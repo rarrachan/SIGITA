@@ -1,0 +1,88 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+              android:orientation="vertical"
+              android:layout_width="fill_parent"
+              android:layout_height="wrap_content">
+    <!-- Start Linear Layout Row -->
+    <LinearLayout
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:layout_gravity="center"
+            android:layout_margin="10dp"
+            android:visibility="visible"
+            android:id="@+id/LakiLakiLayout">
+
+        <!-- Start Blank Space -->
+        <View
+                android:layout_width="0dp"
+                android:layout_height="0dp"
+                android:layout_weight=".1"/>
+        <!-- End Blank Space -->
+
+        <!-- Start Linear Layout Profil -->
+        <LinearLayout
+                android:id="@+id/ProfilLinearLayout"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                android:layout_weight="1"
+                android:background="#FFF1B5">
+
+            <!-- Start Image View Profil LakiLaki-->
+            <ImageView
+                    android:id="@+id/button_anaklaki"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight=".5"
+                    android:adjustViewBounds="true"
+                    android:src="@drawable/icon_lakilaki"
+                    android:contentDescription="@string/app_name"
+                    android:layout_margin="5dp" android:visibility="visible"/>
+            <!-- End Image View Profil LakiLaki -->
+
+            <!-- Start Image View Profil Perempuan-->
+            <ImageView
+                    android:id="@+id/button_anakperempuan"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight=".5"
+                    android:adjustViewBounds="true"
+                    android:src="@drawable/icon_perempuan"
+                    android:contentDescription="@string/app_name"
+                    android:layout_margin="5dp" android:visibility="visible"/>
+            <!-- End Image View Profil Perempuan -->
+
+            <!-- Start Blank Space -->
+            <View
+                    android:layout_width="0dp"
+                    android:layout_height="0dp"
+                    android:layout_weight=".2"/>
+            <!-- End Blank Space -->
+
+            <!-- Start Text View Profil -->
+            <TextView
+                    android:id="@+id/text_button_profil"
+                    android:layout_width="0dp"
+                    android:layout_height="fill_parent"
+                    android:textColor="#D046F2"
+                    android:text="@string/profil_hint_nama"
+                    style="@android:style/TextAppearance.DeviceDefault.Medium"
+                    android:layout_weight="1.5"
+                    android:gravity="right|center"
+                    android:layout_marginRight="10dp"/>
+            <!-- End Text View Profil LakiLaki -->
+
+        </LinearLayout>
+        <!-- End Linear Layout Profil LakiLaki -->
+
+        <!-- Start Blank Space -->
+        <View
+                android:layout_width="0dp"
+                android:layout_height="0dp"
+                android:layout_weight=".1"/>
+        <!-- End Blank Space -->
+
+    </LinearLayout>
+    <!-- End Linear Layout Row  -->
+</LinearLayout>

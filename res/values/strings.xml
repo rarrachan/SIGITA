@@ -1,0 +1,87 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="app_name">SIGITA</string>
+    <string name="text_footer">Copyright &#169; 2016 - SIGITA</string>
+
+    <string name="button_profil">Profil</string>
+    <string name="button_gizi">Gizi</string>
+    <string name="button_imunisasi">Imunisasi</string>
+    <string name="button_tumbuhkembang">Tumbuh Kembang</string>
+    <string name="button_rekammedis">Rekam Medis</string>
+
+    <string name="button_anaklaki">Nama Anak Laki-Laki</string>
+    <string name="button_anakperempuan">Nama Anak Perempuan</string>
+    <string name="button_tambahprofil">Tambah Profil</string>
+
+    <string name="profil_nama">Nama</string>
+    <string name="profil_hint_nama">Nama Anak</string>
+    <string name="profil_jeniskelamin">Jenis Kelamin</string>
+    <string name="profil_L">L</string>
+    <string name="profil_P">P</string>
+    <string name="profil_tempatlahir">Tempat Lahir</string>
+    <string name="profil_tanggallahir">Tanggal Lahir</string>
+    <string name="profil_hint_tempatlahir">Tempat Lahir</string>
+    <string name="profil_hint_tanggallahir">01/01/1990</string>
+    <string name="profil_golongandarah">Golongan Darah</string>
+    <string name="profil_A">A</string>
+    <string name="profil_B">B</string>
+    <string name="profil_AB">AB</string>
+    <string name="profil_O">O</string>
+    <string name="profil_panjanglahir">Panjang Lahir</string>
+    <string name="profil_hint_panjanglahir">50.00</string>
+    <string name="profil_centimeter">CM</string>
+    <string name="profil_beratlahir">Berat Lahir</string>
+    <string name="profil_hint_beratlahir">35.00</string>
+    <string name="profil_gram">GR</string>
+    <string name="profil_alergi">Alergi</string>
+    <string name="profil_hint_alergi">Nama Alergi</string>
+    <string name="profil_penyakitkronis">Penyakit Kronis</string>
+    <string name="profil_hint_penyakitkronis">Nama Penyakit Kronis</string>
+    <string name="profil_foto">Foto</string>
+
+    <string name="titikdua">&#58;</string>
+    <string name="dash">&#8211;</string>
+    <string name="profil_lakilaki">Laki-laki</string>
+    <string name="profil_perempuan">Perempuan</string>
+
+
+    <string name="alert_warning">WARNING !</string>
+    <string name="alert_hapus">Apa anda yakin untuk menghapus seluruh data anak ini? Penghapusan meliputi riwayat
+        imunisasi, status gizi, rekam medis, dan record tumbuh kembang anak.
+    </string>
+    <string name="alert_akses">Anda tidak dapat mengakses menu ini karena belum memilih profil anak. Silahkan memilih
+        profil anak terlebih dahulu.
+    </string>
+
+    <string name="button_kalkulatorgizi">Kalkulator Gizi</string>
+    <string name="button_dokumentasigizi">Dokumentasi Gizi</string>
+
+    <string name="kalkulatorgizi_usia">Usia</string>
+    <string name="hint_kalkulatorgizi_usia">26</string>
+    <string name="kalkulatorgizi_bulan">Bulan</string>
+    <string name="kalkulatorgizi_jeniskelamin">Jenis Kelamin</string>
+    <string name="kalkulatorgizi_L">L</string>
+    <string name="kalkulatorgizi_P">P</string>
+    <string name="kalkulatorgizi_tinggibadan">Tinggi Badan</string>
+    <string name="kalkulatorgizi_hint_tinggibadan">50.00</string>
+    <string name="kalkulatorgizi_centimeter">CM</string>
+    <string name="kalkulatorgizi_beratbadan">Berat Badan</string>
+    <string name="kalkulatorgizi_hint_beratbadan">35.00</string>
+    <string name="kalkulatorgizi_kilogram">KG</string>
+
+    <string name="hasilkalkulatorgizi">Hasil Kalkulator Gizi</string>
+    <string name="bbu">BB/U</string>
+    <string name="tbu">TB/U</string>
+    <string name="bbtb">BB/TB</string>
+    <string name="imtu">IMT/U</string>
+    <string name="hasil_baik">Baik</string>
+    <string name="hasil_normal">Normal</string>
+
+    <string name="button_jadwalimunisasi">Jadwal Imunisasi</string>
+    <string name="button_riwayatimunisasi">Riwayat Imunisasi</string>
+    <string name="button_alarmimunisasi">Alarm Imunisasi</string>
+
+    <string name="button_tahapantumbang">Tahapan Tumbuh Kembang</string>
+    <string name="button_galeritumbang">Galeri Tumbuh Kembang</string>
+
+</resources>

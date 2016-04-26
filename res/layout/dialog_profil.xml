@@ -1,0 +1,119 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+              android:layout_width="fill_parent"
+              android:layout_height="fill_parent"
+              android:gravity="center"
+              android:orientation="horizontal">
+
+    <!-- Start Blank Space -->
+    <View
+            android:layout_width="0dp"
+            android:layout_height="0dp"
+            android:layout_weight=".1"/>
+    <!-- End Blank Space -->
+
+    <!-- Start Linear Layout Dialog Profil -->
+    <LinearLayout
+            android:layout_width="0dp"
+            android:layout_weight="1"
+            android:layout_height="wrap_content"
+            android:gravity="center"
+            android:background="#FFFDC9">
+
+        <!-- Start Image View Foto Profil -->
+        <ImageView
+                android:id="@+id/foto_profil"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight=".7"
+                android:adjustViewBounds="true"
+                android:src="@drawable/icon_logo"
+                android:contentDescription="@string/app_name"
+                android:layout_margin="5dp"/>
+        <!-- End Image View Foto Profil -->
+
+        <!-- Start Linear Layout Profil -->
+        <LinearLayout
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="5dp"
+                android:layout_marginRight="5dp"
+                android:orientation="vertical"
+                android:layout_weight="1">
+
+            <!-- Start Text View Nama Profil -->
+            <TextView
+                    android:id="@+id/profil_nama"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginRight="5dp"
+                    android:textColor="#D046F2"
+                    android:text="@string/profil_hint_nama"
+                    style="@android:style/TextAppearance.DeviceDefault.Medium"
+                    android:layout_gravity="center_horizontal"
+                    android:gravity="center"/>
+            <!-- End Text View Nama Profil -->
+
+            <!-- Start Image View Dotted -->
+            <ImageView
+                    android:id="@+id/dottedline"
+                    android:layout_width="fill_parent"
+                    android:layout_height="0dp"
+                    android:src="@drawable/dottedline"
+                    android:contentDescription="@string/app_name"
+                    android:layout_weight="1"/>
+            <!-- End Image VIew Dotted -->
+
+            <!-- Start Linear Layout Button -->
+            <LinearLayout
+                    android:layout_width="fill_parent"
+                    android:layout_height="0dp"
+                    android:orientation="horizontal"
+                    android:layout_weight="1">
+
+                <!-- Start Image View Button Pilih -->
+                <ImageView
+                        android:id="@+id/button_pilih"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="5"
+                        android:adjustViewBounds="true"
+                        android:src="@drawable/tombol_pilih"
+                        android:contentDescription="@string/app_name"/>
+                <!-- End Image View Button Pilih -->
+
+                <!-- Start Blank Space -->
+                <View
+                        android:layout_width="0dp"
+                        android:layout_height="0dp"
+                        android:layout_weight="1"/>
+                <!-- Start Blank Space -->
+
+                <!-- Start Image View Button Detail -->
+                <ImageView
+                        android:id="@+id/button_detail"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="5"
+                        android:adjustViewBounds="true"
+                        android:src="@drawable/tombol_detail"
+                        android:contentDescription="@string/app_name"/>
+                <!-- End Image View Button Detail -->
+
+            </LinearLayout>
+            <!-- End Linear Layout Button -->
+
+        </LinearLayout>
+        <!-- End Linear Layout Profil -->
+
+    </LinearLayout>
+    <!-- End Linear Layout Dialog Profil -->
+
+    <!-- Start Blank Space -->
+    <View
+            android:layout_width="0dp"
+            android:layout_height="0dp"
+            android:layout_weight=".1"/>
+    <!-- Start Blank Space -->
+
+</LinearLayout>
