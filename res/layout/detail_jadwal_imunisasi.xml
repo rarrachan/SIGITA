@@ -1,0 +1,351 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:fillViewport="true"
+            android:scrollbars="none"
+            android:id="@+id/scrollView">
+
+    <RelativeLayout
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content">
+
+        <LinearLayout
+                android:layout_width="fill_parent"
+                android:layout_height="fill_parent"
+                android:background="#FFFBC9"
+                android:orientation="vertical">
+
+            <LinearLayout
+                    android:layout_width="fill_parent"
+                    android:layout_height="fill_parent"
+                    android:background="#FFFBC9"
+                    android:orientation="vertical"
+                    android:layout_marginBottom="50dp">
+
+                <!-- Start Linear Layout Header -->
+                <LinearLayout
+                        android:id="@+id/HeaderLinearLayout"
+                        android:layout_width="fill_parent"
+                        android:layout_height="wrap_content"
+                        android:background="#FFF1B5"
+                        android:orientation="horizontal">
+
+                    <!-- Start Blank Space -->
+                    <View
+                            android:layout_width="0dp"
+                            android:layout_height="0dp"
+                            android:layout_weight=".2"/>
+                    <!-- End Blank Space -->
+
+                    <!-- Start Header Logo Image -->
+                    <ImageView
+                            android:id="@+id/logo_index"
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content"
+                            android:layout_weight=".5"
+                            android:adjustViewBounds="true"
+                            android:src="@drawable/icon_logopanjang"
+                            android:contentDescription="@string/app_name"/>
+                    <!-- End Header Logo Image -->
+
+                    <!-- Start Blank Space -->
+                    <View
+                            android:layout_width="0dp"
+                            android:layout_height="0dp"
+                            android:layout_weight=".2"/>
+                    <!-- End Blank Space -->
+
+                </LinearLayout>
+                <!-- End Linear Layout Header -->
+
+                <!-- Start Linear Layout Profil -->
+                <LinearLayout
+                        android:id="@+id/ProfilLinearLayout"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginLeft="20dp"
+                        android:layout_marginTop="15dp"
+                        android:paddingRight="10dp"
+                        android:background="@drawable/button_rounded">
+
+                    <!-- Start Button Profil -->
+                    <Button
+                            android:id="@+id/button_profil"
+                            android:layout_width="30dp"
+                            android:layout_height="30dp"
+                            android:background="@drawable/icon_profil"
+                            android:layout_margin="5dp"
+                            android:layout_gravity="center_vertical"/>
+                    <!-- End Button Profil -->
+
+                    <!-- Start Text Profil -->
+                    <TextView
+                            android:id="@+id/text_button_profil"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:textColor="#D046F2"
+                            android:text="@string/button_profil"
+                            android:layout_marginLeft="5dp"
+                            style="@android:style/TextAppearance.DeviceDefault.Medium"
+                            android:layout_gravity="center_vertical"/>
+                    <!-- End Text Profil -->
+
+                </LinearLayout>
+                <!-- End Linear Layout Profil -->
+
+                <!-- Start Linear Layout Content -->
+                <LinearLayout
+                        android:layout_width="fill_parent"
+                        android:layout_height="wrap_content"
+                        android:gravity="center"
+                        android:orientation="vertical"
+                        android:layout_gravity="center_vertical"
+                        android:layout_marginTop="30dp">
+
+                    <!-- Start Linear Layout Row -->
+                    <LinearLayout
+                            android:layout_width="fill_parent"
+                            android:layout_height="wrap_content"
+                            android:orientation="horizontal"
+                            android:layout_gravity="center">
+
+                        <!-- Start Blank Space -->
+                        <View
+                                android:layout_width="0dp"
+                                android:layout_height="0dp"
+                                android:layout_weight=".1"/>
+                        <!-- End Blank Space -->
+
+                        <!-- Start Linear Layout Detail Jadwal Imunisasi -->
+                        <LinearLayout
+                                android:layout_width="0dp"
+                                android:layout_height="wrap_content"
+                                android:orientation="vertical"
+                                android:layout_weight="1.3">
+
+                            <!-- Start Linear Layout Profil Nama -->
+                            <LinearLayout
+                                    android:layout_width="fill_parent"
+                                    android:layout_height="0dp"
+                                    android:orientation="horizontal"
+                                    android:layout_weight="1"
+                                    android:layout_marginBottom="3dp">
+
+                                <!-- Start Text View Jenis Vaksin -->
+                                <TextView
+                                        android:id="@+id/text_jenis_vaksin"
+                                        android:layout_width="wrap_content"
+                                        android:layout_height="wrap_content"
+                                        android:textColor="#D046F2"
+                                        android:text="@string/jenis_vaksin"
+                                        style="@android:style/TextAppearance.DeviceDefault.Medium"/>
+                                <!-- End Text View Jenis Vaksin -->
+
+                                <!-- Start Text View Titik Dua -->
+                                <TextView
+                                        android:id="@+id/titikdua"
+                                        android:layout_width="wrap_content"
+                                        android:layout_height="wrap_content"
+                                        android:textColor="#D046F2"
+                                        android:text="@string/titikdua"
+                                        style="@android:style/TextAppearance.DeviceDefault.Medium"
+                                        android:layout_marginLeft="5dp"/>
+                                <TextView
+                                        android:id="@+id/jenis_vaksin"
+                                        android:layout_width="fill_parent"
+                                        android:layout_height="wrap_content"
+                                        android:textColor="#FF0000"
+                                        android:hint="@string/jenis_vaksin"
+                                        style="@android:style/TextAppearance.DeviceDefault.Medium"
+                                        android:layout_marginLeft="5dp"/>
+                                <!-- End Text View Titik Dua -->
+
+                            </LinearLayout>
+                            <!-- End Linear Layout Jenis Vaksin -->
+
+                            <!-- Start Linear Layout Usia Vaksin -->
+                            <LinearLayout
+                                    android:layout_width="fill_parent"
+                                    android:layout_height="wrap_content"
+                                    android:orientation="horizontal"
+                                    android:layout_weight="1"
+                                    android:layout_marginBottom="4dp">
+
+                                <!-- Start Text View Usia Vaksin -->
+                                <TextView
+                                        android:id="@+id/text_usia_vaksin"
+                                        android:layout_width="wrap_content"
+                                        android:layout_height="wrap_content"
+                                        android:textColor="#D046F2"
+                                        android:text="@string/usia_vaksin"
+                                        style="@android:style/TextAppearance.DeviceDefault.Medium"/>
+                                <!-- End Text View Usia Vaksin -->
+
+                                <!-- Start Text View Titik Dua -->
+                                <TextView
+                                        android:id="@+id/titikdua"
+                                        android:layout_width="wrap_content"
+                                        android:layout_height="wrap_content"
+                                        android:textColor="#D046F2"
+                                        android:text="@string/titikdua"
+                                        style="@android:style/TextAppearance.DeviceDefault.Medium"
+                                        android:layout_marginRight="5dp"
+                                        android:layout_marginLeft="5dp"/>
+                                <!-- End Text View Titik Dua -->
+
+                                <!-- Start Text View Usia Vaksin -->
+                                <TextView
+                                        android:id="@+id/usia_vaksin"
+                                        android:layout_width="wrap_content"
+                                        android:layout_height="wrap_content"
+                                        android:textColor="#FF0000"
+                                        android:text="@string/usia_vaksin"
+                                        style="@android:style/TextAppearance.DeviceDefault.Medium"/>
+                                <!-- End Text View Usia Vaksin -->
+
+                            </LinearLayout>
+                            <!-- End Linear Layout Usia Vaksin -->
+
+                            <!-- Start Linear Layout Status Vaksin -->
+                            <LinearLayout
+                                    android:id="@+id/statusVaksinLayout"
+                                    android:layout_width="fill_parent"
+                                    android:layout_height="wrap_content"
+                                    android:orientation="horizontal"
+                                    android:layout_weight="1"
+                                    android:layout_marginBottom="4dp" android:visibility="gone">
+
+                                <!-- Start Text View Status Vaksin -->
+                                <TextView
+                                        android:id="@+id/text_status_vaksin"
+                                        android:layout_width="wrap_content"
+                                        android:layout_height="wrap_content"
+                                        android:textColor="#D046F2"
+                                        android:text="@string/status_vaksin"
+                                        style="@android:style/TextAppearance.DeviceDefault.Medium"/>
+                                <!-- End Text View Status Vaksin -->
+
+                                <!-- Start Text View Titik Dua -->
+                                <TextView
+                                        android:id="@+id/titikdua"
+                                        android:layout_width="wrap_content"
+                                        android:layout_height="wrap_content"
+                                        android:textColor="#D046F2"
+                                        android:text="@string/titikdua"
+                                        style="@android:style/TextAppearance.DeviceDefault.Medium"
+                                        android:layout_marginRight="5dp"
+                                        android:layout_marginLeft="5dp"/>
+                                <!-- End Text View Titik Dua -->
+
+                                <!-- Start Text View Status Vaksin -->
+                                <TextView
+                                        android:id="@+id/status_vaksin"
+                                        android:layout_width="wrap_content"
+                                        android:layout_height="wrap_content"
+                                        android:textColor="#FF0000"
+                                        android:text="@string/status_vaksin"
+                                        style="@android:style/TextAppearance.DeviceDefault.Medium"/>
+                                <!-- End Text View Status Vaksin -->
+
+                            </LinearLayout>
+                            <!-- End Linear Layout Status Vaksin -->
+
+                            <!-- Start Linear Layout Keterangan Vaksin -->
+                            <LinearLayout
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="0dp"
+                                    android:orientation="horizontal"
+                                    android:layout_weight="1"
+                                    android:layout_marginBottom="3dp">
+
+                                <!-- Start Text View Keterangan Vaksin -->
+                                <TextView
+                                        android:id="@+id/text_keterangan_vaksin"
+                                        android:layout_width="fill_parent"
+                                        android:layout_height="wrap_content"
+                                        android:textColor="#D046F2"
+                                        android:text="@string/keterangan_vaksin"
+                                        style="@android:style/TextAppearance.DeviceDefault.Medium"/>
+                                <!-- End Text View Keterangan Vaksin -->
+
+                                <!-- Start Text View Titik Dua -->
+                                <TextView
+                                        android:id="@+id/titikdua"
+                                        android:layout_width="wrap_content"
+                                        android:layout_height="wrap_content"
+                                        android:textColor="#D046F2"
+                                        android:text="@string/titikdua"
+                                        style="@android:style/TextAppearance.DeviceDefault.Medium"
+                                        android:layout_marginLeft="5dp"/>
+                                <!-- End Text View Titik Dua -->
+
+                            </LinearLayout>
+                            <!-- End Linear Layout Keterangan Vaksin -->
+
+                            <!-- Start Text VIew Keterangan Vaksin -->
+                            <TextView
+                                    android:id="@+id/keterangan_vaksin"
+                                    android:layout_width="fill_parent"
+                                    android:layout_height="wrap_content"
+                                    android:textColor="#FF0000"
+                                    android:hint="@string/keterangan_vaksin"
+                                    style="@android:style/TextAppearance.DeviceDefault.Medium"/>
+                            <!-- End Text VIew Keterangan Vaksin -->
+
+                        </LinearLayout>
+                        <!-- End Linear Layout Detail Jadwal Imunisasi -->
+
+                        <!-- Start Blank Space -->
+                        <View
+                                android:layout_width="0dp"
+                                android:layout_height="0dp"
+                                android:layout_weight=".05"/>
+                        <!-- End Blank Space -->
+
+                        <!-- Start Linear Layout Profil -->
+                        <!-- End Linear Layout Profil -->
+
+                        <!-- Start Blank Space -->
+                        <!-- End Blank Space -->
+
+                    </LinearLayout>
+                    <!-- End Linear Layout Row -->
+
+                </LinearLayout>
+                <!-- End Linear Layout Content -->
+
+                <!-- Start Linear Layout Content -->
+                <!-- End Linear Layout Content -->
+
+            </LinearLayout>
+
+        </LinearLayout>
+
+        <!-- Start Relative Layout Footer -->
+        <RelativeLayout
+                android:id="@+id/FooterRelativeLayout"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:background="#FFF1B5"
+                android:layout_alignParentBottom="true">
+
+            <!-- Start Text Footer -->
+            <TextView
+                    android:id="@+id/text_footer"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_centerHorizontal="true"
+                    android:textColor="#D046F2"
+                    android:paddingTop="15dp"
+                    android:paddingBottom="15dp"
+                    android:text="@string/text_footer"
+                    style="@android:style/TextAppearance.DeviceDefault.Medium"/>
+            <!-- End Text Footer -->
+
+        </RelativeLayout>
+        <!-- End Relative Layout Footer -->
+
+    </RelativeLayout>
+
+</ScrollView>

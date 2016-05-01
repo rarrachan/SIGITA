@@ -23,6 +23,7 @@ import java.io.File;
 public class DetailProfil extends Activity{
 
     // Declare
+    private TextView detail_profil;
     private TextView text_profil_nama;
     private TextView profil_nama;
     private TextView text_profil_jeniskelamin;
@@ -74,6 +75,7 @@ public class DetailProfil extends Activity{
         session = new SessionManager();
 
         // Load Widget
+        detail_profil = (TextView) findViewById(R.id.detail_profil);
         titikdua = (TextView) findViewById(R.id.titikdua);
         text_profil_nama = (TextView) findViewById(R.id.text_profil_nama);
         profil_nama = (TextView) findViewById(R.id.profil_nama);
@@ -103,6 +105,7 @@ public class DetailProfil extends Activity{
 
         // Set Custom Font
         final Typeface typeface = Typeface.createFromAsset(getAssets(), "teen-webfont.ttf");
+        detail_profil.setTypeface(typeface);
         text_profil_foto.setTypeface(typeface);
         titikdua.setTypeface(typeface);
         text_profil_nama.setTypeface(typeface);
@@ -211,6 +214,7 @@ public class DetailProfil extends Activity{
 
                         try {
                             // Delete From Database
+                            db.deleteMedisProfilID(profil_id);
                             db.deleteProfil(profil_id);
 
                             // Delete Folder Directory

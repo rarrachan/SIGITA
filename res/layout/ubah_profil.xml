@@ -3,7 +3,8 @@
             android:layout_width="match_parent"
             android:layout_height="match_parent"
             android:fillViewport="true"
-            android:scrollbars="none">
+            android:scrollbars="none"
+            android:id="@+id/scrollView">
 
     <RelativeLayout
             android:focusable="true"
@@ -68,6 +69,16 @@
                         android:orientation="vertical"
                         android:layout_gravity="center_vertical"
                         android:layout_marginTop="30dp">
+
+                    <TextView
+                            android:id="@+id/ubah_profil"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:textColor="#D046F2"
+                            android:text="@string/ubah_profil"
+                            style="@android:style/TextAppearance.DeviceDefault.Medium"
+                            android:layout_gravity="center_vertical"
+                            android:layout_margin="20dp"/>
 
                     <TextView
                             android:id="@+id/profil_id"

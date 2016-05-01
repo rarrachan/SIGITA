@@ -3,7 +3,8 @@
             android:layout_width="match_parent"
             android:layout_height="match_parent"
             android:fillViewport="true"
-            android:scrollbars="none">
+            android:scrollbars="none"
+            android:id="@+id/scrollView">
 
     <RelativeLayout
             android:layout_width="fill_parent"
@@ -111,7 +112,7 @@
                                     android:layout_width="wrap_content"
                                     android:layout_height="wrap_content"
                                     android:textColor="#D046F2"
-                                    android:text="@string/kalkulatorgizi_usia"
+                                    android:text="@string/kalkulatorgizi_tanggallahir"
                                     style="@android:style/TextAppearance.DeviceDefault.Medium"/>
                             <!-- End Text View Kalkulator Gizi -->
 
@@ -133,19 +134,19 @@
                                     android:layout_height="wrap_content"
                                     android:textColor="#FF0000"
                                     style="@android:style/TextAppearance.DeviceDefault.Medium"
-                                    android:hint="@string/hint_kalkulatorgizi_usia"
+                                    android:hint="@string/profil_hint_tanggallahir"
                                     android:layout_weight=".4" android:layout_marginLeft="5dp"/>
                             <!-- End Text Viewt Kalkulator Gizi Usia-->
 
                             <!-- Start Text View Bulan -->
-                            <TextView
-                                    android:id="@+id/kalkulatorgizi_bulan"
-                                    android:layout_width="0dp"
-                                    android:layout_height="wrap_content"
-                                    android:textColor="#D046F2"
-                                    android:text="@string/kalkulatorgizi_bulan"
-                                    style="@android:style/TextAppearance.DeviceDefault.Medium"
-                                    android:layout_weight=".5"/>
+                            <!--<TextView-->
+                                    <!--android:id="@+id/kalkulatorgizi_bulan"-->
+                                    <!--android:layout_width="0dp"-->
+                                    <!--android:layout_height="wrap_content"-->
+                                    <!--android:textColor="#D046F2"-->
+                                    <!--android:text="@string/kalkulatorgizi_bulan"-->
+                                    <!--style="@android:style/TextAppearance.DeviceDefault.Medium"-->
+                                    <!--android:layout_weight=".5"/>-->
                             <!-- End Text View Bulan -->
 
                         </LinearLayout>

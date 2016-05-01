@@ -6,7 +6,9 @@ package com.syafira.SIGITA;
 
 import android.app.Activity;
 import android.app.AlertDialog;
+import android.app.Dialog;
 import android.content.DialogInterface;
+import android.graphics.drawable.ColorDrawable;
 import android.os.Bundle;
 import android.content.Intent;
 import android.view.View;
@@ -26,6 +28,7 @@ public class Index extends Activity implements OnClickListener {
     private TextView text_button_tumbuhkembang;
     private LinearLayout TumbuhKembangLinearLayout;
     private TextView text_button_rekammedis;
+    private LinearLayout RekamMedisLinearLayout;
     private TextView text_footer;
     private SessionManager session;
 
@@ -50,6 +53,7 @@ public class Index extends Activity implements OnClickListener {
         text_button_tumbuhkembang = (TextView) findViewById(R.id.text_button_tumbuhkembang);
         TumbuhKembangLinearLayout = (LinearLayout) findViewById(R.id.TumbuhKembangLinearLayout);
         text_button_rekammedis = (TextView) findViewById(R.id.text_button_rekammedis);
+        RekamMedisLinearLayout = (LinearLayout) findViewById(R.id.RekamMedisLinearLayout);
         text_footer = (TextView) findViewById(R.id.text_footer);
 
         // Check Session
@@ -63,6 +67,7 @@ public class Index extends Activity implements OnClickListener {
         GiziLinearLayout.setOnClickListener(this);
         ImunisasiLinearLayout.setOnClickListener(this);
         TumbuhKembangLinearLayout.setOnClickListener(this);
+        RekamMedisLinearLayout.setOnClickListener(this);
 
         // Set Custom Font
         Typeface typeface = Typeface.createFromAsset(getAssets(), "teen-webfont.ttf");
@@ -100,6 +105,40 @@ public class Index extends Activity implements OnClickListener {
             case R.id.TumbuhKembangLinearLayout:
                 Intent tumbang = new Intent(this, TumbuhKembang.class);
                 startActivity(tumbang);
+                break;
+
+            // Rekam Medis
+            case R.id.RekamMedisLinearLayout :
+                // Check Session
+                if (session.checkSession(this)) {
+                    Intent medis = new Intent(this, RekamMedis.class);
+                    startActivity(medis);
+                } else {
+                    final Dialog dialog = new Dialog(Index.this);
+                    dialog.setContentView(R.layout.alert_akses);
+                    dialog.setCanceledOnTouchOutside(true);
+                    dialog.getWindow().setBackgroundDrawable(new ColorDrawable(android.graphics.Color.TRANSPARENT));
+                    dialog.show();
+
+                    // Load Dialog Widget
+                    TextView alert_warning = (TextView) dialog.findViewById(R.id.alert_warning);
+                    TextView alert_akses = (TextView) dialog.findViewById(R.id.alert_akses);
+                    ImageView button_ok = (ImageView) dialog.findViewById(R.id.button_ok);
+
+                    // Set Custom Font Dialog
+                    Typeface typeface = Typeface.createFromAsset(getAssets(), "teen-webfont.ttf");
+                    alert_akses.setTypeface(typeface);
+                    alert_warning.setTypeface(typeface);
+
+                    // Set OnClickListener Dialog
+                    button_ok.setOnClickListener(new OnClickListener() {
+                        @Override
+                        public void onClick(View v) {
+                            // Close Dialog
+                            dialog.dismiss();
+                        }
+                    });
+                }
                 break;
         }
     }

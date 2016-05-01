@@ -3,9 +3,12 @@
             android:layout_width="match_parent"
             android:layout_height="match_parent"
             android:fillViewport="true"
-            android:scrollbars="none">
+            android:scrollbars="none"
+            android:id="@+id/scrollView">
 
     <RelativeLayout
+            android:focusable="true"
+            android:focusableInTouchMode="true"
             android:layout_width="fill_parent"
             android:layout_height="wrap_content">
 
@@ -105,15 +108,15 @@
                                 android:orientation="horizontal"
                                 android:layout_weight="1">
 
-                            <!-- Start Text View Kalkulator Gizi Usia  -->
+                            <!-- Start Text View Kalkulator Gizi Tanggal Lahir -->
                             <TextView
-                                    android:id="@+id/text_kalkulatorgizi_usia"
+                                    android:id="@+id/text_kalkulatorgizi_tanggallahir"
                                     android:layout_width="fill_parent"
                                     android:layout_height="wrap_content"
                                     android:textColor="#D046F2"
-                                    android:text="@string/kalkulatorgizi_usia"
+                                    android:text="@string/kalkulatorgizi_tanggallahir"
                                     style="@android:style/TextAppearance.DeviceDefault.Medium"/>
-                            <!-- End Text View Kalkulator Gizi -->
+                            <!-- End Text View Kalkulator Tanggal Lahir -->
 
                             <!-- Start Text View Titik Dua -->
                             <TextView
@@ -134,28 +137,18 @@
                                 android:layout_height="wrap_content"
                                 android:orientation="horizontal">
 
-                            <!-- Start Edit Text Kalkulator Gizi Usia -->
+                            <!-- Start Edit Text Kalkulator Gizi Tanggal Lahir -->
                             <EditText
-                                    android:id="@+id/kalkulatorgizi_usia"
+                                    android:id="@+id/kalkulatorgizi_tanggallahir"
                                     android:layout_width="0dp"
                                     android:layout_height="wrap_content"
                                     android:textColor="#FF0000"
+                                    android:focusable="false"
                                     style="@android:style/TextAppearance.DeviceDefault.Medium"
                                     android:inputType="numberDecimal|numberSigned"
-                                    android:hint="@string/hint_kalkulatorgizi_usia"
+                                    android:hint="@string/profil_hint_tanggallahir"
                                     android:layout_weight=".5"/>
-                            <!-- End Edit Text Kalkulator Gizi Usia -->
-
-                            <!-- Start Text View Bulan -->
-                            <TextView
-                                    android:id="@+id/kalkulatorgizi_bulan"
-                                    android:layout_width="0dp"
-                                    android:layout_height="wrap_content"
-                                    android:textColor="#D046F2"
-                                    android:text="@string/kalkulatorgizi_bulan"
-                                    style="@android:style/TextAppearance.DeviceDefault.Medium"
-                                    android:layout_weight=".5"/>
-                            <!-- End Text View Bulan -->
+                            <!-- End Edit Text Kalkulator Gizi Tanggal Lahir -->
 
                         </LinearLayout>
 

@@ -23,6 +23,7 @@ import android.text.TextUtils;
 import android.view.MotionEvent;
 import android.view.View;
 import android.view.View.OnClickListener;
+import android.view.ViewGroup;
 import android.view.inputmethod.InputMethodManager;
 import android.widget.*;
 
@@ -37,6 +38,7 @@ import java.util.Locale;
 public class UbahProfil extends Activity implements OnClickListener {
 
     // Declare
+    private TextView ubah_profil;
     private TextView profil_id;
     private TextView profil_nama_sebelumnya;
     private TextView text_profil_nama;
@@ -90,6 +92,7 @@ public class UbahProfil extends Activity implements OnClickListener {
         cursor.moveToFirst();
 
         // Load Widget
+        ubah_profil = (TextView) findViewById(R.id.ubah_profil);
         profil_id = (TextView) findViewById(R.id.profil_id);
         profil_nama_sebelumnya = (TextView) findViewById(R.id.profil_nama_sebelumnya);
         titikdua = (TextView) findViewById(R.id.titikdua);
@@ -129,6 +132,7 @@ public class UbahProfil extends Activity implements OnClickListener {
 
         // Set Custom Font
         Typeface typeface = Typeface.createFromAsset(getAssets(), "teen-webfont.ttf");
+        ubah_profil.setTypeface(typeface);
         titikdua.setTypeface(typeface);
         text_profil_nama.setTypeface(typeface);
         profil_nama.setTypeface(typeface);
@@ -507,6 +511,19 @@ public class UbahProfil extends Activity implements OnClickListener {
         }
         // Remove Focus
         v.clearFocus();
+
+        // SCROLL VIEW HACK
+        ScrollView view = (ScrollView)findViewById(R.id.scrollView);
+        view.setDescendantFocusability(ViewGroup.FOCUS_BEFORE_DESCENDANTS);
+        view.setFocusable(true);
+        view.setFocusableInTouchMode(true);
+        view.setOnTouchListener(new View.OnTouchListener() {
+            @Override
+            public boolean onTouch(View v, MotionEvent event) {
+                v.requestFocusFromTouch();
+                return false;
+            }
+        });
         return super.dispatchTouchEvent(event);
     }
 

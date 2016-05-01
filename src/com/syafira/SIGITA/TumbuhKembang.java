@@ -5,8 +5,10 @@ package com.syafira.SIGITA;
  */
 
 import android.app.Activity;
+import android.app.Dialog;
 import android.content.Intent;
 import android.graphics.Typeface;
+import android.graphics.drawable.ColorDrawable;
 import android.os.Bundle;
 import android.view.View;
 import android.view.View.OnClickListener;
@@ -55,6 +57,7 @@ public class TumbuhKembang extends Activity implements OnClickListener {
 
         // Set OnClickListener
         ProfilLinearLayout.setOnClickListener(this);
+        GaleriTumbangLinearLayout.setOnClickListener(this);
 
         // Set Custom Font
         Typeface typeface  = Typeface.createFromAsset(getAssets(), "teen-webfont.ttf");
@@ -75,12 +78,49 @@ public class TumbuhKembang extends Activity implements OnClickListener {
                 Intent profil = new Intent(this, Profil.class);
                 startActivity(profil);
                 break;
+            // Galeri Tumbuh Kembang
+            case R.id.GaleriTumbangLinearLayout :
+                // Check Session
+                if (session.checkSession(this)) {
+                    Intent riwayat = new Intent(this, RiwayatImunisasi.class);
+                    startActivity(riwayat);
+                } else {
+                    final Dialog dialog = new Dialog(TumbuhKembang.this);
+                    dialog.setContentView(R.layout.alert_akses);
+                    dialog.setCanceledOnTouchOutside(true);
+                    dialog.getWindow().setBackgroundDrawable(new ColorDrawable(android.graphics.Color.TRANSPARENT));
+                    dialog.show();
+
+                    // Load Dialog Widget
+                    TextView alert_warning = (TextView) dialog.findViewById(R.id.alert_warning);
+                    TextView alert_akses = (TextView) dialog.findViewById(R.id.alert_akses);
+                    ImageView button_ok = (ImageView) dialog.findViewById(R.id.button_ok);
+
+                    // Set Custom Font Dialog
+                    Typeface typeface = Typeface.createFromAsset(getAssets(), "teen-webfont.ttf");
+                    alert_akses.setTypeface(typeface);
+                    alert_warning.setTypeface(typeface);
+
+                    // Set OnClickListener Dialog
+                    button_ok.setOnClickListener(new OnClickListener() {
+                        @Override
+                        public void onClick(View v) {
+                            // Close Dialog
+                            dialog.dismiss();
+                        }
+                    });
+                }
+                break;
         }
     }
 
     // Pressed Back Button
     @Override
     public void onBackPressed() {
+        // Start Index Activity
+        Intent index = new Intent(this, Index.class);
+        startActivity(index);
+
         // Close This Activity
         finish();
     }

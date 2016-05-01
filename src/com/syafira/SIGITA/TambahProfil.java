@@ -22,6 +22,7 @@ import android.text.TextUtils;
 import android.view.MotionEvent;
 import android.view.View;
 import android.view.View.OnClickListener;
+import android.view.ViewGroup;
 import android.view.inputmethod.InputMethodManager;
 import android.widget.*;
 
@@ -33,6 +34,7 @@ import java.util.Locale;
 public class TambahProfil extends Activity implements OnClickListener {
 
     // Declare
+    private TextView tambah_profil;
     private TextView text_profil_nama;
     private EditText profil_nama;
     private TextView text_profil_jeniskelamin;
@@ -73,6 +75,7 @@ public class TambahProfil extends Activity implements OnClickListener {
         db.open();
 
         // Load Widget
+        tambah_profil = (TextView) findViewById(R.id.tambah_profil);
         titikdua = (TextView) findViewById(R.id.titikdua);
         text_profil_nama = (TextView) findViewById(R.id.text_profil_nama);
         profil_nama = (EditText) findViewById(R.id.profil_nama);
@@ -106,6 +109,7 @@ public class TambahProfil extends Activity implements OnClickListener {
 
         // Set Custom Font
         Typeface typeface = Typeface.createFromAsset(getAssets(), "teen-webfont.ttf");
+        tambah_profil.setTypeface(typeface);
         titikdua.setTypeface(typeface);
         text_profil_nama.setTypeface(typeface);
         profil_nama.setTypeface(typeface);
@@ -296,7 +300,7 @@ public class TambahProfil extends Activity implements OnClickListener {
 //                    File f = new File(android.os.Environment.getExternalStorageDirectory(), foto.replaceAll(" ", "_").toLowerCase());
 //                    String fotoPath = f.getAbsoluteFile().toString();
 
-                    // Inset Data into Database
+                    // Insert Data into Database
                     db.insertProfil(nama, tmptLahir, tglLahir, jenisKelamin, golonganDarah,
                             panjangLahir, beratLahir, alergi, penyakitKronis, foto);
 
@@ -435,6 +439,19 @@ public class TambahProfil extends Activity implements OnClickListener {
         }
         // Remove Focus
         v.clearFocus();
+
+        // SCROLL VIEW HACK
+        ScrollView view = (ScrollView)findViewById(R.id.scrollView);
+        view.setDescendantFocusability(ViewGroup.FOCUS_BEFORE_DESCENDANTS);
+        view.setFocusable(true);
+        view.setFocusableInTouchMode(true);
+        view.setOnTouchListener(new View.OnTouchListener() {
+            @Override
+            public boolean onTouch(View v, MotionEvent event) {
+                v.requestFocusFromTouch();
+                return false;
+            }
+        });
         return super.dispatchTouchEvent(event);
     }
 
