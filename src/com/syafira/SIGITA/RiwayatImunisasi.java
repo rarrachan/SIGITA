@@ -17,6 +17,7 @@ import android.widget.*;
 public class RiwayatImunisasi extends Activity {
 
     // Declare
+    private TextView button_riwayatImunisasi;
     private TextView text_footer;
     private TextView text_button_profil;
     private LinearLayout ProfilLinearLayout;
@@ -42,6 +43,7 @@ public class RiwayatImunisasi extends Activity {
         db.open();
 
         // Load Widget
+        button_riwayatImunisasi = (TextView) findViewById(R.id.button_riwayatimunisasi);
         ProfilLinearLayout = (LinearLayout) findViewById(R.id.ProfilLinearLayout);
         text_button_profil = (TextView) findViewById(R.id.text_button_profil);
         text_tanggal_vaksin = (TextView) findViewById(R.id.text_tanggal_vaksin);
@@ -68,6 +70,7 @@ public class RiwayatImunisasi extends Activity {
 
         // Set Custom Font
         final Typeface typeface  = Typeface.createFromAsset(getAssets(), "teen-webfont.ttf");
+        button_riwayatImunisasi.setTypeface(typeface);
         text_button_profil.setTypeface(typeface);
         text_footer.setTypeface(typeface);
         text_tanggal_vaksin.setTypeface(typeface);
@@ -170,12 +173,15 @@ public class RiwayatImunisasi extends Activity {
         finish();
     }
 
-    // Redirect Back to This Activity
+    // Activity Resume
     @Override
-    public void onRestart() {
-        // Restart Activity
-        super.onRestart();
-        recreate();
+    public void onResume() {
+        super.onResume();
+        // Check Session
+        if (session.checkSession(this)) {
+            // Set Profil Name
+            text_button_profil.setText(session.loadSession(this, "nama"));
+        }
     }
 
 }

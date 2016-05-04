@@ -17,6 +17,7 @@ import android.widget.*;
 public class RekamMedis extends Activity {
 
     // Declare
+    private TextView button_rekammedis;
     private TextView text_footer;
     private TextView text_button_profil;
     private LinearLayout ProfilLinearLayout;
@@ -43,6 +44,7 @@ public class RekamMedis extends Activity {
         db.open();
 
         // Load Widget
+        button_rekammedis = (TextView) findViewById(R.id.button_rekammedis);
         ProfilLinearLayout = (LinearLayout) findViewById(R.id.ProfilLinearLayout);
         text_button_profil = (TextView) findViewById(R.id.text_button_profil);
         text_tanggal_medis = (TextView) findViewById(R.id.text_tanggal_medis);
@@ -53,6 +55,7 @@ public class RekamMedis extends Activity {
 
         // Set Custom Font
         final Typeface typeface  = Typeface.createFromAsset(getAssets(), "teen-webfont.ttf");
+        button_rekammedis.setTypeface(typeface);
         text_button_profil.setTypeface(typeface);
         text_footer.setTypeface(typeface);
         text_tanggal_medis.setTypeface(typeface);
@@ -201,12 +204,14 @@ public class RekamMedis extends Activity {
         finish();
     }
 
-    // Redirect Back to This Activity
+    // Activity Resume
     @Override
-    public void onRestart() {
-        // Restart Activity
-        super.onRestart();
-        recreate();
+    public void onResume() {
+        super.onResume();
+        // Check Session
+        if (session.checkSession(this)) {
+            // Set Profil Name
+            text_button_profil.setText(session.loadSession(this, "nama"));
+        }
     }
-
 }

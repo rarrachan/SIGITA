@@ -51,15 +51,27 @@
             </LinearLayout>
             <!-- End Linear Layout Header -->
 
+            <TextView
+                    android:id="@+id/button_jadwalimunisasi"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:textColor="#D046F2"
+                    android:text="@string/button_jadwalimunisasi"
+                    style="@android:style/TextAppearance.DeviceDefault.Medium"
+                    android:layout_gravity="center_vertical"
+                    android:layout_marginLeft="20dp"
+                    android:layout_marginTop="10dp"
+                    android:layout_marginRight="20dp"
+                    android:layout_marginBottom="10dp"/>
+
             <!-- Start Linear Layout Profil -->
             <LinearLayout
                     android:id="@+id/ProfilLinearLayout"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_marginLeft="20dp"
-                    android:layout_marginTop="15dp"
                     android:paddingRight="10dp"
-                    android:background="@drawable/button_rounded">
+                    android:background="@drawable/button_rounded" android:gravity="left">
 
                 <!-- Start Button Profil -->
                 <Button

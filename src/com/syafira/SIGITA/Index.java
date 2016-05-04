@@ -87,24 +87,30 @@ public class Index extends Activity implements OnClickListener {
             case R.id.ProfilLinearLayout:
                 Intent profil = new Intent(this, Profil.class);
                 startActivity(profil);
+
+//                finish();
                 break;
 
             // Gizi
             case R.id.GiziLinearLayout:
                 Intent gizi = new Intent(this, Gizi.class);
                 startActivity(gizi);
+
+                finish();
                 break;
 
             // Imunisasi
             case R.id.ImunisasiLinearLayout:
                 Intent imunisasi = new Intent(this, Imunisasi.class);
                 startActivity(imunisasi);
+                finish();
                 break;
 
             // Tumbuh Kembang
             case R.id.TumbuhKembangLinearLayout:
                 Intent tumbang = new Intent(this, TumbuhKembang.class);
                 startActivity(tumbang);
+                finish();
                 break;
 
             // Rekam Medis
@@ -113,6 +119,7 @@ public class Index extends Activity implements OnClickListener {
                 if (session.checkSession(this)) {
                     Intent medis = new Intent(this, RekamMedis.class);
                     startActivity(medis);
+                    finish();
                 } else {
                     final Dialog dialog = new Dialog(Index.this);
                     dialog.setContentView(R.layout.alert_akses);
@@ -166,11 +173,14 @@ public class Index extends Activity implements OnClickListener {
                 }).create().show();
     }
 
-    // Redirect Back to This Activity
+    // Activity Resume
     @Override
-    public void onRestart() {
-        // Restart Activity
-        super.onRestart();
-        recreate();
+    public void onResume() {
+        super.onResume();
+        // Check Session
+        if (session.checkSession(this)) {
+            // Set Profil Name
+            text_button_profil.setText(session.loadSession(this, "nama"));
+        }
     }
 }

@@ -52,11 +52,11 @@
             <!-- End Linear Layout Header -->
 
             <TextView
-                    android:id="@+id/button_riwayatimunisasi"
+                    android:id="@+id/button_galeritumbang"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:textColor="#D046F2"
-                    android:text="@string/button_riwayatimunisasi"
+                    android:text="@string/button_galeritumbang"
                     style="@android:style/TextAppearance.DeviceDefault.Medium"
                     android:layout_gravity="center_vertical"
                     android:layout_marginLeft="20dp"
@@ -102,114 +102,103 @@
             <LinearLayout
                     android:layout_width="fill_parent"
                     android:layout_height="fill_parent"
-                    android:gravity="center"
                     android:orientation="vertical"
-                    android:layout_gravity="center_vertical"
-                    android:layout_marginBottom="50dp">
+                    android:layout_marginBottom="50dp" android:layout_marginTop="10dp">
 
-                <!-- Start Linear Layout Content -->
+                <!-- Start Linear Layout Tanggal -->
                 <LinearLayout
-                        android:layout_width="fill_parent"
+                        android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:orientation="horizontal"
-                        android:layout_gravity="center"
-                        android:layout_marginBottom="10dp" android:layout_marginTop="20dp">
+                        android:layout_marginLeft="20dp">
 
-                    <!-- Start Blank Space -->
-                    <View
-                            android:layout_width="0dp"
-                            android:layout_height="0dp"
-                            android:layout_weight="1"/>
-                    <!-- End Blank Space -->
-
-                    <!-- Start Image View Button Tambah -->
-                    <ImageView
-                            android:id="@+id/button_tambah"
-                            android:layout_width="0dp"
+                    <!-- Start Text View Tanggal  -->
+                    <TextView
+                            android:id="@+id/text_galeri_tanggal"
+                            android:layout_width="fill_parent"
                             android:layout_height="wrap_content"
-                            android:layout_weight="1"
-                            android:adjustViewBounds="true"
-                            android:src="@drawable/tombol_tambah"
-                            android:contentDescription="@string/app_name"/>
-                    <!-- End Image View Button Tambah -->
+                            android:textColor="#D046F2"
+                            android:text="@string/galeri_tanggal"
+                            style="@android:style/TextAppearance.DeviceDefault.Medium"/>
+                    <!-- End Text View Tanggal  -->
 
-                    <!-- Start Blank Space -->
-                    <View
-                            android:layout_width="0dp"
-                            android:layout_height="0dp"
-                            android:layout_weight="1"/>
-                    <!-- End Blank Space -->
+                    <!-- Start Text View Titik Dua -->
+                    <TextView
+                            android:id="@+id/titikdua"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:textColor="#D046F2"
+                            android:text="@string/titikdua"
+                            style="@android:style/TextAppearance.DeviceDefault.Medium"
+                            android:layout_marginLeft="5dp"/>
+                    <!-- End Text View Titik Dua -->
+
+                    <EditText
+                            android:id="@+id/galeri_tanggal"
+                            android:layout_width="fill_parent"
+                            android:layout_height="wrap_content"
+                            android:textColor="#FF0000"
+                            android:hint="@string/hint_galeri_tanggal"
+                            android:focusable="false"
+                            style="@android:style/TextAppearance.DeviceDefault.Medium"/>
 
                 </LinearLayout>
-                <!-- End Linear Layout Content -->
+                <!-- End Linear Layout Tanggal -->
 
-                <TableLayout
-                        android:id="@+id/jadwal_imunisasi"
+                <!-- Start Linear Layout Tanggal -->
+                <LinearLayout
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:orientation="horizontal"
+                        android:layout_marginLeft="20dp">
+
+                    <!-- Start Text View Tanggal Lahir -->
+                    <TextView
+                            android:id="@+id/text_galeri_usia"
+                            android:layout_width="fill_parent"
+                            android:layout_height="wrap_content"
+                            android:textColor="#D046F2"
+                            android:text="@string/galeri_usia"
+                            style="@android:style/TextAppearance.DeviceDefault.Medium"/>
+                    <!-- End Text View Tanggal Lahir -->
+
+                    <!-- Start Text View Titik Dua -->
+                    <TextView
+                            android:id="@+id/titikdua"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:textColor="#D046F2"
+                            android:text="@string/titikdua"
+                            style="@android:style/TextAppearance.DeviceDefault.Medium"
+                            android:layout_marginLeft="5dp"/>
+                    <!-- End Text View Titik Dua -->
+
+                    <TextView
+                            android:id="@+id/galeri_usia"
+                            android:layout_width="fill_parent"
+                            android:layout_height="wrap_content"
+                            android:textColor="#FF0000"
+                            android:hint="@string/dash"
+                            android:focusable="false"
+                            style="@android:style/TextAppearance.DeviceDefault.Medium"
+                            android:layout_marginLeft="5dp"/>
+
+                </LinearLayout>
+                <!-- End Linear Layout Usia -->
+
+                <GridView
+                        android:id="@+id/gridView"
                         android:layout_width="fill_parent"
-                        android:layout_height="fill_parent"
-                        android:layout_marginLeft="10dp"
-                        android:layout_marginRight="10dp"
-                        android:layout_marginBottom="20dp"
-                        android:stretchColumns="*"
-                        android:background="@drawable/border_table">
-
-                    <TableRow>
-
-                        <TextView
-                                android:id="@+id/text_tanggal_vaksin"
-                                android:layout_width="0dp"
-                                android:layout_height="match_parent"
-                                android:layout_weight="1"
-                                android:padding="5dp"
-                                android:layout_marginTop="1dp"
-                                android:layout_marginBottom="1dp"
-                                android:layout_marginRight="1dp"
-                                android:layout_marginLeft="3dp"
-                                android:gravity="center_vertical"
-                                android:textColor="#D046F2"
-                                style="@android:style/TextAppearance.DeviceDefault.Medium"
-                                android:background="@drawable/border_row"
-                                android:text="@string/tanggal_vaksin"/>
-
-                        <TextView
-                                android:id="@+id/text_jenis_vaksin"
-                                android:layout_width="0dp"
-                                android:layout_height="match_parent"
-                                android:layout_weight="1"
-                                android:padding="5dp"
-                                android:layout_margin="1dp"
-                                android:gravity="center_vertical"
-                                android:textColor="#D046F2"
-                                style="@android:style/TextAppearance.DeviceDefault.Medium"
-                                android:background="@drawable/border_row"
-                                android:text="@string/jenis_vaksin"/>
-                        <TextView
-                                android:id="@+id/text_usia_vaksin"
-                                android:layout_width="0dp"
-                                android:layout_height="match_parent"
-                                android:layout_weight="1"
-                                android:layout_margin="1dp"
-                                android:padding="5dp"
-                                android:textColor="#D046F2"
-                                android:background="@drawable/border_row"
-                                android:gravity="center_vertical"
-                                style="@android:style/TextAppearance.DeviceDefault.Medium"
-                                android:text="@string/usia_vaksin"/>
-                        <TextView
-                                android:layout_width="0dp"
-                                android:layout_height="match_parent"
-                                android:layout_weight=".5"
-                                android:layout_marginTop="1dp"
-                                android:layout_marginBottom="1dp"
-                                android:layout_marginLeft="1dp"
-                                android:layout_marginRight="3dp"
-                                android:background="@drawable/border_row"
-                                android:padding="5dp"
-                                android:textColor="#D046F2"
-                                style="@android:style/TextAppearance.DeviceDefault.Medium"
-                                android:text="@string/blank"/>
-                    </TableRow>
-                </TableLayout>
+                        android:layout_height="wrap_content"
+                        android:layout_margin="10dp"
+                        android:columnWidth="100dp"
+                        android:drawSelectorOnTop="true"
+                        android:gravity="center"
+                        android:numColumns="auto_fit"
+                        android:stretchMode="columnWidth"
+                        android:verticalSpacing="5dp"
+                        android:focusable="true"
+                        android:clickable="true"/>
 
                 <!-- Start Blank Space -->
                 <View

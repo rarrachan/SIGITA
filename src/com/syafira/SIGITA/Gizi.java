@@ -130,11 +130,14 @@ public class Gizi extends Activity implements OnClickListener {
         finish();
     }
 
-    // Redirect Back to This Activity
+    // Activity Resume
     @Override
-    public void onRestart() {
-        // Restart Activity
-        super.onRestart();
-        recreate();
+    public void onResume() {
+        super.onResume();
+        // Check Session
+        if (session.checkSession(this)) {
+            // Set Profil Name
+            text_button_profil.setText(session.loadSession(this, "nama"));
+        }
     }
 }

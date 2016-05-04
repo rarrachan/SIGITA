@@ -57,6 +57,7 @@ public class TumbuhKembang extends Activity implements OnClickListener {
 
         // Set OnClickListener
         ProfilLinearLayout.setOnClickListener(this);
+        TahapanTumbangLinearLayout.setOnClickListener(this);
         GaleriTumbangLinearLayout.setOnClickListener(this);
 
         // Set Custom Font
@@ -78,12 +79,19 @@ public class TumbuhKembang extends Activity implements OnClickListener {
                 Intent profil = new Intent(this, Profil.class);
                 startActivity(profil);
                 break;
+            // Tahapan Tumbuh Kembang
+            case R.id.TahapanTumbangLinearLayout :
+                Intent tahap_tumbang = new Intent(this, TahapanTumbang.class);
+                startActivity(tahap_tumbang);
+                finish();
+                break;
             // Galeri Tumbuh Kembang
             case R.id.GaleriTumbangLinearLayout :
                 // Check Session
                 if (session.checkSession(this)) {
-                    Intent riwayat = new Intent(this, RiwayatImunisasi.class);
-                    startActivity(riwayat);
+                    Intent galeri = new Intent(this, GaleriTumbang.class);
+                    startActivity(galeri);
+                    finish();
                 } else {
                     final Dialog dialog = new Dialog(TumbuhKembang.this);
                     dialog.setContentView(R.layout.alert_akses);
@@ -125,11 +133,15 @@ public class TumbuhKembang extends Activity implements OnClickListener {
         finish();
     }
 
-    // Redirect Back to This Activity
+    // Activity Resume
     @Override
-    public void onRestart() {
-        // Restart Activity
-        super.onRestart();
-        recreate();
+    public void onResume() {
+        super.onResume();
+        // Check Session
+        if (session.checkSession(this)) {
+            // Set Profil Name
+            text_button_profil.setText(session.loadSession(this, "nama"));
+        }
     }
+
 }

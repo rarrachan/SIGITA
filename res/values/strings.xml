@@ -80,16 +80,27 @@
     <string name="button_jadwalimunisasi">Jadwal Imunisasi</string>
     <string name="jenis_vaksin">Jenis Vaksin</string>
     <string name="usia_vaksin">Usia</string>
-    <string name="status_vaksin">Status Pemberian Vaksin</string>
+    <string name="status_vaksin">Status Vaksinasi</string>
     <string name="keterangan_vaksin">Keterangan Vaksin</string>
     <string name="blank"> </string>
+    <string name="detail_jadwal_imunisasi">Detail Jadwal Imunisasi</string>
+    <string name="detail_tanggal_vaksin">Tanggal Vaksinasi</string>
 
     <string name="button_riwayatimunisasi">Riwayat Imunisasi</string>
     <string name="tanggal_vaksin">Tanggal</string>
     <string name="button_alarmimunisasi">Alarm Imunisasi</string>
 
     <string name="button_tahapantumbang">Tahapan Tumbuh Kembang</string>
+    <string name="usia_tumbang">Usia Perkembangan</string>
+    <string name="gerakan_kasar">Gerakan Kasar</string>
+    <string name="gerakan_halus">Gerakan Halus</string>
+    <string name="komunikasi">Komunikasi</string>
+    <string name="sosial_kemandirian">Sosial dan Kemandirian</string>
+
     <string name="button_galeritumbang">Galeri Tumbuh Kembang</string>
+    <string name="galeri_tanggal">Tanggal</string>
+    <string name="hint_galeri_tanggal">01/01/1990</string>
+    <string name="galeri_usia">Usia</string>
 
     <string name="medis_keluhan">Keluhan</string>
     <string name="medis_obat">Obat</string>

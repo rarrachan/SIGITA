@@ -167,6 +167,7 @@ public class DetailProfil extends Activity{
                 ubah_profil.putExtra("id", profil_id);
                 ubah_profil.putExtra("nama", nama);
                 startActivity(ubah_profil);
+                finish();
             }
         });
         profil_foto.setOnClickListener(new OnClickListener() {

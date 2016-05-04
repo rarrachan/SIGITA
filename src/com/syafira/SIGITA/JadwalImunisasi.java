@@ -17,6 +17,7 @@ import android.widget.*;
 public class JadwalImunisasi extends Activity {
 
     // Declare
+    private TextView button_jadwalimunisasi;
     private TextView text_footer;
     private TextView text_button_profil;
     private LinearLayout ProfilLinearLayout;
@@ -41,6 +42,7 @@ public class JadwalImunisasi extends Activity {
         db.open();
 
         // Load Widget
+        button_jadwalimunisasi = (TextView) findViewById(R.id.button_jadwalimunisasi);
         ProfilLinearLayout = (LinearLayout) findViewById(R.id.ProfilLinearLayout);
         text_button_profil = (TextView) findViewById(R.id.text_button_profil);
         text_jenis_vaksin = (TextView) findViewById(R.id.text_jenis_vaksin);
@@ -66,6 +68,7 @@ public class JadwalImunisasi extends Activity {
 
         // Set Custom Font
         final Typeface typeface  = Typeface.createFromAsset(getAssets(), "teen-webfont.ttf");
+        button_jadwalimunisasi.setTypeface(typeface);
         text_button_profil.setTypeface(typeface);
         text_footer.setTypeface(typeface);
         text_jenis_vaksin.setTypeface(typeface);
@@ -163,16 +166,21 @@ public class JadwalImunisasi extends Activity {
     // Pressed Back Button
     @Override
     public void onBackPressed() {
+        Intent imunisasi = new Intent(this, Imunisasi.class);
+        startActivity(imunisasi);
+
         // Close This Activity
         finish();
     }
 
-    // Redirect Back to This Activity
+    // Activity Resume
     @Override
-    public void onRestart() {
-        // Restart Activity
-        super.onRestart();
-        recreate();
+    public void onResume() {
+        super.onResume();
+        // Check Session
+        if (session.checkSession(this)) {
+            // Set Profil Name
+            text_button_profil.setText(session.loadSession(this, "nama"));
+        }
     }
-
 }

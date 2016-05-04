@@ -155,6 +155,10 @@ public class Profil extends Activity{
                                 // Close Dialog
                                 dialog_profil.dismiss();
 
+                                // Start Index Activity
+                                Intent index = new Intent(Profil.this, Index.class);
+                                startActivity(index);
+
                                 // Close This Activity
                                 finish();
                             }
@@ -162,13 +166,13 @@ public class Profil extends Activity{
                         button_detail_profil.setOnClickListener(new OnClickListener() {
                             @Override
                             public void onClick(View v) {
+                                // Close Dialog
+                                dialog_profil.dismiss();
+
                                 // Show Detail Profil Activity
                                 Intent detail_profil = new Intent(Profil.this, DetailProfil.class);
                                 detail_profil.putExtra("id", id);
                                 startActivity(detail_profil);
-
-                                // Close Dialog
-                                dialog_profil.dismiss();
 
                                 // Close This Activity
                                 finish();

@@ -247,7 +247,8 @@ public class UbahProfil extends Activity implements OnClickListener {
             case R.id.button_simpan:
                 // Get Value
                 final String nama_sebelumnya = profil_nama_sebelumnya.getText().toString().replaceAll(" ", "_");
-                final int id = Integer.parseInt(profil_id.getText().toString());
+                String profilID = profil_id.getText().toString();
+                final int id = Integer.parseInt(profilID);
                 String nama = profil_nama.getText().toString();
                 String golonganDarah = ((RadioButton) findViewById(profil_golongandarah.getCheckedRadioButtonId())).getText().toString();
                 String jenisKelamin = ((RadioButton) findViewById(profil_jeniskelamin.getCheckedRadioButtonId())).getText().toString();
@@ -374,6 +375,17 @@ public class UbahProfil extends Activity implements OnClickListener {
 
                     // Update Data into Database
                     db.updateProfil(id, nama, tmptLahir, tglLahir, jenisKelamin, golonganDarah, panjangLahir, beratLahir, alergi, penyakitKronis, fotoPath);
+
+                    // Check Session
+                    SessionManager session = new SessionManager();
+                    if (session.loadSession(this, "id").equals(profilID)) {
+                        session.clearSession(UbahProfil.this);
+                        session.createSession(UbahProfil.this, "id", profilID);
+                        session.createSession(UbahProfil.this, "nama", nama);
+                        session.createSession(UbahProfil.this, "gender", jenisKelamin);
+                        session.createSession(UbahProfil.this, "tanggallahir", tglLahir);
+
+                    }
 
                     // Start Profil Activity
                     Intent detail_profil = new Intent(this, DetailProfil.class);

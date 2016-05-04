@@ -15,6 +15,7 @@ import android.widget.TextView;
 public class DetailJadwalImunisasi extends Activity {
 
     // Declare
+    private TextView detail_jadwal_imunisasi;
     private TextView text_button_profil;
     private TextView text_jenis_vaksin;
     private TextView titikdua;
@@ -23,10 +24,12 @@ public class DetailJadwalImunisasi extends Activity {
     private TextView usia_vaksin;
     private TextView text_status_vaksin;
     private TextView status_vaksin;
+    private TextView text_tanggal_vaksin;
+    private TextView tanggal_vaksin;
     private TextView text_keterangan_vaksin;
     private TextView keterangan_vaksin;
     private TextView text_footer;
-    private LinearLayout statusVaksinLayout;
+    private LinearLayout tanggalVaksinLayout;
     private SessionManager session;
     private DBHelper db;
 
@@ -52,7 +55,8 @@ public class DetailJadwalImunisasi extends Activity {
         cursor.moveToFirst();
 
         // Load Widget
-        statusVaksinLayout = (LinearLayout) findViewById(R.id.statusVaksinLayout);
+        detail_jadwal_imunisasi = (TextView) findViewById(R.id.detail_jadwal_imunisasi);
+        tanggalVaksinLayout = (LinearLayout) findViewById(R.id.tanggalVaksinLayout);
         text_button_profil = (TextView) findViewById(R.id.text_button_profil);
         text_jenis_vaksin = (TextView) findViewById(R.id.text_jenis_vaksin);
         titikdua = (TextView) findViewById(R.id.titikdua);
@@ -61,12 +65,17 @@ public class DetailJadwalImunisasi extends Activity {
         usia_vaksin = (TextView) findViewById(R.id.usia_vaksin);
         text_status_vaksin = (TextView) findViewById(R.id.text_status_vaksin);
         status_vaksin = (TextView) findViewById(R.id.status_vaksin);
+        text_tanggal_vaksin= (TextView) findViewById(R.id.text_tanggal_vaksin);
+        tanggal_vaksin = (TextView) findViewById(R.id.tanggal_vaksin);
         text_keterangan_vaksin = (TextView) findViewById(R.id.text_keterangan_vaksin);
         keterangan_vaksin = (TextView) findViewById(R.id.keterangan_vaksin);
         text_footer = (TextView) findViewById(R.id.text_footer);
 
         // Set Custom Font
         Typeface typeface  = Typeface.createFromAsset(getAssets(), "teen-webfont.ttf");
+        detail_jadwal_imunisasi.setTypeface(typeface);
+        text_tanggal_vaksin.setTypeface(typeface);
+        tanggal_vaksin.setTypeface(typeface);
         text_button_profil.setTypeface(typeface);
         text_jenis_vaksin.setTypeface(typeface);
         titikdua.setTypeface(typeface);
@@ -83,8 +92,10 @@ public class DetailJadwalImunisasi extends Activity {
         if (session.checkSession(this)) {
             // Set Profil Name
             text_button_profil.setText(session.loadSession(this, "nama"));
-            statusVaksinLayout.setVisibility(View.VISIBLE);
-            status_vaksin.setText(cursor.getString(cursor.getColumnIndex("list_vaksin")));
+            tanggalVaksinLayout.setVisibility(View.VISIBLE);
+
+//            if (!cursor.getString(cursor.getColumnIndex("list_status")).isEmpty())
+//            status_vaksin.setText(cursor.getString(cursor.getColumnIndex("list_status")));
         }
 
         text_button_profil.setOnClickListener(new View.OnClickListener() {
@@ -107,18 +118,12 @@ public class DetailJadwalImunisasi extends Activity {
     // Pressed Back Button
     @Override
     public void onBackPressed() {
-        Intent jadwal_imunisasi = new Intent(DetailJadwalImunisasi.this, JadwalImunisasi.class);
+        // Start Jadwal Imunisasi Activity
+        Intent jadwal_imunisasi = new Intent(this, JadwalImunisasi.class);
         startActivity(jadwal_imunisasi);
 
         // Close This Activity
         finish();
     }
 
-    // Redirect Back to This Activity
-    @Override
-    public void onRestart() {
-        // Restart Activity
-        super.onRestart();
-        recreate();
-    }
 }

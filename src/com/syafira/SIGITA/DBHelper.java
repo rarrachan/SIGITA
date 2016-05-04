@@ -28,6 +28,7 @@ public class DBHelper extends SQLiteOpenHelper {
         // Create All Table Inside Database
         createProfil(db);
         createList(db);
+        createTahap(db);
         createMedis(db);
     }
 
@@ -141,12 +142,9 @@ public class DBHelper extends SQLiteOpenHelper {
         // Create Table List Imunisasi
         String create_list_imunisasi = "create table list_imunisasi (" +
                 "listID integer primary key autoincrement, " +
-//                "list_profilID integer not null, " +
                 "list_vaksin text not null, " +
                 "list_umur text not null, " +
                 "list_desc text not null" +
-//                "list_status text" +
-//                "foreign key(ProfilID) REFERENCES profil(profilID)" +
                 ");";
         db.execSQL(create_list_imunisasi);
         insertList(db);
@@ -240,6 +238,74 @@ public class DBHelper extends SQLiteOpenHelper {
     // Get One List From Database
     public Cursor getOneList(Integer id) {
         Cursor cursor = db.rawQuery("SELECT * FROM list_imunisasi WHERE listID = " + id, null);
+        cursor.moveToFirst();
+        return cursor;
+    }
+
+    // Create Table Tahapan Tumbuh Kembang
+    public void createTahap(SQLiteDatabase db) {
+        // Create Table Tahap Tumbuh Kembang
+        String create_tahap_tumbang = "create table tahap_tumbang (" +
+                "tahapID integer primary key autoincrement, " +
+                "tahap_umur text," +
+                "tahap_gerakan_kasar text, " +
+                "tahap_gerakan_halus text, " +
+                "tahap_komunikasi text, " +
+                "tahap_sosial_kemandirian text " +
+                ");";
+        db.execSQL(create_tahap_tumbang);
+        insertTahapan(db);
+    }
+
+    // Insert Tahapan Tumbuh Kembang
+    public void insertTahapan(SQLiteDatabase db) {
+        db.execSQL("insert into tahap_tumbang (tahap_umur, tahap_gerakan_kasar, tahap_gerakan_halus, tahap_komunikasi, tahap_sosial_kemandirian) values " +
+                "('1 Bulan', 'Tangan dan kaki bergerak aktif', 'Kepala menoleh ke samping kanan-kiri', 'Bereaksi terhadap bunyi lonceng', 'Menatap wajah ibu / pengasuh');");
+        db.execSQL("insert into tahap_tumbang (tahap_umur, tahap_gerakan_kasar, tahap_gerakan_halus, tahap_komunikasi, tahap_sosial_kemandirian) values " +
+                "('2 Bulan', 'Mengangkat kepala ketika tengkurap', '', 'Bersuara', 'Tersenyum spontan');");
+        db.execSQL("insert into tahap_tumbang (tahap_umur, tahap_gerakan_kasar, tahap_gerakan_halus, tahap_komunikasi, tahap_sosial_kemandirian) values " +
+                "('3 Bulan', 'Kepala tegak ketika didudukkan', 'Memegang mainan', 'Tertawa / berteriak', 'Memandang tangannya');");
+        db.execSQL("insert into tahap_tumbang (tahap_umur, tahap_gerakan_kasar, tahap_gerakan_halus, tahap_komunikasi, tahap_sosial_kemandirian) values " +
+                "('4 Bulan', 'Tengkurap-terlentang sendiri', '', '', '');");
+        db.execSQL("insert into tahap_tumbang (tahap_umur, tahap_gerakan_kasar, tahap_gerakan_halus, tahap_komunikasi, tahap_sosial_kemandirian) values " +
+                "('5 Bulan', '', 'Meraih / menggapai', 'Menoleh ke suara', 'Meraih mainan');");
+        db.execSQL("insert into tahap_tumbang (tahap_umur, tahap_gerakan_kasar, tahap_gerakan_halus, tahap_komunikasi, tahap_sosial_kemandirian) values " +
+                "('6 Bulan', 'Duduk tanpa pegangan', '', '', 'Memasukkan benda ke mulut');");
+        db.execSQL("insert into tahap_tumbang (tahap_umur, tahap_gerakan_kasar, tahap_gerakan_halus, tahap_komunikasi, tahap_sosial_kemandirian) values " +
+                "('7 Bulan', '', 'Mengambil dengan tangan kanan dan kiri', 'Bersuara', '');");
+        db.execSQL("insert into tahap_tumbang (tahap_umur, tahap_gerakan_kasar, tahap_gerakan_halus, tahap_komunikasi, tahap_sosial_kemandirian) values " +
+                "('8 Bulan', 'Berdiri berpegangan', '', '', '');");
+        db.execSQL("insert into tahap_tumbang (tahap_umur, tahap_gerakan_kasar, tahap_gerakan_halus, tahap_komunikasi, tahap_sosial_kemandirian) values " +
+                "('9 Bulan', '', 'Menjimpit', '', 'Melambaikan tangan');");
+        db.execSQL("insert into tahap_tumbang (tahap_umur, tahap_gerakan_kasar, tahap_gerakan_halus, tahap_komunikasi, tahap_sosial_kemandirian) values " +
+                "('10 Bulan', '', 'Memukul mainan dengan kedua tangan', '', 'Bertepuk tangan');");
+        db.execSQL("insert into tahap_tumbang (tahap_umur, tahap_gerakan_kasar, tahap_gerakan_halus, tahap_komunikasi, tahap_sosial_kemandirian) values " +
+                "('11 Bulan', '', '', 'Memanggil papa-mama', 'Menunjuk dan meminta');");
+        db.execSQL("insert into tahap_tumbang (tahap_umur, tahap_gerakan_kasar, tahap_gerakan_halus, tahap_komunikasi, tahap_sosial_kemandirian) values " +
+                "('12 Bulan', 'Berdiri tanpa berpegangan', 'Memasukkan mainan ke cangkir', '', 'Bermain dengan orang lain');");
+        db.execSQL("insert into tahap_tumbang (tahap_umur, tahap_gerakan_kasar, tahap_gerakan_halus, tahap_komunikasi, tahap_sosial_kemandirian) values " +
+                "('15 Bulan / 1 Tahun 3 Bulan', 'Berjalan', 'Mencoret-coret', 'Berbicara 2 kata', 'Minum dari gelas');");
+        db.execSQL("insert into tahap_tumbang (tahap_umur, tahap_gerakan_kasar, tahap_gerakan_halus, tahap_komunikasi, tahap_sosial_kemandirian) values " +
+                "('18 Bulan / 1 Tahun 6 Bulan', 'Berlari - Naik tangga', 'Menumpuk 2 mainan', 'Berbicara beberapa kata', 'Menyuapi boneka menggunakan sendok');");
+        db.execSQL("insert into tahap_tumbang (tahap_umur, tahap_gerakan_kasar, tahap_gerakan_halus, tahap_komunikasi, tahap_sosial_kemandirian) values " +
+                "('24 Bulan / 2 Tahun', 'Menendang Bola', 'Menumpuk 4 mainan', 'Menunjuk gambar', 'Melepaskan pakaian - Memakai pakaian - Menyikat gigi');");
+        db.execSQL("insert into tahap_tumbang (tahap_umur, tahap_gerakan_kasar, tahap_gerakan_halus, tahap_komunikasi, tahap_sosial_kemandirian) values " +
+                "('30 Bulan / 2 Tahun 6 Bulan', 'Melompat', '', 'Menunjuk bagian tubuh', 'Mencuci dan mengeringkan tangan');");
+        db.execSQL("insert into tahap_tumbang (tahap_umur, tahap_gerakan_kasar, tahap_gerakan_halus, tahap_komunikasi, tahap_sosial_kemandirian) values " +
+                "('36 Bulan / 3 Tahun', '', 'Menggambar garis tegak', 'Menyebutkan warna benda', 'Menyebutkan nama teman');");
+        db.execSQL("insert into tahap_tumbang (tahap_umur, tahap_gerakan_kasar, tahap_gerakan_halus, tahap_komunikasi, tahap_sosial_kemandirian) values " +
+                "('42 Bulan / 3 Tahun 6 Bulan', 'Naik sepeda roda tiga', 'Menggambar lingkaran', 'Bercerita singkat menyebutkan penggunaan benda', 'Memakai baju kaos');");
+        db.execSQL("insert into tahap_tumbang (tahap_umur, tahap_gerakan_kasar, tahap_gerakan_halus, tahap_komunikasi, tahap_sosial_kemandirian) values " +
+                "('48 Bulan / 4 Tahun', '', 'Menggambar tanda tambah', '', 'Memakai baju tanpa dibantu');");
+        db.execSQL("insert into tahap_tumbang (tahap_umur, tahap_gerakan_kasar, tahap_gerakan_halus, tahap_komunikasi, tahap_sosial_kemandirian) values " +
+                "('56 Bulan / 4 Tahun 6 bulan', '', 'Menggambar manusia (kepala, badan, kaki)', '', 'Bermain kartu - Menyikat gigi tanpa dibantu');");
+        db.execSQL("insert into tahap_tumbang (tahap_umur, tahap_gerakan_kasar, tahap_gerakan_halus, tahap_komunikasi, tahap_sosial_kemandirian) values " +
+                "('62 Bulan / 5 Tahun', '', '', 'Menghitung mainan', 'Mengambil makanan sendiri');");
+        }
+
+    // Get Tahapan from Database
+    public Cursor getTahap() {
+        Cursor cursor = db.rawQuery("SELECT * FROM tahap_tumbang", null);
         cursor.moveToFirst();
         return cursor;
     }
