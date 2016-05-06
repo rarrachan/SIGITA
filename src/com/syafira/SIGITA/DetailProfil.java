@@ -215,6 +215,7 @@ public class DetailProfil extends Activity{
 
                         try {
                             // Delete From Database
+                            db.deleteGaleriProfilID(profil_id);
                             db.deleteMedisProfilID(profil_id);
                             db.deleteProfil(profil_id);
 

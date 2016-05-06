@@ -102,6 +102,10 @@
     <string name="hint_galeri_tanggal">01/01/1990</string>
     <string name="galeri_usia">Usia</string>
 
+    <string name="tambah_galeri">Tambah Galeri</string>
+    <string name="galeri_nama">Nama</string>
+    <string name="galeri_keterangan_foto">Keterangan</string>
+
     <string name="medis_keluhan">Keluhan</string>
     <string name="medis_obat">Obat</string>
 

@@ -186,19 +186,19 @@
                 </LinearLayout>
                 <!-- End Linear Layout Usia -->
 
-                <GridView
-                        android:id="@+id/gridView"
-                        android:layout_width="fill_parent"
+                <com.syafira.SIGITA.ExpandableHeightGridView
+                        android:id="@+id/gridview"
+                        android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:layout_margin="10dp"
-                        android:columnWidth="100dp"
-                        android:drawSelectorOnTop="true"
                         android:gravity="center"
+                        android:layout_margin="20dp"
                         android:numColumns="auto_fit"
+                        android:verticalSpacing="10dp"
+                        android:horizontalSpacing="10dp"
                         android:stretchMode="columnWidth"
-                        android:verticalSpacing="5dp"
-                        android:focusable="true"
-                        android:clickable="true"/>
+                        android:focusable="false"
+                        android:visibility="gone"/>
+
 
                 <!-- Start Blank Space -->
                 <View

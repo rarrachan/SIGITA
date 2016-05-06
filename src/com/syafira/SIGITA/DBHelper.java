@@ -29,6 +29,7 @@ public class DBHelper extends SQLiteOpenHelper {
         createProfil(db);
         createList(db);
         createTahap(db);
+        createGaleri(db);
         createMedis(db);
     }
 
@@ -63,7 +64,7 @@ public class DBHelper extends SQLiteOpenHelper {
                 "profil_beratLahir real not null, " +
                 "profil_alergi text, " +
                 "profil_penyakitKronis text," +
-                "profil_foto text);";
+                "profil_foto text not null);";
         db.execSQL(create_profil);
     }
 
@@ -301,13 +302,90 @@ public class DBHelper extends SQLiteOpenHelper {
                 "('56 Bulan / 4 Tahun 6 bulan', '', 'Menggambar manusia (kepala, badan, kaki)', '', 'Bermain kartu - Menyikat gigi tanpa dibantu');");
         db.execSQL("insert into tahap_tumbang (tahap_umur, tahap_gerakan_kasar, tahap_gerakan_halus, tahap_komunikasi, tahap_sosial_kemandirian) values " +
                 "('62 Bulan / 5 Tahun', '', '', 'Menghitung mainan', 'Mengambil makanan sendiri');");
-        }
+    }
 
     // Get Tahapan from Database
     public Cursor getTahap() {
         Cursor cursor = db.rawQuery("SELECT * FROM tahap_tumbang", null);
         cursor.moveToFirst();
         return cursor;
+    }
+
+    // Create Table Galeri
+    public void createGaleri(SQLiteDatabase db) {
+        // Create Table Profil
+        String create_galeri = "create table galeri_tumbang(" +
+                "galeriID integer primary key autoincrement, " +
+                "galeri_profilID integer not null, " +
+                "galeri_tanggal text not null," +
+                "galeri_umur text," +
+                "galeri_foto text not null," +
+                "galeri_desc text not null, " +
+                "FOREIGN KEY (  galeri_profilID ) REFERENCES profil ( profilID ));";
+        db.execSQL(create_galeri);
+    }
+
+    // Insert Galeri to Database
+    public long insertGaleri(Integer profilID, String tanggal, String umur, String foto, String desc) {
+
+        // Open Database to Write
+        SQLiteDatabase db = this.getWritableDatabase();
+
+        // Get Value
+        ContentValues values = new ContentValues();
+        values.put("galeri_profilID", profilID);
+        values.put("galeri_tanggal", tanggal);
+        values.put("galeri_umur", umur);
+        values.put("galeri_foto", foto);
+        values.put("galeri_desc", desc);
+
+        // Insert Data
+        return db.insert("galeri_tumbang", null, values);
+    }
+
+    // Get Profil from Database
+    public Cursor getGaleri(Integer id, String tanggal) {
+        Cursor cursor = db.rawQuery("SELECT * FROM galeri_tumbang WHERE galeri_profilID = " + id + " AND galeri_tanggal = '" + tanggal + "'", null);
+        cursor.moveToFirst();
+        return cursor;
+    }
+
+    // Get One Profil From Database
+    public Cursor getOneGaleri(Integer id) {
+        Cursor cursor = db.rawQuery("SELECT * FROM profil WHERE profilID = " + id, null);
+        cursor.moveToFirst();
+        return cursor;
+    }
+
+    // Update Profil to Database
+    public long updateGaleri(Integer id, String nama, String tmptLahir, String tglLahir,
+                             String jenisKelamin, String golonganDarah, String panjangLahir,
+                             String beratLahir, String alergi, String penyakitKronis, String fotoPath) {
+
+        // Open Database to Write
+        SQLiteDatabase db = this.getWritableDatabase();
+
+        // Get Value
+        ContentValues values = new ContentValues();
+        values.put("profil_nama", nama);
+        values.put("profil_tempatLahir", tmptLahir);
+        values.put("profil_tanggalLahir", tglLahir);
+        values.put("profil_jenisKelamin", jenisKelamin);
+        values.put("profil_golonganDarah", golonganDarah);
+        values.put("profil_panjangLahir", panjangLahir);
+        values.put("profil_beratLahir", beratLahir);
+        values.put("profil_alergi", alergi);
+        values.put("profil_penyakitKronis", penyakitKronis);
+        values.put("profil_foto", fotoPath);
+
+        // Update Data
+        return db.update("profil", values, "profilID = " + id, null);
+    }
+
+    // Delete Galeri from Database
+    public boolean deleteGaleriProfilID(int id) {
+        // Delete Data
+        return db.delete("galeri_tumbang", "galeri_profilID =" + id, null) < 1;
     }
 
     // Create Table Rekam Medis
@@ -353,7 +431,7 @@ public class DBHelper extends SQLiteOpenHelper {
 
     // Get Rekam Medis from Database
     public Cursor getMedis(Integer id) {
-        Cursor cursor = db.rawQuery("SELECT * FROM rekam_medis WHERE medis_profilID = " + id + " ORDER BY medis_tanggal ASC", null);
+        Cursor cursor = db.rawQuery("SELECT * FROM rekam_medis WHERE medis_profilID = " + id , null);
         cursor.moveToFirst();
         return cursor;
     }

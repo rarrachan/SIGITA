@@ -95,6 +95,12 @@
                   android:label="@string/app_name"
                   android:configChanges="orientation|screenSize|keyboardHidden"
                   android:theme="@android:style/Theme.NoTitleBar.Fullscreen">
+
+        </activity>
+        <activity android:name="com.syafira.SIGITA.TambahGaleri"
+                  android:label="@string/app_name"
+                  android:configChanges="orientation|screenSize|keyboardHidden"
+                  android:theme="@android:style/Theme.NoTitleBar.Fullscreen">
         </activity>
         <activity android:name="com.syafira.SIGITA.RekamMedis"
                   android:label="@string/app_name"

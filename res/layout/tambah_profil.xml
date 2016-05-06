@@ -640,8 +640,9 @@
                                     android:layout_width="wrap_content"
                                     android:layout_height="wrap_content"
                                     android:adjustViewBounds="true"
-                                    android:src="@drawable/icon_logo"
-                                    android:contentDescription="@string/app_name" android:layout_weight="1"
+                                    android:src="@drawable/icon_tambahfoto"
+                                    android:contentDescription="@string/app_name"
+                                    android:layout_weight="1"
                                     android:layout_gravity="center"/>
                             <!-- End Image View Foto -->
 
@@ -667,7 +668,8 @@
                         android:layout_height="wrap_content"
                         android:orientation="horizontal"
                         android:layout_gravity="center"
-                        android:layout_marginBottom="30dp" android:layout_marginTop="20dp">
+                        android:layout_marginBottom="30dp"
+                        android:layout_marginTop="20dp">
 
                     <!-- Start Blank Space -->
                     <View
