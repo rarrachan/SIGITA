@@ -9,8 +9,19 @@
             android:id="@+id/galeri_foto"
             android:layout_width="match_parent"
             android:layout_height="match_parent"
+            android:padding="5dp"
             android:contentDescription="@string/app_name"
             android:layout_gravity="center"
             android:scaleType="centerCrop"/>
+
+    <TextView
+            android:id="@+id/galeri_nama_foto"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:padding="5dp"
+            android:contentDescription="@string/app_name"
+            android:layout_gravity="center"
+            android:scaleType="centerCrop"
+            android:visibility="gone"/>
 
 </LinearLayout>

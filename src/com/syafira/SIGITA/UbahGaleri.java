@@ -9,6 +9,7 @@ import android.content.Intent;
 import android.database.Cursor;
 import android.graphics.*;
 import android.graphics.drawable.BitmapDrawable;
+import android.graphics.drawable.Drawable;
 import android.media.ExifInterface;
 import android.net.Uri;
 import android.os.Bundle;
@@ -25,16 +26,14 @@ import java.io.File;
 import java.io.FileOutputStream;
 import java.io.IOException;
 import java.io.OutputStream;
-import java.text.ParseException;
 import java.text.SimpleDateFormat;
 import java.util.Calendar;
-import java.util.Date;
 import java.util.Locale;
 
 /**
- * Created by syafira rarra on 05/06/2016.
+ * Created by syafira rarra on 05/07/2016.
  */
-public class TambahGaleri extends Activity {
+public class UbahGaleri extends Activity {
 
     private TextView tambah_galeri;
     private TextView titikdua;
@@ -62,10 +61,17 @@ public class TambahGaleri extends Activity {
 
         // Session Manager
         session = new SessionManager();
+        int profilID = Integer.parseInt(session.loadSession(this, "id"));
+
+        // Fetch Intent Extra
+        Intent fetchID = getIntent();
+        final int galeriID = fetchID.getIntExtra("galeriID", 0);
 
         // Load Database
         db = new DBHelper(this);
         db.open();
+        Cursor cursor = db.getOneGaleri(galeriID, profilID);
+        cursor.moveToFirst();
 
         // Load Widget
         tambah_galeri = (TextView) findViewById(R.id.tambah_galeri);
@@ -98,7 +104,13 @@ public class TambahGaleri extends Activity {
         keterangan_foto.setTypeface(typeface);
         text_galeri_foto.setTypeface(typeface);
 
-        galeri_nama.setText(session.loadSession(this, "nama"));
+        final String nama = session.loadSession(this, "nama");
+        galeri_nama.setText(nama);
+        galeri_tanggal.setText(cursor.getString(cursor.getColumnIndex("galeri_tanggal")));
+        galeri_usia.setText(cursor.getString(cursor.getColumnIndex("galeri_umur")));
+        keterangan_foto.setText(cursor.getString(cursor.getColumnIndex("galeri_desc")));
+        final String foto_path = android.os.Environment.getExternalStorageDirectory() + "/SIGITA/" + nama.replaceAll(" ", "_") + "/" + cursor.getString(cursor.getColumnIndex("galeri_foto"));
+        galeri_foto.setImageDrawable(Drawable.createFromPath(foto_path));
 
         galeri_tanggal.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -109,7 +121,7 @@ public class TambahGaleri extends Activity {
                 int mDay = mcurrentDate.get(Calendar.DAY_OF_MONTH);
 
                 // Create Dialog DataPicker
-                final DatePickerDialog mDatePicker = new DatePickerDialog(TambahGaleri.this, new DatePickerDialog.OnDateSetListener() {
+                final DatePickerDialog mDatePicker = new DatePickerDialog(UbahGaleri.this, new DatePickerDialog.OnDateSetListener() {
                     public void onDateSet(DatePicker datepicker, int selectedyear, int selectedmonth, int selectedday) {
                     /*      Your code   to get date and time    */
                         SimpleDateFormat dateFormatter = new SimpleDateFormat("dd/MM/yyyy", Locale.US);
@@ -117,7 +129,7 @@ public class TambahGaleri extends Activity {
                         newDate.set(selectedyear, selectedmonth, selectedday);
                         galeri_tanggal.setText(dateFormatter.format(newDate.getTime()));
 
-                        String getBirthdayDate = session.loadSession(TambahGaleri.this, "tanggallahir");
+                        String getBirthdayDate = session.loadSession(UbahGaleri.this, "tanggallahir");
                         String str[] = getBirthdayDate.split("/");
                         int day = Integer.parseInt(str[0]);
                         int month = Integer.parseInt(str[1]);
@@ -164,7 +176,7 @@ public class TambahGaleri extends Activity {
                 final CharSequence[] options = {"Take Photo", "Choose from Gallery", "Cancel"};
 
                 // Create Dialog
-                AlertDialog.Builder builder = new AlertDialog.Builder(TambahGaleri.this);
+                AlertDialog.Builder builder = new AlertDialog.Builder(UbahGaleri.this);
                 builder.setTitle("Choose Photo");
 
                 // Set OnClickListener Dialog
@@ -199,7 +211,7 @@ public class TambahGaleri extends Activity {
             @Override
             public void onClick(View v) {
                 // Get Value
-                int profilID = Integer.parseInt(session.loadSession(TambahGaleri.this, "id"));
+                int profilID = Integer.parseInt(session.loadSession(UbahGaleri.this, "id"));
                 String nama = galeri_nama.getText().toString();
                 String tgl = galeri_tanggal.getText().toString();
                 String umur = galeri_usia.getText().toString();
@@ -212,7 +224,7 @@ public class TambahGaleri extends Activity {
 
                 if (TextUtils.isEmpty(keterangan) || TextUtils.isEmpty(tgl)) {
                     // Show Toast
-                    Toast.makeText(TambahGaleri.this, "Kolom Belum Terisi", Toast.LENGTH_SHORT).show();
+                    Toast.makeText(UbahGaleri.this, "Kolom Belum Terisi", Toast.LENGTH_SHORT).show();
                 } else {
                     //check sd card
                     String state = Environment.getExternalStorageState();
@@ -232,10 +244,8 @@ public class TambahGaleri extends Activity {
 
                             // Set Location Directory
                             File profil_foto = new File(photoDirectory, foto);
-                            int counter = 1;
-                            while (profil_foto.exists()) {
-                                foto = tgl.replaceAll("/", "") + "_" + nama.replaceAll(" ", "_").toLowerCase() + "_" + (counter++) + ".jpg";
-                                profil_foto = new File(photoDirectory, foto);
+                            if (profil_foto.exists()) {
+                                profil_foto.delete();
                             }
                             outStream = new FileOutputStream(profil_foto);
 
@@ -264,11 +274,12 @@ public class TambahGaleri extends Activity {
                         }
 
                         // Insert Data into Database
-                        db.insertGaleri(profilID, tgl, umur, foto, keterangan);
+                        db.updateGaleri(galeriID, profilID, tgl, umur, foto, keterangan);
 
                         // Start Profil Activity
-                        Intent galeri = new Intent(TambahGaleri.this, GaleriTumbang.class);
-                        startActivity(galeri);
+                        Intent detail_galeri = new Intent(UbahGaleri.this, DetailGaleri.class);
+                        detail_galeri.putExtra("galeriID", galeriID);
+                        startActivity(detail_galeri);
 
                         // Close This Activity
                         finish();
@@ -422,9 +433,14 @@ public class TambahGaleri extends Activity {
     // Pressed Back Button
     @Override
     public void onBackPressed() {
-        // Start galeri Activity
-        Intent galeri = new Intent(TambahGaleri.this, GaleriTumbang.class);
-        startActivity(galeri);
+        // Fetch Intent Extra
+        Intent fetchID = getIntent();
+        int galeriID = fetchID.getIntExtra("galeriID", 0);
+
+        // Start Detail Galeri Activity
+        Intent detail_galeri = new Intent(this, DetailGaleri.class);
+        detail_galeri.putExtra("galeriID", galeriID);
+        startActivity(detail_galeri);
 
         // Close This Activity
         finish();

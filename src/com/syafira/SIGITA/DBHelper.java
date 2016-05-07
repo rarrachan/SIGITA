@@ -344,45 +344,43 @@ public class DBHelper extends SQLiteOpenHelper {
     }
 
     // Get Profil from Database
-    public Cursor getGaleri(Integer id, String tanggal) {
-        Cursor cursor = db.rawQuery("SELECT * FROM galeri_tumbang WHERE galeri_profilID = " + id + " AND galeri_tanggal = '" + tanggal + "'", null);
+    public Cursor getGaleri(Integer id) {
+        Cursor cursor = db.rawQuery("SELECT * FROM galeri_tumbang WHERE galeri_profilID = " + id + " ORDER BY galeri_foto ASC", null);
         cursor.moveToFirst();
         return cursor;
     }
 
-    // Get One Profil From Database
-    public Cursor getOneGaleri(Integer id) {
-        Cursor cursor = db.rawQuery("SELECT * FROM profil WHERE profilID = " + id, null);
+    // Get One Galeri From Database
+    public Cursor getOneGaleri(Integer galeriID, Integer profilID) {
+        Cursor cursor = db.rawQuery("SELECT * FROM galeri_tumbang WHERE galeriID = " + galeriID + " AND galeri_profilID = " + profilID, null);
         cursor.moveToFirst();
         return cursor;
     }
 
-    // Update Profil to Database
-    public long updateGaleri(Integer id, String nama, String tmptLahir, String tglLahir,
-                             String jenisKelamin, String golonganDarah, String panjangLahir,
-                             String beratLahir, String alergi, String penyakitKronis, String fotoPath) {
+    // Insert Galeri to Database
+    public long updateGaleri(Integer galeriID, Integer profilID, String tanggal, String umur, String foto, String desc) {
 
         // Open Database to Write
         SQLiteDatabase db = this.getWritableDatabase();
 
         // Get Value
         ContentValues values = new ContentValues();
-        values.put("profil_nama", nama);
-        values.put("profil_tempatLahir", tmptLahir);
-        values.put("profil_tanggalLahir", tglLahir);
-        values.put("profil_jenisKelamin", jenisKelamin);
-        values.put("profil_golonganDarah", golonganDarah);
-        values.put("profil_panjangLahir", panjangLahir);
-        values.put("profil_beratLahir", beratLahir);
-        values.put("profil_alergi", alergi);
-        values.put("profil_penyakitKronis", penyakitKronis);
-        values.put("profil_foto", fotoPath);
+        values.put("galeri_tanggal", tanggal);
+        values.put("galeri_umur", umur);
+        values.put("galeri_foto", foto);
+        values.put("galeri_desc", desc);
 
         // Update Data
-        return db.update("profil", values, "profilID = " + id, null);
+        return db.update("galeri_tumbang", values, "galeriID = " + galeriID + " AND galeri_profilID = " + profilID, null);
     }
 
     // Delete Galeri from Database
+    public boolean deleteGaleri(int id) {
+        // Delete Data
+        return db.delete("galeri_tumbang", "galeriID =" + id, null) < 1;
+    }
+
+    // Delete Galeri from ProfilID from Database
     public boolean deleteGaleriProfilID(int id) {
         // Delete Data
         return db.delete("galeri_tumbang", "galeri_profilID =" + id, null) < 1;

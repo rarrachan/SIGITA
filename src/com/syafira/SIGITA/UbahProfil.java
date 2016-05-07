@@ -542,6 +542,15 @@ public class UbahProfil extends Activity implements OnClickListener {
     // Pressed Back Button
     @Override
     public void onBackPressed() {
+        // Fetch Intent Extra
+        Intent fetchID = getIntent();
+        int id = fetchID.getIntExtra("id", 0);
+
+        // Start Profil Activity
+        Intent detail_profil = new Intent(this, DetailProfil.class);
+        detail_profil.putExtra("id", id);
+        startActivity(detail_profil);
+
         // Close This Activity
         finish();
     }

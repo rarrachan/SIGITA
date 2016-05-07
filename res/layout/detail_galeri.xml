@@ -54,11 +54,11 @@
             <!-- End Linear Layout Header -->
 
             <TextView
-                    android:id="@+id/tambah_galeri"
+                    android:id="@+id/detail_galeri"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:textColor="#D046F2"
-                    android:text="@string/tambah_galeri"
+                    android:text="@string/detail_galeri"
                     style="@android:style/TextAppearance.DeviceDefault.Medium"
                     android:layout_gravity="center_vertical"
                     android:layout_margin="20dp"/>
@@ -140,15 +140,16 @@
                             android:layout_marginLeft="5dp"/>
                     <!-- End Text View Titik Dua -->
 
-                    <EditText
+                    <TextView
                             android:id="@+id/galeri_tanggal"
                             android:layout_width="fill_parent"
                             android:layout_height="wrap_content"
                             android:textColor="#FF0000"
                             android:focusable="false"
-                            android:hint="@string/hint_galeri_tanggal"
+                            android:text="@string/hint_galeri_tanggal"
+                            android:layout_marginBottom="5dp"
                             style="@android:style/TextAppearance.DeviceDefault.Medium"
-                            />
+                            android:layout_marginLeft="5dp"/>
 
                 </LinearLayout>
                 <!-- End Linear Layout Tanggal -->
@@ -305,12 +306,12 @@
                         <!-- End Linear Layout Foto -->
 
                         <!-- Start Text View Foto -->
-                        <EditText
+                        <TextView
                                 android:id="@+id/galeri_keterangan_foto"
                                 android:layout_width="fill_parent"
                                 android:layout_height="fill_parent"
                                 android:textColor="#D046F2"
-                                android:hint="@string/galeri_keterangan_foto"
+                                android:text="@string/galeri_keterangan_foto"
                                 android:minHeight="130dp"
                                 android:gravity="top"
                                 style="@android:style/TextAppearance.DeviceDefault.Medium"
@@ -340,25 +341,43 @@
                     <View
                             android:layout_width="0dp"
                             android:layout_height="0dp"
-                            android:layout_weight="1"/>
+                            android:layout_weight=".5"/>
                     <!-- End Blank Space -->
 
-                    <!-- Start Image View Button Simpan -->
+                    <!-- Start Image View Button Ubah -->
                     <ImageView
-                            android:id="@+id/button_simpan"
+                            android:id="@+id/button_ubah"
                             android:layout_width="0dp"
                             android:layout_height="wrap_content"
                             android:layout_weight="1"
                             android:adjustViewBounds="true"
-                            android:src="@drawable/tombol_simpan"
+                            android:src="@drawable/tombol_ubah"
                             android:contentDescription="@string/app_name"/>
-                    <!-- End Image View Button Simpan -->
+                    <!-- End Image View Button Ubah -->
 
                     <!-- Start Blank Space -->
                     <View
                             android:layout_width="0dp"
                             android:layout_height="0dp"
-                            android:layout_weight="1"/>
+                            android:layout_weight=".5"/>
+                    <!-- End Blank Space -->
+
+                    <!-- Start Image View Button Hapus -->
+                    <ImageView
+                            android:id="@+id/button_hapus"
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content"
+                            android:layout_weight="1"
+                            android:adjustViewBounds="true"
+                            android:src="@drawable/tombol_hapus"
+                            android:contentDescription="@string/app_name"/>
+                    <!-- End Image View Button Hapus -->
+
+                    <!-- Start Blank Space -->
+                    <View
+                            android:layout_width="0dp"
+                            android:layout_height="0dp"
+                            android:layout_weight=".5"/>
                     <!-- End Blank Space -->
 
                 </LinearLayout>

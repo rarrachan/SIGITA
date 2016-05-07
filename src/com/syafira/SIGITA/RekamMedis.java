@@ -212,6 +212,8 @@ public class RekamMedis extends Activity {
         if (session.checkSession(this)) {
             // Set Profil Name
             text_button_profil.setText(session.loadSession(this, "nama"));
+        }else{
+            finish();
         }
     }
 }

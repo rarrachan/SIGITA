@@ -54,11 +54,11 @@
             <!-- End Linear Layout Header -->
 
             <TextView
-                    android:id="@+id/tambah_galeri"
+                    android:id="@+id/ubah_galeri"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:textColor="#D046F2"
-                    android:text="@string/tambah_galeri"
+                    android:text="@string/ubah_galeri"
                     style="@android:style/TextAppearance.DeviceDefault.Medium"
                     android:layout_gravity="center_vertical"
                     android:layout_margin="20dp"/>

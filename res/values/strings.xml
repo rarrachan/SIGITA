@@ -106,6 +106,10 @@
     <string name="galeri_nama">Nama</string>
     <string name="galeri_keterangan_foto">Keterangan</string>
 
+    <string name="detail_galeri">Detail Galeri</string>
+    <string name="ubah_galeri">Ubah Galeri</string>
+    <string name="alert_hapus_galeri">Apa anda yakin untuk menghapus galeri ini?</string>
+
     <string name="medis_keluhan">Keluhan</string>
     <string name="medis_obat">Obat</string>
 

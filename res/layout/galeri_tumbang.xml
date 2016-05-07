@@ -103,87 +103,12 @@
                     android:layout_width="fill_parent"
                     android:layout_height="fill_parent"
                     android:orientation="vertical"
-                    android:layout_marginBottom="50dp" android:layout_marginTop="10dp">
+                    android:layout_marginBottom="50dp">
 
                 <!-- Start Linear Layout Tanggal -->
-                <LinearLayout
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:orientation="horizontal"
-                        android:layout_marginLeft="20dp">
-
-                    <!-- Start Text View Tanggal  -->
-                    <TextView
-                            android:id="@+id/text_galeri_tanggal"
-                            android:layout_width="fill_parent"
-                            android:layout_height="wrap_content"
-                            android:textColor="#D046F2"
-                            android:text="@string/galeri_tanggal"
-                            style="@android:style/TextAppearance.DeviceDefault.Medium"/>
-                    <!-- End Text View Tanggal  -->
-
-                    <!-- Start Text View Titik Dua -->
-                    <TextView
-                            android:id="@+id/titikdua"
-                            android:layout_width="wrap_content"
-                            android:layout_height="wrap_content"
-                            android:textColor="#D046F2"
-                            android:text="@string/titikdua"
-                            style="@android:style/TextAppearance.DeviceDefault.Medium"
-                            android:layout_marginLeft="5dp"/>
-                    <!-- End Text View Titik Dua -->
-
-                    <EditText
-                            android:id="@+id/galeri_tanggal"
-                            android:layout_width="fill_parent"
-                            android:layout_height="wrap_content"
-                            android:textColor="#FF0000"
-                            android:hint="@string/hint_galeri_tanggal"
-                            android:focusable="false"
-                            style="@android:style/TextAppearance.DeviceDefault.Medium"/>
-
-                </LinearLayout>
                 <!-- End Linear Layout Tanggal -->
 
                 <!-- Start Linear Layout Tanggal -->
-                <LinearLayout
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:orientation="horizontal"
-                        android:layout_marginLeft="20dp">
-
-                    <!-- Start Text View Tanggal Lahir -->
-                    <TextView
-                            android:id="@+id/text_galeri_usia"
-                            android:layout_width="fill_parent"
-                            android:layout_height="wrap_content"
-                            android:textColor="#D046F2"
-                            android:text="@string/galeri_usia"
-                            style="@android:style/TextAppearance.DeviceDefault.Medium"/>
-                    <!-- End Text View Tanggal Lahir -->
-
-                    <!-- Start Text View Titik Dua -->
-                    <TextView
-                            android:id="@+id/titikdua"
-                            android:layout_width="wrap_content"
-                            android:layout_height="wrap_content"
-                            android:textColor="#D046F2"
-                            android:text="@string/titikdua"
-                            style="@android:style/TextAppearance.DeviceDefault.Medium"
-                            android:layout_marginLeft="5dp"/>
-                    <!-- End Text View Titik Dua -->
-
-                    <TextView
-                            android:id="@+id/galeri_usia"
-                            android:layout_width="fill_parent"
-                            android:layout_height="wrap_content"
-                            android:textColor="#FF0000"
-                            android:hint="@string/dash"
-                            android:focusable="false"
-                            style="@android:style/TextAppearance.DeviceDefault.Medium"
-                            android:layout_marginLeft="5dp"/>
-
-                </LinearLayout>
                 <!-- End Linear Layout Usia -->
 
                 <com.syafira.SIGITA.ExpandableHeightGridView
@@ -196,8 +121,7 @@
                         android:verticalSpacing="10dp"
                         android:horizontalSpacing="10dp"
                         android:stretchMode="columnWidth"
-                        android:focusable="false"
-                        android:visibility="gone"/>
+                        android:focusable="false"/>
 
 
                 <!-- Start Blank Space -->
