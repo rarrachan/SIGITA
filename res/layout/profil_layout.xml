@@ -10,8 +10,7 @@
             android:orientation="horizontal"
             android:layout_gravity="center"
             android:layout_margin="10dp"
-            android:visibility="visible"
-            android:id="@+id/LakiLakiLayout">
+            android:visibility="visible">
 
         <!-- Start Blank Space -->
         <View

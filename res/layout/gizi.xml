@@ -35,7 +35,7 @@
                         android:id="@+id/logo_index"
                         android:layout_width="0dp"
                         android:layout_height="wrap_content"
-                        android:layout_weight=".5"
+                        android:layout_weight="1"
                         android:adjustViewBounds="true"
                         android:src="@drawable/icon_logopanjang"
                         android:contentDescription="@string/app_name"/>
@@ -114,7 +114,7 @@
                     <View
                             android:layout_width="0dp"
                             android:layout_height="0dp"
-                            android:layout_weight=".2"/>
+                            android:layout_weight=".1"/>
 
                     <!-- Start Linear Layout Kalkulator Gizi -->
                     <LinearLayout
@@ -164,7 +164,7 @@
                     <View
                             android:layout_width="0dp"
                             android:layout_height="0dp"
-                            android:layout_weight=".2"/>
+                            android:layout_weight=".1"/>
                     <!-- End Blank Space -->
 
                 </LinearLayout>
@@ -182,7 +182,7 @@
                     <View
                             android:layout_width="0dp"
                             android:layout_height="0dp"
-                            android:layout_weight=".2"/>
+                            android:layout_weight=".1"/>
 
                     <LinearLayout
                             android:id="@+id/DokumentasiGiziLinearLayout"
@@ -230,7 +230,7 @@
                     <View
                             android:layout_width="0dp"
                             android:layout_height="0dp"
-                            android:layout_weight=".2"/>
+                            android:layout_weight=".1"/>
                     <!-- End Blank Space -->
 
                 </LinearLayout>

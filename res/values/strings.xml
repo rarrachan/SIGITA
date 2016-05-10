@@ -51,7 +51,7 @@
     <string name="alert_hapus">Apa anda yakin untuk menghapus seluruh data anak ini? Penghapusan meliputi riwayat
         imunisasi, status gizi, rekam medis, dan record tumbuh kembang anak.
     </string>
-    <string name="alert_akses">Anda tidak dapat mengakses menu ini karena belum memilih profil anak. Silahkan memilih
+    <string name="alert_akses">Anda tidak dapat mengakses menu ini. Silahkan memilih
         profil anak terlebih dahulu.
     </string>
 

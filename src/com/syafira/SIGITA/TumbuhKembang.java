@@ -141,6 +141,8 @@ public class TumbuhKembang extends Activity implements OnClickListener {
         if (session.checkSession(this)) {
             // Set Profil Name
             text_button_profil.setText(session.loadSession(this, "nama"));
+        }  else {
+            text_button_profil.setText("Profil");
         }
     }
 

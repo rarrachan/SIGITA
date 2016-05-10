@@ -35,7 +35,7 @@
                         android:id="@+id/logo_index"
                         android:layout_width="0dp"
                         android:layout_height="wrap_content"
-                        android:layout_weight=".5"
+                        android:layout_weight="1"
                         android:adjustViewBounds="true"
                         android:src="@drawable/icon_logopanjang"
                         android:contentDescription="@string/app_name"/>
@@ -110,88 +110,153 @@
                 <!-- Start Linear Layout Content -->
                 <!-- End Linear Layout Content -->
 
-                <TableLayout
-                        android:id="@+id/tahap_tumbang"
+                <HorizontalScrollView
                         android:layout_width="fill_parent"
-                        android:layout_height="fill_parent"
-                        android:layout_marginLeft="10dp"
-                        android:layout_marginRight="10dp"
-                        android:layout_marginBottom="20dp"
-                        android:stretchColumns="*"
-                        android:background="@drawable/border_table"
-                        android:layout_marginTop="20dp">
+                        android:layout_height="wrap_content"
+                        android:fillViewport="true"
+                        android:padding="20dp"
+                        android:scrollbars="none">
 
-                    <TableRow>
+                    <TableLayout
+                            android:id="@+id/tahap_tumbang"
+                            android:layout_width="wrap_content"
+                            android:layout_height="fill_parent"
+                            android:layout_marginBottom="20dp"
+                            android:stretchColumns="*"
+                            android:background="@drawable/border_table">
 
-                        <TextView
-                                android:id="@+id/text_usia_tumbang"
-                                android:layout_width="0dp"
-                                android:layout_height="match_parent"
-                                android:layout_weight="1"
-                                android:padding="5dp"
-                                android:layout_marginTop="1dp"
-                                android:layout_marginBottom="1dp"
-                                android:layout_marginRight="1dp"
-                                android:layout_marginLeft="3dp"
-                                android:gravity="center_vertical"
-                                android:textColor="#D046F2"
-                                style="@android:style/TextAppearance.DeviceDefault.Medium"
-                                android:background="@drawable/border_row"
-                                android:text="@string/usia_tumbang"/>
+                        <TableRow>
 
-                        <TextView
-                                android:id="@+id/text_gerakan_kasar"
-                                android:layout_width="0dp"
-                                android:layout_height="match_parent"
-                                android:layout_weight="1"
-                                android:padding="5dp"
-                                android:layout_margin="1dp"
-                                android:gravity="center_vertical"
-                                android:textColor="#D046F2"
-                                style="@android:style/TextAppearance.DeviceDefault.Medium"
-                                android:background="@drawable/border_row"
-                                android:text="@string/gerakan_kasar"/>
-                        <TextView
-                                android:id="@+id/text_gerakan_halus"
-                                android:layout_width="0dp"
-                                android:layout_height="match_parent"
-                                android:layout_weight="1"
-                                android:layout_margin="1dp"
-                                android:padding="5dp"
-                                android:textColor="#D046F2"
-                                android:background="@drawable/border_row"
-                                android:gravity="center_vertical"
-                                style="@android:style/TextAppearance.DeviceDefault.Medium"
-                                android:text="@string/gerakan_halus"/>
-                        <TextView
-                                android:id="@+id/text_komunikasi"
-                                android:layout_width="0dp"
-                                android:layout_height="match_parent"
-                                android:layout_weight="1"
-                                android:layout_margin="1dp"
-                                android:padding="5dp"
-                                android:textColor="#D046F2"
-                                android:background="@drawable/border_row"
-                                android:gravity="center_vertical"
-                                style="@android:style/TextAppearance.DeviceDefault.Medium"
-                                android:text="@string/komunikasi"/>
-                        <TextView
-                                android:id="@+id/text_sosial_kemandirian"
-                                android:layout_width="0dp"
-                                android:layout_height="match_parent"
-                                android:layout_weight="1"
-                                android:layout_marginTop="1dp"
-                                android:layout_marginBottom="1dp"
-                                android:layout_marginLeft="1dp"
-                                android:layout_marginRight="3dp"
-                                android:background="@drawable/border_row"
-                                android:padding="5dp"
-                                android:textColor="#D046F2"
-                                style="@android:style/TextAppearance.DeviceDefault.Medium"
-                                android:text="@string/sosial_kemandirian"/>
-                    </TableRow>
-                </TableLayout>
+                            <TextView
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="0dp"
+                                    android:padding="5dp"
+                                    android:gravity="center_vertical"
+                                    android:textColor="#D046F2"
+                                    style="@android:style/TextAppearance.DeviceDefault.Medium"
+                                    android:background="@drawable/border_row"
+                                    android:text="@string/gerakan_halus"
+                                    android:visibility="invisible"/>
 
+                            <TextView
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="0dp"
+                                    android:padding="5dp"
+                                    android:gravity="center_vertical"
+                                    android:textColor="#D046F2"
+                                    style="@android:style/TextAppearance.DeviceDefault.Medium"
+                                    android:background="@drawable/border_row"
+                                    android:text="@string/gerakan_halus"
+                                    android:visibility="invisible"/>
+
+                            <TextView
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="0dp"
+                                    android:padding="5dp"
+                                    android:gravity="center_vertical"
+                                    android:textColor="#D046F2"
+                                    style="@android:style/TextAppearance.DeviceDefault.Medium"
+                                    android:background="@drawable/border_row"
+                                    android:text="@string/gerakan_halus"
+                                    android:visibility="invisible"/>
+
+                            <TextView
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="0dp"
+                                    android:padding="5dp"
+                                    android:gravity="center_vertical"
+                                    android:textColor="#D046F2"
+                                    style="@android:style/TextAppearance.DeviceDefault.Medium"
+                                    android:background="@drawable/border_row"
+                                    android:text="@string/gerakan_halus"
+                                    android:visibility="invisible"/>
+
+
+                            <TextView
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="0dp"
+                                    android:padding="5dp"
+                                    android:gravity="center_vertical"
+                                    android:textColor="#D046F2"
+                                    style="@android:style/TextAppearance.DeviceDefault.Medium"
+                                    android:background="@drawable/border_row"
+                                    android:text="@string/gerakan_halus"
+                                    android:visibility="invisible"/>
+                        </TableRow>
+
+                        <TableRow>
+
+                            <TextView
+                                    android:id="@+id/text_usia_tumbang"
+                                    android:layout_width="0dp"
+                                    android:layout_weight="1"
+                                    android:layout_height="match_parent"
+                                    android:padding="5dp"
+                                    android:layout_marginTop="1dp"
+                                    android:layout_marginBottom="1dp"
+                                    android:layout_marginRight="1dp"
+                                    android:layout_marginLeft="3dp"
+                                    android:gravity="center_vertical"
+                                    android:textColor="#D046F2"
+                                    style="@android:style/TextAppearance.DeviceDefault.Medium"
+                                    android:background="@drawable/border_row"
+                                    android:text="@string/usia_tumbang"/>
+
+                            <TextView
+                                    android:id="@+id/text_gerakan_kasar"
+                                    android:layout_width="0dp"
+                                    android:layout_weight="1"
+                                    android:layout_height="match_parent"
+                                    android:padding="5dp"
+                                    android:layout_margin="1dp"
+                                    android:gravity="center_vertical"
+                                    android:textColor="#D046F2"
+                                    style="@android:style/TextAppearance.DeviceDefault.Medium"
+                                    android:background="@drawable/border_row"
+                                    android:text="@string/gerakan_kasar"/>
+
+                            <TextView
+                                    android:id="@+id/text_gerakan_halus"
+                                    android:layout_width="0dp"
+                                    android:layout_weight="1"
+                                    android:layout_height="match_parent"
+                                    android:layout_margin="1dp"
+                                    android:padding="5dp"
+                                    android:textColor="#D046F2"
+                                    android:background="@drawable/border_row"
+                                    android:gravity="center_vertical"
+                                    style="@android:style/TextAppearance.DeviceDefault.Medium"
+                                    android:text="@string/gerakan_halus"/>
+                            <TextView
+                                    android:id="@+id/text_komunikasi"
+                                    android:layout_width="0dp"
+                                    android:layout_weight="1"
+                                    android:layout_height="match_parent"
+                                    android:layout_margin="1dp"
+                                    android:padding="5dp"
+                                    android:textColor="#D046F2"
+                                    android:background="@drawable/border_row"
+                                    android:gravity="center_vertical"
+                                    style="@android:style/TextAppearance.DeviceDefault.Medium"
+                                    android:text="@string/komunikasi"/>
+                            <TextView
+                                    android:id="@+id/text_sosial_kemandirian"
+                                    android:layout_width="0dp"
+                                    android:layout_weight="1"
+                                    android:layout_height="match_parent"
+                                    android:layout_marginTop="1dp"
+                                    android:layout_marginBottom="1dp"
+                                    android:layout_marginLeft="1dp"
+                                    android:layout_marginRight="3dp"
+                                    android:background="@drawable/border_row"
+                                    android:padding="5dp"
+                                    android:textColor="#D046F2"
+                                    style="@android:style/TextAppearance.DeviceDefault.Medium"
+                                    android:text="@string/sosial_kemandirian"/>
+                        </TableRow>
+                    </TableLayout>
+
+                </HorizontalScrollView>
                 <!-- Start Blank Space -->
                 <View
                         android:layout_width="wrap_content"

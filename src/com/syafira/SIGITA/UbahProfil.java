@@ -250,8 +250,6 @@ public class UbahProfil extends Activity implements OnClickListener {
                 String profilID = profil_id.getText().toString();
                 final int id = Integer.parseInt(profilID);
                 String nama = profil_nama.getText().toString();
-                String golonganDarah = ((RadioButton) findViewById(profil_golongandarah.getCheckedRadioButtonId())).getText().toString();
-                String jenisKelamin = ((RadioButton) findViewById(profil_jeniskelamin.getCheckedRadioButtonId())).getText().toString();
                 String panjangLahir = profil_panjanglahir.getText().toString();
                 String beratLahir = profil_beratlahir.getText().toString();
                 String tmptLahir = profil_tempatlahir.getText().toString();
@@ -278,6 +276,10 @@ public class UbahProfil extends Activity implements OnClickListener {
                     Toast.makeText(this, "Kolom Belum Terisi", Toast.LENGTH_SHORT).show();
                     return;
                 } else {
+
+                    String golonganDarah = ((RadioButton) findViewById(profil_golongandarah.getCheckedRadioButtonId())).getText().toString();
+                    String jenisKelamin = ((RadioButton) findViewById(profil_jeniskelamin.getCheckedRadioButtonId())).getText().toString();
+
                     //check sd card
                     String state = Environment.getExternalStorageState();
                     if (Environment.MEDIA_MOUNTED.equals(state)) {
@@ -342,36 +344,6 @@ public class UbahProfil extends Activity implements OnClickListener {
                             Toast.makeText(getApplicationContext(), "Profil Gagal Tersimpan", Toast.LENGTH_LONG).show();
                         }
                     }
-//                        else
-//                    {
-//                        ContextWrapper cw = new ContextWrapper(getApplicationContext());
-//                        File directory = cw.getDir("SIGITA/" + nama, Context.MODE_PRIVATE);
-//                        File profil_foto = new File(directory, foto);
-//                        Bitmap bitmap = drawable_foto.getBitmap();
-//                        FileOutputStream outStream;
-//                        boolean success = false;
-//                        try {
-//
-//                            outStream = new FileOutputStream(profil_foto);
-//                            bitmap.compress(Bitmap.CompressFormat.JPEG, 100, outStream);
-//        /* 100 to keep full quality of the image */
-//                            outStream.flush();
-//                            outStream.close();
-//                            success = true;
-//                        } catch (Exception e) {
-//                            e.printStackTrace();
-//                        }
-//                        if (success) {
-//                            Toast.makeText(getApplicationContext(), "Image saved with success in INTERNAL",
-//                                    Toast.LENGTH_LONG).show();
-//                        } else {
-//                            Toast.makeText(getApplicationContext(),
-//                                    "Error during image saving in INTERNAL", Toast.LENGTH_LONG).show();
-//                        }
-//                    }
-//                    File f = new File(android.os.Environment.getExternalStorageDirectory(), foto.replaceAll(" ", "_").toLowerCase());
-//                    File f = new File(android.os.Environment.getExternalStorageDirectory() + "/SIGITA/" + namaFolder, foto.replaceAll(" ", "_").toLowerCase());
-//                    String fotoPath = f.getAbsoluteFile().toString();
 
                     // Update Data into Database
                     db.updateProfil(id, nama, tmptLahir, tglLahir, jenisKelamin, golonganDarah, panjangLahir, beratLahir, alergi, penyakitKronis, fotoPath);

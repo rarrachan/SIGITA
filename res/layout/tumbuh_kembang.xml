@@ -35,7 +35,7 @@
                         android:id="@+id/logo_index"
                         android:layout_width="0dp"
                         android:layout_height="wrap_content"
-                        android:layout_weight=".5"
+                        android:layout_weight="1"
                         android:adjustViewBounds="true"
                         android:src="@drawable/icon_logopanjang"
                         android:contentDescription="@string/app_name"/>
@@ -114,7 +114,7 @@
                     <View
                             android:layout_width="0dp"
                             android:layout_height="0dp"
-                            android:layout_weight=".2"/>
+                            android:layout_weight=".1"/>
 
                     <!-- Start Linear Layout Tahapan Tumbuh Kembang -->
                     <LinearLayout
@@ -141,7 +141,7 @@
                         <View
                                 android:layout_width="0dp"
                                 android:layout_height="0dp"
-                                android:layout_weight=".2"/>
+                                android:layout_weight=".005"/>
                         <!-- Start Blank Space -->
 
                         <!-- Start Text View Tahapan Tumbuh Kembang -->
@@ -152,7 +152,7 @@
                                 android:textColor="#D046F2"
                                 android:text="@string/button_tahapantumbang"
                                 style="@android:style/TextAppearance.DeviceDefault.Medium"
-                                android:layout_weight="1.5"
+                                android:layout_weight="1.8"
                                 android:gravity="right|center"
                                 android:layout_marginRight="10dp"/>
                         <!-- End Text View Tahapan Tumbuh Kembang -->
@@ -164,7 +164,7 @@
                     <View
                             android:layout_width="0dp"
                             android:layout_height="0dp"
-                            android:layout_weight=".2"/>
+                            android:layout_weight=".1"/>
                     <!-- End Blank Space -->
 
                 </LinearLayout>
@@ -182,7 +182,7 @@
                     <View
                             android:layout_width="0dp"
                             android:layout_height="0dp"
-                            android:layout_weight=".2"/>
+                            android:layout_weight=".1"/>
 
                     <LinearLayout
                             android:id="@+id/GaleriTumbangLinearLayout"
@@ -200,7 +200,7 @@
                                 android:textColor="#D046F2"
                                 android:text="@string/button_galeritumbang"
                                 style="@android:style/TextAppearance.DeviceDefault.Medium"
-                                android:layout_weight="1.5"
+                                android:layout_weight="1.8"
                                 android:gravity="left|center"
                                 android:layout_marginLeft="10dp"/>
                         <!-- End Text View Galeri Tumbuh Kembang -->
@@ -209,7 +209,7 @@
                         <View
                                 android:layout_width="0dp"
                                 android:layout_height="0dp"
-                                android:layout_weight=".2"/>
+                                android:layout_weight=".005"/>
                         <!-- End Blank Space -->
 
                         <!-- Start Image View Galeri Tumbuh Kembang -->
@@ -230,7 +230,7 @@
                     <View
                             android:layout_width="0dp"
                             android:layout_height="0dp"
-                            android:layout_weight=".2"/>
+                            android:layout_weight=".1"/>
                     <!-- End Blank Space -->
 
                 </LinearLayout>

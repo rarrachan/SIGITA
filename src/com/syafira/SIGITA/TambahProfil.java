@@ -131,6 +131,7 @@ public class TambahProfil extends Activity implements OnClickListener {
         profil_beratlahir.setTypeface(typeface);
         profil_gram.setTypeface(typeface);
         text_footer.setTypeface(typeface);
+
     }
 
     // OnClick Activity
@@ -199,8 +200,6 @@ public class TambahProfil extends Activity implements OnClickListener {
             case R.id.button_simpan:
                 // Get Value
                 String nama = profil_nama.getText().toString();
-                String jenisKelamin = ((RadioButton) findViewById(profil_jeniskelamin.getCheckedRadioButtonId())).getText().toString();
-                String golonganDarah = ((RadioButton) findViewById(profil_golongandarah.getCheckedRadioButtonId())).getText().toString();
                 String panjangLahir = profil_panjanglahir.getText().toString();
                 String beratLahir = profil_beratlahir.getText().toString();
                 String tmptLahir = profil_tempatlahir.getText().toString();
@@ -225,6 +224,8 @@ public class TambahProfil extends Activity implements OnClickListener {
                     Toast.makeText(this, "Kolom Belum Terisi", Toast.LENGTH_SHORT).show();
                     return;
                 } else {
+                    String jenisKelamin = ((RadioButton) findViewById(profil_jeniskelamin.getCheckedRadioButtonId())).getText().toString();
+                    String golonganDarah = ((RadioButton) findViewById(profil_golongandarah.getCheckedRadioButtonId())).getText().toString();
                     //check sd card
                     String state = Environment.getExternalStorageState();
                     if (Environment.MEDIA_MOUNTED.equals(state)) {
