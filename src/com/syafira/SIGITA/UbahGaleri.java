@@ -26,8 +26,10 @@ import java.io.File;
 import java.io.FileOutputStream;
 import java.io.IOException;
 import java.io.OutputStream;
+import java.text.ParseException;
 import java.text.SimpleDateFormat;
 import java.util.Calendar;
+import java.util.Date;
 import java.util.Locale;
 
 /**
@@ -70,7 +72,7 @@ public class UbahGaleri extends Activity {
         // Load Database
         db = new DBHelper(this);
         db.open();
-        Cursor cursor = db.getOneGaleri(galeriID, profilID);
+        final Cursor cursor = db.getOneGaleri(galeriID, profilID);
         cursor.moveToFirst();
 
         // Load Widget
@@ -120,16 +122,18 @@ public class UbahGaleri extends Activity {
                 int mMonth = mcurrentDate.get(Calendar.MONTH);
                 int mDay = mcurrentDate.get(Calendar.DAY_OF_MONTH);
 
+                final SimpleDateFormat dateFormatter = new SimpleDateFormat("dd/MM/yyyy", Locale.US);
+                final String getBirthdayDate = session.loadSession(UbahGaleri.this, "tanggallahir");
+
                 // Create Dialog DataPicker
                 final DatePickerDialog mDatePicker = new DatePickerDialog(UbahGaleri.this, new DatePickerDialog.OnDateSetListener() {
                     public void onDateSet(DatePicker datepicker, int selectedyear, int selectedmonth, int selectedday) {
                     /*      Your code   to get date and time    */
-                        SimpleDateFormat dateFormatter = new SimpleDateFormat("dd/MM/yyyy", Locale.US);
+
                         Calendar newDate = Calendar.getInstance();
                         newDate.set(selectedyear, selectedmonth, selectedday);
                         galeri_tanggal.setText(dateFormatter.format(newDate.getTime()));
 
-                        String getBirthdayDate = session.loadSession(UbahGaleri.this, "tanggallahir");
                         String str[] = getBirthdayDate.split("/");
                         int day = Integer.parseInt(str[0]);
                         int month = Integer.parseInt(str[1]);
@@ -165,6 +169,15 @@ public class UbahGaleri extends Activity {
                     }
                 }, mYear, mMonth, mDay);
                 mDatePicker.setTitle("Select date");
+                mDatePicker.getDatePicker().setMaxDate(Calendar.getInstance().getTimeInMillis());
+
+                try {
+                    Date startDate = dateFormatter.parse(getBirthdayDate);
+                    mDatePicker.getDatePicker().setMinDate(startDate.getTime());
+                } catch (ParseException e) {
+                    e.printStackTrace();
+                }
+
                 mDatePicker.show();
             }
         });
@@ -236,18 +249,22 @@ public class UbahGaleri extends Activity {
                         File photoDirectory = new File(sdCardDirectory + "/SIGITA/" + namaFolder);
                         photoDirectory.mkdirs();
 
+                        File foto_lama = new File(photoDirectory, cursor.getString(cursor.getColumnIndex("galeri_foto")));
+                        File foto_baru = new File(photoDirectory, foto);
+
                         // Declare Condition
                         boolean success = false;
 
+                        // Remove Photo
+                        if (foto_lama.exists()) {
+                            foto_lama.delete();
+                        } else if (foto_baru.exists()) {
+                            foto_baru.delete();
+                        }
+
                         try {
                             FileOutputStream outStream;
-
-                            // Set Location Directory
-                            File profil_foto = new File(photoDirectory, foto);
-                            if (profil_foto.exists()) {
-                                profil_foto.delete();
-                            }
-                            outStream = new FileOutputStream(profil_foto);
+                            outStream = new FileOutputStream(foto_baru);
 
                             // Compressed Photo
                             Bitmap bitmap = drawable_foto.getBitmap();
@@ -276,7 +293,7 @@ public class UbahGaleri extends Activity {
                         // Insert Data into Database
                         db.updateGaleri(galeriID, profilID, tgl, umur, foto, keterangan);
 
-                        // Start Profil Activity
+                        // Start Detail Galeri Activity
                         Intent detail_galeri = new Intent(UbahGaleri.this, DetailGaleri.class);
                         detail_galeri.putExtra("galeriID", galeriID);
                         startActivity(detail_galeri);

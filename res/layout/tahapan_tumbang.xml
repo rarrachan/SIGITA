@@ -71,7 +71,8 @@
                     android:layout_height="wrap_content"
                     android:layout_marginLeft="20dp"
                     android:paddingRight="10dp"
-                    android:background="@drawable/button_rounded" android:gravity="left">
+                    android:background="@drawable/button_rounded"
+                    android:gravity="left">
 
                 <!-- Start Button Profil -->
                 <Button
@@ -121,7 +122,6 @@
                             android:id="@+id/tahap_tumbang"
                             android:layout_width="wrap_content"
                             android:layout_height="fill_parent"
-                            android:layout_marginBottom="20dp"
                             android:stretchColumns="*"
                             android:background="@drawable/border_table">
 
@@ -131,10 +131,7 @@
                                     android:layout_width="wrap_content"
                                     android:layout_height="0dp"
                                     android:padding="5dp"
-                                    android:gravity="center_vertical"
-                                    android:textColor="#D046F2"
                                     style="@android:style/TextAppearance.DeviceDefault.Medium"
-                                    android:background="@drawable/border_row"
                                     android:text="@string/gerakan_halus"
                                     android:visibility="invisible"/>
 
@@ -142,33 +139,24 @@
                                     android:layout_width="wrap_content"
                                     android:layout_height="0dp"
                                     android:padding="5dp"
-                                    android:gravity="center_vertical"
-                                    android:textColor="#D046F2"
                                     style="@android:style/TextAppearance.DeviceDefault.Medium"
-                                    android:background="@drawable/border_row"
-                                    android:text="@string/gerakan_halus"
+                                    android:text="@string/usia_tumbang"
                                     android:visibility="invisible"/>
 
                             <TextView
                                     android:layout_width="wrap_content"
                                     android:layout_height="0dp"
                                     android:padding="5dp"
-                                    android:gravity="center_vertical"
-                                    android:textColor="#D046F2"
                                     style="@android:style/TextAppearance.DeviceDefault.Medium"
-                                    android:background="@drawable/border_row"
-                                    android:text="@string/gerakan_halus"
+                                    android:text="@string/usia_tumbang"
                                     android:visibility="invisible"/>
 
                             <TextView
                                     android:layout_width="wrap_content"
                                     android:layout_height="0dp"
                                     android:padding="5dp"
-                                    android:gravity="center_vertical"
-                                    android:textColor="#D046F2"
                                     style="@android:style/TextAppearance.DeviceDefault.Medium"
-                                    android:background="@drawable/border_row"
-                                    android:text="@string/gerakan_halus"
+                                    android:text="@string/usia_tumbang"
                                     android:visibility="invisible"/>
 
 
@@ -176,11 +164,8 @@
                                     android:layout_width="wrap_content"
                                     android:layout_height="0dp"
                                     android:padding="5dp"
-                                    android:gravity="center_vertical"
-                                    android:textColor="#D046F2"
                                     style="@android:style/TextAppearance.DeviceDefault.Medium"
-                                    android:background="@drawable/border_row"
-                                    android:text="@string/gerakan_halus"
+                                    android:text="@string/usia_tumbang"
                                     android:visibility="invisible"/>
                         </TableRow>
 
@@ -197,7 +182,7 @@
                                     android:layout_marginRight="1dp"
                                     android:layout_marginLeft="3dp"
                                     android:gravity="center_vertical"
-                                    android:textColor="#D046F2"
+                                    android:textColor="#FF0000"
                                     style="@android:style/TextAppearance.DeviceDefault.Medium"
                                     android:background="@drawable/border_row"
                                     android:text="@string/usia_tumbang"/>
@@ -210,7 +195,7 @@
                                     android:padding="5dp"
                                     android:layout_margin="1dp"
                                     android:gravity="center_vertical"
-                                    android:textColor="#D046F2"
+                                    android:textColor="#FF0000"
                                     style="@android:style/TextAppearance.DeviceDefault.Medium"
                                     android:background="@drawable/border_row"
                                     android:text="@string/gerakan_kasar"/>
@@ -222,11 +207,12 @@
                                     android:layout_height="match_parent"
                                     android:layout_margin="1dp"
                                     android:padding="5dp"
-                                    android:textColor="#D046F2"
+                                    android:textColor="#FF0000"
                                     android:background="@drawable/border_row"
                                     android:gravity="center_vertical"
                                     style="@android:style/TextAppearance.DeviceDefault.Medium"
                                     android:text="@string/gerakan_halus"/>
+
                             <TextView
                                     android:id="@+id/text_komunikasi"
                                     android:layout_width="0dp"
@@ -234,11 +220,12 @@
                                     android:layout_height="match_parent"
                                     android:layout_margin="1dp"
                                     android:padding="5dp"
-                                    android:textColor="#D046F2"
+                                    android:textColor="#FF0000"
                                     android:background="@drawable/border_row"
                                     android:gravity="center_vertical"
                                     style="@android:style/TextAppearance.DeviceDefault.Medium"
                                     android:text="@string/komunikasi"/>
+
                             <TextView
                                     android:id="@+id/text_sosial_kemandirian"
                                     android:layout_width="0dp"
@@ -250,7 +237,8 @@
                                     android:layout_marginRight="3dp"
                                     android:background="@drawable/border_row"
                                     android:padding="5dp"
-                                    android:textColor="#D046F2"
+                                    android:textColor="#FF0000"
+                                    android:gravity="center_vertical"
                                     style="@android:style/TextAppearance.DeviceDefault.Medium"
                                     android:text="@string/sosial_kemandirian"/>
                         </TableRow>
@@ -262,7 +250,7 @@
                         android:layout_width="wrap_content"
                         android:layout_height="0dp"
                         android:layout_weight=".2"
-                        android:layout_marginBottom="30dp"/>
+                        />
                 <!-- End Blank Space -->
 
             </LinearLayout>

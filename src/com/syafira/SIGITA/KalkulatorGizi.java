@@ -7,9 +7,11 @@ package com.syafira.SIGITA;
 import android.app.Activity;
 import android.app.DatePickerDialog;
 import android.content.Context;
+import android.content.Intent;
 import android.graphics.Rect;
 import android.graphics.Typeface;
 import android.os.Bundle;
+import android.text.TextUtils;
 import android.view.MotionEvent;
 import android.view.View;
 import android.view.ViewGroup;
@@ -27,6 +29,7 @@ public class KalkulatorGizi extends Activity{
     private TextView text_kalkulatorgizi_tanggallahir;
     private TextView titikdua;
     private EditText kalkulatorgizi_tanggallahir;
+    private EditText kalkulatorgizi_umur;
     private TextView text_kalkulatorgizi_jeniskelamin;
     private RadioGroup kalkulatorgizi_jeniskelamin;
     private RadioButton kalkulatorgizi_lakilaki;
@@ -53,6 +56,7 @@ public class KalkulatorGizi extends Activity{
         text_kalkulatorgizi_tanggallahir = (TextView) findViewById(R.id.text_kalkulatorgizi_tanggallahir);
         titikdua = (TextView) findViewById(R.id.titikdua);
         kalkulatorgizi_tanggallahir = (EditText) findViewById(R.id.kalkulatorgizi_tanggallahir);
+        kalkulatorgizi_umur = (EditText) findViewById(R.id.kalkulatorgizi_umur);
         text_kalkulatorgizi_jeniskelamin = (TextView) findViewById(R.id.text_kalkulatorgizi_jeniskelamin);
         kalkulatorgizi_lakilaki = (RadioButton) findViewById(R.id.kalkulatorgizi_lakilaki);
         kalkulatorgizi_perempuan = (RadioButton) findViewById(R.id.kalkulatorgizi_perempuan);
@@ -64,7 +68,7 @@ public class KalkulatorGizi extends Activity{
         kalkulatorgizi_kilogram = (TextView) findViewById(R.id.kalkulatorgizi_kilogram);
         text_footer = (TextView) findViewById(R.id.text_footer);
         button_hitung = (ImageView) findViewById(R.id.button_hitung);
-        kalkulatorgizi_jeniskelamin = (RadioGroup) findViewById(R.id.profil_jeniskelamin);
+        kalkulatorgizi_jeniskelamin = (RadioGroup) findViewById(R.id.kalkulatorgizi_jeniskelamin);
 
         // Set Custom Font
         Typeface typeface = Typeface.createFromAsset(getAssets(), "teen-webfont.ttf");
@@ -87,23 +91,60 @@ public class KalkulatorGizi extends Activity{
         kalkulatorgizi_tanggallahir.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
+
                 // Declare Calendar
-                Calendar mcurrentDate = Calendar.getInstance();
+                final Calendar mcurrentDate = Calendar.getInstance();
                 int mYear = mcurrentDate.get(Calendar.YEAR);
                 int mMonth = mcurrentDate.get(Calendar.MONTH);
                 int mDay = mcurrentDate.get(Calendar.DAY_OF_MONTH);
 
                 // Create Dialog DataPicker
-                DatePickerDialog mDatePicker = new DatePickerDialog(KalkulatorGizi.this, new DatePickerDialog.OnDateSetListener() {
+                final DatePickerDialog mDatePicker = new DatePickerDialog(KalkulatorGizi.this, new DatePickerDialog.OnDateSetListener() {
                     public void onDateSet(DatePicker datepicker, int selectedyear, int selectedmonth, int selectedday) {
                     /*      Your code   to get date and time    */
                         SimpleDateFormat dateFormatter = new SimpleDateFormat("dd/MM/yyyy", Locale.US);
                         Calendar newDate = Calendar.getInstance();
                         newDate.set(selectedyear, selectedmonth, selectedday);
-                        kalkulatorgizi_tanggallahir.setText(dateFormatter.format(newDate.getTime()));
+                        String tglLahir = dateFormatter.format(newDate.getTime());
+                        String hariIni = dateFormatter.format(Calendar.getInstance().getTimeInMillis());
+
+                        kalkulatorgizi_tanggallahir.setText(tglLahir);
+
+                        String str[] = tglLahir.split("/");
+                        int day = Integer.parseInt(str[0]);
+                        int month = Integer.parseInt(str[1]);
+                        int year = Integer.parseInt(str[2]);
+
+                        String strings[] = hariIni.split("/");
+                        int dayDate = Integer.parseInt(strings[0]);
+                        int monthDate = Integer.parseInt(strings[1]);
+                        int yearDate = Integer.parseInt(strings[2]);
+
+                        int years = yearDate - year;
+                        int months = monthDate - month;
+                        int days = dayDate - day;
+                        if (days < 0) {
+                            months--;
+                            days += newDate.getActualMaximum(Calendar.DAY_OF_MONTH);
+                        }
+                        if (months < 0) {
+                            years--;
+                            months += 12;
+                        }
+
+                        int mon = monthDate - month;
+                        int y = 0;
+                        while (y < years) {
+                            mon += 12;
+                            y += 1;
+                        }
+
+                        String umur = mon + " bulan / " + years + " tahun " + months + " bulan " + days + " hari";
+                        kalkulatorgizi_umur.setText(umur);
                     }
                 }, mYear, mMonth, mDay);
                 mDatePicker.setTitle("Select date");
+                mDatePicker.getDatePicker().setMaxDate(Calendar.getInstance().getTimeInMillis());
                 mDatePicker.show();
             }
         });
@@ -111,12 +152,34 @@ public class KalkulatorGizi extends Activity{
             @Override
             public void onClick(View v) {
                 // Get Value
-                String usia = kalkulatorgizi_tanggallahir.getText().toString();
-                String jenisKelamin = ((RadioButton) findViewById(kalkulatorgizi_jeniskelamin.getCheckedRadioButtonId())).getText().toString();
+                String tanggalLahir = kalkulatorgizi_tanggallahir.getText().toString();
                 String tinggiBadan = kalkulatorgizi_tinggibadan.getText().toString();
                 String beratBadan = kalkulatorgizi_beratbadan.getText().toString();
+                String umur = kalkulatorgizi_umur.getText().toString();
 
+                // Check if Value Empty
+                if (TextUtils.isEmpty(tanggalLahir) ||
+                        TextUtils.isEmpty(tinggiBadan) ||
+                        TextUtils.isEmpty(beratBadan) ||
+                        kalkulatorgizi_jeniskelamin.getCheckedRadioButtonId() == -1) {
+                    // Show Toast
+                    Toast.makeText(KalkulatorGizi.this, "Kolom Belum Terisi", Toast.LENGTH_SHORT).show();
 
+                } else {
+
+                    String jenisKelamin = ((RadioButton) findViewById(kalkulatorgizi_jeniskelamin.getCheckedRadioButtonId())).getText().toString();
+
+                    Intent hasilkalkulatorgizi = new Intent(KalkulatorGizi.this, HasilKalkulatorGizi.class);
+                    hasilkalkulatorgizi.putExtra("umur", umur);
+                    hasilkalkulatorgizi.putExtra("tanggalLahir", tanggalLahir);
+                    hasilkalkulatorgizi.putExtra("tinggiBadan", tinggiBadan);
+                    hasilkalkulatorgizi.putExtra("beratBadan", beratBadan);
+                    hasilkalkulatorgizi.putExtra("jenisKelamin", jenisKelamin);
+                    startActivity(hasilkalkulatorgizi);
+
+                    // Close This Activity
+                    finish();
+                }
             }
         });
     }

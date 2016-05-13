@@ -193,6 +193,7 @@ public class TambahProfil extends Activity implements OnClickListener {
                     }
                 }, mYear, mMonth, mDay);
                 mDatePicker.setTitle("Select date");
+                mDatePicker.getDatePicker().setMaxDate(Calendar.getInstance().getTimeInMillis());
                 mDatePicker.show();
                 break;
 

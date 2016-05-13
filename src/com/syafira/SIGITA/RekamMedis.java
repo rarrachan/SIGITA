@@ -87,7 +87,7 @@ public class RekamMedis extends Activity {
                     TableRow.LayoutParams tanggal_text_view = new TableRow.LayoutParams(0, TableRow.LayoutParams.MATCH_PARENT, 1f);
                     TableRow.LayoutParams keluhan_text_view = new TableRow.LayoutParams(0, TableRow.LayoutParams.MATCH_PARENT, 1f);
                     TableRow.LayoutParams obat_text_view = new TableRow.LayoutParams(0, TableRow.LayoutParams.MATCH_PARENT, 1f);
-                    TableRow.LayoutParams detail_text_view = new TableRow.LayoutParams(0, TableRow.LayoutParams.MATCH_PARENT, .5f);
+                    TableRow.LayoutParams detail_text_view = new TableRow.LayoutParams(0, TableRow.LayoutParams.MATCH_PARENT, .8f);
 
                     detail.setImageResource(R.drawable.tombol_detail);
                     tanggal.setGravity(Gravity.CENTER_VERTICAL);
@@ -152,7 +152,7 @@ public class RekamMedis extends Activity {
                         @Override
                         public void onClick(View v) {
                             // Show Detail Profil Activity
-                            Intent detail_medis = new Intent(RekamMedis.this, DetailRekamMedis.class);
+                            Intent detail_medis = new Intent(RekamMedis.this, DetailMedis.class);
                             detail_medis.putExtra("id", id);
                             startActivity(detail_medis);
 

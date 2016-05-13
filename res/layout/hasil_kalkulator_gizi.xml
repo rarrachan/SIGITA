@@ -72,17 +72,12 @@
                         android:layout_margin="20dp"/>
 
                 <!-- Start Blank Space -->
-                <View
-                        android:layout_width="wrap_content"
-                        android:layout_height="0dp"
-                        android:layout_weight=".2"/>
                 <!-- End Blank Space -->
 
                 <!-- Start Linear Layout Row -->
                 <LinearLayout
                         android:layout_width="fill_parent"
-                        android:layout_height="0dp"
-                        android:layout_weight="1"
+                        android:layout_height="wrap_content"
                         android:orientation="horizontal"
                         android:layout_gravity="center">
 
@@ -90,7 +85,7 @@
                     <View
                             android:layout_width="0dp"
                             android:layout_height="0dp"
-                            android:layout_weight=".1"/>
+                            android:layout_weight=".2"/>
                     <!-- End Blank Space -->
 
                     <!-- Start Blank Space -->
@@ -104,11 +99,12 @@
                                 android:layout_width="fill_parent"
                                 android:layout_height="0dp"
                                 android:orientation="horizontal"
-                                android:layout_weight="1" android:layout_marginBottom="3dp">
+                                android:layout_weight="1"
+                                android:layout_marginBottom="3dp">
 
                             <!-- Start Text View Kalkulator Gizi Usia  -->
                             <TextView
-                                    android:id="@+id/text_kalkulatorgizi_usia"
+                                    android:id="@+id/text_kalkulatorgizi_tanggallahir"
                                     android:layout_width="wrap_content"
                                     android:layout_height="wrap_content"
                                     android:textColor="#D046F2"
@@ -127,19 +123,44 @@
                                     android:layout_marginLeft="5dp"/>
                             <!-- End Text View Titik Dua -->
 
-                            <!-- Start Text View Kalkulator Gizi Usia -->
-                            <!-- End Text Viewt Kalkulator Gizi Usia-->
+                        </LinearLayout>
 
-                            <!-- Start Text View Bulan -->
-                            <!--<TextView-->
-                                    <!--android:id="@+id/kalkulatorgizi_bulan"-->
-                                    <!--android:layout_width="0dp"-->
-                                    <!--android:layout_height="wrap_content"-->
-                                    <!--android:textColor="#D046F2"-->
-                                    <!--android:text="@string/kalkulatorgizi_bulan"-->
-                                    <!--style="@android:style/TextAppearance.DeviceDefault.Medium"-->
-                                    <!--android:layout_weight=".5"/>-->
-                            <!-- End Text View Bulan -->
+                        <TextView
+                                android:id="@+id/kalkulatorgizi_tanggallahir"
+                                android:layout_width="fill_parent"
+                                android:layout_height="wrap_content"
+                                android:textColor="#FF0000"
+                                style="@android:style/TextAppearance.DeviceDefault.Medium"
+                                android:hint="@string/profil_hint_tanggallahir"
+                                android:layout_marginBottom="3dp"/>
+
+                        <LinearLayout
+                                android:layout_width="fill_parent"
+                                android:layout_height="0dp"
+                                android:orientation="horizontal"
+                                android:layout_weight="1"
+                                android:layout_marginBottom="3dp">
+
+                            <!-- Start Text View Kalkulator Gizi Usia  -->
+                            <TextView
+                                    android:id="@+id/text_kalkulatorgizi_usia"
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:textColor="#D046F2"
+                                    android:text="@string/kalkulatorgizi_usia"
+                                    style="@android:style/TextAppearance.DeviceDefault.Medium"/>
+                            <!-- End Text View Kalkulator Gizi -->
+
+                            <!-- Start Text View Titik Dua -->
+                            <TextView
+                                    android:id="@+id/titikdua"
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:textColor="#D046F2"
+                                    android:text="@string/titikdua"
+                                    style="@android:style/TextAppearance.DeviceDefault.Medium"
+                                    android:layout_marginLeft="5dp"/>
+                            <!-- End Text View Titik Dua -->
 
                         </LinearLayout>
 
@@ -149,8 +170,24 @@
                                 android:layout_height="wrap_content"
                                 android:textColor="#FF0000"
                                 style="@android:style/TextAppearance.DeviceDefault.Medium"
-                                android:hint="@string/profil_hint_tanggallahir"
+                                android:hint="@string/kalkulatorgizi_usia"
                                 android:layout_marginBottom="3dp"/>
+
+                    </LinearLayout>
+
+                    <View
+                            android:layout_width="0dp"
+                            android:layout_height="0dp"
+                            android:layout_weight=".2"/>
+                    <!-- End Blank Space -->
+
+                    <!-- Start Linear Layout Kalkulator Gizi -->
+                    <LinearLayout
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content"
+                            android:orientation="vertical"
+                            android:layout_weight="1">
+
                         <LinearLayout
                                 android:layout_width="wrap_content"
                                 android:layout_height="0dp"
@@ -185,7 +222,7 @@
 
                         <!-- Start Text View Jenis Kelamin -->
                         <TextView
-                                android:id="@+id/profil_jeniskelamin"
+                                android:id="@+id/kalkulatorgizi_jeniskelamin"
                                 android:layout_width="fill_parent"
                                 android:layout_height="wrap_content"
                                 android:textColor="#FF0000"
@@ -193,20 +230,6 @@
                                 style="@android:style/TextAppearance.DeviceDefault.Medium"
                                 android:layout_marginBottom="3dp"/>
                         <!-- End Text View Jenis Kelamin -->
-                    </LinearLayout>
-
-                    <View
-                            android:layout_width="0dp"
-                            android:layout_height="0dp"
-                            android:layout_weight=".1"/>
-                    <!-- End Blank Space -->
-
-                    <!-- Start Linear Layout Kalkulator Gizi -->
-                    <LinearLayout
-                            android:layout_width="0dp"
-                            android:layout_height="wrap_content"
-                            android:orientation="vertical"
-                            android:layout_weight="1">
 
                         <!-- Start Linear Layout Tinggi Badan -->
                         <LinearLayout
@@ -239,7 +262,8 @@
                         <LinearLayout
                                 android:layout_width="fill_parent"
                                 android:layout_height="wrap_content"
-                                android:orientation="horizontal" android:layout_marginBottom="3dp">
+                                android:orientation="horizontal"
+                                android:layout_marginBottom="3dp">
 
                             <!-- Start Text View Tinggi Badan -->
                             <TextView
@@ -305,7 +329,8 @@
                                     style="@android:style/TextAppearance.DeviceDefault.Medium"
                                     android:textColor="#FF0000"
                                     android:hint="@string/kalkulatorgizi_hint_beratbadan"
-                                    android:layout_weight="1" android:layout_marginBottom="3dp"/>
+                                    android:layout_weight="1"
+                                    android:layout_marginBottom="3dp"/>
                             <!-- End Text View Berat Lahir -->
 
                             <!-- Start Text View Kilogram -->
@@ -328,7 +353,7 @@
                     <View
                             android:layout_width="0dp"
                             android:layout_height="0dp"
-                            android:layout_weight=".1"/>
+                            android:layout_weight=".2"/>
                     <!-- End Blank Space -->
 
                 </LinearLayout>
@@ -338,14 +363,13 @@
                 <View
                         android:layout_width="wrap_content"
                         android:layout_height="0dp"
-                        android:layout_weight=".1"/>
+                        android:layout_weight=".2"/>
                 <!-- End Blank Space -->
 
                 <!-- Start Linear Layout Row -->
                 <LinearLayout
                         android:layout_width="fill_parent"
-                        android:layout_height="0dp"
-                        android:layout_weight="1"
+                        android:layout_height="wrap_content"
                         android:orientation="horizontal"
                         android:layout_gravity="center">
 
@@ -353,7 +377,7 @@
                     <View
                             android:layout_width="0dp"
                             android:layout_height="0dp"
-                            android:layout_weight=".1"/>
+                            android:layout_weight=".2"/>
                     <!-- End Blank Space -->
 
                     <!-- Start Blank Space -->
@@ -367,7 +391,8 @@
                                 android:layout_width="fill_parent"
                                 android:layout_height="0dp"
                                 android:orientation="horizontal"
-                                android:layout_weight="1" android:layout_marginBottom="3dp">
+                                android:layout_weight="1"
+                                android:layout_marginBottom="3dp">
 
                             <!-- Start Text View Berat Badan / Umur -->
                             <TextView
@@ -407,7 +432,8 @@
                                 android:layout_width="fill_parent"
                                 android:layout_height="0dp"
                                 android:orientation="horizontal"
-                                android:layout_weight="1" android:layout_marginBottom="3dp">
+                                android:layout_weight="1"
+                                android:layout_marginBottom="3dp">
 
                             <!-- Start Text View Tinggi Badan / Umur -->
                             <TextView
@@ -449,7 +475,7 @@
                     <View
                             android:layout_width="0dp"
                             android:layout_height="0dp"
-                            android:layout_weight=".1"/>
+                            android:layout_weight=".2"/>
                     <!-- End Blank Space -->
 
                     <!-- Start Linear Layout Hasil Kalkulator Gizi -->
@@ -463,7 +489,8 @@
                                 android:layout_width="fill_parent"
                                 android:layout_height="0dp"
                                 android:orientation="horizontal"
-                                android:layout_weight="1" android:layout_marginBottom="3dp">
+                                android:layout_weight="1"
+                                android:layout_marginBottom="3dp">
 
                             <!-- Start Text View Berat Badan / Tinggi Badan -->
                             <TextView
@@ -504,7 +531,8 @@
                                 android:layout_width="fill_parent"
                                 android:layout_height="0dp"
                                 android:orientation="horizontal"
-                                android:layout_weight="1" android:layout_marginBottom="3dp">
+                                android:layout_weight="1"
+                                android:layout_marginBottom="3dp">
 
                             <!-- Start Text View Iindeks Massa Tubuh / Umur -->
                             <TextView
@@ -548,11 +576,93 @@
                     <View
                             android:layout_width="0dp"
                             android:layout_height="0dp"
-                            android:layout_weight=".1"/>
+                            android:layout_weight=".2"/>
                     <!-- End Blank Space -->
 
                 </LinearLayout>
                 <!-- End Linear Layout Row -->
+
+                <TabHost android:id="@android:id/tabhost"
+                         android:layout_width="fill_parent"
+                         android:layout_height="wrap_content"
+                         android:layout_margin="20dp"
+                         android:background="#FFF1B5">
+
+                    <LinearLayout android:orientation="vertical"
+                                  android:layout_width="fill_parent"
+                                  android:layout_height="fill_parent"
+                                  android:padding="5dp">
+
+                        <TabWidget android:id="@android:id/tabs"
+                                   android:layout_width="fill_parent"
+                                   android:layout_height="wrap_content"
+                                   android:tabStripEnabled="false"/>
+
+                        <FrameLayout android:id="@android:id/tabcontent"
+                                     android:layout_width="fill_parent"
+                                     android:layout_height="fill_parent"
+                                     android:padding="5dp">
+
+                            <LinearLayout android:id="@+id/bbu"
+                                          android:orientation="vertical"
+                                          android:layout_width="fill_parent"
+                                          android:layout_height="wrap_content"
+                                          android:background="#FFFBC9">
+
+                                <TextView android:layout_width="fill_parent"
+                                          android:layout_height="wrap_content"
+                                          android:textColor="#D046F2"
+                                          android:hint="@string/bbu"
+                                          style="@android:style/TextAppearance.DeviceDefault.Medium"/>
+
+                            </LinearLayout>
+
+                            <LinearLayout android:id="@+id/tbu"
+                                          android:orientation="vertical"
+                                          android:layout_width="fill_parent"
+                                          android:layout_height="wrap_content"
+                                          android:background="#FFFBC9">
+
+                                <TextView android:layout_width="fill_parent"
+                                          android:layout_height="wrap_content"
+                                          android:textColor="#D046F2"
+                                          android:hint="@string/tbu"
+                                          style="@android:style/TextAppearance.DeviceDefault.Medium"/>
+
+                            </LinearLayout>
+
+                            <LinearLayout android:id="@+id/bbtb"
+                                          android:orientation="vertical"
+                                          android:layout_width="fill_parent"
+                                          android:layout_height="wrap_content"
+                                          android:background="#FFFBC9">
+
+                                <TextView android:layout_width="fill_parent"
+                                          android:layout_height="wrap_content"
+                                          android:textColor="#D046F2"
+                                          android:hint="@string/bbtb"
+                                          style="@android:style/TextAppearance.DeviceDefault.Medium"/>
+
+                            </LinearLayout>
+
+                            <LinearLayout android:id="@+id/imtu"
+                                          android:orientation="vertical"
+                                          android:layout_width="fill_parent"
+                                          android:layout_height="wrap_content"
+                                          android:background="#FFFBC9">
+
+                                <TextView android:layout_width="fill_parent"
+                                          android:layout_height="wrap_content"
+                                          android:textColor="#D046F2"
+                                          android:hint="@string/imtu"
+                                          style="@android:style/TextAppearance.DeviceDefault.Medium"/>
+
+                            </LinearLayout>
+
+                        </FrameLayout>
+
+                    </LinearLayout>
+                </TabHost>
 
                 <!-- Start Blank Space -->
                 <View

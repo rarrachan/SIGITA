@@ -27,9 +27,7 @@ import java.io.IOException;
 import java.io.OutputStream;
 import java.text.ParseException;
 import java.text.SimpleDateFormat;
-import java.util.Calendar;
-import java.util.Date;
-import java.util.Locale;
+import java.util.*;
 
 /**
  * Created by syafira rarra on 05/06/2016.
@@ -50,6 +48,8 @@ public class TambahGaleri extends Activity {
     private TextView text_galeri_foto;
     private ImageView galeri_foto;
     private ImageView button_simpan;
+//    private LinearLayout galeri_kategori_layout;
+//    private TextView text_galeri_kategori;
     private SessionManager session;
     private DBHelper db;
 
@@ -82,9 +82,11 @@ public class TambahGaleri extends Activity {
         text_galeri_foto = (TextView) findViewById(R.id.text_galeri_foto);
         galeri_foto = (ImageView) findViewById(R.id.galeri_foto);
         button_simpan = (ImageView) findViewById(R.id.button_simpan);
+//        text_galeri_kategori = (TextView) findViewById(R.id.text_galeri_kategori);
+//        galeri_kategori_layout = (LinearLayout) findViewById(R.id.galeri_kategori_layout);
 
         // Set Custom Font
-        Typeface typeface = Typeface.createFromAsset(getAssets(), "teen-webfont.ttf");
+        final Typeface typeface = Typeface.createFromAsset(getAssets(), "teen-webfont.ttf");
         tambah_galeri.setTypeface(typeface);
         titikdua.setTypeface(typeface);
         text_footer.setTypeface(typeface);
@@ -97,6 +99,7 @@ public class TambahGaleri extends Activity {
         text_keterangan_foto.setTypeface(typeface);
         keterangan_foto.setTypeface(typeface);
         text_galeri_foto.setTypeface(typeface);
+//        text_galeri_kategori.setTypeface(typeface);
 
         galeri_nama.setText(session.loadSession(this, "nama"));
 
@@ -108,11 +111,13 @@ public class TambahGaleri extends Activity {
                 int mMonth = mcurrentDate.get(Calendar.MONTH);
                 int mDay = mcurrentDate.get(Calendar.DAY_OF_MONTH);
 
+                final SimpleDateFormat dateFormatter = new SimpleDateFormat("dd/MM/yyyy", Locale.US);
+                final String getBirthdayDate = session.loadSession(TambahGaleri.this, "tanggallahir");
+
                 // Create Dialog DataPicker
                 final DatePickerDialog mDatePicker = new DatePickerDialog(TambahGaleri.this, new DatePickerDialog.OnDateSetListener() {
                     public void onDateSet(DatePicker datepicker, int selectedyear, int selectedmonth, int selectedday) {
                     /*      Your code   to get date and time    */
-                        SimpleDateFormat dateFormatter = new SimpleDateFormat("dd/MM/yyyy", Locale.US);
                         Calendar newDate = Calendar.getInstance();
                         newDate.set(selectedyear, selectedmonth, selectedday);
                         galeri_tanggal.setText(dateFormatter.format(newDate.getTime()));
@@ -150,16 +155,45 @@ public class TambahGaleri extends Activity {
 
                         String umur = mon + " bulan / " + years + " tahun " + months + " bulan " + days + " hari";
                         galeri_usia.setText(umur);
+
+//                        Spinner galeri_kategori = (Spinner) findViewById(R.id.galeri_kategori);
+//                        List<String> list = new ArrayList<>();
+//                        list.add("list 1");
+//                        list.add("list 2");
+//                        list.add("list 3");
+//
+//                        ArrayAdapter dataAdapter = new ArrayAdapter<String>(TambahGaleri.this, android.R.layout.simple_spinner_item, list) {
+//                            public View getView(int position, View convertView, ViewGroup parent) {
+//                                TextView v = (TextView) super.getView(position, convertView, parent);
+//                                v.setTypeface(typeface);
+//                                v.setTextAppearance(TambahGaleri.this, android.R.style.TextAppearance_DeviceDefault_Medium);
+//                                v.setTextColor(Color.parseColor("#FF0000"));
+//                                return v;
+//                            }};
+//
+//                        dataAdapter.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
+//                        galeri_kategori.setAdapter(dataAdapter);
+//                        galeri_kategori_layout.setVisibility(View.VISIBLE);
                     }
-                }, mYear, mMonth, mDay);
+                },mYear,mMonth,mDay);
                 mDatePicker.setTitle("Select date");
+                mDatePicker.getDatePicker().setMaxDate(Calendar.getInstance().getTimeInMillis()
+                );
+
+                try{
+                    Date startDate = dateFormatter.parse(getBirthdayDate);
+                    mDatePicker.getDatePicker().setMinDate(startDate.getTime());
+                } catch (ParseException e) {
+                    e.printStackTrace();
+                }
                 mDatePicker.show();
             }
-        });
+        }
+        );
 
         galeri_foto.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
+                @Override
+                public void onClick (View v){
                 // Declare Option Dialog
                 final CharSequence[] options = {"Take Photo", "Choose from Gallery", "Cancel"};
 
@@ -192,12 +226,13 @@ public class TambahGaleri extends Activity {
                     }
                 });
                 builder.show();
+                }
             }
-        });
+        );
 
         button_simpan.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
+                @Override
+                public void onClick (View v){
                 // Get Value
                 int profilID = Integer.parseInt(session.loadSession(TambahGaleri.this, "id"));
                 String nama = galeri_nama.getText().toString();
@@ -276,158 +311,160 @@ public class TambahGaleri extends Activity {
 
                 }
             }
-        });
-    }
+            }
 
-    // Activity for Dialog Get Photo
-    @Override
-    protected void onActivityResult(int requestCode, int resultCode, Intent data) {
-        super.onActivityResult(requestCode, resultCode, data);
-        if (resultCode == RESULT_OK) {
-            // Use Camera
-            if (requestCode == 1) {
-                File f = new File(Environment.getExternalStorageDirectory().toString());
-                for (File temp : f.listFiles()) {
-                    if (temp.getName().equals("temp.jpg")) {
-                        f = temp;
-                        break;
+            );
+        }
+
+                // Activity for Dialog Get Photo
+        @Override
+        protected void onActivityResult ( int requestCode, int resultCode, Intent data){
+            super.onActivityResult(requestCode, resultCode, data);
+            if (resultCode == RESULT_OK) {
+                // Use Camera
+                if (requestCode == 1) {
+                    File f = new File(Environment.getExternalStorageDirectory().toString());
+                    for (File temp : f.listFiles()) {
+                        if (temp.getName().equals("temp.jpg")) {
+                            f = temp;
+                            break;
+                        }
                     }
-                }
-                try {
-                    Bitmap bitmap;
-                    BitmapFactory.Options bitmapOptions = new BitmapFactory.Options();
-                    bitmap = BitmapFactory.decodeFile(f.getAbsolutePath(),
-                            bitmapOptions);
-
-                    // Rotate Image
-                    ExifInterface exif = new ExifInterface(f.getAbsolutePath());
-                    int orientation = exif.getAttributeInt(ExifInterface.TAG_ORIENTATION, 1);
-                    Matrix matrix = new Matrix();
-
-                    if ((orientation == ExifInterface.ORIENTATION_ROTATE_180)) {
-                        matrix.postRotate(180);
-                        bitmap = Bitmap.createBitmap(bitmap, 0, 0, bitmap.getWidth(),
-                                bitmap.getHeight(), matrix, true);
-                    } else if (orientation == ExifInterface.ORIENTATION_ROTATE_90) {
-                        matrix.postRotate(90);
-                        bitmap = Bitmap.createBitmap(bitmap, 0, 0, bitmap.getWidth(),
-                                bitmap.getHeight(), matrix, true);
-                    } else if (orientation == ExifInterface.ORIENTATION_ROTATE_270) {
-                        matrix.postRotate(270);
-                        bitmap = Bitmap.createBitmap(bitmap, 0, 0, bitmap.getWidth(),
-                                bitmap.getHeight(), matrix, true);
-                    }
-
-                    // Set Image
-                    galeri_foto.setImageBitmap(bitmap);
-
-                    // Save Image Temporary
-                    String path = android.os.Environment
-                            .getExternalStorageDirectory()
-                            + File.separator
-                            + "Phoenix" + File.separator + "default";
-                    f.delete();
-                    OutputStream outFile;
-                    File file = new File(path, String.valueOf(System.currentTimeMillis()) + ".jpg");
                     try {
-                        outFile = new FileOutputStream(file);
-                        bitmap.compress(Bitmap.CompressFormat.JPEG, 100, outFile);
-                        outFile.flush();
-                        outFile.close();
+                        Bitmap bitmap;
+                        BitmapFactory.Options bitmapOptions = new BitmapFactory.Options();
+                        bitmap = BitmapFactory.decodeFile(f.getAbsolutePath(),
+                                bitmapOptions);
+
+                        // Rotate Image
+                        ExifInterface exif = new ExifInterface(f.getAbsolutePath());
+                        int orientation = exif.getAttributeInt(ExifInterface.TAG_ORIENTATION, 1);
+                        Matrix matrix = new Matrix();
+
+                        if ((orientation == ExifInterface.ORIENTATION_ROTATE_180)) {
+                            matrix.postRotate(180);
+                            bitmap = Bitmap.createBitmap(bitmap, 0, 0, bitmap.getWidth(),
+                                    bitmap.getHeight(), matrix, true);
+                        } else if (orientation == ExifInterface.ORIENTATION_ROTATE_90) {
+                            matrix.postRotate(90);
+                            bitmap = Bitmap.createBitmap(bitmap, 0, 0, bitmap.getWidth(),
+                                    bitmap.getHeight(), matrix, true);
+                        } else if (orientation == ExifInterface.ORIENTATION_ROTATE_270) {
+                            matrix.postRotate(270);
+                            bitmap = Bitmap.createBitmap(bitmap, 0, 0, bitmap.getWidth(),
+                                    bitmap.getHeight(), matrix, true);
+                        }
+
+                        // Set Image
+                        galeri_foto.setImageBitmap(bitmap);
+
+                        // Save Image Temporary
+                        String path = android.os.Environment
+                                .getExternalStorageDirectory()
+                                + File.separator
+                                + "Phoenix" + File.separator + "default";
+                        f.delete();
+                        OutputStream outFile;
+                        File file = new File(path, String.valueOf(System.currentTimeMillis()) + ".jpg");
+                        try {
+                            outFile = new FileOutputStream(file);
+                            bitmap.compress(Bitmap.CompressFormat.JPEG, 100, outFile);
+                            outFile.flush();
+                            outFile.close();
+                        } catch (Exception e) {
+                            e.printStackTrace();
+                        }
                     } catch (Exception e) {
                         e.printStackTrace();
                     }
-                } catch (Exception e) {
-                    e.printStackTrace();
+
                 }
+                // From Gallery
+                else if (requestCode == 2) {
 
-            }
-            // From Gallery
-            else if (requestCode == 2) {
+                    Uri selectedImage = data.getData();
+                    String[] filePath = {MediaStore.Images.Media.DATA};
+                    Cursor c = getContentResolver().query(selectedImage, filePath, null, null, null);
+                    c.moveToFirst();
+                    int columnIndex = c.getColumnIndex(filePath[0]);
+                    String picturePath = c.getString(columnIndex);
+                    c.close();
 
-                Uri selectedImage = data.getData();
-                String[] filePath = {MediaStore.Images.Media.DATA};
-                Cursor c = getContentResolver().query(selectedImage, filePath, null, null, null);
-                c.moveToFirst();
-                int columnIndex = c.getColumnIndex(filePath[0]);
-                String picturePath = c.getString(columnIndex);
-                c.close();
+                    try {
+                        Bitmap bitmap;
+                        BitmapFactory.Options bitmapOptions = new BitmapFactory.Options();
+                        bitmap = BitmapFactory.decodeFile(picturePath,
+                                bitmapOptions);
 
-                try {
-                    Bitmap bitmap;
-                    BitmapFactory.Options bitmapOptions = new BitmapFactory.Options();
-                    bitmap = BitmapFactory.decodeFile(picturePath,
-                            bitmapOptions);
+                        // Rotate Image
+                        ExifInterface exif = new ExifInterface(picturePath);
+                        int orientation = exif.getAttributeInt(ExifInterface.TAG_ORIENTATION, 1);
+                        Matrix matrix = new Matrix();
 
-                    // Rotate Image
-                    ExifInterface exif = new ExifInterface(picturePath);
-                    int orientation = exif.getAttributeInt(ExifInterface.TAG_ORIENTATION, 1);
-                    Matrix matrix = new Matrix();
+                        if ((orientation == ExifInterface.ORIENTATION_ROTATE_180)) {
+                            matrix.postRotate(180);
+                            bitmap = Bitmap.createBitmap(bitmap, 0, 0, bitmap.getWidth(),
+                                    bitmap.getHeight(), matrix, true);
+                        } else if (orientation == ExifInterface.ORIENTATION_ROTATE_90) {
+                            matrix.postRotate(90);
+                            bitmap = Bitmap.createBitmap(bitmap, 0, 0, bitmap.getWidth(),
+                                    bitmap.getHeight(), matrix, true);
+                        } else if (orientation == ExifInterface.ORIENTATION_ROTATE_270) {
+                            matrix.postRotate(270);
+                            bitmap = Bitmap.createBitmap(bitmap, 0, 0, bitmap.getWidth(),
+                                    bitmap.getHeight(), matrix, true);
+                        }
 
-                    if ((orientation == ExifInterface.ORIENTATION_ROTATE_180)) {
-                        matrix.postRotate(180);
-                        bitmap = Bitmap.createBitmap(bitmap, 0, 0, bitmap.getWidth(),
-                                bitmap.getHeight(), matrix, true);
-                    } else if (orientation == ExifInterface.ORIENTATION_ROTATE_90) {
-                        matrix.postRotate(90);
-                        bitmap = Bitmap.createBitmap(bitmap, 0, 0, bitmap.getWidth(),
-                                bitmap.getHeight(), matrix, true);
-                    } else if (orientation == ExifInterface.ORIENTATION_ROTATE_270) {
-                        matrix.postRotate(270);
-                        bitmap = Bitmap.createBitmap(bitmap, 0, 0, bitmap.getWidth(),
-                                bitmap.getHeight(), matrix, true);
+                        // Set Image
+                        galeri_foto.setImageBitmap(bitmap);
+                    } catch (Exception e) {
+                        e.printStackTrace();
                     }
-
-                    // Set Image
-                    galeri_foto.setImageBitmap(bitmap);
-                } catch (Exception e) {
-                    e.printStackTrace();
                 }
             }
         }
-    }
 
-    // Remove SoftKeybard if Click Outside EditText
-    @Override
-    public boolean dispatchTouchEvent(MotionEvent event) {
-        View v = getCurrentFocus();
-        if (event.getAction() == MotionEvent.ACTION_DOWN) {
-            if (v instanceof EditText) {
-                Rect outRect = new Rect();
-                v.getGlobalVisibleRect(outRect);
-                if (!outRect.contains((int) event.getRawX(), (int) event.getRawY())) {
-                    InputMethodManager imm = (InputMethodManager) getSystemService(Context.INPUT_METHOD_SERVICE);
-                    imm.hideSoftInputFromWindow(v.getWindowToken(), 0);
+        // Remove SoftKeybard if Click Outside EditText
+        @Override
+        public boolean dispatchTouchEvent (MotionEvent event){
+            View v = getCurrentFocus();
+            if (event.getAction() == MotionEvent.ACTION_DOWN) {
+                if (v instanceof EditText) {
+                    Rect outRect = new Rect();
+                    v.getGlobalVisibleRect(outRect);
+                    if (!outRect.contains((int) event.getRawX(), (int) event.getRawY())) {
+                        InputMethodManager imm = (InputMethodManager) getSystemService(Context.INPUT_METHOD_SERVICE);
+                        imm.hideSoftInputFromWindow(v.getWindowToken(), 0);
+                    }
                 }
             }
+            // Remove Focus
+            v.clearFocus();
+
+            // SCROLL VIEW HACK
+            ScrollView view = (ScrollView) findViewById(R.id.scrollView);
+            view.setDescendantFocusability(ViewGroup.FOCUS_BEFORE_DESCENDANTS);
+            view.setFocusable(true);
+            view.setFocusableInTouchMode(true);
+            view.setOnTouchListener(new View.OnTouchListener() {
+                @Override
+                public boolean onTouch(View v, MotionEvent event) {
+                    v.requestFocusFromTouch();
+                    return false;
+                }
+            });
+            return super.dispatchTouchEvent(event);
         }
-        // Remove Focus
-        v.clearFocus();
 
-        // SCROLL VIEW HACK
-        ScrollView view = (ScrollView) findViewById(R.id.scrollView);
-        view.setDescendantFocusability(ViewGroup.FOCUS_BEFORE_DESCENDANTS);
-        view.setFocusable(true);
-        view.setFocusableInTouchMode(true);
-        view.setOnTouchListener(new View.OnTouchListener() {
-            @Override
-            public boolean onTouch(View v, MotionEvent event) {
-                v.requestFocusFromTouch();
-                return false;
-            }
-        });
-        return super.dispatchTouchEvent(event);
+        // Pressed Back Button
+        @Override
+        public void onBackPressed () {
+            // Start galeri Activity
+            Intent galeri = new Intent(TambahGaleri.this, GaleriTumbang.class);
+            startActivity(galeri);
+
+            // Close This Activity
+            finish();
+        }
+
     }
-
-    // Pressed Back Button
-    @Override
-    public void onBackPressed() {
-        // Start galeri Activity
-        Intent galeri = new Intent(TambahGaleri.this, GaleriTumbang.class);
-        startActivity(galeri);
-
-        // Close This Activity
-        finish();
-    }
-
-}

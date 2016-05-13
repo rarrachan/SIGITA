@@ -24,6 +24,7 @@ public class RiwayatImunisasi extends Activity {
     private TextView text_tanggal_vaksin;
     private TextView text_jenis_vaksin;
     private TextView text_usia_vaksin;
+    private ImageView button_tambah;
     private SessionManager session;
     private DBHelper db;
 
@@ -50,6 +51,7 @@ public class RiwayatImunisasi extends Activity {
         text_jenis_vaksin = (TextView) findViewById(R.id.text_jenis_vaksin);
         text_usia_vaksin = (TextView) findViewById(R.id.text_usia_vaksin);
         text_footer = (TextView) findViewById(R.id.text_footer);
+        button_tambah = (ImageView) findViewById(R.id.button_tambah);
 
         // Check Session
         if (session.checkSession(this)) {
@@ -57,7 +59,7 @@ public class RiwayatImunisasi extends Activity {
             text_button_profil.setText(session.loadSession(this, "nama"));
         }
 
-        TableLayout jadwal_imunisasi = (TableLayout) findViewById(R.id.jadwal_imunisasi);
+        TableLayout riwayat_imunisasi = (TableLayout) findViewById(R.id.riwayat_imunisasi);
 
         ProfilLinearLayout.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -65,6 +67,15 @@ public class RiwayatImunisasi extends Activity {
                 // Show Detail Profil Activity
                 Intent profil = new Intent(RiwayatImunisasi.this, Profil.class);
                 startActivity(profil);
+            }
+        });
+
+        button_tambah.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                // Show Detail Profil Activity
+                Intent tambah_riwayat = new Intent(RiwayatImunisasi.this, TambahRiwayat.class);
+                startActivity(tambah_riwayat);
             }
         });
 
@@ -78,25 +89,28 @@ public class RiwayatImunisasi extends Activity {
         text_usia_vaksin.setTypeface(typeface);
 
         // Get Data from Database
-        Cursor cursor = db.getList();
+        Cursor cursor = db.getRiwayat(Integer.parseInt(session.loadSession(this, "id")));
         cursor.moveToFirst();
         if (!cursor.isAfterLast()) {
             do {
                 TableRow row = new TableRow(this);
-                TableRow.LayoutParams list_imunisasi = new TableRow.LayoutParams(TableRow.LayoutParams.WRAP_CONTENT);
-                row.setLayoutParams(list_imunisasi);
+                TableRow.LayoutParams riwayat = new TableRow.LayoutParams(TableRow.LayoutParams.WRAP_CONTENT);
+                row.setLayoutParams(riwayat);
 
-                TextView vaksin = new TextView(this);
-                TextView umur = new TextView(this);
+                TextView tanggal = new TextView(this);
+                TextView jenisvaksin = new TextView(this);
+                TextView usia = new TextView(this);
                 ImageView detail = new ImageView(this);
 
-                TableRow.LayoutParams vaksin_text_view = new TableRow.LayoutParams(0, TableRow.LayoutParams.MATCH_PARENT, 1f);
-                TableRow.LayoutParams umur_text_view = new TableRow.LayoutParams(0, TableRow.LayoutParams.MATCH_PARENT, 1f);
-                TableRow.LayoutParams detail_text_view = new TableRow.LayoutParams(0, TableRow.LayoutParams.MATCH_PARENT, .5f);
+                TableRow.LayoutParams tanggal_text_view = new TableRow.LayoutParams(0, TableRow.LayoutParams.MATCH_PARENT, 1f);
+                TableRow.LayoutParams jenisvaksin_text_view = new TableRow.LayoutParams(0, TableRow.LayoutParams.MATCH_PARENT, 1f);
+                TableRow.LayoutParams usia_text_view = new TableRow.LayoutParams(0, TableRow.LayoutParams.MATCH_PARENT, 1f);
+                TableRow.LayoutParams detail_text_view = new TableRow.LayoutParams(0, TableRow.LayoutParams.MATCH_PARENT, .8f);
 
                 detail.setImageResource(R.drawable.tombol_detail);
-                vaksin.setGravity(Gravity.CENTER_VERTICAL);
-                umur.setGravity(Gravity.CENTER_VERTICAL);
+                tanggal.setGravity(Gravity.CENTER_VERTICAL);
+                jenisvaksin.setGravity(Gravity.CENTER_VERTICAL);
+                usia.setGravity(Gravity.CENTER_VERTICAL);
 
                 int margin_in_dp_1 = 1 ;//value in dp
                 int margin_in_dp_3 = 3 ;//value in dp
@@ -106,57 +120,66 @@ public class RiwayatImunisasi extends Activity {
                 int margin_in_pixel_3 = (int) TypedValue.applyDimension(
                         TypedValue.COMPLEX_UNIT_DIP, margin_in_dp_3, getResources()
                                 .getDisplayMetrics());
-                vaksin_text_view.setMargins(margin_in_pixel_3, margin_in_pixel_1, margin_in_pixel_1, margin_in_pixel_1);
-                umur_text_view.setMargins(margin_in_pixel_1, margin_in_pixel_1, margin_in_pixel_1, margin_in_pixel_1);
+                tanggal_text_view.setMargins(margin_in_pixel_3, margin_in_pixel_1, margin_in_pixel_1, margin_in_pixel_1);
+                jenisvaksin_text_view.setMargins(margin_in_pixel_1, margin_in_pixel_1, margin_in_pixel_1, margin_in_pixel_1);
+                usia_text_view.setMargins(margin_in_pixel_1, margin_in_pixel_1, margin_in_pixel_1, margin_in_pixel_1);
                 detail_text_view.setMargins(margin_in_pixel_1, margin_in_pixel_1, margin_in_pixel_3, margin_in_pixel_1);
 
                 int padding_in_dp = 5 ;//value in dp
                 int padding_in_pixel = (int) TypedValue.applyDimension(
                         TypedValue.COMPLEX_UNIT_DIP, padding_in_dp, getResources()
                                 .getDisplayMetrics());
-                vaksin.setPadding(padding_in_pixel, padding_in_pixel, padding_in_pixel, padding_in_pixel);
-                umur.setPadding(padding_in_pixel, padding_in_pixel, padding_in_pixel, padding_in_pixel);
+                tanggal.setPadding(padding_in_pixel, padding_in_pixel, padding_in_pixel, padding_in_pixel);
+                jenisvaksin.setPadding(padding_in_pixel, padding_in_pixel, padding_in_pixel, padding_in_pixel);
+                usia.setPadding(padding_in_pixel, padding_in_pixel, padding_in_pixel, padding_in_pixel);
                 detail.setPadding(padding_in_pixel, padding_in_pixel, padding_in_pixel, padding_in_pixel);
 
-                vaksin.setLayoutParams(vaksin_text_view);
-                umur.setLayoutParams(umur_text_view);
+                tanggal.setLayoutParams(tanggal_text_view);
+                jenisvaksin.setLayoutParams(jenisvaksin_text_view);
+                usia.setLayoutParams(usia_text_view);
                 detail.setLayoutParams(detail_text_view);
 
-                vaksin.setBackgroundResource(R.drawable.border_row);
-                umur.setBackgroundResource(R.drawable.border_row);
+                tanggal.setBackgroundResource(R.drawable.border_row);
+                jenisvaksin.setBackgroundResource(R.drawable.border_row);
+                usia.setBackgroundResource(R.drawable.border_row);
                 detail.setBackgroundResource(R.drawable.border_row);
 
-                vaksin.setText(cursor.getString(cursor.getColumnIndex("list_vaksin")));
-                umur.setText(cursor.getString(cursor.getColumnIndex("list_umur")));
-                final int id = cursor.getInt(cursor.getColumnIndex("listID"));
+                tanggal.setText(cursor.getString(cursor.getColumnIndex("riwayat_tanggal")));
+                jenisvaksin.setText(cursor.getString(cursor.getColumnIndex("riwayat_vaksin")));
+                usia.setText(cursor.getString(cursor.getColumnIndex("riwayat_umur")));
+                final int id = cursor.getInt(cursor.getColumnIndex("riwayatID"));
 
-                vaksin.setTextAppearance(this, android.R.style.TextAppearance_DeviceDefault_Medium);
-                umur.setTextAppearance(this, android.R.style.TextAppearance_DeviceDefault_Medium);
+                tanggal.setTextAppearance(this, android.R.style.TextAppearance_DeviceDefault_Medium);
+                jenisvaksin.setTextAppearance(this, android.R.style.TextAppearance_DeviceDefault_Medium);
+                usia.setTextAppearance(this, android.R.style.TextAppearance_DeviceDefault_Medium);
 
-                vaksin.setTextColor(Color.parseColor("#D046F2"));
-                umur.setTextColor(Color.parseColor("#D046F2"));
+                tanggal.setTextColor(Color.parseColor("#D046F2"));
+                jenisvaksin.setTextColor(Color.parseColor("#D046F2"));
+                usia.setTextColor(Color.parseColor("#D046F2"));
 
-                vaksin.setTypeface(typeface);
-                umur.setTypeface(typeface);
+                tanggal.setTypeface(typeface);
+                jenisvaksin.setTypeface(typeface);
+                usia.setTypeface(typeface);
 
-                row.addView(vaksin);
-                row.addView(umur);
+                row.addView(tanggal);
+                row.addView(jenisvaksin);
+                row.addView(usia);
                 row.addView(detail);
 
                 detail.setOnClickListener(new View.OnClickListener() {
                     @Override
                     public void onClick(View v) {
                         // Show Detail Profil Activity
-                        Intent detail_imunisasi = new Intent(RiwayatImunisasi.this, DetailJadwalImunisasi.class);
-                        detail_imunisasi.putExtra("id", id);
-                        startActivity(detail_imunisasi);
+                        Intent detail_riwayat = new Intent(RiwayatImunisasi.this, DetailRiwayat.class);
+                        detail_riwayat.putExtra("id", id);
+                        startActivity(detail_riwayat);
 
                         // Close This Activity
                         finish();
                     }
                 });
 
-                jadwal_imunisasi.addView(row);
+                riwayat_imunisasi.addView(row);
             } while (cursor.moveToNext());
 
             // Close Databsae
@@ -169,6 +192,10 @@ public class RiwayatImunisasi extends Activity {
     // Pressed Back Button
     @Override
     public void onBackPressed() {
+        // Start Imunisasi Activity
+        Intent imunisai = new Intent(RiwayatImunisasi.this, Imunisasi.class);
+        startActivity(imunisai);
+
         // Close This Activity
         finish();
     }

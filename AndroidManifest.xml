@@ -60,6 +60,11 @@
                   android:configChanges="orientation|screenSize|keyboardHidden"
                   android:theme="@android:style/Theme.NoTitleBar.Fullscreen">
         </activity>
+        <activity android:name="com.syafira.SIGITA.HasilKalkulatorGizi"
+                  android:label="@string/app_name"
+                  android:configChanges="orientation|screenSize|keyboardHidden"
+                  android:theme="@android:style/Theme.NoTitleBar.Fullscreen">
+        </activity>
         <activity android:name="com.syafira.SIGITA.Imunisasi"
                   android:label="@string/app_name"
                   android:configChanges="orientation|screenSize|keyboardHidden"
@@ -76,6 +81,21 @@
                   android:theme="@android:style/Theme.NoTitleBar.Fullscreen">
         </activity>
         <activity android:name="com.syafira.SIGITA.RiwayatImunisasi"
+                  android:label="@string/app_name"
+                  android:configChanges="orientation|screenSize|keyboardHidden"
+                  android:theme="@android:style/Theme.NoTitleBar.Fullscreen">
+        </activity>
+        <activity android:name="com.syafira.SIGITA.TambahRiwayat"
+                  android:label="@string/app_name"
+                  android:configChanges="orientation|screenSize|keyboardHidden"
+                  android:theme="@android:style/Theme.NoTitleBar.Fullscreen">
+        </activity>
+        <activity android:name="com.syafira.SIGITA.DetailRiwayat"
+                  android:label="@string/app_name"
+                  android:configChanges="orientation|screenSize|keyboardHidden"
+                  android:theme="@android:style/Theme.NoTitleBar.Fullscreen">
+        </activity>
+        <activity android:name="com.syafira.SIGITA.UbahRiwayat"
                   android:label="@string/app_name"
                   android:configChanges="orientation|screenSize|keyboardHidden"
                   android:theme="@android:style/Theme.NoTitleBar.Fullscreen">
@@ -120,7 +140,7 @@
                   android:configChanges="orientation|screenSize|keyboardHidden"
                   android:theme="@android:style/Theme.NoTitleBar.Fullscreen">
         </activity>
-        <activity android:name="com.syafira.SIGITA.DetailRekamMedis"
+        <activity android:name=".DetailMedis"
                   android:label="@string/app_name"
                   android:configChanges="orientation|screenSize|keyboardHidden"
                   android:theme="@android:style/Theme.NoTitleBar.Fullscreen">

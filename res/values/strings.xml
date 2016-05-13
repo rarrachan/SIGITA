@@ -51,7 +51,7 @@
     <string name="alert_hapus">Apa anda yakin untuk menghapus seluruh data anak ini? Penghapusan meliputi riwayat
         imunisasi, status gizi, rekam medis, dan record tumbuh kembang anak.
     </string>
-    <string name="alert_akses">Anda tidak dapat mengakses menu ini. Silahkan memilih
+    <string name="alert_akses">Anda tidak dapat mengakses menu ini karena anda belum memilih profil. Silahkan memilih
         profil anak terlebih dahulu.
     </string>
 
@@ -59,6 +59,7 @@
     <string name="button_dokumentasigizi">Dokumentasi Gizi</string>
 
     <string name="kalkulatorgizi_tanggallahir">Tanggal Lahir</string>
+    <string name="kalkulatorgizi_usia">Usia</string>
     <string name="kalkulatorgizi_jeniskelamin">Jenis Kelamin</string>
     <string name="kalkulatorgizi_L">L</string>
     <string name="kalkulatorgizi_P">P</string>
@@ -90,6 +91,17 @@
     <string name="tanggal_vaksin">Tanggal</string>
     <string name="button_alarmimunisasi">Alarm Imunisasi</string>
 
+    <string name="tambah_riwayat">Tambah Riwayat Imunisasi</string>
+    <string name="riwayat_nama">Nama Anak</string>
+    <string name="riwayat_dokter">Nama Dokter</string>
+    <string name="riwayat_rumahsakit">Nama Rumah Sakit</string>
+    <string name="riwayat_tanggal">Tanggal Vaksinasi</string>
+    <string name="riwayat_tinggibadan">Tinggi Badan</string>
+    <string name="riwayat_beratbadan">Berat Badan</string>
+    <string name="ubah_riwayat">Ubah Riwayat Imunisasi</string>
+    <string name="detail_riwayat">Detail Riwayat Imunisasi</string>
+    <string name="alert_hapus_riwayat">Apa anda yakin untuk menghapus riwayat imunisasi ini?</string>
+
     <string name="button_tahapantumbang">Tahapan Tumbuh Kembang</string>
     <string name="usia_tumbang">Usia Perkembangan</string>
     <string name="gerakan_kasar">Gerakan Kasar</string>
@@ -101,6 +113,7 @@
     <string name="galeri_tanggal">Tanggal</string>
     <string name="hint_galeri_tanggal">01/01/1990</string>
     <string name="galeri_usia">Usia</string>
+    <string name="galeri_kategori">Kategori</string>
 
     <string name="tambah_galeri">Tambah Galeri</string>
     <string name="galeri_nama">Nama</string>

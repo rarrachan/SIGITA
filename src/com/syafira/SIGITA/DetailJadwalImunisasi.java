@@ -51,7 +51,12 @@ public class DetailJadwalImunisasi extends Activity {
         // Load Database
         db = new DBHelper(this);
         db.open();
+
         Cursor cursor = db.getOneList(id);
+        if(session.checkSession(this)) {
+            int profilID = Integer.parseInt(session.loadSession(this, "id"));
+            cursor = db.getListJoinRiwayat(id, profilID);
+        }
         cursor.moveToFirst();
 
         // Load Widget
@@ -92,10 +97,11 @@ public class DetailJadwalImunisasi extends Activity {
         if (session.checkSession(this)) {
             // Set Profil Name
             text_button_profil.setText(session.loadSession(this, "nama"));
-            tanggalVaksinLayout.setVisibility(View.VISIBLE);
-
-//            if (!cursor.getString(cursor.getColumnIndex("list_status")).isEmpty())
-//            status_vaksin.setText(cursor.getString(cursor.getColumnIndex("list_status")));
+            if (cursor.getString(cursor.getColumnIndex("list_vaksin")).equals(cursor.getString(cursor.getColumnIndex("riwayat_vaksin")))) {
+                tanggalVaksinLayout.setVisibility(View.VISIBLE);
+                status_vaksin.setText("Sudah");
+                tanggal_vaksin.setText(cursor.getString(cursor.getColumnIndex("riwayat_tanggal")));
+            }
         }
 
         text_button_profil.setOnClickListener(new View.OnClickListener() {
@@ -124,6 +130,21 @@ public class DetailJadwalImunisasi extends Activity {
 
         // Close This Activity
         finish();
+    }
+
+    // Activity Resume
+    @Override
+    public void onResume() {
+        super.onResume();
+        // Check Session
+        if (session.checkSession(this)) {
+            // Set Profil Name
+            text_button_profil.setText(session.loadSession(this, "nama"));
+        } else {
+            text_button_profil.setText("Profil");
+            tanggalVaksinLayout.setVisibility(View.GONE);
+            status_vaksin.setText("-");
+        }
     }
 
 }

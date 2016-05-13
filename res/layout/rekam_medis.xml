@@ -71,7 +71,8 @@
                     android:layout_height="wrap_content"
                     android:layout_marginLeft="20dp"
                     android:paddingRight="10dp"
-                    android:background="@drawable/button_rounded" android:gravity="left">
+                    android:background="@drawable/button_rounded"
+                    android:gravity="left">
 
                 <!-- Start Button Profil -->
                 <Button
@@ -113,7 +114,8 @@
                         android:layout_height="wrap_content"
                         android:orientation="horizontal"
                         android:layout_gravity="center"
-                        android:layout_marginBottom="10dp" android:layout_marginTop="20dp">
+                        android:layout_marginBottom="10dp"
+                        android:layout_marginTop="20dp">
 
                     <!-- Start Blank Space -->
                     <View
@@ -143,80 +145,113 @@
                 </LinearLayout>
                 <!-- End Linear Layout Content -->
 
-                <TableLayout
-                        android:id="@+id/rekam_medis"
+                <HorizontalScrollView
                         android:layout_width="fill_parent"
-                        android:layout_height="fill_parent"
-                        android:layout_marginLeft="10dp"
-                        android:layout_marginRight="10dp"
-                        android:layout_marginBottom="20dp"
-                        android:stretchColumns="*"
-                        android:background="@drawable/border_table">
+                        android:layout_height="wrap_content"
+                        android:fillViewport="true"
+                        android:padding="20dp"
+                        android:scrollbars="none">
 
-                    <TableRow>
+                    <TableLayout
+                            android:id="@+id/rekam_medis"
+                            android:layout_width="wrap_content"
+                            android:layout_height="fill_parent"
+                            android:stretchColumns="*"
+                            android:background="@drawable/border_table">
 
-                        <TextView
-                                android:id="@+id/text_tanggal_medis"
-                                android:layout_width="0dp"
-                                android:layout_height="match_parent"
-                                android:layout_weight="1"
-                                android:padding="5dp"
-                                android:layout_marginTop="1dp"
-                                android:layout_marginBottom="1dp"
-                                android:layout_marginRight="1dp"
-                                android:layout_marginLeft="3dp"
-                                android:gravity="center_vertical"
-                                android:textColor="#D046F2"
-                                style="@android:style/TextAppearance.DeviceDefault.Medium"
-                                android:background="@drawable/border_row"
-                                android:text="@string/tanggal_vaksin"/>
+                        <TableRow>
 
-                        <TextView
-                                android:id="@+id/text_medis_keluhan"
-                                android:layout_width="0dp"
-                                android:layout_height="match_parent"
-                                android:layout_weight="1"
-                                android:padding="5dp"
-                                android:layout_margin="1dp"
-                                android:gravity="center_vertical"
-                                android:textColor="#D046F2"
-                                style="@android:style/TextAppearance.DeviceDefault.Medium"
-                                android:background="@drawable/border_row"
-                                android:text="@string/medis_keluhan"/>
-                        <TextView
-                                android:id="@+id/text_medis_obat"
-                                android:layout_width="0dp"
-                                android:layout_height="match_parent"
-                                android:layout_weight="1"
-                                android:layout_margin="1dp"
-                                android:padding="5dp"
-                                android:textColor="#D046F2"
-                                android:background="@drawable/border_row"
-                                android:gravity="center_vertical"
-                                style="@android:style/TextAppearance.DeviceDefault.Medium"
-                                android:text="@string/medis_obat"/>
-                        <TextView
-                                android:layout_width="0dp"
-                                android:layout_height="match_parent"
-                                android:layout_weight=".5"
-                                android:layout_marginTop="1dp"
-                                android:layout_marginBottom="1dp"
-                                android:layout_marginLeft="1dp"
-                                android:layout_marginRight="3dp"
-                                android:background="@drawable/border_row"
-                                android:padding="5dp"
-                                android:textColor="#D046F2"
-                                style="@android:style/TextAppearance.DeviceDefault.Medium"
-                                android:text="@string/blank"/>
-                    </TableRow>
-                </TableLayout>
+                            <TextView
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="0dp"
+                                    android:padding="5dp"
+                                    style="@android:style/TextAppearance.DeviceDefault.Medium"
+                                    android:text="@string/gerakan_halus"
+                                    android:visibility="invisible"/>
 
+                            <TextView
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="0dp"
+                                    android:padding="5dp"
+                                    style="@android:style/TextAppearance.DeviceDefault.Medium"
+                                    android:text="@string/gerakan_halus"
+                                    android:visibility="invisible"/>
+
+
+                            <TextView
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="0dp"
+                                    android:padding="5dp"
+                                    style="@android:style/TextAppearance.DeviceDefault.Medium"
+                                    android:text="@string/gerakan_halus"
+                                    android:visibility="invisible"/>
+                        </TableRow>
+
+                        <TableRow>
+
+                            <TextView
+                                    android:id="@+id/text_tanggal_medis"
+                                    android:layout_width="0dp"
+                                    android:layout_height="match_parent"
+                                    android:layout_weight="1"
+                                    android:padding="5dp"
+                                    android:layout_marginTop="1dp"
+                                    android:layout_marginBottom="1dp"
+                                    android:layout_marginRight="1dp"
+                                    android:layout_marginLeft="3dp"
+                                    android:gravity="center_vertical"
+                                    android:textColor="#FF0000"
+                                    style="@android:style/TextAppearance.DeviceDefault.Medium"
+                                    android:background="@drawable/border_row"
+                                    android:text="@string/tanggal_vaksin"/>
+
+                            <TextView
+                                    android:id="@+id/text_medis_keluhan"
+                                    android:layout_width="0dp"
+                                    android:layout_height="match_parent"
+                                    android:layout_weight="1"
+                                    android:padding="5dp"
+                                    android:layout_margin="1dp"
+                                    android:gravity="center_vertical"
+                                    android:textColor="#FF0000"
+                                    style="@android:style/TextAppearance.DeviceDefault.Medium"
+                                    android:background="@drawable/border_row"
+                                    android:text="@string/medis_keluhan"/>
+                            <TextView
+                                    android:id="@+id/text_medis_obat"
+                                    android:layout_width="0dp"
+                                    android:layout_height="match_parent"
+                                    android:layout_weight="1"
+                                    android:layout_margin="1dp"
+                                    android:padding="5dp"
+                                    android:textColor="#FF0000"
+                                    android:background="@drawable/border_row"
+                                    android:gravity="center_vertical"
+                                    style="@android:style/TextAppearance.DeviceDefault.Medium"
+                                    android:text="@string/medis_obat"/>
+                            <TextView
+                                    android:layout_width="0dp"
+                                    android:layout_height="match_parent"
+                                    android:layout_weight=".8"
+                                    android:layout_marginTop="1dp"
+                                    android:layout_marginBottom="1dp"
+                                    android:layout_marginLeft="1dp"
+                                    android:layout_marginRight="3dp"
+                                    android:background="@drawable/border_row"
+                                    android:padding="5dp"
+                                    android:textColor="#D046F2"
+                                    style="@android:style/TextAppearance.DeviceDefault.Medium"
+                                    android:text="@string/blank"/>
+                        </TableRow>
+                    </TableLayout>
+
+                </HorizontalScrollView>
                 <!-- Start Blank Space -->
                 <View
                         android:layout_width="wrap_content"
                         android:layout_height="0dp"
                         android:layout_weight=".2"
-                        android:layout_marginBottom="30dp"/>
+                        />
                 <!-- End Blank Space -->
 
             </LinearLayout>

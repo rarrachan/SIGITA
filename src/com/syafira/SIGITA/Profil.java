@@ -109,9 +109,8 @@ public class Profil extends Activity{
                         // Create Dialog
                         final Dialog dialog_profil = new Dialog(Profil.this);
                         dialog_profil.setContentView(R.layout.dialog_profil);
-                        dialog_profil.getWindow().setBackgroundDrawable(new ColorDrawable(android.graphics.Color.TRANSPARENT));
-                        dialog_profil.getWindow().setLayout(LinearLayout.LayoutParams.MATCH_PARENT, LinearLayout.LayoutParams.MATCH_PARENT);
                         dialog_profil.setCanceledOnTouchOutside(true);
+                        dialog_profil.getWindow().setBackgroundDrawable(new ColorDrawable(android.graphics.Color.TRANSPARENT));
                         dialog_profil.show();
 
                         // Declare

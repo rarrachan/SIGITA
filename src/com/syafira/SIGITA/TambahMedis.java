@@ -15,6 +15,7 @@ import android.view.inputmethod.InputMethodManager;
 import android.widget.*;
 
 import java.text.DateFormat;
+import java.text.ParseException;
 import java.text.SimpleDateFormat;
 import java.util.Calendar;
 import java.util.Date;
@@ -24,7 +25,7 @@ import java.util.Locale;
  * Created by syafira rarra on 05/01/2016.
  */
 
-public class TambahMedis extends Activity{
+public class TambahMedis extends Activity {
 
     // Declare
     private TextView tambah_rekam_medis;
@@ -139,6 +140,7 @@ public class TambahMedis extends Activity{
                 int mYear = mcurrentDate.get(Calendar.YEAR);
                 int mMonth = mcurrentDate.get(Calendar.MONTH);
                 int mDay = mcurrentDate.get(Calendar.DAY_OF_MONTH);
+                final String getBirthdayDate = session.loadSession(TambahMedis.this, "tanggallahir");
 
                 // Create Dialog DataPicker
                 DatePickerDialog mDatePicker = new DatePickerDialog(TambahMedis.this, new DatePickerDialog.OnDateSetListener() {
@@ -150,6 +152,18 @@ public class TambahMedis extends Activity{
                     }
                 }, mYear, mMonth, mDay);
                 mDatePicker.setTitle("Select date");
+                mDatePicker.getDatePicker().setMaxDate(Calendar.getInstance().getTimeInMillis());
+
+                Date date = null;
+                try {
+                    date = dateFormatter.parse(getBirthdayDate);
+                } catch (ParseException e) {
+                    e.printStackTrace();
+                }
+                Calendar cal = Calendar.getInstance();
+                cal.setTime(date);
+                mDatePicker.getDatePicker().setMinDate(cal.getTime().getTime());
+
                 mDatePicker.show();
             }
         });
@@ -175,11 +189,27 @@ public class TambahMedis extends Activity{
                         TextUtils.isEmpty(obat)) {
                     // Show Toast
                     Toast.makeText(TambahMedis.this, "Kolom Belum Terisi", Toast.LENGTH_SHORT).show();
-                    return;
                 } else {
-                    // Insert Data into Database
-                    db.insertMedis(id, tanggalberobat, namadokter, rumahsakit, tinggibadan, beratbadan,
-                            keluhan, tindakan, obat);
+                    // Declare Condition
+                    boolean success = false;
+
+                    try {
+                        // Insert Data into Database
+                        db.insertMedis(id, tanggalberobat, namadokter, rumahsakit, tinggibadan, beratbadan,
+                                keluhan, tindakan, obat);
+                        success = true;
+                    }catch (Exception e) {
+                        e.printStackTrace();
+                    }
+
+                    // Check Condition
+                    if (success) {
+                        // Show Toast Success
+                        Toast.makeText(getApplicationContext(), "Rekam Medis Berhasil Tersimpan", Toast.LENGTH_LONG).show();
+                    } else {
+                        // Show Toast Failed
+                        Toast.makeText(getApplicationContext(), "Rekam Medis Gagal Tersimpan", Toast.LENGTH_LONG).show();
+                    }
 
                     // Start Rekam Medis Activity
                     Intent medis = new Intent(TambahMedis.this, RekamMedis.class);
@@ -210,7 +240,7 @@ public class TambahMedis extends Activity{
         v.clearFocus();
 
         // SCROLL VIEW HACK
-        ScrollView view = (ScrollView)findViewById(R.id.scrollView);
+        ScrollView view = (ScrollView) findViewById(R.id.scrollView);
         view.setDescendantFocusability(ViewGroup.FOCUS_BEFORE_DESCENDANTS);
         view.setFocusable(true);
         view.setFocusableInTouchMode(true);

@@ -3,6 +3,7 @@
               android:orientation="vertical"
               android:layout_width="fill_parent"
               android:layout_height="wrap_content">
+
     <!-- Start Linear Layout Row -->
     <LinearLayout
             android:layout_width="fill_parent"
@@ -56,7 +57,7 @@
             <View
                     android:layout_width="0dp"
                     android:layout_height="0dp"
-                    android:layout_weight=".2"/>
+                    android:layout_weight=".005"/>
             <!-- End Blank Space -->
 
             <!-- Start Text View Profil -->
@@ -67,7 +68,7 @@
                     android:textColor="#D046F2"
                     android:text="@string/profil_hint_nama"
                     style="@android:style/TextAppearance.DeviceDefault.Medium"
-                    android:layout_weight="1.5"
+                    android:layout_weight="1.8"
                     android:gravity="right|center"
                     android:layout_marginRight="10dp"/>
             <!-- End Text View Profil LakiLaki -->

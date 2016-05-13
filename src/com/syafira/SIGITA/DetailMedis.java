@@ -13,7 +13,7 @@ import android.widget.*;
 /**
  * Created by syafira rarra on 05/01/2016.
  */
-public class DetailRekamMedis extends Activity {
+public class DetailMedis extends Activity {
 
     // Declare
     private TextView detail_rekam_medis;
@@ -123,20 +123,28 @@ public class DetailRekamMedis extends Activity {
         medis_nama.setText(session.loadSession(this, "nama"));
         final int medisID = Integer.parseInt(cursor.getString(cursor.getColumnIndex("medisID")));
         medis_tanggalberobat.setText(cursor.getString(cursor.getColumnIndex("medis_tanggal")));
-        medis_dokter.setText(cursor.getString(cursor.getColumnIndex("medis_dokter")));
-        medis_rumahsakit.setText(cursor.getString(cursor.getColumnIndex("medis_rumahsakit")));
-        medis_beratbadan.setText(cursor.getString(cursor.getColumnIndex("medis_berat")));
-        medis_tinggibadan.setText(cursor.getString(cursor.getColumnIndex("medis_tinggi")));
         medis_keluhan.setText(cursor.getString(cursor.getColumnIndex("medis_keluhan")));
         medis_tindakan.setText(cursor.getString(cursor.getColumnIndex("medis_tindakan")));
         medis_obat.setText(cursor.getString(cursor.getColumnIndex("medis_obat")));
+        if(!cursor.getString(cursor.getColumnIndex("medis_dokter")).equals("") ) {
+            medis_dokter.setText(cursor.getString(cursor.getColumnIndex("medis_dokter")));
+        }
+        if(!cursor.getString(cursor.getColumnIndex("medis_rumahsakit")).equals("") ) {
+            medis_rumahsakit.setText(cursor.getString(cursor.getColumnIndex("medis_rumahsakit")));
+        }
+        if(!cursor.getString(cursor.getColumnIndex("medis_berat")).equals("") ) {
+            medis_beratbadan.setText(cursor.getString(cursor.getColumnIndex("medis_berat")));
+        }
+        if(!cursor.getString(cursor.getColumnIndex("medis_tinggi")).equals("") ) {
+            medis_tinggibadan.setText(cursor.getString(cursor.getColumnIndex("medis_tinggi")));
+        }
 
         // Set OnClickListener
         button_ubah.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 // Show Ubah Profil Activity
-                Intent ubah_profil = new Intent(DetailRekamMedis.this, UbahMedis.class);
+                Intent ubah_profil = new Intent(DetailMedis.this, UbahMedis.class);
 
                 // Put Intent Extra
                 ubah_profil.putExtra("id", medisID);
@@ -148,7 +156,7 @@ public class DetailRekamMedis extends Activity {
             @Override
             public void onClick(View v) {
                 // Create Dialog
-                final Dialog dialog = new Dialog(DetailRekamMedis.this);
+                final Dialog dialog = new Dialog(DetailMedis.this);
                 dialog.setContentView(R.layout.hapus_medis);
                 dialog.setCanceledOnTouchOutside(true);
                 dialog.getWindow().setBackgroundDrawable(new ColorDrawable(android.graphics.Color.TRANSPARENT));
@@ -156,7 +164,7 @@ public class DetailRekamMedis extends Activity {
 
                 // Load Dialog Widget
                 TextView alert_warning = (TextView) dialog.findViewById(R.id.alert_warning);
-                TextView alert_hapus_medis = (TextView) dialog.findViewById(R.id.alert_hapus_medis);
+                TextView alert_hapus_medis = (TextView) dialog.findViewById(R.id.alert_hapus);
                 ImageView button_batal = (ImageView) dialog.findViewById(R.id.button_batal);
                 ImageView button_ok = (ImageView) dialog.findViewById(R.id.button_ok);
 
@@ -189,17 +197,17 @@ public class DetailRekamMedis extends Activity {
                         // Check Condition
                         if (success) {
                             // Show Toast Success
-                            Toast.makeText(DetailRekamMedis.this, "Rekam Medis Berhasil Terhapus", Toast.LENGTH_SHORT).show();
+                            Toast.makeText(DetailMedis.this, "Rekam Medis Berhasil Terhapus", Toast.LENGTH_SHORT).show();
                         } else {
                             // Show Toast Failed
-                            Toast.makeText(DetailRekamMedis.this, "Rekam Medis Gagal Terhapus", Toast.LENGTH_SHORT).show();
+                            Toast.makeText(DetailMedis.this, "Rekam Medis Gagal Terhapus", Toast.LENGTH_SHORT).show();
                         }
 
                         // Close Dialog
                         dialog.dismiss();
 
                         // Show Rekam Medis Activity
-                        Intent medis = new Intent(DetailRekamMedis.this, RekamMedis.class);
+                        Intent medis = new Intent(DetailMedis.this, RekamMedis.class);
                         startActivity(medis);
 
                         // Clear Activity
@@ -215,7 +223,7 @@ public class DetailRekamMedis extends Activity {
     @Override
     public void onBackPressed() {
         // Show Rekam Medis Activity
-        Intent medis = new Intent(DetailRekamMedis.this, RekamMedis.class);
+        Intent medis = new Intent(DetailMedis.this, RekamMedis.class);
         startActivity(medis);
         // Close This Activity
         finish();

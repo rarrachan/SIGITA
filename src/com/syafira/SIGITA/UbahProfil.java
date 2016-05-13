@@ -240,6 +240,7 @@ public class UbahProfil extends Activity implements OnClickListener {
                     }
                 }, mYear, mMonth, mDay);
                 mDatePicker.setTitle("Select date");
+                mDatePicker.getDatePicker().setMaxDate(Calendar.getInstance().getTimeInMillis());
                 mDatePicker.show();
                 break;
 
@@ -350,15 +351,15 @@ public class UbahProfil extends Activity implements OnClickListener {
 
                     // Check Session
                     SessionManager session = new SessionManager();
-                    if (session.loadSession(this, "id").equals(profilID)) {
-                        session.clearSession(UbahProfil.this);
-                        session.createSession(UbahProfil.this, "id", profilID);
-                        session.createSession(UbahProfil.this, "nama", nama);
-                        session.createSession(UbahProfil.this, "gender", jenisKelamin);
-                        session.createSession(UbahProfil.this, "tanggallahir", tglLahir);
-
+                    if(session.checkSession(this)){
+                        if (session.loadSession(this, "id").equals(profilID)) {
+                            session.clearSession(UbahProfil.this);
+                            session.createSession(UbahProfil.this, "id", profilID);
+                            session.createSession(UbahProfil.this, "nama", nama);
+                            session.createSession(UbahProfil.this, "gender", jenisKelamin);
+                            session.createSession(UbahProfil.this, "tanggallahir", tglLahir);
+                        }
                     }
-
                     // Start Profil Activity
                     Intent detail_profil = new Intent(this, DetailProfil.class);
                     detail_profil.putExtra("id", id);

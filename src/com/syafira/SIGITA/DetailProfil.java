@@ -144,14 +144,10 @@ public class DetailProfil extends Activity{
         profil_beratlahir.setText(cursor.getString(cursor.getColumnIndex("profil_beratLahir")));
         profil_tempatlahir.setText(cursor.getString(cursor.getColumnIndex("profil_tempatLahir")));
         profil_tanggallahir.setText(cursor.getString(cursor.getColumnIndex("profil_tanggalLahir")));
-        if( cursor.getString(cursor.getColumnIndex("profil_alergi")).equals("")){
-            profil_alergi.setText("Tidak Ada");
-        } else{
+        if( !cursor.getString(cursor.getColumnIndex("profil_alergi")).equals("")) {
             profil_alergi.setText(cursor.getString(cursor.getColumnIndex("profil_alergi")));
         }
-        if( cursor.getString(cursor.getColumnIndex("profil_penyakitKronis")).equals("")){
-            profil_penyakitkronis.setText("Tidak Ada");
-        } else{
+        if( !cursor.getString(cursor.getColumnIndex("profil_penyakitKronis")).equals("")) {
             profil_penyakitkronis.setText(cursor.getString(cursor.getColumnIndex("profil_penyakitKronis")));
         }
         final String foto_path = android.os.Environment.getExternalStorageDirectory() + "/SIGITA/" + nama.replaceAll(" ", "_") + "/" + cursor.getString(cursor.getColumnIndex("profil_foto"));
@@ -217,6 +213,7 @@ public class DetailProfil extends Activity{
                             // Delete From Database
                             db.deleteGaleriProfilID(profil_id);
                             db.deleteMedisProfilID(profil_id);
+                            db.deleteRiwayatProfilID(profil_id);
                             db.deleteProfil(profil_id);
 
                             // Delete Folder Directory
@@ -224,9 +221,8 @@ public class DetailProfil extends Activity{
                             if (profilDirectory.isDirectory())
                             {
                                 String[] children = profilDirectory.list();
-                                for (int i = 0; i < children.length; i++)
-                                {
-                                    new File(profilDirectory, children[i]).delete();
+                                for (String aChildren : children) {
+                                    new File(profilDirectory, aChildren).delete();
                                 }
                                 profilDirectory.delete();
                             }

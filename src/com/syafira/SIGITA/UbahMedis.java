@@ -15,8 +15,10 @@ import android.view.ViewGroup;
 import android.view.inputmethod.InputMethodManager;
 import android.widget.*;
 
+import java.text.ParseException;
 import java.text.SimpleDateFormat;
 import java.util.Calendar;
+import java.util.Date;
 import java.util.Locale;
 
 /**
@@ -100,12 +102,6 @@ public class UbahMedis extends Activity {
         medis_obat = (EditText) findViewById(R.id.medis_obat);
         button_simpan = (ImageView) findViewById(R.id.button_simpan);
 
-        // Check Session
-        if (session.checkSession(this)) {
-            // Set Profil Name
-            medis_nama.setText(session.loadSession(this, "nama"));
-        }
-
         // Set Custom Font
         Typeface typeface = Typeface.createFromAsset(getAssets(), "teen-webfont.ttf");
         tambah_rekam_medis.setTypeface(typeface);
@@ -152,18 +148,31 @@ public class UbahMedis extends Activity {
                 int mYear = mcurrentDate.get(Calendar.YEAR);
                 int mMonth = mcurrentDate.get(Calendar.MONTH);
                 int mDay = mcurrentDate.get(Calendar.DAY_OF_MONTH);
+                final String getBirthdayDate = session.loadSession(UbahMedis.this, "tanggallahir");
+                final SimpleDateFormat dateFormatter = new SimpleDateFormat("dd/MM/yyyy", Locale.US);
 
                 // Create Dialog DataPicker
                 DatePickerDialog mDatePicker = new DatePickerDialog(UbahMedis.this, new DatePickerDialog.OnDateSetListener() {
                     public void onDateSet(DatePicker datepicker, int selectedyear, int selectedmonth, int selectedday) {
                     /*      Your code   to get date and time    */
                         Calendar newDate = Calendar.getInstance();
-                        SimpleDateFormat dateFormatter = new SimpleDateFormat("dd/MM/yyyy", Locale.US);
                         newDate.set(selectedyear, selectedmonth, selectedday);
                         medis_tanggalberobat.setText(dateFormatter.format(newDate.getTime()));
                     }
                 }, mYear, mMonth, mDay);
                 mDatePicker.setTitle("Select date");
+                mDatePicker.getDatePicker().setMaxDate(Calendar.getInstance().getTimeInMillis());
+
+                Date date = null;
+                try {
+                    date = dateFormatter.parse(getBirthdayDate);
+                } catch (ParseException e) {
+                    e.printStackTrace();
+                }
+                Calendar cal = Calendar.getInstance();
+                cal.setTime(date);
+                mDatePicker.getDatePicker().setMinDate(cal.getTime().getTime());
+
                 mDatePicker.show();
             }
         });
@@ -189,15 +198,32 @@ public class UbahMedis extends Activity {
                         TextUtils.isEmpty(obat)) {
                     // Show Toast
                     Toast.makeText(UbahMedis.this, "Kolom Belum Terisi", Toast.LENGTH_SHORT).show();
-                    return;
                 } else {
-                    // Update Data into Database
-                    db.updateMedis(medisID, profilID, tanggalberobat, namadokter, rumahsakit, tinggibadan, beratbadan,
-                            keluhan, tindakan, obat);
+                    // Declare Condition
+                    boolean success = false;
 
-                    // Start Rekam Medis Activity
-                    Intent medis = new Intent(UbahMedis.this, RekamMedis.class);
-                    startActivity(medis);
+                    try {
+                        // Update Data into Database
+                        db.updateMedis(medisID, profilID, tanggalberobat, namadokter, rumahsakit, tinggibadan, beratbadan,
+                                keluhan, tindakan, obat);
+                        success = true;
+                    }catch (Exception e) {
+                        e.printStackTrace();
+                    }
+
+                    // Check Condition
+                    if (success) {
+                        // Show Toast Success
+                        Toast.makeText(getApplicationContext(), "Rekam Medis Berhasil Tersimpan", Toast.LENGTH_LONG).show();
+                    } else {
+                        // Show Toast Failed
+                        Toast.makeText(getApplicationContext(), "Rekam Medis Gagal Tersimpan", Toast.LENGTH_LONG).show();
+                    }
+
+                    // Start Detail Rekam Medis Activity
+                    Intent detail_medis = new Intent(UbahMedis.this, DetailMedis.class);
+                    detail_medis.putExtra("id", medisID);
+                    startActivity(detail_medis);
 
                     // Close This Activity
                     finish();

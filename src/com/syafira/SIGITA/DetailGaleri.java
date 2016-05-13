@@ -57,7 +57,7 @@ public class DetailGaleri extends Activity {
         // Load Database
         db = new DBHelper(this);
         db.open();
-        Cursor cursor = db.getOneGaleri(galeriID, profilID);
+        final Cursor cursor = db.getOneGaleri(galeriID, profilID);
         cursor.moveToFirst();
 
         // Load Widget
@@ -158,9 +158,6 @@ public class DetailGaleri extends Activity {
                         boolean success = false;
 
                         try {
-                            // Delete From Database
-                            db.deleteGaleri(galeriID);
-
                             // Get Path Directory
                             String sdCardDirectory = Environment.getExternalStorageDirectory().toString();
 
@@ -168,12 +165,15 @@ public class DetailGaleri extends Activity {
                             File photoDirectory = new File(sdCardDirectory + "/SIGITA/" + nama.replaceAll(" ", "_"));
 
                             // Old Directory, New Photo Name
-                            File profil_foto = new File(photoDirectory, foto_path);
+                            File foto = new File(photoDirectory, cursor.getString(cursor.getColumnIndex("galeri_foto")));
 
                             // Remove Photo
-                            if (profil_foto.exists()) {
-                                profil_foto.delete();
+                            if (foto.exists()) {
+                                foto.delete();
                             }
+
+                            // Delete From Database
+                            db.deleteGaleri(galeriID);
 
                             // Declare Condition
                             success = true;
