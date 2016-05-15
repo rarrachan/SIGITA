@@ -50,6 +50,7 @@ public class UbahRiwayat extends Activity {
     private ImageView button_simpan;
     private DBHelper db;
     private SessionManager session;
+    private long lastActivity;
 
     // Start Activity
     @Override
@@ -65,6 +66,7 @@ public class UbahRiwayat extends Activity {
         // Fetch Intent Extra
         Intent fetchID = getIntent();
         final int id = fetchID.getIntExtra("id", 0);
+        lastActivity = fetchID.getLongExtra("lastActivity", 1L);
 
         // Load Database
         db = new DBHelper(this);
@@ -250,7 +252,7 @@ public class UbahRiwayat extends Activity {
             public void onClick(View v) {
                 // Get Value
                 int profilID = Integer.parseInt(session.loadSession(UbahRiwayat.this, "id"));
-                String bulan = riwayat_bulan.getText().toString();
+                int bulan = Integer.valueOf(riwayat_bulan.getText().toString());
                 String tanggal = riwayat_tanggal.getText().toString();
                 String usia = riwayat_usia.getText().toString();
                 String jenisvaksin = riwayat_jenisvaksin.getSelectedItem().toString();
@@ -285,6 +287,8 @@ public class UbahRiwayat extends Activity {
 
                     // Start Detail Riwayat Imunisasi Activity
                     Intent detail_riwayat = new Intent(UbahRiwayat.this, DetailRiwayat.class);
+                    lastActivity = System.currentTimeMillis();
+                    detail_riwayat.putExtra("lastActivity", lastActivity);
                     detail_riwayat.putExtra("id", riwayatID);
                     startActivity(detail_riwayat);
 
@@ -336,10 +340,28 @@ public class UbahRiwayat extends Activity {
 
         // Start Detail Riwayat Activity
         Intent detail_riwayat = new Intent(this, DetailRiwayat.class);
+        lastActivity = System.currentTimeMillis();
+        detail_riwayat.putExtra("lastActivity", lastActivity);
         detail_riwayat.putExtra("id", id);
         startActivity(detail_riwayat);
 
         // Close This Activity
         finish();
+    }
+
+    // Activity Resume
+    @Override
+    public void onResume() {
+        super.onResume();
+        long now = System.currentTimeMillis() - 30 * 60 * 1000;
+        if (lastActivity < now) {
+            finish();
+
+            // Clear Session
+            session.clearSession(UbahRiwayat.this);
+
+            Intent splash = new Intent(this, Splash.class);
+            startActivity(splash);
+        }
     }
 }

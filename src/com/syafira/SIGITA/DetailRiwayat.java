@@ -43,6 +43,7 @@ public class DetailRiwayat extends Activity {
     private ImageView button_hapus;
     private DBHelper db;
     private SessionManager session;
+    private long lastActivity;
 
     // Start Activity
     @Override
@@ -58,6 +59,7 @@ public class DetailRiwayat extends Activity {
         // Fetch Intent Extra
         Intent fetchID = getIntent();
         final int id = fetchID.getIntExtra("id", 0);
+        lastActivity = fetchID.getLongExtra("lastActivity", 1L);
 
         // Load Database
         db = new DBHelper(this);
@@ -140,6 +142,8 @@ public class DetailRiwayat extends Activity {
                 // Show Ubah Riwayat Activity
                 Intent ubah_riwayat = new Intent(DetailRiwayat.this, UbahRiwayat.class);
                 // Put Intent Extra
+                lastActivity = System.currentTimeMillis();
+                ubah_riwayat.putExtra("lastActivity", lastActivity);
                 ubah_riwayat.putExtra("id", riwayatID);
                 startActivity(ubah_riwayat);
                 finish();
@@ -202,6 +206,8 @@ public class DetailRiwayat extends Activity {
 
                         // Show Riwayat Imunisai Activity
                         Intent riwayat = new Intent(DetailRiwayat.this, RiwayatImunisasi.class);
+                        lastActivity = System.currentTimeMillis();
+                        riwayat.putExtra("lastActivity", lastActivity);
                         startActivity(riwayat);
 
                         // Clear Activity
@@ -217,9 +223,27 @@ public class DetailRiwayat extends Activity {
     public void onBackPressed() {
         // Start Riwayat Imunisasi Activity
         Intent riwayat = new Intent(DetailRiwayat.this, RiwayatImunisasi.class);
+        lastActivity = System.currentTimeMillis();
+        riwayat.putExtra("lastActivity", lastActivity);
         startActivity(riwayat);
 
         // Close This Activity
         finish();
+    }
+
+    // Activity Resume
+    @Override
+    public void onResume() {
+        super.onResume();
+        long now = System.currentTimeMillis() - 30 * 60 * 1000;
+        if (lastActivity < now) {
+            finish();
+
+            // Clear Session
+            session.clearSession(DetailRiwayat.this);
+
+            Intent splash = new Intent(this, Splash.class);
+            startActivity(splash);
+        }
     }
 }

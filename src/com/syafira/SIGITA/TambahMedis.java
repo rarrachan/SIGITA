@@ -54,6 +54,7 @@ public class TambahMedis extends Activity {
     private ImageView button_simpan;
     private DBHelper db;
     private SessionManager session;
+    private long lastActivity;
 
     // Start Activity
     @Override
@@ -62,6 +63,10 @@ public class TambahMedis extends Activity {
 
         // Load Layout
         setContentView(R.layout.tambah_medis);
+
+        // Fetch Intent Extra
+        Intent fetchID = getIntent();
+        lastActivity = fetchID.getLongExtra("lastActivity", 1L);
 
         // Load Session Manager
         session = new SessionManager();
@@ -198,7 +203,7 @@ public class TambahMedis extends Activity {
                         db.insertMedis(id, tanggalberobat, namadokter, rumahsakit, tinggibadan, beratbadan,
                                 keluhan, tindakan, obat);
                         success = true;
-                    }catch (Exception e) {
+                    } catch (Exception e) {
                         e.printStackTrace();
                     }
 
@@ -213,6 +218,8 @@ public class TambahMedis extends Activity {
 
                     // Start Rekam Medis Activity
                     Intent medis = new Intent(TambahMedis.this, RekamMedis.class);
+                    lastActivity = System.currentTimeMillis();
+                    medis.putExtra("lastActivity", lastActivity);
                     startActivity(medis);
 
                     // Close This Activity
@@ -257,8 +264,28 @@ public class TambahMedis extends Activity {
     // Pressed Back Button
     @Override
     public void onBackPressed() {
+        Intent medis = new Intent(TambahMedis.this, RekamMedis.class);
+        lastActivity = System.currentTimeMillis();
+        medis.putExtra("lastActivity", lastActivity);
+        startActivity(medis);
+
         // Close This Activity
         finish();
     }
 
+    // Activity Resume
+    @Override
+    public void onResume() {
+        super.onResume();
+        long now = System.currentTimeMillis() - 30 * 60 * 1000;
+        if (lastActivity < now) {
+            finish();
+
+            // Clear Session
+            session.clearSession(TambahMedis.this);
+
+            Intent splash = new Intent(this, Splash.class);
+            startActivity(splash);
+        }
+    }
 }

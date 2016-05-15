@@ -61,11 +61,11 @@
 
 
                 <TextView
-                        android:id="@+id/detail_jadwal_imunisasi"
+                        android:id="@+id/button_alarmimunisasi"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
+                        android:text="@string/button_alarmimunisasi"
                         android:textColor="#D046F2"
-                        android:text="@string/detail_jadwal_imunisasi"
                         style="@android:style/TextAppearance.DeviceDefault.Medium"
                         android:layout_gravity="center_vertical"
                         android:layout_marginLeft="20dp"
@@ -114,7 +114,8 @@
                         android:gravity="center"
                         android:orientation="vertical"
                         android:layout_gravity="center_vertical"
-                        android:layout_marginTop="30dp" android:layout_marginBottom="30dp">
+                        android:layout_marginTop="30dp"
+                        android:layout_marginBottom="30dp">
 
                     <!-- Start Linear Layout Row -->
                     <LinearLayout
@@ -142,11 +143,11 @@
                                     android:layout_width="fill_parent"
                                     android:layout_height="wrap_content"
                                     android:orientation="horizontal"
-                                    android:layout_marginBottom="3dp">
+                                    android:layout_marginBottom="10dp">
 
                                 <!-- Start Text View Jenis Vaksin -->
                                 <TextView
-                                        android:id="@+id/text_jenis_vaksin"
+                                        android:id="@+id/text_alarm_vaksin"
                                         android:layout_width="wrap_content"
                                         android:layout_height="wrap_content"
                                         android:textColor="#D046F2"
@@ -164,11 +165,50 @@
                                         style="@android:style/TextAppearance.DeviceDefault.Medium"
                                         android:layout_marginLeft="5dp"/>
                                 <TextView
-                                        android:id="@+id/jenis_vaksin"
+                                        android:id="@+id/alarm_vaksin"
                                         android:layout_width="wrap_content"
                                         android:layout_height="wrap_content"
                                         android:textColor="#FF0000"
                                         android:hint="@string/jenis_vaksin"
+                                        style="@android:style/TextAppearance.DeviceDefault.Medium"
+                                        android:layout_marginLeft="5dp"/>
+                                <!-- End Text View Titik Dua -->
+
+                            </LinearLayout>
+                            <!-- End Linear Layout Jenis Vaksin -->
+
+                            <!-- Start Linear Layout Profil Nama -->
+                            <LinearLayout
+                                    android:layout_width="fill_parent"
+                                    android:layout_height="wrap_content"
+                                    android:orientation="horizontal"
+                                    android:layout_marginBottom="10dp">
+
+                                <!-- Start Text View Jenis Vaksin -->
+                                <TextView
+                                        android:id="@+id/text_alarm_bulan"
+                                        android:layout_width="wrap_content"
+                                        android:layout_height="wrap_content"
+                                        android:textColor="#D046F2"
+                                        android:text="@string/alarm_bulan"
+                                        style="@android:style/TextAppearance.DeviceDefault.Medium"/>
+                                <!-- End Text View Jenis Vaksin -->
+
+                                <!-- Start Text View Titik Dua -->
+                                <TextView
+                                        android:id="@+id/titikdua"
+                                        android:layout_width="wrap_content"
+                                        android:layout_height="wrap_content"
+                                        android:textColor="#D046F2"
+                                        android:text="@string/titikdua"
+                                        style="@android:style/TextAppearance.DeviceDefault.Medium"
+                                        android:layout_marginLeft="5dp"/>
+                                <TextView
+                                        android:id="@+id/alarm_bulan"
+                                        android:layout_width="wrap_content"
+                                        android:layout_height="wrap_content"
+                                        android:textColor="#FF0000"
+                                        android:hint="@string/alarm_bulan"
                                         style="@android:style/TextAppearance.DeviceDefault.Medium"
                                         android:layout_marginLeft="5dp"/>
                                 <!-- End Text View Titik Dua -->
@@ -181,17 +221,18 @@
                                     android:layout_width="fill_parent"
                                     android:layout_height="wrap_content"
                                     android:orientation="horizontal"
-                                    android:layout_marginBottom="4dp">
+                                    android:layout_marginBottom="10dp">
 
-                                <!-- Start Text View Usia Vaksin -->
+                                <!-- Start Text View Jenis Vaksin -->
                                 <TextView
-                                        android:id="@+id/text_usia_vaksin"
+                                        android:id="@+id/text_alarm_switch"
                                         android:layout_width="wrap_content"
                                         android:layout_height="wrap_content"
                                         android:textColor="#D046F2"
-                                        android:text="@string/usia_vaksin"
-                                        style="@android:style/TextAppearance.DeviceDefault.Medium"/>
-                                <!-- End Text View Usia Vaksin -->
+                                        android:text="@string/alarm_imunisasi"
+                                        style="@android:style/TextAppearance.DeviceDefault.Medium"
+                                        />
+                                <!-- End Text View Jenis Vaksin -->
 
                                 <!-- Start Text View Titik Dua -->
                                 <TextView
@@ -201,148 +242,18 @@
                                         android:textColor="#D046F2"
                                         android:text="@string/titikdua"
                                         style="@android:style/TextAppearance.DeviceDefault.Medium"
-                                        android:layout_marginRight="5dp"
                                         android:layout_marginLeft="5dp"/>
-                                <!-- End Text View Titik Dua -->
 
-                                <!-- Start Text View Usia Vaksin -->
-                                <TextView
-                                        android:id="@+id/usia_vaksin"
+                                <ToggleButton
+                                        android:id="@+id/alarm_switch"
                                         android:layout_width="wrap_content"
                                         android:layout_height="wrap_content"
                                         android:textColor="#FF0000"
-                                        android:text="@string/usia_vaksin"
-                                        style="@android:style/TextAppearance.DeviceDefault.Medium"/>
-                                <!-- End Text View Usia Vaksin -->
+                                        style="@android:style/TextAppearance.DeviceDefault.Medium"
+                                        android:layout_marginLeft="5dp"/>
 
                             </LinearLayout>
                             <!-- End Linear Layout Usia Vaksin -->
-
-                            <!-- Start Linear Layout Status Vaksin -->
-                            <LinearLayout
-                                    android:layout_width="fill_parent"
-                                    android:layout_height="wrap_content"
-                                    android:orientation="horizontal"
-                                    android:layout_marginBottom="4dp">
-
-                                <!-- Start Text View Status Vaksin -->
-                                <TextView
-                                        android:id="@+id/text_status_vaksin"
-                                        android:layout_width="wrap_content"
-                                        android:layout_height="wrap_content"
-                                        android:textColor="#D046F2"
-                                        android:text="@string/status_vaksin"
-                                        style="@android:style/TextAppearance.DeviceDefault.Medium"/>
-                                <!-- End Text View Status Vaksin -->
-
-                                <!-- Start Text View Titik Dua -->
-                                <TextView
-                                        android:id="@+id/titikdua"
-                                        android:layout_width="wrap_content"
-                                        android:layout_height="wrap_content"
-                                        android:textColor="#D046F2"
-                                        android:text="@string/titikdua"
-                                        style="@android:style/TextAppearance.DeviceDefault.Medium"
-                                        android:layout_marginRight="5dp"
-                                        android:layout_marginLeft="5dp"/>
-                                <!-- End Text View Titik Dua -->
-
-                                <!-- Start Text View Status Vaksin -->
-                                <TextView
-                                        android:id="@+id/status_vaksin"
-                                        android:layout_width="wrap_content"
-                                        android:layout_height="wrap_content"
-                                        android:textColor="#FF0000"
-                                        android:text="@string/dash"
-                                        style="@android:style/TextAppearance.DeviceDefault.Medium"/>
-                                <!-- End Text View Status Vaksin -->
-
-                            </LinearLayout>
-                            <!-- End Linear Layout Status Vaksin -->
-
-                            <!-- Start Linear Layout Status Vaksin -->
-                            <LinearLayout
-                                    android:id="@+id/tanggalVaksinLayout"
-                                    android:layout_width="fill_parent"
-                                    android:layout_height="wrap_content"
-                                    android:orientation="horizontal"
-                                    android:layout_marginBottom="4dp" android:visibility="gone">
-
-                                <!-- Start Text View Tanggal Vaksin -->
-                                <TextView
-                                        android:id="@+id/text_tanggal_vaksin"
-                                        android:layout_width="wrap_content"
-                                        android:layout_height="wrap_content"
-                                        android:textColor="#D046F2"
-                                        android:text="@string/detail_tanggal_vaksin"
-                                        style="@android:style/TextAppearance.DeviceDefault.Medium"/>
-                                <!-- End Text View Status Vaksin -->
-
-                                <!-- Start Text View Titik Dua -->
-                                <TextView
-                                        android:id="@+id/titikdua"
-                                        android:layout_width="wrap_content"
-                                        android:layout_height="wrap_content"
-                                        android:textColor="#D046F2"
-                                        android:text="@string/titikdua"
-                                        style="@android:style/TextAppearance.DeviceDefault.Medium"
-                                        android:layout_marginRight="5dp"
-                                        android:layout_marginLeft="5dp"/>
-                                <!-- End Text View Titik Dua -->
-
-                                <!-- Start Text View Tanggal Vaksin -->
-                                <TextView
-                                        android:id="@+id/tanggal_vaksin"
-                                        android:layout_width="wrap_content"
-                                        android:layout_height="wrap_content"
-                                        android:textColor="#FF0000"
-                                        android:text="@string/dash"
-                                        style="@android:style/TextAppearance.DeviceDefault.Medium"/>
-                                <!-- End Text View Tanggal Vaksin -->
-
-                            </LinearLayout>
-                            <!-- End Linear Layout Status Vaksin -->
-
-                            <!-- Start Linear Layout Keterangan Vaksin -->
-                            <LinearLayout
-                                    android:layout_width="fill_parent"
-                                    android:layout_height="wrap_content"
-                                    android:orientation="horizontal"
-                                    android:layout_marginBottom="3dp">
-
-                                <!-- Start Text View Keterangan Vaksin -->
-                                <TextView
-                                        android:id="@+id/text_keterangan_vaksin"
-                                        android:layout_width="wrap_content"
-                                        android:layout_height="wrap_content"
-                                        android:textColor="#D046F2"
-                                        android:text="@string/keterangan_vaksin"
-                                        style="@android:style/TextAppearance.DeviceDefault.Medium"/>
-                                <!-- End Text View Keterangan Vaksin -->
-
-                                <!-- Start Text View Titik Dua -->
-                                <TextView
-                                        android:id="@+id/titikdua"
-                                        android:layout_width="wrap_content"
-                                        android:layout_height="wrap_content"
-                                        android:textColor="#D046F2"
-                                        android:text="@string/titikdua"
-                                        style="@android:style/TextAppearance.DeviceDefault.Medium"
-                                        android:layout_marginLeft="5dp"/>
-                                <!-- End Text View Titik Dua -->
-
-                            </LinearLayout>
-                            <!-- End Linear Layout Keterangan Vaksin -->
-
-                            <!-- Start Text VIew Keterangan Vaksin -->
-                            <TextView
-                                    android:id="@+id/keterangan_vaksin"
-                                    android:layout_width="fill_parent"
-                                    android:layout_height="wrap_content"
-                                    android:textColor="#FF0000"
-                                    android:hint="@string/keterangan_vaksin"
-                                    style="@android:style/TextAppearance.DeviceDefault.Medium"/>
-                            <!-- End Text VIew Keterangan Vaksin -->
 
                         </LinearLayout>
                         <!-- End Linear Layout Detail Jadwal Imunisasi -->
@@ -354,19 +265,10 @@
                                 android:layout_weight=".05"/>
                         <!-- End Blank Space -->
 
-                        <!-- Start Linear Layout Profil -->
-                        <!-- End Linear Layout Profil -->
-
-                        <!-- Start Blank Space -->
-                        <!-- End Blank Space -->
-
                     </LinearLayout>
                     <!-- End Linear Layout Row -->
 
                 </LinearLayout>
-                <!-- End Linear Layout Content -->
-
-                <!-- Start Linear Layout Content -->
                 <!-- End Linear Layout Content -->
 
             </LinearLayout>

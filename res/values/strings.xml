@@ -3,6 +3,10 @@
     <string name="app_name">SIGITA</string>
     <string name="text_footer">Copyright &#169; 2016 - SIGITA</string>
 
+    <string name="ok">OK</string>
+    <string name="titikdua">&#58;</string>
+    <string name="dash">&#8211;</string>
+
     <string name="button_profil">Profil</string>
     <string name="button_gizi">Gizi</string>
     <string name="button_imunisasi">Imunisasi</string>
@@ -42,8 +46,6 @@
     <string name="profil_foto">Foto</string>
 
     <string name="ubah_profil">Ubah Profil</string>
-    <string name="titikdua">&#58;</string>
-    <string name="dash">&#8211;</string>
     <string name="profil_lakilaki">Laki-laki</string>
     <string name="profil_perempuan">Perempuan</string>
 
@@ -102,6 +104,12 @@
     <string name="detail_riwayat">Detail Riwayat Imunisasi</string>
     <string name="alert_hapus_riwayat">Apa anda yakin untuk menghapus riwayat imunisasi ini?</string>
 
+    <string name="alarm_imunisasi">Alarm</string>
+    <string name="alarm_bulan">Bulan Imunisasi</string>
+
+    <string name="alarm_reminder">REMINDER !</string>
+    <string name="alarm_aktif">Imunisasi Polio pada Februari 2017</string>
+
     <string name="button_tahapantumbang">Tahapan Tumbuh Kembang</string>
     <string name="usia_tumbang">Usia Perkembangan</string>
     <string name="gerakan_kasar">Gerakan Kasar</string>
@@ -143,6 +151,5 @@
     <string name="detail_rekam_medis">Detail Rekam Medis</string>
     <string name="ubah_rekam_medis">Ubah Rekam Medis</string>
     <string name="alert_hapus_medis">Apa anda yakin untuk menghapus rekam medis ini?</string>
-
 
 </resources>

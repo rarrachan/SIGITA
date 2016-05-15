@@ -43,6 +43,7 @@ public class DetailMedis extends Activity {
     private ImageView button_ubah;
     private DBHelper db;
     private SessionManager session;
+    private long lastActivity;
 
     // Start Activity
     @Override
@@ -58,6 +59,7 @@ public class DetailMedis extends Activity {
         // Fetch Intent Extra
         Intent fetchID = getIntent();
         int id = fetchID.getIntExtra("id", 0);
+        lastActivity = fetchID.getLongExtra("lastActivity", 1L);
 
         // Load Database
         db = new DBHelper(this);
@@ -143,12 +145,14 @@ public class DetailMedis extends Activity {
         button_ubah.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                // Show Ubah Profil Activity
-                Intent ubah_profil = new Intent(DetailMedis.this, UbahMedis.class);
+                // Show Ubah Medis Activity
+                Intent ubah_medis = new Intent(DetailMedis.this, UbahMedis.class);
 
                 // Put Intent Extra
-                ubah_profil.putExtra("id", medisID);
-                startActivity(ubah_profil);
+                lastActivity = System.currentTimeMillis();
+                ubah_medis.putExtra("lastActivity", lastActivity);
+                ubah_medis.putExtra("id", medisID);
+                startActivity(ubah_medis);
             }
         });
 
@@ -208,6 +212,8 @@ public class DetailMedis extends Activity {
 
                         // Show Rekam Medis Activity
                         Intent medis = new Intent(DetailMedis.this, RekamMedis.class);
+                        lastActivity = System.currentTimeMillis();
+                        medis.putExtra("lastActivity", lastActivity);
                         startActivity(medis);
 
                         // Clear Activity
@@ -224,8 +230,26 @@ public class DetailMedis extends Activity {
     public void onBackPressed() {
         // Show Rekam Medis Activity
         Intent medis = new Intent(DetailMedis.this, RekamMedis.class);
+        lastActivity = System.currentTimeMillis();
+        medis.putExtra("lastActivity", lastActivity);
         startActivity(medis);
         // Close This Activity
         finish();
+    }
+
+    // Activity Resume
+    @Override
+    public void onResume() {
+        super.onResume();
+        long now = System.currentTimeMillis() - 30 * 60 * 1000;
+        if (lastActivity < now) {
+            finish();
+
+            // Clear Session
+            session.clearSession(DetailMedis.this);
+
+            Intent splash = new Intent(this, Splash.class);
+            startActivity(splash);
+        }
     }
 }

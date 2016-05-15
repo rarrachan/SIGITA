@@ -147,7 +147,7 @@ public class DBHelper extends SQLiteOpenHelper {
                 "list_vaksin text not null, " +
                 "list_umur text not null, " +
                 "list_desc text not null," +
-                "list_bulan text not null" +
+                "list_bulan integer not null" +
                 ");";
         db.execSQL(create_list_imunisasi);
         insertList(db);
@@ -259,6 +259,13 @@ public class DBHelper extends SQLiteOpenHelper {
         return cursor;
     }
 
+    // Get One List Join Riwayat From Database
+    public Cursor getListJoinRiwayatClosestValue(Integer bulan, Integer profilID) {
+        Cursor cursor = db.rawQuery("SELECT * FROM list_imunisasi LEFT OUTER JOIN riwayat_imunisasi ON list_imunisasi.list_vaksin = riwayat_imunisasi.riwayat_vaksin AND riwayat_imunisasi.riwayat_profilID = " + profilID + " WHERE list_imunisasi.list_bulan BETWEEN " + bulan + " AND " + bulan + "+1 AND riwayat_imunisasi.riwayatID ISNULL ORDER BY ABS( " + bulan + " - riwayat_imunisasi.riwayat_bulan)", null);
+        cursor.moveToFirst();
+        return cursor;
+    }
+
     // Create Table Riwayat Imunisasi
     public void createRiwayat(SQLiteDatabase db) {
         // Create Table Profil
@@ -279,7 +286,8 @@ public class DBHelper extends SQLiteOpenHelper {
     }
 
     // Insert Riwayat Imunisasi to Database
-    public long insertRiwayat(Integer profilID, String tanggal, String vaksin, String umur, String bulan,
+
+    public long insertRiwayat(Integer profilID, String tanggal, String vaksin, String umur, Integer bulan,
                               String berat, String tinggi, String dokter, String rumahsakit) {
 
         // Open Database to Write
@@ -316,7 +324,7 @@ public class DBHelper extends SQLiteOpenHelper {
     }
 
     // Update Riwayat Imunisasi to Database
-    public long updateRiwayat(Integer riwayatID, Integer profilID, String tanggal, String vaksin, String umur, String bulan,
+    public long updateRiwayat(Integer riwayatID, Integer profilID, String tanggal, String vaksin, String umur, int bulan,
                               String berat, String tinggi, String dokter, String rumahsakit) {
 
         // Open Database to Write

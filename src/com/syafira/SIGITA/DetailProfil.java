@@ -5,12 +5,17 @@ package com.syafira.SIGITA;
  */
 
 import android.app.Activity;
+import android.app.AlarmManager;
 import android.app.Dialog;
+import android.app.PendingIntent;
+import android.content.Context;
 import android.content.Intent;
 import android.database.Cursor;
 import android.graphics.Typeface;
 import android.graphics.drawable.ColorDrawable;
 import android.graphics.drawable.Drawable;
+import android.media.MediaScannerConnection;
+import android.net.Uri;
 import android.os.Bundle;
 import android.os.Environment;
 import android.view.View;
@@ -18,9 +23,10 @@ import android.view.View.OnClickListener;
 import android.widget.ImageView;
 import android.widget.TextView;
 import android.widget.Toast;
+
 import java.io.File;
 
-public class DetailProfil extends Activity{
+public class DetailProfil extends Activity {
 
     // Declare
     private TextView detail_profil;
@@ -52,6 +58,7 @@ public class DetailProfil extends Activity{
     private ImageView profil_foto;
     private SessionManager session;
     private DBHelper db;
+    private long lastActivity;
 
     // Start Activity
     @Override
@@ -64,11 +71,12 @@ public class DetailProfil extends Activity{
         // Fetch Intent Extra
         Intent fetchID = getIntent();
         int id = fetchID.getIntExtra("id", 0);
+        lastActivity = fetchID.getLongExtra("lastActivity", 1L);
 
         // Load Database
         db = new DBHelper(this);
         db.open();
-        Cursor cursor = db.getOneProfil(id);
+        final Cursor cursor = db.getOneProfil(id);
         cursor.moveToFirst();
 
         // Session Manager
@@ -134,7 +142,7 @@ public class DetailProfil extends Activity{
         final int profil_id = cursor.getInt(cursor.getColumnIndex("profilID"));
         final String nama = cursor.getString(cursor.getColumnIndex("profil_nama"));
         profil_nama.setText(nama);
-        if( cursor.getString(cursor.getColumnIndex("profil_jenisKelamin")).equals("L")){
+        if (cursor.getString(cursor.getColumnIndex("profil_jenisKelamin")).equals("L")) {
             profil_jeniskelamin.setText("Laki-Laki");
         } else {
             profil_jeniskelamin.setText("Perempuan");
@@ -144,14 +152,15 @@ public class DetailProfil extends Activity{
         profil_beratlahir.setText(cursor.getString(cursor.getColumnIndex("profil_beratLahir")));
         profil_tempatlahir.setText(cursor.getString(cursor.getColumnIndex("profil_tempatLahir")));
         profil_tanggallahir.setText(cursor.getString(cursor.getColumnIndex("profil_tanggalLahir")));
-        if( !cursor.getString(cursor.getColumnIndex("profil_alergi")).equals("")) {
+        if (!cursor.getString(cursor.getColumnIndex("profil_alergi")).equals("")) {
             profil_alergi.setText(cursor.getString(cursor.getColumnIndex("profil_alergi")));
         }
-        if( !cursor.getString(cursor.getColumnIndex("profil_penyakitKronis")).equals("")) {
+        if (!cursor.getString(cursor.getColumnIndex("profil_penyakitKronis")).equals("")) {
             profil_penyakitkronis.setText(cursor.getString(cursor.getColumnIndex("profil_penyakitKronis")));
         }
         final String foto_path = android.os.Environment.getExternalStorageDirectory() + "/SIGITA/" + nama.replaceAll(" ", "_") + "/" + cursor.getString(cursor.getColumnIndex("profil_foto"));
         profil_foto.setImageDrawable(Drawable.createFromPath(foto_path));
+
 
         // Set OnClickListener
         button_ubah.setOnClickListener(new OnClickListener() {
@@ -160,6 +169,8 @@ public class DetailProfil extends Activity{
                 // Show Ubah Profil Activity
                 Intent ubah_profil = new Intent(DetailProfil.this, UbahProfil.class);
                 // Put Intent Extra
+                lastActivity = System.currentTimeMillis();
+                ubah_profil.putExtra("lastActivity", lastActivity);
                 ubah_profil.putExtra("id", profil_id);
                 ubah_profil.putExtra("nama", nama);
                 startActivity(ubah_profil);
@@ -171,6 +182,8 @@ public class DetailProfil extends Activity{
             public void onClick(View v) {
                 // Show Image Zoom Activity
                 Intent zoom = new Intent(DetailProfil.this, ImageZoom.class);
+                lastActivity = System.currentTimeMillis();
+                zoom.putExtra("lastActivity", lastActivity);
                 zoom.putExtra("foto_path", foto_path);
                 startActivity(zoom);
             }
@@ -210,22 +223,41 @@ public class DetailProfil extends Activity{
                         boolean success = false;
 
                         try {
-                            // Delete From Database
-                            db.deleteGaleriProfilID(profil_id);
-                            db.deleteMedisProfilID(profil_id);
-                            db.deleteRiwayatProfilID(profil_id);
-                            db.deleteProfil(profil_id);
+
+                            // Turn Off Alarm Imunisasi
+                            AlarmManager alarmManager = (AlarmManager) getSystemService(Context.ALARM_SERVICE);
+                            if (PendingIntent.getBroadcast(DetailProfil.this, profil_id,
+                                    new Intent(DetailProfil.this, AlarmReceiver.class), PendingIntent.FLAG_NO_CREATE) != null) {
+                                PendingIntent.getBroadcast(DetailProfil.this, profil_id,
+                                        new Intent(DetailProfil.this, AlarmReceiver.class), PendingIntent.FLAG_NO_CREATE).cancel();
+                                alarmManager.cancel(PendingIntent.getBroadcast(DetailProfil.this, profil_id,
+                                        new Intent(DetailProfil.this, AlarmReceiver.class), PendingIntent.FLAG_NO_CREATE));
+                            }
 
                             // Delete Folder Directory
                             File profilDirectory = new File(Environment.getExternalStorageDirectory() + "/SIGITA/" + nama.replaceAll(" ", "_"));
-                            if (profilDirectory.isDirectory())
-                            {
+                            if (profilDirectory.isDirectory()) {
                                 String[] children = profilDirectory.list();
                                 for (String aChildren : children) {
                                     new File(profilDirectory, aChildren).delete();
                                 }
                                 profilDirectory.delete();
                             }
+
+                            // Scan Gallery
+                            File scanGallery = new File(Environment.getExternalStorageDirectory() + "/SIGITA/" + nama.replaceAll(" ", "_"), cursor.getString(cursor.getColumnIndex("profil_foto")));
+                            MediaScannerConnection.scanFile(DetailProfil.this,
+                                    new String[]{scanGallery.toString()}, null,
+                                    new MediaScannerConnection.OnScanCompletedListener() {
+                                        public void onScanCompleted(String path, Uri uri) {
+                                        }
+                                    });
+
+                            // Delete From Database
+                            db.deleteGaleriProfilID(profil_id);
+                            db.deleteMedisProfilID(profil_id);
+                            db.deleteRiwayatProfilID(profil_id);
+                            db.deleteProfil(profil_id);
 
                             // Declare Condition
                             success = true;
@@ -248,6 +280,8 @@ public class DetailProfil extends Activity{
 
                         // Show Profil Activity
                         Intent profil = new Intent(DetailProfil.this, Profil.class);
+                        lastActivity = System.currentTimeMillis();
+                        profil.putExtra("lastActivity", lastActivity);
                         startActivity(profil);
 
                         // Clear Session
@@ -266,9 +300,27 @@ public class DetailProfil extends Activity{
     public void onBackPressed() {
         // Start Profil Activity
         Intent profil = new Intent(DetailProfil.this, Profil.class);
+        lastActivity = System.currentTimeMillis();
+        profil.putExtra("lastActivity", lastActivity);
         startActivity(profil);
 
         // Close This Activity
         finish();
+    }
+
+    // Activity Resume
+    @Override
+    public void onResume() {
+        super.onResume();
+        long now = System.currentTimeMillis() - 30 * 60 * 1000;
+        if (lastActivity < now) {
+            finish();
+
+            // Clear Session
+            session.clearSession(DetailProfil.this);
+
+            Intent splash = new Intent(this, Splash.class);
+            startActivity(splash);
+        }
     }
 }

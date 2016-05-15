@@ -11,6 +11,7 @@ import android.graphics.*;
 import android.graphics.drawable.BitmapDrawable;
 import android.graphics.drawable.Drawable;
 import android.media.ExifInterface;
+import android.media.MediaScannerConnection;
 import android.net.Uri;
 import android.os.Bundle;
 import android.os.Environment;
@@ -53,6 +54,7 @@ public class UbahGaleri extends Activity {
     private ImageView button_simpan;
     private SessionManager session;
     private DBHelper db;
+    private long lastActivity;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -68,6 +70,7 @@ public class UbahGaleri extends Activity {
         // Fetch Intent Extra
         Intent fetchID = getIntent();
         final int galeriID = fetchID.getIntExtra("galeriID", 0);
+        lastActivity = fetchID.getLongExtra("lastActivity", 1L);
 
         // Load Database
         db = new DBHelper(this);
@@ -112,7 +115,9 @@ public class UbahGaleri extends Activity {
         galeri_usia.setText(cursor.getString(cursor.getColumnIndex("galeri_umur")));
         keterangan_foto.setText(cursor.getString(cursor.getColumnIndex("galeri_desc")));
         final String foto_path = android.os.Environment.getExternalStorageDirectory() + "/SIGITA/" + nama.replaceAll(" ", "_") + "/" + cursor.getString(cursor.getColumnIndex("galeri_foto"));
-        galeri_foto.setImageDrawable(Drawable.createFromPath(foto_path));
+        if (Drawable.createFromPath(foto_path) != null) {
+            galeri_foto.setImageDrawable(Drawable.createFromPath(foto_path));
+        }
 
         galeri_tanggal.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -275,6 +280,15 @@ public class UbahGaleri extends Activity {
                             outStream.flush();
                             outStream.close();
 
+                            // Scan Gallery
+                            MediaScannerConnection.scanFile(UbahGaleri.this,
+                                    new String[]{foto_baru.toString()}, null,
+                                    new MediaScannerConnection.OnScanCompletedListener() {
+                                        public void onScanCompleted(String path, Uri uri) {
+                                        }
+                                    });
+
+
                             // Declare Condition
                             success = true;
                         } catch (IOException e) {
@@ -295,6 +309,8 @@ public class UbahGaleri extends Activity {
 
                         // Start Detail Galeri Activity
                         Intent detail_galeri = new Intent(UbahGaleri.this, DetailGaleri.class);
+                        lastActivity = System.currentTimeMillis();
+                        detail_galeri.putExtra("lastActivity", lastActivity);
                         detail_galeri.putExtra("galeriID", galeriID);
                         startActivity(detail_galeri);
 
@@ -456,6 +472,8 @@ public class UbahGaleri extends Activity {
 
         // Start Detail Galeri Activity
         Intent detail_galeri = new Intent(this, DetailGaleri.class);
+        lastActivity = System.currentTimeMillis();
+        detail_galeri.putExtra("lastActivity", lastActivity);
         detail_galeri.putExtra("galeriID", galeriID);
         startActivity(detail_galeri);
 
@@ -463,4 +481,19 @@ public class UbahGaleri extends Activity {
         finish();
     }
 
+    // Activity Resume
+    @Override
+    public void onResume() {
+        super.onResume();
+        long now = System.currentTimeMillis() - 30 * 60 * 1000;
+        if (lastActivity < now) {
+            finish();
+
+            // Clear Session
+            session.clearSession(UbahGaleri.this);
+
+            Intent splash = new Intent(this, Splash.class);
+            startActivity(splash);
+        }
+    }
 }

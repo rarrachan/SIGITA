@@ -17,7 +17,6 @@ import android.widget.*;
 public class TumbuhKembang extends Activity implements OnClickListener {
 
     // Declare
-    private Button button_profil;
     private TextView text_button_profil;
     private LinearLayout ProfilLinearLayout;
     private TextView text_footer;
@@ -28,6 +27,7 @@ public class TumbuhKembang extends Activity implements OnClickListener {
     private ImageView button_tahapantumbang;
     private LinearLayout TahapanTumbangLinearLayout;
     private SessionManager session;
+    private long lastActivity;
 
     // Start Activity
     @Override
@@ -36,6 +36,10 @@ public class TumbuhKembang extends Activity implements OnClickListener {
 
         // Load Layout
         setContentView(R.layout.tumbuh_kembang);
+
+        // Fetch Intent Extra
+        Intent fetchID = getIntent();
+        lastActivity = fetchID.getLongExtra("lastActivity", 1L);
 
         // Load Session Manager
         session = new SessionManager();
@@ -77,11 +81,15 @@ public class TumbuhKembang extends Activity implements OnClickListener {
             // Profil
             case R.id.ProfilLinearLayout :
                 Intent profil = new Intent(this, Profil.class);
+                lastActivity = System.currentTimeMillis();
+                profil.putExtra("lastActivity", lastActivity);
                 startActivity(profil);
                 break;
             // Tahapan Tumbuh Kembang
             case R.id.TahapanTumbangLinearLayout :
                 Intent tahap_tumbang = new Intent(this, TahapanTumbang.class);
+                lastActivity = System.currentTimeMillis();
+                tahap_tumbang.putExtra("lastActivity", lastActivity);
                 startActivity(tahap_tumbang);
                 finish();
                 break;
@@ -90,6 +98,8 @@ public class TumbuhKembang extends Activity implements OnClickListener {
                 // Check Session
                 if (session.checkSession(this)) {
                     Intent galeri = new Intent(this, GaleriTumbang.class);
+                    lastActivity = System.currentTimeMillis();
+                    galeri.putExtra("lastActivity", lastActivity);
                     startActivity(galeri);
                     finish();
                 } else {
@@ -126,7 +136,9 @@ public class TumbuhKembang extends Activity implements OnClickListener {
     @Override
     public void onBackPressed() {
         // Start Index Activity
+        lastActivity = System.currentTimeMillis();
         Intent index = new Intent(this, Index.class);
+        index.putExtra("lastActivity", lastActivity);
         startActivity(index);
 
         // Close This Activity
@@ -137,13 +149,23 @@ public class TumbuhKembang extends Activity implements OnClickListener {
     @Override
     public void onResume() {
         super.onResume();
-        // Check Session
-        if (session.checkSession(this)) {
-            // Set Profil Name
-            text_button_profil.setText(session.loadSession(this, "nama"));
-        }  else {
-            text_button_profil.setText("Profil");
+        long now = System.currentTimeMillis() - 30 * 60 * 1000;
+        if (lastActivity < now) {
+            finish();
+
+            // Clear Session
+            session.clearSession(TumbuhKembang.this);
+
+            Intent splash = new Intent(this, Splash.class);
+            startActivity(splash);
+        } else {
+            // Check Session
+            if (session.checkSession(this)) {
+                // Set Profil Name
+                text_button_profil.setText(session.loadSession(this, "nama"));
+            } else {
+                text_button_profil.setText("Profil");
+            }
         }
     }
-
 }

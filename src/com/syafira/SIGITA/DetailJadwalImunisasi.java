@@ -32,6 +32,7 @@ public class DetailJadwalImunisasi extends Activity {
     private LinearLayout tanggalVaksinLayout;
     private SessionManager session;
     private DBHelper db;
+    private long lastActivity;
 
     // Start Activity
     @Override
@@ -44,6 +45,7 @@ public class DetailJadwalImunisasi extends Activity {
         // Fetch Intent Extra
         Intent fetchID = getIntent();
         int id = fetchID.getIntExtra("id", 0);
+        lastActivity = fetchID.getLongExtra("lastActivity", 1L);
 
         // Session Manager
         session = new SessionManager();
@@ -107,8 +109,10 @@ public class DetailJadwalImunisasi extends Activity {
         text_button_profil.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                // Show Detail Profil Activity
+                // Show Profil Activity
                 Intent profil = new Intent(DetailJadwalImunisasi.this, Profil.class);
+                lastActivity = System.currentTimeMillis();
+                profil.putExtra("lastActivity", lastActivity);
                 startActivity(profil);
             }
         });
@@ -126,6 +130,8 @@ public class DetailJadwalImunisasi extends Activity {
     public void onBackPressed() {
         // Start Jadwal Imunisasi Activity
         Intent jadwal_imunisasi = new Intent(this, JadwalImunisasi.class);
+        lastActivity = System.currentTimeMillis();
+        jadwal_imunisasi.putExtra("lastActivity", lastActivity);
         startActivity(jadwal_imunisasi);
 
         // Close This Activity
@@ -136,15 +142,25 @@ public class DetailJadwalImunisasi extends Activity {
     @Override
     public void onResume() {
         super.onResume();
-        // Check Session
-        if (session.checkSession(this)) {
-            // Set Profil Name
-            text_button_profil.setText(session.loadSession(this, "nama"));
+        long now = System.currentTimeMillis() - 30 * 60 * 1000;
+        if (lastActivity < now) {
+            finish();
+
+            // Clear Session
+            session.clearSession(DetailJadwalImunisasi.this);
+
+            Intent splash = new Intent(this, Splash.class);
+            startActivity(splash);
         } else {
-            text_button_profil.setText("Profil");
-            tanggalVaksinLayout.setVisibility(View.GONE);
-            status_vaksin.setText("-");
+            // Check Session
+            if (session.checkSession(this)) {
+                // Set Profil Name
+                text_button_profil.setText(session.loadSession(this, "nama"));
+            } else {
+                text_button_profil.setText("Profil");
+                tanggalVaksinLayout.setVisibility(View.GONE);
+                status_vaksin.setText("-");
+            }
         }
     }
-
 }

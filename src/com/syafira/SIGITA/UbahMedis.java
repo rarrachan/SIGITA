@@ -53,6 +53,7 @@ public class UbahMedis extends Activity {
     private ImageView button_simpan;
     private DBHelper db;
     private SessionManager session;
+    private long lastActivity;
 
     // Start Activity
     @Override
@@ -68,6 +69,7 @@ public class UbahMedis extends Activity {
         // Fetch Intent Extra
         Intent fetchID = getIntent();
         int id = fetchID.getIntExtra("id", 0);
+        lastActivity = fetchID.getLongExtra("lastActivity", 1L);
 
         // Load Database
         db = new DBHelper(this);
@@ -222,6 +224,8 @@ public class UbahMedis extends Activity {
 
                     // Start Detail Rekam Medis Activity
                     Intent detail_medis = new Intent(UbahMedis.this, DetailMedis.class);
+                    lastActivity = System.currentTimeMillis();
+                    detail_medis.putExtra("lastActivity", lastActivity);
                     detail_medis.putExtra("id", medisID);
                     startActivity(detail_medis);
 
@@ -267,8 +271,35 @@ public class UbahMedis extends Activity {
     // Pressed Back Button
     @Override
     public void onBackPressed() {
+        // Fetch Intent Extra
+        Intent fetchID = getIntent();
+        int id = fetchID.getIntExtra("id", 0);
+
+        // Start Detail Medis Activity
+        Intent detail_medis = new Intent(this, DetailMedis.class);
+        lastActivity = System.currentTimeMillis();
+        detail_medis.putExtra("lastActivity", lastActivity);
+        detail_medis.putExtra("id", id);
+        startActivity(detail_medis);
+
         // Close This Activity
         finish();
+    }
+
+    // Activity Resume
+    @Override
+    public void onResume() {
+        super.onResume();
+        long now = System.currentTimeMillis() - 30 * 60 * 1000;
+        if (lastActivity < now) {
+            finish();
+
+            // Clear Session
+            session.clearSession(UbahMedis.this);
+
+            Intent splash = new Intent(this, Splash.class);
+            startActivity(splash);
+        }
     }
 
 }

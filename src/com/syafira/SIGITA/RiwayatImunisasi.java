@@ -27,6 +27,7 @@ public class RiwayatImunisasi extends Activity {
     private ImageView button_tambah;
     private SessionManager session;
     private DBHelper db;
+    private long lastActivity;
 
     // Start Activity
     @Override
@@ -35,6 +36,10 @@ public class RiwayatImunisasi extends Activity {
 
         // Load Layout
         setContentView(R.layout.riwayat_imunisasi);
+
+        // Fetch Intent Extra
+        Intent fetchID = getIntent();
+        lastActivity = fetchID.getLongExtra("lastActivity", 1L);
 
         // Session Manager
         session = new SessionManager();
@@ -66,6 +71,8 @@ public class RiwayatImunisasi extends Activity {
             public void onClick(View v) {
                 // Show Detail Profil Activity
                 Intent profil = new Intent(RiwayatImunisasi.this, Profil.class);
+                lastActivity = System.currentTimeMillis();
+                profil.putExtra("lastActivity", lastActivity);
                 startActivity(profil);
             }
         });
@@ -75,7 +82,10 @@ public class RiwayatImunisasi extends Activity {
             public void onClick(View v) {
                 // Show Detail Profil Activity
                 Intent tambah_riwayat = new Intent(RiwayatImunisasi.this, TambahRiwayat.class);
+                lastActivity = System.currentTimeMillis();
+                tambah_riwayat.putExtra("lastActivity", lastActivity);
                 startActivity(tambah_riwayat);
+                finish();
             }
         });
 
@@ -100,7 +110,7 @@ public class RiwayatImunisasi extends Activity {
                 TextView tanggal = new TextView(this);
                 TextView jenisvaksin = new TextView(this);
                 TextView usia = new TextView(this);
-                ImageView detail = new ImageView(this);
+                final ImageView detail = new ImageView(this);
 
                 TableRow.LayoutParams tanggal_text_view = new TableRow.LayoutParams(0, TableRow.LayoutParams.MATCH_PARENT, 1f);
                 TableRow.LayoutParams jenisvaksin_text_view = new TableRow.LayoutParams(0, TableRow.LayoutParams.MATCH_PARENT, 1f);
@@ -171,6 +181,8 @@ public class RiwayatImunisasi extends Activity {
                     public void onClick(View v) {
                         // Show Detail Profil Activity
                         Intent detail_riwayat = new Intent(RiwayatImunisasi.this, DetailRiwayat.class);
+                        lastActivity = System.currentTimeMillis();
+                        detail_riwayat.putExtra("lastActivity", lastActivity);
                         detail_riwayat.putExtra("id", id);
                         startActivity(detail_riwayat);
 
@@ -193,8 +205,10 @@ public class RiwayatImunisasi extends Activity {
     @Override
     public void onBackPressed() {
         // Start Imunisasi Activity
-        Intent imunisai = new Intent(RiwayatImunisasi.this, Imunisasi.class);
-        startActivity(imunisai);
+        Intent imunisasi = new Intent(RiwayatImunisasi.this, Imunisasi.class);
+        lastActivity = System.currentTimeMillis();
+        imunisasi.putExtra("lastActivity", lastActivity);
+        startActivity(imunisasi);
 
         // Close This Activity
         finish();
@@ -204,12 +218,28 @@ public class RiwayatImunisasi extends Activity {
     @Override
     public void onResume() {
         super.onResume();
-        // Check Session
-        if (session.checkSession(this)) {
-            // Set Profil Name
-            text_button_profil.setText(session.loadSession(this, "nama"));
-        } else {
+        long now = System.currentTimeMillis() - 30 * 60 * 1000;
+        if (lastActivity < now) {
             finish();
+
+            // Clear Session
+            session.clearSession(RiwayatImunisasi.this);
+
+            Intent splash = new Intent(this, Splash.class);
+            startActivity(splash);
+        } else {
+            // Check Session
+            if (session.checkSession(this)) {
+                // Set Profil Name
+                text_button_profil.setText(session.loadSession(this, "nama"));
+            } else {
+                // Start Imunisasi Activity
+                Intent imunisasi = new Intent(RiwayatImunisasi.this, Imunisasi.class);
+                lastActivity = System.currentTimeMillis();
+                imunisasi.putExtra("lastActivity", lastActivity);
+                startActivity(imunisasi);
+                finish();
+            }
         }
     }
 

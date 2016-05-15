@@ -135,111 +135,44 @@
   </component>
   <component name="FileEditorManager">
     <leaf>
-      <file leaf-file-name="RiwayatImunisasi.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/com/syafira/SIGITA/RiwayatImunisasi.java">
+      <file leaf-file-name="AlarmReceiver.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/com/syafira/SIGITA/AlarmReceiver.java">
           <provider selected="true" editor-type-id="text-editor">
             <state vertical-scroll-proportion="0.0">
-              <caret line="211" column="21" selection-start-line="211" selection-start-column="21" selection-end-line="211" selection-end-column="21" />
+              <caret line="19" column="0" selection-start-line="19" selection-start-column="0" selection-end-line="19" selection-end-column="0" />
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="jadwal_imunisasi.xml" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/res/layout/jadwal_imunisasi.xml">
-          <provider selected="true" editor-type-id="android-designer">
-            <state />
-          </provider>
-          <provider editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.0">
-              <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="tahapan_tumbang.xml" pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/res/layout/tahapan_tumbang.xml">
-          <provider selected="true" editor-type-id="android-designer">
-            <state />
-          </provider>
-          <provider editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.0">
-              <caret line="142" column="71" selection-start-line="0" selection-start-column="0" selection-end-line="286" selection-end-column="13" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="TahapanTumbang.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/com/syafira/SIGITA/TahapanTumbang.java">
+      <file leaf-file-name="DBHelper.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/com/syafira/SIGITA/DBHelper.java">
           <provider selected="true" editor-type-id="text-editor">
             <state vertical-scroll-proportion="0.0">
-              <caret line="175" column="40" selection-start-line="175" selection-start-column="40" selection-end-line="175" selection-end-column="40" />
+              <caret line="263" column="336" selection-start-line="263" selection-start-column="336" selection-end-line="263" selection-end-column="336" />
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="JadwalImunisasi.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/com/syafira/SIGITA/JadwalImunisasi.java">
+      <file leaf-file-name="AndroidManifest.xml" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/AndroidManifest.xml">
           <provider selected="true" editor-type-id="text-editor">
             <state vertical-scroll-proportion="0.0">
-              <caret line="91" column="124" selection-start-line="91" selection-start-column="124" selection-end-line="91" selection-end-column="124" />
+              <caret line="108" column="66" selection-start-line="108" selection-start-column="66" selection-end-line="108" selection-end-column="66" />
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="UbahGaleri.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/com/syafira/SIGITA/UbahGaleri.java">
+      <file leaf-file-name="AlarmImunisasi.java" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/src/com/syafira/SIGITA/AlarmImunisasi.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.0">
-              <caret line="261" column="37" selection-start-line="261" selection-start-column="37" selection-end-line="261" selection-end-column="37" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="DetailProfil.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/com/syafira/SIGITA/DetailProfil.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.0">
-              <caret line="219" column="144" selection-start-line="219" selection-start-column="144" selection-end-line="219" selection-end-column="144" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="DetailGaleri.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/com/syafira/SIGITA/DetailGaleri.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.0">
-              <caret line="176" column="0" selection-start-line="176" selection-start-column="0" selection-end-line="176" selection-end-column="0" />
+            <state vertical-scroll-proportion="1.0179641">
+              <caret line="174" column="24" selection-start-line="174" selection-start-column="24" selection-end-line="174" selection-end-column="24" />
               <folding>
-                <element signature="e#6499#8614#0" expanded="true" />
-                <element signature="e#8613#8614#0" expanded="true" />
+                <element signature="imports" expanded="true" />
               </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="GaleriTumbang.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/com/syafira/SIGITA/GaleriTumbang.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.0">
-              <caret line="150" column="13" selection-start-line="150" selection-start-column="13" selection-end-line="150" selection-end-column="13" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="RekamMedis.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/com/syafira/SIGITA/RekamMedis.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.0">
-              <caret line="171" column="16" selection-start-line="171" selection-start-column="16" selection-end-line="171" selection-end-column="16" />
-              <folding />
             </state>
           </provider>
         </entry>
@@ -254,8 +187,8 @@
         <option value="XSLT Stylesheet" />
         <option value="resourceFile" />
         <option value="valueResourceFile" />
-        <option value="Class" />
         <option value="layoutResourceFile_vertical" />
+        <option value="Class" />
       </list>
     </option>
   </component>
@@ -273,57 +206,57 @@
   <component name="IdeDocumentHistory">
     <option name="CHANGED_PATHS">
       <list>
-        <option value="$PROJECT_DIR$/res/layout/gizi_bbtb.xml" />
-        <option value="$PROJECT_DIR$/res/layout/gizi_imtu.xml" />
-        <option value="$PROJECT_DIR$/src/com/syafira/SIGITA/GiziBBU.java" />
-        <option value="$PROJECT_DIR$/src/com/syafira/SIGITA/GiziTBU.java" />
-        <option value="$PROJECT_DIR$/src/com/syafira/SIGITA/GiziBBTB.java" />
-        <option value="$PROJECT_DIR$/src/com/syafira/SIGITA/GiziIMTU.java" />
-        <option value="$PROJECT_DIR$/res/layout/kalkulator_gizi.xml" />
-        <option value="$PROJECT_DIR$/src/com/syafira/SIGITA/KalkulatorGizi.java" />
-        <option value="$PROJECT_DIR$/src/com/syafira/SIGITA/HasilKalkulatorGizi.java" />
-        <option value="$PROJECT_DIR$/res/layout/hasil_kalkulator_gizi.xml" />
-        <option value="$PROJECT_DIR$/src/com/syafira/SIGITA/Profil.java" />
-        <option value="$PROJECT_DIR$/src/com/syafira/SIGITA/TambahGaleri.java" />
-        <option value="$PROJECT_DIR$/res/layout/tambah_medis.xml" />
-        <option value="$PROJECT_DIR$/res/layout/ubah_medis.xml" />
-        <option value="$PROJECT_DIR$/res/layout/ubah_profil.xml" />
-        <option value="$PROJECT_DIR$/res/layout/ubah_galeri.xml" />
-        <option value="$PROJECT_DIR$/res/layout/detail_jadwal_imunisasi.xml" />
-        <option value="$PROJECT_DIR$/res/layout/tambah_profil.xml" />
-        <option value="$PROJECT_DIR$/src/com/syafira/SIGITA/TambahMedis.java" />
-        <option value="$PROJECT_DIR$/res/layout/ubah_riwayat.xml" />
-        <option value="$PROJECT_DIR$/AndroidManifest.xml" />
-        <option value="$PROJECT_DIR$/res/layout/detail_riwayat.xml" />
-        <option value="$PROJECT_DIR$/res/layout/tambah_riwayat.xml" />
-        <option value="$PROJECT_DIR$/res/values/strings.xml" />
         <option value="$PROJECT_DIR$/res/layout/hapus_riwayat.xml" />
         <option value="$PROJECT_DIR$/res/layout/hapus_medis.xml" />
-        <option value="$PROJECT_DIR$/src/com/syafira/SIGITA/DetailProfil.java" />
-        <option value="$PROJECT_DIR$/src/com/syafira/SIGITA/DetailMedis.java" />
         <option value="$PROJECT_DIR$/res/layout/detail_profil.xml" />
         <option value="$PROJECT_DIR$/res/layout/detail_medis.xml" />
-        <option value="$PROJECT_DIR$/src/com/syafira/SIGITA/UbahMedis.java" />
-        <option value="$PROJECT_DIR$/src/com/syafira/SIGITA/UbahRiwayat.java" />
-        <option value="$PROJECT_DIR$/res/layout/alarm_imunisasi.xml" />
-        <option value="$PROJECT_DIR$/src/com/syafira/SIGITA/DBHelper.java" />
-        <option value="$PROJECT_DIR$/src/com/syafira/SIGITA/RiwayatImunisasi.java" />
-        <option value="$PROJECT_DIR$/src/com/syafira/SIGITA/DetailJadwalImunisasi.java" />
-        <option value="$PROJECT_DIR$/src/com/syafira/SIGITA/TambahProfil.java" />
-        <option value="$PROJECT_DIR$/src/com/syafira/SIGITA/UbahProfil.java" />
-        <option value="$PROJECT_DIR$/src/com/syafira/SIGITA/DetailRiwayat.java" />
-        <option value="$PROJECT_DIR$/src/com/syafira/SIGITA/TambahRiwayat.java" />
         <option value="$PROJECT_DIR$/res/layout/tambah_galeri.xml" />
         <option value="$PROJECT_DIR$/res/layout/detail_galeri.xml" />
         <option value="$PROJECT_DIR$/res/layout/rekam_medis.xml" />
-        <option value="$PROJECT_DIR$/src/com/syafira/SIGITA/UbahGaleri.java" />
-        <option value="$PROJECT_DIR$/src/com/syafira/SIGITA/DetailGaleri.java" />
-        <option value="$PROJECT_DIR$/src/com/syafira/SIGITA/GaleriTumbang.java" />
-        <option value="$PROJECT_DIR$/src/com/syafira/SIGITA/RekamMedis.java" />
         <option value="$PROJECT_DIR$/res/layout/riwayat_imunisasi.xml" />
-        <option value="$PROJECT_DIR$/src/com/syafira/SIGITA/JadwalImunisasi.java" />
         <option value="$PROJECT_DIR$/res/layout/jadwal_imunisasi.xml" />
         <option value="$PROJECT_DIR$/res/layout/tahapan_tumbang.xml" />
+        <option value="$PROJECT_DIR$/src/com/syafira/SIGITA/BaseActivity.java" />
+        <option value="$APPLICATION_CONFIG_DIR$/consoles/db/4a4cd68f-41d4-43b8-a857-f75f6438bf06/console.sql" />
+        <option value="$APPLICATION_CONFIG_DIR$/consoles/db/29118756-df50-4c9e-8355-273b894ff403/console.sql" />
+        <option value="$PROJECT_DIR$/res/layout/alarm_imunisasi.xml" />
+        <option value="$PROJECT_DIR$/src/com/syafira/SIGITA/TambahRiwayat.java" />
+        <option value="$PROJECT_DIR$/src/com/syafira/SIGITA/DetailRiwayat.java" />
+        <option value="$PROJECT_DIR$/src/com/syafira/SIGITA/UbahRiwayat.java" />
+        <option value="$PROJECT_DIR$/src/com/syafira/SIGITA/Index.java" />
+        <option value="$PROJECT_DIR$/src/com/syafira/SIGITA/DetailMedis.java" />
+        <option value="$PROJECT_DIR$/src/com/syafira/SIGITA/DetailJadwalImunisasi.java" />
+        <option value="$PROJECT_DIR$/src/com/syafira/SIGITA/Gizi.java" />
+        <option value="$PROJECT_DIR$/src/com/syafira/SIGITA/HasilKalkulatorGizi.java" />
+        <option value="$PROJECT_DIR$/src/com/syafira/SIGITA/ImageZoom.java" />
+        <option value="$PROJECT_DIR$/src/com/syafira/SIGITA/JadwalImunisasi.java" />
+        <option value="$PROJECT_DIR$/src/com/syafira/SIGITA/KalkulatorGizi.java" />
+        <option value="$PROJECT_DIR$/src/com/syafira/SIGITA/Imunisasi.java" />
+        <option value="$PROJECT_DIR$/src/com/syafira/SIGITA/TahapanTumbang.java" />
+        <option value="$PROJECT_DIR$/src/com/syafira/SIGITA/TambahMedis.java" />
+        <option value="$PROJECT_DIR$/src/com/syafira/SIGITA/TumbuhKembang.java" />
+        <option value="$PROJECT_DIR$/res/values/strings.xml" />
+        <option value="$PROJECT_DIR$/res/layout/alarm_dialog.xml" />
+        <option value="$PROJECT_DIR$/src/com/syafira/SIGITA/AlarmDialog.java" />
+        <option value="$PROJECT_DIR$/src/com/syafira/SIGITA/SessionManager.java" />
+        <option value="$PROJECT_DIR$/src/com/syafira/SIGITA/UbahMedis.java" />
+        <option value="$PROJECT_DIR$/src/com/syafira/SIGITA/Profil.java" />
+        <option value="$PROJECT_DIR$/src/com/syafira/SIGITA/RiwayatImunisasi.java" />
+        <option value="$PROJECT_DIR$/res/layout/galeri_tumbang.xml" />
+        <option value="$PROJECT_DIR$/src/com/syafira/SIGITA/Splash.java" />
+        <option value="$PROJECT_DIR$/src/com/syafira/SIGITA/RekamMedis.java" />
+        <option value="$PROJECT_DIR$/src/com/syafira/SIGITA/GaleriTumbang.java" />
+        <option value="$PROJECT_DIR$/src/com/syafira/SIGITA/TambahProfil.java" />
+        <option value="$PROJECT_DIR$/src/com/syafira/SIGITA/TambahGaleri.java" />
+        <option value="$PROJECT_DIR$/src/com/syafira/SIGITA/DetailGaleri.java" />
+        <option value="$PROJECT_DIR$/src/com/syafira/SIGITA/DetailProfil.java" />
+        <option value="$PROJECT_DIR$/src/com/syafira/SIGITA/UbahProfil.java" />
+        <option value="$PROJECT_DIR$/src/com/syafira/SIGITA/UbahGaleri.java" />
+        <option value="$APPLICATION_CONFIG_DIR$/consoles/db/86fad845-7794-4228-b7f1-5140cdba28b7/console.sql" />
+        <option value="$PROJECT_DIR$/src/com/syafira/SIGITA/DBHelper.java" />
+        <option value="$PROJECT_DIR$/AndroidManifest.xml" />
+        <option value="$PROJECT_DIR$/src/com/syafira/SIGITA/AlarmReceiver.java" />
+        <option value="$PROJECT_DIR$/src/com/syafira/SIGITA/AlarmImunisasi.java" />
       </list>
     </option>
   </component>
@@ -398,38 +331,8 @@
       <sortByType />
     </navigator>
     <panes>
-      <pane id="Scope">
-        <subPane subId="Project Files">
-          <PATH>
-            <PATH_ELEMENT USER_OBJECT="Root">
-              <option name="myItemId" value="" />
-              <option name="myItemType" value="" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT USER_OBJECT="SIGITA">
-              <option name="myItemId" value="" />
-              <option name="myItemType" value="" />
-            </PATH_ELEMENT>
-          </PATH>
-          <PATH>
-            <PATH_ELEMENT USER_OBJECT="Root">
-              <option name="myItemId" value="" />
-              <option name="myItemType" value="" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT USER_OBJECT="SIGITA">
-              <option name="myItemId" value="" />
-              <option name="myItemType" value="" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT USER_OBJECT="src">
-              <option name="myItemId" value="" />
-              <option name="myItemType" value="" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT USER_OBJECT="com/syafira/SIGITA">
-              <option name="myItemId" value="" />
-              <option name="myItemType" value="" />
-            </PATH_ELEMENT>
-          </PATH>
-        </subPane>
-      </pane>
+      <pane id="PackagesPane" />
+      <pane id="Scratches" />
       <pane id="ProjectPane">
         <subPane>
           <PATH>
@@ -515,11 +418,45 @@
               <option name="myItemId" value="res" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="drawable" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
           </PATH>
         </subPane>
       </pane>
-      <pane id="PackagesPane" />
-      <pane id="Scratches" />
+      <pane id="Scope">
+        <subPane subId="Project Files">
+          <PATH>
+            <PATH_ELEMENT USER_OBJECT="Root">
+              <option name="myItemId" value="" />
+              <option name="myItemType" value="" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT USER_OBJECT="SIGITA">
+              <option name="myItemId" value="" />
+              <option name="myItemType" value="" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT USER_OBJECT="Root">
+              <option name="myItemId" value="" />
+              <option name="myItemType" value="" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT USER_OBJECT="SIGITA">
+              <option name="myItemId" value="" />
+              <option name="myItemType" value="" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT USER_OBJECT="src">
+              <option name="myItemId" value="" />
+              <option name="myItemType" value="" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT USER_OBJECT="com/syafira/SIGITA">
+              <option name="myItemId" value="" />
+              <option name="myItemType" value="" />
+            </PATH_ELEMENT>
+          </PATH>
+        </subPane>
+      </pane>
     </panes>
   </component>
   <component name="PropertiesComponent">
@@ -877,11 +814,16 @@
       <workItem from="1463027445950" duration="6318000" />
       <workItem from="1463057905159" duration="26059000" />
       <workItem from="1463135531010" duration="22689000" />
+      <workItem from="1463209554225" duration="13889000" />
+      <workItem from="1463223719490" duration="185000" />
+      <workItem from="1463224232912" duration="270000" />
+      <workItem from="1463224915457" duration="40569000" />
+      <workItem from="1463287603397" duration="22248000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="659639000" />
+    <option name="totallyTimeSpent" value="736800000" />
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
@@ -901,14 +843,15 @@
       <window_info id="Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32879046" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Build Variants" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="3" side_tool="true" content_ui="tabs" />
       <window_info id="Palette&#9;" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
-      <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.40545145" sideWeight="0.5279879" order="0" side_tool="true" content_ui="tabs" />
+      <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.19250426" sideWeight="0.5226929" order="0" side_tool="true" content_ui="tabs" />
       <window_info id="Application Servers" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Maven Projects" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32980332" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Preview" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
-      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.2879046" sideWeight="0.5" order="9" side_tool="false" content_ui="tabs" />
-      <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32879046" sideWeight="0.4969743" order="4" side_tool="false" content_ui="tabs" />
+      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.19250426" sideWeight="0.4773071" order="9" side_tool="false" content_ui="tabs" />
+      <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32879046" sideWeight="0.49394855" order="4" side_tool="false" content_ui="tabs" />
       <window_info id="Android" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.22487223" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
+      <window_info id="Database Console" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.4616695" sideWeight="0.5" order="14" side_tool="false" content_ui="tabs" />
       <window_info id="Designer" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
       <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.15658094" sideWeight="0.5" order="4" side_tool="false" content_ui="combo" />
       <window_info id="Memory Monitor" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.44463372" sideWeight="0.54689866" order="6" side_tool="true" content_ui="tabs" />
@@ -917,7 +860,7 @@
       <window_info id="Ant Build" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
       <window_info id="UI Designer" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
       <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="2" side_tool="true" content_ui="tabs" />
-      <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.35434413" sideWeight="0.4720121" order="10" side_tool="false" content_ui="tabs" />
+      <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.38330495" sideWeight="0.4720121" order="10" side_tool="false" content_ui="tabs" />
       <window_info id="Cvs" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="11" side_tool="false" content_ui="tabs" />
       <window_info id="Message" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Commander" active="false" anchor="right" auto_hide="false" internal_type="SLIDING" type="SLIDING" visible="false" weight="0.4" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
@@ -953,509 +896,317 @@
     <option name="FILTER_TARGETS" value="false" />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/res/layout/kalkulator_gizi.xml">
-      <provider selected="true" editor-type-id="android-designer">
-        <state />
-      </provider>
+    <entry file="file://$PROJECT_DIR$/res/layout/riwayat_imunisasi.xml">
       <provider editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0">
-          <caret line="140" column="68" selection-start-line="140" selection-start-column="68" selection-end-line="140" selection-end-column="68" />
-          <folding />
+          <caret line="153" column="0" selection-start-line="153" selection-start-column="0" selection-end-line="153" selection-end-column="0" />
         </state>
       </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/res/layout/hasil_kalkulator_gizi.xml">
       <provider selected="true" editor-type-id="android-designer">
         <state />
       </provider>
-      <provider editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="232" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="704" selection-end-column="13" />
-          <folding />
-        </state>
-      </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/res/layout/ubah_medis.xml">
-      <provider selected="true" editor-type-id="android-designer">
-        <state />
-      </provider>
+    <entry file="file://$PROJECT_DIR$/res/layout/jadwal_imunisasi.xml">
       <provider editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0">
           <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+        </state>
+      </provider>
+      <provider selected="true" editor-type-id="android-designer">
+        <state />
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/res/layout/tahapan_tumbang.xml">
+      <provider editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="142" column="71" selection-start-line="0" selection-start-column="0" selection-end-line="286" selection-end-column="13" />
+        </state>
+      </provider>
+      <provider selected="true" editor-type-id="android-designer">
+        <state />
+      </provider>
+    </entry>
+    <entry file="file://$APPLICATION_CONFIG_DIR$/consoles/db/b0ba93ee-0ff3-407b-8287-8c5e96f936a3/console.sql">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$APPLICATION_CONFIG_DIR$/consoles/db/2a25f75e-2a67-4281-b829-5eddf2ab2f19/console.sql">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$APPLICATION_CONFIG_DIR$/consoles/db/37ad7f96-2d13-488c-a186-2fb63385d7e8/console.sql">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$APPLICATION_CONFIG_DIR$/consoles/db/4a4cd68f-41d4-43b8-a857-f75f6438bf06/console.sql">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="-0.0">
+          <caret line="0" column="202" selection-start-line="0" selection-start-column="202" selection-end-line="0" selection-end-column="202" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$APPLICATION_CONFIG_DIR$/consoles/db/29118756-df50-4c9e-8355-273b894ff403/console.sql">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="-0.0">
+          <caret line="0" column="209" selection-start-line="0" selection-start-column="209" selection-end-line="0" selection-end-column="209" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/com/syafira/SIGITA/DetailJadwalImunisasi.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.64688426">
+          <caret line="155" column="39" selection-start-line="155" selection-start-column="39" selection-end-line="155" selection-end-column="39" />
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/res/layout/ubah_galeri.xml">
-      <provider selected="true" editor-type-id="android-designer">
-        <state />
-      </provider>
-      <provider editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="105" column="48" selection-start-line="105" selection-start-column="48" selection-end-line="105" selection-end-column="54" />
+    <entry file="file://$PROJECT_DIR$/src/com/syafira/SIGITA/DetailMedis.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.44510385">
+          <caret line="250" column="34" selection-start-line="250" selection-start-column="28" selection-end-line="250" selection-end-column="34" />
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/res/layout/tambah_medis.xml">
-      <provider selected="true" editor-type-id="android-designer">
-        <state />
+    <entry file="file://$PROJECT_DIR$/src/com/syafira/SIGITA/ExpandableHeightGridView.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.20178041">
+          <caret line="7" column="13" selection-start-line="7" selection-start-column="13" selection-end-line="7" selection-end-column="13" />
+          <folding />
+        </state>
       </provider>
-      <provider editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="121" column="51" selection-start-line="0" selection-start-column="0" selection-end-line="650" selection-end-column="13" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/com/syafira/SIGITA/Gizi.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="-0.24666667">
+          <caret line="153" column="28" selection-start-line="153" selection-start-column="28" selection-end-line="153" selection-end-column="28" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/com/syafira/SIGITA/GridViewItem.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.3323442">
+          <caret line="9" column="13" selection-start-line="9" selection-start-column="13" selection-end-line="9" selection-end-column="13" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/com/syafira/SIGITA/HasilKalkulatorGizi.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.38636363">
+          <caret line="199" column="12" selection-start-line="199" selection-start-column="12" selection-end-line="199" selection-end-column="12" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/com/syafira/SIGITA/ImageZoom.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.60534126">
+          <caret line="45" column="28" selection-start-line="45" selection-start-column="28" selection-end-line="45" selection-end-column="28" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/com/syafira/SIGITA/TahapanTumbang.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.33116883">
+          <caret line="198" column="31" selection-start-line="198" selection-start-column="25" selection-end-line="198" selection-end-column="31" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/com/syafira/SIGITA/TambahMedis.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.39285713">
+          <caret line="286" column="34" selection-start-line="286" selection-start-column="28" selection-end-line="286" selection-end-column="34" />
+          <folding>
+            <element signature="e#7587#10168#0" expanded="false" />
+            <element signature="e#10167#10168#0" expanded="false" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/com/syafira/SIGITA/TambahRiwayat.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.79821956">
+          <caret line="277" column="45" selection-start-line="277" selection-start-column="37" selection-end-line="277" selection-end-column="45" />
           <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/com/syafira/SIGITA/TumbuhKembang.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="16" column="13" selection-start-line="16" selection-start-column="13" selection-end-line="16" selection-end-column="13" />
-          <folding />
+        <state vertical-scroll-proportion="0.8896104">
+          <caret line="170" column="1" selection-start-line="170" selection-start-column="1" selection-end-line="170" selection-end-column="1" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/com/syafira/SIGITA/TambahGaleri.java">
+    <entry file="file://$PROJECT_DIR$/src/com/syafira/SIGITA/Imunisasi.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="-8.275862">
+          <caret line="199" column="9" selection-start-line="186" selection-start-column="4" selection-end-line="199" selection-end-column="9" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/com/syafira/SIGITA/UbahRiwayat.java">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0">
-          <caret line="298" column="25" selection-start-line="298" selection-start-column="25" selection-end-line="298" selection-end-column="25" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/res/layout/ubah_profil.xml">
-      <provider selected="true" editor-type-id="android-designer">
-        <state />
-      </provider>
-      <provider editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="92" column="55" selection-start-line="92" selection-start-column="55" selection-end-line="92" selection-end-column="55" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/AndroidManifest.xml">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="92" column="64" selection-start-line="92" selection-start-column="64" selection-end-line="92" selection-end-column="64" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/res/layout/tambah_riwayat.xml">
-      <provider selected="true" editor-type-id="android-designer">
-        <state />
-      </provider>
-      <provider editor-type-id="text-editor">
-        <state vertical-scroll-proportion="-5.7586207">
-          <caret line="229" column="47" selection-start-line="229" selection-start-column="44" selection-end-line="229" selection-end-column="47" />
+          <caret line="288" column="52" selection-start-line="288" selection-start-column="44" selection-end-line="288" selection-end-column="52" />
           <folding>
-            <element signature="e#12109#12133#0" expanded="true" />
+            <element signature="imports" expanded="false" />
+            <element signature="e#8016#11471#0" expanded="false" />
+            <element signature="e#8713#10954#0" expanded="false" />
+            <element signature="e#10953#10954#0" expanded="false" />
+            <element signature="e#11470#11471#0" expanded="false" />
+            <element signature="e#11516#14036#0" expanded="false" />
+            <element signature="e#14035#14036#0" expanded="false" />
+            <element signature="e#15046#15257#0" expanded="false" />
+            <element signature="e#15256#15257#0" expanded="false" />
           </folding>
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/res/layout/ubah_riwayat.xml">
-      <provider editor-type-id="android-designer">
-        <state />
-      </provider>
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="-1.7413793">
-          <caret line="186" column="66" selection-start-line="186" selection-start-column="61" selection-end-line="186" selection-end-column="66" />
+    <entry file="file://$PROJECT_DIR$/res/layout/alarm_imunisasi.xml">
+      <provider editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="250" column="67" selection-start-line="250" selection-start-column="67" selection-end-line="250" selection-end-column="67" />
           <folding />
         </state>
       </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/res/layout/hapus_riwayat.xml">
-      <provider editor-type-id="android-designer">
+      <provider selected="true" editor-type-id="android-designer">
         <state />
       </provider>
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="-1.7413793">
-          <caret line="45" column="48" selection-start-line="45" selection-start-column="48" selection-end-line="45" selection-end-column="48" />
-          <folding>
-            <element signature="e#1557#1580#0" expanded="true" />
-            <element signature="e#2076#2105#0" expanded="true" />
-            <element signature="e#3020#3038#0" expanded="true" />
-            <element signature="e#3823#3841#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/res/layout/hapus_medis.xml">
-      <provider editor-type-id="android-designer">
-        <state />
-      </provider>
+    <entry file="file://$PROJECT_DIR$/res/layout/hapus_galeri.xml">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.44407895">
-          <caret line="45" column="48" selection-start-line="45" selection-start-column="48" selection-end-line="45" selection-end-column="48" />
+        <state vertical-scroll-proportion="0.0">
+          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="105" selection-end-column="13" />
           <folding />
         </state>
+      </provider>
+      <provider editor-type-id="android-designer">
+        <state />
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/res/values/strings.xml">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="-7.5555553">
-          <caret line="102" column="37" selection-start-line="102" selection-start-column="37" selection-end-line="102" selection-end-column="37" />
+        <state vertical-scroll-proportion="0.0">
+          <caret line="110" column="24" selection-start-line="110" selection-start-column="24" selection-end-line="110" selection-end-column="29" />
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/res/layout/detail_riwayat.xml">
-      <provider selected="true" editor-type-id="android-designer">
-        <state />
+    <entry file="file://C:/Android/SDK/sources/android-15/android/content/BroadcastReceiver.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.33248731">
+          <caret line="476" column="25" selection-start-line="476" selection-start-column="25" selection-end-line="476" selection-end-column="25" />
+        </state>
       </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/res/layout/splash.xml">
       <provider editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0">
-          <caret line="325" column="56" selection-start-line="325" selection-start-column="49" selection-end-line="325" selection-end-column="56" />
+          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+      <provider selected="true" editor-type-id="android-designer">
+        <state />
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/com/syafira/SIGITA/Index.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="49" column="8" selection-start-line="49" selection-start-column="8" selection-end-line="49" selection-end-column="37" />
+          <folding>
+            <element signature="imports" expanded="false" />
+            <element signature="e#6316#6565#0" expanded="false" />
+            <element signature="e#6564#6565#0" expanded="false" />
+            <element signature="e#6986#7594#0" expanded="false" />
+            <element signature="e#7593#7594#0" expanded="false" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/com/syafira/SIGITA/SessionManager.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="13" column="44" selection-start-line="13" selection-start-column="44" selection-end-line="13" selection-end-column="57" />
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/res/layout/detail_medis.xml">
-      <provider selected="true" editor-type-id="android-designer">
-        <state />
-      </provider>
-      <provider editor-type-id="text-editor">
-        <state vertical-scroll-proportion="-1.1724138">
-          <caret line="475" column="32" selection-start-line="475" selection-start-column="32" selection-end-line="475" selection-end-column="32" />
+    <entry file="file://$PROJECT_DIR$/src/com/syafira/SIGITA/Profil.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="-0.42776203">
+          <caret line="160" column="97" selection-start-line="160" selection-start-column="97" selection-end-line="160" selection-end-column="97" />
           <folding>
-            <element signature="e#2205#2223#0" expanded="true" />
-            <element signature="e#3421#3449#0" expanded="true" />
-            <element signature="e#5365#5385#0" expanded="true" />
-            <element signature="e#6004#6022#0" expanded="true" />
-            <element signature="e#6731#6751#0" expanded="true" />
-            <element signature="e#7818#7840#0" expanded="true" />
-            <element signature="e#8460#8478#0" expanded="true" />
-            <element signature="e#9257#9271#0" expanded="true" />
-            <element signature="e#10336#10362#0" expanded="true" />
-            <element signature="e#10987#11005#0" expanded="true" />
-            <element signature="e#11798#11812#0" expanded="true" />
-            <element signature="e#13641#13671#0" expanded="true" />
-            <element signature="e#14293#14311#0" expanded="true" />
-            <element signature="e#15102#15137#0" expanded="true" />
-            <element signature="e#16292#16319#0" expanded="true" />
-            <element signature="e#16845#16863#0" expanded="true" />
-            <element signature="e#17990#18004#0" expanded="true" />
-            <element signature="e#18592#18618#0" expanded="true" />
-            <element signature="e#19691#19717#0" expanded="true" />
-            <element signature="e#20243#20261#0" expanded="true" />
-            <element signature="e#21384#21398#0" expanded="true" />
-            <element signature="e#22009#22033#0" expanded="true" />
-            <element signature="e#24529#24552#0" expanded="true" />
-            <element signature="e#25135#25153#0" expanded="true" />
-            <element signature="e#25912#25935#0" expanded="true" />
-            <element signature="e#27101#27125#0" expanded="true" />
-            <element signature="e#27708#27726#0" expanded="true" />
-            <element signature="e#28486#28510#0" expanded="true" />
-            <element signature="e#29640#29660#0" expanded="true" />
-            <element signature="e#30243#30261#0" expanded="true" />
-            <element signature="e#31017#31037#0" expanded="true" />
-            <element signature="e#32734#32752#0" expanded="true" />
-            <element signature="e#33602#33620#0" expanded="true" />
-            <element signature="e#34898#34919#0" expanded="true" />
+            <element signature="imports" expanded="true" />
           </folding>
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/com/syafira/SIGITA/UbahMedis.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="224" column="57" selection-start-line="224" selection-start-column="57" selection-end-line="224" selection-end-column="57" />
+        <state vertical-scroll-proportion="-2.5135136">
+          <caret line="201" column="100" selection-start-line="201" selection-start-column="19" selection-end-line="201" selection-end-column="100" />
           <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/com/syafira/SIGITA/UbahRiwayat.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.6243094">
-          <caret line="287" column="61" selection-start-line="287" selection-start-column="61" selection-end-line="287" selection-end-column="61" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/res/layout/dialog_profil.xml">
-      <provider editor-type-id="android-designer">
-        <state />
-      </provider>
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/res/layout/detail_profil.xml">
-      <provider selected="true" editor-type-id="android-designer">
-        <state />
-      </provider>
-      <provider editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="434" column="63" selection-start-line="434" selection-start-column="63" selection-end-line="434" selection-end-column="63" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/res/layout/tambah_profil.xml">
-      <provider selected="true" editor-type-id="android-designer">
-        <state />
-      </provider>
-      <provider editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="6" column="40" selection-start-line="6" selection-start-column="40" selection-end-line="6" selection-end-column="40" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="dbDummy://dbtable:/f6e7b6b1/35d3cd51-002d-4bb2-8935-3944e76cc54a/..riwayat_imunisasi">
-      <provider editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-      <provider selected="true" editor-type-id="com.intellij.database.editor.DatabaseTableFileEditorProvider">
-        <state>
-          <filtering enabled="true" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/res/layout/detail_jadwal_imunisasi.xml">
-      <provider editor-type-id="android-designer">
-        <state />
-      </provider>
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="401" selection-end-column="13" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="dbDummy://dbtable:/f6e7b6b1/35d3cd51-002d-4bb2-8935-3944e76cc54a/..list_imunisasi">
-      <provider editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-      <provider selected="true" editor-type-id="com.intellij.database.editor.DatabaseTableFileEditorProvider">
-        <state>
-          <filtering enabled="true" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/com/syafira/SIGITA/DetailMedis.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.2173913">
-          <caret line="131" column="82" selection-start-line="131" selection-start-column="71" selection-end-line="131" selection-end-column="82" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/res/layout/alarm_imunisasi.xml">
-      <provider editor-type-id="android-designer">
-        <state />
-      </provider>
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="-11.310345">
-          <caret line="401" column="13" selection-start-line="401" selection-start-column="13" selection-end-line="401" selection-end-column="13" />
-          <folding>
-            <element signature="e#2120#2138#0" expanded="false" />
-            <element signature="e#2866#2899#0" expanded="false" />
-            <element signature="e#4613#4636#0" expanded="false" />
-            <element signature="e#7324#7346#0" expanded="false" />
-            <element signature="e#7967#7985#0" expanded="false" />
-            <element signature="e#8546#8568#0" expanded="false" />
-            <element signature="e#9777#9798#0" expanded="false" />
-            <element signature="e#10418#10436#0" expanded="false" />
-            <element signature="e#11204#11225#0" expanded="false" />
-            <element signature="e#12369#12392#0" expanded="false" />
-            <element signature="e#13014#13032#0" expanded="false" />
-            <element signature="e#13804#13818#0" expanded="false" />
-            <element signature="e#15068#15099#0" expanded="false" />
-            <element signature="e#15721#15739#0" expanded="false" />
-            <element signature="e#16513#16527#0" expanded="false" />
-            <element signature="e#17688#17715#0" expanded="false" />
-            <element signature="e#18341#18359#0" expanded="false" />
-            <element signature="e#19155#19182#0" expanded="false" />
-            <element signature="e#21121#21142#0" expanded="false" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/com/syafira/SIGITA/TambahMedis.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="-2.5311573">
-          <caret line="196" column="26" selection-start-line="196" selection-start-column="26" selection-end-line="196" selection-end-column="26" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/com/syafira/SIGITA/DetailJadwalImunisasi.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="139" column="12" selection-start-line="139" selection-start-column="12" selection-end-line="139" selection-end-column="12" />
-          <folding>
-            <element signature="e#4317#4605#0" expanded="true" />
-            <element signature="e#4604#4605#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/com/syafira/SIGITA/DetailRiwayat.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="135" column="30" selection-start-line="135" selection-start-column="30" selection-end-line="135" selection-end-column="30" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/com/syafira/SIGITA/DBHelper.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="257" column="29" selection-start-line="257" selection-start-column="29" selection-end-line="257" selection-end-column="29" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/com/syafira/SIGITA/TambahProfil.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="-4.448276">
-          <caret line="233" column="61" selection-start-line="233" selection-start-column="61" selection-end-line="233" selection-end-column="87" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/com/syafira/SIGITA/TambahRiwayat.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="216" column="25" selection-start-line="216" selection-start-column="25" selection-end-line="216" selection-end-column="25" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/res/layout/tambah_galeri.xml">
-      <provider editor-type-id="android-designer">
-        <state />
-      </provider>
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="-2.7272727">
-          <caret line="353" column="57" selection-start-line="353" selection-start-column="57" selection-end-line="353" selection-end-column="57" />
-          <folding>
-            <element signature="e#16473#16505#0" expanded="false" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/res/layout/detail_galeri.xml">
-      <provider editor-type-id="android-designer">
-        <state />
-      </provider>
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="-2.2121212">
-          <caret line="312" column="59" selection-start-line="312" selection-start-column="59" selection-end-line="312" selection-end-column="59" />
-          <folding>
-            <element signature="e#14217#14249#0" expanded="false" />
-            <element signature="e#17590#17608#0" expanded="false" />
-            <element signature="e#18458#18476#0" expanded="false" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/res/layout/rekam_medis.xml">
-      <provider selected="true" editor-type-id="android-designer">
-        <state />
-      </provider>
-      <provider editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="6" column="40" selection-start-line="6" selection-start-column="40" selection-end-line="6" selection-end-column="40" />
-          <folding>
-            <element signature="n#TableRow#0;n#TableLayout#0;n#HorizontalScrollView#0;n#LinearLayout#2;n#LinearLayout#0;n#RelativeLayout#0;n#ScrollView#0;n#!!top" expanded="false" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$APPLICATION_CONFIG_DIR$/consoles/db/aaed2b86-e2c3-470b-a6e3-b7f210709b33/console.sql">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$APPLICATION_CONFIG_DIR$/consoles/db/2837f07d-ddb1-4d46-909b-802328e5b4fe/console.sql">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="dbDummy://dbtable:/f6e7b6b1/35d3cd51-002d-4bb2-8935-3944e76cc54a/..galeri_tumbang">
-      <provider editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-      <provider selected="true" editor-type-id="com.intellij.database.editor.DatabaseTableFileEditorProvider">
-        <state>
-          <filtering enabled="true" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/com/syafira/SIGITA/Profil.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.41880342">
-          <caret line="154" column="56" selection-start-line="154" selection-start-column="56" selection-end-line="154" selection-end-column="56" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/com/syafira/SIGITA/UbahProfil.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="300" column="0" selection-start-line="300" selection-start-column="0" selection-end-line="300" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/com/syafira/SIGITA/DetailGaleri.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="176" column="0" selection-start-line="176" selection-start-column="0" selection-end-line="176" selection-end-column="0" />
-          <folding>
-            <element signature="e#6499#8614#0" expanded="true" />
-            <element signature="e#8613#8614#0" expanded="true" />
-          </folding>
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/com/syafira/SIGITA/RiwayatImunisasi.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="211" column="21" selection-start-line="211" selection-start-column="21" selection-end-line="211" selection-end-column="21" />
+        <state vertical-scroll-proportion="0.6147309">
+          <caret line="239" column="39" selection-start-line="239" selection-start-column="39" selection-end-line="239" selection-end-column="39" />
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/com/syafira/SIGITA/UbahGaleri.java">
+    <entry file="file://$PROJECT_DIR$/src/com/syafira/SIGITA/DetailRiwayat.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="261" column="37" selection-start-line="261" selection-start-column="37" selection-end-line="261" selection-end-column="37" />
+        <state vertical-scroll-proportion="2.878187">
+          <caret line="244" column="35" selection-start-line="244" selection-start-column="28" selection-end-line="244" selection-end-column="35" />
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/com/syafira/SIGITA/DetailProfil.java">
+    <entry file="file://$PROJECT_DIR$/src/com/syafira/SIGITA/JadwalImunisasi.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="-5.934844">
+          <caret line="68" column="38" selection-start-line="68" selection-start-column="32" selection-end-line="68" selection-end-column="38" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/res/layout/galeri_tumbang.xml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="-3.3275862">
+          <caret line="119" column="45" selection-start-line="119" selection-start-column="45" selection-end-line="119" selection-end-column="45" />
+          <folding />
+        </state>
+      </provider>
+      <provider editor-type-id="android-designer">
+        <state />
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/com/syafira/SIGITA/Splash.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.305949">
+          <caret line="28" column="0" selection-start-line="26" selection-start-column="0" selection-end-line="28" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/com/syafira/SIGITA/KalkulatorGizi.java">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0">
-          <caret line="219" column="144" selection-start-line="219" selection-start-column="144" selection-end-line="219" selection-end-column="144" />
+          <caret line="177" column="55" selection-start-line="177" selection-start-column="49" selection-end-line="177" selection-end-column="55" />
           <folding />
         </state>
       </provider>
@@ -1463,49 +1214,64 @@
     <entry file="file://$PROJECT_DIR$/src/com/syafira/SIGITA/RekamMedis.java">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0">
-          <caret line="171" column="16" selection-start-line="171" selection-start-column="16" selection-end-line="171" selection-end-column="16" />
-          <folding />
+          <caret line="214" column="53" selection-start-line="213" selection-start-column="8" selection-end-line="214" selection-end-column="53" />
+          <folding>
+            <element signature="e#9119#9568#0" expanded="true" />
+            <element signature="e#9567#9568#0" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/com/syafira/SIGITA/GaleriTumbang.java">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0">
-          <caret line="150" column="13" selection-start-line="150" selection-start-column="13" selection-end-line="150" selection-end-column="13" />
+          <caret line="165" column="15" selection-start-line="165" selection-start-column="15" selection-end-line="165" selection-end-column="15" />
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/res/layout/riwayat_imunisasi.xml">
-      <provider selected="true" editor-type-id="android-designer">
-        <state />
-      </provider>
-      <provider editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="153" column="0" selection-start-line="153" selection-start-column="0" selection-end-line="153" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/com/syafira/SIGITA/TahapanTumbang.java">
+    <entry file="file://$PROJECT_DIR$/src/com/syafira/SIGITA/TambahGaleri.java">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0">
-          <caret line="175" column="40" selection-start-line="175" selection-start-column="40" selection-end-line="175" selection-end-column="40" />
-          <folding />
+          <caret line="298" column="72" selection-start-line="292" selection-start-column="61" selection-end-line="298" selection-end-column="72" />
+          <folding>
+            <element signature="e#13660#20663#0" expanded="true" />
+            <element signature="e#20662#20663#0" expanded="true" />
+            <element signature="e#26792#27003#0" expanded="true" />
+            <element signature="e#27002#27003#0" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/com/syafira/SIGITA/JadwalImunisasi.java">
+    <entry file="file://$PROJECT_DIR$/src/com/syafira/SIGITA/TambahProfil.java">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0">
-          <caret line="91" column="124" selection-start-line="91" selection-start-column="124" selection-end-line="91" selection-end-column="124" />
+          <caret line="268" column="36" selection-start-line="268" selection-start-column="36" selection-end-line="268" selection-end-column="36" />
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/res/layout/jadwal_imunisasi.xml">
-      <provider selected="true" editor-type-id="android-designer">
-        <state />
+    <entry file="file://$PROJECT_DIR$/src/com/syafira/SIGITA/UbahProfil.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="188" column="12" selection-start-line="188" selection-start-column="12" selection-end-line="188" selection-end-column="54" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/com/syafira/SIGITA/UbahGaleri.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="117" column="54" selection-start-line="117" selection-start-column="54" selection-end-line="117" selection-end-column="54" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="dbDummy://dbtable:/f6e7b6b1/86fad845-7794-4228-b7f1-5140cdba28b7/..riwayat_imunisasi">
+      <provider selected="true" editor-type-id="com.intellij.database.editor.DatabaseTableFileEditorProvider">
+        <state>
+          <filtering enabled="true" />
+        </state>
       </provider>
       <provider editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0">
@@ -1514,14 +1280,83 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/res/layout/tahapan_tumbang.xml">
-      <provider selected="true" editor-type-id="android-designer">
-        <state />
-      </provider>
-      <provider editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="142" column="71" selection-start-line="0" selection-start-column="0" selection-end-line="286" selection-end-column="13" />
+    <entry file="file://$APPLICATION_CONFIG_DIR$/consoles/db/86fad845-7794-4228-b7f1-5140cdba28b7/console.sql">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="-0.0">
+          <caret line="0" column="221" selection-start-line="0" selection-start-column="221" selection-end-line="0" selection-end-column="260" />
           <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/com/syafira/SIGITA/DBHelper.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="263" column="336" selection-start-line="263" selection-start-column="336" selection-end-line="263" selection-end-column="336" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/com/syafira/SIGITA/DetailGaleri.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="104" column="73" selection-start-line="104" selection-start-column="0" selection-end-line="104" selection-end-column="73" />
+          <folding>
+            <element signature="e#4456#4996#0" expanded="true" />
+            <element signature="e#4995#4996#0" expanded="true" />
+            <element signature="e#5039#5489#0" expanded="true" />
+            <element signature="e#5488#5489#0" expanded="true" />
+            <element signature="e#5533#9655#0" expanded="true" />
+            <element signature="e#9654#9655#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/com/syafira/SIGITA/DetailProfil.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="161" column="0" selection-start-line="161" selection-start-column="0" selection-end-line="161" selection-end-column="0" />
+          <folding>
+            <element signature="e#7745#8327#0" expanded="true" />
+            <element signature="e#8326#8327#0" expanded="true" />
+            <element signature="e#8369#8814#0" expanded="true" />
+            <element signature="e#8813#8814#0" expanded="true" />
+            <element signature="e#8857#14250#0" expanded="true" />
+            <element signature="e#14249#14250#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/AndroidManifest.xml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="108" column="66" selection-start-line="108" selection-start-column="66" selection-end-line="108" selection-end-column="66" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://C:/Android/SDK/sources/android-15/android/app/ActivityThread.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.33088234">
+          <caret line="2599" column="0" selection-start-line="2599" selection-start-column="0" selection-end-line="2599" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/com/syafira/SIGITA/AlarmReceiver.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="19" column="0" selection-start-line="19" selection-start-column="0" selection-end-line="19" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/com/syafira/SIGITA/AlarmImunisasi.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="1.0179641">
+          <caret line="174" column="24" selection-start-line="174" selection-start-column="24" selection-end-line="174" selection-end-column="24" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>

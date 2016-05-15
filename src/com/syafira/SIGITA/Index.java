@@ -16,6 +16,8 @@ import android.view.View.OnClickListener;
 import android.widget.*;
 import android.graphics.Typeface;
 
+import java.util.Date;
+
 public class Index extends Activity implements OnClickListener {
 
     // Declare
@@ -31,6 +33,7 @@ public class Index extends Activity implements OnClickListener {
     private LinearLayout RekamMedisLinearLayout;
     private TextView text_footer;
     private SessionManager session;
+    private long lastActivity;
 
     // Start Activity
     @Override
@@ -42,6 +45,10 @@ public class Index extends Activity implements OnClickListener {
 
         // Load Session Manager
         session = new SessionManager();
+
+        // Fetch Intent Extra
+        Intent fetchID = getIntent();
+        lastActivity = fetchID.getLongExtra("lastActivity", 1L);
 
         // Load Widget
         text_button_profil = (TextView) findViewById(R.id.text_button_profil);
@@ -86,14 +93,16 @@ public class Index extends Activity implements OnClickListener {
             // Profil
             case R.id.ProfilLinearLayout:
                 Intent profil = new Intent(this, Profil.class);
+                lastActivity = System.currentTimeMillis();
+                profil.putExtra("lastActivity", lastActivity);
                 startActivity(profil);
-
-//                finish();
                 break;
 
             // Gizi
             case R.id.GiziLinearLayout:
                 Intent gizi = new Intent(this, Gizi.class);
+                lastActivity = System.currentTimeMillis();
+                gizi.putExtra("lastActivity", lastActivity);
                 startActivity(gizi);
 
                 finish();
@@ -102,6 +111,8 @@ public class Index extends Activity implements OnClickListener {
             // Imunisasi
             case R.id.ImunisasiLinearLayout:
                 Intent imunisasi = new Intent(this, Imunisasi.class);
+                lastActivity = System.currentTimeMillis();
+                imunisasi.putExtra("lastActivity", lastActivity);
                 startActivity(imunisasi);
                 finish();
                 break;
@@ -109,6 +120,8 @@ public class Index extends Activity implements OnClickListener {
             // Tumbuh Kembang
             case R.id.TumbuhKembangLinearLayout:
                 Intent tumbang = new Intent(this, TumbuhKembang.class);
+                lastActivity = System.currentTimeMillis();
+                tumbang.putExtra("lastActivity", lastActivity);
                 startActivity(tumbang);
                 finish();
                 break;
@@ -118,6 +131,8 @@ public class Index extends Activity implements OnClickListener {
                 // Check Session
                 if (session.checkSession(this)) {
                     Intent medis = new Intent(this, RekamMedis.class);
+                    lastActivity = System.currentTimeMillis();
+                    medis.putExtra("lastActivity", lastActivity);
                     startActivity(medis);
                     finish();
                 } else {
@@ -173,16 +188,29 @@ public class Index extends Activity implements OnClickListener {
                 }).create().show();
     }
 
+
     // Activity Resume
     @Override
     public void onResume() {
         super.onResume();
-        // Check Session
-        if (session.checkSession(this)) {
-            // Set Profil Name
-            text_button_profil.setText(session.loadSession(this, "nama"));
+
+        long now = System.currentTimeMillis() - 30 * 60 * 1000;
+        if (lastActivity < now) {
+            finish();
+
+            // Clear Session
+            session.clearSession(Index.this);
+
+            Intent splash = new Intent(this, Splash.class);
+            startActivity(splash);
         } else {
-            text_button_profil.setText("Profil");
+            // Check Session
+            if (session.checkSession(this)) {
+                // Set Profil Name
+                text_button_profil.setText(session.loadSession(this, "nama"));
+            } else {
+                text_button_profil.setText("Profil");
+            }
         }
     }
 }

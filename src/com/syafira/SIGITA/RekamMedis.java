@@ -27,6 +27,7 @@ public class RekamMedis extends Activity {
     private ImageView button_tambah;
     private SessionManager session;
     private DBHelper db;
+    private long lastActivity;
 
     // Start Activity
     @Override
@@ -38,6 +39,10 @@ public class RekamMedis extends Activity {
 
         // Session Manager
         session = new SessionManager();
+
+        // Fetch Intent Extra
+        Intent fetchID = getIntent();
+        lastActivity = fetchID.getLongExtra("lastActivity", 1L);
 
         // Load Database
         db = new DBHelper(this);
@@ -82,7 +87,7 @@ public class RekamMedis extends Activity {
                     TextView tanggal = new TextView(this);
                     TextView keluhan = new TextView(this);
                     TextView obat = new TextView(this);
-                    ImageView detail = new ImageView(this);
+                    final ImageView detail = new ImageView(this);
 
                     TableRow.LayoutParams tanggal_text_view = new TableRow.LayoutParams(0, TableRow.LayoutParams.MATCH_PARENT, 1f);
                     TableRow.LayoutParams keluhan_text_view = new TableRow.LayoutParams(0, TableRow.LayoutParams.MATCH_PARENT, 1f);
@@ -153,6 +158,8 @@ public class RekamMedis extends Activity {
                         public void onClick(View v) {
                             // Show Detail Profil Activity
                             Intent detail_medis = new Intent(RekamMedis.this, DetailMedis.class);
+                            lastActivity = System.currentTimeMillis();
+                            detail_medis.putExtra("lastActivity", lastActivity);
                             detail_medis.putExtra("id", id);
                             startActivity(detail_medis);
 
@@ -178,6 +185,8 @@ public class RekamMedis extends Activity {
             public void onClick(View v) {
                 // Show Detail Profil Activity
                 Intent profil = new Intent(RekamMedis.this, Profil.class);
+                lastActivity = System.currentTimeMillis();
+                profil.putExtra("lastActivity", lastActivity);
                 startActivity(profil);
             }
         });
@@ -187,7 +196,11 @@ public class RekamMedis extends Activity {
             public void onClick(View v) {
                 // Show Detail Profil Activity
                 Intent tambah_medis = new Intent(RekamMedis.this, TambahMedis.class);
+                lastActivity = System.currentTimeMillis();
+                tambah_medis.putExtra("lastActivity", lastActivity);
                 startActivity(tambah_medis);
+
+                finish();
             }
         });
 
@@ -198,6 +211,8 @@ public class RekamMedis extends Activity {
     public void onBackPressed() {
         // Start Index Activity
         Intent index = new Intent(this, Index.class);
+        lastActivity = System.currentTimeMillis();
+        index.putExtra("lastActivity", lastActivity);
         startActivity(index);
 
         // Close This Activity
@@ -208,12 +223,28 @@ public class RekamMedis extends Activity {
     @Override
     public void onResume() {
         super.onResume();
-        // Check Session
-        if (session.checkSession(this)) {
-            // Set Profil Name
-            text_button_profil.setText(session.loadSession(this, "nama"));
-        }else{
+        long now = System.currentTimeMillis() - 30 * 60 * 1000;
+        if (lastActivity < now) {
             finish();
+
+            // Clear Session
+            session.clearSession(RekamMedis.this);
+
+            Intent splash = new Intent(this, Splash.class);
+            startActivity(splash);
+        } else {
+            // Check Session
+            if (session.checkSession(this)) {
+                // Set Profil Name
+                text_button_profil.setText(session.loadSession(this, "nama"));
+            } else {
+                // Start Index Activity
+                Intent index = new Intent(RekamMedis.this, Index.class);
+                lastActivity = System.currentTimeMillis();
+                index.putExtra("lastActivity", lastActivity);
+                startActivity(index);
+                finish();
+            }
         }
     }
 }

@@ -7,6 +7,8 @@ import android.database.Cursor;
 import android.graphics.Typeface;
 import android.graphics.drawable.ColorDrawable;
 import android.graphics.drawable.Drawable;
+import android.media.MediaScannerConnection;
+import android.net.Uri;
 import android.os.Bundle;
 import android.os.Environment;
 import android.view.View;
@@ -38,6 +40,7 @@ public class DetailGaleri extends Activity {
     private ImageView button_hapus;
     private SessionManager session;
     private DBHelper db;
+    private long lastActivity;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -53,6 +56,7 @@ public class DetailGaleri extends Activity {
         // Fetch Intent Extra
         Intent fetchID = getIntent();
         final int galeriID = fetchID.getIntExtra("galeriID", 0);
+        lastActivity = fetchID.getLongExtra("lastActivity", 1L);
 
         // Load Database
         db = new DBHelper(this);
@@ -107,6 +111,8 @@ public class DetailGaleri extends Activity {
                 // Show Ubah Profil Activity
                 Intent ubah_galeri = new Intent(DetailGaleri.this, UbahGaleri.class);
                 // Put Intent Extra
+                lastActivity = System.currentTimeMillis();
+                ubah_galeri.putExtra("lastActivity", lastActivity);
                 ubah_galeri.putExtra("galeriID", galeriID);
                 startActivity(ubah_galeri);
                 finish();
@@ -118,6 +124,8 @@ public class DetailGaleri extends Activity {
             public void onClick(View v) {
                 // Show Image Zoom Activity
                 Intent zoom = new Intent(DetailGaleri.this, ImageZoom.class);
+                lastActivity = System.currentTimeMillis();
+                zoom.putExtra("lastActivity", lastActivity);
                 zoom.putExtra("foto_path", foto_path);
                 startActivity(zoom);
             }
@@ -172,6 +180,14 @@ public class DetailGaleri extends Activity {
                                 foto.delete();
                             }
 
+                            // Scan on Gallery
+                            MediaScannerConnection.scanFile(DetailGaleri.this,
+                                    new String[]{foto.toString()}, null,
+                                    new MediaScannerConnection.OnScanCompletedListener() {
+                                        public void onScanCompleted(String path, Uri uri) {
+                                        }
+                                    });
+
                             // Delete From Database
                             db.deleteGaleri(galeriID);
 
@@ -194,9 +210,11 @@ public class DetailGaleri extends Activity {
                         // Close Dialog
                         dialog.dismiss();
 
-                        // Show Profil Activity
-                        Intent profil = new Intent(DetailGaleri.this, GaleriTumbang.class);
-                        startActivity(profil);
+                        // Show Galeri Activity
+                        Intent galeri = new Intent(DetailGaleri.this, GaleriTumbang.class);
+                        lastActivity = System.currentTimeMillis();
+                        galeri.putExtra("lastActivity", lastActivity);
+                        startActivity(galeri);
 
                         // Clear Activity
                         finish();
@@ -211,9 +229,27 @@ public class DetailGaleri extends Activity {
     public void onBackPressed() {
         // Start Galeri Activity
         Intent galeri = new Intent(DetailGaleri.this, GaleriTumbang.class);
+        lastActivity = System.currentTimeMillis();
+        galeri.putExtra("lastActivity", lastActivity);
         startActivity(galeri);
 
         // Close This Activity
         finish();
+    }
+
+    // Activity Resume
+    @Override
+    public void onResume() {
+        super.onResume();
+        long now = System.currentTimeMillis() - 30 * 60 * 1000;
+        if (lastActivity < now) {
+            finish();
+
+            // Clear Session
+            session.clearSession(DetailGaleri.this);
+
+            Intent splash = new Intent(this, Splash.class);
+            startActivity(splash);
+        }
     }
 }

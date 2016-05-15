@@ -25,6 +25,7 @@ public class Gizi extends Activity implements OnClickListener {
     private TextView text_button_dokumentasigizi;
     private LinearLayout DokumentasiGiziLinearLayout;
     private SessionManager session;
+    private long lastActivity;
 
     // Start Activity
     @Override
@@ -33,6 +34,10 @@ public class Gizi extends Activity implements OnClickListener {
 
         // Load Layout
         setContentView(R.layout.gizi);
+
+        // Fetch Intent Extra
+        Intent fetchID = getIntent();
+        lastActivity = fetchID.getLongExtra("lastActivity", 1L);
 
         // Load Session Manager
         session = new SessionManager();
@@ -58,7 +63,7 @@ public class Gizi extends Activity implements OnClickListener {
         DokumentasiGiziLinearLayout.setOnClickListener(this);
 
         // Set Custtom Layout
-        Typeface typeface  = Typeface.createFromAsset(getAssets(), "teen-webfont.ttf");
+        Typeface typeface = Typeface.createFromAsset(getAssets(), "teen-webfont.ttf");
         text_button_profil.setTypeface(typeface);
         text_button_kalkulatorgizi.setTypeface(typeface);
         text_button_dokumentasigizi.setTypeface(typeface);
@@ -69,26 +74,31 @@ public class Gizi extends Activity implements OnClickListener {
     // OnClick Activity
     @Override
     public void onClick(View v) {
-        switch(v.getId())
-        {
+        switch (v.getId()) {
             // Profil
-            case R.id.ProfilLinearLayout :
+            case R.id.ProfilLinearLayout:
                 Intent profil = new Intent(this, Profil.class);
+                lastActivity = System.currentTimeMillis();
+                profil.putExtra("lastActivity", lastActivity);
                 startActivity(profil);
                 break;
 
             // Kalkulator Gizi
-            case R.id.KalkulatorGiziLinearLayout :
+            case R.id.KalkulatorGiziLinearLayout:
                 Intent kalkulatorgizi = new Intent(this, KalkulatorGizi.class);
+                lastActivity = System.currentTimeMillis();
+                kalkulatorgizi.putExtra("lastActivity", lastActivity);
                 startActivity(kalkulatorgizi);
                 break;
 
             // Dokumentasi Gizi
-            case R.id.DokumentasiGiziLinearLayout :
+            case R.id.DokumentasiGiziLinearLayout:
                 // Check Session
                 if (session.checkSession(this)) {
-                    Intent medis = new Intent(this, RekamMedis.class);
-                    startActivity(medis);
+                    Intent dokumentasi = new Intent(this, RekamMedis.class);
+                    lastActivity = System.currentTimeMillis();
+                    dokumentasi.putExtra("lastActivity", lastActivity);
+                    startActivity(dokumentasi);
                 } else {
                     final Dialog dialog = new Dialog(Gizi.this);
                     dialog.setContentView(R.layout.alert_akses);
@@ -124,6 +134,8 @@ public class Gizi extends Activity implements OnClickListener {
     public void onBackPressed() {
         // Start Index Activity
         Intent index = new Intent(this, Index.class);
+        lastActivity = System.currentTimeMillis();
+        index.putExtra("lastActivity", lastActivity);
         startActivity(index);
 
         // Close This Activity
@@ -134,12 +146,24 @@ public class Gizi extends Activity implements OnClickListener {
     @Override
     public void onResume() {
         super.onResume();
-        // Check Session
-        if (session.checkSession(this)) {
-            // Set Profil Name
-            text_button_profil.setText(session.loadSession(this, "nama"));
+        // Activity Resume
+        long now = System.currentTimeMillis() - 30 * 60 * 1000;
+        if (lastActivity < now) {
+            finish();
+
+            // Clear Session
+            session.clearSession(Gizi.this);
+
+            Intent splash = new Intent(this, Splash.class);
+            startActivity(splash);
         } else {
-            text_button_profil.setText("Profil");
+            // Check Session
+            if (session.checkSession(this)) {
+                // Set Profil Name
+                text_button_profil.setText(session.loadSession(this, "nama"));
+            } else {
+                text_button_profil.setText("Profil");
+            }
         }
     }
 }

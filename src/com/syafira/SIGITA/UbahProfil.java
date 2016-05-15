@@ -71,6 +71,8 @@ public class UbahProfil extends Activity implements OnClickListener {
     private ImageView profil_foto;
     private ImageView button_simpan;
     private DBHelper db;
+    private SessionManager session;
+    private long lastActivity;
 
     // Start Activity
     @Override
@@ -80,10 +82,14 @@ public class UbahProfil extends Activity implements OnClickListener {
         // Load Layout
         setContentView(R.layout.ubah_profil);
 
+        // Load Session Manager
+        session = new SessionManager();
+
         // Fetch Intent Extra
         Intent fetchID = getIntent();
         int id = fetchID.getIntExtra("id", 0);
         String nama_sebelumnya = fetchID.getStringExtra("nama");
+        lastActivity = fetchID.getLongExtra("lastActivity", 1L);
 
         // Open Database
         db = new DBHelper(this);
@@ -179,7 +185,10 @@ public class UbahProfil extends Activity implements OnClickListener {
         profil_tanggallahir.setText(cursor.getString(cursor.getColumnIndex("profil_tanggalLahir")));
         profil_alergi.setText(cursor.getString(cursor.getColumnIndex("profil_alergi")));
         profil_penyakitkronis.setText(cursor.getString(cursor.getColumnIndex("profil_penyakitKronis")));
-        profil_foto.setImageDrawable(Drawable.createFromPath(android.os.Environment.getExternalStorageDirectory() + "/SIGITA/" + cursor.getString(cursor.getColumnIndex("profil_nama")).replaceAll(" ", "_") + "/" + cursor.getString(cursor.getColumnIndex("profil_foto"))));
+        final String foto_path = android.os.Environment.getExternalStorageDirectory() + "/SIGITA/" + cursor.getString(cursor.getColumnIndex("profil_nama")).replaceAll(" ", "_") + "/" + cursor.getString(cursor.getColumnIndex("profil_foto"));
+        if (Drawable.createFromPath(foto_path) != null) {
+            profil_foto.setImageDrawable(Drawable.createFromPath(foto_path));
+        }
     }
 
     // OnClick Activity
@@ -362,6 +371,8 @@ public class UbahProfil extends Activity implements OnClickListener {
                     }
                     // Start Profil Activity
                     Intent detail_profil = new Intent(this, DetailProfil.class);
+                    lastActivity = System.currentTimeMillis();
+                    detail_profil.putExtra("lastActivity", lastActivity);
                     detail_profil.putExtra("id", id);
                     startActivity(detail_profil);
 
@@ -521,10 +532,28 @@ public class UbahProfil extends Activity implements OnClickListener {
 
         // Start Profil Activity
         Intent detail_profil = new Intent(this, DetailProfil.class);
+        lastActivity = System.currentTimeMillis();
+        detail_profil.putExtra("lastActivity", lastActivity);
         detail_profil.putExtra("id", id);
         startActivity(detail_profil);
 
         // Close This Activity
         finish();
+    }
+
+    // Activity Resume
+    @Override
+    public void onResume() {
+        super.onResume();
+        long now = System.currentTimeMillis() - 30 * 60 * 1000;
+        if (lastActivity < now) {
+            finish();
+
+            // Clear Session
+            session.clearSession(UbahProfil.this);
+
+            Intent splash = new Intent(this, Splash.class);
+            startActivity(splash);
+        }
     }
 }

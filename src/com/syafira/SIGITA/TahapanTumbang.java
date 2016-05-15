@@ -28,6 +28,7 @@ public class TahapanTumbang extends Activity {
     private TextView text_sosial_kemandirian;
     private SessionManager session;
     private DBHelper db;
+    private long lastActivity;
 
     // Start Activity
     @Override
@@ -36,6 +37,10 @@ public class TahapanTumbang extends Activity {
 
         // Load Layout
         setContentView(R.layout.tahapan_tumbang);
+
+        // Fetch Intent Extra
+        Intent fetchID = getIntent();
+        lastActivity = fetchID.getLongExtra("lastActivity", 1L);
 
         // Session Manager
         session = new SessionManager();
@@ -68,6 +73,8 @@ public class TahapanTumbang extends Activity {
             public void onClick(View v) {
                 // Show Detail Profil Activity
                 Intent profil = new Intent(TahapanTumbang.this, Profil.class);
+                lastActivity = System.currentTimeMillis();
+                profil.putExtra("lastActivity", lastActivity);
                 startActivity(profil);
             }
         });
@@ -190,6 +197,8 @@ public class TahapanTumbang extends Activity {
     @Override
     public void onBackPressed() {
         Intent tumbang = new Intent(this, TumbuhKembang.class);
+        lastActivity = System.currentTimeMillis();
+        tumbang.putExtra("lastActivity", lastActivity);
         startActivity(tumbang);
 
         // Close This Activity
@@ -200,10 +209,21 @@ public class TahapanTumbang extends Activity {
     @Override
     public void onResume() {
         super.onResume();
-        // Check Session
-        if (session.checkSession(this)) {
-            // Set Profil Name
-            text_button_profil.setText(session.loadSession(this, "nama"));
+        long now = System.currentTimeMillis() - 30 * 60 * 1000;
+        if (lastActivity < now) {
+            finish();
+
+            // Clear Session
+            session.clearSession(TahapanTumbang.this);
+
+            Intent splash = new Intent(this, Splash.class);
+            startActivity(splash);
+        } else {
+            // Check Session
+            if (session.checkSession(this)) {
+                // Set Profil Name
+                text_button_profil.setText(session.loadSession(this, "nama"));
+            }
         }
     }
 }

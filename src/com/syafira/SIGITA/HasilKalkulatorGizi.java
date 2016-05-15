@@ -40,8 +40,9 @@ public class HasilKalkulatorGizi extends Activity {
     private TextView imtu;
     private TextView hasil_imtu;
     private TextView text_footer;
-
-    TabHost tabHost;
+    private SessionManager session;
+    private long lastActivity;
+    private TabHost tabHost;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -57,6 +58,10 @@ public class HasilKalkulatorGizi extends Activity {
         String tinggiBadan = fetchID.getStringExtra("tinggiBadan");
         String beratBadan = fetchID.getStringExtra("beratBadan");
         String jenisKelamin = fetchID.getStringExtra("jenisKelamin");
+        lastActivity = fetchID.getLongExtra("lastActivity", 1L);
+
+        // Load Session Manager
+        session = new SessionManager();
 
         // Load Widget
         hasil_kalkulator_gizi = (TextView) findViewById(R.id.hasil_kalkulator_gizi);
@@ -190,7 +195,28 @@ public class HasilKalkulatorGizi extends Activity {
     // Pressed Back Button
     @Override
     public void onBackPressed() {
+        Intent gizi = new Intent(this, Gizi.class);
+        lastActivity = System.currentTimeMillis();
+        gizi.putExtra("lastActivity", lastActivity);
+        startActivity(gizi);
+
         // Close This Activity
         finish();
+    }
+
+    // Activity Resume
+    @Override
+    public void onResume() {
+        super.onResume();
+        long now = System.currentTimeMillis() - 30 * 60 * 1000;
+        if (lastActivity < now) {
+            finish();
+
+            // Clear Session
+            session.clearSession(HasilKalkulatorGizi.this);
+
+            Intent splash = new Intent(this, Splash.class);
+            startActivity(splash);
+        }
     }
 }

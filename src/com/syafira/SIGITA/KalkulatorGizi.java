@@ -22,7 +22,7 @@ import java.text.SimpleDateFormat;
 import java.util.Calendar;
 import java.util.Locale;
 
-public class KalkulatorGizi extends Activity{
+public class KalkulatorGizi extends Activity {
 
     // Declare
     private TextView kalkulator_gizi;
@@ -42,6 +42,8 @@ public class KalkulatorGizi extends Activity{
     private TextView kalkulatorgizi_kilogram;
     private TextView text_footer;
     private ImageView button_hitung;
+    private SessionManager session;
+    private long lastActivity;
 
     // Start Activity
     @Override
@@ -50,6 +52,10 @@ public class KalkulatorGizi extends Activity{
 
         // Load Layout
         setContentView(R.layout.kalkulator_gizi);
+
+        // Fetch Intent Extra
+        Intent fetchID = getIntent();
+        lastActivity = fetchID.getLongExtra("lastActivity", 1L);
 
         // Load Widget
         kalkulator_gizi = (TextView) findViewById(R.id.kalkulator_gizi);
@@ -170,6 +176,8 @@ public class KalkulatorGizi extends Activity{
                     String jenisKelamin = ((RadioButton) findViewById(kalkulatorgizi_jeniskelamin.getCheckedRadioButtonId())).getText().toString();
 
                     Intent hasilkalkulatorgizi = new Intent(KalkulatorGizi.this, HasilKalkulatorGizi.class);
+                    lastActivity = System.currentTimeMillis();
+                    hasilkalkulatorgizi.putExtra("lastActivity", lastActivity);
                     hasilkalkulatorgizi.putExtra("umur", umur);
                     hasilkalkulatorgizi.putExtra("tanggalLahir", tanggalLahir);
                     hasilkalkulatorgizi.putExtra("tinggiBadan", tinggiBadan);
@@ -202,7 +210,7 @@ public class KalkulatorGizi extends Activity{
         v.clearFocus();
 
         // SCROLL VIEW HACK
-        ScrollView view = (ScrollView)findViewById(R.id.scrollView);
+        ScrollView view = (ScrollView) findViewById(R.id.scrollView);
         view.setDescendantFocusability(ViewGroup.FOCUS_BEFORE_DESCENDANTS);
         view.setFocusable(true);
         view.setFocusableInTouchMode(true);
@@ -221,5 +229,21 @@ public class KalkulatorGizi extends Activity{
     public void onBackPressed() {
         // Close This Activity
         finish();
+    }
+
+    // Activity Resume
+    @Override
+    public void onResume() {
+        super.onResume();
+        long now = System.currentTimeMillis() - 30 * 60 * 1000;
+        if (lastActivity < now) {
+            finish();
+
+            // Clear Session
+            session.clearSession(KalkulatorGizi.this);
+
+            Intent splash = new Intent(this, Splash.class);
+            startActivity(splash);
+        }
     }
 }

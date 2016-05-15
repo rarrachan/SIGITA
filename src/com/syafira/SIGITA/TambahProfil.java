@@ -14,6 +14,7 @@ import android.database.Cursor;
 import android.graphics.*;
 import android.graphics.drawable.BitmapDrawable;
 import android.media.ExifInterface;
+import android.media.MediaScannerConnection;
 import android.net.Uri;
 import android.os.Bundle;
 import android.os.Environment;
@@ -61,6 +62,8 @@ public class TambahProfil extends Activity implements OnClickListener {
     private ImageView button_simpan;
     private ImageView profil_foto;
     private DBHelper db;
+    private SessionManager session;
+    private long lastActivity;
 
     // Start Activity
     @Override
@@ -69,6 +72,13 @@ public class TambahProfil extends Activity implements OnClickListener {
 
         // Load Layout
         setContentView(R.layout.tambah_profil);
+
+        // Fetch Intent Extra
+        Intent fetchID = getIntent();
+        lastActivity = fetchID.getLongExtra("lastActivity", 1L);
+
+        // Load Session Manager
+        session = new SessionManager();
 
         // Load Database
         db = new DBHelper(this);
@@ -256,6 +266,14 @@ public class TambahProfil extends Activity implements OnClickListener {
                             outStream.flush();
                             outStream.close();
 
+                            // Scan Gallery
+                            MediaScannerConnection.scanFile(TambahProfil.this,
+                                    new String[]{profil_foto.toString()}, null,
+                                    new MediaScannerConnection.OnScanCompletedListener() {
+                                        public void onScanCompleted(String path, Uri uri) {
+                                        }
+                                    });
+
                             // Declare Condition
                             success = true;
                         } catch (IOException e) {
@@ -308,6 +326,8 @@ public class TambahProfil extends Activity implements OnClickListener {
 
                     // Start Profil Activity
                     Intent profil = new Intent(this, Profil.class);
+                    lastActivity = System.currentTimeMillis();
+                    profil.putExtra("lastActivity", lastActivity);
                     startActivity(profil);
 
                     // Close This Activity
@@ -462,9 +482,27 @@ public class TambahProfil extends Activity implements OnClickListener {
     public void onBackPressed() {
         // Start Profil Activity
         Intent profil = new Intent(TambahProfil.this, Profil.class);
+        lastActivity = System.currentTimeMillis();
+        profil.putExtra("lastActivity", lastActivity);
         startActivity(profil);
 
         // Close This Activity
         finish();
+    }
+
+    // Activity Resume
+    @Override
+    public void onResume() {
+        super.onResume();
+        long now = System.currentTimeMillis() - 30 * 60 * 1000;
+        if (lastActivity < now) {
+            finish();
+
+            // Clear Session
+            session.clearSession(TambahProfil.this);
+
+            Intent splash = new Intent(this, Splash.class);
+            startActivity(splash);
+        }
     }
 }

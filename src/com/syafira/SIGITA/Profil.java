@@ -28,6 +28,7 @@ public class Profil extends Activity{
     private LinearLayout ListProfilLinearLayout;
     private SessionManager session;
     private DBHelper db;
+    private long lastActivity;
 
     // Start Activity
     @Override
@@ -36,6 +37,10 @@ public class Profil extends Activity{
 
         // Load Layout
         setContentView(R.layout.profil);
+
+        // Fetch Intent Extra
+        Intent fetchID = getIntent();
+        lastActivity = fetchID.getLongExtra("lastActivity", 1L);
 
         // Session Manager
         session = new SessionManager();
@@ -56,6 +61,8 @@ public class Profil extends Activity{
             public void onClick(View v) {
                 // Show Tambah Profil Activity
                 Intent tambah_profil = new Intent(Profil.this, TambahProfil.class);
+                lastActivity = System.currentTimeMillis();
+                tambah_profil.putExtra("lastActivity", lastActivity);
                 startActivity(tambah_profil);
 
                 // Close This Activity
@@ -135,6 +142,8 @@ public class Profil extends Activity{
                             public void onClick(View v) {
                                 // Show Image Zoom Activity
                                 Intent zoom = new Intent(Profil.this, ImageZoom.class);
+                                lastActivity = System.currentTimeMillis();
+                                zoom.putExtra("lastActivity", lastActivity);
                                 zoom.putExtra("foto_path", foto_path);
                                 startActivity(zoom);
                             }
@@ -155,7 +164,9 @@ public class Profil extends Activity{
                                 dialog_profil.dismiss();
 
                                 // Start Index Activity
+                                lastActivity = System.currentTimeMillis();
                                 Intent index = new Intent(Profil.this, Index.class);
+                                index.putExtra("lastActivity", lastActivity);
                                 startActivity(index);
 
                                 // Close This Activity
@@ -170,6 +181,8 @@ public class Profil extends Activity{
 
                                 // Show Detail Profil Activity
                                 Intent detail_profil = new Intent(Profil.this, DetailProfil.class);
+                                lastActivity = System.currentTimeMillis();
+                                detail_profil.putExtra("lastActivity", lastActivity);
                                 detail_profil.putExtra("id", id);
                                 startActivity(detail_profil);
 
@@ -192,5 +205,21 @@ public class Profil extends Activity{
     public void onBackPressed() {
         // Close This Activity
         finish();
+    }
+
+    // Activity Resume
+    @Override
+    public void onResume() {
+        super.onResume();
+        long now = System.currentTimeMillis() - 30 * 60 * 1000;
+        if (lastActivity < now) {
+            finish();
+
+            // Clear Session
+            session.clearSession(Profil.this);
+
+            Intent splash = new Intent(this, Splash.class);
+            startActivity(splash);
+        }
     }
 }

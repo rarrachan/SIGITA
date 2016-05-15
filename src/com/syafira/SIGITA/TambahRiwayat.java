@@ -50,6 +50,7 @@ public class TambahRiwayat extends Activity {
     private ImageView button_simpan;
     private DBHelper db;
     private SessionManager session;
+    private long lastActivity;
 
     // Start Activity
     @Override
@@ -58,6 +59,10 @@ public class TambahRiwayat extends Activity {
 
         // Load Layout
         setContentView(R.layout.tambah_riwayat);
+
+        // Fetch Intent Extra
+        Intent fetchID = getIntent();
+        lastActivity = fetchID.getLongExtra("lastActivity", 1L);
 
         // Load Session Manager
         session = new SessionManager();
@@ -236,7 +241,7 @@ public class TambahRiwayat extends Activity {
             public void onClick(View v) {
                 // Get Value
                 int profilID = Integer.parseInt(session.loadSession(TambahRiwayat.this, "id"));
-                String bulan = riwayat_bulan.getText().toString();
+                int bulan = Integer.valueOf(riwayat_bulan.getText().toString());
                 String tanggal = riwayat_tanggal.getText().toString();
                 String usia = riwayat_usia.getText().toString();
                 String jenisvaksin = riwayat_jenisvaksin.getSelectedItem().toString();
@@ -271,6 +276,8 @@ public class TambahRiwayat extends Activity {
 
                     // Start Profil Activity
                     Intent riwayat = new Intent(TambahRiwayat.this, RiwayatImunisasi.class);
+                    lastActivity = System.currentTimeMillis();
+                    riwayat.putExtra("lastActivity", lastActivity);
                     startActivity(riwayat);
 
                     // Close This Activity
@@ -317,9 +324,27 @@ public class TambahRiwayat extends Activity {
     public void onBackPressed() {
         // Start Riwayat Imunisasi Activity
         Intent riwayat = new Intent(TambahRiwayat.this, RiwayatImunisasi.class);
+        lastActivity = System.currentTimeMillis();
+        riwayat.putExtra("lastActivity", lastActivity);
         startActivity(riwayat);
 
         // Close This Activity
         finish();
+    }
+
+    // Activity Resume
+    @Override
+    public void onResume() {
+        super.onResume();
+        long now = System.currentTimeMillis() - 30 * 60 * 1000;
+        if (lastActivity < now) {
+            finish();
+
+            // Clear Session
+            session.clearSession(TambahRiwayat.this);
+
+            Intent splash = new Intent(this, Splash.class);
+            startActivity(splash);
+        }
     }
 }

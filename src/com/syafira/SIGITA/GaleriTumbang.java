@@ -33,6 +33,7 @@ public class GaleriTumbang extends Activity {
     private TextView text_footer;
     private SessionManager session;
     private DBHelper db;
+    private long lastActivity;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -40,6 +41,10 @@ public class GaleriTumbang extends Activity {
 
         // Load Layout
         setContentView(R.layout.galeri_tumbang);
+
+        // Fetch Intent Extra
+        Intent fetchID = getIntent();
+        lastActivity = fetchID.getLongExtra("lastActivity", 1L);
 
         // Load Session Manager
         session = new SessionManager();
@@ -69,6 +74,8 @@ public class GaleriTumbang extends Activity {
                 @Override
                 public void onClick(View v) {
                     Intent profil = new Intent(GaleriTumbang.this, Profil.class);
+                    lastActivity = System.currentTimeMillis();
+                    profil.putExtra("lastActivity", lastActivity);
                     startActivity(profil);
                 }
             });
@@ -105,13 +112,13 @@ public class GaleriTumbang extends Activity {
             final SimpleAdapter adapter = new SimpleAdapter(getBaseContext(), aList, R.layout.galeri_grid, from, to);
             final ExpandableHeightGridView grid = (ExpandableHeightGridView) findViewById(R.id.gridview);
 
-            float scalefactor = getResources().getDisplayMetrics().density * 100;
-            Display display = getWindowManager().getDefaultDisplay();
-            Point size = new Point();
-            display.getSize(size);
-            int number = size.x;
-            int columns = (int) ((float) number / scalefactor);
-            grid.setNumColumns(columns);
+//            float scalefactor = getResources().getDisplayMetrics().density * 100;
+//            Display display = getWindowManager().getDefaultDisplay();
+//            Point size = new Point();
+//            display.getSize(size);
+//            int number = size.x;
+//            int columns = (int) ((float) number / scalefactor);
+//            grid.setNumColumns(columns);
 
             grid.setFocusable(false);
             grid.setAdapter(adapter);
@@ -123,6 +130,8 @@ public class GaleriTumbang extends Activity {
                 public void onItemClick(AdapterView parent, View v, int position, long id) {
                     if (position == 0) {
                         Intent tambah_galeri = new Intent(GaleriTumbang.this, TambahGaleri.class);
+                        lastActivity = System.currentTimeMillis();
+                        tambah_galeri.putExtra("lastActivity", lastActivity);
                         startActivity(tambah_galeri);
 
                         // Close This Activity
@@ -132,6 +141,8 @@ public class GaleriTumbang extends Activity {
                         int galeri_id = (Integer) obj.get("galeriID");
 
                         Intent detail_galeri = new Intent(GaleriTumbang.this, DetailGaleri.class);
+                        lastActivity = System.currentTimeMillis();
+                        detail_galeri.putExtra("lastActivity", lastActivity);
                         detail_galeri.putExtra("galeriID", galeri_id);
                         startActivity(detail_galeri);
                         finish();
@@ -151,6 +162,8 @@ public class GaleriTumbang extends Activity {
     @Override
     public void onBackPressed() {
         Intent tumbang = new Intent(this, TumbuhKembang.class);
+        lastActivity = System.currentTimeMillis();
+        tumbang.putExtra("lastActivity", lastActivity);
         startActivity(tumbang);
 
         // Close This Activity
@@ -162,15 +175,30 @@ public class GaleriTumbang extends Activity {
     @Override
     public void onResume() {
         super.onResume();
-        // Check Session
-        if (session.checkSession(this)) {
-            // Set Profil Name
-            text_button_profil.setText(session.loadSession(this, "nama"));
-            ExpandableHeightGridView grid = (ExpandableHeightGridView) findViewById(R.id.gridview);
-            grid.setFocusable(false);
-        }
-        else{
+        long now = System.currentTimeMillis() - 30 * 60 * 1000;
+        if (lastActivity < now) {
             finish();
+
+            // Clear Session
+            session.clearSession(GaleriTumbang.this);
+
+            Intent splash = new Intent(this, Splash.class);
+            startActivity(splash);
+        } else {
+            // Check Session
+            if (session.checkSession(this)) {
+                // Set Profil Name
+                text_button_profil.setText(session.loadSession(this, "nama"));
+                ExpandableHeightGridView grid = (ExpandableHeightGridView) findViewById(R.id.gridview);
+                grid.setFocusable(false);
+            } else {
+                // Start Tumbuh Kembang Activity
+                Intent tumbang = new Intent(GaleriTumbang.this, TumbuhKembang.class);
+                lastActivity = System.currentTimeMillis();
+                tumbang.putExtra("lastActivity", lastActivity);
+                startActivity(tumbang);
+                finish();
+            }
         }
     }
 }
