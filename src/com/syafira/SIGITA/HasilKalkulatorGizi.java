@@ -2,6 +2,7 @@ package com.syafira.SIGITA;
 
 import android.app.Activity;
 import android.content.Intent;
+import android.database.Cursor;
 import android.graphics.Color;
 import android.graphics.Typeface;
 import android.os.Bundle;
@@ -41,6 +42,7 @@ public class HasilKalkulatorGizi extends Activity {
     private TextView hasil_imtu;
     private TextView text_footer;
     private SessionManager session;
+    private DBHelper db;
     private long lastActivity;
     private TabHost tabHost;
 
@@ -55,6 +57,7 @@ public class HasilKalkulatorGizi extends Activity {
         Intent fetchID = getIntent();
         String tanggalLahir = fetchID.getStringExtra("tanggalLahir");
         String umur = fetchID.getStringExtra("umur");
+        String bulan = fetchID.getStringExtra("bulan");
         String tinggiBadan = fetchID.getStringExtra("tinggiBadan");
         String beratBadan = fetchID.getStringExtra("beratBadan");
         String jenisKelamin = fetchID.getStringExtra("jenisKelamin");
@@ -62,6 +65,18 @@ public class HasilKalkulatorGizi extends Activity {
 
         // Load Session Manager
         session = new SessionManager();
+
+        // Load Database
+        db = new DBHelper(this);
+        db.open();
+        Cursor cursorBBU = null;
+        Cursor cursorTBU = null;
+        if((jenisKelamin).equals("L")) {
+            cursorBBU = db.getLakiBBUList(Integer.valueOf(bulan));
+            cursorTBU = db.getLakiTBUList(Integer.valueOf(bulan));
+        }
+        cursorBBU.moveToFirst();
+        cursorTBU.moveToFirst();
 
         // Load Widget
         hasil_kalkulator_gizi = (TextView) findViewById(R.id.hasil_kalkulator_gizi);
@@ -122,6 +137,52 @@ public class HasilKalkulatorGizi extends Activity {
             kalkulatorgizi_jeniskelamin.setText("Perempuan");
         }
 
+        // Berat Badan / Umur
+        float bbu = 0;
+        if(Float.parseFloat(beratBadan) < Float.parseFloat(cursorBBU.getString(cursorBBU.getColumnIndex("laki_bbu_median")))){
+            bbu = (Float.parseFloat(beratBadan) - Float.parseFloat(cursorBBU.getString(cursorBBU.getColumnIndex("laki_bbu_median")))) /
+                    (Float.parseFloat(cursorBBU.getString(cursorBBU.getColumnIndex("laki_bbu_median"))) - Float.parseFloat(cursorBBU.getString(cursorBBU.getColumnIndex("laki_bbu_min1sd"))));
+        } else if(Float.parseFloat(beratBadan) > Float.parseFloat(cursorBBU.getString(cursorBBU.getColumnIndex("laki_bbu_median")))){
+            bbu = (Float.parseFloat(beratBadan) - Float.parseFloat(cursorBBU.getString(cursorBBU.getColumnIndex("laki_bbu_median")))) /
+                    (Float.parseFloat(cursorBBU.getString(cursorBBU.getColumnIndex("laki_bbu_1sd"))) - Float.parseFloat(cursorBBU.getString(cursorBBU.getColumnIndex("laki_bbu_median"))));
+        }
+
+        String status_bbu = null;
+        if (bbu < Float.parseFloat("-3")){
+            status_bbu = "Gizi Buruk";
+        } else if (bbu >= Float.parseFloat("-3") && bbu < Float.parseFloat("-2")){
+            status_bbu = "Gizi Kurang";
+        } else if (bbu >= Float.parseFloat("-2") && bbu <= Float.parseFloat("2")) {
+            status_bbu = "Gizi Baik";
+        } else if (bbu > Float.parseFloat("2")) {
+            status_bbu = "Gizi Lebih";
+        }
+
+        hasil_bbu.setText(status_bbu);
+
+        // Tinggi Badan / Umur
+        float tbu = 0;
+        if(Float.parseFloat(tinggiBadan) < Float.parseFloat(cursorTBU.getString(cursorTBU.getColumnIndex("laki_tbu_median")))){
+            tbu = (Float.parseFloat(tinggiBadan) - Float.parseFloat(cursorTBU.getString(cursorTBU.getColumnIndex("laki_tbu_median")))) /
+                    (Float.parseFloat(cursorTBU.getString(cursorTBU.getColumnIndex("laki_tbu_median"))) - Float.parseFloat(cursorTBU.getString(cursorTBU.getColumnIndex("laki_tbu_min1sd"))));
+        } else if(Float.parseFloat(tinggiBadan) > Float.parseFloat(cursorTBU.getString(cursorTBU.getColumnIndex("laki_tbu_median")))){
+            tbu = (Float.parseFloat(tinggiBadan) - Float.parseFloat(cursorTBU.getString(cursorTBU.getColumnIndex("laki_tbu_median")))) /
+                    (Float.parseFloat(cursorTBU.getString(cursorTBU.getColumnIndex("laki_tbu_1sd"))) - Float.parseFloat(cursorTBU.getString(cursorTBU.getColumnIndex("laki_tbu_median"))));
+        }
+
+        String status_tbu = null;
+        if (bbu < Float.parseFloat("-3")){
+            status_tbu = "Sangat Pendek";
+        } else if (tbu >= Float.parseFloat("-3") && tbu < Float.parseFloat("-2")){
+            status_tbu = "Pendek";
+        } else if (tbu >= Float.parseFloat("-2") && tbu <= Float.parseFloat("2")) {
+            status_tbu = "Normal";
+        } else if (tbu > Float.parseFloat("2")) {
+            status_tbu = "Tinggi";
+        }
+
+        hasil_tbu.setText(status_tbu);
+
         tabHost = (TabHost) findViewById(android.R.id.tabhost);     // The activity TabHost
         tabHost.setup();
 
@@ -154,7 +215,7 @@ public class HasilKalkulatorGizi extends Activity {
             final View view = tabHost.getTabWidget().getChildTabViewAt(i);
             if ( view != null ) {
                 // reduce height of the tab
-                view.getLayoutParams().height *= 0.66;
+                view.getLayoutParams().height *= 0.5;
 
                 //  get title text view
                 final View textView = view.findViewById(android.R.id.title);

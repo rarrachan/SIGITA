@@ -137,8 +137,14 @@
                                 android:inputType="numberDecimal|numberSigned"
                                 android:hint="@string/profil_hint_tanggallahir"/>
 
-                        <EditText
+                        <TextView
                                 android:id="@+id/kalkulatorgizi_umur"
+                                android:layout_width="fill_parent"
+                                android:layout_height="wrap_content"
+                                android:visibility="gone"/>
+
+                        <TextView
+                                android:id="@+id/kalkulatorgizi_bulan"
                                 android:layout_width="fill_parent"
                                 android:layout_height="wrap_content"
                                 android:visibility="gone"/>

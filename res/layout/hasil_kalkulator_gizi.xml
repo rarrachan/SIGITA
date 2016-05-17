@@ -132,7 +132,7 @@
                                 android:textColor="#FF0000"
                                 style="@android:style/TextAppearance.DeviceDefault.Medium"
                                 android:hint="@string/profil_hint_tanggallahir"
-                                android:layout_marginBottom="3dp"/>
+                                android:layout_margin="10dp"/>
 
                         <LinearLayout
                                 android:layout_width="fill_parent"
@@ -171,7 +171,7 @@
                                 android:textColor="#FF0000"
                                 style="@android:style/TextAppearance.DeviceDefault.Medium"
                                 android:hint="@string/kalkulatorgizi_usia"
-                                android:layout_marginBottom="3dp"/>
+                                android:layout_margin="10dp"/>
 
                     </LinearLayout>
 
@@ -228,7 +228,7 @@
                                 android:textColor="#FF0000"
                                 android:text="@string/profil_perempuan"
                                 style="@android:style/TextAppearance.DeviceDefault.Medium"
-                                android:layout_marginBottom="3dp"/>
+                                android:layout_margin="10dp"/>
                         <!-- End Text View Jenis Kelamin -->
 
                         <!-- Start Linear Layout Tinggi Badan -->
@@ -263,17 +263,17 @@
                                 android:layout_width="fill_parent"
                                 android:layout_height="wrap_content"
                                 android:orientation="horizontal"
-                                android:layout_marginBottom="3dp">
+                                android:layout_margin="10dp">
 
                             <!-- Start Text View Tinggi Badan -->
                             <TextView
                                     android:id="@+id/kalkulatorgizi_tinggibadan"
-                                    android:layout_width="0dp"
+                                    android:layout_width="wrap_content"
                                     android:layout_height="wrap_content"
                                     android:textColor="#FF0000"
                                     style="@android:style/TextAppearance.DeviceDefault.Medium"
                                     android:hint="@string/kalkulatorgizi_hint_tinggibadan"
-                                    android:layout_weight="1"/>
+                                    />
                             <!-- End Text View Tinggi Badan -->
 
                             <!-- Start Text View Centimeter -->
@@ -284,7 +284,7 @@
                                     android:textColor="#D046F2"
                                     android:text="@string/kalkulatorgizi_centimeter"
                                     style="@android:style/TextAppearance.DeviceDefault.Medium"
-                                    android:layout_weight=".5"/>
+                                    android:layout_weight=".5" android:layout_marginLeft="5dp"/>
                             <!-- End Text View Centimeter -->
 
                         </LinearLayout>
@@ -319,18 +319,17 @@
                         <LinearLayout
                                 android:layout_width="fill_parent"
                                 android:layout_height="wrap_content"
-                                android:orientation="horizontal">
+                                android:orientation="horizontal" android:layout_margin="10dp">
 
                             <!-- Start Text View Berat Badan -->
                             <TextView
                                     android:id="@+id/kalkulatorgizi_beratbadan"
-                                    android:layout_width="0dp"
+                                    android:layout_width="wrap_content"
                                     android:layout_height="wrap_content"
                                     style="@android:style/TextAppearance.DeviceDefault.Medium"
                                     android:textColor="#FF0000"
                                     android:hint="@string/kalkulatorgizi_hint_beratbadan"
-                                    android:layout_weight="1"
-                                    android:layout_marginBottom="3dp"/>
+                                    />
                             <!-- End Text View Berat Lahir -->
 
                             <!-- Start Text View Kilogram -->
@@ -341,7 +340,7 @@
                                     android:textColor="#D046F2"
                                     android:text="@string/kalkulatorgizi_kilogram"
                                     style="@android:style/TextAppearance.DeviceDefault.Medium"
-                                    android:layout_weight=".5"/>
+                                    android:layout_weight=".5" android:layout_marginLeft="5dp"/>
                             <!-- End Text View kilogram -->
 
                         </LinearLayout>
@@ -363,7 +362,7 @@
                 <View
                         android:layout_width="wrap_content"
                         android:layout_height="0dp"
-                        android:layout_weight=".2"/>
+                        android:layout_weight=".5"/>
                 <!-- End Blank Space -->
 
                 <!-- Start Linear Layout Row -->

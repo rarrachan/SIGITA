@@ -29,7 +29,8 @@ public class KalkulatorGizi extends Activity {
     private TextView text_kalkulatorgizi_tanggallahir;
     private TextView titikdua;
     private EditText kalkulatorgizi_tanggallahir;
-    private EditText kalkulatorgizi_umur;
+    private TextView kalkulatorgizi_umur;
+    private TextView kalkulatorgizi_bulan;
     private TextView text_kalkulatorgizi_jeniskelamin;
     private RadioGroup kalkulatorgizi_jeniskelamin;
     private RadioButton kalkulatorgizi_lakilaki;
@@ -53,6 +54,9 @@ public class KalkulatorGizi extends Activity {
         // Load Layout
         setContentView(R.layout.kalkulator_gizi);
 
+        // Load Session Manager
+        session = new SessionManager();
+
         // Fetch Intent Extra
         Intent fetchID = getIntent();
         lastActivity = fetchID.getLongExtra("lastActivity", 1L);
@@ -62,7 +66,8 @@ public class KalkulatorGizi extends Activity {
         text_kalkulatorgizi_tanggallahir = (TextView) findViewById(R.id.text_kalkulatorgizi_tanggallahir);
         titikdua = (TextView) findViewById(R.id.titikdua);
         kalkulatorgizi_tanggallahir = (EditText) findViewById(R.id.kalkulatorgizi_tanggallahir);
-        kalkulatorgizi_umur = (EditText) findViewById(R.id.kalkulatorgizi_umur);
+        kalkulatorgizi_umur = (TextView) findViewById(R.id.kalkulatorgizi_umur);
+        kalkulatorgizi_bulan = (TextView) findViewById(R.id.kalkulatorgizi_bulan);
         text_kalkulatorgizi_jeniskelamin = (TextView) findViewById(R.id.text_kalkulatorgizi_jeniskelamin);
         kalkulatorgizi_lakilaki = (RadioButton) findViewById(R.id.kalkulatorgizi_lakilaki);
         kalkulatorgizi_perempuan = (RadioButton) findViewById(R.id.kalkulatorgizi_perempuan);
@@ -146,6 +151,7 @@ public class KalkulatorGizi extends Activity {
                         }
 
                         String umur = mon + " bulan / " + years + " tahun " + months + " bulan " + days + " hari";
+                        kalkulatorgizi_bulan.setText(Integer.toString(mon));
                         kalkulatorgizi_umur.setText(umur);
                     }
                 }, mYear, mMonth, mDay);
@@ -162,6 +168,7 @@ public class KalkulatorGizi extends Activity {
                 String tinggiBadan = kalkulatorgizi_tinggibadan.getText().toString();
                 String beratBadan = kalkulatorgizi_beratbadan.getText().toString();
                 String umur = kalkulatorgizi_umur.getText().toString();
+                String bulan = kalkulatorgizi_bulan.getText().toString();
 
                 // Check if Value Empty
                 if (TextUtils.isEmpty(tanggalLahir) ||
@@ -179,6 +186,7 @@ public class KalkulatorGizi extends Activity {
                     lastActivity = System.currentTimeMillis();
                     hasilkalkulatorgizi.putExtra("lastActivity", lastActivity);
                     hasilkalkulatorgizi.putExtra("umur", umur);
+                    hasilkalkulatorgizi.putExtra("bulan", bulan);
                     hasilkalkulatorgizi.putExtra("tanggalLahir", tanggalLahir);
                     hasilkalkulatorgizi.putExtra("tinggiBadan", tinggiBadan);
                     hasilkalkulatorgizi.putExtra("beratBadan", beratBadan);
