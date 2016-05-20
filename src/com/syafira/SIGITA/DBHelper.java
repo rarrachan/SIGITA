@@ -29,6 +29,8 @@ public class DBHelper extends SQLiteOpenHelper {
         createProfil(db);
         createLakiBBU(db);
         createLakiTBU(db);
+        createLakiBBTB_0_24(db);
+        createLakiBBTB_24_60(db);
         createList(db);
         createTahap(db);
         createRiwayat(db);
@@ -295,7 +297,7 @@ public class DBHelper extends SQLiteOpenHelper {
     // Create Table Tahapan Tumbuh Kembang
     public void createLakiTBU(SQLiteDatabase db) {
         // Create Table Tahap Tumbuh Kembang
-        String create_laki_tbu= "create table antropometri_laki_tbu (" +
+        String create_laki_tbu  = "create table antropometri_laki_tbu (" +
                 "laki_tbu_ID integer primary key autoincrement, " +
                 "laki_tbu_umur real not null," +
                 "laki_tbu_min3sd real not null, " +
@@ -366,13 +368,470 @@ public class DBHelper extends SQLiteOpenHelper {
                 "('25', '78.6', '81.7', '84.9', '88.0', '91.1', '94.2', '97.3');");
         db.execSQL("insert into antropometri_laki_tbu (laki_tbu_umur, laki_tbu_min3sd, laki_tbu_min2sd, laki_tbu_min1sd, laki_tbu_median, laki_tbu_1sd, laki_tbu_2sd, laki_tbu_3sd) values " +
                 "('26', '79.3', '82.5', '85.6', '88.8', '92.0', '95.2', '98.3');");
-        //masih lanjut sampe 60
-
+        db.execSQL("insert into antropometri_laki_tbu (laki_tbu_umur, laki_tbu_min3sd, laki_tbu_min2sd, laki_tbu_min1sd, laki_tbu_median, laki_tbu_1sd, laki_tbu_2sd, laki_tbu_3sd) values " +
+                "('27', '79.9', '83.1', '86.4', '89.6', '92.9', '96.1', '99.3');");
+        db.execSQL("insert into antropometri_laki_tbu (laki_tbu_umur, laki_tbu_min3sd, laki_tbu_min2sd, laki_tbu_min1sd, laki_tbu_median, laki_tbu_1sd, laki_tbu_2sd, laki_tbu_3sd) values " +
+                "('28', '80.5', '83.8', '87.1', '90.4', '93.7', '97.0', '100.3');");
+        db.execSQL("insert into antropometri_laki_tbu (laki_tbu_umur, laki_tbu_min3sd, laki_tbu_min2sd, laki_tbu_min1sd, laki_tbu_median, laki_tbu_1sd, laki_tbu_2sd, laki_tbu_3sd) values " +
+                "('29', '81.1', '85.5', '87.8', '91.2', '94.5', '97.9', '101.2');");
+        db.execSQL("insert into antropometri_laki_tbu (laki_tbu_umur, laki_tbu_min3sd, laki_tbu_min2sd, laki_tbu_min1sd, laki_tbu_median, laki_tbu_1sd, laki_tbu_2sd, laki_tbu_3sd) values " +
+                "('30', '81.7', '85.1', '88.5', '91.9', '95.3', '98.7', '102.1');");
+        db.execSQL("insert into antropometri_laki_tbu (laki_tbu_umur, laki_tbu_min3sd, laki_tbu_min2sd, laki_tbu_min1sd, laki_tbu_median, laki_tbu_1sd, laki_tbu_2sd, laki_tbu_3sd) values " +
+                "('31', '82.3', '85.7', '89.2', '92.7', '96.1', '99.6', '103.0');");
+        db.execSQL("insert into antropometri_laki_tbu (laki_tbu_umur, laki_tbu_min3sd, laki_tbu_min2sd, laki_tbu_min1sd, laki_tbu_median, laki_tbu_1sd, laki_tbu_2sd, laki_tbu_3sd) values " +
+                "('32', '82.8', '86.4', '89.9', '93.4', '96.9', '100.4', '103.9');");
+        db.execSQL("insert into antropometri_laki_tbu (laki_tbu_umur, laki_tbu_min3sd, laki_tbu_min2sd, laki_tbu_min1sd, laki_tbu_median, laki_tbu_1sd, laki_tbu_2sd, laki_tbu_3sd) values " +
+                "('33', '83.4', '86.9', '90.5', '94.1', '97.6', '101.2', '104.8');");
+        db.execSQL("insert into antropometri_laki_tbu (laki_tbu_umur, laki_tbu_min3sd, laki_tbu_min2sd, laki_tbu_min1sd, laki_tbu_median, laki_tbu_1sd, laki_tbu_2sd, laki_tbu_3sd) values " +
+                "('34', '83.9', '87.5', '91.1', '94.8', '98.4', '102.0', '105.6');");
+        db.execSQL("insert into antropometri_laki_tbu (laki_tbu_umur, laki_tbu_min3sd, laki_tbu_min2sd, laki_tbu_min1sd, laki_tbu_median, laki_tbu_1sd, laki_tbu_2sd, laki_tbu_3sd) values " +
+                "('35', '84.4', '88.1', '91.8', '95.4', '99.1', '102.7', '106.4');");
+        db.execSQL("insert into antropometri_laki_tbu (laki_tbu_umur, laki_tbu_min3sd, laki_tbu_min2sd, laki_tbu_min1sd, laki_tbu_median, laki_tbu_1sd, laki_tbu_2sd, laki_tbu_3sd) values " +
+                "('36', '85.0', '88.7', '92.4', '96.1', '99.8', '103.5', '107.2');");
+        db.execSQL("insert into antropometri_laki_tbu (laki_tbu_umur, laki_tbu_min3sd, laki_tbu_min2sd, laki_tbu_min1sd, laki_tbu_median, laki_tbu_1sd, laki_tbu_2sd, laki_tbu_3sd) values " +
+                "('37', '85.5', '89.2', '93.0', '96.7', '100.5', '104.2', '108.0');");
+        db.execSQL("insert into antropometri_laki_tbu (laki_tbu_umur, laki_tbu_min3sd, laki_tbu_min2sd, laki_tbu_min1sd, laki_tbu_median, laki_tbu_1sd, laki_tbu_2sd, laki_tbu_3sd) values " +
+                "('38', '86.0', '89.8', '93.6', '97.4', '101.2', '105.0', '108.8');");
+        db.execSQL("insert into antropometri_laki_tbu (laki_tbu_umur, laki_tbu_min3sd, laki_tbu_min2sd, laki_tbu_min1sd, laki_tbu_median, laki_tbu_1sd, laki_tbu_2sd, laki_tbu_3sd) values " +
+                "('39', '86.5', '90.3', '94.2', '98.0', '101.8', '105.7', '109.5');");
+        db.execSQL("insert into antropometri_laki_tbu (laki_tbu_umur, laki_tbu_min3sd, laki_tbu_min2sd, laki_tbu_min1sd, laki_tbu_median, laki_tbu_1sd, laki_tbu_2sd, laki_tbu_3sd) values " +
+                "('40', '87.0', '90.9', '94.7', '98.6', '102.5', '106.4', '110.3');");
+        db.execSQL("insert into antropometri_laki_tbu (laki_tbu_umur, laki_tbu_min3sd, laki_tbu_min2sd, laki_tbu_min1sd, laki_tbu_median, laki_tbu_1sd, laki_tbu_2sd, laki_tbu_3sd) values " +
+                "('41', '87.5', '91.4', '95.3', '99.2', '103.2', '107.1', '111.0');");
+        db.execSQL("insert into antropometri_laki_tbu (laki_tbu_umur, laki_tbu_min3sd, laki_tbu_min2sd, laki_tbu_min1sd, laki_tbu_median, laki_tbu_1sd, laki_tbu_2sd, laki_tbu_3sd) values " +
+                "('42', '88.0', '91.9', '95.9', '99.9', '103.8', '107.8', '111.7');");
+        db.execSQL("insert into antropometri_laki_tbu (laki_tbu_umur, laki_tbu_min3sd, laki_tbu_min2sd, laki_tbu_min1sd, laki_tbu_median, laki_tbu_1sd, laki_tbu_2sd, laki_tbu_3sd) values " +
+                "('43', '88.4', '92.4', '96.4', '100.4', '104.5', '108.5', '112.5');");
+        db.execSQL("insert into antropometri_laki_tbu (laki_tbu_umur, laki_tbu_min3sd, laki_tbu_min2sd, laki_tbu_min1sd, laki_tbu_median, laki_tbu_1sd, laki_tbu_2sd, laki_tbu_3sd) values " +
+                "('44', '88.9', '93.0', '97.0', '101.0', '105.1', '109.1', '113.2');");
+        db.execSQL("insert into antropometri_laki_tbu (laki_tbu_umur, laki_tbu_min3sd, laki_tbu_min2sd, laki_tbu_min1sd, laki_tbu_median, laki_tbu_1sd, laki_tbu_2sd, laki_tbu_3sd) values " +
+                "('45', '89.4', '93.5', '97.5', '101.6', '105.7', '109.8', '113.9');");
+        db.execSQL("insert into antropometri_laki_tbu (laki_tbu_umur, laki_tbu_min3sd, laki_tbu_min2sd, laki_tbu_min1sd, laki_tbu_median, laki_tbu_1sd, laki_tbu_2sd, laki_tbu_3sd) values " +
+                "('46', '89.8', '94.0', '98.1', '102.2', '106.3', '110.4', '114.6');");
+        db.execSQL("insert into antropometri_laki_tbu (laki_tbu_umur, laki_tbu_min3sd, laki_tbu_min2sd, laki_tbu_min1sd, laki_tbu_median, laki_tbu_1sd, laki_tbu_2sd, laki_tbu_3sd) values " +
+                "('47', '90.3', '94.4', '98.6', '102.8', '106.9', '111.1', '115.2');");
+        db.execSQL("insert into antropometri_laki_tbu (laki_tbu_umur, laki_tbu_min3sd, laki_tbu_min2sd, laki_tbu_min1sd, laki_tbu_median, laki_tbu_1sd, laki_tbu_2sd, laki_tbu_3sd) values " +
+                "('48', '90.7', '94.9', '99.1', '103.3', '107.5', '111.7', '115.9');");
+        db.execSQL("insert into antropometri_laki_tbu (laki_tbu_umur, laki_tbu_min3sd, laki_tbu_min2sd, laki_tbu_min1sd, laki_tbu_median, laki_tbu_1sd, laki_tbu_2sd, laki_tbu_3sd) values " +
+                "('49', '91.2', '95.4', '99.7', '103.9', '108.1', '112.4', '116.6');");
+        db.execSQL("insert into antropometri_laki_tbu (laki_tbu_umur, laki_tbu_min3sd, laki_tbu_min2sd, laki_tbu_min1sd, laki_tbu_median, laki_tbu_1sd, laki_tbu_2sd, laki_tbu_3sd) values " +
+                "('50', '91.6', '95.9', '100.2', '104.4', '108.7', '113.0', '117.3');");
+        db.execSQL("insert into antropometri_laki_tbu (laki_tbu_umur, laki_tbu_min3sd, laki_tbu_min2sd, laki_tbu_min1sd, laki_tbu_median, laki_tbu_1sd, laki_tbu_2sd, laki_tbu_3sd) values " +
+                "('51', '92.1', '96.4', '100.7', '105.0', '109.3', '113.6', '117.9');");
+        db.execSQL("insert into antropometri_laki_tbu (laki_tbu_umur, laki_tbu_min3sd, laki_tbu_min2sd, laki_tbu_min1sd, laki_tbu_median, laki_tbu_1sd, laki_tbu_2sd, laki_tbu_3sd) values " +
+                "('52', '92.5', '96.9', '101.2', '105.6', '109.9', '114.2', '118.6');");
+        db.execSQL("insert into antropometri_laki_tbu (laki_tbu_umur, laki_tbu_min3sd, laki_tbu_min2sd, laki_tbu_min1sd, laki_tbu_median, laki_tbu_1sd, laki_tbu_2sd, laki_tbu_3sd) values " +
+                "('53', '93.0', '97.4', '101.7', '106.1', '110.5', '114.9', '118.6');");
+        db.execSQL("insert into antropometri_laki_tbu (laki_tbu_umur, laki_tbu_min3sd, laki_tbu_min2sd, laki_tbu_min1sd, laki_tbu_median, laki_tbu_1sd, laki_tbu_2sd, laki_tbu_3sd) values " +
+                "('54', '93.4', '97.8', '102.3', '106.7', '111.1', '115.5', '119.9');");
+        db.execSQL("insert into antropometri_laki_tbu (laki_tbu_umur, laki_tbu_min3sd, laki_tbu_min2sd, laki_tbu_min1sd, laki_tbu_median, laki_tbu_1sd, laki_tbu_2sd, laki_tbu_3sd) values " +
+                "('55', '93.9', '98.3', '102.8', '107.2', '111.7', '116.1', '120.6');");
+        db.execSQL("insert into antropometri_laki_tbu (laki_tbu_umur, laki_tbu_min3sd, laki_tbu_min2sd, laki_tbu_min1sd, laki_tbu_median, laki_tbu_1sd, laki_tbu_2sd, laki_tbu_3sd) values " +
+                "('56', '94.3', '98.8', '103.3', '107.8', '112.3', '116.7', '121.2');");
+        db.execSQL("insert into antropometri_laki_tbu (laki_tbu_umur, laki_tbu_min3sd, laki_tbu_min2sd, laki_tbu_min1sd, laki_tbu_median, laki_tbu_1sd, laki_tbu_2sd, laki_tbu_3sd) values " +
+                "('57', '94.7', '99.3', '103.8', '108.3', '112.8', '117.4', '121.9');");
+        db.execSQL("insert into antropometri_laki_tbu (laki_tbu_umur, laki_tbu_min3sd, laki_tbu_min2sd, laki_tbu_min1sd, laki_tbu_median, laki_tbu_1sd, laki_tbu_2sd, laki_tbu_3sd) values " +
+                "('58', '95.2', '99.7', '104.3', '108.9', '113.4', '118.0', '122.6');");
+        db.execSQL("insert into antropometri_laki_tbu (laki_tbu_umur, laki_tbu_min3sd, laki_tbu_min2sd, laki_tbu_min1sd, laki_tbu_median, laki_tbu_1sd, laki_tbu_2sd, laki_tbu_3sd) values " +
+                "('59', '95.6', '100.2', '104.8', '109.4', '114.0', '118.6', '123.2');");
+        db.execSQL("insert into antropometri_laki_tbu (laki_tbu_umur, laki_tbu_min3sd, laki_tbu_min2sd, laki_tbu_min1sd, laki_tbu_median, laki_tbu_1sd, laki_tbu_2sd, laki_tbu_3sd) values " +
+                "('60', '96.1', '100.7', '105.3', '110.0', '114.6', '119.2', '123.9');");
     }
 
     // Get One List From Database
     public Cursor getLakiTBUList(Integer umur) {
         Cursor cursor = db.rawQuery("SELECT * FROM antropometri_laki_tbu WHERE laki_tbu_umur = " + umur, null);
+        cursor.moveToFirst();
+        return cursor;
+    }
+
+    // Create Table Tahapan Tumbuh Kembang
+    public void createLakiBBTB_0_24(SQLiteDatabase db) {
+        // Create Table Tahap Tumbuh Kembang
+        String create_laki_bbtb_0_24 = "create table antropometri_laki_bbtb_0_24 (" +
+                "laki_bbtb_ID integer primary key autoincrement, " +
+                "laki_bbtb_tb real not null," +
+                "laki_bbtb_min3sd real not null, " +
+                "laki_bbtb_min2sd real not null, " +
+                "laki_bbtb_min1sd real not null, " +
+                "laki_bbtb_median real not null, " +
+                "laki_bbtb_1sd real not null, " +
+                "laki_bbtb_2sd real not null, " +
+                "laki_bbtb_3sd real not null " +
+                ");";
+        db.execSQL(create_laki_bbtb_0_24);
+        insertLakiBBTB_0_24(db);
+    }
+
+    // Insert List Imunisasi
+    public void insertLakiBBTB_0_24(SQLiteDatabase db) {
+        db.execSQL("insert into antropometri_laki_bbtb_0_24 (laki_bbtb_tb, laki_bbtb_min3sd, laki_bbtb_min2sd, laki_bbtb_min1sd, laki_bbtb_median, laki_bbtb_1sd, laki_bbtb_2sd, laki_bbtb_3sd) values " +
+                "('45.0', '1.9', '2.0', '2.2', '2.4', '2.7', '3.0', '3.3');");
+        db.execSQL("insert into antropometri_laki_bbtb_0_24 (laki_bbtb_tb, laki_bbtb_min3sd, laki_bbtb_min2sd, laki_bbtb_min1sd, laki_bbtb_median, laki_bbtb_1sd, laki_bbtb_2sd, laki_bbtb_3sd) values " +
+                "('45.5', '1.9', '2.1', '2.3', '2.5', '2.8', '3.1', '3.4');");
+        db.execSQL("insert into antropometri_laki_bbtb_0_24 (laki_bbtb_tb, laki_bbtb_min3sd, laki_bbtb_min2sd, laki_bbtb_min1sd, laki_bbtb_median, laki_bbtb_1sd, laki_bbtb_2sd, laki_bbtb_3sd) values " +
+                "('46.0', '2.0', '2.2', '2.4', '2.6', '2.9', '3.1', '3.5');");
+        db.execSQL("insert into antropometri_laki_bbtb_0_24 (laki_bbtb_tb, laki_bbtb_min3sd, laki_bbtb_min2sd, laki_bbtb_min1sd, laki_bbtb_median, laki_bbtb_1sd, laki_bbtb_2sd, laki_bbtb_3sd) values " +
+                "('46.5', '2.1', '2.3', '2.5', '2.7', '3.0', '3.2', '3.6');");
+        db.execSQL("insert into antropometri_laki_bbtb_0_24 (laki_bbtb_tb, laki_bbtb_min3sd, laki_bbtb_min2sd, laki_bbtb_min1sd, laki_bbtb_median, laki_bbtb_1sd, laki_bbtb_2sd, laki_bbtb_3sd) values " +
+                "('47.0', '2.1', '2.3', '2.5', '2.8', '3.0', '3.3', '3.7');");
+        db.execSQL("insert into antropometri_laki_bbtb_0_24 (laki_bbtb_tb, laki_bbtb_min3sd, laki_bbtb_min2sd, laki_bbtb_min1sd, laki_bbtb_median, laki_bbtb_1sd, laki_bbtb_2sd, laki_bbtb_3sd) values " +
+                "('47.5', '2.2', '2.4', '2.6', '2.9', '3.1', '3.4', '3.8');");
+        db.execSQL("insert into antropometri_laki_bbtb_0_24 (laki_bbtb_tb, laki_bbtb_min3sd, laki_bbtb_min2sd, laki_bbtb_min1sd, laki_bbtb_median, laki_bbtb_1sd, laki_bbtb_2sd, laki_bbtb_3sd) values " +
+                "('48.0', '2.3', '2.5', '2.7', '2.9', '3.2', '3.6', '3.9');");
+        db.execSQL("insert into antropometri_laki_bbtb_0_24 (laki_bbtb_tb, laki_bbtb_min3sd, laki_bbtb_min2sd, laki_bbtb_min1sd, laki_bbtb_median, laki_bbtb_1sd, laki_bbtb_2sd, laki_bbtb_3sd) values " +
+                "('48.5', '2.3', '2.6', '2.8', '3.0', '3.3', '3.7', '4.0');");
+        db.execSQL("insert into antropometri_laki_bbtb_0_24 (laki_bbtb_tb, laki_bbtb_min3sd, laki_bbtb_min2sd, laki_bbtb_min1sd, laki_bbtb_median, laki_bbtb_1sd, laki_bbtb_2sd, laki_bbtb_3sd) values " +
+                "('49.0', '2.4', '2.6', '2.9', '3.1', '3.4', '3.8', '4.2');");
+        db.execSQL("insert into antropometri_laki_bbtb_0_24 (laki_bbtb_tb, laki_bbtb_min3sd, laki_bbtb_min2sd, laki_bbtb_min1sd, laki_bbtb_median, laki_bbtb_1sd, laki_bbtb_2sd, laki_bbtb_3sd) values " +
+                "('49.5', '2.5', '2.7', '3.0', '3.2', '3.5', '3.9', '4.3');");
+        db.execSQL("insert into antropometri_laki_bbtb_0_24 (laki_bbtb_tb, laki_bbtb_min3sd, laki_bbtb_min2sd, laki_bbtb_min1sd, laki_bbtb_median, laki_bbtb_1sd, laki_bbtb_2sd, laki_bbtb_3sd) values " +
+                "('50.0', '2.6', '2.8', '3.0', '3.3', '3.6', '4.0', '4.4');");
+        db.execSQL("insert into antropometri_laki_bbtb_0_24 (laki_bbtb_tb, laki_bbtb_min3sd, laki_bbtb_min2sd, laki_bbtb_min1sd, laki_bbtb_median, laki_bbtb_1sd, laki_bbtb_2sd, laki_bbtb_3sd) values " +
+                "('50.5', '2.7', '2.9', '3.1', '3.4', '3.8', '4.1', '4.5');");
+        db.execSQL("insert into antropometri_laki_bbtb_0_24 (laki_bbtb_tb, laki_bbtb_min3sd, laki_bbtb_min2sd, laki_bbtb_min1sd, laki_bbtb_median, laki_bbtb_1sd, laki_bbtb_2sd, laki_bbtb_3sd) values " +
+                "('51.0', '2.7', '3.0', '3.2', '3.5', '3.9', '4.2', '4.7');");
+        db.execSQL("insert into antropometri_laki_bbtb_0_24 (laki_bbtb_tb, laki_bbtb_min3sd, laki_bbtb_min2sd, laki_bbtb_min1sd, laki_bbtb_median, laki_bbtb_1sd, laki_bbtb_2sd, laki_bbtb_3sd) values " +
+                "('51.5', '2.8', '3.1', '3.3', '3.6', '4.0', '4.4', '4.8');");
+        db.execSQL("insert into antropometri_laki_bbtb_0_24 (laki_bbtb_tb, laki_bbtb_min3sd, laki_bbtb_min2sd, laki_bbtb_min1sd, laki_bbtb_median, laki_bbtb_1sd, laki_bbtb_2sd, laki_bbtb_3sd) values " +
+                "('52.0', '2.9', '3.2', '3.5', '3.8', '4.1', '4.5', '5.0');");
+        db.execSQL("insert into antropometri_laki_bbtb_0_24 (laki_bbtb_tb, laki_bbtb_min3sd, laki_bbtb_min2sd, laki_bbtb_min1sd, laki_bbtb_median, laki_bbtb_1sd, laki_bbtb_2sd, laki_bbtb_3sd) values " +
+                "('52.5', '3.0', '3.3', '3.6', '3.9', '4.2', '4.6', '5.1');");
+        db.execSQL("insert into antropometri_laki_bbtb_0_24 (laki_bbtb_tb, laki_bbtb_min3sd, laki_bbtb_min2sd, laki_bbtb_min1sd, laki_bbtb_median, laki_bbtb_1sd, laki_bbtb_2sd, laki_bbtb_3sd) values " +
+                "('53.0', '3.1', '3.4', '3.7', '4.0', '4.4', '4.6', '5.1');");
+        db.execSQL("insert into antropometri_laki_bbtb_0_24 (laki_bbtb_tb, laki_bbtb_min3sd, laki_bbtb_min2sd, laki_bbtb_min1sd, laki_bbtb_median, laki_bbtb_1sd, laki_bbtb_2sd, laki_bbtb_3sd) values " +
+                "('53.5', '3.2', '3.5', '3.8', '4.1', '4.5', '4.9', '5.4');");
+        db.execSQL("insert into antropometri_laki_bbtb_0_24 (laki_bbtb_tb, laki_bbtb_min3sd, laki_bbtb_min2sd, laki_bbtb_min1sd, laki_bbtb_median, laki_bbtb_1sd, laki_bbtb_2sd, laki_bbtb_3sd) values " +
+                "('54.0', '3.3', '3.6', '3.9', '4.3', '4.7', '5.1', '5.6');");
+        db.execSQL("insert into antropometri_laki_bbtb_0_24 (laki_bbtb_tb, laki_bbtb_min3sd, laki_bbtb_min2sd, laki_bbtb_min1sd, laki_bbtb_median, laki_bbtb_1sd, laki_bbtb_2sd, laki_bbtb_3sd) values " +
+                "('54.5', '3.4', '3.7', '4.0', '4.4', '4.8', '5.3', '5.8');");
+        db.execSQL("insert into antropometri_laki_bbtb_0_24 (laki_bbtb_tb, laki_bbtb_min3sd, laki_bbtb_min2sd, laki_bbtb_min1sd, laki_bbtb_median, laki_bbtb_1sd, laki_bbtb_2sd, laki_bbtb_3sd) values " +
+                "('55.0', '3.6', '3.8', '4.2', '4.5', '5.0', '5.4', '6.0');");
+        db.execSQL("insert into antropometri_laki_bbtb_0_24 (laki_bbtb_tb, laki_bbtb_min3sd, laki_bbtb_min2sd, laki_bbtb_min1sd, laki_bbtb_median, laki_bbtb_1sd, laki_bbtb_2sd, laki_bbtb_3sd) values " +
+                "('55.5', '3.7', '4.0', '4.3', '4.7', '5.1', '5.6', '6.1');");
+        db.execSQL("insert into antropometri_laki_bbtb_0_24 (laki_bbtb_tb, laki_bbtb_min3sd, laki_bbtb_min2sd, laki_bbtb_min1sd, laki_bbtb_median, laki_bbtb_1sd, laki_bbtb_2sd, laki_bbtb_3sd) values " +
+                "('56.0', '3.8', '4.1', '4.4', '4.8', '5.3', '5.8', '6.3');");
+        db.execSQL("insert into antropometri_laki_bbtb_0_24 (laki_bbtb_tb, laki_bbtb_min3sd, laki_bbtb_min2sd, laki_bbtb_min1sd, laki_bbtb_median, laki_bbtb_1sd, laki_bbtb_2sd, laki_bbtb_3sd) values " +
+                "('56.5', '3.9', '4.2', '4.6', '5.0', '5.4', '5.9', '6.4');");
+        db.execSQL("insert into antropometri_laki_bbtb_0_24 (laki_bbtb_tb, laki_bbtb_min3sd, laki_bbtb_min2sd, laki_bbtb_min1sd, laki_bbtb_median, laki_bbtb_1sd, laki_bbtb_2sd, laki_bbtb_3sd) values " +
+                "('57.0', '4.0', '4.3', '4.7', '5.1', '5.6', '6.1', '6.7');");
+        db.execSQL("insert into antropometri_laki_bbtb_0_24 (laki_bbtb_tb, laki_bbtb_min3sd, laki_bbtb_min2sd, laki_bbtb_min1sd, laki_bbtb_median, laki_bbtb_1sd, laki_bbtb_2sd, laki_bbtb_3sd) values " +
+                "('57.5', '4.1', '4.5', '4.9', '5.3', '5.7', '6.3', '6.9');");
+        db.execSQL("insert into antropometri_laki_bbtb_0_24 (laki_bbtb_tb, laki_bbtb_min3sd, laki_bbtb_min2sd, laki_bbtb_min1sd, laki_bbtb_median, laki_bbtb_1sd, laki_bbtb_2sd, laki_bbtb_3sd) values " +
+                "('58.0', '4.3', '4.6', '5.0', '5.4', '5.9', '6.4', '7.1');");
+        db.execSQL("insert into antropometri_laki_bbtb_0_24 (laki_bbtb_tb, laki_bbtb_min3sd, laki_bbtb_min2sd, laki_bbtb_min1sd, laki_bbtb_median, laki_bbtb_1sd, laki_bbtb_2sd, laki_bbtb_3sd) values " +
+                "('58.5', '4.4', '4.7', '5.1', '5.6', '6.1', '6.6', '7.2');");
+        db.execSQL("insert into antropometri_laki_bbtb_0_24 (laki_bbtb_tb, laki_bbtb_min3sd, laki_bbtb_min2sd, laki_bbtb_min1sd, laki_bbtb_median, laki_bbtb_1sd, laki_bbtb_2sd, laki_bbtb_3sd) values " +
+                "('59.0', '4.5', '4.8', '5.3', '5.7', '6.2', '6.8', '7.4');");
+        db.execSQL("insert into antropometri_laki_bbtb_0_24 (laki_bbtb_tb, laki_bbtb_min3sd, laki_bbtb_min2sd, laki_bbtb_min1sd, laki_bbtb_median, laki_bbtb_1sd, laki_bbtb_2sd, laki_bbtb_3sd) values " +
+                "('59.5', '4.6', '5.0', '5.4', '5.9', '6.4', '7.0', '7.6');");
+        db.execSQL("insert into antropometri_laki_bbtb_0_24 (laki_bbtb_tb, laki_bbtb_min3sd, laki_bbtb_min2sd, laki_bbtb_min1sd, laki_bbtb_median, laki_bbtb_1sd, laki_bbtb_2sd, laki_bbtb_3sd) values " +
+                "('60.0', '4.7', '5.1', '5.5', '6.0', '6.5', '7.1', '7.8');");
+        db.execSQL("insert into antropometri_laki_bbtb_0_24 (laki_bbtb_tb, laki_bbtb_min3sd, laki_bbtb_min2sd, laki_bbtb_min1sd, laki_bbtb_median, laki_bbtb_1sd, laki_bbtb_2sd, laki_bbtb_3sd) values " +
+                "('60.5', '4.8', '5.2', '5.6', '6.1', '6.7', '7.3', '8.0');");
+        db.execSQL("insert into antropometri_laki_bbtb_0_24 (laki_bbtb_tb, laki_bbtb_min3sd, laki_bbtb_min2sd, laki_bbtb_min1sd, laki_bbtb_median, laki_bbtb_1sd, laki_bbtb_2sd, laki_bbtb_3sd) values " +
+                "('61.0', '4.9', '5.3', '5.8', '6.3', '6.8', '7.4', '8.1');");
+        db.execSQL("insert into antropometri_laki_bbtb_0_24 (laki_bbtb_tb, laki_bbtb_min3sd, laki_bbtb_min2sd, laki_bbtb_min1sd, laki_bbtb_median, laki_bbtb_1sd, laki_bbtb_2sd, laki_bbtb_3sd) values " +
+                "('61.5', '5.0', '5.4', '5.9', '6.4', '7.0', '7.6', '8.3');");
+        db.execSQL("insert into antropometri_laki_bbtb_0_24 (laki_bbtb_tb, laki_bbtb_min3sd, laki_bbtb_min2sd, laki_bbtb_min1sd, laki_bbtb_median, laki_bbtb_1sd, laki_bbtb_2sd, laki_bbtb_3sd) values " +
+                "('62.0', '5.1', '5.6', '6.0', '6.5', '7.1', '7.7', '8.5');");
+        db.execSQL("insert into antropometri_laki_bbtb_0_24 (laki_bbtb_tb, laki_bbtb_min3sd, laki_bbtb_min2sd, laki_bbtb_min1sd, laki_bbtb_median, laki_bbtb_1sd, laki_bbtb_2sd, laki_bbtb_3sd) values " +
+                "('62.5', '5.2', '5.7', '6.1', '6.7', '7.2', '7.9', '8.6');");
+        db.execSQL("insert into antropometri_laki_bbtb_0_24 (laki_bbtb_tb, laki_bbtb_min3sd, laki_bbtb_min2sd, laki_bbtb_min1sd, laki_bbtb_median, laki_bbtb_1sd, laki_bbtb_2sd, laki_bbtb_3sd) values " +
+                "('63.0', '5.3', '5.8', '6.2', '6.8', '7.4', '8.0', '8.8');");
+        db.execSQL("insert into antropometri_laki_bbtb_0_24 (laki_bbtb_tb, laki_bbtb_min3sd, laki_bbtb_min2sd, laki_bbtb_min1sd, laki_bbtb_median, laki_bbtb_1sd, laki_bbtb_2sd, laki_bbtb_3sd) values " +
+                "('63.5', '5.4', '5.9', '6.4', '6.9', '7.5', '8.2', '8.9');");
+        db.execSQL("insert into antropometri_laki_bbtb_0_24 (laki_bbtb_tb, laki_bbtb_min3sd, laki_bbtb_min2sd, laki_bbtb_min1sd, laki_bbtb_median, laki_bbtb_1sd, laki_bbtb_2sd, laki_bbtb_3sd) values " +
+                "('64.0', '5.5', '6.0', '6.5', '7.0', '7.6', '8.3', '9.1');");
+        db.execSQL("insert into antropometri_laki_bbtb_0_24 (laki_bbtb_tb, laki_bbtb_min3sd, laki_bbtb_min2sd, laki_bbtb_min1sd, laki_bbtb_median, laki_bbtb_1sd, laki_bbtb_2sd, laki_bbtb_3sd) values " +
+                "('64.5', '5.6', '6.1', '6.6', '7.1', '7.8', '8.5', '9.3');");
+        db.execSQL("insert into antropometri_laki_bbtb_0_24 (laki_bbtb_tb, laki_bbtb_min3sd, laki_bbtb_min2sd, laki_bbtb_min1sd, laki_bbtb_median, laki_bbtb_1sd, laki_bbtb_2sd, laki_bbtb_3sd) values " +
+                "('65.0', '5.7', '6.2', '6.7', '7.3', '7.9', '8.6', '9.4');");
+        db.execSQL("insert into antropometri_laki_bbtb_0_24 (laki_bbtb_tb, laki_bbtb_min3sd, laki_bbtb_min2sd, laki_bbtb_min1sd, laki_bbtb_median, laki_bbtb_1sd, laki_bbtb_2sd, laki_bbtb_3sd) values " +
+                "('65.5', '5.8', '6.3', '6.8', '7.4', '8.0', '8.7', '9.6');");
+        db.execSQL("insert into antropometri_laki_bbtb_0_24 (laki_bbtb_tb, laki_bbtb_min3sd, laki_bbtb_min2sd, laki_bbtb_min1sd, laki_bbtb_median, laki_bbtb_1sd, laki_bbtb_2sd, laki_bbtb_3sd) values " +
+                "('66.0', '5.9', '6.4', '6.9', '7.5', '8.2', '8.9', '9.7');");
+        db.execSQL("insert into antropometri_laki_bbtb_0_24 (laki_bbtb_tb, laki_bbtb_min3sd, laki_bbtb_min2sd, laki_bbtb_min1sd, laki_bbtb_median, laki_bbtb_1sd, laki_bbtb_2sd, laki_bbtb_3sd) values " +
+                "('66.5', '6.0', '6.5', '7.0', '7.6', '8.3', '9.0', '9.9');");
+        db.execSQL("insert into antropometri_laki_bbtb_0_24 (laki_bbtb_tb, laki_bbtb_min3sd, laki_bbtb_min2sd, laki_bbtb_min1sd, laki_bbtb_median, laki_bbtb_1sd, laki_bbtb_2sd, laki_bbtb_3sd) values " +
+                "('67.0', '6.1', '6.6', '7.1', '7.7', '8.4', '9.2', '10.0');");
+        db.execSQL("insert into antropometri_laki_bbtb_0_24 (laki_bbtb_tb, laki_bbtb_min3sd, laki_bbtb_min2sd, laki_bbtb_min1sd, laki_bbtb_median, laki_bbtb_1sd, laki_bbtb_2sd, laki_bbtb_3sd) values " +
+                "('68.0', '6.3', '6.8', '7.3', '8.0', '8.7', '9.4', '10.3');");
+        db.execSQL("insert into antropometri_laki_bbtb_0_24 (laki_bbtb_tb, laki_bbtb_min3sd, laki_bbtb_min2sd, laki_bbtb_min1sd, laki_bbtb_median, laki_bbtb_1sd, laki_bbtb_2sd, laki_bbtb_3sd) values " +
+                "('68.5', '6.4', '6.9', '7.5', '8.1', '8.8', '9.6', '10.5');");
+        db.execSQL("insert into antropometri_laki_bbtb_0_24 (laki_bbtb_tb, laki_bbtb_min3sd, laki_bbtb_min2sd, laki_bbtb_min1sd, laki_bbtb_median, laki_bbtb_1sd, laki_bbtb_2sd, laki_bbtb_3sd) values " +
+                "('69.0', '6.5', '7.0', '7.6', '8.2', '8.9', '9.7', '10.6');");
+        db.execSQL("insert into antropometri_laki_bbtb_0_24 (laki_bbtb_tb, laki_bbtb_min3sd, laki_bbtb_min2sd, laki_bbtb_min1sd, laki_bbtb_median, laki_bbtb_1sd, laki_bbtb_2sd, laki_bbtb_3sd) values " +
+                "('69.5', '6.6', '7.1', '7.7', '8.3', '9.0', '9.8', '10.8');");
+        db.execSQL("insert into antropometri_laki_bbtb_0_24 (laki_bbtb_tb, laki_bbtb_min3sd, laki_bbtb_min2sd, laki_bbtb_min1sd, laki_bbtb_median, laki_bbtb_1sd, laki_bbtb_2sd, laki_bbtb_3sd) values " +
+                "('70.0', '6.6', '7.2', '7.8', '8.4', '9.2', '10.0', '10.9');");
+        db.execSQL("insert into antropometri_laki_bbtb_0_24 (laki_bbtb_tb, laki_bbtb_min3sd, laki_bbtb_min2sd, laki_bbtb_min1sd, laki_bbtb_median, laki_bbtb_1sd, laki_bbtb_2sd, laki_bbtb_3sd) values " +
+                "('70.5', '6.7', '7.3', '7.9', '8.5', '9.3', '10.1', '11.1');");
+        db.execSQL("insert into antropometri_laki_bbtb_0_24 (laki_bbtb_tb, laki_bbtb_min3sd, laki_bbtb_min2sd, laki_bbtb_min1sd, laki_bbtb_median, laki_bbtb_1sd, laki_bbtb_2sd, laki_bbtb_3sd) values " +
+                "('71.0', '6.8', '7.4', '8.0', '8.6', '9.4', '10.2', '11.2');");
+        db.execSQL("insert into antropometri_laki_bbtb_0_24 (laki_bbtb_tb, laki_bbtb_min3sd, laki_bbtb_min2sd, laki_bbtb_min1sd, laki_bbtb_median, laki_bbtb_1sd, laki_bbtb_2sd, laki_bbtb_3sd) values " +
+                "('71.5', '6.9', '7.5', '8.1', '8.8', '9.5', '10.4', '11.3');");
+        db.execSQL("insert into antropometri_laki_bbtb_0_24 (laki_bbtb_tb, laki_bbtb_min3sd, laki_bbtb_min2sd, laki_bbtb_min1sd, laki_bbtb_median, laki_bbtb_1sd, laki_bbtb_2sd, laki_bbtb_3sd) values " +
+                "('72.0', '7.0', '7.6', '8.2', '8.9', '9.6', '10.5', '11.5');");
+        db.execSQL("insert into antropometri_laki_bbtb_0_24 (laki_bbtb_tb, laki_bbtb_min3sd, laki_bbtb_min2sd, laki_bbtb_min1sd, laki_bbtb_median, laki_bbtb_1sd, laki_bbtb_2sd, laki_bbtb_3sd) values " +
+                "('72.5', '7.1', '7.6', '8.3', '9.0', '9.8', '10.6', '11.6');");
+        db.execSQL("insert into antropometri_laki_bbtb_0_24 (laki_bbtb_tb, laki_bbtb_min3sd, laki_bbtb_min2sd, laki_bbtb_min1sd, laki_bbtb_median, laki_bbtb_1sd, laki_bbtb_2sd, laki_bbtb_3sd) values " +
+                "('73.0', '7.2', '7.7', '8.4', '9.1', '9.9', '10.8', '11.8');");
+        db.execSQL("insert into antropometri_laki_bbtb_0_24 (laki_bbtb_tb, laki_bbtb_min3sd, laki_bbtb_min2sd, laki_bbtb_min1sd, laki_bbtb_median, laki_bbtb_1sd, laki_bbtb_2sd, laki_bbtb_3sd) values " +
+                "('73.5', '7.2', '7.8', '8.5', '9.2', '10.0', '10.9', '11.9');");
+        db.execSQL("insert into antropometri_laki_bbtb_0_24 (laki_bbtb_tb, laki_bbtb_min3sd, laki_bbtb_min2sd, laki_bbtb_min1sd, laki_bbtb_median, laki_bbtb_1sd, laki_bbtb_2sd, laki_bbtb_3sd) values " +
+                "('74.0', '7.3', '7.9', '8.6', '9.3', '10.1', '11.0', '12.1');");
+        db.execSQL("insert into antropometri_laki_bbtb_0_24 (laki_bbtb_tb, laki_bbtb_min3sd, laki_bbtb_min2sd, laki_bbtb_min1sd, laki_bbtb_median, laki_bbtb_1sd, laki_bbtb_2sd, laki_bbtb_3sd) values " +
+                "('74.5', '7.4', '8.0', '8.7', '9.4', '10.2', '11.2', '12.2');");
+        db.execSQL("insert into antropometri_laki_bbtb_0_24 (laki_bbtb_tb, laki_bbtb_min3sd, laki_bbtb_min2sd, laki_bbtb_min1sd, laki_bbtb_median, laki_bbtb_1sd, laki_bbtb_2sd, laki_bbtb_3sd) values " +
+                "('75.0', '7.5', '8.1', '8.8', '9.5', '10.3', '11.3', '12.3');");
+        db.execSQL("insert into antropometri_laki_bbtb_0_24 (laki_bbtb_tb, laki_bbtb_min3sd, laki_bbtb_min2sd, laki_bbtb_min1sd, laki_bbtb_median, laki_bbtb_1sd, laki_bbtb_2sd, laki_bbtb_3sd) values " +
+                "('75.5', '7.6', '8.2', '8.8', '9.6', '10.4', '11.4', '12.5');");
+        db.execSQL("insert into antropometri_laki_bbtb_0_24 (laki_bbtb_tb, laki_bbtb_min3sd, laki_bbtb_min2sd, laki_bbtb_min1sd, laki_bbtb_median, laki_bbtb_1sd, laki_bbtb_2sd, laki_bbtb_3sd) values " +
+                "('76.0', '7.6', '8.3', '8.9', '9.7', '10.6', '11.5', '12.6');");
+        db.execSQL("insert into antropometri_laki_bbtb_0_24 (laki_bbtb_tb, laki_bbtb_min3sd, laki_bbtb_min2sd, laki_bbtb_min1sd, laki_bbtb_median, laki_bbtb_1sd, laki_bbtb_2sd, laki_bbtb_3sd) values " +
+                "('76.5', '7.7', '8.3', '9.0', '9.8', '10.7', '11.6', '12.7');");
+        db.execSQL("insert into antropometri_laki_bbtb_0_24 (laki_bbtb_tb, laki_bbtb_min3sd, laki_bbtb_min2sd, laki_bbtb_min1sd, laki_bbtb_median, laki_bbtb_1sd, laki_bbtb_2sd, laki_bbtb_3sd) values " +
+                "('77.0', '7.8', '8.4', '9.1', '9.9', '10.8', '11.7', '12.8');");
+        db.execSQL("insert into antropometri_laki_bbtb_0_24 (laki_bbtb_tb, laki_bbtb_min3sd, laki_bbtb_min2sd, laki_bbtb_min1sd, laki_bbtb_median, laki_bbtb_1sd, laki_bbtb_2sd, laki_bbtb_3sd) values " +
+                "('77.5', '7.9', '8.5', '9.2', '10.0', '10.9', '11.9', '13.0');");
+        db.execSQL("insert into antropometri_laki_bbtb_0_24 (laki_bbtb_tb, laki_bbtb_min3sd, laki_bbtb_min2sd, laki_bbtb_min1sd, laki_bbtb_median, laki_bbtb_1sd, laki_bbtb_2sd, laki_bbtb_3sd) values " +
+                "('78.0', '7.9', '8.6', '9.3', '10.1', '11.0', '12.0', '13.1');");
+        db.execSQL("insert into antropometri_laki_bbtb_0_24 (laki_bbtb_tb, laki_bbtb_min3sd, laki_bbtb_min2sd, laki_bbtb_min1sd, laki_bbtb_median, laki_bbtb_1sd, laki_bbtb_2sd, laki_bbtb_3sd) values " +
+                "('78.5', '8.0', '8.7', '9.4', '10.2', '11.1', '12.1', '13.2');");
+        db.execSQL("insert into antropometri_laki_bbtb_0_24 (laki_bbtb_tb, laki_bbtb_min3sd, laki_bbtb_min2sd, laki_bbtb_min1sd, laki_bbtb_median, laki_bbtb_1sd, laki_bbtb_2sd, laki_bbtb_3sd) values " +
+                "('79.0', '8.1', '8.7', '9.5', '10.3', '11.2', '12.2', '13.3');");
+        db.execSQL("insert into antropometri_laki_bbtb_0_24 (laki_bbtb_tb, laki_bbtb_min3sd, laki_bbtb_min2sd, laki_bbtb_min1sd, laki_bbtb_median, laki_bbtb_1sd, laki_bbtb_2sd, laki_bbtb_3sd) values " +
+                "('79.5', '8.2', '8.9', '9.5', '10.4', '11.3', '12.3', '13.4');");
+        db.execSQL("insert into antropometri_laki_bbtb_0_24 (laki_bbtb_tb, laki_bbtb_min3sd, laki_bbtb_min2sd, laki_bbtb_min1sd, laki_bbtb_median, laki_bbtb_1sd, laki_bbtb_2sd, laki_bbtb_3sd) values " +
+                "('80.0', '8.2', '8.9', '9.6', '10.4', '11.4', '12.4', '13.6');");
+        db.execSQL("insert into antropometri_laki_bbtb_0_24 (laki_bbtb_tb, laki_bbtb_min3sd, laki_bbtb_min2sd, laki_bbtb_min1sd, laki_bbtb_median, laki_bbtb_1sd, laki_bbtb_2sd, laki_bbtb_3sd) values " +
+                "('80.5', '8.3', '9.0', '9.7', '10.5', '11.5', '12.5', '13.7');");
+        db.execSQL("insert into antropometri_laki_bbtb_0_24 (laki_bbtb_tb, laki_bbtb_min3sd, laki_bbtb_min2sd, laki_bbtb_min1sd, laki_bbtb_median, laki_bbtb_1sd, laki_bbtb_2sd, laki_bbtb_3sd) values " +
+                "('81.0', '8.4', '9.1', '9.8', '10.6', '11.6', '12.6', '13.8');");
+        db.execSQL("insert into antropometri_laki_bbtb_0_24 (laki_bbtb_tb, laki_bbtb_min3sd, laki_bbtb_min2sd, laki_bbtb_min1sd, laki_bbtb_median, laki_bbtb_1sd, laki_bbtb_2sd, laki_bbtb_3sd) values " +
+                "('81.5', '8.5', '9.1', '9.9', '10.7', '11.7', '12.7', '13.9');");
+        db.execSQL("insert into antropometri_laki_bbtb_0_24 (laki_bbtb_tb, laki_bbtb_min3sd, laki_bbtb_min2sd, laki_bbtb_min1sd, laki_bbtb_median, laki_bbtb_1sd, laki_bbtb_2sd, laki_bbtb_3sd) values " +
+                "('82.0', '8.5', '9.2', '10.0', '10.8', '11.8', '12.8', '14.0');");
+        db.execSQL("insert into antropometri_laki_bbtb_0_24 (laki_bbtb_tb, laki_bbtb_min3sd, laki_bbtb_min2sd, laki_bbtb_min1sd, laki_bbtb_median, laki_bbtb_1sd, laki_bbtb_2sd, laki_bbtb_3sd) values " +
+                "('82.5', '8.6', '9.3', '10.1', '10.9', '11.9', '13.0', '14.2');");
+        db.execSQL("insert into antropometri_laki_bbtb_0_24 (laki_bbtb_tb, laki_bbtb_min3sd, laki_bbtb_min2sd, laki_bbtb_min1sd, laki_bbtb_median, laki_bbtb_1sd, laki_bbtb_2sd, laki_bbtb_3sd) values " +
+                "('83.0', '8.7', '9.4', '10.2', '11.0', '12.0', '13.1', '14.3');");
+        db.execSQL("insert into antropometri_laki_bbtb_0_24 (laki_bbtb_tb, laki_bbtb_min3sd, laki_bbtb_min2sd, laki_bbtb_min1sd, laki_bbtb_median, laki_bbtb_1sd, laki_bbtb_2sd, laki_bbtb_3sd) values " +
+                "('83.5', '8.8', '9.5', '10.3', '11.2', '12.1', '13.2', '14.4');");
+        db.execSQL("insert into antropometri_laki_bbtb_0_24 (laki_bbtb_tb, laki_bbtb_min3sd, laki_bbtb_min2sd, laki_bbtb_min1sd, laki_bbtb_median, laki_bbtb_1sd, laki_bbtb_2sd, laki_bbtb_3sd) values " +
+                "('84.0', '8.9', '9.6', '10.4', '11.3', '12.2', '13.3', '14.6');");
+        db.execSQL("insert into antropometri_laki_bbtb_0_24 (laki_bbtb_tb, laki_bbtb_min3sd, laki_bbtb_min2sd, laki_bbtb_min1sd, laki_bbtb_median, laki_bbtb_1sd, laki_bbtb_2sd, laki_bbtb_3sd) values " +
+                "('84.5', '9.0', '9.7', '10.5', '11.4', '12.4', '13.5', '14.7');");
+        db.execSQL("insert into antropometri_laki_bbtb_0_24 (laki_bbtb_tb, laki_bbtb_min3sd, laki_bbtb_min2sd, laki_bbtb_min1sd, laki_bbtb_median, laki_bbtb_1sd, laki_bbtb_2sd, laki_bbtb_3sd) values " +
+                "('85.0', '9.1', '9.8', '10.6', '11.5', '12.5', '13.6', '14.9');");
+        db.execSQL("insert into antropometri_laki_bbtb_0_24 (laki_bbtb_tb, laki_bbtb_min3sd, laki_bbtb_min2sd, laki_bbtb_min1sd, laki_bbtb_median, laki_bbtb_1sd, laki_bbtb_2sd, laki_bbtb_3sd) values " +
+                "('85.5', '9.2', '9.9', '10.7', '11.6', '12.6', '13.7', '15.0');");
+        db.execSQL("insert into antropometri_laki_bbtb_0_24 (laki_bbtb_tb, laki_bbtb_min3sd, laki_bbtb_min2sd, laki_bbtb_min1sd, laki_bbtb_median, laki_bbtb_1sd, laki_bbtb_2sd, laki_bbtb_3sd) values " +
+                "('86.0', '9.3', '10.0', '10.8', '11.7', '12.8', '13.9', '15.2');");
+        db.execSQL("insert into antropometri_laki_bbtb_0_24 (laki_bbtb_tb, laki_bbtb_min3sd, laki_bbtb_min2sd, laki_bbtb_min1sd, laki_bbtb_median, laki_bbtb_1sd, laki_bbtb_2sd, laki_bbtb_3sd) values " +
+                "('86.5', '9.4', '10.1', '11.0', '11.9', '12.9', '14.0', '15.3');");
+        db.execSQL("insert into antropometri_laki_bbtb_0_24 (laki_bbtb_tb, laki_bbtb_min3sd, laki_bbtb_min2sd, laki_bbtb_min1sd, laki_bbtb_median, laki_bbtb_1sd, laki_bbtb_2sd, laki_bbtb_3sd) values " +
+                "('87.0', '9.5', '10.2', '11.1', '12.0', '13.0', '14.2', '15.5');");
+        db.execSQL("insert into antropometri_laki_bbtb_0_24 (laki_bbtb_tb, laki_bbtb_min3sd, laki_bbtb_min2sd, laki_bbtb_min1sd, laki_bbtb_median, laki_bbtb_1sd, laki_bbtb_2sd, laki_bbtb_3sd) values " +
+                "('87.5', '9.5', '10.4', '11.2', '12.1', '13.2', '14.3', '15.6');");
+        db.execSQL("insert into antropometri_laki_bbtb_0_24 (laki_bbtb_tb, laki_bbtb_min3sd, laki_bbtb_min2sd, laki_bbtb_min1sd, laki_bbtb_median, laki_bbtb_1sd, laki_bbtb_2sd, laki_bbtb_3sd) values " +
+                "('88.0', '9.7', '10.5', '11.3', '12.2', '13.3', '14.5', '15.8');");
+        db.execSQL("insert into antropometri_laki_bbtb_0_24 (laki_bbtb_tb, laki_bbtb_min3sd, laki_bbtb_min2sd, laki_bbtb_min1sd, laki_bbtb_median, laki_bbtb_1sd, laki_bbtb_2sd, laki_bbtb_3sd) values " +
+                "('88.5', '9.8', '10.6', '11.4', '12.4', '13.4', '14.6', '15.9');");
+        db.execSQL("insert into antropometri_laki_bbtb_0_24 (laki_bbtb_tb, laki_bbtb_min3sd, laki_bbtb_min2sd, laki_bbtb_min1sd, laki_bbtb_median, laki_bbtb_1sd, laki_bbtb_2sd, laki_bbtb_3sd) values " +
+                "('89.0', '9.9', '10.7', '11.5', '12.5', '13.5', '14.7', '16.1');");
+        db.execSQL("insert into antropometri_laki_bbtb_0_24 (laki_bbtb_tb, laki_bbtb_min3sd, laki_bbtb_min2sd, laki_bbtb_min1sd, laki_bbtb_median, laki_bbtb_1sd, laki_bbtb_2sd, laki_bbtb_3sd) values " +
+                "('89.5', '10.0', '10.8', '11.6', '12.6', '13.7', '14.9', '16.2');");
+        db.execSQL("insert into antropometri_laki_bbtb_0_24 (laki_bbtb_tb, laki_bbtb_min3sd, laki_bbtb_min2sd, laki_bbtb_min1sd, laki_bbtb_median, laki_bbtb_1sd, laki_bbtb_2sd, laki_bbtb_3sd) values " +
+                "('90.0', '10.1', '10.9', '11.8', '12.7', '13.8', '15.0', '16.4');");
+        db.execSQL("insert into antropometri_laki_bbtb_0_24 (laki_bbtb_tb, laki_bbtb_min3sd, laki_bbtb_min2sd, laki_bbtb_min1sd, laki_bbtb_median, laki_bbtb_1sd, laki_bbtb_2sd, laki_bbtb_3sd) values " +
+                "('90.5', '10.2', '11.0', '11.9', '12.8', '13.9', '15.1', '16.5');");
+        db.execSQL("insert into antropometri_laki_bbtb_0_24 (laki_bbtb_tb, laki_bbtb_min3sd, laki_bbtb_min2sd, laki_bbtb_min1sd, laki_bbtb_median, laki_bbtb_1sd, laki_bbtb_2sd, laki_bbtb_3sd) values " +
+                "('91.0', '10.3', '11.1', '12.0', '13.0', '14.1', '15.3', '16.7');");
+        db.execSQL("insert into antropometri_laki_bbtb_0_24 (laki_bbtb_tb, laki_bbtb_min3sd, laki_bbtb_min2sd, laki_bbtb_min1sd, laki_bbtb_median, laki_bbtb_1sd, laki_bbtb_2sd, laki_bbtb_3sd) values " +
+                "('91.5', '10.4', '11.2', '12.1', '13.1', '14.2', '15.4', '16.8');");
+        db.execSQL("insert into antropometri_laki_bbtb_0_24 (laki_bbtb_tb, laki_bbtb_min3sd, laki_bbtb_min2sd, laki_bbtb_min1sd, laki_bbtb_median, laki_bbtb_1sd, laki_bbtb_2sd, laki_bbtb_3sd) values " +
+                "('92.0', '10.5', '11.3', '12.2', '13.2', '14.3', '15.6', '17.0');");
+        db.execSQL("insert into antropometri_laki_bbtb_0_24 (laki_bbtb_tb, laki_bbtb_min3sd, laki_bbtb_min2sd, laki_bbtb_min1sd, laki_bbtb_median, laki_bbtb_1sd, laki_bbtb_2sd, laki_bbtb_3sd) values " +
+                "('92.5', '10.6', '11.4', '12.3', '13.3', '14.4', '15.7', '17.1');");
+        db.execSQL("insert into antropometri_laki_bbtb_0_24 (laki_bbtb_tb, laki_bbtb_min3sd, laki_bbtb_min2sd, laki_bbtb_min1sd, laki_bbtb_median, laki_bbtb_1sd, laki_bbtb_2sd, laki_bbtb_3sd) values " +
+                "('93.0', '10.7', '11.5', '12.4', '13.4', '14.6', '15.8', '17.3');");
+        db.execSQL("insert into antropometri_laki_bbtb_0_24 (laki_bbtb_tb, laki_bbtb_min3sd, laki_bbtb_min2sd, laki_bbtb_min1sd, laki_bbtb_median, laki_bbtb_1sd, laki_bbtb_2sd, laki_bbtb_3sd) values " +
+                "('93.5', '10.7', '11.6', '12.5', '13.5', '14.7', '16.0', '17.4');");
+        db.execSQL("insert into antropometri_laki_bbtb_0_24 (laki_bbtb_tb, laki_bbtb_min3sd, laki_bbtb_min2sd, laki_bbtb_min1sd, laki_bbtb_median, laki_bbtb_1sd, laki_bbtb_2sd, laki_bbtb_3sd) values " +
+                "('94.0', '10.8', '11.7', '12.6', '13.7', '14.8', '16.1', '17.6');");
+        db.execSQL("insert into antropometri_laki_bbtb_0_24 (laki_bbtb_tb, laki_bbtb_min3sd, laki_bbtb_min2sd, laki_bbtb_min1sd, laki_bbtb_median, laki_bbtb_1sd, laki_bbtb_2sd, laki_bbtb_3sd) values " +
+                "('94.5', '10.9', '11.8', '12.7', '13.8', '14.9', '16.3', '17.7');");
+        db.execSQL("insert into antropometri_laki_bbtb_0_24 (laki_bbtb_tb, laki_bbtb_min3sd, laki_bbtb_min2sd, laki_bbtb_min1sd, laki_bbtb_median, laki_bbtb_1sd, laki_bbtb_2sd, laki_bbtb_3sd) values " +
+                "('95.0', '11.0', '11.9', '12.8', '13.9', '15.1', '16.4', '17.9');");
+        db.execSQL("insert into antropometri_laki_bbtb_0_24 (laki_bbtb_tb, laki_bbtb_min3sd, laki_bbtb_min2sd, laki_bbtb_min1sd, laki_bbtb_median, laki_bbtb_1sd, laki_bbtb_2sd, laki_bbtb_3sd) values " +
+                "('95.5', '11.1', '12.0', '12.9', '14.0', '15.2', '16.5', '18.0');");
+        db.execSQL("insert into antropometri_laki_bbtb_0_24 (laki_bbtb_tb, laki_bbtb_min3sd, laki_bbtb_min2sd, laki_bbtb_min1sd, laki_bbtb_median, laki_bbtb_1sd, laki_bbtb_2sd, laki_bbtb_3sd) values " +
+                "('96.0', '11.2', '12.1', '13.1', '14.1', '15.3', '16.7', '18.2');");
+        db.execSQL("insert into antropometri_laki_bbtb_0_24 (laki_bbtb_tb, laki_bbtb_min3sd, laki_bbtb_min2sd, laki_bbtb_min1sd, laki_bbtb_median, laki_bbtb_1sd, laki_bbtb_2sd, laki_bbtb_3sd) values " +
+                "('96.5', '11.3', '12.2', '13.2', '14.3', '15.5', '16.8', '18.4');");
+        db.execSQL("insert into antropometri_laki_bbtb_0_24 (laki_bbtb_tb, laki_bbtb_min3sd, laki_bbtb_min2sd, laki_bbtb_min1sd, laki_bbtb_median, laki_bbtb_1sd, laki_bbtb_2sd, laki_bbtb_3sd) values " +
+                "('97.0', '11.4', '12.3', '13.3', '14.4', '15.6', '17.0', '18.5');");
+        db.execSQL("insert into antropometri_laki_bbtb_0_24 (laki_bbtb_tb, laki_bbtb_min3sd, laki_bbtb_min2sd, laki_bbtb_min1sd, laki_bbtb_median, laki_bbtb_1sd, laki_bbtb_2sd, laki_bbtb_3sd) values " +
+                "('97.5, '11.5', '12.4', '13.4', '14.5', '15.7', '17.1', '18.7');");
+        db.execSQL("insert into antropometri_laki_bbtb_0_24 (laki_bbtb_tb, laki_bbtb_min3sd, laki_bbtb_min2sd, laki_bbtb_min1sd, laki_bbtb_median, laki_bbtb_1sd, laki_bbtb_2sd, laki_bbtb_3sd) values " +
+                "('98.0', '11.6', '12.5', '13.5', '14.6', '15.9', '17.3', '18.9');");
+        db.execSQL("insert into antropometri_laki_bbtb_0_24 (laki_bbtb_tb, laki_bbtb_min3sd, laki_bbtb_min2sd, laki_bbtb_min1sd, laki_bbtb_median, laki_bbtb_1sd, laki_bbtb_2sd, laki_bbtb_3sd) values " +
+                "('98.5', '11.7', '12.6', '13.6', '14.8', '16.0', '17.5', '19.1');");
+        db.execSQL("insert into antropometri_laki_bbtb_0_24 (laki_bbtb_tb, laki_bbtb_min3sd, laki_bbtb_min2sd, laki_bbtb_min1sd, laki_bbtb_median, laki_bbtb_1sd, laki_bbtb_2sd, laki_bbtb_3sd) values " +
+                "('99.0', '11.8', '12.7', '13.7', '14.9', '16.2', '17.6', '19.2');");
+        db.execSQL("insert into antropometri_laki_bbtb_0_24 (laki_bbtb_tb, laki_bbtb_min3sd, laki_bbtb_min2sd, laki_bbtb_min1sd, laki_bbtb_median, laki_bbtb_1sd, laki_bbtb_2sd, laki_bbtb_3sd) values " +
+                "('99.5', '11.9', '12.8', '13.9', '15.0', '16.3', '17.8', '19.4');");
+        db.execSQL("insert into antropometri_laki_bbtb_0_24 (laki_bbtb_tb, laki_bbtb_min3sd, laki_bbtb_min2sd, laki_bbtb_min1sd, laki_bbtb_median, laki_bbtb_1sd, laki_bbtb_2sd, laki_bbtb_3sd) values " +
+                "('100.0', '12.0', '12.9', '14.0', '15.2', '16.5', '18.0', '19.6');");
+        db.execSQL("insert into antropometri_laki_bbtb_0_24 (laki_bbtb_tb, laki_bbtb_min3sd, laki_bbtb_min2sd, laki_bbtb_min1sd, laki_bbtb_median, laki_bbtb_1sd, laki_bbtb_2sd, laki_bbtb_3sd) values " +
+                "('100.5', '12.1', '13.0', '14.1', '15.3', '16.6', '18.1', '19.8');");
+        db.execSQL("insert into antropometri_laki_bbtb_0_24 (laki_bbtb_tb, laki_bbtb_min3sd, laki_bbtb_min2sd, laki_bbtb_min1sd, laki_bbtb_median, laki_bbtb_1sd, laki_bbtb_2sd, laki_bbtb_3sd) values " +
+                "('101.0', '12.2', '13.2', '14.2', '15.4', '16.8', '18.3', '20.0');");
+        db.execSQL("insert into antropometri_laki_bbtb_0_24 (laki_bbtb_tb, laki_bbtb_min3sd, laki_bbtb_min2sd, laki_bbtb_min1sd, laki_bbtb_median, laki_bbtb_1sd, laki_bbtb_2sd, laki_bbtb_3sd) values " +
+                "('101.5', '12.3', '13.3', '14.4', '15.6', '16.9', '18.5', '20.2');");
+        db.execSQL("insert into antropometri_laki_bbtb_0_24 (laki_bbtb_tb, laki_bbtb_min3sd, laki_bbtb_min2sd, laki_bbtb_min1sd, laki_bbtb_median, laki_bbtb_1sd, laki_bbtb_2sd, laki_bbtb_3sd) values " +
+                "('102.0', '12.4', '13.4', '14.5', '15.7', '17.1', '18.7', '20.4');");
+        db.execSQL("insert into antropometri_laki_bbtb_0_24 (laki_bbtb_tb, laki_bbtb_min3sd, laki_bbtb_min2sd, laki_bbtb_min1sd, laki_bbtb_median, laki_bbtb_1sd, laki_bbtb_2sd, laki_bbtb_3sd) values " +
+                "('102.5', '12.5', '13.5', '14.6', '15.9', '17.3', '18.8', '20.6');");
+        db.execSQL("insert into antropometri_laki_bbtb_0_24 (laki_bbtb_tb, laki_bbtb_min3sd, laki_bbtb_min2sd, laki_bbtb_min1sd, laki_bbtb_median, laki_bbtb_1sd, laki_bbtb_2sd, laki_bbtb_3sd) values " +
+                "('103.0', '12.6', '13.6', '14.8', '16.0', '17.4', '19.0', '20.8');");
+        db.execSQL("insert into antropometri_laki_bbtb_0_24 (laki_bbtb_tb, laki_bbtb_min3sd, laki_bbtb_min2sd, laki_bbtb_min1sd, laki_bbtb_median, laki_bbtb_1sd, laki_bbtb_2sd, laki_bbtb_3sd) values " +
+                "('103.5', '12.7', '13.7', '14.9', '16.2', '17.6', '19.2', '21.0');");
+        db.execSQL("insert into antropometri_laki_bbtb_0_24 (laki_bbtb_tb, laki_bbtb_min3sd, laki_bbtb_min2sd, laki_bbtb_min1sd, laki_bbtb_median, laki_bbtb_1sd, laki_bbtb_2sd, laki_bbtb_3sd) values " +
+                "('104.0', '12.8', '13.9', '15.0', '16.3', '17.8', '19.4', '21.2');");
+        db.execSQL("insert into antropometri_laki_bbtb_0_24 (laki_bbtb_tb, laki_bbtb_min3sd, laki_bbtb_min2sd, laki_bbtb_min1sd, laki_bbtb_median, laki_bbtb_1sd, laki_bbtb_2sd, laki_bbtb_3sd) values " +
+                "('104.5', '12.9', '14.0', '15.2', '16.2', '17.9', '19.6', '21.5');");
+        db.execSQL("insert into antropometri_laki_bbtb_0_24 (laki_bbtb_tb, laki_bbtb_min3sd, laki_bbtb_min2sd, laki_bbtb_min1sd, laki_bbtb_median, laki_bbtb_1sd, laki_bbtb_2sd, laki_bbtb_3sd) values " +
+                "('105.0', '13.0', '14.1', '15.3', '16.6', '18.1', '19.8', '21.7');");
+        db.execSQL("insert into antropometri_laki_bbtb_0_24 (laki_bbtb_tb, laki_bbtb_min3sd, laki_bbtb_min2sd, laki_bbtb_min1sd, laki_bbtb_median, laki_bbtb_1sd, laki_bbtb_2sd, laki_bbtb_3sd) values " +
+                "('105.5', '13.2', '14.2', '15.4', '16.8', '18.3', '20.0', '21.9');");
+        db.execSQL("insert into antropometri_laki_bbtb_0_24 (laki_bbtb_tb, laki_bbtb_min3sd, laki_bbtb_min2sd, laki_bbtb_min1sd, laki_bbtb_median, laki_bbtb_1sd, laki_bbtb_2sd, laki_bbtb_3sd) values " +
+                "('106.0', '13.3', '14.4', '15.6', '16.9', '18.5', '20.2', '22.1');");
+        db.execSQL("insert into antropometri_laki_bbtb_0_24 (laki_bbtb_tb, laki_bbtb_min3sd, laki_bbtb_min2sd, laki_bbtb_min1sd, laki_bbtb_median, laki_bbtb_1sd, laki_bbtb_2sd, laki_bbtb_3sd) values " +
+                "('106.5', '13.4', '14.5', '15.7', '17.1', '18.6', '20.4', '22.4');");
+        db.execSQL("insert into antropometri_laki_bbtb_0_24 (laki_bbtb_tb, laki_bbtb_min3sd, laki_bbtb_min2sd, laki_bbtb_min1sd, laki_bbtb_median, laki_bbtb_1sd, laki_bbtb_2sd, laki_bbtb_3sd) values " +
+                "('107.0', '13.5', '14.6', '15.9', '17.3', '18.8', '20.6', '22.6');");
+        db.execSQL("insert into antropometri_laki_bbtb_0_24 (laki_bbtb_tb, laki_bbtb_min3sd, laki_bbtb_min2sd, laki_bbtb_min1sd, laki_bbtb_median, laki_bbtb_1sd, laki_bbtb_2sd, laki_bbtb_3sd) values " +
+                "('107.5', '13.6', '14.7', '16.0', '17.4', '19.0', '20.8', '22.8');");
+        db.execSQL("insert into antropometri_laki_bbtb_0_24 (laki_bbtb_tb, laki_bbtb_min3sd, laki_bbtb_min2sd, laki_bbtb_min1sd, laki_bbtb_median, laki_bbtb_1sd, laki_bbtb_2sd, laki_bbtb_3sd) values " +
+                "('108.0', '13.7', '14.9', '16.2', '17.6', '19.2', '21.0', '23.1');");
+        db.execSQL("insert into antropometri_laki_bbtb_0_24 (laki_bbtb_tb, laki_bbtb_min3sd, laki_bbtb_min2sd, laki_bbtb_min1sd, laki_bbtb_median, laki_bbtb_1sd, laki_bbtb_2sd, laki_bbtb_3sd) values " +
+                "('108.5', '13.8', '15.0', '16.3', '17.8', '19.4', '21.2', '23.3');");
+        db.execSQL("insert into antropometri_laki_bbtb_0_24 (laki_bbtb_tb, laki_bbtb_min3sd, laki_bbtb_min2sd, laki_bbtb_min1sd, laki_bbtb_median, laki_bbtb_1sd, laki_bbtb_2sd, laki_bbtb_3sd) values " +
+                "('109.0', '14.0', '15.1', '16.5', '17.8', '19.4', '21.4', '23.6');");
+        db.execSQL("insert into antropometri_laki_bbtb_0_24 (laki_bbtb_tb, laki_bbtb_min3sd, laki_bbtb_min2sd, laki_bbtb_min1sd, laki_bbtb_median, laki_bbtb_1sd, laki_bbtb_2sd, laki_bbtb_3sd) values " +
+                "('109.5', '14.1', '15.3', '16.6', '18.1', '19.8', '21.7', '23.8');");
+        db.execSQL("insert into antropometri_laki_bbtb_0_24 (laki_bbtb_tb, laki_bbtb_min3sd, laki_bbtb_min2sd, laki_bbtb_min1sd, laki_bbtb_median, laki_bbtb_1sd, laki_bbtb_2sd, laki_bbtb_3sd) values " +
+                "('110.0', '14.2', '15.4', '16.8', '18.3', '20.0', '21.9', '24.1');");
+    }
+
+    // Get One List From Database
+    public Cursor getLakiBBTBList_0_24(Integer tinggi) {
+        Cursor cursor = db.rawQuery("SELECT * FROM antropometri_laki_bbtb_0_24 WHERE laki_bbtb_tb = " + tinggi, null);
+        cursor.moveToFirst();
+        return cursor;
+    }
+
+    // Create Table Tahapan Tumbuh Kembang
+    public void createLakiBBTB_24_60(SQLiteDatabase db) {
+        // Create Table Tahap Tumbuh Kembang
+        String create_laki_bbtb_24_60 = "create table antropometri_laki_bbtb_24_60(" +
+                "laki_bbtb_ID integer primary key autoincrement, " +
+                "laki_bbtb_tb real not null," +
+                "laki_bbtb_min3sd real not null, " +
+                "laki_bbtb_min2sd real not null, " +
+                "laki_bbtb_min1sd real not null, " +
+                "laki_bbtb_median real not null, " +
+                "laki_bbtb_1sd real not null, " +
+                "laki_bbtb_2sd real not null, " +
+                "laki_bbtb_3sd real not null " +
+                ");";
+        db.execSQL(create_laki_bbtb_24_60);
+        insertLakiBBTB_24_60(db);
+    }
+
+    // Insert List Imunisasi
+    public void insertLakiBBTB_24_60(SQLiteDatabase db) {
+        db.execSQL("insert into antropometri_laki_bbtb_24_60 (laki_bbtb_tb, laki_bbtb_min3sd, laki_bbtb_min2sd, laki_bbtb_min1sd, laki_bbtb_median, laki_bbtb_1sd, laki_bbtb_2sd, laki_bbtb_3sd) values " +
+                "('65.0', '5.9', '6.3', '6.9', '7.4', '8.1', '8.8', '9.6');");
+        db.execSQL("insert into antropometri_laki_bbtb_24_60 (laki_bbtb_tb, laki_bbtb_min3sd, laki_bbtb_min2sd, laki_bbtb_min1sd, laki_bbtb_median, laki_bbtb_1sd, laki_bbtb_2sd, laki_bbtb_3sd) values " +
+                "('65.5', '6.0', '6.4', '7.0', '7.6', '8.2', '8.9', '9.8');");
+        db.execSQL("insert into antropometri_laki_bbtb_24_60 (laki_bbtb_tb, laki_bbtb_min3sd, laki_bbtb_min2sd, laki_bbtb_min1sd, laki_bbtb_median, laki_bbtb_1sd, laki_bbtb_2sd, laki_bbtb_3sd) values " +
+                "('66.0', '6.1', '6.5', '7.1', '7.7', '8.3', '9.1', '9.9');");
+        db.execSQL("insert into antropometri_laki_bbtb_24_60 (laki_bbtb_tb, laki_bbtb_min3sd, laki_bbtb_min2sd, laki_bbtb_min1sd, laki_bbtb_median, laki_bbtb_1sd, laki_bbtb_2sd, laki_bbtb_3sd) values " +
+                "('66.5', '6.1', '6.6', '7.2', '7.8', '8.5', '9.2', '10.1');");
+        db.execSQL("insert into antropometri_laki_bbtb_24_60 (laki_bbtb_tb, laki_bbtb_min3sd, laki_bbtb_min2sd, laki_bbtb_min1sd, laki_bbtb_median, laki_bbtb_1sd, laki_bbtb_2sd, laki_bbtb_3sd) values " +
+                "('67.0', '6.2', '6.7', '7.3', '7.9', '8.6', '9.4', '10.2');");
+        db.execSQL("insert into antropometri_laki_bbtb_24_60 (laki_bbtb_tb, laki_bbtb_min3sd, laki_bbtb_min2sd, laki_bbtb_min1sd, laki_bbtb_median, laki_bbtb_1sd, laki_bbtb_2sd, laki_bbtb_3sd) values " +
+                "('67.5', '6.3', '6.8', '7.4', '8.0', '8.7', '9.5', '10.4');");
+        db.execSQL("insert into antropometri_laki_bbtb_24_60 (laki_bbtb_tb, laki_bbtb_min3sd, laki_bbtb_min2sd, laki_bbtb_min1sd, laki_bbtb_median, laki_bbtb_1sd, laki_bbtb_2sd, laki_bbtb_3sd) values " +
+                "('68.0', '6.4', '6.9', '7.5', '8.1', '8.8', '9.6', '10.5');");
+        db.execSQL("insert into antropometri_laki_bbtb_24_60 (laki_bbtb_tb, laki_bbtb_min3sd, laki_bbtb_min2sd, laki_bbtb_min1sd, laki_bbtb_median, laki_bbtb_1sd, laki_bbtb_2sd, laki_bbtb_3sd) values " +
+                "('68.5', '6.5', '7.0', '7.6', '8.2', '9.0', '9.8', '10.7');");
+        db.execSQL("insert into antropometri_laki_bbtb_24_60 (laki_bbtb_tb, laki_bbtb_min3sd, laki_bbtb_min2sd, laki_bbtb_min1sd, laki_bbtb_median, laki_bbtb_1sd, laki_bbtb_2sd, laki_bbtb_3sd) values " +
+                "('69.0', '6.6', '7.1', '7.7', '8.4', '9.1', '9.9', '10.8');");
+        db.execSQL("insert into antropometri_laki_bbtb_24_60 (laki_bbtb_tb, laki_bbtb_min3sd, laki_bbtb_min2sd, laki_bbtb_min1sd, laki_bbtb_median, laki_bbtb_1sd, laki_bbtb_2sd, laki_bbtb_3sd) values " +
+                "('69.5', '6.7', '7.2', '7.8', '8.5', '9.2', '10.0', '11.0');");
+        db.execSQL("insert into antropometri_laki_bbtb_24_60 (laki_bbtb_tb, laki_bbtb_min3sd, laki_bbtb_min2sd, laki_bbtb_min1sd, laki_bbtb_median, laki_bbtb_1sd, laki_bbtb_2sd, laki_bbtb_3sd) values " +
+                "('70.0', '6.8', '7.3', '7.9', '8.6', '9.3', '10.2', '11.1');");
+        db.execSQL("insert into antropometri_laki_bbtb_24_60 (laki_bbtb_tb, laki_bbtb_min3sd, laki_bbtb_min2sd, laki_bbtb_min1sd, laki_bbtb_median, laki_bbtb_1sd, laki_bbtb_2sd, laki_bbtb_3sd) values " +
+                "('70.5', '6.9', '7.4', '8.0', '8.7', '9.5', '10.3', '11.3');");
+        db.execSQL("insert into antropometri_laki_bbtb_24_60 (laki_bbtb_tb, laki_bbtb_min3sd, laki_bbtb_min2sd, laki_bbtb_min1sd, laki_bbtb_median, laki_bbtb_1sd, laki_bbtb_2sd, laki_bbtb_3sd) values " +
+                "('71.0', '6.9', '7.5', '8.1', '8.8', '9.6', '10.4', '11.4');");
+        db.execSQL("insert into antropometri_laki_bbtb_24_60 (laki_bbtb_tb, laki_bbtb_min3sd, laki_bbtb_min2sd, laki_bbtb_min1sd, laki_bbtb_median, laki_bbtb_1sd, laki_bbtb_2sd, laki_bbtb_3sd) values " +
+                "('71.5', '7.0', '7.6', '8.2', '8.9', '9.7', '10.6', '11.6');");
+        db.execSQL("insert into antropometri_laki_bbtb_24_60 (laki_bbtb_tb, laki_bbtb_min3sd, laki_bbtb_min2sd, laki_bbtb_min1sd, laki_bbtb_median, laki_bbtb_1sd, laki_bbtb_2sd, laki_bbtb_3sd) values " +
+                "('72.0', '7.1', '7.7', '8.3', '9.0', '9.8', '10.7', '11.7');");
+        db.execSQL("insert into antropometri_laki_bbtb_24_60 (laki_bbtb_tb, laki_bbtb_min3sd, laki_bbtb_min2sd, laki_bbtb_min1sd, laki_bbtb_median, laki_bbtb_1sd, laki_bbtb_2sd, laki_bbtb_3sd) values " +
+                "('72.5', '7.2', '7.8', '8.4', '9.1', '9.9', '10.8', '12.0');");
+        db.execSQL("insert into antropometri_laki_bbtb_24_60 (laki_bbtb_tb, laki_bbtb_min3sd, laki_bbtb_min2sd, laki_bbtb_min1sd, laki_bbtb_median, laki_bbtb_1sd, laki_bbtb_2sd, laki_bbtb_3sd) values " +
+                "('73.0', '7.3', '7.9', '8.5', '9.2', '10.0', '11.0', '12.0');");
+        db.execSQL("insert into antropometri_laki_bbtb_24_60 (laki_bbtb_tb, laki_bbtb_min3sd, laki_bbtb_min2sd, laki_bbtb_min1sd, laki_bbtb_median, laki_bbtb_1sd, laki_bbtb_2sd, laki_bbtb_3sd) values " +
+                "('73.5', '7.4', '7.9', '8.6', '9.3', '10.2', '11.1', '12.1');");
+        db.execSQL("insert into antropometri_laki_bbtb_24_60 (laki_bbtb_tb, laki_bbtb_min3sd, laki_bbtb_min2sd, laki_bbtb_min1sd, laki_bbtb_median, laki_bbtb_1sd, laki_bbtb_2sd, laki_bbtb_3sd) values " +
+                "('74.0', '7.4', '8.0', '8.7', '9.4', '10.3', '11.2', '12.2');");
+        db.execSQL("insert into antropometri_laki_bbtb_24_60 (laki_bbtb_tb, laki_bbtb_min3sd, laki_bbtb_min2sd, laki_bbtb_min1sd, laki_bbtb_median, laki_bbtb_1sd, laki_bbtb_2sd, laki_bbtb_3sd) values " +
+                "('74.5', '7.5', '8.1', '8.8', '9.5', '10.4', '11.3', '12.4');");
+        db.execSQL("insert into antropometri_laki_bbtb_24_60 (laki_bbtb_tb, laki_bbtb_min3sd, laki_bbtb_min2sd, laki_bbtb_min1sd, laki_bbtb_median, laki_bbtb_1sd, laki_bbtb_2sd, laki_bbtb_3sd) values " +
+                "('75.0', '7.6', '8.2', '8.9', '9.6', '10.5', '11.4', '12.5');");
+        db.execSQL("insert into antropometri_laki_bbtb_24_60 (laki_bbtb_tb, laki_bbtb_min3sd, laki_bbtb_min2sd, laki_bbtb_min1sd, laki_bbtb_median, laki_bbtb_1sd, laki_bbtb_2sd, laki_bbtb_3sd) values " +
+                "('75.5', '7.7', '8.3', '9.0', '9.7', '10.6', '11.6', '12.6');");
+        db.execSQL("insert into antropometri_laki_bbtb_24_60 (laki_bbtb_tb, laki_bbtb_min3sd, laki_bbtb_min2sd, laki_bbtb_min1sd, laki_bbtb_median, laki_bbtb_1sd, laki_bbtb_2sd, laki_bbtb_3sd) values " +
+                "('76.0', '7.7', '8.4', '9.1', '9.8', '10.7', '11.7', '12.8');");
+        db.execSQL("insert into antropometri_laki_bbtb_24_60 (laki_bbtb_tb, laki_bbtb_min3sd, laki_bbtb_min2sd, laki_bbtb_min1sd, laki_bbtb_median, laki_bbtb_1sd, laki_bbtb_2sd, laki_bbtb_3sd) values " +
+                "('76.5', '7.8', '8.5', '9.2', '9.9', '10.8', '11.8', '12.9');");
+        db.execSQL("insert into antropometri_laki_bbtb_24_60 (laki_bbtb_tb, laki_bbtb_min3sd, laki_bbtb_min2sd, laki_bbtb_min1sd, laki_bbtb_median, laki_bbtb_1sd, laki_bbtb_2sd, laki_bbtb_3sd) values " +
+                "('77.0', '7.9', '8.5', '9.2', '10.0', '10.9', '11.9', '13.0');");
+        db.execSQL("insert into antropometri_laki_bbtb_24_60 (laki_bbtb_tb, laki_bbtb_min3sd, laki_bbtb_min2sd, laki_bbtb_min1sd, laki_bbtb_median, laki_bbtb_1sd, laki_bbtb_2sd, laki_bbtb_3sd) values " +
+                "('77.5', '8.0', '8.6', '9.3', '10.1', '11.0', '12.0', '13.1');");
+        db.execSQL("insert into antropometri_laki_bbtb_24_60 (laki_bbtb_tb, laki_bbtb_min3sd, laki_bbtb_min2sd, laki_bbtb_min1sd, laki_bbtb_median, laki_bbtb_1sd, laki_bbtb_2sd, laki_bbtb_3sd) values " +
+                "('78.0', '8.0', '8.7', '9.4', '10.2', '11.1', '12.1', '13.3');");
+        db.execSQL("insert into antropometri_laki_bbtb_24_60 (laki_bbtb_tb, laki_bbtb_min3sd, laki_bbtb_min2sd, laki_bbtb_min1sd, laki_bbtb_median, laki_bbtb_1sd, laki_bbtb_2sd, laki_bbtb_3sd) values " +
+                "('78.5', '8.1', '8.8', '9.5', '10.3', '11.2', '12.2', '13.4');");
+        db.execSQL("insert into antropometri_laki_bbtb_24_60 (laki_bbtb_tb, laki_bbtb_min3sd, laki_bbtb_min2sd, laki_bbtb_min1sd, laki_bbtb_median, laki_bbtb_1sd, laki_bbtb_2sd, laki_bbtb_3sd) values " +
+                "('79.0', '8.2', '8.8', '9.6', '10.4', '11.3', '12.3', '13.5');");
+        db.execSQL("insert into antropometri_laki_bbtb_24_60 (laki_bbtb_tb, laki_bbtb_min3sd, laki_bbtb_min2sd, laki_bbtb_min1sd, laki_bbtb_median, laki_bbtb_1sd, laki_bbtb_2sd, laki_bbtb_3sd) values " +
+                "('79.5', '8.3', '8.9', '9.7', '10.5', '11.4', '12.4', '13.6');");
+        db.execSQL("insert into antropometri_laki_bbtb_24_60 (laki_bbtb_tb, laki_bbtb_min3sd, laki_bbtb_min2sd, laki_bbtb_min1sd, laki_bbtb_median, laki_bbtb_1sd, laki_bbtb_2sd, laki_bbtb_3sd) values " +
+                "('80.0', '8.3', '9.0', '9.7', '10.6', '11.5', '12.6', '13.7');");
+        db.execSQL("insert into antropometri_laki_bbtb_24_60 (laki_bbtb_tb, laki_bbtb_min3sd, laki_bbtb_min2sd, laki_bbtb_min1sd, laki_bbtb_median, laki_bbtb_1sd, laki_bbtb_2sd, laki_bbtb_3sd) values " +
+                "('80.5', '8.4', '9.1', '9.8', '10.7', '11.6', '12.7', '13.8');");
+        db.execSQL("insert into antropometri_laki_bbtb_24_60 (laki_bbtb_tb, laki_bbtb_min3sd, laki_bbtb_min2sd, laki_bbtb_min1sd, laki_bbtb_median, laki_bbtb_1sd, laki_bbtb_2sd, laki_bbtb_3sd) values " +
+                "('81.0', '8.5', '9.2', '9.9', '10.8', '11.7', '12.8', '14.0');");
+        db.execSQL("insert into antropometri_laki_bbtb_24_60 (laki_bbtb_tb, laki_bbtb_min3sd, laki_bbtb_min2sd, laki_bbtb_min1sd, laki_bbtb_median, laki_bbtb_1sd, laki_bbtb_2sd, laki_bbtb_3sd) values " +
+                "('81.5', '8.6', '9.3', '10.0', '10.9', '11.8', '12.9', '14.1');");
+        db.execSQL("insert into antropometri_laki_bbtb_24_60 (laki_bbtb_tb, laki_bbtb_min3sd, laki_bbtb_min2sd, laki_bbtb_min1sd, laki_bbtb_median, laki_bbtb_1sd, laki_bbtb_2sd, laki_bbtb_3sd) values " +
+                "('82.0', '8.7', '9.3', '10.1', '11.0', '11.9', '13.0', '14.2');");
+        db.execSQL("insert into antropometri_laki_bbtb_24_60 (laki_bbtb_tb, laki_bbtb_min3sd, laki_bbtb_min2sd, laki_bbtb_min1sd, laki_bbtb_median, laki_bbtb_1sd, laki_bbtb_2sd, laki_bbtb_3sd) values " +
+                "('82.5', '8.7', '9.4', '10.2', '11.1', '12.1', '13.1', '14.4');");
+        // masi lanjut
+    }
+
+    // Get One List From Database
+    public Cursor getLakiBBTBList_24_60(Integer tinggi) {
+        Cursor cursor = db.rawQuery("SELECT * FROM antropometri_laki_bbtb_24_60 WHERE laki_bbtb_tb = " + tinggi, null);
         cursor.moveToFirst();
         return cursor;
     }

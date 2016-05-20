@@ -71,12 +71,19 @@ public class HasilKalkulatorGizi extends Activity {
         db.open();
         Cursor cursorBBU = null;
         Cursor cursorTBU = null;
+        Cursor cursorBBTB = null;
         if((jenisKelamin).equals("L")) {
             cursorBBU = db.getLakiBBUList(Integer.valueOf(bulan));
             cursorTBU = db.getLakiTBUList(Integer.valueOf(bulan));
+            if(Integer.valueOf(umur) <= 24) {
+                cursorBBTB = db.getLakiBBTBList_0_24(Integer.valueOf(tinggiBadan));
+            }else{
+                cursorBBTB = db.getLakiBBTBList_24_60(Integer.valueOf(tinggiBadan));
+            }
         }
         cursorBBU.moveToFirst();
         cursorTBU.moveToFirst();
+        cursorBBTB.moveToFirst();
 
         // Load Widget
         hasil_kalkulator_gizi = (TextView) findViewById(R.id.hasil_kalkulator_gizi);
@@ -139,12 +146,18 @@ public class HasilKalkulatorGizi extends Activity {
 
         // Berat Badan / Umur
         float bbu = 0;
+        // Berat badan < Median
         if(Float.parseFloat(beratBadan) < Float.parseFloat(cursorBBU.getString(cursorBBU.getColumnIndex("laki_bbu_median")))){
             bbu = (Float.parseFloat(beratBadan) - Float.parseFloat(cursorBBU.getString(cursorBBU.getColumnIndex("laki_bbu_median")))) /
                     (Float.parseFloat(cursorBBU.getString(cursorBBU.getColumnIndex("laki_bbu_median"))) - Float.parseFloat(cursorBBU.getString(cursorBBU.getColumnIndex("laki_bbu_min1sd"))));
-        } else if(Float.parseFloat(beratBadan) > Float.parseFloat(cursorBBU.getString(cursorBBU.getColumnIndex("laki_bbu_median")))){
+        } // Berat Badan > Median
+        else if(Float.parseFloat(beratBadan) > Float.parseFloat(cursorBBU.getString(cursorBBU.getColumnIndex("laki_bbu_median")))){
             bbu = (Float.parseFloat(beratBadan) - Float.parseFloat(cursorBBU.getString(cursorBBU.getColumnIndex("laki_bbu_median")))) /
                     (Float.parseFloat(cursorBBU.getString(cursorBBU.getColumnIndex("laki_bbu_1sd"))) - Float.parseFloat(cursorBBU.getString(cursorBBU.getColumnIndex("laki_bbu_median"))));
+        } // Berat Badan == Median
+        else if(Float.parseFloat(beratBadan) == Float.parseFloat(cursorBBU.getString(cursorBBU.getColumnIndex("laki_bbu_median")))){
+            bbu = (Float.parseFloat(cursorBBU.getString(cursorBBU.getColumnIndex("laki_bbu_median"))) - Float.parseFloat(cursorBBU.getString(cursorBBU.getColumnIndex("laki_bbu_1sd")))) /
+                    (Float.parseFloat(cursorBBU.getString(cursorBBU.getColumnIndex("laki_bbu_1sd"))) - Float.parseFloat(cursorBBU.getString(cursorBBU.getColumnIndex("laki_bbu_min1sd"))));
         }
 
         String status_bbu = null;
@@ -158,16 +171,22 @@ public class HasilKalkulatorGizi extends Activity {
             status_bbu = "Gizi Lebih";
         }
 
-        hasil_bbu.setText(status_bbu);
+        hasil_bbu.setText(String.valueOf(bbu));
 
         // Tinggi Badan / Umur
         float tbu = 0;
+        // Tinggi Badan < Median
         if(Float.parseFloat(tinggiBadan) < Float.parseFloat(cursorTBU.getString(cursorTBU.getColumnIndex("laki_tbu_median")))){
             tbu = (Float.parseFloat(tinggiBadan) - Float.parseFloat(cursorTBU.getString(cursorTBU.getColumnIndex("laki_tbu_median")))) /
                     (Float.parseFloat(cursorTBU.getString(cursorTBU.getColumnIndex("laki_tbu_median"))) - Float.parseFloat(cursorTBU.getString(cursorTBU.getColumnIndex("laki_tbu_min1sd"))));
-        } else if(Float.parseFloat(tinggiBadan) > Float.parseFloat(cursorTBU.getString(cursorTBU.getColumnIndex("laki_tbu_median")))){
+        } // Tinggi Badan > Median
+        else if(Float.parseFloat(tinggiBadan) > Float.parseFloat(cursorTBU.getString(cursorTBU.getColumnIndex("laki_tbu_median")))){
             tbu = (Float.parseFloat(tinggiBadan) - Float.parseFloat(cursorTBU.getString(cursorTBU.getColumnIndex("laki_tbu_median")))) /
                     (Float.parseFloat(cursorTBU.getString(cursorTBU.getColumnIndex("laki_tbu_1sd"))) - Float.parseFloat(cursorTBU.getString(cursorTBU.getColumnIndex("laki_tbu_median"))));
+        } // Tinggi Badan == Median
+        else if(Float.parseFloat(tinggiBadan) == Float.parseFloat(cursorTBU.getString(cursorTBU.getColumnIndex("laki_tbu_median")))){
+            tbu = (Float.parseFloat(cursorTBU.getString(cursorTBU.getColumnIndex("laki_tbu_median"))) - Float.parseFloat(cursorTBU.getString(cursorTBU.getColumnIndex("laki_tbu_1sd")))) /
+                    (Float.parseFloat(cursorTBU.getString(cursorTBU.getColumnIndex("laki_tbu_1sd"))) - Float.parseFloat(cursorTBU.getString(cursorTBU.getColumnIndex("laki_tbu_min1sd"))));
         }
 
         String status_tbu = null;
@@ -181,7 +200,7 @@ public class HasilKalkulatorGizi extends Activity {
             status_tbu = "Tinggi";
         }
 
-        hasil_tbu.setText(status_tbu);
+        hasil_tbu.setText(String.valueOf(tbu));
 
         tabHost = (TabHost) findViewById(android.R.id.tabhost);     // The activity TabHost
         tabHost.setup();
