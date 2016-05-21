@@ -77,8 +77,6 @@
     <string name="tbu">TB/U</string>
     <string name="bbtb">BB/TB</string>
     <string name="imtu">IMT/U</string>
-    <string name="hasil_baik">Baik</string>
-    <string name="hasil_normal">Normal</string>
 
     <string name="button_jadwalimunisasi">Jadwal Imunisasi</string>
     <string name="jenis_vaksin">Jenis Vaksin</string>

@@ -178,7 +178,19 @@ public class KalkulatorGizi extends Activity {
                     // Show Toast
                     Toast.makeText(KalkulatorGizi.this, "Kolom Belum Terisi", Toast.LENGTH_SHORT).show();
 
-                } else {
+                } else if (Integer.valueOf(bulan) > 60) {
+                    // Show Toast
+                    Toast.makeText(KalkulatorGizi.this, "Umur Tidak Boleh Lebih Dari 5 Tahun / 60 Bulan", Toast.LENGTH_SHORT).show();
+
+                } else if (Integer.valueOf(tinggiBadan) < 45) {
+                    // Show Toast
+                    Toast.makeText(KalkulatorGizi.this, "Tinggi Tidak Boleh Kurang Dari 45 cm", Toast.LENGTH_SHORT).show();
+
+                }  else if (Integer.valueOf(beratBadan) < 2) {
+                    // Show Toast
+                    Toast.makeText(KalkulatorGizi.this, "Berat Tidak Boleh Kurang Dari 2 kg", Toast.LENGTH_SHORT).show();
+
+                }else {
 
                     String jenisKelamin = ((RadioButton) findViewById(kalkulatorgizi_jeniskelamin.getCheckedRadioButtonId())).getText().toString();
 

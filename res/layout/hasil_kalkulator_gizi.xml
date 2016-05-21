@@ -7,6 +7,8 @@
             android:id="@+id/scrollView">
 
     <RelativeLayout
+            android:focusable="true"
+            android:focusableInTouchMode="true"
             android:layout_width="fill_parent"
             android:layout_height="wrap_content">
 
@@ -245,8 +247,7 @@
                                     android:layout_height="wrap_content"
                                     android:textColor="#D046F2"
                                     android:text="@string/kalkulatorgizi_tinggibadan"
-                                    style="@android:style/TextAppearance.DeviceDefault.Medium"
-                                    android:layout_marginBottom="3dp"/>
+                                    style="@android:style/TextAppearance.DeviceDefault.Medium"/>
                             <TextView
                                     android:id="@+id/titikdua"
                                     android:layout_width="wrap_content"
@@ -303,7 +304,7 @@
                                     android:textColor="#D046F2"
                                     android:text="@string/kalkulatorgizi_beratbadan"
                                     style="@android:style/TextAppearance.DeviceDefault.Medium"
-                                    android:layout_marginBottom="3dp"/>
+                                    />
                             <TextView
                                     android:id="@+id/titikdua"
                                     android:layout_width="wrap_content"
@@ -421,7 +422,7 @@
                                     android:layout_height="wrap_content"
                                     android:textColor="#FF0000"
                                     style="@android:style/TextAppearance.DeviceDefault.Medium"
-                                    android:hint="@string/hasil_baik"
+                                    android:hint="@string/dash"
                                     android:layout_weight=".4"
                                     android:layout_marginLeft="5dp"/>
                             <!-- End Text View Berat Badan / Umur -->
@@ -462,7 +463,7 @@
                                     android:layout_height="wrap_content"
                                     android:textColor="#FF0000"
                                     style="@android:style/TextAppearance.DeviceDefault.Medium"
-                                    android:hint="@string/hasil_baik"
+                                    android:hint="@string/dash"
                                     android:layout_weight=".4"
                                     android:layout_marginLeft="5dp"/>
                             <!-- End Text View Tinggi Badan / Umur -->
@@ -519,7 +520,7 @@
                                     android:layout_height="wrap_content"
                                     android:textColor="#FF0000"
                                     style="@android:style/TextAppearance.DeviceDefault.Medium"
-                                    android:hint="@string/hasil_normal"
+                                    android:hint="@string/dash"
                                     android:layout_weight=".4"
                                     android:layout_marginLeft="5dp"/>
                             <!-- End Text View Berat Badan / Tinggi Badan -->
@@ -561,7 +562,7 @@
                                     android:layout_height="wrap_content"
                                     android:textColor="#FF0000"
                                     style="@android:style/TextAppearance.DeviceDefault.Medium"
-                                    android:hint="@string/hasil_normal"
+                                    android:hint="@string/dash"
                                     android:layout_weight=".4"
                                     android:layout_marginLeft="5dp"/>
                             <!-- End Text View Iindeks Massa Tubuh / Umur -->
@@ -602,59 +603,39 @@
                                      android:layout_height="fill_parent"
                                      android:padding="5dp">
 
-                            <LinearLayout android:id="@+id/bbu"
+                            <LinearLayout android:id="@+id/bbu_layout"
                                           android:orientation="vertical"
                                           android:layout_width="fill_parent"
                                           android:layout_height="wrap_content"
-                                          android:background="#FFFBC9">
-
-                                <TextView android:layout_width="fill_parent"
-                                          android:layout_height="wrap_content"
-                                          android:textColor="#D046F2"
-                                          android:hint="@string/bbu"
-                                          style="@android:style/TextAppearance.DeviceDefault.Medium"/>
+                                          android:background="#FFFBC9"
+                                          android:paddingTop="10dp">
 
                             </LinearLayout>
 
-                            <LinearLayout android:id="@+id/tbu"
+                            <LinearLayout android:id="@+id/tbu_layout"
                                           android:orientation="vertical"
                                           android:layout_width="fill_parent"
                                           android:layout_height="wrap_content"
-                                          android:background="#FFFBC9">
-
-                                <TextView android:layout_width="fill_parent"
-                                          android:layout_height="wrap_content"
-                                          android:textColor="#D046F2"
-                                          android:hint="@string/tbu"
-                                          style="@android:style/TextAppearance.DeviceDefault.Medium"/>
+                                          android:background="#FFFBC9"
+                                          android:paddingTop="10dp">
 
                             </LinearLayout>
 
-                            <LinearLayout android:id="@+id/bbtb"
+                            <LinearLayout android:id="@+id/bbtb_layout"
                                           android:orientation="vertical"
                                           android:layout_width="fill_parent"
                                           android:layout_height="wrap_content"
-                                          android:background="#FFFBC9">
-
-                                <TextView android:layout_width="fill_parent"
-                                          android:layout_height="wrap_content"
-                                          android:textColor="#D046F2"
-                                          android:hint="@string/bbtb"
-                                          style="@android:style/TextAppearance.DeviceDefault.Medium"/>
+                                          android:background="#FFFBC9"
+                                          android:paddingTop="10dp">
 
                             </LinearLayout>
 
-                            <LinearLayout android:id="@+id/imtu"
+                            <LinearLayout android:id="@+id/imtu_layout"
                                           android:orientation="vertical"
                                           android:layout_width="fill_parent"
                                           android:layout_height="wrap_content"
-                                          android:background="#FFFBC9">
-
-                                <TextView android:layout_width="fill_parent"
-                                          android:layout_height="wrap_content"
-                                          android:textColor="#D046F2"
-                                          android:hint="@string/imtu"
-                                          style="@android:style/TextAppearance.DeviceDefault.Medium"/>
+                                          android:background="#FFFBC9"
+                                          android:paddingTop="10dp">
 
                             </LinearLayout>
 
