@@ -33,6 +33,11 @@ public class DBHelper extends SQLiteOpenHelper {
         createLakiBBTB_24_60(db);
         createLakiIMTU(db);
         createPerempuanBBU(db);
+        createPerempuanTBU(db);
+        createPerempuanBBTB_0_24(db);
+        createPerempuanBBTB_24_60(db);
+        createPerempuanIMTU(db);
+        createDokumentasi(db);
         createList(db);
         createTahap(db);
         createRiwayat(db);
@@ -1327,6 +1332,976 @@ public class DBHelper extends SQLiteOpenHelper {
         return cursor;
     }
 
+    // Create Table Tahapan Tumbuh Kembang
+    public void createPerempuanTBU(SQLiteDatabase db) {
+        // Create Table Tahap Tumbuh Kembang
+        String create_perempuan_tbu  = "create table antropometri_perempuan_tbu (" +
+                "perempuan_tbu_ID integer primary key autoincrement, " +
+                "perempuan_tbu_umur real not null," +
+                "perempuan_tbu_min3sd real not null, " +
+                "perempuan_tbu_min2sd real not null, " +
+                "perempuan_tbu_min1sd real not null, " +
+                "perempuan_tbu_median real not null, " +
+                "perempuan_tbu_1sd real not null, " +
+                "perempuan_tbu_2sd real not null, " +
+                "perempuan_tbu_3sd real not null " +
+                ");";
+        db.execSQL(create_perempuan_tbu);
+        insertPerempuanTBU(db);
+    }
+
+    // Insert List Imunisasi
+    public void insertPerempuanTBU(SQLiteDatabase db) {
+        db.execSQL("insert into antropometri_perempuan_tbu (perempuan_tbu_umur, perempuan_tbu_min3sd, perempuan_tbu_min2sd, perempuan_tbu_min1sd, perempuan_tbu_median, perempuan_tbu_1sd, perempuan_tbu_2sd, perempuan_tbu_3sd) values " +
+                "('0', '43.6', '45.4', '47.3', '49.1', '51.0', '52.9', '54.7');");
+        db.execSQL("insert into antropometri_perempuan_tbu (perempuan_tbu_umur, perempuan_tbu_min3sd, perempuan_tbu_min2sd, perempuan_tbu_min1sd, perempuan_tbu_median, perempuan_tbu_1sd, perempuan_tbu_2sd, perempuan_tbu_3sd) values " +
+                "('1', '47.8', '49.8', '51.7', '53.7', '55.6', '57.6', '59.5');");
+        db.execSQL("insert into antropometri_perempuan_tbu (perempuan_tbu_umur, perempuan_tbu_min3sd, perempuan_tbu_min2sd, perempuan_tbu_min1sd, perempuan_tbu_median, perempuan_tbu_1sd, perempuan_tbu_2sd, perempuan_tbu_3sd) values " +
+                "('2', '51.0', '53.0', '55.0', '57.1', '59.1', '61.1', '63.2');");
+        db.execSQL("insert into antropometri_perempuan_tbu (perempuan_tbu_umur, perempuan_tbu_min3sd, perempuan_tbu_min2sd, perempuan_tbu_min1sd, perempuan_tbu_median, perempuan_tbu_1sd, perempuan_tbu_2sd, perempuan_tbu_3sd) values " +
+                "('3', '53.5', '55.6', '57.7', '59.8', '61.9', '64.0', '66.1');");
+        db.execSQL("insert into antropometri_perempuan_tbu (perempuan_tbu_umur, perempuan_tbu_min3sd, perempuan_tbu_min2sd, perempuan_tbu_min1sd, perempuan_tbu_median, perempuan_tbu_1sd, perempuan_tbu_2sd, perempuan_tbu_3sd) values " +
+                "('4', '55.6', '57.8', '59.9', '62.1', '64.3', '66.4', '68.6');");
+        db.execSQL("insert into antropometri_perempuan_tbu (perempuan_tbu_umur, perempuan_tbu_min3sd, perempuan_tbu_min2sd, perempuan_tbu_min1sd, perempuan_tbu_median, perempuan_tbu_1sd, perempuan_tbu_2sd, perempuan_tbu_3sd) values " +
+                "('5', '57.4', '59.6', '61.8', '64.0', '66.2', '68.5', '70.7');");
+        db.execSQL("insert into antropometri_perempuan_tbu (perempuan_tbu_umur, perempuan_tbu_min3sd, perempuan_tbu_min2sd, perempuan_tbu_min1sd, perempuan_tbu_median, perempuan_tbu_1sd, perempuan_tbu_2sd, perempuan_tbu_3sd) values " +
+                "('6', '58.9', '61.2', '63.5', '65.7', '68.0', '70.3', '72.5');");
+        db.execSQL("insert into antropometri_perempuan_tbu (perempuan_tbu_umur, perempuan_tbu_min3sd, perempuan_tbu_min2sd, perempuan_tbu_min1sd, perempuan_tbu_median, perempuan_tbu_1sd, perempuan_tbu_2sd, perempuan_tbu_3sd) values " +
+                "('7', '60.3', '62.7', '65.0', '67.3', '69.6', '71.9', '74.2');");
+        db.execSQL("insert into antropometri_perempuan_tbu (perempuan_tbu_umur, perempuan_tbu_min3sd, perempuan_tbu_min2sd, perempuan_tbu_min1sd, perempuan_tbu_median, perempuan_tbu_1sd, perempuan_tbu_2sd, perempuan_tbu_3sd) values " +
+                "('8', '61.7', '64.0', '66.4', '68.7', '71.1', '73.5', '75.8');");
+        db.execSQL("insert into antropometri_perempuan_tbu (perempuan_tbu_umur, perempuan_tbu_min3sd, perempuan_tbu_min2sd, perempuan_tbu_min1sd, perempuan_tbu_median, perempuan_tbu_1sd, perempuan_tbu_2sd, perempuan_tbu_3sd) values " +
+                "('9', '62.9', '65.3', '67.7', '70.1', '72.6', '75.0', '77.4');");
+        db.execSQL("insert into antropometri_perempuan_tbu (perempuan_tbu_umur, perempuan_tbu_min3sd, perempuan_tbu_min2sd, perempuan_tbu_min1sd, perempuan_tbu_median, perempuan_tbu_1sd, perempuan_tbu_2sd, perempuan_tbu_3sd) values " +
+                "('10', '64.1', '66.5', '69.0', '71.5', '73.9', '76.4', '78.9');");
+        db.execSQL("insert into antropometri_perempuan_tbu (perempuan_tbu_umur, perempuan_tbu_min3sd, perempuan_tbu_min2sd, perempuan_tbu_min1sd, perempuan_tbu_median, perempuan_tbu_1sd, perempuan_tbu_2sd, perempuan_tbu_3sd) values " +
+                "('11', '65.2', '67.7', '70.3', '72.8', '75.3', '77.8', '80.3');");
+        db.execSQL("insert into antropometri_perempuan_tbu (perempuan_tbu_umur, perempuan_tbu_min3sd, perempuan_tbu_min2sd, perempuan_tbu_min1sd, perempuan_tbu_median, perempuan_tbu_1sd, perempuan_tbu_2sd, perempuan_tbu_3sd) values " +
+                "('12', '66.3', '68.9', '71.4', '74.0', '76.6', '79.2', '81.7');");
+        db.execSQL("insert into antropometri_perempuan_tbu (perempuan_tbu_umur, perempuan_tbu_min3sd, perempuan_tbu_min2sd, perempuan_tbu_min1sd, perempuan_tbu_median, perempuan_tbu_1sd, perempuan_tbu_2sd, perempuan_tbu_3sd) values " +
+                "('13', '67.3', '70.0', '72.6', '75.2', '77.8', '80.5', '83.1');");
+        db.execSQL("insert into antropometri_perempuan_tbu (perempuan_tbu_umur, perempuan_tbu_min3sd, perempuan_tbu_min2sd, perempuan_tbu_min1sd, perempuan_tbu_median, perempuan_tbu_1sd, perempuan_tbu_2sd, perempuan_tbu_3sd) values " +
+                "('14', '68.3', '71.0', '73.7', '76.4', '79.1', '81.7', '84.4');");
+        db.execSQL("insert into antropometri_perempuan_tbu (perempuan_tbu_umur, perempuan_tbu_min3sd, perempuan_tbu_min2sd, perempuan_tbu_min1sd, perempuan_tbu_median, perempuan_tbu_1sd, perempuan_tbu_2sd, perempuan_tbu_3sd) values " +
+                "('15', '69.3', '72.0', '74.8', '77.5', '80.2', '83.0', '85.7');");
+        db.execSQL("insert into antropometri_perempuan_tbu (perempuan_tbu_umur, perempuan_tbu_min3sd, perempuan_tbu_min2sd, perempuan_tbu_min1sd, perempuan_tbu_median, perempuan_tbu_1sd, perempuan_tbu_2sd, perempuan_tbu_3sd) values " +
+                "('16', '70.2', '73.0', '75.8', '78.6', '81.4', '84.2', '87.0');");
+        db.execSQL("insert into antropometri_perempuan_tbu (perempuan_tbu_umur, perempuan_tbu_min3sd, perempuan_tbu_min2sd, perempuan_tbu_min1sd, perempuan_tbu_median, perempuan_tbu_1sd, perempuan_tbu_2sd, perempuan_tbu_3sd) values " +
+                "('17', '71.1', '74.0', '76.8', '79.7', '82.5', '85.4', '88.2');");
+        db.execSQL("insert into antropometri_perempuan_tbu (perempuan_tbu_umur, perempuan_tbu_min3sd, perempuan_tbu_min2sd, perempuan_tbu_min1sd, perempuan_tbu_median, perempuan_tbu_1sd, perempuan_tbu_2sd, perempuan_tbu_3sd) values " +
+                "('18', '72.0', '74.9', '77.8', '80.7', '83.6', '86.5', '89.4');");
+        db.execSQL("insert into antropometri_perempuan_tbu (perempuan_tbu_umur, perempuan_tbu_min3sd, perempuan_tbu_min2sd, perempuan_tbu_min1sd, perempuan_tbu_median, perempuan_tbu_1sd, perempuan_tbu_2sd, perempuan_tbu_3sd) values " +
+                "('19', '72.8', '75.8', '78.8', '81.7', '84.7', '87.6', '90.6');");
+        db.execSQL("insert into antropometri_perempuan_tbu (perempuan_tbu_umur, perempuan_tbu_min3sd, perempuan_tbu_min2sd, perempuan_tbu_min1sd, perempuan_tbu_median, perempuan_tbu_1sd, perempuan_tbu_2sd, perempuan_tbu_3sd) values " +
+                "('20', '73.7', '76.7', '79.7', '82.7', '85.7', '88.7', '91.7');");
+        db.execSQL("insert into antropometri_perempuan_tbu (perempuan_tbu_umur, perempuan_tbu_min3sd, perempuan_tbu_min2sd, perempuan_tbu_min1sd, perempuan_tbu_median, perempuan_tbu_1sd, perempuan_tbu_2sd, perempuan_tbu_3sd) values " +
+                "('21', '74.5', '77.5', '80.6', '83.7', '86.7', '89.8', '92.9');");
+        db.execSQL("insert into antropometri_perempuan_tbu (perempuan_tbu_umur, perempuan_tbu_min3sd, perempuan_tbu_min2sd, perempuan_tbu_min1sd, perempuan_tbu_median, perempuan_tbu_1sd, perempuan_tbu_2sd, perempuan_tbu_3sd) values " +
+                "('22', '75.2', '78.4', '81.5', '84.6', '87.7', '90.8', '94.0');");
+        db.execSQL("insert into antropometri_perempuan_tbu (perempuan_tbu_umur, perempuan_tbu_min3sd, perempuan_tbu_min2sd, perempuan_tbu_min1sd, perempuan_tbu_median, perempuan_tbu_1sd, perempuan_tbu_2sd, perempuan_tbu_3sd) values " +
+                "('23', '76.0', '79.2', '82.3', '85.5', '88.7', '91.9', '95.0');");
+        db.execSQL("insert into antropometri_perempuan_tbu (perempuan_tbu_umur, perempuan_tbu_min3sd, perempuan_tbu_min2sd, perempuan_tbu_min1sd, perempuan_tbu_median, perempuan_tbu_1sd, perempuan_tbu_2sd, perempuan_tbu_3sd) values " +
+                "('24', '76.0', '79.3', '82.5', '85.7', '88.9', '92.2', '95.4');");
+        db.execSQL("insert into antropometri_perempuan_tbu (perempuan_tbu_umur, perempuan_tbu_min3sd, perempuan_tbu_min2sd, perempuan_tbu_min1sd, perempuan_tbu_median, perempuan_tbu_1sd, perempuan_tbu_2sd, perempuan_tbu_3sd) values " +
+                "('25', '76.8', '80.0', '83.3', '86.6', '89.9', '93.1', '96.4');");
+        db.execSQL("insert into antropometri_perempuan_tbu (perempuan_tbu_umur, perempuan_tbu_min3sd, perempuan_tbu_min2sd, perempuan_tbu_min1sd, perempuan_tbu_median, perempuan_tbu_1sd, perempuan_tbu_2sd, perempuan_tbu_3sd) values " +
+                "('26', '77.5', '80.8', '84.1', '87.4', '90.8', '94.1', '97.4');");
+        db.execSQL("insert into antropometri_perempuan_tbu (perempuan_tbu_umur, perempuan_tbu_min3sd, perempuan_tbu_min2sd, perempuan_tbu_min1sd, perempuan_tbu_median, perempuan_tbu_1sd, perempuan_tbu_2sd, perempuan_tbu_3sd) values " +
+                "('27', '78.1', '81.5', '84.9', '88.3', '91.7', '95.0', '98.4');");
+        db.execSQL("insert into antropometri_perempuan_tbu (perempuan_tbu_umur, perempuan_tbu_min3sd, perempuan_tbu_min2sd, perempuan_tbu_min1sd, perempuan_tbu_median, perempuan_tbu_1sd, perempuan_tbu_2sd, perempuan_tbu_3sd) values " +
+                "('28', '78.8', '82.2', '85.7', '89.1', '92.5', '96.0', '99.4');");
+        db.execSQL("insert into antropometri_perempuan_tbu (perempuan_tbu_umur, perempuan_tbu_min3sd, perempuan_tbu_min2sd, perempuan_tbu_min1sd, perempuan_tbu_median, perempuan_tbu_1sd, perempuan_tbu_2sd, perempuan_tbu_3sd) values " +
+                "('29', '79.5', '82.9', '86.4', '89.9', '93.4', '96.9', '100.3');");
+        db.execSQL("insert into antropometri_perempuan_tbu (perempuan_tbu_umur, perempuan_tbu_min3sd, perempuan_tbu_min2sd, perempuan_tbu_min1sd, perempuan_tbu_median, perempuan_tbu_1sd, perempuan_tbu_2sd, perempuan_tbu_3sd) values " +
+                "('30', '80.1', '83.6', '87.1', '90.7', '94.2', '97.7', '101.3');");
+        db.execSQL("insert into antropometri_perempuan_tbu (perempuan_tbu_umur, perempuan_tbu_min3sd, perempuan_tbu_min2sd, perempuan_tbu_min1sd, perempuan_tbu_median, perempuan_tbu_1sd, perempuan_tbu_2sd, perempuan_tbu_3sd) values " +
+                "('31', '80.7', '84.3', '87.9', '91.4', '95.0', '98.6', '102.2');");
+        db.execSQL("insert into antropometri_perempuan_tbu (perempuan_tbu_umur, perempuan_tbu_min3sd, perempuan_tbu_min2sd, perempuan_tbu_min1sd, perempuan_tbu_median, perempuan_tbu_1sd, perempuan_tbu_2sd, perempuan_tbu_3sd) values " +
+                "('32', '81.3', '84.9', '88.6', '92.2', '95.8', '99.4', '103.1');");
+        db.execSQL("insert into antropometri_perempuan_tbu (perempuan_tbu_umur, perempuan_tbu_min3sd, perempuan_tbu_min2sd, perempuan_tbu_min1sd, perempuan_tbu_median, perempuan_tbu_1sd, perempuan_tbu_2sd, perempuan_tbu_3sd) values " +
+                "('33', '81.9', '85.6', '89.3', '92.9', '96.6', '100.3', '103.9');");
+        db.execSQL("insert into antropometri_perempuan_tbu (perempuan_tbu_umur, perempuan_tbu_min3sd, perempuan_tbu_min2sd, perempuan_tbu_min1sd, perempuan_tbu_median, perempuan_tbu_1sd, perempuan_tbu_2sd, perempuan_tbu_3sd) values " +
+                "('34', '82.5', '86.2', '89.9', '93.6', '97.4', '101.1', '104.8');");
+        db.execSQL("insert into antropometri_perempuan_tbu (perempuan_tbu_umur, perempuan_tbu_min3sd, perempuan_tbu_min2sd, perempuan_tbu_min1sd, perempuan_tbu_median, perempuan_tbu_1sd, perempuan_tbu_2sd, perempuan_tbu_3sd) values " +
+                "('35', '83.1', '86.8', '90.6', '94.4', '98.1', '101.9', '105.6');");
+        db.execSQL("insert into antropometri_perempuan_tbu (perempuan_tbu_umur, perempuan_tbu_min3sd, perempuan_tbu_min2sd, perempuan_tbu_min1sd, perempuan_tbu_median, perempuan_tbu_1sd, perempuan_tbu_2sd, perempuan_tbu_3sd) values " +
+                "('36', '83.6', '87.4', '91.2', '95.1', '98.9', '102.7', '106.5');");
+        db.execSQL("insert into antropometri_perempuan_tbu (perempuan_tbu_umur, perempuan_tbu_min3sd, perempuan_tbu_min2sd, perempuan_tbu_min1sd, perempuan_tbu_median, perempuan_tbu_1sd, perempuan_tbu_2sd, perempuan_tbu_3sd) values " +
+                "('37', '84.2', '88.0', '91.9', '95.7', '99.6', '103.4', '107.3');");
+        db.execSQL("insert into antropometri_perempuan_tbu (perempuan_tbu_umur, perempuan_tbu_min3sd, perempuan_tbu_min2sd, perempuan_tbu_min1sd, perempuan_tbu_median, perempuan_tbu_1sd, perempuan_tbu_2sd, perempuan_tbu_3sd) values " +
+                "('38', '84.7', '88.6', '92.5', '96.4', '100.3', '104.2', '108.1');");
+        db.execSQL("insert into antropometri_perempuan_tbu (perempuan_tbu_umur, perempuan_tbu_min3sd, perempuan_tbu_min2sd, perempuan_tbu_min1sd, perempuan_tbu_median, perempuan_tbu_1sd, perempuan_tbu_2sd, perempuan_tbu_3sd) values " +
+                "('39', '85.3', '89.2', '93.1', '97.1', '101.0', '105.0', '106.9');");
+        db.execSQL("insert into antropometri_perempuan_tbu (perempuan_tbu_umur, perempuan_tbu_min3sd, perempuan_tbu_min2sd, perempuan_tbu_min1sd, perempuan_tbu_median, perempuan_tbu_1sd, perempuan_tbu_2sd, perempuan_tbu_3sd) values " +
+                "('40', '85.8', '89.8', '93.8', '97.7', '101.7', '105.7', '109.7');");
+        db.execSQL("insert into antropometri_perempuan_tbu (perempuan_tbu_umur, perempuan_tbu_min3sd, perempuan_tbu_min2sd, perempuan_tbu_min1sd, perempuan_tbu_median, perempuan_tbu_1sd, perempuan_tbu_2sd, perempuan_tbu_3sd) values " +
+                "('41', '86.3', '90.4', '94.4', '98.4', '102.4', '106.4', '110.5');");
+        db.execSQL("insert into antropometri_perempuan_tbu (perempuan_tbu_umur, perempuan_tbu_min3sd, perempuan_tbu_min2sd, perempuan_tbu_min1sd, perempuan_tbu_median, perempuan_tbu_1sd, perempuan_tbu_2sd, perempuan_tbu_3sd) values " +
+                "('42', '86.8', '90.9', '95.0', '99.0', '103.1', '107.2', '111.2');");
+        db.execSQL("insert into antropometri_perempuan_tbu (perempuan_tbu_umur, perempuan_tbu_min3sd, perempuan_tbu_min2sd, perempuan_tbu_min1sd, perempuan_tbu_median, perempuan_tbu_1sd, perempuan_tbu_2sd, perempuan_tbu_3sd) values " +
+                "('43', '87.4', '91.5', '95.6', '99.7', '103.8', '107.9', '112.0');");
+        db.execSQL("insert into antropometri_perempuan_tbu (perempuan_tbu_umur, perempuan_tbu_min3sd, perempuan_tbu_min2sd, perempuan_tbu_min1sd, perempuan_tbu_median, perempuan_tbu_1sd, perempuan_tbu_2sd, perempuan_tbu_3sd) values " +
+                "('44', '87.9', '92.0', '96.2', '100.3', '104.5', '108.6', '112.7');");
+        db.execSQL("insert into antropometri_perempuan_tbu (perempuan_tbu_umur, perempuan_tbu_min3sd, perempuan_tbu_min2sd, perempuan_tbu_min1sd, perempuan_tbu_median, perempuan_tbu_1sd, perempuan_tbu_2sd, perempuan_tbu_3sd) values " +
+                "('45', '88.4', '92.5', '96.7', '100.9', '105.1', '109.3', '113.5');");
+        db.execSQL("insert into antropometri_perempuan_tbu (perempuan_tbu_umur, perempuan_tbu_min3sd, perempuan_tbu_min2sd, perempuan_tbu_min1sd, perempuan_tbu_median, perempuan_tbu_1sd, perempuan_tbu_2sd, perempuan_tbu_3sd) values " +
+                "('46', '88.9', '93.1', '97.3', '101.5', '105.8', '110.0', '114.2');");
+        db.execSQL("insert into antropometri_perempuan_tbu (perempuan_tbu_umur, perempuan_tbu_min3sd, perempuan_tbu_min2sd, perempuan_tbu_min1sd, perempuan_tbu_median, perempuan_tbu_1sd, perempuan_tbu_2sd, perempuan_tbu_3sd) values " +
+                "('47', '89.3', '93.6', '97.9', '102.1', '106.4', '110.7', '114.9');");
+        db.execSQL("insert into antropometri_perempuan_tbu (perempuan_tbu_umur, perempuan_tbu_min3sd, perempuan_tbu_min2sd, perempuan_tbu_min1sd, perempuan_tbu_median, perempuan_tbu_1sd, perempuan_tbu_2sd, perempuan_tbu_3sd) values " +
+                "('48', '89.8', '94.1', '98.4', '102.7', '107.0', '111.3', '115.7');");
+        db.execSQL("insert into antropometri_perempuan_tbu (perempuan_tbu_umur, perempuan_tbu_min3sd, perempuan_tbu_min2sd, perempuan_tbu_min1sd, perempuan_tbu_median, perempuan_tbu_1sd, perempuan_tbu_2sd, perempuan_tbu_3sd) values " +
+                "('49', '90.3', '94.6', '99.0', '103.3', '107.7', '112.0', '116.4');");
+        db.execSQL("insert into antropometri_perempuan_tbu (perempuan_tbu_umur, perempuan_tbu_min3sd, perempuan_tbu_min2sd, perempuan_tbu_min1sd, perempuan_tbu_median, perempuan_tbu_1sd, perempuan_tbu_2sd, perempuan_tbu_3sd) values " +
+                "('50', '90.7', '95.1', '99.5', '103.9', '108.3', '112.7', '117.1');");
+        db.execSQL("insert into antropometri_perempuan_tbu (perempuan_tbu_umur, perempuan_tbu_min3sd, perempuan_tbu_min2sd, perempuan_tbu_min1sd, perempuan_tbu_median, perempuan_tbu_1sd, perempuan_tbu_2sd, perempuan_tbu_3sd) values " +
+                "('51', '91.2', '95.6', '100.1', '104.5', '108.9', '113.3', '117.7');");
+        db.execSQL("insert into antropometri_perempuan_tbu (perempuan_tbu_umur, perempuan_tbu_min3sd, perempuan_tbu_min2sd, perempuan_tbu_min1sd, perempuan_tbu_median, perempuan_tbu_1sd, perempuan_tbu_2sd, perempuan_tbu_3sd) values " +
+                "('52', '91.7', '96.1', '100.6', '105.0', '109.5', '114.0', '118.4');");
+        db.execSQL("insert into antropometri_perempuan_tbu (perempuan_tbu_umur, perempuan_tbu_min3sd, perempuan_tbu_min2sd, perempuan_tbu_min1sd, perempuan_tbu_median, perempuan_tbu_1sd, perempuan_tbu_2sd, perempuan_tbu_3sd) values " +
+                "('53', '92.1', '96.6', '101.1', '105.6', '110.1', '114.6', '119.1');");
+        db.execSQL("insert into antropometri_perempuan_tbu (perempuan_tbu_umur, perempuan_tbu_min3sd, perempuan_tbu_min2sd, perempuan_tbu_min1sd, perempuan_tbu_median, perempuan_tbu_1sd, perempuan_tbu_2sd, perempuan_tbu_3sd) values " +
+                "('54', '92.6', '97.1', '101.6', '106.2', '110.7', '115.2', '119.8');");
+        db.execSQL("insert into antropometri_perempuan_tbu (perempuan_tbu_umur, perempuan_tbu_min3sd, perempuan_tbu_min2sd, perempuan_tbu_min1sd, perempuan_tbu_median, perempuan_tbu_1sd, perempuan_tbu_2sd, perempuan_tbu_3sd) values " +
+                "('55', '93.0', '97.6', '102.2', '106.7', '111.3', '115.9', '120.4');");
+        db.execSQL("insert into antropometri_perempuan_tbu (perempuan_tbu_umur, perempuan_tbu_min3sd, perempuan_tbu_min2sd, perempuan_tbu_min1sd, perempuan_tbu_median, perempuan_tbu_1sd, perempuan_tbu_2sd, perempuan_tbu_3sd) values " +
+                "('56', '93.4', '98.1', '102.7', '107.3', '111.9', '116.5', '121.1');");
+        db.execSQL("insert into antropometri_perempuan_tbu (perempuan_tbu_umur, perempuan_tbu_min3sd, perempuan_tbu_min2sd, perempuan_tbu_min1sd, perempuan_tbu_median, perempuan_tbu_1sd, perempuan_tbu_2sd, perempuan_tbu_3sd) values " +
+                "('57', '93.9', '98.5', '103.2', '107.8', '112.5', '117.1', '121.8');");
+        db.execSQL("insert into antropometri_perempuan_tbu (perempuan_tbu_umur, perempuan_tbu_min3sd, perempuan_tbu_min2sd, perempuan_tbu_min1sd, perempuan_tbu_median, perempuan_tbu_1sd, perempuan_tbu_2sd, perempuan_tbu_3sd) values " +
+                "('58', '94.3', '99.0', '103.7', '108.4', '113.0', '117.7', '122.4');");
+        db.execSQL("insert into antropometri_perempuan_tbu (perempuan_tbu_umur, perempuan_tbu_min3sd, perempuan_tbu_min2sd, perempuan_tbu_min1sd, perempuan_tbu_median, perempuan_tbu_1sd, perempuan_tbu_2sd, perempuan_tbu_3sd) values " +
+                "('59', '94.7', '99.5', '104.2', '108.9', '113.6', '118.3', '123.1');");
+        db.execSQL("insert into antropometri_perempuan_tbu (perempuan_tbu_umur, perempuan_tbu_min3sd, perempuan_tbu_min2sd, perempuan_tbu_min1sd, perempuan_tbu_median, perempuan_tbu_1sd, perempuan_tbu_2sd, perempuan_tbu_3sd) values " +
+                "('60', '95.2', '99.9', '104.7', '109.4', '114.2', '118.9', '123.7');");
+    }
+
+    // Get One List From Database
+    public Cursor getPerempuanTBUList(Integer umur) {
+        Cursor cursor = db.rawQuery("SELECT * FROM antropometri_perempuan_tbu WHERE perempuan_tbu_umur = " + umur, null);
+        cursor.moveToFirst();
+        return cursor;
+    }
+
+    // Get One List From Database
+    public Cursor getPerempuanTBUAllList() {
+        Cursor cursor = db.rawQuery("SELECT * FROM antropometri_perempuan_tbu", null);
+        cursor.moveToFirst();
+        return cursor;
+    }
+
+    // Create Table Tahapan Tumbuh Kembang
+    public void createPerempuanBBTB_0_24(SQLiteDatabase db) {
+        // Create Table Tahap Tumbuh Kembang
+        String create_perempuan_bbtb_0_24 = "create table antropometri_perempuan_bbtb_0_24 (" +
+                "perempuan_bbtb_ID integer primary key autoincrement, " +
+                "perempuan_bbtb_tb real not null," +
+                "perempuan_bbtb_min3sd real not null, " +
+                "perempuan_bbtb_min2sd real not null, " +
+                "perempuan_bbtb_min1sd real not null, " +
+                "perempuan_bbtb_median real not null, " +
+                "perempuan_bbtb_1sd real not null, " +
+                "perempuan_bbtb_2sd real not null, " +
+                "perempuan_bbtb_3sd real not null " +
+                ");";
+        db.execSQL(create_perempuan_bbtb_0_24);
+        insertPerempuanBBTB_0_24(db);
+    }
+
+    // Insert List Imunisasi
+    public void insertPerempuanBBTB_0_24(SQLiteDatabase db) {
+        db.execSQL("insert into antropometri_perempuan_bbtb_0_24 (perempuan_bbtb_tb, perempuan_bbtb_min3sd, perempuan_bbtb_min2sd, perempuan_bbtb_min1sd, perempuan_bbtb_median, perempuan_bbtb_1sd, perempuan_bbtb_2sd, perempuan_bbtb_3sd) values " +
+                "('45.0', '1.9', '2.1', '2.3', '2.5', '2.7', '3.0', '3.3');");
+        db.execSQL("insert into antropometri_perempuan_bbtb_0_24 (perempuan_bbtb_tb, perempuan_bbtb_min3sd, perempuan_bbtb_min2sd, perempuan_bbtb_min1sd, perempuan_bbtb_median, perempuan_bbtb_1sd, perempuan_bbtb_2sd, perempuan_bbtb_3sd) values " +
+                "('45.5', '2.0', '2.1', '2.3', '2.5', '2.8', '3.1', '3.4');");
+        db.execSQL("insert into antropometri_perempuan_bbtb_0_24 (perempuan_bbtb_tb, perempuan_bbtb_min3sd, perempuan_bbtb_min2sd, perempuan_bbtb_min1sd, perempuan_bbtb_median, perempuan_bbtb_1sd, perempuan_bbtb_2sd, perempuan_bbtb_3sd) values " +
+                "('46.0', '2.0', '2.2', '2.4', '2.6', '2.9', '3.2', '3.5');");
+        db.execSQL("insert into antropometri_perempuan_bbtb_0_24 (perempuan_bbtb_tb, perempuan_bbtb_min3sd, perempuan_bbtb_min2sd, perempuan_bbtb_min1sd, perempuan_bbtb_median, perempuan_bbtb_1sd, perempuan_bbtb_2sd, perempuan_bbtb_3sd) values " +
+                "('46.5', '2.1', '2.3', '2.5', '2.7', '3.0', '3.3', '3.6');");
+        db.execSQL("insert into antropometri_perempuan_bbtb_0_24 (perempuan_bbtb_tb, perempuan_bbtb_min3sd, perempuan_bbtb_min2sd, perempuan_bbtb_min1sd, perempuan_bbtb_median, perempuan_bbtb_1sd, perempuan_bbtb_2sd, perempuan_bbtb_3sd) values " +
+                "('47.0', '2.2', '2.4', '2.6', '2.9', '3.2', '3.3', '3.7');");
+        db.execSQL("insert into antropometri_perempuan_bbtb_0_24 (perempuan_bbtb_tb, perempuan_bbtb_min3sd, perempuan_bbtb_min2sd, perempuan_bbtb_min1sd, perempuan_bbtb_median, perempuan_bbtb_1sd, perempuan_bbtb_2sd, perempuan_bbtb_3sd) values " +
+                "('47.5', '2.2', '2.4', '2.6', '2.9', '3.0', '3.4', '3.8');");
+        db.execSQL("insert into antropometri_perempuan_bbtb_0_24 (perempuan_bbtb_tb, perempuan_bbtb_min3sd, perempuan_bbtb_min2sd, perempuan_bbtb_min1sd, perempuan_bbtb_median, perempuan_bbtb_1sd, perempuan_bbtb_2sd, perempuan_bbtb_3sd) values " +
+                "('48.0', '2.3', '2.5', '2.7', '3.0', '3.3', '3.6', '3.9');");
+        db.execSQL("insert into antropometri_perempuan_bbtb_0_24 (perempuan_bbtb_tb, perempuan_bbtb_min3sd, perempuan_bbtb_min2sd, perempuan_bbtb_min1sd, perempuan_bbtb_median, perempuan_bbtb_1sd, perempuan_bbtb_2sd, perempuan_bbtb_3sd) values " +
+                "('48.5', '2.4', '2.6', '2.8', '3.1', '3.4', '3.7', '4.1');");
+        db.execSQL("insert into antropometri_perempuan_bbtb_0_24 (perempuan_bbtb_tb, perempuan_bbtb_min3sd, perempuan_bbtb_min2sd, perempuan_bbtb_min1sd, perempuan_bbtb_median, perempuan_bbtb_1sd, perempuan_bbtb_2sd, perempuan_bbtb_3sd) values " +
+                "('49.0', '2.4', '2.6', '2.9', '3.2', '3.5', '3.8', '4.2');");
+        db.execSQL("insert into antropometri_perempuan_bbtb_0_24 (perempuan_bbtb_tb, perempuan_bbtb_min3sd, perempuan_bbtb_min2sd, perempuan_bbtb_min1sd, perempuan_bbtb_median, perempuan_bbtb_1sd, perempuan_bbtb_2sd, perempuan_bbtb_3sd) values " +
+                "('49.5', '2.5', '2.7', '3.0', '3.3', '3.6', '3.9', '4.3');");
+        db.execSQL("insert into antropometri_perempuan_bbtb_0_24 (perempuan_bbtb_tb, perempuan_bbtb_min3sd, perempuan_bbtb_min2sd, perempuan_bbtb_min1sd, perempuan_bbtb_median, perempuan_bbtb_1sd, perempuan_bbtb_2sd, perempuan_bbtb_3sd) values " +
+                "('50.0', '2.6', '2.8', '3.1', '3.4', '3.7', '4.0', '4.5');");
+        db.execSQL("insert into antropometri_perempuan_bbtb_0_24 (perempuan_bbtb_tb, perempuan_bbtb_min3sd, perempuan_bbtb_min2sd, perempuan_bbtb_min1sd, perempuan_bbtb_median, perempuan_bbtb_1sd, perempuan_bbtb_2sd, perempuan_bbtb_3sd) values " +
+                "('50.5', '2.7', '2.9', '3.2', '3.5', '3.8', '4.2', '4.6');");
+        db.execSQL("insert into antropometri_perempuan_bbtb_0_24 (perempuan_bbtb_tb, perempuan_bbtb_min3sd, perempuan_bbtb_min2sd, perempuan_bbtb_min1sd, perempuan_bbtb_median, perempuan_bbtb_1sd, perempuan_bbtb_2sd, perempuan_bbtb_3sd) values " +
+                "('51.0', '2.8', '3.0', '3.3', '3.6', '3.9', '4.3', '4.8');");
+        db.execSQL("insert into antropometri_perempuan_bbtb_0_24 (perempuan_bbtb_tb, perempuan_bbtb_min3sd, perempuan_bbtb_min2sd, perempuan_bbtb_min1sd, perempuan_bbtb_median, perempuan_bbtb_1sd, perempuan_bbtb_2sd, perempuan_bbtb_3sd) values " +
+                "('51.5', '2.8', '3.1', '3.4', '3.7', '4.0', '4.4', '4.9');");
+        db.execSQL("insert into antropometri_perempuan_bbtb_0_24 (perempuan_bbtb_tb, perempuan_bbtb_min3sd, perempuan_bbtb_min2sd, perempuan_bbtb_min1sd, perempuan_bbtb_median, perempuan_bbtb_1sd, perempuan_bbtb_2sd, perempuan_bbtb_3sd) values " +
+                "('52.0', '2.9', '3.2', '3.5', '3.8', '4.2', '4.6', '5.1');");
+        db.execSQL("insert into antropometri_perempuan_bbtb_0_24 (perempuan_bbtb_tb, perempuan_bbtb_min3sd, perempuan_bbtb_min2sd, perempuan_bbtb_min1sd, perempuan_bbtb_median, perempuan_bbtb_1sd, perempuan_bbtb_2sd, perempuan_bbtb_3sd) values " +
+                "('52.5', '3.0', '3.3', '3.6', '3.9', '4.3', '4.7', '5.2');");
+        db.execSQL("insert into antropometri_perempuan_bbtb_0_24 (perempuan_bbtb_tb, perempuan_bbtb_min3sd, perempuan_bbtb_min2sd, perempuan_bbtb_min1sd, perempuan_bbtb_median, perempuan_bbtb_1sd, perempuan_bbtb_2sd, perempuan_bbtb_3sd) values " +
+                "('53.0', '3.1', '3.4', '3.7', '4.0', '4.4', '4.9', '5.4');");
+        db.execSQL("insert into antropometri_perempuan_bbtb_0_24 (perempuan_bbtb_tb, perempuan_bbtb_min3sd, perempuan_bbtb_min2sd, perempuan_bbtb_min1sd, perempuan_bbtb_median, perempuan_bbtb_1sd, perempuan_bbtb_2sd, perempuan_bbtb_3sd) values " +
+                "('53.5', '3.2', '3.5', '3.8', '4.2', '4.6', '5.0', '5.5');");
+        db.execSQL("insert into antropometri_perempuan_bbtb_0_24 (perempuan_bbtb_tb, perempuan_bbtb_min3sd, perempuan_bbtb_min2sd, perempuan_bbtb_min1sd, perempuan_bbtb_median, perempuan_bbtb_1sd, perempuan_bbtb_2sd, perempuan_bbtb_3sd) values " +
+                "('54.0', '3.3', '3.6', '3.9', '4.3', '4.7', '5.2', '5.7');");
+        db.execSQL("insert into antropometri_perempuan_bbtb_0_24 (perempuan_bbtb_tb, perempuan_bbtb_min3sd, perempuan_bbtb_min2sd, perempuan_bbtb_min1sd, perempuan_bbtb_median, perempuan_bbtb_1sd, perempuan_bbtb_2sd, perempuan_bbtb_3sd) values " +
+                "('54.5', '3.4', '3.7', '4.0', '4.4', '4.8', '5.3', '5.9');");
+        db.execSQL("insert into antropometri_perempuan_bbtb_0_24 (perempuan_bbtb_tb, perempuan_bbtb_min3sd, perempuan_bbtb_min2sd, perempuan_bbtb_min1sd, perempuan_bbtb_median, perempuan_bbtb_1sd, perempuan_bbtb_2sd, perempuan_bbtb_3sd) values " +
+                "('55.0', '3.5', '3.8', '4.2', '4.5', '5.0', '5.5', '6.1');");
+        db.execSQL("insert into antropometri_perempuan_bbtb_0_24 (perempuan_bbtb_tb, perempuan_bbtb_min3sd, perempuan_bbtb_min2sd, perempuan_bbtb_min1sd, perempuan_bbtb_median, perempuan_bbtb_1sd, perempuan_bbtb_2sd, perempuan_bbtb_3sd) values " +
+                "('55.5', '3.6', '3.9', '4.3', '4.7', '5.1', '5.7', '6.3');");
+        db.execSQL("insert into antropometri_perempuan_bbtb_0_24 (perempuan_bbtb_tb, perempuan_bbtb_min3sd, perempuan_bbtb_min2sd, perempuan_bbtb_min1sd, perempuan_bbtb_median, perempuan_bbtb_1sd, perempuan_bbtb_2sd, perempuan_bbtb_3sd) values " +
+                "('56.0', '3.7', '4.0', '4.4', '4.8', '5.3', '5.8', '6.4');");
+        db.execSQL("insert into antropometri_perempuan_bbtb_0_24 (perempuan_bbtb_tb, perempuan_bbtb_min3sd, perempuan_bbtb_min2sd, perempuan_bbtb_min1sd, perempuan_bbtb_median, perempuan_bbtb_1sd, perempuan_bbtb_2sd, perempuan_bbtb_3sd) values " +
+                "('56.5', '3.8', '4.1', '4.5', '5.0', '5.4', '6.0', '6.6');");
+        db.execSQL("insert into antropometri_perempuan_bbtb_0_24 (perempuan_bbtb_tb, perempuan_bbtb_min3sd, perempuan_bbtb_min2sd, perempuan_bbtb_min1sd, perempuan_bbtb_median, perempuan_bbtb_1sd, perempuan_bbtb_2sd, perempuan_bbtb_3sd) values " +
+                "('57.0', '3.9', '4.3', '4.6', '5.1', '5.6', '6.1', '6.8');");
+        db.execSQL("insert into antropometri_perempuan_bbtb_0_24 (perempuan_bbtb_tb, perempuan_bbtb_min3sd, perempuan_bbtb_min2sd, perempuan_bbtb_min1sd, perempuan_bbtb_median, perempuan_bbtb_1sd, perempuan_bbtb_2sd, perempuan_bbtb_3sd) values " +
+                "('57.5', '4.0', '4.4', '4.8', '5.2', '5.7', '6.3', '7.0');");
+        db.execSQL("insert into antropometri_perempuan_bbtb_0_24 (perempuan_bbtb_tb, perempuan_bbtb_min3sd, perempuan_bbtb_min2sd, perempuan_bbtb_min1sd, perempuan_bbtb_median, perempuan_bbtb_1sd, perempuan_bbtb_2sd, perempuan_bbtb_3sd) values " +
+                "('58.0', '4.1', '4.5', '4.9', '5.4', '5.9', '6.5', '7.1');");
+        db.execSQL("insert into antropometri_perempuan_bbtb_0_24 (perempuan_bbtb_tb, perempuan_bbtb_min3sd, perempuan_bbtb_min2sd, perempuan_bbtb_min1sd, perempuan_bbtb_median, perempuan_bbtb_1sd, perempuan_bbtb_2sd, perempuan_bbtb_3sd) values " +
+                "('58.5', '4.2', '4.6', '5.0', '5.5', '6.0', '6.6', '7.3');");
+        db.execSQL("insert into antropometri_perempuan_bbtb_0_24 (perempuan_bbtb_tb, perempuan_bbtb_min3sd, perempuan_bbtb_min2sd, perempuan_bbtb_min1sd, perempuan_bbtb_median, perempuan_bbtb_1sd, perempuan_bbtb_2sd, perempuan_bbtb_3sd) values " +
+                "('59.0', '4.3', '4.7', '5.1', '5.6', '6.2', '6.8', '7.5');");
+        db.execSQL("insert into antropometri_perempuan_bbtb_0_24 (perempuan_bbtb_tb, perempuan_bbtb_min3sd, perempuan_bbtb_min2sd, perempuan_bbtb_min1sd, perempuan_bbtb_median, perempuan_bbtb_1sd, perempuan_bbtb_2sd, perempuan_bbtb_3sd) values " +
+                "('59.5', '4.4', '4.8', '5.3', '5.7', '6.3', '6.9', '7.7');");
+        db.execSQL("insert into antropometri_perempuan_bbtb_0_24 (perempuan_bbtb_tb, perempuan_bbtb_min3sd, perempuan_bbtb_min2sd, perempuan_bbtb_min1sd, perempuan_bbtb_median, perempuan_bbtb_1sd, perempuan_bbtb_2sd, perempuan_bbtb_3sd) values " +
+                "('60.0', '4.5', '4.9', '5.4', '5.9', '6.4', '7.1', '7.8');");
+        db.execSQL("insert into antropometri_perempuan_bbtb_0_24 (perempuan_bbtb_tb, perempuan_bbtb_min3sd, perempuan_bbtb_min2sd, perempuan_bbtb_min1sd, perempuan_bbtb_median, perempuan_bbtb_1sd, perempuan_bbtb_2sd, perempuan_bbtb_3sd) values " +
+                "('60.5', '4.6', '5.0', '5.5', '6.0', '6.6', '7.3', '8.0');");
+        db.execSQL("insert into antropometri_perempuan_bbtb_0_24 (perempuan_bbtb_tb, perempuan_bbtb_min3sd, perempuan_bbtb_min2sd, perempuan_bbtb_min1sd, perempuan_bbtb_median, perempuan_bbtb_1sd, perempuan_bbtb_2sd, perempuan_bbtb_3sd) values " +
+                "('61.0', '4.7', '5.1', '5.6', '6.1', '6.7', '7.4', '8.2');");
+        db.execSQL("insert into antropometri_perempuan_bbtb_0_24 (perempuan_bbtb_tb, perempuan_bbtb_min3sd, perempuan_bbtb_min2sd, perempuan_bbtb_min1sd, perempuan_bbtb_median, perempuan_bbtb_1sd, perempuan_bbtb_2sd, perempuan_bbtb_3sd) values " +
+                "('61.5', '4.8', '5.2', '5.7', '6.3', '6.9', '7.6', '8.4');");
+        db.execSQL("insert into antropometri_perempuan_bbtb_0_24 (perempuan_bbtb_tb, perempuan_bbtb_min3sd, perempuan_bbtb_min2sd, perempuan_bbtb_min1sd, perempuan_bbtb_median, perempuan_bbtb_1sd, perempuan_bbtb_2sd, perempuan_bbtb_3sd) values " +
+                "('62.0', '4.9', '5.3', '5.8', '6.4', '7.0', '7.7', '8.5');");
+        db.execSQL("insert into antropometri_perempuan_bbtb_0_24 (perempuan_bbtb_tb, perempuan_bbtb_min3sd, perempuan_bbtb_min2sd, perempuan_bbtb_min1sd, perempuan_bbtb_median, perempuan_bbtb_1sd, perempuan_bbtb_2sd, perempuan_bbtb_3sd) values " +
+                "('62.5', '5.0', '5.4', '5.9', '6.5', '7.1', '7.8', '8.7');");
+        db.execSQL("insert into antropometri_perempuan_bbtb_0_24 (perempuan_bbtb_tb, perempuan_bbtb_min3sd, perempuan_bbtb_min2sd, perempuan_bbtb_min1sd, perempuan_bbtb_median, perempuan_bbtb_1sd, perempuan_bbtb_2sd, perempuan_bbtb_3sd) values " +
+                "('63.0', '5.1', '5.5', '6.0', '6.6', '7.3', '8.0', '8.8');");
+        db.execSQL("insert into antropometri_perempuan_bbtb_0_24 (perempuan_bbtb_tb, perempuan_bbtb_min3sd, perempuan_bbtb_min2sd, perempuan_bbtb_min1sd, perempuan_bbtb_median, perempuan_bbtb_1sd, perempuan_bbtb_2sd, perempuan_bbtb_3sd) values " +
+                "('63.5', '5.2', '5.6', '6.2', '6.7', '7.4', '8.1', '9.0');");
+        db.execSQL("insert into antropometri_perempuan_bbtb_0_24 (perempuan_bbtb_tb, perempuan_bbtb_min3sd, perempuan_bbtb_min2sd, perempuan_bbtb_min1sd, perempuan_bbtb_median, perempuan_bbtb_1sd, perempuan_bbtb_2sd, perempuan_bbtb_3sd) values " +
+                "('64.0', '5.3', '5.7', '6.3', '6.9', '7.5', '8.3', '9.1');");
+        db.execSQL("insert into antropometri_perempuan_bbtb_0_24 (perempuan_bbtb_tb, perempuan_bbtb_min3sd, perempuan_bbtb_min2sd, perempuan_bbtb_min1sd, perempuan_bbtb_median, perempuan_bbtb_1sd, perempuan_bbtb_2sd, perempuan_bbtb_3sd) values " +
+                "('64.5', '5.4', '5.8', '6.4', '7.0', '7.6', '8.4', '9.3');");
+        db.execSQL("insert into antropometri_perempuan_bbtb_0_24 (perempuan_bbtb_tb, perempuan_bbtb_min3sd, perempuan_bbtb_min2sd, perempuan_bbtb_min1sd, perempuan_bbtb_median, perempuan_bbtb_1sd, perempuan_bbtb_2sd, perempuan_bbtb_3sd) values " +
+                "('65.0', '5.5', '5.9', '6.5', '7.1', '7.8', '8.6', '9.5');");
+        db.execSQL("insert into antropometri_perempuan_bbtb_0_24 (perempuan_bbtb_tb, perempuan_bbtb_min3sd, perempuan_bbtb_min2sd, perempuan_bbtb_min1sd, perempuan_bbtb_median, perempuan_bbtb_1sd, perempuan_bbtb_2sd, perempuan_bbtb_3sd) values " +
+                "('65.5', '5.5', '6.0', '6.6', '7.2', '7.9', '8.7', '9.6');");
+        db.execSQL("insert into antropometri_perempuan_bbtb_0_24 (perempuan_bbtb_tb, perempuan_bbtb_min3sd, perempuan_bbtb_min2sd, perempuan_bbtb_min1sd, perempuan_bbtb_median, perempuan_bbtb_1sd, perempuan_bbtb_2sd, perempuan_bbtb_3sd) values " +
+                "('66.0', '5.6', '6.1', '6.7', '7.3', '8.0', '8.8', '9.8');");
+        db.execSQL("insert into antropometri_perempuan_bbtb_0_24 (perempuan_bbtb_tb, perempuan_bbtb_min3sd, perempuan_bbtb_min2sd, perempuan_bbtb_min1sd, perempuan_bbtb_median, perempuan_bbtb_1sd, perempuan_bbtb_2sd, perempuan_bbtb_3sd) values " +
+                "('66.5', '5.7', '6.2', '6.8', '7.4', '8.1', '9.0', '9.9');");
+        db.execSQL("insert into antropometri_perempuan_bbtb_0_24 (perempuan_bbtb_tb, perempuan_bbtb_min3sd, perempuan_bbtb_min2sd, perempuan_bbtb_min1sd, perempuan_bbtb_median, perempuan_bbtb_1sd, perempuan_bbtb_2sd, perempuan_bbtb_3sd) values " +
+                "('67.0', '5.8', '6.3', '6.9', '7.5', '8.3', '9.1', '10.0');");
+        db.execSQL("insert into antropometri_perempuan_bbtb_0_24 (perempuan_bbtb_tb, perempuan_bbtb_min3sd, perempuan_bbtb_min2sd, perempuan_bbtb_min1sd, perempuan_bbtb_median, perempuan_bbtb_1sd, perempuan_bbtb_2sd, perempuan_bbtb_3sd) values " +
+                "('67.5', '5.9', '6.4', '7.0', '7.6', '8.4', '9.2', '10.2');");
+        db.execSQL("insert into antropometri_perempuan_bbtb_0_24 (perempuan_bbtb_tb, perempuan_bbtb_min3sd, perempuan_bbtb_min2sd, perempuan_bbtb_min1sd, perempuan_bbtb_median, perempuan_bbtb_1sd, perempuan_bbtb_2sd, perempuan_bbtb_3sd) values " +
+                "('68.0', '6.0', '6.5', '7.1', '7.7', '8.5', '9.4', '10.3');");
+        db.execSQL("insert into antropometri_perempuan_bbtb_0_24 (perempuan_bbtb_tb, perempuan_bbtb_min3sd, perempuan_bbtb_min2sd, perempuan_bbtb_min1sd, perempuan_bbtb_median, perempuan_bbtb_1sd, perempuan_bbtb_2sd, perempuan_bbtb_3sd) values " +
+                "('68.5', '6.1', '6.6', '7.2', '7.9', '8.6', '9.5', '10.5');");
+        db.execSQL("insert into antropometri_perempuan_bbtb_0_24 (perempuan_bbtb_tb, perempuan_bbtb_min3sd, perempuan_bbtb_min2sd, perempuan_bbtb_min1sd, perempuan_bbtb_median, perempuan_bbtb_1sd, perempuan_bbtb_2sd, perempuan_bbtb_3sd) values " +
+                "('69.0', '6.1', '6.7', '7.3', '8.0', '8.7', '9.6', '10.6');");
+        db.execSQL("insert into antropometri_perempuan_bbtb_0_24 (perempuan_bbtb_tb, perempuan_bbtb_min3sd, perempuan_bbtb_min2sd, perempuan_bbtb_min1sd, perempuan_bbtb_median, perempuan_bbtb_1sd, perempuan_bbtb_2sd, perempuan_bbtb_3sd) values " +
+                "('69.5', '6.2', '6.8', '7.4', '8.1', '8.8', '9.7', '10.7');");
+        db.execSQL("insert into antropometri_perempuan_bbtb_0_24 (perempuan_bbtb_tb, perempuan_bbtb_min3sd, perempuan_bbtb_min2sd, perempuan_bbtb_min1sd, perempuan_bbtb_median, perempuan_bbtb_1sd, perempuan_bbtb_2sd, perempuan_bbtb_3sd) values " +
+                "('70.0', '6.3', '6.9', '7.5', '8.2', '9.0', '9.9', '10.9');");
+        db.execSQL("insert into antropometri_perempuan_bbtb_0_24 (perempuan_bbtb_tb, perempuan_bbtb_min3sd, perempuan_bbtb_min2sd, perempuan_bbtb_min1sd, perempuan_bbtb_median, perempuan_bbtb_1sd, perempuan_bbtb_2sd, perempuan_bbtb_3sd) values " +
+                "('70.5', '6.4', '6.9', '7.6', '8.3', '9.1', '10.0', '11.0');");
+        db.execSQL("insert into antropometri_perempuan_bbtb_0_24 (perempuan_bbtb_tb, perempuan_bbtb_min3sd, perempuan_bbtb_min2sd, perempuan_bbtb_min1sd, perempuan_bbtb_median, perempuan_bbtb_1sd, perempuan_bbtb_2sd, perempuan_bbtb_3sd) values " +
+                "('71.0', '6.5', '7.0', '7.7', '8.4', '9.2', '10.1', '11.1');");
+        db.execSQL("insert into antropometri_perempuan_bbtb_0_24 (perempuan_bbtb_tb, perempuan_bbtb_min3sd, perempuan_bbtb_min2sd, perempuan_bbtb_min1sd, perempuan_bbtb_median, perempuan_bbtb_1sd, perempuan_bbtb_2sd, perempuan_bbtb_3sd) values " +
+                "('71.5', '6.5', '7.1', '7.7', '8.5', '9.3', '10.2', '11.3');");
+        db.execSQL("insert into antropometri_perempuan_bbtb_0_24 (perempuan_bbtb_tb, perempuan_bbtb_min3sd, perempuan_bbtb_min2sd, perempuan_bbtb_min1sd, perempuan_bbtb_median, perempuan_bbtb_1sd, perempuan_bbtb_2sd, perempuan_bbtb_3sd) values " +
+                "('72.0', '6.6', '7.2', '7.8', '8.6', '9.4', '10.3', '11.4');");
+        db.execSQL("insert into antropometri_perempuan_bbtb_0_24 (perempuan_bbtb_tb, perempuan_bbtb_min3sd, perempuan_bbtb_min2sd, perempuan_bbtb_min1sd, perempuan_bbtb_median, perempuan_bbtb_1sd, perempuan_bbtb_2sd, perempuan_bbtb_3sd) values " +
+                "('72.5', '6.7', '7.3', '7.9', '8.7', '9.5', '10.5', '11.5');");
+        db.execSQL("insert into antropometri_perempuan_bbtb_0_24 (perempuan_bbtb_tb, perempuan_bbtb_min3sd, perempuan_bbtb_min2sd, perempuan_bbtb_min1sd, perempuan_bbtb_median, perempuan_bbtb_1sd, perempuan_bbtb_2sd, perempuan_bbtb_3sd) values " +
+                "('73.0', '6.8', '7.4', '8.0', '8.8', '9.6', '10.6', '11.7');");
+        db.execSQL("insert into antropometri_perempuan_bbtb_0_24 (perempuan_bbtb_tb, perempuan_bbtb_min3sd, perempuan_bbtb_min2sd, perempuan_bbtb_min1sd, perempuan_bbtb_median, perempuan_bbtb_1sd, perempuan_bbtb_2sd, perempuan_bbtb_3sd) values " +
+                "('73.5', '6.9', '7.4', '8.1', '8.9', '9.7', '10.7', '11.8');");
+        db.execSQL("insert into antropometri_perempuan_bbtb_0_24 (perempuan_bbtb_tb, perempuan_bbtb_min3sd, perempuan_bbtb_min2sd, perempuan_bbtb_min1sd, perempuan_bbtb_median, perempuan_bbtb_1sd, perempuan_bbtb_2sd, perempuan_bbtb_3sd) values " +
+                "('74.0', '6.9', '7.5', '8.2', '9.0', '9.8', '10.8', '11.9');");
+        db.execSQL("insert into antropometri_perempuan_bbtb_0_24 (perempuan_bbtb_tb, perempuan_bbtb_min3sd, perempuan_bbtb_min2sd, perempuan_bbtb_min1sd, perempuan_bbtb_median, perempuan_bbtb_1sd, perempuan_bbtb_2sd, perempuan_bbtb_3sd) values " +
+                "('74.5', '7.0', '7.6', '8.3', '9.1', '9.9', '10.9', '12.0');");
+        db.execSQL("insert into antropometri_perempuan_bbtb_0_24 (perempuan_bbtb_tb, perempuan_bbtb_min3sd, perempuan_bbtb_min2sd, perempuan_bbtb_min1sd, perempuan_bbtb_median, perempuan_bbtb_1sd, perempuan_bbtb_2sd, perempuan_bbtb_3sd) values " +
+                "('75.0', '7.1', '7.7', '8.4', '9.1', '10.0', '11.0', '12.2');");
+        db.execSQL("insert into antropometri_perempuan_bbtb_0_24 (perempuan_bbtb_tb, perempuan_bbtb_min3sd, perempuan_bbtb_min2sd, perempuan_bbtb_min1sd, perempuan_bbtb_median, perempuan_bbtb_1sd, perempuan_bbtb_2sd, perempuan_bbtb_3sd) values " +
+                "('75.5', '7.1', '7.8', '8.5', '9.2', '10.1', '11.1', '12.3');");
+        db.execSQL("insert into antropometri_perempuan_bbtb_0_24 (perempuan_bbtb_tb, perempuan_bbtb_min3sd, perempuan_bbtb_min2sd, perempuan_bbtb_min1sd, perempuan_bbtb_median, perempuan_bbtb_1sd, perempuan_bbtb_2sd, perempuan_bbtb_3sd) values " +
+                "('76.0', '7.2', '7.8', '8.5', '9.3', '10.2', '11.2', '12.4');");
+        db.execSQL("insert into antropometri_perempuan_bbtb_0_24 (perempuan_bbtb_tb, perempuan_bbtb_min3sd, perempuan_bbtb_min2sd, perempuan_bbtb_min1sd, perempuan_bbtb_median, perempuan_bbtb_1sd, perempuan_bbtb_2sd, perempuan_bbtb_3sd) values " +
+                "('76.5', '7.3', '7.9', '8.6', '9.4', '10.3', '11.4', '12.5');");
+        db.execSQL("insert into antropometri_perempuan_bbtb_0_24 (perempuan_bbtb_tb, perempuan_bbtb_min3sd, perempuan_bbtb_min2sd, perempuan_bbtb_min1sd, perempuan_bbtb_median, perempuan_bbtb_1sd, perempuan_bbtb_2sd, perempuan_bbtb_3sd) values " +
+                "('77.0', '7.4', '8.0', '8.7', '9.5', '10.4', '11.5', '12.6');");
+        db.execSQL("insert into antropometri_perempuan_bbtb_0_24 (perempuan_bbtb_tb, perempuan_bbtb_min3sd, perempuan_bbtb_min2sd, perempuan_bbtb_min1sd, perempuan_bbtb_median, perempuan_bbtb_1sd, perempuan_bbtb_2sd, perempuan_bbtb_3sd) values " +
+                "('77.5', '7.4', '8.1', '8.8', '9.6', '10.5', '11.6', '12.8');");
+        db.execSQL("insert into antropometri_perempuan_bbtb_0_24 (perempuan_bbtb_tb, perempuan_bbtb_min3sd, perempuan_bbtb_min2sd, perempuan_bbtb_min1sd, perempuan_bbtb_median, perempuan_bbtb_1sd, perempuan_bbtb_2sd, perempuan_bbtb_3sd) values " +
+                "('78.0', '7.4', '8.2', '8.9', '9.7', '10.6', '11.7', '12.9');");
+        db.execSQL("insert into antropometri_perempuan_bbtb_0_24 (perempuan_bbtb_tb, perempuan_bbtb_min3sd, perempuan_bbtb_min2sd, perempuan_bbtb_min1sd, perempuan_bbtb_median, perempuan_bbtb_1sd, perempuan_bbtb_2sd, perempuan_bbtb_3sd) values " +
+                "('78.5', '7.6', '8.2', '9.0', '9.8', '10.7', '11.8', '13.0');");
+        db.execSQL("insert into antropometri_perempuan_bbtb_0_24 (perempuan_bbtb_tb, perempuan_bbtb_min3sd, perempuan_bbtb_min2sd, perempuan_bbtb_min1sd, perempuan_bbtb_median, perempuan_bbtb_1sd, perempuan_bbtb_2sd, perempuan_bbtb_3sd) values " +
+                "('79.0', '7.7', '8.3', '9.1', '9.9', '10.8', '11.9', '13.1');");
+        db.execSQL("insert into antropometri_perempuan_bbtb_0_24 (perempuan_bbtb_tb, perempuan_bbtb_min3sd, perempuan_bbtb_min2sd, perempuan_bbtb_min1sd, perempuan_bbtb_median, perempuan_bbtb_1sd, perempuan_bbtb_2sd, perempuan_bbtb_3sd) values " +
+                "('79.5', '7.7', '8.4', '9.1', '10.0', '10.9', '12.0', '13.3');");
+        db.execSQL("insert into antropometri_perempuan_bbtb_0_24 (perempuan_bbtb_tb, perempuan_bbtb_min3sd, perempuan_bbtb_min2sd, perempuan_bbtb_min1sd, perempuan_bbtb_median, perempuan_bbtb_1sd, perempuan_bbtb_2sd, perempuan_bbtb_3sd) values " +
+                "('80.0', '7.8', '8.5', '9.2', '10.1', '11.0', '12.1', '13.4');");
+        db.execSQL("insert into antropometri_perempuan_bbtb_0_24 (perempuan_bbtb_tb, perempuan_bbtb_min3sd, perempuan_bbtb_min2sd, perempuan_bbtb_min1sd, perempuan_bbtb_median, perempuan_bbtb_1sd, perempuan_bbtb_2sd, perempuan_bbtb_3sd) values " +
+                "('80.5', '7.9', '8.6', '9.3', '10.2', '11.2', '12.3', '13.5');");
+        db.execSQL("insert into antropometri_perempuan_bbtb_0_24 (perempuan_bbtb_tb, perempuan_bbtb_min3sd, perempuan_bbtb_min2sd, perempuan_bbtb_min1sd, perempuan_bbtb_median, perempuan_bbtb_1sd, perempuan_bbtb_2sd, perempuan_bbtb_3sd) values " +
+                "('81.0', '8.0', '8.7', '9.4', '10.3', '11.3', '12.4', '13.7');");
+        db.execSQL("insert into antropometri_perempuan_bbtb_0_24 (perempuan_bbtb_tb, perempuan_bbtb_min3sd, perempuan_bbtb_min2sd, perempuan_bbtb_min1sd, perempuan_bbtb_median, perempuan_bbtb_1sd, perempuan_bbtb_2sd, perempuan_bbtb_3sd) values " +
+                "('81.5', '8.1', '8.8', '9.5', '10.4', '11.4', '12.5', '13.8');");
+        db.execSQL("insert into antropometri_perempuan_bbtb_0_24 (perempuan_bbtb_tb, perempuan_bbtb_min3sd, perempuan_bbtb_min2sd, perempuan_bbtb_min1sd, perempuan_bbtb_median, perempuan_bbtb_1sd, perempuan_bbtb_2sd, perempuan_bbtb_3sd) values " +
+                "('82.0', '8.1', '8.8', '9.6', '10.5', '11.5', '12.6', '13.9');");
+        db.execSQL("insert into antropometri_perempuan_bbtb_0_24 (perempuan_bbtb_tb, perempuan_bbtb_min3sd, perempuan_bbtb_min2sd, perempuan_bbtb_min1sd, perempuan_bbtb_median, perempuan_bbtb_1sd, perempuan_bbtb_2sd, perempuan_bbtb_3sd) values " +
+                "('82.5', '8.4', '9.1', '9.9', '10.9', '11.9', '13.1', '14.1');");
+        db.execSQL("insert into antropometri_perempuan_bbtb_0_24 (perempuan_bbtb_tb, perempuan_bbtb_min3sd, perempuan_bbtb_min2sd, perempuan_bbtb_min1sd, perempuan_bbtb_median, perempuan_bbtb_1sd, perempuan_bbtb_2sd, perempuan_bbtb_3sd) values " +
+                "('83.0', '8.3', '9.0', '9.8', '10.7', '11.8', '12.9', '14.2');");
+        db.execSQL("insert into antropometri_perempuan_bbtb_0_24 (perempuan_bbtb_tb, perempuan_bbtb_min3sd, perempuan_bbtb_min2sd, perempuan_bbtb_min1sd, perempuan_bbtb_median, perempuan_bbtb_1sd, perempuan_bbtb_2sd, perempuan_bbtb_3sd) values " +
+                "('83.5', '8.4', '9.1', '9.9', '10.9', '11.9', '13.1', '14.4');");
+        db.execSQL("insert into antropometri_perempuan_bbtb_0_24 (perempuan_bbtb_tb, perempuan_bbtb_min3sd, perempuan_bbtb_min2sd, perempuan_bbtb_min1sd, perempuan_bbtb_median, perempuan_bbtb_1sd, perempuan_bbtb_2sd, perempuan_bbtb_3sd) values " +
+                "('84.0', '8.5', '9.2', '10.1', '11.0', '12.0', '13.2', '14.5');");
+        db.execSQL("insert into antropometri_perempuan_bbtb_0_24 (perempuan_bbtb_tb, perempuan_bbtb_min3sd, perempuan_bbtb_min2sd, perempuan_bbtb_min1sd, perempuan_bbtb_median, perempuan_bbtb_1sd, perempuan_bbtb_2sd, perempuan_bbtb_3sd) values " +
+                "('84.5', '8.6', '9.3', '10.2', '11.1', '12.1', '13.1', '14.7');");
+        db.execSQL("insert into antropometri_perempuan_bbtb_0_24 (perempuan_bbtb_tb, perempuan_bbtb_min3sd, perempuan_bbtb_min2sd, perempuan_bbtb_min1sd, perempuan_bbtb_median, perempuan_bbtb_1sd, perempuan_bbtb_2sd, perempuan_bbtb_3sd) values " +
+                "('85.0', '8.7', '9.4', '10.3', '11.2', '12.3', '13.5', '14.9');");
+        db.execSQL("insert into antropometri_perempuan_bbtb_0_24 (perempuan_bbtb_tb, perempuan_bbtb_min3sd, perempuan_bbtb_min2sd, perempuan_bbtb_min1sd, perempuan_bbtb_median, perempuan_bbtb_1sd, perempuan_bbtb_2sd, perempuan_bbtb_3sd) values " +
+                "('85.5', '8.8', '9.5', '10.4', '11.3', '12.4', '13.6', '15.0');");
+        db.execSQL("insert into antropometri_perempuan_bbtb_0_24 (perempuan_bbtb_tb, perempuan_bbtb_min3sd, perempuan_bbtb_min2sd, perempuan_bbtb_min1sd, perempuan_bbtb_median, perempuan_bbtb_1sd, perempuan_bbtb_2sd, perempuan_bbtb_3sd) values " +
+                "('86.0', '8.9', '9.7', '10.5', '11.5', '12.6', '13.8', '15.2');");
+        db.execSQL("insert into antropometri_perempuan_bbtb_0_24 (perempuan_bbtb_tb, perempuan_bbtb_min3sd, perempuan_bbtb_min2sd, perempuan_bbtb_min1sd, perempuan_bbtb_median, perempuan_bbtb_1sd, perempuan_bbtb_2sd, perempuan_bbtb_3sd) values " +
+                "('86.5', '9.0', '9.8', '10.6', '11.6', '12.7', '13.9', '15.4');");
+        db.execSQL("insert into antropometri_perempuan_bbtb_0_24 (perempuan_bbtb_tb, perempuan_bbtb_min3sd, perempuan_bbtb_min2sd, perempuan_bbtb_min1sd, perempuan_bbtb_median, perempuan_bbtb_1sd, perempuan_bbtb_2sd, perempuan_bbtb_3sd) values " +
+                "('87.0', '9.1', '9.9', '10.7', '11.7', '12.8', '14.1', '15.5');");
+        db.execSQL("insert into antropometri_perempuan_bbtb_0_24 (perempuan_bbtb_tb, perempuan_bbtb_min3sd, perempuan_bbtb_min2sd, perempuan_bbtb_min1sd, perempuan_bbtb_median, perempuan_bbtb_1sd, perempuan_bbtb_2sd, perempuan_bbtb_3sd) values " +
+                "('87.5', '9.2', '10.0', '10.9', '11.8', '13.0', '14.2', '15.7');");
+        db.execSQL("insert into antropometri_perempuan_bbtb_0_24 (perempuan_bbtb_tb, perempuan_bbtb_min3sd, perempuan_bbtb_min2sd, perempuan_bbtb_min1sd, perempuan_bbtb_median, perempuan_bbtb_1sd, perempuan_bbtb_2sd, perempuan_bbtb_3sd) values " +
+                "('88.0', '9.3', '10.1', '11.0', '12.0', '13.1', '14.4', '15.9');");
+        db.execSQL("insert into antropometri_perempuan_bbtb_0_24 (perempuan_bbtb_tb, perempuan_bbtb_min3sd, perempuan_bbtb_min2sd, perempuan_bbtb_min1sd, perempuan_bbtb_median, perempuan_bbtb_1sd, perempuan_bbtb_2sd, perempuan_bbtb_3sd) values " +
+                "('88.5', '9.4', '10.2', '11.1', '12.1', '13.2', '14.5', '16.0');");
+        db.execSQL("insert into antropometri_perempuan_bbtb_0_24 (perempuan_bbtb_tb, perempuan_bbtb_min3sd, perempuan_bbtb_min2sd, perempuan_bbtb_min1sd, perempuan_bbtb_median, perempuan_bbtb_1sd, perempuan_bbtb_2sd, perempuan_bbtb_3sd) values " +
+                "('89.0', '9.5', '10.3', '11.2', '12.2', '13.4', '14.7', '16.2');");
+        db.execSQL("insert into antropometri_perempuan_bbtb_0_24 (perempuan_bbtb_tb, perempuan_bbtb_min3sd, perempuan_bbtb_min2sd, perempuan_bbtb_min1sd, perempuan_bbtb_median, perempuan_bbtb_1sd, perempuan_bbtb_2sd, perempuan_bbtb_3sd) values " +
+                "('89.5', '9.6', '10.4', '11.3', '12.3', '13.5', '14.8', '16.4');");
+        db.execSQL("insert into antropometri_perempuan_bbtb_0_24 (perempuan_bbtb_tb, perempuan_bbtb_min3sd, perempuan_bbtb_min2sd, perempuan_bbtb_min1sd, perempuan_bbtb_median, perempuan_bbtb_1sd, perempuan_bbtb_2sd, perempuan_bbtb_3sd) values " +
+                "('90.0', '9.7', '10.5', '11.4', '12.5', '13.7', '15.0', '16.5');");
+        db.execSQL("insert into antropometri_perempuan_bbtb_0_24 (perempuan_bbtb_tb, perempuan_bbtb_min3sd, perempuan_bbtb_min2sd, perempuan_bbtb_min1sd, perempuan_bbtb_median, perempuan_bbtb_1sd, perempuan_bbtb_2sd, perempuan_bbtb_3sd) values " +
+                "('90.5', '9.8', '10.6', '11.5', '12.6', '13.8', '15.1', '16.7');");
+        db.execSQL("insert into antropometri_perempuan_bbtb_0_24 (perempuan_bbtb_tb, perempuan_bbtb_min3sd, perempuan_bbtb_min2sd, perempuan_bbtb_min1sd, perempuan_bbtb_median, perempuan_bbtb_1sd, perempuan_bbtb_2sd, perempuan_bbtb_3sd) values " +
+                "('91.0', '9.9', '10.7', '11.7', '12.7', '13.9', '15.3', '16.9');");
+        db.execSQL("insert into antropometri_perempuan_bbtb_0_24 (perempuan_bbtb_tb, perempuan_bbtb_min3sd, perempuan_bbtb_min2sd, perempuan_bbtb_min1sd, perempuan_bbtb_median, perempuan_bbtb_1sd, perempuan_bbtb_2sd, perempuan_bbtb_3sd) values " +
+                "('91.5', '10.0', '10.8', '11.8', '12.8', '14.1', '15.5', '17.0');");
+        db.execSQL("insert into antropometri_perempuan_bbtb_0_24 (perempuan_bbtb_tb, perempuan_bbtb_min3sd, perempuan_bbtb_min2sd, perempuan_bbtb_min1sd, perempuan_bbtb_median, perempuan_bbtb_1sd, perempuan_bbtb_2sd, perempuan_bbtb_3sd) values " +
+                "('92.0', '10.1', '10.9', '11.9', '13.0', '14.2', '15.6', '17.2');");
+        db.execSQL("insert into antropometri_perempuan_bbtb_0_24 (perempuan_bbtb_tb, perempuan_bbtb_min3sd, perempuan_bbtb_min2sd, perempuan_bbtb_min1sd, perempuan_bbtb_median, perempuan_bbtb_1sd, perempuan_bbtb_2sd, perempuan_bbtb_3sd) values " +
+                "('92.5', '10.1', '11.0', '12.0', '13.1', '14.3', '15.8', '17.4');");
+        db.execSQL("insert into antropometri_perempuan_bbtb_0_24 (perempuan_bbtb_tb, perempuan_bbtb_min3sd, perempuan_bbtb_min2sd, perempuan_bbtb_min1sd, perempuan_bbtb_median, perempuan_bbtb_1sd, perempuan_bbtb_2sd, perempuan_bbtb_3sd) values " +
+                "('93.0', '10.2', '11.1', '12.1', '13.2', '14.5', '15.9', '17.5');");
+        db.execSQL("insert into antropometri_perempuan_bbtb_0_24 (perempuan_bbtb_tb, perempuan_bbtb_min3sd, perempuan_bbtb_min2sd, perempuan_bbtb_min1sd, perempuan_bbtb_median, perempuan_bbtb_1sd, perempuan_bbtb_2sd, perempuan_bbtb_3sd) values " +
+                "('93.5', '10.3', '11.2', '12.2', '13.3', '14.6', '16.1', '17.7');");
+        db.execSQL("insert into antropometri_perempuan_bbtb_0_24 (perempuan_bbtb_tb, perempuan_bbtb_min3sd, perempuan_bbtb_min2sd, perempuan_bbtb_min1sd, perempuan_bbtb_median, perempuan_bbtb_1sd, perempuan_bbtb_2sd, perempuan_bbtb_3sd) values " +
+                "('94.0', '10.4', '11.3', '12.3', '13.5', '14.7', '16.2', '17.9');");
+        db.execSQL("insert into antropometri_perempuan_bbtb_0_24 (perempuan_bbtb_tb, perempuan_bbtb_min3sd, perempuan_bbtb_min2sd, perempuan_bbtb_min1sd, perempuan_bbtb_median, perempuan_bbtb_1sd, perempuan_bbtb_2sd, perempuan_bbtb_3sd) values " +
+                "('94.5', '10.5', '11.4', '12.4', '13.6', '14.9', '16.4', '18.0');");
+        db.execSQL("insert into antropometri_perempuan_bbtb_0_24 (perempuan_bbtb_tb, perempuan_bbtb_min3sd, perempuan_bbtb_min2sd, perempuan_bbtb_min1sd, perempuan_bbtb_median, perempuan_bbtb_1sd, perempuan_bbtb_2sd, perempuan_bbtb_3sd) values " +
+                "('95.0', '10.6', '11.5', '12.6', '13.7', '15.0', '16.5', '18.2');");
+        db.execSQL("insert into antropometri_perempuan_bbtb_0_24 (perempuan_bbtb_tb, perempuan_bbtb_min3sd, perempuan_bbtb_min2sd, perempuan_bbtb_min1sd, perempuan_bbtb_median, perempuan_bbtb_1sd, perempuan_bbtb_2sd, perempuan_bbtb_3sd) values " +
+                "('95.5', '10.7', '11.6', '12.7', '13.8', '15.2', '16.7', '18.4');");
+        db.execSQL("insert into antropometri_perempuan_bbtb_0_24 (perempuan_bbtb_tb, perempuan_bbtb_min3sd, perempuan_bbtb_min2sd, perempuan_bbtb_min1sd, perempuan_bbtb_median, perempuan_bbtb_1sd, perempuan_bbtb_2sd, perempuan_bbtb_3sd) values " +
+                "('96.0', '10.8', '11.7', '12.8', '14.0', '15.3', '16.8', '18.6');");
+        db.execSQL("insert into antropometri_perempuan_bbtb_0_24 (perempuan_bbtb_tb, perempuan_bbtb_min3sd, perempuan_bbtb_min2sd, perempuan_bbtb_min1sd, perempuan_bbtb_median, perempuan_bbtb_1sd, perempuan_bbtb_2sd, perempuan_bbtb_3sd) values " +
+                "('96.5', '10.9', '11.8', '12.9', '14.1', '15.4', '17.0', '18.7');");
+        db.execSQL("insert into antropometri_perempuan_bbtb_0_24 (perempuan_bbtb_tb, perempuan_bbtb_min3sd, perempuan_bbtb_min2sd, perempuan_bbtb_min1sd, perempuan_bbtb_median, perempuan_bbtb_1sd, perempuan_bbtb_2sd, perempuan_bbtb_3sd) values " +
+                "('97.0', '11.0', '12.0', '13.0', '14.2', '15.6', '17.1', '18.9');");
+        db.execSQL("insert into antropometri_perempuan_bbtb_0_24 (perempuan_bbtb_tb, perempuan_bbtb_min3sd, perempuan_bbtb_min2sd, perempuan_bbtb_min1sd, perempuan_bbtb_median, perempuan_bbtb_1sd, perempuan_bbtb_2sd, perempuan_bbtb_3sd) values " +
+                "('97.5', '11.1', '12.1', '13.1', '14.4', '15.7', '17.3', '19.1');");
+        db.execSQL("insert into antropometri_perempuan_bbtb_0_24 (perempuan_bbtb_tb, perempuan_bbtb_min3sd, perempuan_bbtb_min2sd, perempuan_bbtb_min1sd, perempuan_bbtb_median, perempuan_bbtb_1sd, perempuan_bbtb_2sd, perempuan_bbtb_3sd) values " +
+                "('98.0', '11.2', '12.2', '13.3', '14.5', '15.9', '17.5', '19.3');");
+        db.execSQL("insert into antropometri_perempuan_bbtb_0_24 (perempuan_bbtb_tb, perempuan_bbtb_min3sd, perempuan_bbtb_min2sd, perempuan_bbtb_min1sd, perempuan_bbtb_median, perempuan_bbtb_1sd, perempuan_bbtb_2sd, perempuan_bbtb_3sd) values " +
+                "('98.5', '11.3', '12.3', '13.4', '14.6', '16.0', '17.6', '19.5');");
+        db.execSQL("insert into antropometri_perempuan_bbtb_0_24 (perempuan_bbtb_tb, perempuan_bbtb_min3sd, perempuan_bbtb_min2sd, perempuan_bbtb_min1sd, perempuan_bbtb_median, perempuan_bbtb_1sd, perempuan_bbtb_2sd, perempuan_bbtb_3sd) values " +
+                "('99.0', '11.4', '12.4', '13.5', '14.8', '16.2', '17.8', '19.6');");
+        db.execSQL("insert into antropometri_perempuan_bbtb_0_24 (perempuan_bbtb_tb, perempuan_bbtb_min3sd, perempuan_bbtb_min2sd, perempuan_bbtb_min1sd, perempuan_bbtb_median, perempuan_bbtb_1sd, perempuan_bbtb_2sd, perempuan_bbtb_3sd) values " +
+                "('99.5', '11.5', '12.5', '13.6', '14.9', '16.3', '18.0', '19.8');");
+        db.execSQL("insert into antropometri_perempuan_bbtb_0_24 (perempuan_bbtb_tb, perempuan_bbtb_min3sd, perempuan_bbtb_min2sd, perempuan_bbtb_min1sd, perempuan_bbtb_median, perempuan_bbtb_1sd, perempuan_bbtb_2sd, perempuan_bbtb_3sd) values " +
+                "('100.0', '11.6', '12.6', '13.7', '15.0', '16.5', '18.1', '20.0');");
+        db.execSQL("insert into antropometri_perempuan_bbtb_0_24 (perempuan_bbtb_tb, perempuan_bbtb_min3sd, perempuan_bbtb_min2sd, perempuan_bbtb_min1sd, perempuan_bbtb_median, perempuan_bbtb_1sd, perempuan_bbtb_2sd, perempuan_bbtb_3sd) values " +
+                "('100.5', '11.7', '12.7', '13.9', '15.2', '16.6', '18.3', '20.2');");
+        db.execSQL("insert into antropometri_perempuan_bbtb_0_24 (perempuan_bbtb_tb, perempuan_bbtb_min3sd, perempuan_bbtb_min2sd, perempuan_bbtb_min1sd, perempuan_bbtb_median, perempuan_bbtb_1sd, perempuan_bbtb_2sd, perempuan_bbtb_3sd) values " +
+                "('101.0', '11.8', '12.8', '14.0', '15.3', '16.8', '18.5', '20.4');");
+        db.execSQL("insert into antropometri_perempuan_bbtb_0_24 (perempuan_bbtb_tb, perempuan_bbtb_min3sd, perempuan_bbtb_min2sd, perempuan_bbtb_min1sd, perempuan_bbtb_median, perempuan_bbtb_1sd, perempuan_bbtb_2sd, perempuan_bbtb_3sd) values " +
+                "('101.5', '11.9', '13.0', '14.1', '15.5', '17.0', '18.7', '20.6');");
+        db.execSQL("insert into antropometri_perempuan_bbtb_0_24 (perempuan_bbtb_tb, perempuan_bbtb_min3sd, perempuan_bbtb_min2sd, perempuan_bbtb_min1sd, perempuan_bbtb_median, perempuan_bbtb_1sd, perempuan_bbtb_2sd, perempuan_bbtb_3sd) values " +
+                "('102.0', '12.0', '13.1', '14.3', '15.6', '17.1', '18.9', '20.8');");
+        db.execSQL("insert into antropometri_perempuan_bbtb_0_24 (perempuan_bbtb_tb, perempuan_bbtb_min3sd, perempuan_bbtb_min2sd, perempuan_bbtb_min1sd, perempuan_bbtb_median, perempuan_bbtb_1sd, perempuan_bbtb_2sd, perempuan_bbtb_3sd) values " +
+                "('102.5', '12.1', '13.2', '14.3', '15.8', '17.3', '19.0', '21.0');");
+        db.execSQL("insert into antropometri_perempuan_bbtb_0_24 (perempuan_bbtb_tb, perempuan_bbtb_min3sd, perempuan_bbtb_min2sd, perempuan_bbtb_min1sd, perempuan_bbtb_median, perempuan_bbtb_1sd, perempuan_bbtb_2sd, perempuan_bbtb_3sd) values " +
+                "('103.0', '12.3', '13.3', '14.5', '15.9', '17.5', '19.2', '21.3');");
+        db.execSQL("insert into antropometri_perempuan_bbtb_0_24 (perempuan_bbtb_tb, perempuan_bbtb_min3sd, perempuan_bbtb_min2sd, perempuan_bbtb_min1sd, perempuan_bbtb_median, perempuan_bbtb_1sd, perempuan_bbtb_2sd, perempuan_bbtb_3sd) values " +
+                "('103.5', '12.4', '13.5', '14.7', '16.1', '17.6', '19.4', '21.5');");
+        db.execSQL("insert into antropometri_perempuan_bbtb_0_24 (perempuan_bbtb_tb, perempuan_bbtb_min3sd, perempuan_bbtb_min2sd, perempuan_bbtb_min1sd, perempuan_bbtb_median, perempuan_bbtb_1sd, perempuan_bbtb_2sd, perempuan_bbtb_3sd) values " +
+                "('104.0', '12.5', '13.6', '14.8', '16.2', '17.8', '19.6', '21.7');");
+        db.execSQL("insert into antropometri_perempuan_bbtb_0_24 (perempuan_bbtb_tb, perempuan_bbtb_min3sd, perempuan_bbtb_min2sd, perempuan_bbtb_min1sd, perempuan_bbtb_median, perempuan_bbtb_1sd, perempuan_bbtb_2sd, perempuan_bbtb_3sd) values " +
+                "('104.5', '12.6', '13.7', '15.0', '16.4', '18.0', '19.8', '21.9');");
+        db.execSQL("insert into antropometri_perempuan_bbtb_0_24 (perempuan_bbtb_tb, perempuan_bbtb_min3sd, perempuan_bbtb_min2sd, perempuan_bbtb_min1sd, perempuan_bbtb_median, perempuan_bbtb_1sd, perempuan_bbtb_2sd, perempuan_bbtb_3sd) values " +
+                "('105.0', '12.7', '13.8', '15.1', '16.5', '18.2', '20.0', '22.2');");
+        db.execSQL("insert into antropometri_perempuan_bbtb_0_24 (perempuan_bbtb_tb, perempuan_bbtb_min3sd, perempuan_bbtb_min2sd, perempuan_bbtb_min1sd, perempuan_bbtb_median, perempuan_bbtb_1sd, perempuan_bbtb_2sd, perempuan_bbtb_3sd) values " +
+                "('105.5', '12.8', '14.0', '15.3', '16.7', '18.4', '20.2', '22.4');");
+        db.execSQL("insert into antropometri_perempuan_bbtb_0_24 (perempuan_bbtb_tb, perempuan_bbtb_min3sd, perempuan_bbtb_min2sd, perempuan_bbtb_min1sd, perempuan_bbtb_median, perempuan_bbtb_1sd, perempuan_bbtb_2sd, perempuan_bbtb_3sd) values " +
+                "('106.0', '13.0', '14.1', '15.4', '16.9', '18.5', '20.5', '22.6');");
+        db.execSQL("insert into antropometri_perempuan_bbtb_0_24 (perempuan_bbtb_tb, perempuan_bbtb_min3sd, perempuan_bbtb_min2sd, perempuan_bbtb_min1sd, perempuan_bbtb_median, perempuan_bbtb_1sd, perempuan_bbtb_2sd, perempuan_bbtb_3sd) values " +
+                "('106.5', '13.1', '14.3', '15.6', '17.1', '18.7', '20.7', '22.9');");
+        db.execSQL("insert into antropometri_perempuan_bbtb_0_24 (perempuan_bbtb_tb, perempuan_bbtb_min3sd, perempuan_bbtb_min2sd, perempuan_bbtb_min1sd, perempuan_bbtb_median, perempuan_bbtb_1sd, perempuan_bbtb_2sd, perempuan_bbtb_3sd) values " +
+                "('107.0', '13.2', '14.4', '15.7', '17.2', '18.9', '20.9', '23.1');");
+        db.execSQL("insert into antropometri_perempuan_bbtb_0_24 (perempuan_bbtb_tb, perempuan_bbtb_min3sd, perempuan_bbtb_min2sd, perempuan_bbtb_min1sd, perempuan_bbtb_median, perempuan_bbtb_1sd, perempuan_bbtb_2sd, perempuan_bbtb_3sd) values " +
+                "('107.5', '13.3', '14.5', '15.9', '17.4', '19.1', '21.1', '23.4');");
+        db.execSQL("insert into antropometri_perempuan_bbtb_0_24 (perempuan_bbtb_tb, perempuan_bbtb_min3sd, perempuan_bbtb_min2sd, perempuan_bbtb_min1sd, perempuan_bbtb_median, perempuan_bbtb_1sd, perempuan_bbtb_2sd, perempuan_bbtb_3sd) values " +
+                "('108.0', '13.5', '14.7', '16.0', '17.6', '19.3', '21.3', '23.6');");
+        db.execSQL("insert into antropometri_perempuan_bbtb_0_24 (perempuan_bbtb_tb, perempuan_bbtb_min3sd, perempuan_bbtb_min2sd, perempuan_bbtb_min1sd, perempuan_bbtb_median, perempuan_bbtb_1sd, perempuan_bbtb_2sd, perempuan_bbtb_3sd) values " +
+                "('108.5', '13.6', '14.8', '16.2', '17.8', '19.5', '21.6', '23.9');");
+        db.execSQL("insert into antropometri_perempuan_bbtb_0_24 (perempuan_bbtb_tb, perempuan_bbtb_min3sd, perempuan_bbtb_min2sd, perempuan_bbtb_min1sd, perempuan_bbtb_median, perempuan_bbtb_1sd, perempuan_bbtb_2sd, perempuan_bbtb_3sd) values " +
+                "('109.0', '13.7', '15.0', '16.4', '18.0', '19.7', '21.8', '24.2');");
+        db.execSQL("insert into antropometri_perempuan_bbtb_0_24 (perempuan_bbtb_tb, perempuan_bbtb_min3sd, perempuan_bbtb_min2sd, perempuan_bbtb_min1sd, perempuan_bbtb_median, perempuan_bbtb_1sd, perempuan_bbtb_2sd, perempuan_bbtb_3sd) values " +
+                "('109.5', '13.9', '15.1', '16.5', '18.1', '20.0', '22.0', '24.4');");
+        db.execSQL("insert into antropometri_perempuan_bbtb_0_24 (perempuan_bbtb_tb, perempuan_bbtb_min3sd, perempuan_bbtb_min2sd, perempuan_bbtb_min1sd, perempuan_bbtb_median, perempuan_bbtb_1sd, perempuan_bbtb_2sd, perempuan_bbtb_3sd) values " +
+                "('110.0', '14.0', '15.3', '16.7', '18.3', '20.2', '22.3', '24.7');");
+    }
+
+    // Get One List From Database
+    public Cursor getPerempuanBBTBList_0_24(Integer tinggi) {
+        Cursor cursor = db.rawQuery("SELECT * FROM antropometri_perempuan_bbtb_0_24 WHERE perempuan_bbtb_tb = " + tinggi, null);
+        cursor.moveToFirst();
+        return cursor;
+    }
+
+    // Get One List From Database
+    public Cursor getPerempuanBBTBAllList_0_24() {
+        Cursor cursor = db.rawQuery("SELECT * FROM antropometri_perempuan_bbtb_0_24", null);
+        cursor.moveToFirst();
+        return cursor;
+    }
+
+    // Create Table Tahapan Tumbuh Kembang
+    public void createPerempuanBBTB_24_60(SQLiteDatabase db) {
+        // Create Table Tahap Tumbuh Kembang
+        String create_perempuan_bbtb_24_60 = "create table antropometri_perempuan_bbtb_24_60(" +
+                "perempuan_bbtb_ID integer primary key autoincrement, " +
+                "perempuan_bbtb_tb real not null," +
+                "perempuan_bbtb_min3sd real not null, " +
+                "perempuan_bbtb_min2sd real not null, " +
+                "perempuan_bbtb_min1sd real not null, " +
+                "perempuan_bbtb_median real not null, " +
+                "perempuan_bbtb_1sd real not null, " +
+                "perempuan_bbtb_2sd real not null, " +
+                "perempuan_bbtb_3sd real not null " +
+                ");";
+        db.execSQL(create_perempuan_bbtb_24_60);
+        insertPerempuanBBTB_24_60(db);
+    }
+
+    // Insert List Imunisasi
+    public void insertPerempuanBBTB_24_60(SQLiteDatabase db) {
+        db.execSQL("insert into antropometri_perempuan_bbtb_24_60 (perempuan_bbtb_tb, perempuan_bbtb_min3sd, perempuan_bbtb_min2sd, perempuan_bbtb_min1sd, perempuan_bbtb_median, perempuan_bbtb_1sd, perempuan_bbtb_2sd, perempuan_bbtb_3sd) values " +
+                "('65.0', '5.6', '6.1', '6.6', '7.2', '7.9', '8.7', '9.7');");
+        db.execSQL("insert into antropometri_perempuan_bbtb_24_60 (perempuan_bbtb_tb, perempuan_bbtb_min3sd, perempuan_bbtb_min2sd, perempuan_bbtb_min1sd, perempuan_bbtb_median, perempuan_bbtb_1sd, perempuan_bbtb_2sd, perempuan_bbtb_3sd) values " +
+                "('65.5', '5.7', '6.2', '6.7', '7.4', '8.1', '8.9', '9.8');");
+        db.execSQL("insert into antropometri_perempuan_bbtb_24_60 (perempuan_bbtb_tb, perempuan_bbtb_min3sd, perempuan_bbtb_min2sd, perempuan_bbtb_min1sd, perempuan_bbtb_median, perempuan_bbtb_1sd, perempuan_bbtb_2sd, perempuan_bbtb_3sd) values " +
+                "('66.0', '5.8', '6.3', '6.8', '7.5', '8.2', '9.0', '10.0');");
+        db.execSQL("insert into antropometri_perempuan_bbtb_24_60 (perempuan_bbtb_tb, perempuan_bbtb_min3sd, perempuan_bbtb_min2sd, perempuan_bbtb_min1sd, perempuan_bbtb_median, perempuan_bbtb_1sd, perempuan_bbtb_2sd, perempuan_bbtb_3sd) values " +
+                "('66.5', '5.8', '6.4', '6.9', '7.6', '8.3', '9.1', '10.1');");
+        db.execSQL("insert into antropometri_perempuan_bbtb_24_60 (perempuan_bbtb_tb, perempuan_bbtb_min3sd, perempuan_bbtb_min2sd, perempuan_bbtb_min1sd, perempuan_bbtb_median, perempuan_bbtb_1sd, perempuan_bbtb_2sd, perempuan_bbtb_3sd) values " +
+                "('67.0', '5.9', '6.4', '7.0', '7.7', '8.4', '9.3', '10.2');");
+        db.execSQL("insert into antropometri_perempuan_bbtb_24_60 (perempuan_bbtb_tb, perempuan_bbtb_min3sd, perempuan_bbtb_min2sd, perempuan_bbtb_min1sd, perempuan_bbtb_median, perempuan_bbtb_1sd, perempuan_bbtb_2sd, perempuan_bbtb_3sd) values " +
+                "('67.5', '6.0', '6.5', '7.1', '7.8', '8.5', '9.4', '10.4');");
+        db.execSQL("insert into antropometri_perempuan_bbtb_24_60 (perempuan_bbtb_tb, perempuan_bbtb_min3sd, perempuan_bbtb_min2sd, perempuan_bbtb_min1sd, perempuan_bbtb_median, perempuan_bbtb_1sd, perempuan_bbtb_2sd, perempuan_bbtb_3sd) values " +
+                "('68.0', '6.1', '6.6', '7.2', '7.9', '8.7', '9.5', '10.5');");
+        db.execSQL("insert into antropometri_perempuan_bbtb_24_60 (perempuan_bbtb_tb, perempuan_bbtb_min3sd, perempuan_bbtb_min2sd, perempuan_bbtb_min1sd, perempuan_bbtb_median, perempuan_bbtb_1sd, perempuan_bbtb_2sd, perempuan_bbtb_3sd) values " +
+                "('68.5', '6.2', '6.7', '7.3', '8.0', '8.8', '9.7', '10.7');");
+        db.execSQL("insert into antropometri_perempuan_bbtb_24_60 (perempuan_bbtb_tb, perempuan_bbtb_min3sd, perempuan_bbtb_min2sd, perempuan_bbtb_min1sd, perempuan_bbtb_median, perempuan_bbtb_1sd, perempuan_bbtb_2sd, perempuan_bbtb_3sd) values " +
+                "('69.0', '6.3', '6.8', '7.4', '8.1', '8.9', '9.8', '10.8');");
+        db.execSQL("insert into antropometri_perempuan_bbtb_24_60 (perempuan_bbtb_tb, perempuan_bbtb_min3sd, perempuan_bbtb_min2sd, perempuan_bbtb_min1sd, perempuan_bbtb_median, perempuan_bbtb_1sd, perempuan_bbtb_2sd, perempuan_bbtb_3sd) values " +
+                "('69.5', '6.3', '6.9', '7.5', '8.2', '9.0', '9.9', '10.9');");
+        db.execSQL("insert into antropometri_perempuan_bbtb_24_60 (perempuan_bbtb_tb, perempuan_bbtb_min3sd, perempuan_bbtb_min2sd, perempuan_bbtb_min1sd, perempuan_bbtb_median, perempuan_bbtb_1sd, perempuan_bbtb_2sd, perempuan_bbtb_3sd) values " +
+                "('70.0', '6.4', '7.0', '7.6', '8.3', '9.1', '10.0', '11.1');");
+        db.execSQL("insert into antropometri_perempuan_bbtb_24_60 (perempuan_bbtb_tb, perempuan_bbtb_min3sd, perempuan_bbtb_min2sd, perempuan_bbtb_min1sd, perempuan_bbtb_median, perempuan_bbtb_1sd, perempuan_bbtb_2sd, perempuan_bbtb_3sd) values " +
+                "('70.5', '6.5', '7.1', '7.7', '8.4', '9.2', '10.1', '11.2');");
+        db.execSQL("insert into antropometri_perempuan_bbtb_24_60 (perempuan_bbtb_tb, perempuan_bbtb_min3sd, perempuan_bbtb_min2sd, perempuan_bbtb_min1sd, perempuan_bbtb_median, perempuan_bbtb_1sd, perempuan_bbtb_2sd, perempuan_bbtb_3sd) values " +
+                "('71.0', '6.6', '7.1', '7.8', '8.5', '9.3', '10.3', '11.3');");
+        db.execSQL("insert into antropometri_perempuan_bbtb_24_60 (perempuan_bbtb_tb, perempuan_bbtb_min3sd, perempuan_bbtb_min2sd, perempuan_bbtb_min1sd, perempuan_bbtb_median, perempuan_bbtb_1sd, perempuan_bbtb_2sd, perempuan_bbtb_3sd) values " +
+                "('71.5', '6.7', '7.2', '7.9', '8.6', '9.4', '10.4', '11.5');");
+        db.execSQL("insert into antropometri_perempuan_bbtb_24_60 (perempuan_bbtb_tb, perempuan_bbtb_min3sd, perempuan_bbtb_min2sd, perempuan_bbtb_min1sd, perempuan_bbtb_median, perempuan_bbtb_1sd, perempuan_bbtb_2sd, perempuan_bbtb_3sd) values " +
+                "('72.0', '6.7', '7.3', '8.0', '8.7', '9.5', '10.5', '11.6');");
+        db.execSQL("insert into antropometri_perempuan_bbtb_24_60 (perempuan_bbtb_tb, perempuan_bbtb_min3sd, perempuan_bbtb_min2sd, perempuan_bbtb_min1sd, perempuan_bbtb_median, perempuan_bbtb_1sd, perempuan_bbtb_2sd, perempuan_bbtb_3sd) values " +
+                "('72.5', '6.8', '7.4', '8.1', '8.8', '9.7', '10.6', '11.7');");
+        db.execSQL("insert into antropometri_perempuan_bbtb_24_60 (perempuan_bbtb_tb, perempuan_bbtb_min3sd, perempuan_bbtb_min2sd, perempuan_bbtb_min1sd, perempuan_bbtb_median, perempuan_bbtb_1sd, perempuan_bbtb_2sd, perempuan_bbtb_3sd) values " +
+                "('73.0', '6.9', '7.5', '8.1', '8.9', '9.8', '10.7', '11.8');");
+        db.execSQL("insert into antropometri_perempuan_bbtb_24_60 (perempuan_bbtb_tb, perempuan_bbtb_min3sd, perempuan_bbtb_min2sd, perempuan_bbtb_min1sd, perempuan_bbtb_median, perempuan_bbtb_1sd, perempuan_bbtb_2sd, perempuan_bbtb_3sd) values " +
+                "('73.5', '7.0', '7.6', '8.2', '9.0', '9.9', '10.8', '12.0');");
+        db.execSQL("insert into antropometri_perempuan_bbtb_24_60 (perempuan_bbtb_tb, perempuan_bbtb_min3sd, perempuan_bbtb_min2sd, perempuan_bbtb_min1sd, perempuan_bbtb_median, perempuan_bbtb_1sd, perempuan_bbtb_2sd, perempuan_bbtb_3sd) values " +
+                "('74.0', '7.0', '7.6', '8.3', '9.1', '10.0', '11.0', '12.1');");
+        db.execSQL("insert into antropometri_perempuan_bbtb_24_60 (perempuan_bbtb_tb, perempuan_bbtb_min3sd, perempuan_bbtb_min2sd, perempuan_bbtb_min1sd, perempuan_bbtb_median, perempuan_bbtb_1sd, perempuan_bbtb_2sd, perempuan_bbtb_3sd) values " +
+                "('74.5', '7.1', '7.7', '8.4', '9.2', '10.1', '11.1', '12.2');");
+        db.execSQL("insert into antropometri_perempuan_bbtb_24_60 (perempuan_bbtb_tb, perempuan_bbtb_min3sd, perempuan_bbtb_min2sd, perempuan_bbtb_min1sd, perempuan_bbtb_median, perempuan_bbtb_1sd, perempuan_bbtb_2sd, perempuan_bbtb_3sd) values " +
+                "('75.0', '7.2', '7.8', '8.5', '9.3', '10.2', '11.2', '12.3');");
+        db.execSQL("insert into antropometri_perempuan_bbtb_24_60 (perempuan_bbtb_tb, perempuan_bbtb_min3sd, perempuan_bbtb_min2sd, perempuan_bbtb_min1sd, perempuan_bbtb_median, perempuan_bbtb_1sd, perempuan_bbtb_2sd, perempuan_bbtb_3sd) values " +
+                "('75.5', '7.2', '7.9', '8.6', '9.4', '10.3', '11.3', '12.5');");
+        db.execSQL("insert into antropometri_perempuan_bbtb_24_60 (perempuan_bbtb_tb, perempuan_bbtb_min3sd, perempuan_bbtb_min2sd, perempuan_bbtb_min1sd, perempuan_bbtb_median, perempuan_bbtb_1sd, perempuan_bbtb_2sd, perempuan_bbtb_3sd) values " +
+                "('76.0', '7.3', '8.0', '8.7', '9.5', '10.4', '11.4', '12.6');");
+        db.execSQL("insert into antropometri_perempuan_bbtb_24_60 (perempuan_bbtb_tb, perempuan_bbtb_min3sd, perempuan_bbtb_min2sd, perempuan_bbtb_min1sd, perempuan_bbtb_median, perempuan_bbtb_1sd, perempuan_bbtb_2sd, perempuan_bbtb_3sd) values " +
+                "('76.5', '7.4', '8.0', '8.7', '9.6', '10.6', '11.6', '12.8');");
+        db.execSQL("insert into antropometri_perempuan_bbtb_24_60 (perempuan_bbtb_tb, perempuan_bbtb_min3sd, perempuan_bbtb_min2sd, perempuan_bbtb_min1sd, perempuan_bbtb_median, perempuan_bbtb_1sd, perempuan_bbtb_2sd, perempuan_bbtb_3sd) values " +
+                "('77.0', '7.5', '8.1', '8.8', '9.6', '10.6', '11.6', '12.8');");
+        db.execSQL("insert into antropometri_perempuan_bbtb_24_60 (perempuan_bbtb_tb, perempuan_bbtb_min3sd, perempuan_bbtb_min2sd, perempuan_bbtb_min1sd, perempuan_bbtb_median, perempuan_bbtb_1sd, perempuan_bbtb_2sd, perempuan_bbtb_3sd) values " +
+                "('77.5', '7.5', '8.2', '8.9', '9.7', '10.7', '11.7', '12.9');");
+        db.execSQL("insert into antropometri_perempuan_bbtb_24_60 (perempuan_bbtb_tb, perempuan_bbtb_min3sd, perempuan_bbtb_min2sd, perempuan_bbtb_min1sd, perempuan_bbtb_median, perempuan_bbtb_1sd, perempuan_bbtb_2sd, perempuan_bbtb_3sd) values " +
+                "('78.0', '7.6', '8.3', '9.0', '9.8', '10.8', '11.8', '13.1');");
+        db.execSQL("insert into antropometri_perempuan_bbtb_24_60 (perempuan_bbtb_tb, perempuan_bbtb_min3sd, perempuan_bbtb_min2sd, perempuan_bbtb_min1sd, perempuan_bbtb_median, perempuan_bbtb_1sd, perempuan_bbtb_2sd, perempuan_bbtb_3sd) values " +
+                "('78.5', '7.7', '8.4', '9.1', '9.9', '10.9', '12.0', '13.2');");
+        db.execSQL("insert into antropometri_perempuan_bbtb_24_60 (perempuan_bbtb_tb, perempuan_bbtb_min3sd, perempuan_bbtb_min2sd, perempuan_bbtb_min1sd, perempuan_bbtb_median, perempuan_bbtb_1sd, perempuan_bbtb_2sd, perempuan_bbtb_3sd) values " +
+                "('79.0', '7.8', '8.4', '9.2', '10.0', '11.0', '12.1', '13.3');");
+        db.execSQL("insert into antropometri_perempuan_bbtb_24_60 (perempuan_bbtb_tb, perempuan_bbtb_min3sd, perempuan_bbtb_min2sd, perempuan_bbtb_min1sd, perempuan_bbtb_median, perempuan_bbtb_1sd, perempuan_bbtb_2sd, perempuan_bbtb_3sd) values " +
+                "('79.5', '7.8', '8.5', '9.3', '10.1', '11.1', '12.2', '13.4');");
+        db.execSQL("insert into antropometri_perempuan_bbtb_24_60 (perempuan_bbtb_tb, perempuan_bbtb_min3sd, perempuan_bbtb_min2sd, perempuan_bbtb_min1sd, perempuan_bbtb_median, perempuan_bbtb_1sd, perempuan_bbtb_2sd, perempuan_bbtb_3sd) values " +
+                "('80.0', '7.9', '8.6', '9.4', '10.2', '11.2', '12.3', '13.6');");
+        db.execSQL("insert into antropometri_perempuan_bbtb_24_60 (perempuan_bbtb_tb, perempuan_bbtb_min3sd, perempuan_bbtb_min2sd, perempuan_bbtb_min1sd, perempuan_bbtb_median, perempuan_bbtb_1sd, perempuan_bbtb_2sd, perempuan_bbtb_3sd) values " +
+                "('80.5', '8.0', '8.7', '9.5', '10.3', '11.3', '12.4', '13.7');");
+        db.execSQL("insert into antropometri_perempuan_bbtb_24_60 (perempuan_bbtb_tb, perempuan_bbtb_min3sd, perempuan_bbtb_min2sd, perempuan_bbtb_min1sd, perempuan_bbtb_median, perempuan_bbtb_1sd, perempuan_bbtb_2sd, perempuan_bbtb_3sd) values " +
+                "('81.0', '8.1', '8.8', '9.6', '10.4', '11.4', '12.6', '13.9');");
+        db.execSQL("insert into antropometri_perempuan_bbtb_24_60 (perempuan_bbtb_tb, perempuan_bbtb_min3sd, perempuan_bbtb_min2sd, perempuan_bbtb_min1sd, perempuan_bbtb_median, perempuan_bbtb_1sd, perempuan_bbtb_2sd, perempuan_bbtb_3sd) values " +
+                "('81.5', '8.2', '8.9', '9.7', '10.6', '11.6', '12.7', '14.0');");
+        db.execSQL("insert into antropometri_perempuan_bbtb_24_60 (perempuan_bbtb_tb, perempuan_bbtb_min3sd, perempuan_bbtb_min2sd, perempuan_bbtb_min1sd, perempuan_bbtb_median, perempuan_bbtb_1sd, perempuan_bbtb_2sd, perempuan_bbtb_3sd) values " +
+                "('82.0', '8.3', '9.0', '9.8', '10.7', '11.7', '12.8', '14.1');");
+        db.execSQL("insert into antropometri_perempuan_bbtb_24_60 (perempuan_bbtb_tb, perempuan_bbtb_min3sd, perempuan_bbtb_min2sd, perempuan_bbtb_min1sd, perempuan_bbtb_median, perempuan_bbtb_1sd, perempuan_bbtb_2sd, perempuan_bbtb_3sd) values " +
+                "('82.5', '8.4', '9.1', '9.9', '10.8', '11.8', '13.0', '14.3');");
+        db.execSQL("insert into antropometri_perempuan_bbtb_24_60 (perempuan_bbtb_tb, perempuan_bbtb_min3sd, perempuan_bbtb_min2sd, perempuan_bbtb_min1sd, perempuan_bbtb_median, perempuan_bbtb_1sd, perempuan_bbtb_2sd, perempuan_bbtb_3sd) values " +
+                "('83.0', '8.5', '9.2', '10.0', '10.9', '11.9', '13.1', '14.5');");
+        db.execSQL("insert into antropometri_perempuan_bbtb_24_60 (perempuan_bbtb_tb, perempuan_bbtb_min3sd, perempuan_bbtb_min2sd, perempuan_bbtb_min1sd, perempuan_bbtb_median, perempuan_bbtb_1sd, perempuan_bbtb_2sd, perempuan_bbtb_3sd) values " +
+                "('83.5', '8.5', '9.3', '10.1', '11.0', '12.1', '13.3', '14.6');");
+        db.execSQL("insert into antropometri_perempuan_bbtb_24_60 (perempuan_bbtb_tb, perempuan_bbtb_min3sd, perempuan_bbtb_min2sd, perempuan_bbtb_min1sd, perempuan_bbtb_median, perempuan_bbtb_1sd, perempuan_bbtb_2sd, perempuan_bbtb_3sd) values " +
+                "('84.0', '8.6', '9.4', '10.2', '11.1', '12.2', '13.4', '14.8');");
+        db.execSQL("insert into antropometri_perempuan_bbtb_24_60 (perempuan_bbtb_tb, perempuan_bbtb_min3sd, perempuan_bbtb_min2sd, perempuan_bbtb_min1sd, perempuan_bbtb_median, perempuan_bbtb_1sd, perempuan_bbtb_2sd, perempuan_bbtb_3sd) values " +
+                "('84.5', '8.7', '9.5', '10.3', '11.3', '12.3', '13.5', '14.9');");
+        db.execSQL("insert into antropometri_perempuan_bbtb_24_60 (perempuan_bbtb_tb, perempuan_bbtb_min3sd, perempuan_bbtb_min2sd, perempuan_bbtb_min1sd, perempuan_bbtb_median, perempuan_bbtb_1sd, perempuan_bbtb_2sd, perempuan_bbtb_3sd) values " +
+                "('85.0', '8.8', '9.6', '10.4', '11.4', '12.5', '13.7', '15.1');");
+        db.execSQL("insert into antropometri_perempuan_bbtb_24_60 (perempuan_bbtb_tb, perempuan_bbtb_min3sd, perempuan_bbtb_min2sd, perempuan_bbtb_min1sd, perempuan_bbtb_median, perempuan_bbtb_1sd, perempuan_bbtb_2sd, perempuan_bbtb_3sd) values " +
+                "('85.5', '8.9', '9.7', '10.6', '11.5', '12.6', '13.8', '15.3');");
+        db.execSQL("insert into antropometri_perempuan_bbtb_24_60 (perempuan_bbtb_tb, perempuan_bbtb_min3sd, perempuan_bbtb_min2sd, perempuan_bbtb_min1sd, perempuan_bbtb_median, perempuan_bbtb_1sd, perempuan_bbtb_2sd, perempuan_bbtb_3sd) values " +
+                "('86.0', '9.0', '9.8', '10.7', '11.6', '12.7', '14.0', '15.4');");
+        db.execSQL("insert into antropometri_perempuan_bbtb_24_60 (perempuan_bbtb_tb, perempuan_bbtb_min3sd, perempuan_bbtb_min2sd, perempuan_bbtb_min1sd, perempuan_bbtb_median, perempuan_bbtb_1sd, perempuan_bbtb_2sd, perempuan_bbtb_3sd) values " +
+                "('86.5', '9.1', '9.9', '10.8', '11.8', '12.9', '14.2', '15.6');");
+        db.execSQL("insert into antropometri_perempuan_bbtb_24_60 (perempuan_bbtb_tb, perempuan_bbtb_min3sd, perempuan_bbtb_min2sd, perempuan_bbtb_min1sd, perempuan_bbtb_median, perempuan_bbtb_1sd, perempuan_bbtb_2sd, perempuan_bbtb_3sd) values " +
+                "('87.0', '9.2', '10.0', '10.9', '11.9', '13.0', '14.3', '15.8');");
+        db.execSQL("insert into antropometri_perempuan_bbtb_24_60 (perempuan_bbtb_tb, perempuan_bbtb_min3sd, perempuan_bbtb_min2sd, perempuan_bbtb_min1sd, perempuan_bbtb_median, perempuan_bbtb_1sd, perempuan_bbtb_2sd, perempuan_bbtb_3sd) values " +
+                "('87.5', '9.3', '10.1', '11.0', '12.0', '13.2', '14.5', '15.9');");
+        db.execSQL("insert into antropometri_perempuan_bbtb_24_60 (perempuan_bbtb_tb, perempuan_bbtb_min3sd, perempuan_bbtb_min2sd, perempuan_bbtb_min1sd, perempuan_bbtb_median, perempuan_bbtb_1sd, perempuan_bbtb_2sd, perempuan_bbtb_3sd) values " +
+                "('88.0', '9.4', '10.2', '11.1', '12.1', '13.3', '14.6', '16.1');");
+        db.execSQL("insert into antropometri_perempuan_bbtb_24_60 (perempuan_bbtb_tb, perempuan_bbtb_min3sd, perempuan_bbtb_min2sd, perempuan_bbtb_min1sd, perempuan_bbtb_median, perempuan_bbtb_1sd, perempuan_bbtb_2sd, perempuan_bbtb_3sd) values " +
+                "('88.5', '9.5', '10.3', '11.2', '12.3', '13.4', '14.8', '16.3');");
+        db.execSQL("insert into antropometri_perempuan_bbtb_24_60 (perempuan_bbtb_tb, perempuan_bbtb_min3sd, perempuan_bbtb_min2sd, perempuan_bbtb_min1sd, perempuan_bbtb_median, perempuan_bbtb_1sd, perempuan_bbtb_2sd, perempuan_bbtb_3sd) values " +
+                "('89.0', '9.6', '10.4', '11.4', '12.4', '13.6', '14.9', '16.4');");
+        db.execSQL("insert into antropometri_perempuan_bbtb_24_60 (perempuan_bbtb_tb, perempuan_bbtb_min3sd, perempuan_bbtb_min2sd, perempuan_bbtb_min1sd, perempuan_bbtb_median, perempuan_bbtb_1sd, perempuan_bbtb_2sd, perempuan_bbtb_3sd) values " +
+                "('89.5', '9.7', '10.5', '11.5', '12.5', '13.7', '15.1', '16.6');");
+        db.execSQL("insert into antropometri_perempuan_bbtb_24_60 (perempuan_bbtb_tb, perempuan_bbtb_min3sd, perempuan_bbtb_min2sd, perempuan_bbtb_min1sd, perempuan_bbtb_median, perempuan_bbtb_1sd, perempuan_bbtb_2sd, perempuan_bbtb_3sd) values " +
+                "('90.0', '9.8', '10.6', '11.6', '12.6', '13.8', '15.2', '16.8');");
+        db.execSQL("insert into antropometri_perempuan_bbtb_24_60 (perempuan_bbtb_tb, perempuan_bbtb_min3sd, perempuan_bbtb_min2sd, perempuan_bbtb_min1sd, perempuan_bbtb_median, perempuan_bbtb_1sd, perempuan_bbtb_2sd, perempuan_bbtb_3sd) values " +
+                "('90.5', '9.9', '10.7', '11.7', '12.8', '14.0', '15.4', '16.9');");
+        db.execSQL("insert into antropometri_perempuan_bbtb_24_60 (perempuan_bbtb_tb, perempuan_bbtb_min3sd, perempuan_bbtb_min2sd, perempuan_bbtb_min1sd, perempuan_bbtb_median, perempuan_bbtb_1sd, perempuan_bbtb_2sd, perempuan_bbtb_3sd) values " +
+                "('91.0', '10.0', '10.9', '11.8', '12.9', '14.1', '15.5', '17.1');");
+        db.execSQL("insert into antropometri_perempuan_bbtb_24_60 (perempuan_bbtb_tb, perempuan_bbtb_min3sd, perempuan_bbtb_min2sd, perempuan_bbtb_min1sd, perempuan_bbtb_median, perempuan_bbtb_1sd, perempuan_bbtb_2sd, perempuan_bbtb_3sd) values " +
+                "('91.5', '10.1', '11.0', '11.9', '13.0', '14.3', '15.7', '17.3');");
+        db.execSQL("insert into antropometri_perempuan_bbtb_24_60 (perempuan_bbtb_tb, perempuan_bbtb_min3sd, perempuan_bbtb_min2sd, perempuan_bbtb_min1sd, perempuan_bbtb_median, perempuan_bbtb_1sd, perempuan_bbtb_2sd, perempuan_bbtb_3sd) values " +
+                "('92.0', '10.2', '11.1', '12.0', '13.1', '14.4', '15.8', '17.4');");
+        db.execSQL("insert into antropometri_perempuan_bbtb_24_60 (perempuan_bbtb_tb, perempuan_bbtb_min3sd, perempuan_bbtb_min2sd, perempuan_bbtb_min1sd, perempuan_bbtb_median, perempuan_bbtb_1sd, perempuan_bbtb_2sd, perempuan_bbtb_3sd) values " +
+                "('92.5', '10.3', '11.2', '12.1', '13.3', '14.5', '16.0', '17.6');");
+        db.execSQL("insert into antropometri_perempuan_bbtb_24_60 (perempuan_bbtb_tb, perempuan_bbtb_min3sd, perempuan_bbtb_min2sd, perempuan_bbtb_min1sd, perempuan_bbtb_median, perempuan_bbtb_1sd, perempuan_bbtb_2sd, perempuan_bbtb_3sd) values " +
+                "('93.0', '10.4', '11.3', '12.3', '13.4', '14.7', '16.1', '17.8');");
+        db.execSQL("insert into antropometri_perempuan_bbtb_24_60 (perempuan_bbtb_tb, perempuan_bbtb_min3sd, perempuan_bbtb_min2sd, perempuan_bbtb_min1sd, perempuan_bbtb_median, perempuan_bbtb_1sd, perempuan_bbtb_2sd, perempuan_bbtb_3sd) values " +
+                "('93.5', '10.5', '11.4', '12.4', '13.5', '14.8', '16.3', '17.9');");
+        db.execSQL("insert into antropometri_perempuan_bbtb_24_60 (perempuan_bbtb_tb, perempuan_bbtb_min3sd, perempuan_bbtb_min2sd, perempuan_bbtb_min1sd, perempuan_bbtb_median, perempuan_bbtb_1sd, perempuan_bbtb_2sd, perempuan_bbtb_3sd) values " +
+                "('94.0', '10.6', '11.5', '12.5', '13.6', '14.9', '16.4', '18.1');");
+        db.execSQL("insert into antropometri_perempuan_bbtb_24_60 (perempuan_bbtb_tb, perempuan_bbtb_min3sd, perempuan_bbtb_min2sd, perempuan_bbtb_min1sd, perempuan_bbtb_median, perempuan_bbtb_1sd, perempuan_bbtb_2sd, perempuan_bbtb_3sd) values " +
+                "('94.5', '10.7', '11.6', '12.6', '13.8', '15.1', '16.6', '18.3');");
+        db.execSQL("insert into antropometri_perempuan_bbtb_24_60 (perempuan_bbtb_tb, perempuan_bbtb_min3sd, perempuan_bbtb_min2sd, perempuan_bbtb_min1sd, perempuan_bbtb_median, perempuan_bbtb_1sd, perempuan_bbtb_2sd, perempuan_bbtb_3sd) values " +
+                "('95.0', '10.8', '11.7', '12.7', '13.9', '15.2', '16.7', '18.5');");
+        db.execSQL("insert into antropometri_perempuan_bbtb_24_60 (perempuan_bbtb_tb, perempuan_bbtb_min3sd, perempuan_bbtb_min2sd, perempuan_bbtb_min1sd, perempuan_bbtb_median, perempuan_bbtb_1sd, perempuan_bbtb_2sd, perempuan_bbtb_3sd) values " +
+                "('95.5', '10.8', '11.8', '12.8', '14.0', '15.4', '16.9', '18.6');");
+        db.execSQL("insert into antropometri_perempuan_bbtb_24_60 (perempuan_bbtb_tb, perempuan_bbtb_min3sd, perempuan_bbtb_min2sd, perempuan_bbtb_min1sd, perempuan_bbtb_median, perempuan_bbtb_1sd, perempuan_bbtb_2sd, perempuan_bbtb_3sd) values " +
+                "('96.0', '10.9', '11.9', '12.9', '14.1', '15.5', '17.0', '18.8');");
+        db.execSQL("insert into antropometri_perempuan_bbtb_24_60 (perempuan_bbtb_tb, perempuan_bbtb_min3sd, perempuan_bbtb_min2sd, perempuan_bbtb_min1sd, perempuan_bbtb_median, perempuan_bbtb_1sd, perempuan_bbtb_2sd, perempuan_bbtb_3sd) values " +
+                "('96.5', '11.0', '12.0', '13.1', '14.3', '15.6', '17.2', '19.0');");
+        db.execSQL("insert into antropometri_perempuan_bbtb_24_60 (perempuan_bbtb_tb, perempuan_bbtb_min3sd, perempuan_bbtb_min2sd, perempuan_bbtb_min1sd, perempuan_bbtb_median, perempuan_bbtb_1sd, perempuan_bbtb_2sd, perempuan_bbtb_3sd) values " +
+                "('97.0', '11.1', '12.1', '13.2', '14.4', '15.8', '17.4', '19.2');");
+        db.execSQL("insert into antropometri_perempuan_bbtb_24_60 (perempuan_bbtb_tb, perempuan_bbtb_min3sd, perempuan_bbtb_min2sd, perempuan_bbtb_min1sd, perempuan_bbtb_median, perempuan_bbtb_1sd, perempuan_bbtb_2sd, perempuan_bbtb_3sd) values " +
+                "('97.5', '11.2', '12.2', '13.3', '14.5', '15.9', '17.5', '19.3');");
+        db.execSQL("insert into antropometri_perempuan_bbtb_24_60 (perempuan_bbtb_tb, perempuan_bbtb_min3sd, perempuan_bbtb_min2sd, perempuan_bbtb_min1sd, perempuan_bbtb_median, perempuan_bbtb_1sd, perempuan_bbtb_2sd, perempuan_bbtb_3sd) values " +
+                "('98.0', '11.3', '12.3', '13.4', '14.7', '16.1', '17.7', '19.5');");
+        db.execSQL("insert into antropometri_perempuan_bbtb_24_60 (perempuan_bbtb_tb, perempuan_bbtb_min3sd, perempuan_bbtb_min2sd, perempuan_bbtb_min1sd, perempuan_bbtb_median, perempuan_bbtb_1sd, perempuan_bbtb_2sd, perempuan_bbtb_3sd) values " +
+                "('98.5', '11.4', '12.4', '13.5', '14.8', '16.2', '17.9', '19.7');");
+        db.execSQL("insert into antropometri_perempuan_bbtb_24_60 (perempuan_bbtb_tb, perempuan_bbtb_min3sd, perempuan_bbtb_min2sd, perempuan_bbtb_min1sd, perempuan_bbtb_median, perempuan_bbtb_1sd, perempuan_bbtb_2sd, perempuan_bbtb_3sd) values " +
+                "('99.0', '11.5', '12.5', '13.7', '14.9', '16.4', '18.0', '19.9');");
+        db.execSQL("insert into antropometri_perempuan_bbtb_24_60 (perempuan_bbtb_tb, perempuan_bbtb_min3sd, perempuan_bbtb_min2sd, perempuan_bbtb_min1sd, perempuan_bbtb_median, perempuan_bbtb_1sd, perempuan_bbtb_2sd, perempuan_bbtb_3sd) values " +
+                "('99.5', '11.6', '12.7', '13.8', '15.1', '16.5', '18.2', '20.1');");
+        db.execSQL("insert into antropometri_perempuan_bbtb_24_60 (perempuan_bbtb_tb, perempuan_bbtb_min3sd, perempuan_bbtb_min2sd, perempuan_bbtb_min1sd, perempuan_bbtb_median, perempuan_bbtb_1sd, perempuan_bbtb_2sd, perempuan_bbtb_3sd) values " +
+                "('100.0', '11.7', '12.8', '13.9', '15.2', '16.7', '18.4', '20.3');");
+        db.execSQL("insert into antropometri_perempuan_bbtb_24_60 (perempuan_bbtb_tb, perempuan_bbtb_min3sd, perempuan_bbtb_min2sd, perempuan_bbtb_min1sd, perempuan_bbtb_median, perempuan_bbtb_1sd, perempuan_bbtb_2sd, perempuan_bbtb_3sd) values " +
+                "('100.5', '11.9', '12.9', '14.1', '15.4', '16.9', '18.6', '20.5');");
+        db.execSQL("insert into antropometri_perempuan_bbtb_24_60 (perempuan_bbtb_tb, perempuan_bbtb_min3sd, perempuan_bbtb_min2sd, perempuan_bbtb_min1sd, perempuan_bbtb_median, perempuan_bbtb_1sd, perempuan_bbtb_2sd, perempuan_bbtb_3sd) values " +
+                "('101.0', '12.0', '13.0', '14.2', '15.5', '17.0', '18.7', '20.7');");
+        db.execSQL("insert into antropometri_perempuan_bbtb_24_60 (perempuan_bbtb_tb, perempuan_bbtb_min3sd, perempuan_bbtb_min2sd, perempuan_bbtb_min1sd, perempuan_bbtb_median, perempuan_bbtb_1sd, perempuan_bbtb_2sd, perempuan_bbtb_3sd) values " +
+                "('101.5', '12.1', '13.1', '14.3', '15.7', '17.2', '18.9', '20.9');");
+        db.execSQL("insert into antropometri_perempuan_bbtb_24_60 (perempuan_bbtb_tb, perempuan_bbtb_min3sd, perempuan_bbtb_min2sd, perempuan_bbtb_min1sd, perempuan_bbtb_median, perempuan_bbtb_1sd, perempuan_bbtb_2sd, perempuan_bbtb_3sd) values " +
+                "('102.0', '12.2', '13.3', '14.5', '15.8', '17.4', '19.1', '21.1');");
+        db.execSQL("insert into antropometri_perempuan_bbtb_24_60 (perempuan_bbtb_tb, perempuan_bbtb_min3sd, perempuan_bbtb_min2sd, perempuan_bbtb_min1sd, perempuan_bbtb_median, perempuan_bbtb_1sd, perempuan_bbtb_2sd, perempuan_bbtb_3sd) values " +
+                "('102.5', '12.3', '13.4', '14.6', '16.0', '17.5', '19.3', '21.4');");
+        db.execSQL("insert into antropometri_perempuan_bbtb_24_60 (perempuan_bbtb_tb, perempuan_bbtb_min3sd, perempuan_bbtb_min2sd, perempuan_bbtb_min1sd, perempuan_bbtb_median, perempuan_bbtb_1sd, perempuan_bbtb_2sd, perempuan_bbtb_3sd) values " +
+                "('103.0', '12.4', '13.5', '14.7', '16.1', '17.7', '19.5', '21.6');");
+        db.execSQL("insert into antropometri_perempuan_bbtb_24_60 (perempuan_bbtb_tb, perempuan_bbtb_min3sd, perempuan_bbtb_min2sd, perempuan_bbtb_min1sd, perempuan_bbtb_median, perempuan_bbtb_1sd, perempuan_bbtb_2sd, perempuan_bbtb_3sd) values " +
+                "('103.5', '12.5', '13.6', '14.9', '16.3', '17.9', '19.7', '21.8');");
+        db.execSQL("insert into antropometri_perempuan_bbtb_24_60 (perempuan_bbtb_tb, perempuan_bbtb_min3sd, perempuan_bbtb_min2sd, perempuan_bbtb_min1sd, perempuan_bbtb_median, perempuan_bbtb_1sd, perempuan_bbtb_2sd, perempuan_bbtb_3sd) values " +
+                "('104.0', '12.6', '13.8', '15.0', '16.4', '18.1', '19.9', '22.0');");
+        db.execSQL("insert into antropometri_perempuan_bbtb_24_60 (perempuan_bbtb_tb, perempuan_bbtb_min3sd, perempuan_bbtb_min2sd, perempuan_bbtb_min1sd, perempuan_bbtb_median, perempuan_bbtb_1sd, perempuan_bbtb_2sd, perempuan_bbtb_3sd) values " +
+                "('104.5', '12.8', '13.9', '15.2', '16.6', '18.2', '20.1', '22.3');");
+        db.execSQL("insert into antropometri_perempuan_bbtb_24_60 (perempuan_bbtb_tb, perempuan_bbtb_min3sd, perempuan_bbtb_min2sd, perempuan_bbtb_min1sd, perempuan_bbtb_median, perempuan_bbtb_1sd, perempuan_bbtb_2sd, perempuan_bbtb_3sd) values " +
+                "('105.0', '12.9', '14.0', '15.3', '16.8', '18.4', '20.3', '22.5');");
+        db.execSQL("insert into antropometri_perempuan_bbtb_24_60 (perempuan_bbtb_tb, perempuan_bbtb_min3sd, perempuan_bbtb_min2sd, perempuan_bbtb_min1sd, perempuan_bbtb_median, perempuan_bbtb_1sd, perempuan_bbtb_2sd, perempuan_bbtb_3sd) values " +
+                "('105.5', '13.0', '14.2', '15.5', '16.9', '18.6', '20.5', '22.7');");
+        db.execSQL("insert into antropometri_perempuan_bbtb_24_60 (perempuan_bbtb_tb, perempuan_bbtb_min3sd, perempuan_bbtb_min2sd, perempuan_bbtb_min1sd, perempuan_bbtb_median, perempuan_bbtb_1sd, perempuan_bbtb_2sd, perempuan_bbtb_3sd) values " +
+                "('106.0', '13.1', '14.3', '15.6', '17.1', '18.8', '20.8', '23.0');");
+        db.execSQL("insert into antropometri_perempuan_bbtb_24_60 (perempuan_bbtb_tb, perempuan_bbtb_min3sd, perempuan_bbtb_min2sd, perempuan_bbtb_min1sd, perempuan_bbtb_median, perempuan_bbtb_1sd, perempuan_bbtb_2sd, perempuan_bbtb_3sd) values " +
+                "('106.5', '13.3', '14.5', '15.8', '17.3', '19.0', '21.0', '23.2');");
+        db.execSQL("insert into antropometri_perempuan_bbtb_24_60 (perempuan_bbtb_tb, perempuan_bbtb_min3sd, perempuan_bbtb_min2sd, perempuan_bbtb_min1sd, perempuan_bbtb_median, perempuan_bbtb_1sd, perempuan_bbtb_2sd, perempuan_bbtb_3sd) values " +
+                "('107.0', '13.4', '14.6', '15.9', '17.5', '19.2', '21.2', '23.5');");
+        db.execSQL("insert into antropometri_perempuan_bbtb_24_60 (perempuan_bbtb_tb, perempuan_bbtb_min3sd, perempuan_bbtb_min2sd, perempuan_bbtb_min1sd, perempuan_bbtb_median, perempuan_bbtb_1sd, perempuan_bbtb_2sd, perempuan_bbtb_3sd) values " +
+                "('107.5', '13.5', '14.7', '16.1', '17.7', '19.4', '21.4', '23.7');");
+        db.execSQL("insert into antropometri_perempuan_bbtb_24_60 (perempuan_bbtb_tb, perempuan_bbtb_min3sd, perempuan_bbtb_min2sd, perempuan_bbtb_min1sd, perempuan_bbtb_median, perempuan_bbtb_1sd, perempuan_bbtb_2sd, perempuan_bbtb_3sd) values " +
+                "('108.0', '13.7', '14.9', '16.3', '17.8', '19.6', '21.7', '24.0');");
+        db.execSQL("insert into antropometri_perempuan_bbtb_24_60 (perempuan_bbtb_tb, perempuan_bbtb_min3sd, perempuan_bbtb_min2sd, perempuan_bbtb_min1sd, perempuan_bbtb_median, perempuan_bbtb_1sd, perempuan_bbtb_2sd, perempuan_bbtb_3sd) values " +
+                "('108.5', '13.8', '15.0', '16.4', '18.0', '19.8', '21.9', '24.3');");
+        db.execSQL("insert into antropometri_perempuan_bbtb_24_60 (perempuan_bbtb_tb, perempuan_bbtb_min3sd, perempuan_bbtb_min2sd, perempuan_bbtb_min1sd, perempuan_bbtb_median, perempuan_bbtb_1sd, perempuan_bbtb_2sd, perempuan_bbtb_3sd) values " +
+                "('109.0', '13.9', '15.2', '16.6', '18.2', '20.0', '22.1', '24.5');");
+        db.execSQL("insert into antropometri_perempuan_bbtb_24_60 (perempuan_bbtb_tb, perempuan_bbtb_min3sd, perempuan_bbtb_min2sd, perempuan_bbtb_min1sd, perempuan_bbtb_median, perempuan_bbtb_1sd, perempuan_bbtb_2sd, perempuan_bbtb_3sd) values " +
+                "('110.0', '14.1', '15.4', '16.8', '18.4', '20.3', '22.4', '24.8');");
+        db.execSQL("insert into antropometri_perempuan_bbtb_24_60 (perempuan_bbtb_tb, perempuan_bbtb_min3sd, perempuan_bbtb_min2sd, perempuan_bbtb_min1sd, perempuan_bbtb_median, perempuan_bbtb_1sd, perempuan_bbtb_2sd, perempuan_bbtb_3sd) values " +
+                "('110.5', '14.4', '15.7', '17.1', '18.8', '20.7', '22.9', '25.4');");
+        db.execSQL("insert into antropometri_perempuan_bbtb_24_60 (perempuan_bbtb_tb, perempuan_bbtb_min3sd, perempuan_bbtb_min2sd, perempuan_bbtb_min1sd, perempuan_bbtb_median, perempuan_bbtb_1sd, perempuan_bbtb_2sd, perempuan_bbtb_3sd) values " +
+                "('111.0', '14.5', '15.8', '17.3', '19.0', '20.9', '23.1', '25.7');");
+        db.execSQL("insert into antropometri_perempuan_bbtb_24_60 (perempuan_bbtb_tb, perempuan_bbtb_min3sd, perempuan_bbtb_min2sd, perempuan_bbtb_min1sd, perempuan_bbtb_median, perempuan_bbtb_1sd, perempuan_bbtb_2sd, perempuan_bbtb_3sd) values " +
+                "('111.5', '14.7', '16.0', '17.5', '19.2', '21.2', '23.4', '26.0');");
+        db.execSQL("insert into antropometri_perempuan_bbtb_24_60 (perempuan_bbtb_tb, perempuan_bbtb_min3sd, perempuan_bbtb_min2sd, perempuan_bbtb_min1sd, perempuan_bbtb_median, perempuan_bbtb_1sd, perempuan_bbtb_2sd, perempuan_bbtb_3sd) values " +
+                "('112.0', '14.8', '16.2', '17.7', '19.4', '21.4', '23.6', '26.2');");
+        db.execSQL("insert into antropometri_perempuan_bbtb_24_60 (perempuan_bbtb_tb, perempuan_bbtb_min3sd, perempuan_bbtb_min2sd, perempuan_bbtb_min1sd, perempuan_bbtb_median, perempuan_bbtb_1sd, perempuan_bbtb_2sd, perempuan_bbtb_3sd) values " +
+                "('112.5', '15.0', '16.3', '17.9', '19.6', '21.6', '23.9', '26.5');");
+        db.execSQL("insert into antropometri_perempuan_bbtb_24_60 (perempuan_bbtb_tb, perempuan_bbtb_min3sd, perempuan_bbtb_min2sd, perempuan_bbtb_min1sd, perempuan_bbtb_median, perempuan_bbtb_1sd, perempuan_bbtb_2sd, perempuan_bbtb_3sd) values " +
+                "('113.0', '15.1', '16.5', '18.0', '19.8', '21.8', '24.2', '26.8');");
+        db.execSQL("insert into antropometri_perempuan_bbtb_24_60 (perempuan_bbtb_tb, perempuan_bbtb_min3sd, perempuan_bbtb_min2sd, perempuan_bbtb_min1sd, perempuan_bbtb_median, perempuan_bbtb_1sd, perempuan_bbtb_2sd, perempuan_bbtb_3sd) values " +
+                "('113.5', '15.3', '16.7', '18.2', '20.2', '22.1', '24.4', '27.1');");
+        db.execSQL("insert into antropometri_perempuan_bbtb_24_60 (perempuan_bbtb_tb, perempuan_bbtb_min3sd, perempuan_bbtb_min2sd, perempuan_bbtb_min1sd, perempuan_bbtb_median, perempuan_bbtb_1sd, perempuan_bbtb_2sd, perempuan_bbtb_3sd) values " +
+                "('114.0', '15.4', '16.8', '18.4', '20.2', '22.3', '24.7', '27.4');");
+        db.execSQL("insert into antropometri_perempuan_bbtb_24_60 (perempuan_bbtb_tb, perempuan_bbtb_min3sd, perempuan_bbtb_min2sd, perempuan_bbtb_min1sd, perempuan_bbtb_median, perempuan_bbtb_1sd, perempuan_bbtb_2sd, perempuan_bbtb_3sd) values " +
+                "('114.5', '15.6', '17.0', '18.6', '20.5', '22.6', '25.0', '27.8');");
+        db.execSQL("insert into antropometri_perempuan_bbtb_24_60 (perempuan_bbtb_tb, perempuan_bbtb_min3sd, perempuan_bbtb_min2sd, perempuan_bbtb_min1sd, perempuan_bbtb_median, perempuan_bbtb_1sd, perempuan_bbtb_2sd, perempuan_bbtb_3sd) values " +
+                "('115.0', '15.7', '17.5', '18.8', '20.7', '22.8', '25.2', '28.1');");
+        db.execSQL("insert into antropometri_perempuan_bbtb_24_60 (perempuan_bbtb_tb, perempuan_bbtb_min3sd, perempuan_bbtb_min2sd, perempuan_bbtb_min1sd, perempuan_bbtb_median, perempuan_bbtb_1sd, perempuan_bbtb_2sd, perempuan_bbtb_3sd) values " +
+                "('115.5', '15.9', '17.3', '19.0', '20.9', '23.0', '25.5', '28.4');");
+        db.execSQL("insert into antropometri_perempuan_bbtb_24_60 (perempuan_bbtb_tb, perempuan_bbtb_min3sd, perempuan_bbtb_min2sd, perempuan_bbtb_min1sd, perempuan_bbtb_median, perempuan_bbtb_1sd, perempuan_bbtb_2sd, perempuan_bbtb_3sd) values " +
+                "('116.0', '16.0', '17.5', '19.2', '21.1', '23.3', '25.8', '28.7');");
+        db.execSQL("insert into antropometri_perempuan_bbtb_24_60 (perempuan_bbtb_tb, perempuan_bbtb_min3sd, perempuan_bbtb_min2sd, perempuan_bbtb_min1sd, perempuan_bbtb_median, perempuan_bbtb_1sd, perempuan_bbtb_2sd, perempuan_bbtb_3sd) values " +
+                "('116.5', '16.2', '17.7', '19.4', '21.3', '23.5', '26.1', '29.0');");
+        db.execSQL("insert into antropometri_perempuan_bbtb_24_60 (perempuan_bbtb_tb, perempuan_bbtb_min3sd, perempuan_bbtb_min2sd, perempuan_bbtb_min1sd, perempuan_bbtb_median, perempuan_bbtb_1sd, perempuan_bbtb_2sd, perempuan_bbtb_3sd) values " +
+                "('117.0', '16.3', '17.8', '19.6', '21.5', '23.8', '26.3', '29.3');");
+        db.execSQL("insert into antropometri_perempuan_bbtb_24_60 (perempuan_bbtb_tb, perempuan_bbtb_min3sd, perempuan_bbtb_min2sd, perempuan_bbtb_min1sd, perempuan_bbtb_median, perempuan_bbtb_1sd, perempuan_bbtb_2sd, perempuan_bbtb_3sd) values " +
+                "('117.5', '16.5', '18.0', '19.8', '21.7', '24.0', '26.6', '29.6');");
+        db.execSQL("insert into antropometri_perempuan_bbtb_24_60 (perempuan_bbtb_tb, perempuan_bbtb_min3sd, perempuan_bbtb_min2sd, perempuan_bbtb_min1sd, perempuan_bbtb_median, perempuan_bbtb_1sd, perempuan_bbtb_2sd, perempuan_bbtb_3sd) values " +
+                "('118.0', '16.6', '18.2', '19.9', '22.0', '24.2', '26.9', '29.9');");
+        db.execSQL("insert into antropometri_perempuan_bbtb_24_60 (perempuan_bbtb_tb, perempuan_bbtb_min3sd, perempuan_bbtb_min2sd, perempuan_bbtb_min1sd, perempuan_bbtb_median, perempuan_bbtb_1sd, perempuan_bbtb_2sd, perempuan_bbtb_3sd) values " +
+                "('118.5', '16.8', '18.4', '20.1', '22.2', '24.5', '27.2', '30.3');");
+        db.execSQL("insert into antropometri_perempuan_bbtb_24_60 (perempuan_bbtb_tb, perempuan_bbtb_min3sd, perempuan_bbtb_min2sd, perempuan_bbtb_min1sd, perempuan_bbtb_median, perempuan_bbtb_1sd, perempuan_bbtb_2sd, perempuan_bbtb_3sd) values " +
+                "('119.0', '16.9', '18.5', '20.3', '22.4', '24.7', '27.4', '30.6');");
+        db.execSQL("insert into antropometri_perempuan_bbtb_24_60 (perempuan_bbtb_tb, perempuan_bbtb_min3sd, perempuan_bbtb_min2sd, perempuan_bbtb_min1sd, perempuan_bbtb_median, perempuan_bbtb_1sd, perempuan_bbtb_2sd, perempuan_bbtb_3sd) values " +
+                "('119.5', '17.1', '18.7', '20.5', '22.6', '25.0', '27.7', '30.9');");
+        db.execSQL("insert into antropometri_perempuan_bbtb_24_60 (perempuan_bbtb_tb, perempuan_bbtb_min3sd, perempuan_bbtb_min2sd, perempuan_bbtb_min1sd, perempuan_bbtb_median, perempuan_bbtb_1sd, perempuan_bbtb_2sd, perempuan_bbtb_3sd) values " +
+                "('120.0', '17.3', '18.9', '20.7', '22.8', '25.2', '28.0', '31.2');");
+    }
+
+    // Get One List From Database
+    public Cursor getPerempuanBBTBList_24_60(Integer tinggi) {
+        Cursor cursor = db.rawQuery("SELECT * FROM antropometri_perempuan_bbtb_24_60 WHERE perempuan_bbtb_tb = " + tinggi, null);
+        cursor.moveToFirst();
+        return cursor;
+    }
+
+    // Get One List From Database
+    public Cursor getPerempuanBBTBAllList_24_60() {
+        Cursor cursor = db.rawQuery("SELECT * FROM antropometri_perempuan_bbtb_24_60", null);
+        cursor.moveToFirst();
+        return cursor;
+    }
+
+    // Create Table Tahapan Tumbuh Kembang
+    public void createPerempuanIMTU(SQLiteDatabase db) {
+        // Create Table Tahap Tumbuh Kembang
+        String create_perempuan_imtu= "create table antropometri_perempuan_imtu (" +
+                "perempuan_imtu_ID integer primary key autoincrement, " +
+                "perempuan_imtu_umur real not null," +
+                "perempuan_imtu_min3sd real not null, " +
+                "perempuan_imtu_min2sd real not null, " +
+                "perempuan_imtu_min1sd real not null, " +
+                "perempuan_imtu_median real not null, " +
+                "perempuan_imtu_1sd real not null, " +
+                "perempuan_imtu_2sd real not null, " +
+                "perempuan_imtu_3sd real not null " +
+                ");";
+        db.execSQL(create_perempuan_imtu);
+        insertPerempuanIMTU(db);
+    }
+
+    // Insert List Imunisasi
+    public void insertPerempuanIMTU(SQLiteDatabase db) {
+        db.execSQL("insert into antropometri_perempuan_imtu (perempuan_imtu_umur, perempuan_imtu_min3sd, perempuan_imtu_min2sd, perempuan_imtu_min1sd, perempuan_imtu_median, perempuan_imtu_1sd, perempuan_imtu_2sd, perempuan_imtu_3sd) values " +
+                "('0', '10.1', '11.1', '12.1', '13.3', '14.6', '16.0', '17.5');");
+        db.execSQL("insert into antropometri_perempuan_imtu (perempuan_imtu_umur, perempuan_imtu_min3sd, perempuan_imtu_min2sd, perempuan_imtu_min1sd, perempuan_imtu_median, perempuan_imtu_1sd, perempuan_imtu_2sd, perempuan_imtu_3sd) values " +
+                "('1', '10.8', '12.0', '13.2', '14.6', '16.0', '17.5', '19.1');");
+        db.execSQL("insert into antropometri_perempuan_imtu (perempuan_imtu_umur, perempuan_imtu_min3sd, perempuan_imtu_min2sd, perempuan_imtu_min1sd, perempuan_imtu_median, perempuan_imtu_1sd, perempuan_imtu_2sd, perempuan_imtu_3sd) values " +
+                "('2', '11.8', '13.0', '14.3', '15.8', '17.3', '19.0', '20.7');");
+        db.execSQL("insert into antropometri_perempuan_imtu (perempuan_imtu_umur, perempuan_imtu_min3sd, perempuan_imtu_min2sd, perempuan_imtu_min1sd, perempuan_imtu_median, perempuan_imtu_1sd, perempuan_imtu_2sd, perempuan_imtu_3sd) values " +
+                "('3', '12.4', '13.6', '14.9', '16.4', '17.9', '19.7', '21.5');");
+        db.execSQL("insert into antropometri_perempuan_imtu (perempuan_imtu_umur, perempuan_imtu_min3sd, perempuan_imtu_min2sd, perempuan_imtu_min1sd, perempuan_imtu_median, perempuan_imtu_1sd, perempuan_imtu_2sd, perempuan_imtu_3sd) values " +
+                "('4', '12.7', '13.9', '15.2', '16.7', '18.3', '20.0', '22.0');");
+        db.execSQL("insert into antropometri_perempuan_imtu (perempuan_imtu_umur, perempuan_imtu_min3sd, perempuan_imtu_min2sd, perempuan_imtu_min1sd, perempuan_imtu_median, perempuan_imtu_1sd, perempuan_imtu_2sd, perempuan_imtu_3sd) values " +
+                "('5', '12.9', '14.1', '15.4', '16.8', '18.4', '20.2', '22.2');");
+        db.execSQL("insert into antropometri_perempuan_imtu (perempuan_imtu_umur, perempuan_imtu_min3sd, perempuan_imtu_min2sd, perempuan_imtu_min1sd, perempuan_imtu_median, perempuan_imtu_1sd, perempuan_imtu_2sd, perempuan_imtu_3sd) values " +
+                "('6', '13.0', '14.1', '15.5', '16.9', '18.5', '20.3', '22.3');");
+        db.execSQL("insert into antropometri_perempuan_imtu (perempuan_imtu_umur, perempuan_imtu_min3sd, perempuan_imtu_min2sd, perempuan_imtu_min1sd, perempuan_imtu_median, perempuan_imtu_1sd, perempuan_imtu_2sd, perempuan_imtu_3sd) values " +
+                "('7', '13.0', '14.2', '15.5', '16.9', '18.5', '20.3', '22.3');");
+        db.execSQL("insert into antropometri_perempuan_imtu (perempuan_imtu_umur, perempuan_imtu_min3sd, perempuan_imtu_min2sd, perempuan_imtu_min1sd, perempuan_imtu_median, perempuan_imtu_1sd, perempuan_imtu_2sd, perempuan_imtu_3sd) values " +
+                "('8', '13.0', '14.1', '15.4', '16.8', '18.4', '20.2', '22.2');");
+        db.execSQL("insert into antropometri_perempuan_imtu (perempuan_imtu_umur, perempuan_imtu_min3sd, perempuan_imtu_min2sd, perempuan_imtu_min1sd, perempuan_imtu_median, perempuan_imtu_1sd, perempuan_imtu_2sd, perempuan_imtu_3sd) values " +
+                "('9', '12.9', '14.1', '15.3', '16.7', '18.3', '20.1', '22.1');");
+        db.execSQL("insert into antropometri_perempuan_imtu (perempuan_imtu_umur, perempuan_imtu_min3sd, perempuan_imtu_min2sd, perempuan_imtu_min1sd, perempuan_imtu_median, perempuan_imtu_1sd, perempuan_imtu_2sd, perempuan_imtu_3sd) values " +
+                "('10', '12.9', '14.0', '15.2', '16.6', '18.2', '19.9', '21.9');");
+        db.execSQL("insert into antropometri_perempuan_imtu (perempuan_imtu_umur, perempuan_imtu_min3sd, perempuan_imtu_min2sd, perempuan_imtu_min1sd, perempuan_imtu_median, perempuan_imtu_1sd, perempuan_imtu_2sd, perempuan_imtu_3sd) values " +
+                "('11', '12.8', '13.9', '15.1', '16.5', '18.0', '19.8', '21.8');");
+        db.execSQL("insert into antropometri_perempuan_imtu (perempuan_imtu_umur, perempuan_imtu_min3sd, perempuan_imtu_min2sd, perempuan_imtu_min1sd, perempuan_imtu_median, perempuan_imtu_1sd, perempuan_imtu_2sd, perempuan_imtu_3sd) values " +
+                "('12', '12.7', '13.8', '15.0', '16.4', '17.9', '19.6', '21.6');");
+        db.execSQL("insert into antropometri_perempuan_imtu (perempuan_imtu_umur, perempuan_imtu_min3sd, perempuan_imtu_min2sd, perempuan_imtu_min1sd, perempuan_imtu_median, perempuan_imtu_1sd, perempuan_imtu_2sd, perempuan_imtu_3sd) values " +
+                "('13', '12.6', '13.7', '14.9', '16.2', '17.7', '19.5', '21.4');");
+        db.execSQL("insert into antropometri_perempuan_imtu (perempuan_imtu_umur, perempuan_imtu_min3sd, perempuan_imtu_min2sd, perempuan_imtu_min1sd, perempuan_imtu_median, perempuan_imtu_1sd, perempuan_imtu_2sd, perempuan_imtu_3sd) values " +
+                "('14', '12.6', '13.6', '14.8', '16.1', '17.6', '19.3', '21.3');");
+        db.execSQL("insert into antropometri_perempuan_imtu (perempuan_imtu_umur, perempuan_imtu_min3sd, perempuan_imtu_min2sd, perempuan_imtu_min1sd, perempuan_imtu_median, perempuan_imtu_1sd, perempuan_imtu_2sd, perempuan_imtu_3sd) values " +
+                "('15', '12.5', '13.5', '14.7', '16.0', '17.5', '19.2', '21.1');");
+        db.execSQL("insert into antropometri_perempuan_imtu (perempuan_imtu_umur, perempuan_imtu_min3sd, perempuan_imtu_min2sd, perempuan_imtu_min1sd, perempuan_imtu_median, perempuan_imtu_1sd, perempuan_imtu_2sd, perempuan_imtu_3sd) values " +
+                "('16', '12.4', '13.5', '14.6', '15.9', '17.4', '19.1', '21.0');");
+        db.execSQL("insert into antropometri_perempuan_imtu (perempuan_imtu_umur, perempuan_imtu_min3sd, perempuan_imtu_min2sd, perempuan_imtu_min1sd, perempuan_imtu_median, perempuan_imtu_1sd, perempuan_imtu_2sd, perempuan_imtu_3sd) values " +
+                "('17', '12.4', '13.4', '14.5', '15.8', '17.3', '18.9', '20.9');");
+        db.execSQL("insert into antropometri_perempuan_imtu (perempuan_imtu_umur, perempuan_imtu_min3sd, perempuan_imtu_min2sd, perempuan_imtu_min1sd, perempuan_imtu_median, perempuan_imtu_1sd, perempuan_imtu_2sd, perempuan_imtu_3sd) values " +
+                "('18', '12.3', '13.3', '14.4', '15.7', '17.2', '18.8', '20.8');");
+        db.execSQL("insert into antropometri_perempuan_imtu (perempuan_imtu_umur, perempuan_imtu_min3sd, perempuan_imtu_min2sd, perempuan_imtu_min1sd, perempuan_imtu_median, perempuan_imtu_1sd, perempuan_imtu_2sd, perempuan_imtu_3sd) values " +
+                "('19', '12.3', '13.3', '14.4', '15.7', '17.1', '18.8', '20.7');");
+        db.execSQL("insert into antropometri_perempuan_imtu (perempuan_imtu_umur, perempuan_imtu_min3sd, perempuan_imtu_min2sd, perempuan_imtu_min1sd, perempuan_imtu_median, perempuan_imtu_1sd, perempuan_imtu_2sd, perempuan_imtu_3sd) values " +
+                "('20', '12.2', '13.2', '14.3', '15.6', '17.0', '18.7', '20.6');");
+        db.execSQL("insert into antropometri_perempuan_imtu (perempuan_imtu_umur, perempuan_imtu_min3sd, perempuan_imtu_min2sd, perempuan_imtu_min1sd, perempuan_imtu_median, perempuan_imtu_1sd, perempuan_imtu_2sd, perempuan_imtu_3sd) values " +
+                "('21', '12.2', '13.2', '14.3', '15.6', '17.0', '18.6', '20.5');");
+        db.execSQL("insert into antropometri_perempuan_imtu (perempuan_imtu_umur, perempuan_imtu_min3sd, perempuan_imtu_min2sd, perempuan_imtu_min1sd, perempuan_imtu_median, perempuan_imtu_1sd, perempuan_imtu_2sd, perempuan_imtu_3sd) values " +
+                "('22', '12.2', '13.1', '14.2', '15.5', '17.0', '18.5', '20.4');");
+        db.execSQL("insert into antropometri_perempuan_imtu (perempuan_imtu_umur, perempuan_imtu_min3sd, perempuan_imtu_min2sd, perempuan_imtu_min1sd, perempuan_imtu_median, perempuan_imtu_1sd, perempuan_imtu_2sd, perempuan_imtu_3sd) values " +
+                "('23', '12.2', '13.1', '14.2', '15.4', '16.9', '18.5', '20.4');");
+        db.execSQL("insert into antropometri_perempuan_imtu (perempuan_imtu_umur, perempuan_imtu_min3sd, perempuan_imtu_min2sd, perempuan_imtu_min1sd, perempuan_imtu_median, perempuan_imtu_1sd, perempuan_imtu_2sd, perempuan_imtu_3sd) values " +
+                "('24', '12.4', '13.3', '14.4', '15.7', '17.1', '18.7', '20.6');");
+        db.execSQL("insert into antropometri_perempuan_imtu (perempuan_imtu_umur, perempuan_imtu_min3sd, perempuan_imtu_min2sd, perempuan_imtu_min1sd, perempuan_imtu_median, perempuan_imtu_1sd, perempuan_imtu_2sd, perempuan_imtu_3sd) values " +
+                "('25', '12.4', '13.3', '14.4', '15.7', '17.1', '18.7', '20.6');");
+        db.execSQL("insert into antropometri_perempuan_imtu (perempuan_imtu_umur, perempuan_imtu_min3sd, perempuan_imtu_min2sd, perempuan_imtu_min1sd, perempuan_imtu_median, perempuan_imtu_1sd, perempuan_imtu_2sd, perempuan_imtu_3sd) values " +
+                "('26', '12.3', '13.3', '14.4', '15.6', '17.0', '18.7', '20.6');");
+        db.execSQL("insert into antropometri_perempuan_imtu (perempuan_imtu_umur, perempuan_imtu_min3sd, perempuan_imtu_min2sd, perempuan_imtu_min1sd, perempuan_imtu_median, perempuan_imtu_1sd, perempuan_imtu_2sd, perempuan_imtu_3sd) values " +
+                "('27', '12.3', '13.3', '14.4', '15.6', '17.0', '18.6', '20.5');");
+        db.execSQL("insert into antropometri_perempuan_imtu (perempuan_imtu_umur, perempuan_imtu_min3sd, perempuan_imtu_min2sd, perempuan_imtu_min1sd, perempuan_imtu_median, perempuan_imtu_1sd, perempuan_imtu_2sd, perempuan_imtu_3sd) values " +
+                "('28', '12.3', '13.3', '14.3', '15.6', '17.0', '18.6', '20.5');");
+        db.execSQL("insert into antropometri_perempuan_imtu (perempuan_imtu_umur, perempuan_imtu_min3sd, perempuan_imtu_min2sd, perempuan_imtu_min1sd, perempuan_imtu_median, perempuan_imtu_1sd, perempuan_imtu_2sd, perempuan_imtu_3sd) values " +
+                "('29', '12.3', '13.2', '14.3', '15.6', '17.0', '18.6', '20.4');");
+        db.execSQL("insert into antropometri_perempuan_imtu (perempuan_imtu_umur, perempuan_imtu_min3sd, perempuan_imtu_min2sd, perempuan_imtu_min1sd, perempuan_imtu_median, perempuan_imtu_1sd, perempuan_imtu_2sd, perempuan_imtu_3sd) values " +
+                "('30', '12.3', '13.2', '14.3', '15.5', '16.9', '18.5', '20.4');");
+        db.execSQL("insert into antropometri_perempuan_imtu (perempuan_imtu_umur, perempuan_imtu_min3sd, perempuan_imtu_min2sd, perempuan_imtu_min1sd, perempuan_imtu_median, perempuan_imtu_1sd, perempuan_imtu_2sd, perempuan_imtu_3sd) values " +
+                "('31', '12.2', '13.2', '14.3', '15.5', '16.9', '18.5', '20.4');");
+        db.execSQL("insert into antropometri_perempuan_imtu (perempuan_imtu_umur, perempuan_imtu_min3sd, perempuan_imtu_min2sd, perempuan_imtu_min1sd, perempuan_imtu_median, perempuan_imtu_1sd, perempuan_imtu_2sd, perempuan_imtu_3sd) values " +
+                "('32', '12.2', '13.2', '14.3', '15.5', '16.9', '18.5', '20.4');");
+        db.execSQL("insert into antropometri_perempuan_imtu (perempuan_imtu_umur, perempuan_imtu_min3sd, perempuan_imtu_min2sd, perempuan_imtu_min1sd, perempuan_imtu_median, perempuan_imtu_1sd, perempuan_imtu_2sd, perempuan_imtu_3sd) values " +
+                "('33', '12.2', '13.1', '14.2', '15.5', '16.9', '18.5', '20.3');");
+        db.execSQL("insert into antropometri_perempuan_imtu (perempuan_imtu_umur, perempuan_imtu_min3sd, perempuan_imtu_min2sd, perempuan_imtu_min1sd, perempuan_imtu_median, perempuan_imtu_1sd, perempuan_imtu_2sd, perempuan_imtu_3sd) values " +
+                "('34', '12.2', '13.1', '14.2', '15.4', '16.8', '18.5', '20.3');");
+        db.execSQL("insert into antropometri_perempuan_imtu (perempuan_imtu_umur, perempuan_imtu_min3sd, perempuan_imtu_min2sd, perempuan_imtu_min1sd, perempuan_imtu_median, perempuan_imtu_1sd, perempuan_imtu_2sd, perempuan_imtu_3sd) values " +
+                "('35', '12.1', '13.1', '14.2', '15.4', '16.8', '18.4', '20.3');");
+        db.execSQL("insert into antropometri_perempuan_imtu (perempuan_imtu_umur, perempuan_imtu_min3sd, perempuan_imtu_min2sd, perempuan_imtu_min1sd, perempuan_imtu_median, perempuan_imtu_1sd, perempuan_imtu_2sd, perempuan_imtu_3sd) values " +
+                "('36', '12.1', '13.1', '14.2', '15.4', '16.8', '18.4', '20.3');");
+        db.execSQL("insert into antropometri_perempuan_imtu (perempuan_imtu_umur, perempuan_imtu_min3sd, perempuan_imtu_min2sd, perempuan_imtu_min1sd, perempuan_imtu_median, perempuan_imtu_1sd, perempuan_imtu_2sd, perempuan_imtu_3sd) values " +
+                "('37', '12.1', '13.1', '14.1', '15.4', '16.8', '18.4', '20.3');");
+        db.execSQL("insert into antropometri_perempuan_imtu (perempuan_imtu_umur, perempuan_imtu_min3sd, perempuan_imtu_min2sd, perempuan_imtu_min1sd, perempuan_imtu_median, perempuan_imtu_1sd, perempuan_imtu_2sd, perempuan_imtu_3sd) values " +
+                "('38', '12.1', '13.0', '14.1', '15.4', '16.8', '18.4', '20.3');");
+        db.execSQL("insert into antropometri_perempuan_imtu (perempuan_imtu_umur, perempuan_imtu_min3sd, perempuan_imtu_min2sd, perempuan_imtu_min1sd, perempuan_imtu_median, perempuan_imtu_1sd, perempuan_imtu_2sd, perempuan_imtu_3sd) values " +
+                "('39', '12.0', '13.0', '14.1', '15.3', '16.8', '18.4', '20.3');");
+        db.execSQL("insert into antropometri_perempuan_imtu (perempuan_imtu_umur, perempuan_imtu_min3sd, perempuan_imtu_min2sd, perempuan_imtu_min1sd, perempuan_imtu_median, perempuan_imtu_1sd, perempuan_imtu_2sd, perempuan_imtu_3sd) values " +
+                "('40', '12.0', '13.0', '14.1', '15.3', '16.8', '18.4', '20.3');");
+        db.execSQL("insert into antropometri_perempuan_imtu (perempuan_imtu_umur, perempuan_imtu_min3sd, perempuan_imtu_min2sd, perempuan_imtu_min1sd, perempuan_imtu_median, perempuan_imtu_1sd, perempuan_imtu_2sd, perempuan_imtu_3sd) values " +
+                "('41', '12.0', '13.0', '14.1', '15.3', '16.8', '18.4', '20.4');");
+        db.execSQL("insert into antropometri_perempuan_imtu (perempuan_imtu_umur, perempuan_imtu_min3sd, perempuan_imtu_min2sd, perempuan_imtu_min1sd, perempuan_imtu_median, perempuan_imtu_1sd, perempuan_imtu_2sd, perempuan_imtu_3sd) values " +
+                "('42', '12.0', '12.9', '14.0', '15.3', '16.8', '18.4', '20.4');");
+        db.execSQL("insert into antropometri_perempuan_imtu (perempuan_imtu_umur, perempuan_imtu_min3sd, perempuan_imtu_min2sd, perempuan_imtu_min1sd, perempuan_imtu_median, perempuan_imtu_1sd, perempuan_imtu_2sd, perempuan_imtu_3sd) values " +
+                "('43', '11.9', '12.9', '14.0', '15.3', '16.8', '18.4', '20.4');");
+        db.execSQL("insert into antropometri_perempuan_imtu (perempuan_imtu_umur, perempuan_imtu_min3sd, perempuan_imtu_min2sd, perempuan_imtu_min1sd, perempuan_imtu_median, perempuan_imtu_1sd, perempuan_imtu_2sd, perempuan_imtu_3sd) values " +
+                "('44', '11.9', '12.9', '14.0', '15.3', '16.8', '18.5', '20.5');");
+        db.execSQL("insert into antropometri_perempuan_imtu (perempuan_imtu_umur, perempuan_imtu_min3sd, perempuan_imtu_min2sd, perempuan_imtu_min1sd, perempuan_imtu_median, perempuan_imtu_1sd, perempuan_imtu_2sd, perempuan_imtu_3sd) values " +
+                "('45', '11.9', '12.9', '14.0', '15.3', '16.8', '18.5', '20.5');");
+        db.execSQL("insert into antropometri_perempuan_imtu (perempuan_imtu_umur, perempuan_imtu_min3sd, perempuan_imtu_min2sd, perempuan_imtu_min1sd, perempuan_imtu_median, perempuan_imtu_1sd, perempuan_imtu_2sd, perempuan_imtu_3sd) values " +
+                "('46', '11.9', '12.9', '14.0', '15.3', '16.8', '18.5', '20.5');");
+        db.execSQL("insert into antropometri_perempuan_imtu (perempuan_imtu_umur, perempuan_imtu_min3sd, perempuan_imtu_min2sd, perempuan_imtu_min1sd, perempuan_imtu_median, perempuan_imtu_1sd, perempuan_imtu_2sd, perempuan_imtu_3sd) values " +
+                "('47', '11.8', '12.8', '14.0', '15.3', '16.8', '18.5', '20.5');");
+        db.execSQL("insert into antropometri_perempuan_imtu (perempuan_imtu_umur, perempuan_imtu_min3sd, perempuan_imtu_min2sd, perempuan_imtu_min1sd, perempuan_imtu_median, perempuan_imtu_1sd, perempuan_imtu_2sd, perempuan_imtu_3sd) values " +
+                "('48', '11.8', '12.8', '14.0', '15.3', '16.8', '18.5', '20.6');");
+        db.execSQL("insert into antropometri_perempuan_imtu (perempuan_imtu_umur, perempuan_imtu_min3sd, perempuan_imtu_min2sd, perempuan_imtu_min1sd, perempuan_imtu_median, perempuan_imtu_1sd, perempuan_imtu_2sd, perempuan_imtu_3sd) values " +
+                "('49', '11.8', '12.8', '13.9', '15.3', '16.8', '18.5', '20.6');");
+        db.execSQL("insert into antropometri_perempuan_imtu (perempuan_imtu_umur, perempuan_imtu_min3sd, perempuan_imtu_min2sd, perempuan_imtu_min1sd, perempuan_imtu_median, perempuan_imtu_1sd, perempuan_imtu_2sd, perempuan_imtu_3sd) values " +
+                "('50', '11.8', '12.8', '13.9', '15.3', '16.8', '18.6', '20.7');");
+        db.execSQL("insert into antropometri_perempuan_imtu (perempuan_imtu_umur, perempuan_imtu_min3sd, perempuan_imtu_min2sd, perempuan_imtu_min1sd, perempuan_imtu_median, perempuan_imtu_1sd, perempuan_imtu_2sd, perempuan_imtu_3sd) values " +
+                "('51', '11.8', '12.8', '13.9', '15.3', '16.8', '18.6', '20.7');");
+        db.execSQL("insert into antropometri_perempuan_imtu (perempuan_imtu_umur, perempuan_imtu_min3sd, perempuan_imtu_min2sd, perempuan_imtu_min1sd, perempuan_imtu_median, perempuan_imtu_1sd, perempuan_imtu_2sd, perempuan_imtu_3sd) values " +
+                "('52', '11.7', '12.8', '13.9', '15.2', '16.8', '18.6', '20.7');");
+        db.execSQL("insert into antropometri_perempuan_imtu (perempuan_imtu_umur, perempuan_imtu_min3sd, perempuan_imtu_min2sd, perempuan_imtu_min1sd, perempuan_imtu_median, perempuan_imtu_1sd, perempuan_imtu_2sd, perempuan_imtu_3sd) values " +
+                "('53', '11.7', '12.7', '13.9', '15.3', '16.8', '18.6', '20.8');");
+        db.execSQL("insert into antropometri_perempuan_imtu (perempuan_imtu_umur, perempuan_imtu_min3sd, perempuan_imtu_min2sd, perempuan_imtu_min1sd, perempuan_imtu_median, perempuan_imtu_1sd, perempuan_imtu_2sd, perempuan_imtu_3sd) values " +
+                "('54', '11.7', '12.7', '13.9', '15.3', '16.8', '18.7', '20.8');");
+        db.execSQL("insert into antropometri_perempuan_imtu (perempuan_imtu_umur, perempuan_imtu_min3sd, perempuan_imtu_min2sd, perempuan_imtu_min1sd, perempuan_imtu_median, perempuan_imtu_1sd, perempuan_imtu_2sd, perempuan_imtu_3sd) values " +
+                "('55', '11.7', '12.7', '13.9', '15.3', '16.8', '18.7', '20.9');");
+        db.execSQL("insert into antropometri_perempuan_imtu (perempuan_imtu_umur, perempuan_imtu_min3sd, perempuan_imtu_min2sd, perempuan_imtu_min1sd, perempuan_imtu_median, perempuan_imtu_1sd, perempuan_imtu_2sd, perempuan_imtu_3sd) values " +
+                "('56', '11.7', '12.7', '13.9', '15.3', '16.8', '18.7', '20.9');");
+        db.execSQL("insert into antropometri_perempuan_imtu (perempuan_imtu_umur, perempuan_imtu_min3sd, perempuan_imtu_min2sd, perempuan_imtu_min1sd, perempuan_imtu_median, perempuan_imtu_1sd, perempuan_imtu_2sd, perempuan_imtu_3sd) values " +
+                "('57', '11.7', '12.7', '13.9', '15.3', '16.9', '18.7', '21.0');");
+        db.execSQL("insert into antropometri_perempuan_imtu (perempuan_imtu_umur, perempuan_imtu_min3sd, perempuan_imtu_min2sd, perempuan_imtu_min1sd, perempuan_imtu_median, perempuan_imtu_1sd, perempuan_imtu_2sd, perempuan_imtu_3sd) values " +
+                "('58', '11.7', '12.7', '13.9', '15.3', '16.9', '18.8', '21.0');");
+        db.execSQL("insert into antropometri_perempuan_imtu (perempuan_imtu_umur, perempuan_imtu_min3sd, perempuan_imtu_min2sd, perempuan_imtu_min1sd, perempuan_imtu_median, perempuan_imtu_1sd, perempuan_imtu_2sd, perempuan_imtu_3sd) values " +
+                "('59', '11.6', '12.7', '13.9', '15.3', '16.9', '18.8', '21.0');");
+        db.execSQL("insert into antropometri_perempuan_imtu (perempuan_imtu_umur, perempuan_imtu_min3sd, perempuan_imtu_min2sd, perempuan_imtu_min1sd, perempuan_imtu_median, perempuan_imtu_1sd, perempuan_imtu_2sd, perempuan_imtu_3sd) values " +
+                "('60', '11.6', '12.7', '13.9', '15.3', '16.9', '18.8', '21.1');");
+    }
+
+    // Get One List From Database
+    public Cursor getPerempuanIMTUList(Integer umur) {
+        Cursor cursor = db.rawQuery("SELECT * FROM antropometri_perempuan_imtu WHERE perempuan_imtu_umur = " + umur, null);
+        cursor.moveToFirst();
+        return cursor;
+    }
+
+    // Get One List From Database
+    public Cursor getPerempuanIMTUAllList() {
+        Cursor cursor = db.rawQuery("SELECT * FROM antropometri_perempuan_imtu", null);
+        cursor.moveToFirst();
+        return cursor;
+    }
+
+    // Create Table List Imunisasi
+    public void createDokumentasi(SQLiteDatabase db) {
+        // Create Table List Imunisasi
+        String create_dokumentasi = "create table dokumentasi_gizi (" +
+                "dokumentasiID integer primary key autoincrement, " +
+                "dokumentasi_profilID integer not null, " +
+                "dokumentasi_tanggal text not null, " +
+                "dokumentasi_usia text not null, " +
+                "dokumentasi_bulan integer not null, " +
+                "dokumentasi_tinggi integer not null," +
+                "dokumentasi_berat integer not null," +
+                "dokumentasi_bbu text," +
+                "dokumentasi_tbu text," +
+                "dokumentasi_bbtb text," +
+                "dokumentasi_imtu text," +
+                "FOREIGN KEY ( dokumentasi_profilID ) REFERENCES profil ( profilID ));";
+        db.execSQL(create_dokumentasi);
+    }
+
+    // Insert Riwayat Imunisasi to Database
+    public long insertDokumentasi(Integer profilID, String tanggal, String usia, Integer bulan,
+                              String beratBadan, String tinggiBadan, String status_bbu, String status_tbu, String status_bbtb, String status_imtu) {
+
+        // Open Database to Write
+        SQLiteDatabase db = this.getWritableDatabase();
+
+        // Get Value
+        ContentValues values = new ContentValues();
+        values.put("dokumentasi_profilID", profilID);
+        values.put("dokumentasi_tanggal", tanggal);
+        values.put("dokumentasi_usia", usia);
+        values.put("dokumentasi_bulan", bulan);
+        values.put("dokumentasi_berat", beratBadan);
+        values.put("dokumentasi_tinggi", tinggiBadan);
+        values.put("dokumentasi_bbu", status_bbu);
+        values.put("dokumentasi_tbu", status_tbu);
+        values.put("dokumentasi_bbtb", status_bbtb);
+        values.put("dokumentasi_imtu", status_imtu);
+
+        // Insert Data
+        return db.insert("dokumentasi_gizi", null, values);
+    }
+
+    // Get Riwayat Imunisasi from Database
+    public Cursor getDokumentasi(Integer id) {
+        Cursor cursor = db.rawQuery("SELECT * FROM dokumentasi_gizi WHERE dokumentasi_profilID = " + id + " ORDER BY dokumentasi_bulan", null);
+        cursor.moveToFirst();
+        return cursor;
+    }
+
+    // Get Riwayat Imunisasi from Database
+    public Cursor getDokumentasiChart(Integer id, Integer bulan) {
+        Cursor cursor = db.rawQuery("SELECT * FROM dokumentasi_gizi WHERE dokumentasi_profilID = " + id + " AND dokumentasi_bulan BETWEEN 0 AND " + bulan , null);
+        cursor.moveToFirst();
+        return cursor;
+    }
+
+    // Get One Profil From Database
+    public Cursor getOneDokumentasi(Integer id) {
+        Cursor cursor = db.rawQuery("SELECT * FROM dokumentasi_gizi WHERE dokumentasiID = " + id, null);
+        cursor.moveToFirst();
+        return cursor;
+    }
+
+    // Update Riwayat Imunisasi to Database
+    public long updateDokumentasi(Integer dokumentasiID, Integer profilID, String tanggal, String usia, Integer bulan,
+                                  String berat, String tinggi, String bbu, String tbu, String bbtb, String imtu) {
+
+        // Open Database to Write
+        SQLiteDatabase db = this.getWritableDatabase();
+
+        // Get Value
+        ContentValues values = new ContentValues();
+        values.put("dokumentasi_profilID", profilID);
+        values.put("dokumentasi_tanggal", tanggal);
+        values.put("dokumentasi_usia", usia);
+        values.put("dokumentasi_bulan", bulan);
+        values.put("dokumentasi_tinggi", tinggi);
+        values.put("dokumentasi_berat", berat);
+        values.put("dokumentasi_bbu", bbu);
+        values.put("dokumentasi_tbu", tbu);
+        values.put("dokumentasi_bbtb", bbtb);
+        values.put("dokumentasi_imtu", imtu);
+
+        // Update Data
+        return db.update("dokumentasi_gizi", values, "dokumentasiID = " + dokumentasiID, null);
+    }
+
+    // Delete Riwayat Imunisasi from Database
+    public boolean deleteDokumentasi (int id) {
+        // Delete Data
+        return db.delete("dokumentasi_gizi", "dokumentasiID =" + id, null) < 1;
+    }
+
+    // Delete Riwyat Imunisasi from ProfilID from Database
+    public boolean deleteDokumentasiProfilID(int profilID) {
+        // Delete Data
+        return db.delete("dokumentasi_gizi", "dokumentasi_profilID =" + profilID, null) < 1;
+    }
+
     // Create Table List Imunisasi
     public void createList(SQLiteDatabase db) {
         // Create Table List Imunisasi
@@ -1474,7 +2449,6 @@ public class DBHelper extends SQLiteOpenHelper {
     }
 
     // Insert Riwayat Imunisasi to Database
-
     public long insertRiwayat(Integer profilID, String tanggal, String vaksin, String umur, Integer bulan,
                               String berat, String tinggi, String dokter, String rumahsakit) {
 
@@ -1506,7 +2480,7 @@ public class DBHelper extends SQLiteOpenHelper {
 
     // Get One Profil From Database
     public Cursor getOneRiwayat(Integer id) {
-        Cursor cursor = db.rawQuery("SELECT * FROM riwayat_imunisasi WHERE riwayatID = " + id, null);
+        Cursor cursor = db.rawQuery("SELECT * FROM riwayat_imunisasi WHERE riwayatID = " + id + " ORDER BY riwayat_tanggal", null);
         cursor.moveToFirst();
         return cursor;
     }
@@ -1648,7 +2622,7 @@ public class DBHelper extends SQLiteOpenHelper {
 
     // Get Profil from Database
     public Cursor getGaleri(Integer id) {
-        Cursor cursor = db.rawQuery("SELECT * FROM galeri_tumbang WHERE galeri_profilID = " + id + " ORDER BY galeri_foto ASC", null);
+        Cursor cursor = db.rawQuery("SELECT * FROM galeri_tumbang WHERE galeri_profilID = " + id + " ORDER BY galeri_foto", null);
         cursor.moveToFirst();
         return cursor;
     }
@@ -1732,7 +2706,7 @@ public class DBHelper extends SQLiteOpenHelper {
 
     // Get Rekam Medis from Database
     public Cursor getMedis(Integer id) {
-        Cursor cursor = db.rawQuery("SELECT * FROM rekam_medis WHERE medis_profilID = " + id , null);
+        Cursor cursor = db.rawQuery("SELECT * FROM rekam_medis WHERE medis_profilID = " + id + " ORDER BY medis_tanggal" , null);
         cursor.moveToFirst();
         return cursor;
     }

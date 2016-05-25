@@ -254,9 +254,10 @@ public class DetailProfil extends Activity {
                                     });
 
                             // Delete From Database
+                            db.deleteDokumentasiProfilID(profil_id);
+                            db.deleteRiwayatProfilID(profil_id);
                             db.deleteGaleriProfilID(profil_id);
                             db.deleteMedisProfilID(profil_id);
-                            db.deleteRiwayatProfilID(profil_id);
                             db.deleteProfil(profil_id);
 
                             // Declare Condition

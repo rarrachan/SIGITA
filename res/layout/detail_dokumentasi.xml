@@ -1,0 +1,745 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:fillViewport="true"
+            android:scrollbars="none"
+            android:id="@+id/scrollView">
+
+    <RelativeLayout
+            android:focusable="true"
+            android:focusableInTouchMode="true"
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content">
+
+        <LinearLayout
+                android:layout_width="fill_parent"
+                android:layout_height="fill_parent"
+                android:background="#FFFBC9"
+                android:orientation="vertical">
+
+            <!-- Start Linear Layout Header -->
+            <LinearLayout
+                    android:id="@+id/HeaderLinearLayout"
+                    android:layout_width="fill_parent"
+                    android:layout_height="wrap_content"
+                    android:background="#FFF1B5"
+                    android:orientation="horizontal">
+
+                <!-- Start Blank Space -->
+                <View
+                        android:layout_width="0dp"
+                        android:layout_height="0dp"
+                        android:layout_weight=".2"/>
+                <!-- End Blank Space -->
+
+                <!-- Start Header Logo Image -->
+                <ImageView
+                        android:id="@+id/logo_index"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:adjustViewBounds="true"
+                        android:src="@drawable/icon_logopanjang"
+                        android:contentDescription="@string/app_name"/>
+                <!-- End Header Logo Image -->
+
+                <!-- Start Blank Space -->
+                <View
+                        android:layout_width="0dp"
+                        android:layout_height="0dp"
+                        android:layout_weight=".2"/>
+                <!-- End Blank Space -->
+
+            </LinearLayout>
+            <!-- End Linear Layout Header -->
+
+            <!-- Start Linear Layout Content -->
+            <LinearLayout
+                    android:layout_width="fill_parent"
+                    android:layout_height="fill_parent"
+                    android:gravity="center"
+                    android:orientation="vertical"
+                    android:layout_gravity="center_vertical"
+                    android:layout_marginBottom="50dp">
+
+                <TextView
+                        android:id="@+id/detail_dokumentasigizi"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:textColor="#D046F2"
+                        android:text="@string/detail_dokumentasigizi"
+                        style="@android:style/TextAppearance.DeviceDefault.Medium"
+                        android:layout_gravity="center_vertical"
+                        android:layout_margin="20dp"/>
+
+                <!-- Start Blank Space -->
+                <!-- End Blank Space -->
+
+                <!-- Start Linear Layout Row -->
+                <LinearLayout
+                        android:layout_width="fill_parent"
+                        android:layout_height="wrap_content"
+                        android:orientation="horizontal"
+                        android:layout_gravity="center">
+
+                    <!-- Start Blank Space -->
+                    <View
+                            android:layout_width="0dp"
+                            android:layout_height="0dp"
+                            android:layout_weight=".2"/>
+                    <!-- End Blank Space -->
+
+                    <!-- Start Blank Space -->
+                    <LinearLayout
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content"
+                            android:orientation="vertical"
+                            android:layout_weight="1">
+
+                        <LinearLayout
+                                android:layout_width="fill_parent"
+                                android:layout_height="0dp"
+                                android:orientation="horizontal"
+                                android:layout_weight="1"
+                                android:layout_marginBottom="3dp">
+
+                            <!-- Start Text View Kalkulator Gizi Usia  -->
+                            <TextView
+                                    android:id="@+id/text_dokumentasigizi_nama"
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:textColor="#D046F2"
+                                    android:text="@string/dokumentasigizi_nama"
+                                    style="@android:style/TextAppearance.DeviceDefault.Medium"/>
+                            <!-- End Text View Kalkulator Gizi -->
+
+                            <!-- Start Text View Titik Dua -->
+                            <TextView
+                                    android:id="@+id/titikdua"
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:textColor="#D046F2"
+                                    android:text="@string/titikdua"
+                                    style="@android:style/TextAppearance.DeviceDefault.Medium"
+                                    android:layout_marginLeft="5dp"/>
+                            <!-- End Text View Titik Dua -->
+
+                        </LinearLayout>
+
+                        <TextView
+                                android:id="@+id/dokumentasigizi_nama"
+                                android:layout_width="fill_parent"
+                                android:layout_height="wrap_content"
+                                android:textColor="#FF0000"
+                                style="@android:style/TextAppearance.DeviceDefault.Medium"
+                                android:hint="@string/dokumentasigizi_nama"
+                                android:layout_margin="10dp"/>
+
+                        <LinearLayout
+                                android:layout_width="fill_parent"
+                                android:layout_height="0dp"
+                                android:orientation="horizontal"
+                                android:layout_weight="1"
+                                android:layout_marginBottom="3dp">
+
+                            <!-- Start Text View Kalkulator Gizi Usia  -->
+                            <TextView
+                                    android:id="@+id/text_dokumentasigizi_usia"
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:textColor="#D046F2"
+                                    android:text="@string/dokumentasigizi_usia"
+                                    style="@android:style/TextAppearance.DeviceDefault.Medium"/>
+                            <!-- End Text View Kalkulator Gizi -->
+
+                            <!-- Start Text View Titik Dua -->
+                            <TextView
+                                    android:id="@+id/titikdua"
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:textColor="#D046F2"
+                                    android:text="@string/titikdua"
+                                    style="@android:style/TextAppearance.DeviceDefault.Medium"
+                                    android:layout_marginLeft="5dp"/>
+                            <!-- End Text View Titik Dua -->
+
+                        </LinearLayout>
+
+                        <TextView
+                                android:id="@+id/dokumentasigizi_usia"
+                                android:layout_width="fill_parent"
+                                android:layout_height="wrap_content"
+                                android:textColor="#FF0000"
+                                style="@android:style/TextAppearance.DeviceDefault.Medium"
+                                android:hint="@string/dokumentasigizi_usia"
+                                android:layout_margin="10dp"/>
+
+                    </LinearLayout>
+
+                    <View
+                            android:layout_width="0dp"
+                            android:layout_height="0dp"
+                            android:layout_weight=".1"/>
+                    <!-- End Blank Space -->
+
+                    <!-- Start Linear Layout Kalkulator Gizi -->
+                    <LinearLayout
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content"
+                            android:orientation="vertical"
+                            android:layout_weight="1">
+
+                        <!-- End Linear Layout Kalkulator Gizi Usia -->
+
+                        <LinearLayout
+                                android:layout_width="fill_parent"
+                                android:layout_height="0dp"
+                                android:orientation="horizontal"
+                                android:layout_weight="1"
+                                android:layout_marginBottom="3dp">
+
+                            <!-- Start Text View Kalkulator Gizi Usia  -->
+                            <TextView
+                                    android:id="@+id/text_dokumentasigizi_tanggal"
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:textColor="#D046F2"
+                                    android:text="@string/dokumentasigizi_tanggal"
+                                    style="@android:style/TextAppearance.DeviceDefault.Medium"/>
+                            <!-- End Text View Kalkulator Gizi -->
+
+                            <!-- Start Text View Titik Dua -->
+                            <TextView
+                                    android:id="@+id/titikdua"
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:textColor="#D046F2"
+                                    android:text="@string/titikdua"
+                                    style="@android:style/TextAppearance.DeviceDefault.Medium"
+                                    android:layout_marginLeft="5dp"/>
+                            <!-- End Text View Titik Dua -->
+
+                        </LinearLayout>
+
+                        <TextView
+                                android:id="@+id/dokumentasigizi_tanggal"
+                                android:layout_width="fill_parent"
+                                android:layout_height="wrap_content"
+                                android:textColor="#FF0000"
+                                style="@android:style/TextAppearance.DeviceDefault.Medium"
+                                android:hint="@string/profil_hint_tanggallahir"
+                                android:layout_margin="10dp"/>
+
+                        <!-- Start Linear Layout Tinggi Badan -->
+                        <LinearLayout
+                                android:layout_width="fill_parent"
+                                android:layout_height="wrap_content"
+                                android:orientation="horizontal"
+                                android:gravity="center_vertical">
+
+                            <!-- Start Text View Tinggi Badan -->
+                            <TextView
+                                    android:id="@+id/text_dokumentasigizi_tinggibadan"
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:textColor="#D046F2"
+                                    android:text="@string/dokumentasigizi_tinggibadan"
+                                    style="@android:style/TextAppearance.DeviceDefault.Medium"/>
+                            <TextView
+                                    android:id="@+id/titikdua"
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:textColor="#D046F2"
+                                    android:text="@string/titikdua"
+                                    style="@android:style/TextAppearance.DeviceDefault.Medium"
+                                    android:layout_marginLeft="5dp"/>
+                            <!-- End Text View Panjang Lahir -->
+
+                        </LinearLayout>
+
+                        <LinearLayout
+                                android:layout_width="fill_parent"
+                                android:layout_height="wrap_content"
+                                android:orientation="horizontal"
+                                android:layout_margin="10dp">
+
+                            <!-- Start Text View Tinggi Badan -->
+                            <TextView
+                                    android:id="@+id/dokumentasigizi_tinggibadan"
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:textColor="#FF0000"
+                                    style="@android:style/TextAppearance.DeviceDefault.Medium"
+                                    android:hint="@string/kalkulatorgizi_hint_tinggibadan"
+                                    />
+                            <!-- End Text View Tinggi Badan -->
+
+                            <!-- Start Text View Centimeter -->
+                            <TextView
+                                    android:id="@+id/dokumentasigizi_centimeter"
+                                    android:layout_width="0dp"
+                                    android:layout_height="wrap_content"
+                                    android:textColor="#D046F2"
+                                    android:text="@string/kalkulatorgizi_centimeter"
+                                    style="@android:style/TextAppearance.DeviceDefault.Medium"
+                                    android:layout_weight=".5" android:layout_marginLeft="5dp"/>
+                            <!-- End Text View Centimeter -->
+
+                        </LinearLayout>
+
+                        <LinearLayout
+                                android:layout_width="fill_parent"
+                                android:layout_height="wrap_content"
+                                android:orientation="horizontal"
+                                android:gravity="center_vertical">
+
+                            <!-- Start Text View Berat Badan -->
+                            <TextView
+                                    android:id="@+id/text_dokumentasigizi_beratbadan"
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:textColor="#D046F2"
+                                    android:text="@string/dokumentasigizi_beratbadan"
+                                    style="@android:style/TextAppearance.DeviceDefault.Medium"
+                                    />
+                            <TextView
+                                    android:id="@+id/titikdua"
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:textColor="#D046F2"
+                                    android:text="@string/titikdua"
+                                    style="@android:style/TextAppearance.DeviceDefault.Medium"
+                                    android:layout_marginLeft="5dp"/>
+                            <!-- End Text View Berat Lahir -->
+
+                        </LinearLayout>
+
+                        <LinearLayout
+                                android:layout_width="fill_parent"
+                                android:layout_height="wrap_content"
+                                android:orientation="horizontal" android:layout_margin="10dp">
+
+                            <!-- Start Text View Berat Badan -->
+                            <TextView
+                                    android:id="@+id/dokumentasigizi_beratbadan"
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    style="@android:style/TextAppearance.DeviceDefault.Medium"
+                                    android:textColor="#FF0000"
+                                    android:hint="@string/kalkulatorgizi_hint_beratbadan"
+                                    />
+                            <!-- End Text View Berat Lahir -->
+
+                            <!-- Start Text View Kilogram -->
+                            <TextView
+                                    android:id="@+id/dokumentasigizi_kilogram"
+                                    android:layout_width="0dp"
+                                    android:layout_height="wrap_content"
+                                    android:textColor="#D046F2"
+                                    android:text="@string/kalkulatorgizi_kilogram"
+                                    style="@android:style/TextAppearance.DeviceDefault.Medium"
+                                    android:layout_weight=".5" android:layout_marginLeft="5dp"/>
+                            <!-- End Text View kilogram -->
+
+                        </LinearLayout>
+
+                    </LinearLayout>
+                    <!-- End Linear Layout Kalkulator Gizi -->
+
+                    <!-- Start Blank Space -->
+                    <View
+                            android:layout_width="0dp"
+                            android:layout_height="0dp"
+                            android:layout_weight=".2"/>
+                    <!-- End Blank Space -->
+
+                </LinearLayout>
+                <!-- End Linear Layout Row -->
+
+
+                <!-- Start Blank Space -->
+                <View
+                        android:layout_width="wrap_content"
+                        android:layout_height="0dp"
+                        android:layout_weight="1" android:layout_margin="10dp"/>
+                <!-- End Blank Space -->
+
+                <!-- Start Linear Layout Content -->
+                <LinearLayout
+                        android:layout_width="fill_parent"
+                        android:layout_height="wrap_content"
+                        android:orientation="horizontal"
+                        android:layout_gravity="center"
+                        >
+
+                    <!-- Start Blank Space -->
+                    <View
+                            android:layout_width="0dp"
+                            android:layout_height="0dp"
+                            android:layout_weight=".5"/>
+                    <!-- End Blank Space -->
+
+                    <!-- Start Image View Button Ubah -->
+                    <ImageView
+                            android:id="@+id/button_ubah"
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content"
+                            android:layout_weight="1"
+                            android:adjustViewBounds="true"
+                            android:src="@drawable/tombol_ubah"
+                            android:contentDescription="@string/app_name"/>
+                    <!-- End Image View Button Ubah -->
+
+                    <!-- Start Blank Space -->
+                    <View
+                            android:layout_width="0dp"
+                            android:layout_height="0dp"
+                            android:layout_weight=".5"/>
+                    <!-- End Blank Space -->
+
+                    <!-- Start Image View Button Hapus -->
+                    <ImageView
+                            android:id="@+id/button_hapus"
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content"
+                            android:layout_weight="1"
+                            android:adjustViewBounds="true"
+                            android:src="@drawable/tombol_hapus"
+                            android:contentDescription="@string/app_name"/>
+                    <!-- End Image View Button Hapus -->
+
+                    <!-- Start Blank Space -->
+                    <View
+                            android:layout_width="0dp"
+                            android:layout_height="0dp"
+                            android:layout_weight=".5"/>
+                    <!-- End Blank Space -->
+
+                </LinearLayout>
+                <!-- End Linear Layout Content -->
+
+                <!-- Start Blank Space -->
+                <View
+                        android:layout_width="wrap_content"
+                        android:layout_height="0dp"
+                        android:layout_weight="1" android:layout_margin="10dp"/>
+                <!-- End Blank Space -->
+
+                <!-- Start Linear Layout Row -->
+                <LinearLayout
+                        android:layout_width="fill_parent"
+                        android:layout_height="wrap_content"
+                        android:orientation="horizontal"
+                        android:layout_gravity="center">
+
+                    <!-- Start Blank Space -->
+                    <View
+                            android:layout_width="0dp"
+                            android:layout_height="0dp"
+                            android:layout_weight=".2"/>
+                    <!-- End Blank Space -->
+
+                    <!-- Start Blank Space -->
+                    <LinearLayout
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content"
+                            android:orientation="vertical"
+                            android:layout_weight="1">
+
+                        <LinearLayout
+                                android:layout_width="fill_parent"
+                                android:layout_height="0dp"
+                                android:orientation="horizontal"
+                                android:layout_weight="1"
+                                android:layout_marginBottom="3dp">
+
+                            <!-- Start Text View Berat Badan / Umur -->
+                            <TextView
+                                    android:id="@+id/bbu"
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:textColor="#D046F2"
+                                    android:text="@string/bbu"
+                                    style="@android:style/TextAppearance.DeviceDefault.Medium"/>
+                            <!-- End Text View Berat Badan / Umur -->
+
+                            <!-- Start Text View Titik Dua -->
+                            <TextView
+                                    android:id="@+id/titikdua"
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:textColor="#D046F2"
+                                    android:text="@string/titikdua"
+                                    style="@android:style/TextAppearance.DeviceDefault.Medium"
+                                    android:layout_marginLeft="5dp"/>
+                            <!-- End Text View Titik Dua -->
+
+                            <!-- Start Text View Berat Badan / Umur -->
+                            <TextView
+                                    android:id="@+id/hasil_bbu"
+                                    android:layout_width="0dp"
+                                    android:layout_height="wrap_content"
+                                    android:textColor="#FF0000"
+                                    style="@android:style/TextAppearance.DeviceDefault.Medium"
+                                    android:hint="@string/dash"
+                                    android:layout_weight=".4"
+                                    android:layout_marginLeft="5dp"/>
+                            <!-- End Text View Berat Badan / Umur -->
+                        </LinearLayout>
+
+                        <LinearLayout
+                                android:layout_width="fill_parent"
+                                android:layout_height="0dp"
+                                android:orientation="horizontal"
+                                android:layout_weight="1"
+                                android:layout_marginBottom="3dp">
+
+                            <!-- Start Text View Tinggi Badan / Umur -->
+                            <TextView
+                                    android:id="@+id/tbu"
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:textColor="#D046F2"
+                                    android:text="@string/tbu"
+                                    style="@android:style/TextAppearance.DeviceDefault.Medium"/>
+                            <!-- End Text View Tinggi Badan / Umur  -->
+
+                            <!-- Start Text View Titik Dua -->
+                            <TextView
+                                    android:id="@+id/titikdua"
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:textColor="#D046F2"
+                                    android:text="@string/titikdua"
+                                    style="@android:style/TextAppearance.DeviceDefault.Medium"
+                                    android:layout_marginLeft="5dp"/>
+                            <!-- End Text View Titik Dua -->
+
+                            <!-- Start Text View Tinggi Badan / Umur -->
+                            <TextView
+                                    android:id="@+id/hasil_tbu"
+                                    android:layout_width="0dp"
+                                    android:layout_height="wrap_content"
+                                    android:textColor="#FF0000"
+                                    style="@android:style/TextAppearance.DeviceDefault.Medium"
+                                    android:hint="@string/dash"
+                                    android:layout_weight=".4"
+                                    android:layout_marginLeft="5dp"/>
+                            <!-- End Text View Tinggi Badan / Umur -->
+
+                        </LinearLayout>
+
+                    </LinearLayout>
+
+                    <View
+                            android:layout_width="0dp"
+                            android:layout_height="0dp"
+                            android:layout_weight=".2"/>
+                    <!-- End Blank Space -->
+
+                    <!-- Start Linear Layout Hasil Kalkulator Gizi -->
+                    <LinearLayout
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content"
+                            android:orientation="vertical"
+                            android:layout_weight="1">
+
+                        <LinearLayout
+                                android:layout_width="fill_parent"
+                                android:layout_height="0dp"
+                                android:orientation="horizontal"
+                                android:layout_weight="1"
+                                android:layout_marginBottom="3dp">
+
+                            <!-- Start Text View Berat Badan / Tinggi Badan -->
+                            <TextView
+                                    android:id="@+id/bbtb"
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:textColor="#D046F2"
+                                    android:text="@string/bbtb"
+                                    style="@android:style/TextAppearance.DeviceDefault.Medium"/>
+                            <!-- End Text View Berat Badan / Tinggi Badan  -->
+
+                            <!-- Start Text View Titik Dua -->
+                            <TextView
+                                    android:id="@+id/titikdua"
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:textColor="#D046F2"
+                                    android:text="@string/titikdua"
+                                    style="@android:style/TextAppearance.DeviceDefault.Medium"
+                                    android:layout_marginLeft="5dp"/>
+                            <!-- End Text View Titik Dua -->
+
+                            <!-- Start Text View Berat Badan / Tinggi Badan  -->
+                            <TextView
+                                    android:id="@+id/hasil_bbtb"
+                                    android:layout_width="0dp"
+                                    android:layout_height="wrap_content"
+                                    android:textColor="#FF0000"
+                                    style="@android:style/TextAppearance.DeviceDefault.Medium"
+                                    android:hint="@string/dash"
+                                    android:layout_weight=".4"
+                                    android:layout_marginLeft="5dp"/>
+                            <!-- End Text View Berat Badan / Tinggi Badan -->
+
+                        </LinearLayout>
+
+                        <LinearLayout
+                                android:layout_width="fill_parent"
+                                android:layout_height="0dp"
+                                android:orientation="horizontal"
+                                android:layout_weight="1"
+                                android:layout_marginBottom="3dp">
+
+                            <!-- Start Text View Iindeks Massa Tubuh / Umur -->
+                            <TextView
+                                    android:id="@+id/imtu"
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:textColor="#D046F2"
+                                    android:text="@string/imtu"
+                                    style="@android:style/TextAppearance.DeviceDefault.Medium"/>
+                            <!-- End Text View Iindeks Massa Tubuh / Umur  -->
+
+                            <!-- Start Text View Titik Dua -->
+                            <TextView
+                                    android:id="@+id/titikdua"
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:textColor="#D046F2"
+                                    android:text="@string/titikdua"
+                                    style="@android:style/TextAppearance.DeviceDefault.Medium"
+                                    android:layout_marginLeft="5dp"/>
+                            <!-- End Text View Titik Dua -->
+
+                            <!-- Start Text View Iindeks Massa Tubuh / Umur -->
+                            <TextView
+                                    android:id="@+id/hasil_imtu"
+                                    android:layout_width="0dp"
+                                    android:layout_height="wrap_content"
+                                    android:textColor="#FF0000"
+                                    style="@android:style/TextAppearance.DeviceDefault.Medium"
+                                    android:hint="@string/dash"
+                                    android:layout_weight=".4"
+                                    android:layout_marginLeft="5dp"/>
+                            <!-- End Text View Iindeks Massa Tubuh / Umur -->
+
+                        </LinearLayout>
+
+                    </LinearLayout>
+                    <!-- End Linear Layout Hasil Kalkulator Gizi -->
+
+                    <!-- Start Blank Space -->
+                    <View
+                            android:layout_width="0dp"
+                            android:layout_height="0dp"
+                            android:layout_weight=".2"/>
+                    <!-- End Blank Space -->
+
+                </LinearLayout>
+                <!-- End Linear Layout Row -->
+
+                <TabHost android:id="@android:id/tabhost"
+                         android:layout_width="fill_parent"
+                         android:layout_height="wrap_content"
+                         android:layout_margin="20dp"
+                         android:background="#FFF1B5">
+
+                    <LinearLayout android:orientation="vertical"
+                                  android:layout_width="fill_parent"
+                                  android:layout_height="fill_parent"
+                                  android:padding="5dp">
+
+                        <TabWidget android:id="@android:id/tabs"
+                                   android:layout_width="fill_parent"
+                                   android:layout_height="wrap_content"
+                                   android:tabStripEnabled="false"/>
+
+                        <FrameLayout android:id="@android:id/tabcontent"
+                                     android:layout_width="fill_parent"
+                                     android:layout_height="fill_parent"
+                                     android:padding="5dp">
+
+                            <LinearLayout android:id="@+id/bbu_layout"
+                                          android:orientation="vertical"
+                                          android:layout_width="fill_parent"
+                                          android:layout_height="wrap_content"
+                                          android:background="#FFFBC9"
+                                          android:paddingTop="10dp">
+
+                            </LinearLayout>
+
+                            <LinearLayout android:id="@+id/tbu_layout"
+                                          android:orientation="vertical"
+                                          android:layout_width="fill_parent"
+                                          android:layout_height="wrap_content"
+                                          android:background="#FFFBC9"
+                                          android:paddingTop="10dp">
+
+                            </LinearLayout>
+
+                            <LinearLayout android:id="@+id/bbtb_layout"
+                                          android:orientation="vertical"
+                                          android:layout_width="fill_parent"
+                                          android:layout_height="wrap_content"
+                                          android:background="#FFFBC9"
+                                          android:paddingTop="10dp">
+
+                            </LinearLayout>
+
+                            <LinearLayout android:id="@+id/imtu_layout"
+                                          android:orientation="vertical"
+                                          android:layout_width="fill_parent"
+                                          android:layout_height="wrap_content"
+                                          android:background="#FFFBC9"
+                                          android:paddingTop="10dp">
+
+                            </LinearLayout>
+
+                        </FrameLayout>
+
+                    </LinearLayout>
+                </TabHost>
+
+                <!-- Start Blank Space -->
+                <View
+                        android:layout_width="wrap_content"
+                        android:layout_height="0dp"
+                        android:layout_weight=".5"/>
+                <!-- End Blank Space -->
+
+            </LinearLayout>
+            <!-- End Linear Layout Content -->
+
+        </LinearLayout>
+
+        <!-- Start Relative Layout Footer -->
+        <RelativeLayout
+                android:id="@+id/FooterRelativeLayout"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:background="#FFF1B5"
+                android:layout_alignParentBottom="true">
+
+            <!-- Start Text Footer -->
+            <TextView
+                    android:id="@+id/text_footer"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_centerHorizontal="true"
+                    android:textColor="#D046F2"
+                    android:paddingTop="15dp"
+                    android:paddingBottom="15dp"
+                    android:text="@string/text_footer"
+                    style="@android:style/TextAppearance.DeviceDefault.Medium"/>
+            <!-- End Text Footer -->
+
+        </RelativeLayout>
+        <!-- End Relative Layout Footer -->
+
+    </RelativeLayout>
+
+</ScrollView>

@@ -66,6 +66,26 @@
                   android:configChanges="orientation|screenSize|keyboardHidden"
                   android:theme="@android:style/Theme.NoTitleBar.Fullscreen">
         </activity>
+        <activity android:name="com.syafira.SIGITA.DokumentasiGizi"
+                  android:label="@string/app_name"
+                  android:configChanges="orientation|screenSize|keyboardHidden"
+                  android:theme="@android:style/Theme.NoTitleBar.Fullscreen">
+        </activity>
+        <activity android:name="com.syafira.SIGITA.TambahDokumentasi"
+                  android:label="@string/app_name"
+                  android:configChanges="orientation|screenSize|keyboardHidden"
+                  android:theme="@android:style/Theme.NoTitleBar.Fullscreen">
+        </activity>
+        <activity android:name="com.syafira.SIGITA.DetailDokumentasi"
+                  android:label="@string/app_name"
+                  android:configChanges="orientation|screenSize|keyboardHidden"
+                  android:theme="@android:style/Theme.NoTitleBar.Fullscreen">
+        </activity>
+        <activity android:name="com.syafira.SIGITA.UbahDokumentasi"
+                  android:label="@string/app_name"
+                  android:configChanges="orientation|screenSize|keyboardHidden"
+                  android:theme="@android:style/Theme.NoTitleBar.Fullscreen">
+        </activity>
         <activity android:name="com.syafira.SIGITA.Imunisasi"
                   android:label="@string/app_name"
                   android:configChanges="orientation|screenSize|keyboardHidden"

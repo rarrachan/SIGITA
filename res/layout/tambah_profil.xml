@@ -283,31 +283,28 @@
                                     android:orientation="horizontal"
                                     >
 
-                                <!-- Start Text View Titik Dua -->
-                                <!-- End Text View Titik Dua -->
-
-                                <!-- Start Edit Text Berat Lahir -->
+                                <!-- Start Edit Text Panjang Lahir -->
                                 <EditText
-                                        android:id="@+id/profil_beratlahir"
+                                        android:id="@+id/profil_panjanglahir"
                                         android:layout_width="0dp"
                                         android:layout_height="wrap_content"
+                                        android:textColor="#FF0000"
                                         style="@android:style/TextAppearance.DeviceDefault.Medium"
                                         android:inputType="numberDecimal|numberSigned"
-                                        android:textColor="#FF0000"
-                                        android:hint="@string/profil_hint_beratlahir"
+                                        android:hint="@string/profil_hint_panjanglahir"
                                         android:layout_weight="1"/>
-                                <!-- End Edit Text Berat Lahir -->
+                                <!-- End Edit Text Panjang Lahir -->
 
-                                <!-- Start Text View Gram -->
+                                <!-- Start Text View Centimeter -->
                                 <TextView
-                                        android:id="@+id/profil_gram"
+                                        android:id="@+id/profil_centimeter"
                                         android:layout_width="0dp"
                                         android:layout_height="wrap_content"
                                         android:textColor="#D046F2"
-                                        android:text="@string/profil_gram"
+                                        android:text="@string/profil_centimeter"
                                         style="@android:style/TextAppearance.DeviceDefault.Medium"
                                         android:layout_weight=".5"/>
-                                <!-- End Text View Gram -->
+                                <!-- End Text View Centimeter -->
 
                             </LinearLayout>
                             <LinearLayout
@@ -595,31 +592,29 @@
                                     android:orientation="horizontal"
                                     >
 
-                                <!-- Start Text View Titik Dua -->
-                                <!-- End Text View Titik Dua -->
-
-                                <!-- Start Edit Text Panjang Lahir -->
+                                <!-- Start Edit Text Berat Lahir -->
                                 <EditText
-                                        android:id="@+id/profil_panjanglahir"
+                                        android:id="@+id/profil_beratlahir"
                                         android:layout_width="0dp"
                                         android:layout_height="wrap_content"
-                                        android:textColor="#FF0000"
                                         style="@android:style/TextAppearance.DeviceDefault.Medium"
                                         android:inputType="numberDecimal|numberSigned"
-                                        android:hint="@string/profil_hint_panjanglahir"
+                                        android:textColor="#FF0000"
+                                        android:hint="@string/profil_hint_beratlahir"
                                         android:layout_weight="1"/>
-                                <!-- End Edit Text Panjang Lahir -->
+                                <!-- End Edit Text Berat Lahir -->
 
-                                <!-- Start Text View Centimeter -->
+                                <!-- Start Text View Gram -->
                                 <TextView
-                                        android:id="@+id/profil_centimeter"
+                                        android:id="@+id/profil_gram"
                                         android:layout_width="0dp"
                                         android:layout_height="wrap_content"
                                         android:textColor="#D046F2"
-                                        android:text="@string/profil_centimeter"
+                                        android:text="@string/profil_gram"
                                         style="@android:style/TextAppearance.DeviceDefault.Medium"
                                         android:layout_weight=".5"/>
-                                <!-- End Text View Centimeter -->
+                                <!-- End Text View Gram -->
+
 
                             </LinearLayout>
                             <LinearLayout

@@ -94,9 +94,9 @@ public class HasilKalkulatorGizi extends Activity {
         db = new DBHelper(this);
         db.open();
         Cursor cursorBBU;
-        Cursor cursorTBU = null;
-        Cursor cursorBBTB = null;
-        Cursor cursorIMTU = null;
+        Cursor cursorTBU;
+        Cursor cursorBBTB;
+        Cursor cursorIMTU;
         if ((jenisKelamin).equals("L")) {
             cursorBBU = db.getLakiBBUList(Integer.valueOf(bulan));
             cursorTBU = db.getLakiTBUList(Integer.valueOf(bulan));
@@ -106,14 +106,20 @@ public class HasilKalkulatorGizi extends Activity {
                 cursorBBTB = db.getLakiBBTBList_24_60(Integer.valueOf(tinggiBadan));
             }
             cursorIMTU = db.getLakiIMTUList(Integer.valueOf(bulan));
-
-            cursorTBU.moveToFirst();
-            cursorBBTB.moveToFirst();
-            cursorIMTU.moveToFirst();
         } else {
             cursorBBU = db.getPerempuanBBUList(Integer.valueOf(bulan));
+            cursorTBU = db.getPerempuanTBUList(Integer.valueOf(bulan));
+            if (Integer.valueOf(bulan) <= 24) {
+                cursorBBTB = db.getPerempuanBBTBList_0_24(Integer.valueOf(tinggiBadan));
+            } else {
+                cursorBBTB = db.getPerempuanBBTBList_24_60(Integer.valueOf(tinggiBadan));
+            }
+            cursorIMTU = db.getPerempuanIMTUList(Integer.valueOf(bulan));
         }
         cursorBBU.moveToFirst();
+        cursorTBU.moveToFirst();
+        cursorBBTB.moveToFirst();
+        cursorIMTU.moveToFirst();
 
         // Load Widget
         hasil_kalkulator_gizi = (TextView) findViewById(R.id.hasil_kalkulator_gizi);
@@ -235,6 +241,20 @@ public class HasilKalkulatorGizi extends Activity {
                 tbu = (Float.parseFloat(cursorTBU.getString(cursorTBU.getColumnIndex("laki_tbu_median"))) - Float.parseFloat(cursorTBU.getString(cursorTBU.getColumnIndex("laki_tbu_1sd")))) /
                         (Float.parseFloat(cursorTBU.getString(cursorTBU.getColumnIndex("laki_tbu_1sd"))) - Float.parseFloat(cursorTBU.getString(cursorTBU.getColumnIndex("laki_tbu_min1sd"))));
             }
+        } else {
+            // Tinggi Badan < Median
+            if (Float.parseFloat(tinggiBadan) < Float.parseFloat(cursorTBU.getString(cursorTBU.getColumnIndex("perempuan_tbu_median")))) {
+                tbu = (Float.parseFloat(tinggiBadan) - Float.parseFloat(cursorTBU.getString(cursorTBU.getColumnIndex("perempuan_tbu_median")))) /
+                        (Float.parseFloat(cursorTBU.getString(cursorTBU.getColumnIndex("perempuan_tbu_median"))) - Float.parseFloat(cursorTBU.getString(cursorTBU.getColumnIndex("perempuan_tbu_min1sd"))));
+            } // Tinggi Badan > Median
+            else if (Float.parseFloat(tinggiBadan) > Float.parseFloat(cursorTBU.getString(cursorTBU.getColumnIndex("perempuan_tbu_median")))) {
+                tbu = (Float.parseFloat(tinggiBadan) - Float.parseFloat(cursorTBU.getString(cursorTBU.getColumnIndex("perempuan_tbu_median")))) /
+                        (Float.parseFloat(cursorTBU.getString(cursorTBU.getColumnIndex("perempuan_tbu_1sd"))) - Float.parseFloat(cursorTBU.getString(cursorTBU.getColumnIndex("perempuan_tbu_median"))));
+            } // Tinggi Badan == Median
+            else if (Float.parseFloat(tinggiBadan) == Float.parseFloat(cursorTBU.getString(cursorTBU.getColumnIndex("perempuan_tbu_median")))) {
+                tbu = (Float.parseFloat(cursorTBU.getString(cursorTBU.getColumnIndex("perempuan_tbu_median"))) - Float.parseFloat(cursorTBU.getString(cursorTBU.getColumnIndex("perempuan_tbu_1sd")))) /
+                        (Float.parseFloat(cursorTBU.getString(cursorTBU.getColumnIndex("perempuan_tbu_1sd"))) - Float.parseFloat(cursorTBU.getString(cursorTBU.getColumnIndex("perempuan_tbu_min1sd"))));
+            }
         }
 
         String status_tbu = null;
@@ -266,6 +286,20 @@ public class HasilKalkulatorGizi extends Activity {
             else if (Float.parseFloat(tinggiBadan) == Float.parseFloat(cursorBBTB.getString(cursorBBTB.getColumnIndex("laki_bbtb_median")))) {
                 bbtb = (Float.parseFloat(cursorBBTB.getString(cursorBBTB.getColumnIndex("laki_bbtb_median"))) - Float.parseFloat(cursorBBTB.getString(cursorBBTB.getColumnIndex("laki_bbtb_1sd")))) /
                         (Float.parseFloat(cursorBBTB.getString(cursorBBTB.getColumnIndex("laki_bbtb_1sd"))) - Float.parseFloat(cursorBBTB.getString(cursorBBTB.getColumnIndex("laki_bbtb_min1sd"))));
+            }
+        } else {
+            // Tinggi Badan < Median
+            if (Float.parseFloat(tinggiBadan) < Float.parseFloat(cursorBBTB.getString(cursorBBTB.getColumnIndex("perempuan_bbtb_median")))) {
+                bbtb = (Float.parseFloat(tinggiBadan) - Float.parseFloat(cursorBBTB.getString(cursorBBTB.getColumnIndex("perempuan_bbtb_median")))) /
+                        (Float.parseFloat(cursorBBTB.getString(cursorBBTB.getColumnIndex("perempuan_bbtb_median"))) - Float.parseFloat(cursorBBTB.getString(cursorBBTB.getColumnIndex("perempuan_bbtb_min1sd"))));
+            } // Tinggi Badan > Median
+            else if (Float.parseFloat(tinggiBadan) > Float.parseFloat(cursorBBTB.getString(cursorBBTB.getColumnIndex("perempuan_bbtb_median")))) {
+                bbtb = (Float.parseFloat(tinggiBadan) - Float.parseFloat(cursorTBU.getString(cursorBBTB.getColumnIndex("perempuan_bbtb_median")))) /
+                        (Float.parseFloat(cursorBBTB.getString(cursorBBTB.getColumnIndex("perempuan_bbtb_1sd"))) - Float.parseFloat(cursorBBTB.getString(cursorBBTB.getColumnIndex("perempuan_bbtb_median"))));
+            } // Tinggi Badan == Median
+            else if (Float.parseFloat(tinggiBadan) == Float.parseFloat(cursorBBTB.getString(cursorBBTB.getColumnIndex("perempuan_bbtb_median")))) {
+                bbtb = (Float.parseFloat(cursorBBTB.getString(cursorBBTB.getColumnIndex("perempuan_bbtb_median"))) - Float.parseFloat(cursorBBTB.getString(cursorBBTB.getColumnIndex("perempuan_bbtb_1sd")))) /
+                        (Float.parseFloat(cursorBBTB.getString(cursorBBTB.getColumnIndex("perempuan_bbtb_1sd"))) - Float.parseFloat(cursorBBTB.getString(cursorBBTB.getColumnIndex("perempuan_bbtb_min1sd"))));
             }
         }
 
@@ -299,6 +333,20 @@ public class HasilKalkulatorGizi extends Activity {
                 imtu = (Float.parseFloat(cursorIMTU.getString(cursorIMTU.getColumnIndex("laki_imtu_median"))) - Float.parseFloat(cursorIMTU.getString(cursorIMTU.getColumnIndex("laki_imtu_1sd")))) /
                         (Float.parseFloat(cursorIMTU.getString(cursorIMTU.getColumnIndex("laki_imtu_1sd"))) - Float.parseFloat(cursorIMTU.getString(cursorIMTU.getColumnIndex("laki_imtu_min1sd"))));
             }
+        } else {
+            // Indeks Massa Tubuh < Median
+            if (imt < Float.parseFloat(cursorIMTU.getString(cursorIMTU.getColumnIndex("perempuan_imtu_median")))) {
+                imtu = (imt - Float.parseFloat(cursorIMTU.getString(cursorIMTU.getColumnIndex("perempuan_imtu_median")))) /
+                        (Float.parseFloat(cursorIMTU.getString(cursorIMTU.getColumnIndex("perempuan_imtu_median"))) - Float.parseFloat(cursorIMTU.getString(cursorIMTU.getColumnIndex("perempuan_imtu_min1sd"))));
+            } // Indeks Massa Tubuh > Median
+            else if (imt > Float.parseFloat(cursorIMTU.getString(cursorIMTU.getColumnIndex("perempuan_imtu_median")))) {
+                imtu = (imt - Float.parseFloat(cursorIMTU.getString(cursorIMTU.getColumnIndex("perempuan_imtu_median")))) /
+                        (Float.parseFloat(cursorIMTU.getString(cursorIMTU.getColumnIndex("perempuan_imtu_1sd"))) - Float.parseFloat(cursorIMTU.getString(cursorIMTU.getColumnIndex("perempuan_imtu_median"))));
+            } // Indeks Massa Tubuh == Median
+            else if (imt == Float.parseFloat(cursorIMTU.getString(cursorIMTU.getColumnIndex("perempuan_imtu_median")))) {
+                imtu = (Float.parseFloat(cursorIMTU.getString(cursorIMTU.getColumnIndex("perempuan_imtu_median"))) - Float.parseFloat(cursorIMTU.getString(cursorIMTU.getColumnIndex("perempuan_imtu_1sd")))) /
+                        (Float.parseFloat(cursorIMTU.getString(cursorIMTU.getColumnIndex("perempuan_imtu_1sd"))) - Float.parseFloat(cursorIMTU.getString(cursorIMTU.getColumnIndex("perempuan_imtu_min1sd"))));
+            }
         }
 
         String status_imtu = null;
@@ -308,7 +356,7 @@ public class HasilKalkulatorGizi extends Activity {
             status_imtu = "Kurus";
         } else if (imtu >= Float.parseFloat("-2") && imtu <= Float.parseFloat("2")) {
             status_imtu = "Normal";
-        } else if (bbu > Float.parseFloat("2")) {
+        } else if (imtu > Float.parseFloat("2")) {
             status_imtu = "Gemuk";
         }
 
@@ -510,6 +558,23 @@ public class HasilKalkulatorGizi extends Activity {
 
                 } while (cursorTBUchart.moveToNext());
             }
+        } else {
+            Cursor cursorTBUchart = db.getPerempuanTBUAllList();
+            cursorTBUchart.moveToFirst();
+            if (!cursorTBUchart.isAfterLast()) {
+                do {
+                    TBUchartID.add(cursorTBUchart.getString(cursorTBUchart.getColumnIndex("perempuan_tbu_ID")));
+                    TBUchartUmur.add(cursorTBUchart.getString(cursorTBUchart.getColumnIndex("perempuan_tbu_umur")));
+                    TBUchartMin3sd.add(cursorTBUchart.getString(cursorTBUchart.getColumnIndex("perempuan_tbu_min3sd")));
+                    TBUchartMin2sd.add(cursorTBUchart.getString(cursorTBUchart.getColumnIndex("perempuan_tbu_min2sd")));
+                    TBUchartMin1sd.add(cursorTBUchart.getString(cursorTBUchart.getColumnIndex("perempuan_tbu_min1sd")));
+                    TBUchartMedian.add(cursorTBUchart.getString(cursorTBUchart.getColumnIndex("perempuan_tbu_median")));
+                    TBUchart1sd.add(cursorTBUchart.getString(cursorTBUchart.getColumnIndex("perempuan_tbu_1sd")));
+                    TBUchart2sd.add(cursorTBUchart.getString(cursorTBUchart.getColumnIndex("perempuan_tbu_2sd")));
+                    TBUchart3sd.add(cursorTBUchart.getString(cursorTBUchart.getColumnIndex("perempuan_tbu_3sd")));
+
+                } while (cursorTBUchart.moveToNext());
+            }
         }
         // Creating an  XYSeries for Income
         XYSeries TBUseriesMin3sd = new XYSeries("-3 SD");
@@ -681,6 +746,42 @@ public class HasilKalkulatorGizi extends Activity {
                     } while (cursorBBTBchart.moveToNext());
                 }
             }
+        } else {
+            if (Integer.valueOf(bulan) <= 24) {
+                Cursor cursorBBTBchart = db.getPerempuanBBTBAllList_0_24();
+                cursorBBTBchart.moveToFirst();
+                if (!cursorBBTBchart.isAfterLast()) {
+                    do {
+                        BBTBchartID.add(cursorBBTBchart.getString(cursorBBTBchart.getColumnIndex("perempuan_bbtb_ID")));
+                        BBTBchartTinggi.add(cursorBBTBchart.getString(cursorBBTBchart.getColumnIndex("perempuan_bbtb_tb")));
+                        BBTBchartMin3sd.add(cursorBBTBchart.getString(cursorBBTBchart.getColumnIndex("perempuan_bbtb_min3sd")));
+                        BBTBchartMin2sd.add(cursorBBTBchart.getString(cursorBBTBchart.getColumnIndex("perempuan_bbtb_min2sd")));
+                        BBTBchartMin1sd.add(cursorBBTBchart.getString(cursorBBTBchart.getColumnIndex("perempuan_bbtb_min1sd")));
+                        BBTBchartMedian.add(cursorBBTBchart.getString(cursorBBTBchart.getColumnIndex("perempuan_bbtb_median")));
+                        BBTBchart1sd.add(cursorBBTBchart.getString(cursorBBTBchart.getColumnIndex("perempuan_bbtb_1sd")));
+                        BBTBchart2sd.add(cursorBBTBchart.getString(cursorBBTBchart.getColumnIndex("perempuan_bbtb_2sd")));
+                        BBTBchart3sd.add(cursorBBTBchart.getString(cursorBBTBchart.getColumnIndex("perempuan_bbtb_3sd")));
+
+                    } while (cursorBBTBchart.moveToNext());
+                }
+            } else {
+                Cursor cursorBBTBchart = db.getPerempuanBBTBAllList_24_60();
+                cursorBBTBchart.moveToFirst();
+                if (!cursorBBTBchart.isAfterLast()) {
+                    do {
+                        BBTBchartID.add(cursorBBTBchart.getString(cursorBBTBchart.getColumnIndex("perempuan_bbtb_ID")));
+                        BBTBchartTinggi.add(cursorBBTBchart.getString(cursorBBTBchart.getColumnIndex("perempuan_bbtb_tb")));
+                        BBTBchartMin3sd.add(cursorBBTBchart.getString(cursorBBTBchart.getColumnIndex("perempuan_bbtb_min3sd")));
+                        BBTBchartMin2sd.add(cursorBBTBchart.getString(cursorBBTBchart.getColumnIndex("perempuan_bbtb_min2sd")));
+                        BBTBchartMin1sd.add(cursorBBTBchart.getString(cursorBBTBchart.getColumnIndex("perempuan_bbtb_min1sd")));
+                        BBTBchartMedian.add(cursorBBTBchart.getString(cursorBBTBchart.getColumnIndex("perempuan_bbtb_median")));
+                        BBTBchart1sd.add(cursorBBTBchart.getString(cursorBBTBchart.getColumnIndex("perempuan_bbtb_1sd")));
+                        BBTBchart2sd.add(cursorBBTBchart.getString(cursorBBTBchart.getColumnIndex("perempuan_bbtb_2sd")));
+                        BBTBchart3sd.add(cursorBBTBchart.getString(cursorBBTBchart.getColumnIndex("perempuan_bbtb_3sd")));
+
+                    } while (cursorBBTBchart.moveToNext());
+                }
+            }
         }
         // Creating an  XYSeries for Income
         XYSeries BBTBseriesMin3sd = new XYSeries("-3 SD");
@@ -837,6 +938,23 @@ public class HasilKalkulatorGizi extends Activity {
                     IMTUchart1sd.add(cursorIMTUchart.getString(cursorIMTUchart.getColumnIndex("laki_imtu_1sd")));
                     IMTUchart2sd.add(cursorIMTUchart.getString(cursorIMTUchart.getColumnIndex("laki_imtu_2sd")));
                     IMTUchart3sd.add(cursorIMTUchart.getString(cursorIMTUchart.getColumnIndex("laki_imtu_3sd")));
+
+                } while (cursorIMTUchart.moveToNext());
+            }
+        } else {
+            Cursor cursorIMTUchart = db.getPerempuanIMTUAllList();
+            cursorIMTUchart.moveToFirst();
+            if (!cursorIMTUchart.isAfterLast()) {
+                do {
+                    IMTUchartID.add(cursorIMTUchart.getString(cursorIMTUchart.getColumnIndex("perempuan_imtu_ID")));
+                    IMTUchartUmur.add(cursorIMTUchart.getString(cursorIMTUchart.getColumnIndex("perempuan_imtu_umur")));
+                    IMTUchartMin3sd.add(cursorIMTUchart.getString(cursorIMTUchart.getColumnIndex("perempuan_imtu_min3sd")));
+                    IMTUchartMin2sd.add(cursorIMTUchart.getString(cursorIMTUchart.getColumnIndex("perempuan_imtu_min2sd")));
+                    IMTUchartMin1sd.add(cursorIMTUchart.getString(cursorIMTUchart.getColumnIndex("perempuan_imtu_min1sd")));
+                    IMTUchartMedian.add(cursorIMTUchart.getString(cursorIMTUchart.getColumnIndex("perempuan_imtu_median")));
+                    IMTUchart1sd.add(cursorIMTUchart.getString(cursorIMTUchart.getColumnIndex("perempuan_imtu_1sd")));
+                    IMTUchart2sd.add(cursorIMTUchart.getString(cursorIMTUchart.getColumnIndex("perempuan_imtu_2sd")));
+                    IMTUchart3sd.add(cursorIMTUchart.getString(cursorIMTUchart.getColumnIndex("perempuan_imtu_3sd")));
 
                 } while (cursorIMTUchart.moveToNext());
             }

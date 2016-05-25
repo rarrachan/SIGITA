@@ -220,12 +220,14 @@ public class UbahRiwayat extends Activity {
                             months += 12;
                         }
 
-                        int mon = monthDate - month;
+                        int mon = months;
                         int y = 0;
                         while (y < years) {
                             mon += 12;
                             y += 1;
                         }
+                        if (mon < 0)
+                            mon += 12;
 
                         String umur = mon + " bulan / " + years + " tahun " + months + " bulan " + days + " hari";
                         riwayat_usia.setText(umur);

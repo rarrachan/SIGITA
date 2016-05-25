@@ -95,7 +95,7 @@ public class Gizi extends Activity implements OnClickListener {
             case R.id.DokumentasiGiziLinearLayout:
                 // Check Session
                 if (session.checkSession(this)) {
-                    Intent dokumentasi = new Intent(this, RekamMedis.class);
+                    Intent dokumentasi = new Intent(this, DokumentasiGizi.class);
                     lastActivity = System.currentTimeMillis();
                     dokumentasi.putExtra("lastActivity", lastActivity);
                     startActivity(dokumentasi);
