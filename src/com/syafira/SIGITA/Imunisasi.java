@@ -127,6 +127,12 @@ public class Imunisasi extends Activity implements OnClickListener {
                         public void onClick(View v) {
                             // Close Dialog
                             dialog.dismiss();
+
+                            // Start Profil Activity
+                            Intent profil = new Intent(Imunisasi.this, Profil.class);
+                            lastActivity = System.currentTimeMillis();
+                            profil.putExtra("lastActivity", lastActivity);
+                            startActivity(profil);
                         }
                     });
                 }
@@ -164,6 +170,12 @@ public class Imunisasi extends Activity implements OnClickListener {
                         public void onClick(View v) {
                             // Close Dialog
                             dialog.dismiss();
+
+                            // Start Profil Activity
+                            Intent profil = new Intent(Imunisasi.this, Profil.class);
+                            lastActivity = System.currentTimeMillis();
+                            profil.putExtra("lastActivity", lastActivity);
+                            startActivity(profil);
                         }
                     });
                 }

@@ -153,7 +153,7 @@ public class DBHelper extends SQLiteOpenHelper {
     // Create Table Tahapan Tumbuh Kembang
     public void createLakiBBU(SQLiteDatabase db) {
         // Create Table Tahap Tumbuh Kembang
-        String create_laki_bbu= "create table antropometri_laki_bbu (" +
+        String create_laki_bbu = "create table antropometri_laki_bbu (" +
                 "laki_bbu_ID integer primary key autoincrement, " +
                 "laki_bbu_umur real not null," +
                 "laki_bbu_min3sd real not null, " +
@@ -311,7 +311,7 @@ public class DBHelper extends SQLiteOpenHelper {
     // Create Table Tahapan Tumbuh Kembang
     public void createLakiTBU(SQLiteDatabase db) {
         // Create Table Tahap Tumbuh Kembang
-        String create_laki_tbu  = "create table antropometri_laki_tbu (" +
+        String create_laki_tbu = "create table antropometri_laki_tbu (" +
                 "laki_tbu_ID integer primary key autoincrement, " +
                 "laki_tbu_umur real not null," +
                 "laki_tbu_min3sd real not null, " +
@@ -1021,7 +1021,7 @@ public class DBHelper extends SQLiteOpenHelper {
     // Create Table Tahapan Tumbuh Kembang
     public void createLakiIMTU(SQLiteDatabase db) {
         // Create Table Tahap Tumbuh Kembang
-        String create_laki_imtu= "create table antropometri_laki_imtu (" +
+        String create_laki_imtu = "create table antropometri_laki_imtu (" +
                 "laki_imtu_ID integer primary key autoincrement, " +
                 "laki_imtu_umur real not null," +
                 "laki_imtu_min3sd real not null, " +
@@ -1179,7 +1179,7 @@ public class DBHelper extends SQLiteOpenHelper {
     // Create Table Tahapan Tumbuh Kembang
     public void createPerempuanBBU(SQLiteDatabase db) {
         // Create Table Tahap Tumbuh Kembang
-        String create_perempuan_bbu= "create table antropometri_perempuan_bbu (" +
+        String create_perempuan_bbu = "create table antropometri_perempuan_bbu (" +
                 "perempuan_bbu_ID integer primary key autoincrement, " +
                 "perempuan_bbu_umur real not null," +
                 "perempuan_bbu_min3sd real not null, " +
@@ -1335,7 +1335,7 @@ public class DBHelper extends SQLiteOpenHelper {
     // Create Table Tahapan Tumbuh Kembang
     public void createPerempuanTBU(SQLiteDatabase db) {
         // Create Table Tahap Tumbuh Kembang
-        String create_perempuan_tbu  = "create table antropometri_perempuan_tbu (" +
+        String create_perempuan_tbu = "create table antropometri_perempuan_tbu (" +
                 "perempuan_tbu_ID integer primary key autoincrement, " +
                 "perempuan_tbu_umur real not null," +
                 "perempuan_tbu_min3sd real not null, " +
@@ -2047,7 +2047,7 @@ public class DBHelper extends SQLiteOpenHelper {
     // Create Table Tahapan Tumbuh Kembang
     public void createPerempuanIMTU(SQLiteDatabase db) {
         // Create Table Tahap Tumbuh Kembang
-        String create_perempuan_imtu= "create table antropometri_perempuan_imtu (" +
+        String create_perempuan_imtu = "create table antropometri_perempuan_imtu (" +
                 "perempuan_imtu_ID integer primary key autoincrement, " +
                 "perempuan_imtu_umur real not null," +
                 "perempuan_imtu_min3sd real not null, " +
@@ -2223,7 +2223,7 @@ public class DBHelper extends SQLiteOpenHelper {
 
     // Insert Riwayat Imunisasi to Database
     public long insertDokumentasi(Integer profilID, String tanggal, String usia, Integer bulan,
-                              String beratBadan, String tinggiBadan, String status_bbu, String status_tbu, String status_bbtb, String status_imtu) {
+                                  String beratBadan, String tinggiBadan, String status_bbu, String status_tbu, String status_bbtb, String status_imtu) {
 
         // Open Database to Write
         SQLiteDatabase db = this.getWritableDatabase();
@@ -2254,7 +2254,7 @@ public class DBHelper extends SQLiteOpenHelper {
 
     // Get Riwayat Imunisasi from Database
     public Cursor getDokumentasiChart(Integer id, Integer bulan) {
-        Cursor cursor = db.rawQuery("SELECT * FROM dokumentasi_gizi WHERE dokumentasi_profilID = " + id + " AND dokumentasi_bulan BETWEEN 0 AND " + bulan , null);
+        Cursor cursor = db.rawQuery("SELECT * FROM dokumentasi_gizi WHERE dokumentasi_profilID = " + id + " AND dokumentasi_bulan BETWEEN 0 AND " + bulan, null);
         cursor.moveToFirst();
         return cursor;
     }
@@ -2291,7 +2291,7 @@ public class DBHelper extends SQLiteOpenHelper {
     }
 
     // Delete Riwayat Imunisasi from Database
-    public boolean deleteDokumentasi (int id) {
+    public boolean deleteDokumentasi(int id) {
         // Delete Data
         return db.delete("dokumentasi_gizi", "dokumentasiID =" + id, null) < 1;
     }
@@ -2443,7 +2443,7 @@ public class DBHelper extends SQLiteOpenHelper {
                 "riwayat_tinggi real, " +
                 "riwayat_dokter text, " +
                 "riwayat_rumahsakit text, " +
-                "FOREIGN KEY ( riwayat_vaksin  ) REFERENCES profil  ( list_vaksin )" +
+                "FOREIGN KEY ( riwayat_vaksin  ) REFERENCES list_imunisasi  ( list_vaksin )" +
                 "FOREIGN KEY ( riwayat_profilID  ) REFERENCES profil  ( profilID ));";
         db.execSQL(create_riwayat);
     }
@@ -2473,7 +2473,7 @@ public class DBHelper extends SQLiteOpenHelper {
 
     // Get Riwayat Imunisasi from Database
     public Cursor getRiwayat(Integer id) {
-        Cursor cursor = db.rawQuery("SELECT * FROM riwayat_imunisasi WHERE riwayat_profilID = " + id , null);
+        Cursor cursor = db.rawQuery("SELECT * FROM riwayat_imunisasi WHERE riwayat_profilID = " + id, null);
         cursor.moveToFirst();
         return cursor;
     }
@@ -2706,7 +2706,7 @@ public class DBHelper extends SQLiteOpenHelper {
 
     // Get Rekam Medis from Database
     public Cursor getMedis(Integer id) {
-        Cursor cursor = db.rawQuery("SELECT * FROM rekam_medis WHERE medis_profilID = " + id + " ORDER BY medis_tanggal" , null);
+        Cursor cursor = db.rawQuery("SELECT * FROM rekam_medis WHERE medis_profilID = " + id + " ORDER BY medis_tanggal", null);
         cursor.moveToFirst();
         return cursor;
     }
