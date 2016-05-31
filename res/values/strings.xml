@@ -34,21 +34,30 @@
     <string name="profil_AB">AB</string>
     <string name="profil_O">O</string>
     <string name="profil_panjanglahir">Panjang Lahir</string>
-    <string name="profil_hint_panjanglahir">50.00</string>
+    <string name="profil_hint_panjanglahir">00.00</string>
     <string name="profil_centimeter">CM</string>
     <string name="profil_beratlahir">Berat Lahir</string>
-    <string name="profil_hint_beratlahir">35.00</string>
+    <string name="profil_hint_beratlahir">00.00</string>
     <string name="profil_gram">GR</string>
     <string name="profil_alergi">Alergi</string>
     <string name="profil_hint_alergi">Nama Alergi</string>
     <string name="profil_penyakitkronis">Penyakit Kronis</string>
     <string name="profil_hint_penyakitkronis">Nama Penyakit Kronis</string>
     <string name="profil_foto">Foto</string>
+    <string name="alert_tambah_passcode">Apakah anda mau menambahkan passcode untuk profil ini?</string>
 
+    <string name="lupa_passcode">Lupa Passcode?</string>
+    <string name="button_passcode">Passcode</string>
+    <string name="button_passcode_ubah">Ubah Passcode</string>
+    <string name="profil_passcode">Masukkan Passcode Baru</string>
+    <string name="profil_cek_passcode">Masukkan Passcode</string>
     <string name="ubah_profil">Ubah Profil</string>
     <string name="profil_lakilaki">Laki-laki</string>
     <string name="profil_perempuan">Perempuan</string>
 
+    <string name="alert_lupa">Lupa Passcode?</string>
+    <string name="alert_lupa_passcode">Jika anda lupa passcode, maka anda harus menghapus seluruh data anak ini. Penghapusan meliputi riwayat
+        imunisasi, status gizi, rekam medis, dan record tumbuh kembang anak. Apa anda yakin untuk menghapus seluruh data anak ini?</string>
     <string name="alert_warning">WARNING !</string>
     <string name="alert_hapus">Apa anda yakin untuk menghapus seluruh data anak ini? Penghapusan meliputi riwayat
         imunisasi, status gizi, rekam medis, dan record tumbuh kembang anak.
@@ -63,13 +72,13 @@
     <string name="kalkulatorgizi_tanggallahir">Tanggal Lahir</string>
     <string name="kalkulatorgizi_usia">Usia</string>
     <string name="kalkulatorgizi_jeniskelamin">Jenis Kelamin</string>
-    <string name="kalkulatorgizi_L">L</string>
-    <string name="kalkulatorgizi_P">P</string>
+    <string name="kalkulatorgizi_lakilaki">Laki-laki</string>
+    <string name="kalkulatorgizi_perempuan">Perempuan</string>
     <string name="kalkulatorgizi_tinggibadan">Tinggi Badan</string>
-    <string name="kalkulatorgizi_hint_tinggibadan">50.00</string>
+    <string name="kalkulatorgizi_hint_tinggibadan">00.00</string>
     <string name="kalkulatorgizi_centimeter">CM</string>
     <string name="kalkulatorgizi_beratbadan">Berat Badan</string>
-    <string name="kalkulatorgizi_hint_beratbadan">35.00</string>
+    <string name="kalkulatorgizi_hint_beratbadan">00.00</string>
     <string name="kalkulatorgizi_kilogram">KG</string>
 
     <string name="hasilkalkulatorgizi">Hasil Kalkulator Gizi</string>
@@ -150,10 +159,10 @@
     <string name="medis_dokter">Nama Dokter</string>
     <string name="medis_rumahsakit">Nama Rumah Sakit</string>
     <string name="medis_tinggibadan">Tinggi Badan</string>
-    <string name="medis_hint_tinggibadan">50.00</string>
+    <string name="medis_hint_tinggibadan">00.00</string>
     <string name="medis_centimeter">CM</string>
     <string name="medis_beratbadan">Berat Badan</string>
-    <string name="medis_hint_beratbadan">35.00</string>
+    <string name="medis_hint_beratbadan">00.00</string>
     <string name="medis_kilogram">KG</string>
     <string name="medis_tindakan">Tindakan</string>
 

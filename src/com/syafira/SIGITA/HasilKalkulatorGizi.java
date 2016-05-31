@@ -174,7 +174,7 @@ public class HasilKalkulatorGizi extends Activity {
         kalkulatorgizi_usia.setText(umur);
         kalkulatorgizi_tinggibadan.setText(tinggiBadan);
         kalkulatorgizi_beratbadan.setText(beratBadan);
-        if ((jenisKelamin).equals("L")) {
+        if ((jenisKelamin).equals("Laki-laki")) {
             kalkulatorgizi_jeniskelamin.setText("Laki-Laki");
         } else {
             kalkulatorgizi_jeniskelamin.setText("Perempuan");
@@ -182,7 +182,7 @@ public class HasilKalkulatorGizi extends Activity {
 
         // Berat Badan / Umur
         float bbu = 0;
-        if ((jenisKelamin).equals("L")) {
+        if ((jenisKelamin).equals("Laki-laki")) {
             // Berat badan < Median
             if (Float.parseFloat(beratBadan) < Float.parseFloat(cursorBBU.getString(cursorBBU.getColumnIndex("laki_bbu_median")))) {
                 bbu = (Float.parseFloat(beratBadan) - Float.parseFloat(cursorBBU.getString(cursorBBU.getColumnIndex("laki_bbu_median")))) /
@@ -227,7 +227,7 @@ public class HasilKalkulatorGizi extends Activity {
 
         // Tinggi Badan / Umur
         float tbu = 0;
-        if ((jenisKelamin).equals("L")) {
+        if ((jenisKelamin).equals("Laki-laki")) {
             // Tinggi Badan < Median
             if (Float.parseFloat(tinggiBadan) < Float.parseFloat(cursorTBU.getString(cursorTBU.getColumnIndex("laki_tbu_median")))) {
                 tbu = (Float.parseFloat(tinggiBadan) - Float.parseFloat(cursorTBU.getString(cursorTBU.getColumnIndex("laki_tbu_median")))) /
@@ -258,7 +258,7 @@ public class HasilKalkulatorGizi extends Activity {
         }
 
         String status_tbu = null;
-        if (bbu < Float.parseFloat("-3")) {
+        if (tbu < Float.parseFloat("-3")) {
             status_tbu = "Sangat Pendek";
         } else if (tbu >= Float.parseFloat("-3") && tbu < Float.parseFloat("-2")) {
             status_tbu = "Pendek";
@@ -273,7 +273,7 @@ public class HasilKalkulatorGizi extends Activity {
 
         // Berat Badan / Tinggi Badan
         float bbtb = 0;
-        if ((jenisKelamin).equals("L")) {
+        if ((jenisKelamin).equals("Laki-laki")) {
             // Tinggi Badan < Median
             if (Float.parseFloat(tinggiBadan) < Float.parseFloat(cursorBBTB.getString(cursorBBTB.getColumnIndex("laki_bbtb_median")))) {
                 bbtb = (Float.parseFloat(tinggiBadan) - Float.parseFloat(cursorBBTB.getString(cursorBBTB.getColumnIndex("laki_bbtb_median")))) /
@@ -319,7 +319,7 @@ public class HasilKalkulatorGizi extends Activity {
         // Indeks Massa Tubuh / Umur
         float imt = Float.parseFloat(beratBadan) / ((Float.parseFloat(tinggiBadan) / 100) * (Float.parseFloat(tinggiBadan) / 100));
         float imtu = 0;
-        if ((jenisKelamin).equals("L")) {
+        if ((jenisKelamin).equals("Laki-laki")) {
             // Indeks Massa Tubuh < Median
             if (imt < Float.parseFloat(cursorIMTU.getString(cursorIMTU.getColumnIndex("laki_imtu_median")))) {
                 imtu = (imt - Float.parseFloat(cursorIMTU.getString(cursorIMTU.getColumnIndex("laki_imtu_median")))) /
@@ -372,7 +372,7 @@ public class HasilKalkulatorGizi extends Activity {
         List<String> BBUchart1sd = new ArrayList<>();
         List<String> BBUchart2sd = new ArrayList<>();
         List<String> BBUchart3sd = new ArrayList<>();
-        if ((jenisKelamin).equals("L")) {
+        if ((jenisKelamin).equals("Laki-laki")) {
             Cursor cursorBBUchart = db.getLakiBBUAllList();
             cursorBBUchart.moveToFirst();
             if (!cursorBBUchart.isAfterLast()) {
@@ -541,7 +541,7 @@ public class HasilKalkulatorGizi extends Activity {
         List<String> TBUchart1sd = new ArrayList<>();
         List<String> TBUchart2sd = new ArrayList<>();
         List<String> TBUchart3sd = new ArrayList<>();
-        if ((jenisKelamin).equals("L")) {
+        if ((jenisKelamin).equals("Laki-laki")) {
             Cursor cursorTBUchart = db.getLakiTBUAllList();
             cursorTBUchart.moveToFirst();
             if (!cursorTBUchart.isAfterLast()) {
@@ -710,7 +710,7 @@ public class HasilKalkulatorGizi extends Activity {
         List<String> BBTBchart1sd = new ArrayList<>();
         List<String> BBTBchart2sd = new ArrayList<>();
         List<String> BBTBchart3sd = new ArrayList<>();
-        if ((jenisKelamin).equals("L")) {
+        if ((jenisKelamin).equals("Laki-laki")) {
             if (Integer.valueOf(bulan) <= 24) {
                 Cursor cursorBBTBchart = db.getLakiBBTBAllList_0_24();
                 cursorBBTBchart.moveToFirst();
@@ -924,7 +924,7 @@ public class HasilKalkulatorGizi extends Activity {
         List<String> IMTUchart1sd = new ArrayList<>();
         List<String> IMTUchart2sd = new ArrayList<>();
         List<String> IMTUchart3sd = new ArrayList<>();
-        if ((jenisKelamin).equals("L")) {
+        if ((jenisKelamin).equals("Laki-laki")) {
             Cursor cursorIMTUchart = db.getLakiIMTUAllList();
             cursorIMTUchart.moveToFirst();
             if (!cursorIMTUchart.isAfterLast()) {
@@ -1160,6 +1160,7 @@ public class HasilKalkulatorGizi extends Activity {
         Intent gizi = new Intent(this, Gizi.class);
         lastActivity = System.currentTimeMillis();
         gizi.putExtra("lastActivity", lastActivity);
+        gizi.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TASK | Intent.FLAG_ACTIVITY_CLEAR_TOP);
         startActivity(gizi);
 
         // Close This Activity

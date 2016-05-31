@@ -39,7 +39,6 @@ public class AlarmImunisasi extends Activity {
     private SessionManager session;
     private DBHelper db;
     private long lastActivity;
-    private PendingIntent pendingIntent;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {

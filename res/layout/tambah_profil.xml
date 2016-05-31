@@ -307,6 +307,72 @@
                                 <!-- End Text View Centimeter -->
 
                             </LinearLayout>
+
+                            <!-- Start Linear Layout Berat Lahir -->
+                            <LinearLayout
+                                    android:layout_width="fill_parent"
+                                    android:layout_height="wrap_content"
+                                    android:orientation="horizontal"
+                                    android:gravity="center_vertical">
+
+                                <!-- Start Text View Berat Lahir -->
+                                <TextView
+                                        android:id="@+id/text_profil_beratlahir"
+                                        android:layout_width="wrap_content"
+                                        android:layout_height="wrap_content"
+                                        android:textColor="#D046F2"
+                                        android:text="@string/profil_beratlahir"
+                                        style="@android:style/TextAppearance.DeviceDefault.Medium"
+                                        />
+                                <!-- End Text View Berat Lahir -->
+
+                                <!-- Start Linear Layout Berat Lahir -->
+                                <TextView
+                                        android:id="@+id/titikdua"
+                                        android:layout_width="wrap_content"
+                                        android:layout_height="wrap_content"
+                                        android:textColor="#D046F2"
+                                        android:text="@string/titikdua"
+                                        style="@android:style/TextAppearance.DeviceDefault.Medium"
+                                        android:layout_marginLeft="5dp"/>
+                                <!-- End Linear Layout Berat Lahir -->
+
+                            </LinearLayout>
+                            <!-- End Linear Layout Berat Lahir -->
+
+                            <!-- Start Linear Layout Foto -->
+                            <LinearLayout
+                                    android:layout_width="fill_parent"
+                                    android:layout_height="wrap_content"
+                                    android:orientation="horizontal"
+                                    >
+
+                                <!-- Start Edit Text Berat Lahir -->
+                                <EditText
+                                        android:id="@+id/profil_beratlahir"
+                                        android:layout_width="0dp"
+                                        android:layout_height="wrap_content"
+                                        style="@android:style/TextAppearance.DeviceDefault.Medium"
+                                        android:inputType="numberDecimal|numberSigned"
+                                        android:textColor="#FF0000"
+                                        android:hint="@string/profil_hint_beratlahir"
+                                        android:layout_weight="1"/>
+                                <!-- End Edit Text Berat Lahir -->
+
+                                <!-- Start Text View Gram -->
+                                <TextView
+                                        android:id="@+id/profil_gram"
+                                        android:layout_width="0dp"
+                                        android:layout_height="wrap_content"
+                                        android:textColor="#D046F2"
+                                        android:text="@string/profil_gram"
+                                        style="@android:style/TextAppearance.DeviceDefault.Medium"
+                                        android:layout_weight=".5"/>
+                                <!-- End Text View Gram -->
+
+
+                            </LinearLayout>
+
                             <LinearLayout
                                     android:layout_width="fill_parent"
                                     android:layout_height="wrap_content"
@@ -335,8 +401,6 @@
                                         android:layout_marginLeft="5dp"/>
                                 <!-- End Text View Titik Dua-->
 
-                                <!-- Start Edit Text Alergi -->
-                                <!-- End Edit Text Alergi -->
 
                             </LinearLayout>
                             <!-- End Linear Layout Alergi -->
@@ -438,20 +502,19 @@
                             </LinearLayout>
                             <!-- End Text View Jenis Kelamin -->
 
-                            <!-- Start Radio Group Jenis Kelamin -->
                             <RadioGroup
                                     android:id="@+id/profil_jeniskelamin"
                                     android:layout_width="fill_parent"
                                     android:layout_height="wrap_content"
-                                    android:orientation="horizontal">
+                                    android:orientation="vertical">
 
                                 <!-- Start Radio Button LakiLaki -->
                                 <RadioButton
                                         android:id="@+id/profil_lakilaki"
-                                        android:layout_width="0dp"
+                                        android:layout_width="fill_parent"
                                         android:layout_weight="1"
-                                        android:layout_height="wrap_content"
-                                        android:text="@string/profil_L"
+                                        android:layout_height="0dp"
+                                        android:text="@string/profil_lakilaki"
                                         android:textColor="#FF0000"
                                         style="@android:style/TextAppearance.DeviceDefault.Medium"/>
                                 <!-- End Radio Button LakiLaki -->
@@ -459,10 +522,10 @@
                                 <!-- Start Radio Button Perempuan -->
                                 <RadioButton
                                         android:id="@+id/profil_perempuan"
-                                        android:layout_width="0dp"
+                                        android:layout_width="fill_parent"
                                         android:layout_weight="1"
-                                        android:layout_height="wrap_content"
-                                        android:text="@string/profil_P"
+                                        android:layout_height="0dp"
+                                        android:text="@string/profil_perempuan"
                                         android:textColor="#FF0000"
                                         style="@android:style/TextAppearance.DeviceDefault.Medium"/>
                                 <!-- End Radio Button Perempuan -->
@@ -553,70 +616,6 @@
                                     style="@android:style/TextAppearance.DeviceDefault.Medium"/>
                             <!-- End Edit Text Tanggal lahir -->
 
-                            <!-- Start Linear Layout Berat Lahir -->
-                            <LinearLayout
-                                    android:layout_width="fill_parent"
-                                    android:layout_height="wrap_content"
-                                    android:orientation="horizontal"
-                                    android:gravity="center_vertical">
-
-                                <!-- Start Text View Berat Lahir -->
-                                <TextView
-                                        android:id="@+id/text_profil_beratlahir"
-                                        android:layout_width="wrap_content"
-                                        android:layout_height="wrap_content"
-                                        android:textColor="#D046F2"
-                                        android:text="@string/profil_beratlahir"
-                                        style="@android:style/TextAppearance.DeviceDefault.Medium"
-                                        />
-                                <!-- End Text View Berat Lahir -->
-
-                                <!-- Start Linear Layout Berat Lahir -->
-                                <TextView
-                                        android:id="@+id/titikdua"
-                                        android:layout_width="wrap_content"
-                                        android:layout_height="wrap_content"
-                                        android:textColor="#D046F2"
-                                        android:text="@string/titikdua"
-                                        style="@android:style/TextAppearance.DeviceDefault.Medium"
-                                        android:layout_marginLeft="5dp"/>
-                                <!-- End Linear Layout Berat Lahir -->
-
-                            </LinearLayout>
-                            <!-- End Linear Layout Berat Lahir -->
-
-                            <!-- Start Linear Layout Foto -->
-                            <LinearLayout
-                                    android:layout_width="fill_parent"
-                                    android:layout_height="wrap_content"
-                                    android:orientation="horizontal"
-                                    >
-
-                                <!-- Start Edit Text Berat Lahir -->
-                                <EditText
-                                        android:id="@+id/profil_beratlahir"
-                                        android:layout_width="0dp"
-                                        android:layout_height="wrap_content"
-                                        style="@android:style/TextAppearance.DeviceDefault.Medium"
-                                        android:inputType="numberDecimal|numberSigned"
-                                        android:textColor="#FF0000"
-                                        android:hint="@string/profil_hint_beratlahir"
-                                        android:layout_weight="1"/>
-                                <!-- End Edit Text Berat Lahir -->
-
-                                <!-- Start Text View Gram -->
-                                <TextView
-                                        android:id="@+id/profil_gram"
-                                        android:layout_width="0dp"
-                                        android:layout_height="wrap_content"
-                                        android:textColor="#D046F2"
-                                        android:text="@string/profil_gram"
-                                        style="@android:style/TextAppearance.DeviceDefault.Medium"
-                                        android:layout_weight=".5"/>
-                                <!-- End Text View Gram -->
-
-
-                            </LinearLayout>
                             <LinearLayout
                                     android:layout_width="fill_parent"
                                     android:layout_height="wrap_content"
@@ -658,6 +657,7 @@
                                     android:layout_weight="1"
                                     android:layout_gravity="center"/>
                             <!-- End Image View Foto -->
+
 
                         </LinearLayout>
                         <!-- End Linear Layout Profil -->

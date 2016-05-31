@@ -41,6 +41,21 @@
                   android:configChanges="orientation|screenSize|keyboardHidden"
                   android:theme="@android:style/Theme.NoTitleBar.Fullscreen">
         </activity>
+        <activity android:name="com.syafira.SIGITA.ProfilPasscode"
+                  android:label="@string/app_name"
+                  android:configChanges="orientation|screenSize|keyboardHidden"
+                  android:theme="@android:style/Theme.NoTitleBar.Fullscreen">
+        </activity>
+        <activity android:name="com.syafira.SIGITA.ProfilCekPasscode"
+                  android:label="@string/app_name"
+                  android:configChanges="orientation|screenSize|keyboardHidden"
+                  android:theme="@android:style/Theme.NoTitleBar.Fullscreen">
+        </activity>
+        <activity android:name="com.syafira.SIGITA.Passcode"
+                  android:label="@string/app_name"
+                  android:configChanges="orientation|screenSize|keyboardHidden"
+                  android:theme="@android:style/Theme.NoTitleBar.Fullscreen">
+        </activity>
         <activity android:name="com.syafira.SIGITA.DetailProfil"
                   android:label="@string/app_name"
                   android:configChanges="orientation|screenSize|keyboardHidden"

@@ -16,21 +16,15 @@ import android.view.View.OnClickListener;
 import android.widget.*;
 import android.graphics.Typeface;
 
-import java.util.Date;
+import java.util.ArrayList;
+import java.util.HashMap;
+import java.util.List;
 
-public class Index extends Activity implements OnClickListener {
+public class Index extends Activity {
 
     // Declare
     private TextView text_button_profil;
     private LinearLayout ProfilLinearLayout;
-    private TextView text_button_gizi;
-    private LinearLayout GiziLinearLayout;
-    private TextView text_button_imunisasi;
-    private LinearLayout ImunisasiLinearLayout;
-    private TextView text_button_tumbuhkembang;
-    private LinearLayout TumbuhKembangLinearLayout;
-    private TextView text_button_rekammedis;
-    private LinearLayout RekamMedisLinearLayout;
     private TextView text_footer;
     private SessionManager session;
     private long lastActivity;
@@ -53,14 +47,6 @@ public class Index extends Activity implements OnClickListener {
         // Load Widget
         text_button_profil = (TextView) findViewById(R.id.text_button_profil);
         ProfilLinearLayout = (LinearLayout) findViewById(R.id.ProfilLinearLayout);
-        text_button_gizi = (TextView) findViewById(R.id.text_button_gizi);
-        GiziLinearLayout = (LinearLayout) findViewById(R.id.GiziLinearLayout);
-        text_button_imunisasi = (TextView) findViewById(R.id.text_button_imunisasi);
-        ImunisasiLinearLayout = (LinearLayout) findViewById(R.id.ImunisasiLinearLayout);
-        text_button_tumbuhkembang = (TextView) findViewById(R.id.text_button_tumbuhkembang);
-        TumbuhKembangLinearLayout = (LinearLayout) findViewById(R.id.TumbuhKembangLinearLayout);
-        text_button_rekammedis = (TextView) findViewById(R.id.text_button_rekammedis);
-        RekamMedisLinearLayout = (LinearLayout) findViewById(R.id.RekamMedisLinearLayout);
         text_footer = (TextView) findViewById(R.id.text_footer);
 
         // Check Session
@@ -70,105 +56,141 @@ public class Index extends Activity implements OnClickListener {
         }
 
         // Set OnClickListener
-        ProfilLinearLayout.setOnClickListener(this);
-        GiziLinearLayout.setOnClickListener(this);
-        ImunisasiLinearLayout.setOnClickListener(this);
-        TumbuhKembangLinearLayout.setOnClickListener(this);
-        RekamMedisLinearLayout.setOnClickListener(this);
-
-        // Set Custom Font
-        Typeface typeface = Typeface.createFromAsset(getAssets(), "teen-webfont.ttf");
-        text_button_profil.setTypeface(typeface);
-        text_button_gizi.setTypeface(typeface);
-        text_button_imunisasi.setTypeface(typeface);
-        text_button_tumbuhkembang.setTypeface(typeface);
-        text_button_rekammedis.setTypeface(typeface);
-        text_footer.setTypeface(typeface);
-    }
-
-    // OnClick Activity
-    @Override
-    public void onClick(View v) {
-        switch (v.getId()) {
-            // Profil
-            case R.id.ProfilLinearLayout:
-                Intent profil = new Intent(this, Profil.class);
+        ProfilLinearLayout.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent profil = new Intent(Index.this, Profil.class);
                 lastActivity = System.currentTimeMillis();
                 profil.putExtra("lastActivity", lastActivity);
                 startActivity(profil);
-                break;
+            }
+        });
 
-            // Gizi
-            case R.id.GiziLinearLayout:
-                Intent gizi = new Intent(this, Gizi.class);
-                lastActivity = System.currentTimeMillis();
-                gizi.putExtra("lastActivity", lastActivity);
-                startActivity(gizi);
+        // Set Custom Font
+        final Typeface typeface = Typeface.createFromAsset(getAssets(), "teen-webfont.ttf");
+        text_button_profil.setTypeface(typeface);
+        text_footer.setTypeface(typeface);
 
-                finish();
-                break;
+        String[] menu = {"Profil", "Gizi", "Imunisasi", "Tumbuh Kembang", "Rekam Medis", "Tentang"};
+        int[] menu_image = {R.drawable.icon_profil, R.drawable.icon_gizi, R.drawable.icon_imunisasi, R.drawable.icon_tumbuhkembang, R.drawable.icon_rekammedis, R.drawable.icon_logo};
 
-            // Imunisasi
-            case R.id.ImunisasiLinearLayout:
-                Intent imunisasi = new Intent(this, Imunisasi.class);
-                lastActivity = System.currentTimeMillis();
-                imunisasi.putExtra("lastActivity", lastActivity);
-                startActivity(imunisasi);
-                finish();
-                break;
-
-            // Tumbuh Kembang
-            case R.id.TumbuhKembangLinearLayout:
-                Intent tumbang = new Intent(this, TumbuhKembang.class);
-                lastActivity = System.currentTimeMillis();
-                tumbang.putExtra("lastActivity", lastActivity);
-                startActivity(tumbang);
-                finish();
-                break;
-
-            // Rekam Medis
-            case R.id.RekamMedisLinearLayout :
-                // Check Session
-                if (session.checkSession(this)) {
-                    Intent medis = new Intent(this, RekamMedis.class);
-                    lastActivity = System.currentTimeMillis();
-                    medis.putExtra("lastActivity", lastActivity);
-                    startActivity(medis);
-                    finish();
-                } else {
-                    final Dialog dialog = new Dialog(Index.this);
-                    dialog.setContentView(R.layout.alert_akses);
-                    dialog.setCanceledOnTouchOutside(true);
-                    dialog.getWindow().setBackgroundDrawable(new ColorDrawable(android.graphics.Color.TRANSPARENT));
-                    dialog.show();
-
-                    // Load Dialog Widget
-                    TextView alert_warning = (TextView) dialog.findViewById(R.id.alert_warning);
-                    TextView alert_akses = (TextView) dialog.findViewById(R.id.alert_akses);
-                    ImageView button_ok = (ImageView) dialog.findViewById(R.id.button_ok);
-
-                    // Set Custom Font Dialog
-                    Typeface typeface = Typeface.createFromAsset(getAssets(), "teen-webfont.ttf");
-                    alert_akses.setTypeface(typeface);
-                    alert_warning.setTypeface(typeface);
-
-                    // Set OnClickListener Dialog
-                    button_ok.setOnClickListener(new OnClickListener() {
-                        @Override
-                        public void onClick(View v) {
-                            // Close Dialog
-                            dialog.dismiss();
-
-                            // Start Profil Activity
-                            Intent profil = new Intent(Index.this, Profil.class);
-                            lastActivity = System.currentTimeMillis();
-                            profil.putExtra("lastActivity", lastActivity);
-                            startActivity(profil);
-                        }
-                    });
-                }
-                break;
+        List<HashMap<String, ?>> aList = new ArrayList<>();
+        for (int a = 0; a < menu.length; a++) {
+            HashMap<String, Object> hm = new HashMap<>();
+            hm.put("nama_menu", menu[a]);
+            hm.put("foto_menu", menu_image[a]);
+            aList.add(hm);
         }
+
+        final String[] from = {"foto_menu", "nama_menu"};
+        int[] to = {R.id.index_menu, R.id.index_nama_menu};
+
+        SimpleAdapter adapter = new SimpleAdapter(getBaseContext(), aList, R.layout.index_grid, from, to) {
+            @Override
+            public View getView(int position, View convertView, android.view.ViewGroup parent) {
+                View v = super.getView(position, convertView, parent);
+
+                TextView tv = (TextView) v.findViewById(R.id.index_nama_menu);
+                tv.setLines(2);
+                tv.setTypeface(typeface);
+                return v;
+            }
+        };
+        ExpandableHeightGridView grid = (ExpandableHeightGridView) findViewById(R.id.gridview);
+
+        grid.setAdapter(adapter);
+        grid.setExpanded(true);
+        grid.setVisibility(View.VISIBLE);
+
+        grid.setOnItemClickListener(new AdapterView.OnItemClickListener() {
+            @Override
+            public void onItemClick(AdapterView<?> parent, View v, int position, long id) {
+                switch (position) {
+
+                    // Profil
+                    case 0:
+                        Intent profil = new Intent(Index.this, Profil.class);
+                        lastActivity = System.currentTimeMillis();
+                        profil.putExtra("lastActivity", lastActivity);
+                        startActivity(profil);
+                        break;
+
+                    // Gizi
+                    case 1:
+                        Intent gizi = new Intent(Index.this, Gizi.class);
+                        lastActivity = System.currentTimeMillis();
+                        gizi.putExtra("lastActivity", lastActivity);
+                        gizi.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TASK | Intent.FLAG_ACTIVITY_CLEAR_TOP);
+                        startActivity(gizi);
+                        finish();
+                        break;
+
+                    // Imunisasi
+                    case 2:
+                        Intent imunisasi = new Intent(Index.this, Imunisasi.class);
+                        lastActivity = System.currentTimeMillis();
+                        imunisasi.putExtra("lastActivity", lastActivity);
+                        imunisasi.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TASK | Intent.FLAG_ACTIVITY_CLEAR_TOP);
+                        startActivity(imunisasi);
+                        finish();
+                        break;
+
+                    // Tumbuh Kembang
+                    case 3:
+                        Intent tumbang = new Intent(Index.this, TumbuhKembang.class);
+                        lastActivity = System.currentTimeMillis();
+                        tumbang.putExtra("lastActivity", lastActivity);
+                        tumbang.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TASK | Intent.FLAG_ACTIVITY_CLEAR_TOP);
+                        startActivity(tumbang);
+                        finish();
+                        break;
+
+                    // Rekam Medis
+                    case 4:
+                        // Check Session
+                        if (session.checkSession(Index.this)) {
+                            Intent medis = new Intent(Index.this, RekamMedis.class);
+                            lastActivity = System.currentTimeMillis();
+                            medis.putExtra("lastActivity", lastActivity);
+                            medis.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TASK | Intent.FLAG_ACTIVITY_CLEAR_TOP);
+                            startActivity(medis);
+                            finish();
+                        } else {
+                            final Dialog dialog = new Dialog(Index.this);
+                            dialog.setContentView(R.layout.alert_akses);
+                            dialog.setCanceledOnTouchOutside(true);
+                            dialog.getWindow().setBackgroundDrawable(new ColorDrawable(android.graphics.Color.TRANSPARENT));
+                            dialog.show();
+
+                            // Load Dialog Widget
+                            TextView alert_warning = (TextView) dialog.findViewById(R.id.alert_warning);
+                            TextView alert_akses = (TextView) dialog.findViewById(R.id.alert_akses);
+                            ImageView button_ok = (ImageView) dialog.findViewById(R.id.button_ok);
+
+                            // Set Custom Font Dialog
+                            Typeface typeface = Typeface.createFromAsset(getAssets(), "teen-webfont.ttf");
+                            alert_akses.setTypeface(typeface);
+                            alert_warning.setTypeface(typeface);
+
+                            // Set OnClickListener Dialog
+                            button_ok.setOnClickListener(new OnClickListener() {
+                                @Override
+                                public void onClick(View v) {
+                                    // Close Dialog
+                                    dialog.dismiss();
+
+                                    // Start Profil Activity
+                                    Intent profil = new Intent(Index.this, Profil.class);
+                                    lastActivity = System.currentTimeMillis();
+                                    profil.putExtra("lastActivity", lastActivity);
+                                    startActivity(profil);
+                                }
+                            });
+                        }
+                        break;
+                }
+            }
+        });
     }
 
     // Pressed Button Back
@@ -181,15 +203,15 @@ public class Index extends Activity implements OnClickListener {
                 .setNegativeButton(android.R.string.no, null)
                 .setPositiveButton(android.R.string.yes, new DialogInterface.OnClickListener() {
                     public void onClick(DialogInterface arg0, int arg1) {
+//                        // Clear Session
+                        session.clearSession(Index.this);
+                        Index.super.onBackPressed();
+
                         // Close Application
                         Intent finish = new Intent(Intent.ACTION_MAIN);
                         finish.addCategory(Intent.CATEGORY_HOME);
-                        finish.setFlags(Intent.FLAG_ACTIVITY_NEW_TASK);
+                        finish.addFlags(Intent.FLAG_ACTIVITY_NEW_TASK | Intent.FLAG_ACTIVITY_CLEAR_TASK | Intent.FLAG_ACTIVITY_CLEAR_TOP);
                         startActivity(finish);
-
-                        // Clear Session
-                        session.clearSession(Index.this);
-                        Index.super.onBackPressed();
                     }
                 }).create().show();
     }

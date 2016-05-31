@@ -220,6 +220,7 @@ public class TambahMedis extends Activity {
                     Intent medis = new Intent(TambahMedis.this, RekamMedis.class);
                     lastActivity = System.currentTimeMillis();
                     medis.putExtra("lastActivity", lastActivity);
+                    medis.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TASK | Intent.FLAG_ACTIVITY_CLEAR_TOP);
                     startActivity(medis);
 
                     // Close This Activity
@@ -267,6 +268,7 @@ public class TambahMedis extends Activity {
         Intent medis = new Intent(TambahMedis.this, RekamMedis.class);
         lastActivity = System.currentTimeMillis();
         medis.putExtra("lastActivity", lastActivity);
+        medis.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TASK | Intent.FLAG_ACTIVITY_CLEAR_TOP);
         startActivity(medis);
 
         // Close This Activity

@@ -292,6 +292,7 @@ public class UbahRiwayat extends Activity {
                     lastActivity = System.currentTimeMillis();
                     detail_riwayat.putExtra("lastActivity", lastActivity);
                     detail_riwayat.putExtra("id", riwayatID);
+                    detail_riwayat.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TASK | Intent.FLAG_ACTIVITY_CLEAR_TOP);
                     startActivity(detail_riwayat);
 
                     // Close This Activity
@@ -345,6 +346,7 @@ public class UbahRiwayat extends Activity {
         lastActivity = System.currentTimeMillis();
         detail_riwayat.putExtra("lastActivity", lastActivity);
         detail_riwayat.putExtra("id", id);
+        detail_riwayat.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TASK | Intent.FLAG_ACTIVITY_CLEAR_TOP);
         startActivity(detail_riwayat);
 
         // Close This Activity

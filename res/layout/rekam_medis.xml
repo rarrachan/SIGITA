@@ -241,7 +241,8 @@
                                     android:padding="5dp"
                                     android:textColor="#D046F2"
                                     style="@android:style/TextAppearance.DeviceDefault.Medium"
-                                    android:text="@string/blank"/>
+                                    android:text="@string/blank" android:id="@+id/text_medis_detail"
+                                    android:visibility="gone"/>
                         </TableRow>
                     </TableLayout>
 

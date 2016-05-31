@@ -5,16 +5,24 @@ package com.syafira.SIGITA;
  */
 
 import android.app.Activity;
+import android.app.AlarmManager;
 import android.app.Dialog;
+import android.app.PendingIntent;
+import android.content.Context;
 import android.database.Cursor;
 import android.graphics.drawable.ColorDrawable;
 import android.graphics.drawable.Drawable;
+import android.media.MediaScannerConnection;
+import android.net.Uri;
 import android.os.Bundle;
 import android.content.Intent;
+import android.os.Environment;
 import android.view.View;
 import android.view.View.OnClickListener;
 import android.widget.*;
 import android.graphics.Typeface;
+
+import java.io.File;
 
 public class Profil extends Activity{
 
@@ -76,7 +84,7 @@ public class Profil extends Activity{
         text_footer.setTypeface(typeface);
 
         // Get Data from Database
-        Cursor cursor = db.getProfil();
+        final Cursor cursor = db.getProfil();
         cursor.moveToFirst();
         if (!cursor.isAfterLast()) {
             do {
@@ -96,7 +104,8 @@ public class Profil extends Activity{
                 final String tanggallahir = cursor.getString(cursor.getColumnIndex("profil_tanggalLahir"));
                 final String foto_path = android.os.Environment.getExternalStorageDirectory() + "/SIGITA/" + nama.replaceAll(" ", "_") + "/" + cursor.getString(cursor.getColumnIndex("profil_foto"));
                 final String gender = cursor.getString(cursor.getColumnIndex("profil_jenisKelamin"));
-                if (gender.equals("L")) {
+                final String passcode = cursor.getString(cursor.getColumnIndex("profil_passcode"));
+                if (gender.equals("Laki-laki")) {
                     // Hide Perempuan Image
                     button_anakperempuan = (ImageView) profil_layout.findViewById(R.id.button_anakperempuan);
                     button_anakperempuan.setVisibility(View.GONE);
@@ -151,43 +160,75 @@ public class Profil extends Activity{
                         button_pilih.setOnClickListener(new OnClickListener() {
                             @Override
                             public void onClick(View v) {
-                                // Create Session
-                                if (session.checkSession(Profil.this)) {
-                                    session.clearSession(Profil.this);
+
+                                if (!passcode.equals("")) {
+                                    Intent profilCekPasscode = new Intent(Profil.this, ProfilCekPasscode.class);
+                                    lastActivity = System.currentTimeMillis();
+                                    profilCekPasscode.putExtra("lastActivity", lastActivity);
+                                    profilCekPasscode.putExtra("id", id);
+                                    profilCekPasscode.putExtra("nama", nama);
+                                    profilCekPasscode.putExtra("gender", gender);
+                                    profilCekPasscode.putExtra("tanggallahir", tanggallahir);
+                                    profilCekPasscode.putExtra("passcode", passcode);
+                                    profilCekPasscode.putExtra("action", "pilihprofil");
+                                    profilCekPasscode.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TASK | Intent.FLAG_ACTIVITY_CLEAR_TOP);
+                                    startActivity(profilCekPasscode);
+
+                                    dialog_profil.dismiss();
+                                } else {
+                                    // Create Session
+                                    if (session.checkSession(Profil.this)) {
+                                        session.clearSession(Profil.this);
+                                    }
+                                    session.createSession(Profil.this, "id", session_id);
+                                    session.createSession(Profil.this, "nama", nama);
+                                    session.createSession(Profil.this, "gender", gender);
+                                    session.createSession(Profil.this, "tanggallahir", tanggallahir);
+
+                                    // Close Dialog
+                                    dialog_profil.dismiss();
+
+                                    // Start Index Activity
+                                    lastActivity = System.currentTimeMillis();
+                                    Intent index = new Intent(Profil.this, Index.class);
+                                    index.putExtra("lastActivity", lastActivity);
+                                    index.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TASK | Intent.FLAG_ACTIVITY_CLEAR_TOP);
+                                    startActivity(index);
+
+                                    // Close This Activity
+                                    finish();
                                 }
-                                session.createSession(Profil.this, "id", session_id);
-                                session.createSession(Profil.this, "nama", nama);
-                                session.createSession(Profil.this, "gender", gender);
-                                session.createSession(Profil.this, "tanggallahir", tanggallahir);
-
-                                // Close Dialog
-                                dialog_profil.dismiss();
-
-                                // Start Index Activity
-                                lastActivity = System.currentTimeMillis();
-                                Intent index = new Intent(Profil.this, Index.class);
-                                index.putExtra("lastActivity", lastActivity);
-                                startActivity(index);
-
-                                // Close This Activity
-                                finish();
                             }
                         });
                         button_detail_profil.setOnClickListener(new OnClickListener() {
                             @Override
                             public void onClick(View v) {
-                                // Close Dialog
-                                dialog_profil.dismiss();
+                                if (!passcode.equals("")) {
+                                    // Close Dialog
+                                    dialog_profil.dismiss();
 
-                                // Show Detail Profil Activity
-                                Intent detail_profil = new Intent(Profil.this, DetailProfil.class);
-                                lastActivity = System.currentTimeMillis();
-                                detail_profil.putExtra("lastActivity", lastActivity);
-                                detail_profil.putExtra("id", id);
-                                startActivity(detail_profil);
+                                    Intent profilCekPasscode = new Intent(Profil.this, ProfilCekPasscode.class);
+                                    lastActivity = System.currentTimeMillis();
+                                    profilCekPasscode.putExtra("lastActivity", lastActivity);
+                                    profilCekPasscode.putExtra("id", id);
+                                    profilCekPasscode.putExtra("nama", nama);
+                                    profilCekPasscode.putExtra("passcode", passcode);
+                                    profilCekPasscode.putExtra("action", "detailprofil");
+                                    startActivity(profilCekPasscode);
+                                } else {
+                                    // Close Dialog
+                                    dialog_profil.dismiss();
 
-                                // Close This Activity
-                                finish();
+                                    // Show Detail Profil Activity
+                                    Intent detail_profil = new Intent(Profil.this, DetailProfil.class);
+                                    lastActivity = System.currentTimeMillis();
+                                    detail_profil.putExtra("lastActivity", lastActivity);
+                                    detail_profil.putExtra("id", id);
+                                    startActivity(detail_profil);
+
+                                    // Close This Activity
+                                    finish();
+                                }
                             }
                         });
                     }

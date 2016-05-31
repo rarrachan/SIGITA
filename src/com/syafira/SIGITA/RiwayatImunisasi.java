@@ -52,9 +52,9 @@ public class RiwayatImunisasi extends Activity {
         button_riwayatImunisasi = (TextView) findViewById(R.id.button_riwayatimunisasi);
         ProfilLinearLayout = (LinearLayout) findViewById(R.id.ProfilLinearLayout);
         text_button_profil = (TextView) findViewById(R.id.text_button_profil);
-        text_tanggal_vaksin = (TextView) findViewById(R.id.text_tanggal_vaksin);
-        text_jenis_vaksin = (TextView) findViewById(R.id.text_jenis_vaksin);
-        text_usia_vaksin = (TextView) findViewById(R.id.text_usia_vaksin);
+        text_tanggal_vaksin = (TextView) findViewById(R.id.text_riwayat_tanggal);
+        text_jenis_vaksin = (TextView) findViewById(R.id.text_riwayat_jenisvaksin);
+        text_usia_vaksin = (TextView) findViewById(R.id.text_riwayat_usia);
         text_footer = (TextView) findViewById(R.id.text_footer);
         button_tambah = (ImageView) findViewById(R.id.button_tambah);
 
@@ -84,6 +84,7 @@ public class RiwayatImunisasi extends Activity {
                 Intent tambah_riwayat = new Intent(RiwayatImunisasi.this, TambahRiwayat.class);
                 lastActivity = System.currentTimeMillis();
                 tambah_riwayat.putExtra("lastActivity", lastActivity);
+                tambah_riwayat.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TASK | Intent.FLAG_ACTIVITY_CLEAR_TOP);
                 startActivity(tambah_riwayat);
                 finish();
             }
@@ -103,6 +104,9 @@ public class RiwayatImunisasi extends Activity {
         cursor.moveToFirst();
         if (!cursor.isAfterLast()) {
             do {
+                TextView text_riwayat_detail = (TextView) findViewById(R.id.text_riwayat_detail);
+                text_riwayat_detail.setVisibility(View.VISIBLE);
+
                 TableRow row = new TableRow(this);
                 TableRow.LayoutParams riwayat = new TableRow.LayoutParams(TableRow.LayoutParams.WRAP_CONTENT);
                 row.setLayoutParams(riwayat);
@@ -184,6 +188,7 @@ public class RiwayatImunisasi extends Activity {
                         lastActivity = System.currentTimeMillis();
                         detail_riwayat.putExtra("lastActivity", lastActivity);
                         detail_riwayat.putExtra("id", id);
+                        detail_riwayat.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TASK | Intent.FLAG_ACTIVITY_CLEAR_TOP);
                         startActivity(detail_riwayat);
 
                         // Close This Activity
@@ -208,6 +213,7 @@ public class RiwayatImunisasi extends Activity {
         Intent imunisasi = new Intent(RiwayatImunisasi.this, Imunisasi.class);
         lastActivity = System.currentTimeMillis();
         imunisasi.putExtra("lastActivity", lastActivity);
+        imunisasi.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TASK | Intent.FLAG_ACTIVITY_CLEAR_TOP);
         startActivity(imunisasi);
 
         // Close This Activity

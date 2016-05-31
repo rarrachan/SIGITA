@@ -210,12 +210,12 @@ public class UbahDokumentasi extends Activity {
                     // Show Toast
                     Toast.makeText(UbahDokumentasi.this, "Umur Tidak Boleh Lebih Dari 5 Tahun / 60 Bulan", Toast.LENGTH_SHORT).show();
 
-                } else if (Integer.valueOf(tinggiBadan) < 45) {
+                } else if (Float.parseFloat(tinggiBadan) < 45) {
                     // Show Toast
                     Toast.makeText(UbahDokumentasi.this, "Tinggi Tidak Boleh Kurang Dari 45 cm", Toast.LENGTH_SHORT).show();
 
                 }  else {
-                    if (Integer.valueOf(beratBadan) < 2) {
+                    if (Float.parseFloat(beratBadan) < 2) {
                         // Show Toast
                         Toast.makeText(UbahDokumentasi.this, "Berat Tidak Boleh Kurang Dari 2 kg", Toast.LENGTH_SHORT).show();
 
@@ -328,7 +328,7 @@ public class UbahDokumentasi extends Activity {
                         }
 
                         String status_tbu = null;
-                        if (bbu < Float.parseFloat("-3")) {
+                        if (tbu < Float.parseFloat("-3")) {
                             status_tbu = "Sangat Pendek";
                         } else if (tbu >= Float.parseFloat("-3") && tbu < Float.parseFloat("-2")) {
                             status_tbu = "Pendek";
@@ -451,6 +451,7 @@ public class UbahDokumentasi extends Activity {
                         lastActivity = System.currentTimeMillis();
                         dokumentasi_gizi.putExtra("dokumentasiID", dokumentasiID);
                         dokumentasi_gizi.putExtra("lastActivity", lastActivity);
+                        dokumentasi_gizi.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TASK | Intent.FLAG_ACTIVITY_CLEAR_TOP);
                         startActivity(dokumentasi_gizi);
 
                         // Close This Activity
@@ -504,6 +505,7 @@ public class UbahDokumentasi extends Activity {
         lastActivity = System.currentTimeMillis();
         dokumentasi_gizi.putExtra("dokumentasiID", dokumentasiID);
         dokumentasi_gizi.putExtra("lastActivity", lastActivity);
+        dokumentasi_gizi.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TASK | Intent.FLAG_ACTIVITY_CLEAR_TOP);
         startActivity(dokumentasi_gizi);
 
         // Close This Activity

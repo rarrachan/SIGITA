@@ -132,6 +132,7 @@ public class DetailJadwalImunisasi extends Activity {
         Intent jadwal_imunisasi = new Intent(this, JadwalImunisasi.class);
         lastActivity = System.currentTimeMillis();
         jadwal_imunisasi.putExtra("lastActivity", lastActivity);
+        jadwal_imunisasi.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TASK | Intent.FLAG_ACTIVITY_CLEAR_TOP);
         startActivity(jadwal_imunisasi);
 
         // Close This Activity

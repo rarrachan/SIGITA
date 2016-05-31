@@ -93,7 +93,9 @@ public class Imunisasi extends Activity implements OnClickListener {
                 Intent jadwal = new Intent(this, JadwalImunisasi.class);
                 lastActivity = System.currentTimeMillis();
                 jadwal.putExtra("lastActivity", lastActivity);
+                jadwal.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TASK | Intent.FLAG_ACTIVITY_CLEAR_TOP);
                 startActivity(jadwal);
+                finish();
                 break;
             // Riwayat Imunisasi
             case R.id.RiwayatImunisasiLinearLayout :
@@ -102,6 +104,7 @@ public class Imunisasi extends Activity implements OnClickListener {
                     Intent riwayat = new Intent(this, RiwayatImunisasi.class);
                     lastActivity = System.currentTimeMillis();
                     riwayat.putExtra("lastActivity", lastActivity);
+                    riwayat.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TASK | Intent.FLAG_ACTIVITY_CLEAR_TOP);
                     startActivity(riwayat);
                     finish();
                 } else {
@@ -144,6 +147,7 @@ public class Imunisasi extends Activity implements OnClickListener {
                     Intent alarm = new Intent(this, AlarmImunisasi.class);
                     lastActivity = System.currentTimeMillis();
                     alarm.putExtra("lastActivity", lastActivity);
+                    alarm.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TASK | Intent.FLAG_ACTIVITY_CLEAR_TOP);
                     startActivity(alarm);
                     finish();
 
@@ -190,6 +194,7 @@ public class Imunisasi extends Activity implements OnClickListener {
         Intent index = new Intent(this, Index.class);
         lastActivity = System.currentTimeMillis();
         index.putExtra("lastActivity", lastActivity);
+        index.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TASK | Intent.FLAG_ACTIVITY_CLEAR_TOP);
         startActivity(index);
 
         // Close This Activity

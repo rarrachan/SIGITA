@@ -7,12 +7,14 @@ package com.syafira.SIGITA;
 import android.app.Activity;
 import android.app.AlertDialog;
 import android.app.DatePickerDialog;
+import android.app.Dialog;
 import android.content.Context;
 import android.content.DialogInterface;
 import android.content.Intent;
 import android.database.Cursor;
 import android.graphics.*;
 import android.graphics.drawable.BitmapDrawable;
+import android.graphics.drawable.ColorDrawable;
 import android.media.ExifInterface;
 import android.media.MediaScannerConnection;
 import android.net.Uri;
@@ -210,18 +212,19 @@ public class TambahProfil extends Activity implements OnClickListener {
             // Simpan
             case R.id.button_simpan:
                 // Get Value
-                String nama = profil_nama.getText().toString();
-                String panjangLahir = profil_panjanglahir.getText().toString();
-                String beratLahir = profil_beratlahir.getText().toString();
-                String tmptLahir = profil_tempatlahir.getText().toString();
-                String tglLahir = profil_tanggallahir.getText().toString();
-                String alergi = profil_alergi.getText().toString();
-                String penyakitKronis = profil_penyakitkronis.getText().toString();
-                BitmapDrawable drawable_foto = (BitmapDrawable) profil_foto.getDrawable();
+                final String nama = profil_nama.getText().toString();
+                final String panjangLahir = profil_panjanglahir.getText().toString();
+                final String beratLahir = profil_beratlahir.getText().toString();
+                final String tmptLahir = profil_tempatlahir.getText().toString();
+                final String tglLahir = profil_tanggallahir.getText().toString();
+                final String alergi = profil_alergi.getText().toString();
+                final String penyakitKronis = profil_penyakitkronis.getText().toString();
+                final String passcode = "";
+                final BitmapDrawable drawable_foto = (BitmapDrawable) profil_foto.getDrawable();
 
                 // Change Space into UnderScore
-                String foto = "profil_" + nama.replaceAll(" ", "_").toLowerCase() + ".jpg";
-                String namaFolder = nama.replaceAll(" ", "_");
+                final String foto = "profil_" + nama.replaceAll(" ", "_").toLowerCase() + ".jpg";
+                final String namaFolder = nama.replaceAll(" ", "_");
 
                 // Check if Value Empty
                 if (TextUtils.isEmpty(nama) ||
@@ -235,60 +238,85 @@ public class TambahProfil extends Activity implements OnClickListener {
                     Toast.makeText(this, "Kolom Belum Terisi", Toast.LENGTH_SHORT).show();
                     return;
                 } else {
-                    String jenisKelamin = ((RadioButton) findViewById(profil_jeniskelamin.getCheckedRadioButtonId())).getText().toString();
-                    String golonganDarah = ((RadioButton) findViewById(profil_golongandarah.getCheckedRadioButtonId())).getText().toString();
-                    //check sd card
-                    String state = Environment.getExternalStorageState();
-                    if (Environment.MEDIA_MOUNTED.equals(state)) {
-                        // Get Path Directory
-                        String sdCardDirectory = Environment.getExternalStorageDirectory().toString();
+                    // Create Dialog
+                    final Dialog dialog = new Dialog(TambahProfil.this);
+                    dialog.setContentView(R.layout.tambah_passcode);
+                    dialog.setCanceledOnTouchOutside(true);
+                    dialog.getWindow().setBackgroundDrawable(new ColorDrawable(android.graphics.Color.TRANSPARENT));
+                    dialog.show();
 
-                        // Create Directory
-                        File photoDirectory = new File(sdCardDirectory + "/SIGITA/" + namaFolder);
-                        photoDirectory.mkdirs();
+                    // Load Dialog Widget
+                    TextView alert_warning = (TextView) dialog.findViewById(R.id.alert_warning);
+                    TextView alert_tambah = (TextView) dialog.findViewById(R.id.alert_tambah);
+                    ImageView button_batal = (ImageView) dialog.findViewById(R.id.button_batal);
+                    ImageView button_ok = (ImageView) dialog.findViewById(R.id.button_ok);
 
-                        // Declare Condition
-                        boolean success = false;
+                    // Set Custom Font Dialog
+                    Typeface typeface = Typeface.createFromAsset(getAssets(), "teen-webfont.ttf");
+                    alert_tambah.setTypeface(typeface);
+                    alert_warning.setTypeface(typeface);
 
-                        try {
-                            FileOutputStream outStream;
+                    // Set OnClickListener Dialog
+                    button_batal.setOnClickListener(new OnClickListener() {
+                        @Override
+                        public void onClick(View v) {
+                            // Close Dialog
+                            dialog.dismiss();
 
-                            // Set Location Directory
-                            File profil_foto = new File(photoDirectory, foto);
-                            outStream = new FileOutputStream(profil_foto);
+                            String jenisKelamin = ((RadioButton) findViewById(profil_jeniskelamin.getCheckedRadioButtonId())).getText().toString();
+                            String golonganDarah = ((RadioButton) findViewById(profil_golongandarah.getCheckedRadioButtonId())).getText().toString();
+                            //check sd card
+                            String state = Environment.getExternalStorageState();
+                            if (Environment.MEDIA_MOUNTED.equals(state)) {
+                                // Get Path Directory
+                                String sdCardDirectory = Environment.getExternalStorageDirectory().toString();
 
-                            // Compressed Photo
-                            Bitmap bitmap = drawable_foto.getBitmap();
-                            bitmap.compress(Bitmap.CompressFormat.JPEG, 100, outStream);
+                                // Create Directory
+                                File photoDirectory = new File(sdCardDirectory + "/SIGITA/" + namaFolder);
+                                photoDirectory.mkdirs();
+
+                                // Declare Condition
+                                boolean success = false;
+
+                                try {
+                                    FileOutputStream outStream;
+
+                                    // Set Location Directory
+                                    File profil_foto = new File(photoDirectory, foto);
+                                    outStream = new FileOutputStream(profil_foto);
+
+                                    // Compressed Photo
+                                    Bitmap bitmap = drawable_foto.getBitmap();
+                                    bitmap.compress(Bitmap.CompressFormat.JPEG, 100, outStream);
                             /* 100 to keep full quality of the image */
 
-                            // Put Photo into Directory
-                            outStream.flush();
-                            outStream.close();
+                                    // Put Photo into Directory
+                                    outStream.flush();
+                                    outStream.close();
 
-                            // Scan Gallery
-                            MediaScannerConnection.scanFile(TambahProfil.this,
-                                    new String[]{profil_foto.toString()}, null,
-                                    new MediaScannerConnection.OnScanCompletedListener() {
-                                        public void onScanCompleted(String path, Uri uri) {
-                                        }
-                                    });
+                                    // Scan Gallery
+                                    MediaScannerConnection.scanFile(TambahProfil.this,
+                                            new String[]{profil_foto.toString()}, null,
+                                            new MediaScannerConnection.OnScanCompletedListener() {
+                                                public void onScanCompleted(String path, Uri uri) {
+                                                }
+                                            });
 
-                            // Declare Condition
-                            success = true;
-                        } catch (IOException e) {
-                            e.printStackTrace();
-                        }
+                                    // Declare Condition
+                                    success = true;
+                                } catch (IOException e) {
+                                    e.printStackTrace();
+                                }
 
-                        // Check Condition
-                        if (success) {
-                            // Show Toast Success
-                            Toast.makeText(getApplicationContext(), "Profil Berhasil Tersimpan", Toast.LENGTH_LONG).show();
-                        } else {
-                            // Show Toast Failed
-                            Toast.makeText(getApplicationContext(), "Profil Gagal Tersimpan", Toast.LENGTH_LONG).show();
-                        }
-                    }
+                                // Check Condition
+                                if (success) {
+                                    // Show Toast Success
+                                    Toast.makeText(getApplicationContext(), "Profil Berhasil Tersimpan", Toast.LENGTH_LONG).show();
+                                } else {
+                                    // Show Toast Failed
+                                    Toast.makeText(getApplicationContext(), "Profil Gagal Tersimpan", Toast.LENGTH_LONG).show();
+                                }
+                            }
 //                        else
 //                    {
 //                        ContextWrapper cw = new ContextWrapper(getApplicationContext());
@@ -320,18 +348,54 @@ public class TambahProfil extends Activity implements OnClickListener {
 //                    File f = new File(android.os.Environment.getExternalStorageDirectory(), foto.replaceAll(" ", "_").toLowerCase());
 //                    String fotoPath = f.getAbsoluteFile().toString();
 
-                    // Insert Data into Database
-                    db.insertProfil(nama, tmptLahir, tglLahir, jenisKelamin, golonganDarah,
-                            panjangLahir, beratLahir, alergi, penyakitKronis, foto);
+                            // Insert Data into Database
+                            db.insertProfil(nama, tmptLahir, tglLahir, jenisKelamin, golonganDarah,
+                                    panjangLahir, beratLahir, alergi, penyakitKronis, passcode, foto);
 
-                    // Start Profil Activity
-                    Intent profil = new Intent(this, Profil.class);
-                    lastActivity = System.currentTimeMillis();
-                    profil.putExtra("lastActivity", lastActivity);
-                    startActivity(profil);
+                            // Start Profil Activity
+                            Intent profil = new Intent(TambahProfil.this, Profil.class);
+                            lastActivity = System.currentTimeMillis();
+                            profil.putExtra("lastActivity", lastActivity);
+                            profil.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TASK | Intent.FLAG_ACTIVITY_CLEAR_TOP);
+                            startActivity(profil);
 
-                    // Close This Activity
-                    finish();
+                            // Close This Activity
+                            finish();
+                        }
+                    });
+                    button_ok.setOnClickListener(new OnClickListener() {
+                        @Override
+                        public void onClick(View v) {
+                            // Close Dialog
+                            dialog.dismiss();
+
+                            String jenisKelamin = ((RadioButton) findViewById(profil_jeniskelamin.getCheckedRadioButtonId())).getText().toString();
+                            String golonganDarah = ((RadioButton) findViewById(profil_golongandarah.getCheckedRadioButtonId())).getText().toString();
+
+                            Bitmap bitmap = drawable_foto.getBitmap();
+                            ByteArrayOutputStream bs = new ByteArrayOutputStream();
+                            bitmap.compress(Bitmap.CompressFormat.JPEG, 100, bs);
+
+                            Intent profilPasscode = new Intent(TambahProfil.this, ProfilPasscode.class);
+                            profilPasscode.putExtra("nama", nama);
+                            profilPasscode.putExtra("tmptLahir", tmptLahir);
+                            profilPasscode.putExtra("tglLahir", tglLahir);
+                            profilPasscode.putExtra("jenisKelamin", jenisKelamin);
+                            profilPasscode.putExtra("golonganDarah", golonganDarah);
+                            profilPasscode.putExtra("panjangLahir", panjangLahir);
+                            profilPasscode.putExtra("beratLahir", beratLahir);
+                            profilPasscode.putExtra("alergi", alergi);
+                            profilPasscode.putExtra("penyakitKronis", penyakitKronis);
+                            profilPasscode.putExtra("byteArray", bs.toByteArray());
+                            lastActivity = System.currentTimeMillis();
+                            profilPasscode.putExtra("lastActivity", lastActivity);
+                            profilPasscode.putExtra("action", "tambahprofil");
+                            profilPasscode.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TASK | Intent.FLAG_ACTIVITY_CLEAR_TOP);
+                            startActivity(profilPasscode);
+
+                            finish();
+                        }
+                    });
                 }
                 break;
         }
@@ -484,6 +548,7 @@ public class TambahProfil extends Activity implements OnClickListener {
         Intent profil = new Intent(TambahProfil.this, Profil.class);
         lastActivity = System.currentTimeMillis();
         profil.putExtra("lastActivity", lastActivity);
+        profil.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TASK | Intent.FLAG_ACTIVITY_CLEAR_TOP);
         startActivity(profil);
 
         // Close This Activity

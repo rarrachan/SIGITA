@@ -56,6 +56,7 @@ public class DetailProfil extends Activity {
     private ImageView button_ubah;
     private ImageView button_hapus;
     private ImageView profil_foto;
+    private ImageView button_passcode;
     private SessionManager session;
     private DBHelper db;
     private long lastActivity;
@@ -70,7 +71,7 @@ public class DetailProfil extends Activity {
 
         // Fetch Intent Extra
         Intent fetchID = getIntent();
-        int id = fetchID.getIntExtra("id", 0);
+        final int id = fetchID.getIntExtra("id", 0);
         lastActivity = fetchID.getLongExtra("lastActivity", 1L);
 
         // Load Database
@@ -110,6 +111,7 @@ public class DetailProfil extends Activity {
         button_ubah = (ImageView) findViewById(R.id.button_ubah);
         button_hapus = (ImageView) findViewById(R.id.button_hapus);
         profil_foto = (ImageView) findViewById(R.id.profil_foto);
+        button_passcode = (ImageView) findViewById(R.id.button_passcode);
 
         // Set Custom Font
         final Typeface typeface = Typeface.createFromAsset(getAssets(), "teen-webfont.ttf");
@@ -142,11 +144,7 @@ public class DetailProfil extends Activity {
         final int profil_id = cursor.getInt(cursor.getColumnIndex("profilID"));
         final String nama = cursor.getString(cursor.getColumnIndex("profil_nama"));
         profil_nama.setText(nama);
-        if (cursor.getString(cursor.getColumnIndex("profil_jenisKelamin")).equals("L")) {
-            profil_jeniskelamin.setText("Laki-Laki");
-        } else {
-            profil_jeniskelamin.setText("Perempuan");
-        }
+        profil_jeniskelamin.setText(cursor.getString(cursor.getColumnIndex("profil_jenisKelamin")));
         profil_golongandarah.setText(cursor.getString(cursor.getColumnIndex("profil_golonganDarah")));
         profil_panjanglahir.setText(cursor.getString(cursor.getColumnIndex("profil_panjangLahir")));
         profil_beratlahir.setText(cursor.getString(cursor.getColumnIndex("profil_beratLahir")));
@@ -161,8 +159,34 @@ public class DetailProfil extends Activity {
         final String foto_path = android.os.Environment.getExternalStorageDirectory() + "/SIGITA/" + nama.replaceAll(" ", "_") + "/" + cursor.getString(cursor.getColumnIndex("profil_foto"));
         profil_foto.setImageDrawable(Drawable.createFromPath(foto_path));
 
+        final String pass = cursor.getString(cursor.getColumnIndex("profil_passcode"));
+
 
         // Set OnClickListener
+        button_passcode.setOnClickListener(new OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                if(!pass.equals("")) {
+                    // Show Image Zoom Activity
+                    Intent passcode = new Intent(DetailProfil.this, ProfilCekPasscode.class);
+                    lastActivity = System.currentTimeMillis();
+                    passcode.putExtra("lastActivity", lastActivity);
+                    passcode.putExtra("nama", nama);
+                    passcode.putExtra("passcode", pass);
+                    passcode.putExtra("id", id);
+                    passcode.putExtra("action", "passcode");
+                    startActivity(passcode);
+                } else {
+                    // Start Index Activity
+                    lastActivity = System.currentTimeMillis();
+                    Intent createnewpasscode = new Intent(DetailProfil.this, Passcode.class);
+                    createnewpasscode.putExtra("lastActivity", lastActivity);
+                    createnewpasscode.putExtra("id", id);
+                    startActivity(createnewpasscode);
+                }
+            }
+        });
+
         button_ubah.setOnClickListener(new OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -173,6 +197,7 @@ public class DetailProfil extends Activity {
                 ubah_profil.putExtra("lastActivity", lastActivity);
                 ubah_profil.putExtra("id", profil_id);
                 ubah_profil.putExtra("nama", nama);
+                ubah_profil.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TASK | Intent.FLAG_ACTIVITY_CLEAR_TOP);
                 startActivity(ubah_profil);
                 finish();
             }
@@ -245,7 +270,7 @@ public class DetailProfil extends Activity {
                             }
 
                             // Scan Gallery
-                            File scanGallery = new File(Environment.getExternalStorageDirectory() + "/SIGITA/" + nama.replaceAll(" ", "_"), cursor.getString(cursor.getColumnIndex("profil_foto")));
+                            File scanGallery = new File(Environment.getExternalStorageDirectory() + "/SIGITA/" + nama.replaceAll(" ", "_"));
                             MediaScannerConnection.scanFile(DetailProfil.this,
                                     new String[]{scanGallery.toString()}, null,
                                     new MediaScannerConnection.OnScanCompletedListener() {
@@ -283,6 +308,7 @@ public class DetailProfil extends Activity {
                         Intent profil = new Intent(DetailProfil.this, Profil.class);
                         lastActivity = System.currentTimeMillis();
                         profil.putExtra("lastActivity", lastActivity);
+                        profil.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TASK | Intent.FLAG_ACTIVITY_CLEAR_TOP);
                         startActivity(profil);
 
                         // Clear Session
@@ -303,6 +329,7 @@ public class DetailProfil extends Activity {
         Intent profil = new Intent(DetailProfil.this, Profil.class);
         lastActivity = System.currentTimeMillis();
         profil.putExtra("lastActivity", lastActivity);
+        profil.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TASK | Intent.FLAG_ACTIVITY_CLEAR_TOP);
         startActivity(profil);
 
         // Close This Activity

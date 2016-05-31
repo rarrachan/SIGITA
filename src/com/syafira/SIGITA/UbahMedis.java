@@ -227,6 +227,7 @@ public class UbahMedis extends Activity {
                     lastActivity = System.currentTimeMillis();
                     detail_medis.putExtra("lastActivity", lastActivity);
                     detail_medis.putExtra("id", medisID);
+                    detail_medis.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TASK | Intent.FLAG_ACTIVITY_CLEAR_TOP);
                     startActivity(detail_medis);
 
                     // Close This Activity
@@ -280,6 +281,7 @@ public class UbahMedis extends Activity {
         lastActivity = System.currentTimeMillis();
         detail_medis.putExtra("lastActivity", lastActivity);
         detail_medis.putExtra("id", id);
+        detail_medis.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TASK | Intent.FLAG_ACTIVITY_CLEAR_TOP);
         startActivity(detail_medis);
 
         // Close This Activity

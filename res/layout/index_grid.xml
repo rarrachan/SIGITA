@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+              android:layout_width="match_parent"
+              android:layout_height="match_parent"
+              android:orientation="vertical"
+              android:background="#FFF1B5">
+
+    <com.syafira.SIGITA.GridViewItem
+            android:id="@+id/index_menu"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:contentDescription="@string/app_name"
+            android:layout_gravity="center"/>
+
+    <TextView
+            android:id="@+id/index_nama_menu"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:contentDescription="@string/app_name"
+            style="@android:style/TextAppearance.DeviceDefault.Medium"
+            android:textColor="#D046F2"
+            android:gravity="center"/>
+
+</LinearLayout>

@@ -88,6 +88,7 @@ public class Gizi extends Activity implements OnClickListener {
                 Intent kalkulatorgizi = new Intent(this, KalkulatorGizi.class);
                 lastActivity = System.currentTimeMillis();
                 kalkulatorgizi.putExtra("lastActivity", lastActivity);
+                kalkulatorgizi.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TASK | Intent.FLAG_ACTIVITY_CLEAR_TOP);
                 startActivity(kalkulatorgizi);
                 break;
 
@@ -142,6 +143,7 @@ public class Gizi extends Activity implements OnClickListener {
         Intent index = new Intent(this, Index.class);
         lastActivity = System.currentTimeMillis();
         index.putExtra("lastActivity", lastActivity);
+        index.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TASK | Intent.FLAG_ACTIVITY_CLEAR_TOP);
         startActivity(index);
 
         // Close This Activity

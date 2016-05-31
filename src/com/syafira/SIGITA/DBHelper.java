@@ -76,6 +76,7 @@ public class DBHelper extends SQLiteOpenHelper {
                 "profil_beratLahir real not null, " +
                 "profil_alergi text, " +
                 "profil_penyakitKronis text," +
+                "profil_passcode text, " +
                 "profil_foto text not null);";
         db.execSQL(create_profil);
     }
@@ -83,7 +84,7 @@ public class DBHelper extends SQLiteOpenHelper {
     // Insert Profil to Database
     public long insertProfil(String nama, String tmptLahir, String tglLahir, String jenisKelamin,
                              String golonganDarah, String panjangLahir, String beratLahir,
-                             String alergi, String penyakitKronis, String fotoPath) {
+                             String alergi, String penyakitKronis, String passcode, String fotoPath) {
 
         // Open Database to Write
         SQLiteDatabase db = this.getWritableDatabase();
@@ -99,6 +100,7 @@ public class DBHelper extends SQLiteOpenHelper {
         values.put("profil_beratLahir", beratLahir);
         values.put("profil_alergi", alergi);
         values.put("profil_penyakitKronis", penyakitKronis);
+        values.put("profil_passcode", passcode);
         values.put("profil_foto", fotoPath);
 
         // Insert Data
@@ -139,6 +141,20 @@ public class DBHelper extends SQLiteOpenHelper {
         values.put("profil_alergi", alergi);
         values.put("profil_penyakitKronis", penyakitKronis);
         values.put("profil_foto", fotoPath);
+
+        // Update Data
+        return db.update("profil", values, "profilID = " + id, null);
+    }
+
+    // Update Profil to Database
+    public long updateProfilPasscode(Integer id, String passcode) {
+
+        // Open Database to Write
+        SQLiteDatabase db = this.getWritableDatabase();
+
+        // Get Value
+        ContentValues values = new ContentValues();
+        values.put("profil_passcode", passcode);
 
         // Update Data
         return db.update("profil", values, "profilID = " + id, null);
@@ -2211,8 +2227,8 @@ public class DBHelper extends SQLiteOpenHelper {
                 "dokumentasi_tanggal text not null, " +
                 "dokumentasi_usia text not null, " +
                 "dokumentasi_bulan integer not null, " +
-                "dokumentasi_tinggi integer not null," +
-                "dokumentasi_berat integer not null," +
+                "dokumentasi_tinggi real not null," +
+                "dokumentasi_berat real not null," +
                 "dokumentasi_bbu text," +
                 "dokumentasi_tbu text," +
                 "dokumentasi_bbtb text," +

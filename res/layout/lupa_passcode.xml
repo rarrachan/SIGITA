@@ -1,0 +1,106 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:fillViewport="true"
+            android:scrollbars="none"
+            android:layout_marginBottom="40dp"
+            android:id="@+id/scrollView">
+
+    <LinearLayout
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:gravity="center"
+            android:orientation="horizontal">
+
+        <!-- Start Blank Space -->
+        <View
+                android:layout_width="0dp"
+                android:layout_height="0dp"
+                android:layout_weight=".2"/>
+        <!-- End Blank Space -->
+
+        <!-- Start Linear Layout Hapus Profil -->
+        <LinearLayout
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="5dp"
+                android:layout_marginRight="5dp"
+                android:orientation="vertical"
+                android:background="#FFFDC9"
+                android:layout_weight="1">
+
+            <!-- Start Text View Alert Warning -->
+            <TextView
+                    android:id="@+id/alert_lupa"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_margin="20dp"
+                    android:textColor="#D046F2"
+                    android:text="@string/alert_lupa"
+                    style="@android:style/TextAppearance.DeviceDefault.Medium"/>
+            <!-- End Text View Alert Warning -->
+
+            <!-- Start Text View Alert Hapus -->
+            <TextView
+                    android:id="@+id/alert_lupa_passcode"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_margin="20dp"
+                    android:textColor="#D046F2"
+                    android:text="@string/alert_lupa_passcode"
+                    style="@android:style/TextAppearance.DeviceDefault.Medium"/>
+            <!-- End Text View Alert Hapus -->
+
+            <!-- Start Linear Layout Button -->
+            <LinearLayout
+                    android:layout_width="fill_parent"
+                    android:layout_height="0dp"
+                    android:orientation="horizontal"
+                    android:layout_weight="1"
+                    android:layout_margin="20dp">
+
+                <!-- Start Image View Button Ok -->
+                <ImageView
+                        android:id="@+id/button_ok"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="3"
+                        android:adjustViewBounds="true"
+                        android:src="@drawable/tombol_ok"
+                        android:contentDescription="@string/app_name"/>
+                <!-- End Image View Button Ok -->
+
+                <!-- Start Blank Space -->
+                <View
+                        android:layout_width="0dp"
+                        android:layout_height="0dp"
+                        android:layout_weight="1"/>
+                <!-- Start Blank Space -->
+
+                <!-- Start Image View Button Batal -->
+                <ImageView
+                        android:id="@+id/button_batal"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="3"
+                        android:adjustViewBounds="true"
+                        android:src="@drawable/tombol_batal"
+                        android:contentDescription="@string/app_name"/>
+                <!-- End Image View Button Batal -->
+
+            </LinearLayout>
+            <!-- End Linear Layout Button -->
+
+        </LinearLayout>
+        <!-- End Linear Layout Profil -->
+
+        <!-- Start Blank Space -->
+        <View
+                android:layout_width="0dp"
+                android:layout_height="0dp"
+                android:layout_weight=".2"/>
+        <!-- Start Blank Space -->
+
+    </LinearLayout>
+</ScrollView>

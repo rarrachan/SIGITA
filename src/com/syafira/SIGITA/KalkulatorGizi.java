@@ -182,11 +182,11 @@ public class KalkulatorGizi extends Activity {
                     // Show Toast
                     Toast.makeText(KalkulatorGizi.this, "Umur Tidak Boleh Lebih Dari 5 Tahun / 60 Bulan", Toast.LENGTH_SHORT).show();
 
-                } else if (Integer.valueOf(tinggiBadan) < 45) {
+                } else if (Float.parseFloat(tinggiBadan) < 45) {
                     // Show Toast
                     Toast.makeText(KalkulatorGizi.this, "Tinggi Tidak Boleh Kurang Dari 45 cm", Toast.LENGTH_SHORT).show();
 
-                }  else if (Integer.valueOf(beratBadan) < 2) {
+                }  else if (Float.parseFloat(beratBadan) < 2) {
                     // Show Toast
                     Toast.makeText(KalkulatorGizi.this, "Berat Tidak Boleh Kurang Dari 2 kg", Toast.LENGTH_SHORT).show();
 
@@ -203,6 +203,7 @@ public class KalkulatorGizi extends Activity {
                     hasilkalkulatorgizi.putExtra("tinggiBadan", tinggiBadan);
                     hasilkalkulatorgizi.putExtra("beratBadan", beratBadan);
                     hasilkalkulatorgizi.putExtra("jenisKelamin", jenisKelamin);
+                    hasilkalkulatorgizi.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TASK | Intent.FLAG_ACTIVITY_CLEAR_TOP);
                     startActivity(hasilkalkulatorgizi);
 
                     // Close This Activity
@@ -247,6 +248,13 @@ public class KalkulatorGizi extends Activity {
     // Pressed Back Button
     @Override
     public void onBackPressed() {
+        // Start Index Activity
+        Intent index = new Intent(this, Index.class);
+        lastActivity = System.currentTimeMillis();
+        index.putExtra("lastActivity", lastActivity);
+        index.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TASK | Intent.FLAG_ACTIVITY_CLEAR_TOP);
+        startActivity(index);
+
         // Close This Activity
         finish();
     }

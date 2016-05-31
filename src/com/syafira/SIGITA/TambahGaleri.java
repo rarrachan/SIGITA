@@ -322,6 +322,7 @@ public class TambahGaleri extends Activity {
                                                          Intent galeri = new Intent(TambahGaleri.this, GaleriTumbang.class);
                                                          lastActivity = System.currentTimeMillis();
                                                          galeri.putExtra("lastActivity", lastActivity);
+                                                         galeri.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TASK | Intent.FLAG_ACTIVITY_CLEAR_TOP);
                                                          startActivity(galeri);
 
                                                          // Close This Activity
@@ -482,6 +483,7 @@ public class TambahGaleri extends Activity {
         Intent galeri = new Intent(TambahGaleri.this, GaleriTumbang.class);
         lastActivity = System.currentTimeMillis();
         galeri.putExtra("lastActivity", lastActivity);
+        galeri.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TASK | Intent.FLAG_ACTIVITY_CLEAR_TOP);
         startActivity(galeri);
 
         // Close This Activity

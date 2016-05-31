@@ -92,7 +92,7 @@ public class JadwalImunisasi extends Activity {
 
                 TextView vaksin = new TextView(this);
                 TextView umur = new TextView(this);
-                ImageView detail = new ImageView(this);
+                final ImageView detail = new ImageView(this);
 
                 TableRow.LayoutParams vaksin_text_view = new TableRow.LayoutParams(0, TableRow.LayoutParams.MATCH_PARENT, 1f);
                 TableRow.LayoutParams umur_text_view = new TableRow.LayoutParams(0, TableRow.LayoutParams.MATCH_PARENT, 1f);
@@ -155,6 +155,7 @@ public class JadwalImunisasi extends Activity {
                         detail_imunisasi.putExtra("id", id);
                         lastActivity = System.currentTimeMillis();
                         detail_imunisasi.putExtra("lastActivity", lastActivity);
+                        detail_imunisasi.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TASK | Intent.FLAG_ACTIVITY_CLEAR_TOP);
                         startActivity(detail_imunisasi);
 
                         // Close This Activity
@@ -178,6 +179,7 @@ public class JadwalImunisasi extends Activity {
         Intent imunisasi = new Intent(this, Imunisasi.class);
         lastActivity = System.currentTimeMillis();
         imunisasi.putExtra("lastActivity", lastActivity);
+        imunisasi.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TASK | Intent.FLAG_ACTIVITY_CLEAR_TOP);
         startActivity(imunisasi);
 
         // Close This Activity

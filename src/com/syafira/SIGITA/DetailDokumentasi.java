@@ -1012,6 +1012,7 @@ public class DetailDokumentasi extends Activity {
                 lastActivity = System.currentTimeMillis();
                 ubah_dokumentasi.putExtra("lastActivity", lastActivity);
                 ubah_dokumentasi.putExtra("dokumentasiID", dokumentasiID);
+                ubah_dokumentasi.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TASK | Intent.FLAG_ACTIVITY_CLEAR_TOP);
                 startActivity(ubah_dokumentasi);
                 finish();
             }
@@ -1075,6 +1076,7 @@ public class DetailDokumentasi extends Activity {
                         Intent dokumentasi_gizi = new Intent(DetailDokumentasi.this, DokumentasiGizi.class);
                         lastActivity = System.currentTimeMillis();
                         dokumentasi_gizi.putExtra("lastActivity", lastActivity);
+                        dokumentasi_gizi.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TASK | Intent.FLAG_ACTIVITY_CLEAR_TOP);
                         startActivity(dokumentasi_gizi);
 
                         // Clear Activity
@@ -1092,6 +1094,7 @@ public class DetailDokumentasi extends Activity {
         Intent gizi = new Intent(this, DokumentasiGizi.class);
         lastActivity = System.currentTimeMillis();
         gizi.putExtra("lastActivity", lastActivity);
+        gizi.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TASK | Intent.FLAG_ACTIVITY_CLEAR_TOP);
         startActivity(gizi);
 
         // Close This Activity

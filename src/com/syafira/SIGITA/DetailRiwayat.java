@@ -145,6 +145,7 @@ public class DetailRiwayat extends Activity {
                 lastActivity = System.currentTimeMillis();
                 ubah_riwayat.putExtra("lastActivity", lastActivity);
                 ubah_riwayat.putExtra("id", riwayatID);
+                ubah_riwayat.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TASK | Intent.FLAG_ACTIVITY_CLEAR_TOP);
                 startActivity(ubah_riwayat);
                 finish();
             }
@@ -208,6 +209,7 @@ public class DetailRiwayat extends Activity {
                         Intent riwayat = new Intent(DetailRiwayat.this, RiwayatImunisasi.class);
                         lastActivity = System.currentTimeMillis();
                         riwayat.putExtra("lastActivity", lastActivity);
+                        riwayat.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TASK | Intent.FLAG_ACTIVITY_CLEAR_TOP);
                         startActivity(riwayat);
 
                         // Clear Activity
@@ -225,6 +227,7 @@ public class DetailRiwayat extends Activity {
         Intent riwayat = new Intent(DetailRiwayat.this, RiwayatImunisasi.class);
         lastActivity = System.currentTimeMillis();
         riwayat.putExtra("lastActivity", lastActivity);
+        riwayat.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TASK | Intent.FLAG_ACTIVITY_CLEAR_TOP);
         startActivity(riwayat);
 
         // Close This Activity

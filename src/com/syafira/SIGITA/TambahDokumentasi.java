@@ -196,12 +196,12 @@ public class TambahDokumentasi extends Activity {
                     // Show Toast
                     Toast.makeText(TambahDokumentasi.this, "Umur Tidak Boleh Lebih Dari 5 Tahun / 60 Bulan", Toast.LENGTH_SHORT).show();
 
-                } else if (Integer.valueOf(tinggiBadan) < 45) {
+                } else if (Float.parseFloat(tinggiBadan) < 45) {
                     // Show Toast
                     Toast.makeText(TambahDokumentasi.this, "Tinggi Tidak Boleh Kurang Dari 45 cm", Toast.LENGTH_SHORT).show();
 
                 }  else {
-                    if (Integer.valueOf(beratBadan) < 2) {
+                    if (Float.parseFloat(beratBadan) < 2) {
                         // Show Toast
                         Toast.makeText(TambahDokumentasi.this, "Berat Tidak Boleh Kurang Dari 2 kg", Toast.LENGTH_SHORT).show();
 
@@ -214,7 +214,7 @@ public class TambahDokumentasi extends Activity {
                         Cursor cursorTBU;
                         Cursor cursorBBTB;
                         Cursor cursorIMTU;
-                        if ((session.loadSession(TambahDokumentasi.this, "gender")).equals("L")) {
+                        if ((session.loadSession(TambahDokumentasi.this, "gender")).equals("Laki-laki")) {
                             cursorBBU = db.getLakiBBUList(bulan);
                             cursorTBU = db.getLakiTBUList(bulan);
                             if (bulan <= 24) {
@@ -240,7 +240,7 @@ public class TambahDokumentasi extends Activity {
 
                         // Berat Badan / Umur
                         float bbu = 0;
-                        if ((session.loadSession(TambahDokumentasi.this, "gender")).equals("L")) {
+                        if ((session.loadSession(TambahDokumentasi.this, "gender")).equals("Laki-laki")) {
                             // Berat badan < Median
                             if (Float.parseFloat(beratBadan) < Float.parseFloat(cursorBBU.getString(cursorBBU.getColumnIndex("laki_bbu_median")))) {
                                 bbu = (Float.parseFloat(beratBadan) - Float.parseFloat(cursorBBU.getString(cursorBBU.getColumnIndex("laki_bbu_median")))) /
@@ -283,7 +283,7 @@ public class TambahDokumentasi extends Activity {
 
                         // Tinggi Badan / Umur
                         float tbu = 0;
-                        if ((session.loadSession(TambahDokumentasi.this, "gender")).equals("L")) {
+                        if ((session.loadSession(TambahDokumentasi.this, "gender")).equals("Laki-laki")) {
                             // Tinggi Badan < Median
                             if (Float.parseFloat(tinggiBadan) < Float.parseFloat(cursorTBU.getString(cursorTBU.getColumnIndex("laki_tbu_median")))) {
                                 tbu = (Float.parseFloat(tinggiBadan) - Float.parseFloat(cursorTBU.getString(cursorTBU.getColumnIndex("laki_tbu_median")))) /
@@ -314,7 +314,7 @@ public class TambahDokumentasi extends Activity {
                         }
 
                         String status_tbu = null;
-                        if (bbu < Float.parseFloat("-3")) {
+                        if (tbu < Float.parseFloat("-3")) {
                             status_tbu = "Sangat Pendek";
                         } else if (tbu >= Float.parseFloat("-3") && tbu < Float.parseFloat("-2")) {
                             status_tbu = "Pendek";
@@ -326,7 +326,7 @@ public class TambahDokumentasi extends Activity {
 
                         // Berat Badan / Tinggi Badan
                         float bbtb = 0;
-                        if ((session.loadSession(TambahDokumentasi.this, "gender")).equals("L")) {
+                        if ((session.loadSession(TambahDokumentasi.this, "gender")).equals("Laki-laki")) {
                             // Tinggi Badan < Median
                             if (Float.parseFloat(tinggiBadan) < Float.parseFloat(cursorBBTB.getString(cursorBBTB.getColumnIndex("laki_bbtb_median")))) {
                                 bbtb = (Float.parseFloat(tinggiBadan) - Float.parseFloat(cursorBBTB.getString(cursorBBTB.getColumnIndex("laki_bbtb_median")))) /
@@ -370,7 +370,7 @@ public class TambahDokumentasi extends Activity {
                         // Indeks Massa Tubuh / Umur
                         float imt = Float.parseFloat(beratBadan) / ((Float.parseFloat(tinggiBadan) / 100) * (Float.parseFloat(tinggiBadan) / 100));
                         float imtu = 0;
-                        if ((session.loadSession(TambahDokumentasi.this, "gender")).equals("L")) {
+                        if ((session.loadSession(TambahDokumentasi.this, "gender")).equals("Laki-laki")) {
                             // Indeks Massa Tubuh < Median
                             if (imt < Float.parseFloat(cursorIMTU.getString(cursorIMTU.getColumnIndex("laki_imtu_median")))) {
                                 imtu = (imt - Float.parseFloat(cursorIMTU.getString(cursorIMTU.getColumnIndex("laki_imtu_median")))) /
@@ -436,6 +436,7 @@ public class TambahDokumentasi extends Activity {
                         Intent dokumentasi_gizi = new Intent(TambahDokumentasi.this, DokumentasiGizi.class);
                         lastActivity = System.currentTimeMillis();
                         dokumentasi_gizi.putExtra("lastActivity", lastActivity);
+                        dokumentasi_gizi.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TASK | Intent.FLAG_ACTIVITY_CLEAR_TOP);
                         startActivity(dokumentasi_gizi);
 
                         // Close This Activity
@@ -484,6 +485,7 @@ public class TambahDokumentasi extends Activity {
         Intent dokumentasi_gizi = new Intent(TambahDokumentasi.this, DokumentasiGizi.class);
         lastActivity = System.currentTimeMillis();
         dokumentasi_gizi.putExtra("lastActivity", lastActivity);
+        dokumentasi_gizi.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TASK | Intent.FLAG_ACTIVITY_CLEAR_TOP);
         startActivity(dokumentasi_gizi);
 
         // Close This Activity

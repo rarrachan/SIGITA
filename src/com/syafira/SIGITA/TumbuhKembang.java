@@ -90,6 +90,7 @@ public class TumbuhKembang extends Activity implements OnClickListener {
                 Intent tahap_tumbang = new Intent(this, TahapanTumbang.class);
                 lastActivity = System.currentTimeMillis();
                 tahap_tumbang.putExtra("lastActivity", lastActivity);
+                tahap_tumbang.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TASK | Intent.FLAG_ACTIVITY_CLEAR_TOP);
                 startActivity(tahap_tumbang);
                 finish();
                 break;
@@ -100,6 +101,7 @@ public class TumbuhKembang extends Activity implements OnClickListener {
                     Intent galeri = new Intent(this, GaleriTumbang.class);
                     lastActivity = System.currentTimeMillis();
                     galeri.putExtra("lastActivity", lastActivity);
+                    galeri.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TASK | Intent.FLAG_ACTIVITY_CLEAR_TOP);
                     startActivity(galeri);
                     finish();
                 } else {
@@ -145,6 +147,7 @@ public class TumbuhKembang extends Activity implements OnClickListener {
         lastActivity = System.currentTimeMillis();
         Intent index = new Intent(this, Index.class);
         index.putExtra("lastActivity", lastActivity);
+        index.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TASK | Intent.FLAG_ACTIVITY_CLEAR_TOP);
         startActivity(index);
 
         // Close This Activity

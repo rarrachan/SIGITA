@@ -374,6 +374,7 @@ public class UbahProfil extends Activity implements OnClickListener {
                     lastActivity = System.currentTimeMillis();
                     detail_profil.putExtra("lastActivity", lastActivity);
                     detail_profil.putExtra("id", id);
+                    detail_profil.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TASK | Intent.FLAG_ACTIVITY_CLEAR_TOP);
                     startActivity(detail_profil);
 
                     // Close This Activity
@@ -535,6 +536,7 @@ public class UbahProfil extends Activity implements OnClickListener {
         lastActivity = System.currentTimeMillis();
         detail_profil.putExtra("lastActivity", lastActivity);
         detail_profil.putExtra("id", id);
+        detail_profil.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TASK | Intent.FLAG_ACTIVITY_CLEAR_TOP);
         startActivity(detail_profil);
 
         // Close This Activity

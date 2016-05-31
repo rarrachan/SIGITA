@@ -314,6 +314,7 @@ public class UbahGaleri extends Activity {
                         lastActivity = System.currentTimeMillis();
                         detail_galeri.putExtra("lastActivity", lastActivity);
                         detail_galeri.putExtra("galeriID", galeriID);
+                        detail_galeri.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TASK | Intent.FLAG_ACTIVITY_CLEAR_TOP);
                         startActivity(detail_galeri);
 
                         // Close This Activity
@@ -477,6 +478,7 @@ public class UbahGaleri extends Activity {
         lastActivity = System.currentTimeMillis();
         detail_galeri.putExtra("lastActivity", lastActivity);
         detail_galeri.putExtra("galeriID", galeriID);
+        detail_galeri.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TASK | Intent.FLAG_ACTIVITY_CLEAR_TOP);
         startActivity(detail_galeri);
 
         // Close This Activity

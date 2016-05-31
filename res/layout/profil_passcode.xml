@@ -1,0 +1,241 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:fillViewport="true"
+            android:scrollbars="none"
+            android:id="@+id/scrollView">
+
+    <RelativeLayout
+            android:focusable="true"
+            android:focusableInTouchMode="true"
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content">
+
+        <LinearLayout
+                android:layout_width="fill_parent"
+                android:layout_height="fill_parent"
+                android:background="#FFFBC9"
+                android:orientation="vertical">
+
+            <!-- Start Linear Layout Header -->
+            <LinearLayout
+                    android:id="@+id/HeaderLinearLayout"
+                    android:layout_width="fill_parent"
+                    android:layout_height="wrap_content"
+                    android:background="#FFF1B5"
+                    android:orientation="horizontal">
+
+                <!-- Start Blank Space -->
+                <View
+                        android:layout_width="0dp"
+                        android:layout_height="0dp"
+                        android:layout_weight=".2"/>
+                <!-- End Blank Space -->
+
+                <!-- Start Header Logo Image -->
+                <ImageView
+                        android:id="@+id/logo_index"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:adjustViewBounds="true"
+                        android:src="@drawable/icon_logopanjang"
+                        android:contentDescription="@string/app_name"/>
+                <!-- End Header Logo Image -->
+
+                <!-- Start Blank Space -->
+                <View
+                        android:layout_width="0dp"
+                        android:layout_height="0dp"
+                        android:layout_weight=".2"/>
+                <!-- End Blank Space -->
+
+            </LinearLayout>
+            <!-- End Linear Layout Header -->
+
+            <!-- Start Linear Layout Content -->
+            <LinearLayout
+                    android:layout_width="fill_parent"
+                    android:layout_height="fill_parent"
+                    android:gravity="center"
+                    android:orientation="vertical"
+                    android:layout_gravity="center_vertical"
+                    android:layout_marginBottom="70dp">
+
+                <!-- Start Text Footer -->
+                <TextView
+                        android:id="@+id/profil_passcode"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:textColor="#D046F2"
+                        android:paddingTop="15dp"
+                        android:paddingBottom="15dp"
+                        android:text="@string/profil_passcode"
+                        style="@android:style/TextAppearance.DeviceDefault.Medium"/>
+                <!-- End Text Footer -->
+
+                <LinearLayout
+                        android:layout_width="fill_parent"
+                        android:layout_height="fill_parent"
+                        android:gravity="center"
+                        android:orientation="horizontal"
+                        android:layout_gravity="center_vertical">
+
+                    <!-- Start Blank Space -->
+                    <View
+                            android:layout_width="0dp"
+                            android:layout_height="0dp"
+                            android:layout_weight=".2"/>
+                    <!-- End Blank Space -->
+
+                    <EditText
+                            android:id="@+id/pass1"
+                            android:layout_width="0dp"
+                            android:layout_height="0dp"
+                            android:gravity="center"
+                            android:inputType="numberPassword"
+                            >
+                        <requestFocus/>
+                    </EditText>
+
+                    <ImageView
+                            android:id="@+id/pass1image"
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content"
+                            android:layout_weight="1"
+                            android:background="@drawable/pin_txt_bg"
+                            android:adjustViewBounds="true"
+                            android:contentDescription="@string/app_name"
+                            android:gravity="center"/>
+
+                    <!-- Start Blank Space -->
+                    <View
+                            android:layout_width="0dp"
+                            android:layout_height="0dp"
+                            android:layout_weight=".2"/>
+                    <!-- End Blank Space -->
+
+                    <EditText
+                            android:id="@+id/pass2"
+                            android:layout_width="0dp"
+                            android:layout_height="0dp"
+                            android:gravity="center"
+                            android:inputType="numberPassword"
+                            >
+                    </EditText>
+
+                    <ImageView
+                            android:id="@+id/pass2image"
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content"
+                            android:layout_weight="1"
+                            android:adjustViewBounds="true"
+                            android:background="@drawable/pin_txt_bg"
+                            android:contentDescription="@string/app_name"
+                            android:gravity="center"/>
+
+                    <!-- Start Blank Space -->
+                    <View
+                            android:layout_width="0dp"
+                            android:layout_height="0dp"
+                            android:layout_weight=".2"/>
+                    <!-- End Blank Space -->
+
+                    <EditText
+                            android:id="@+id/pass3"
+                            android:layout_width="0dp"
+                            android:layout_height="0dp"
+                            android:gravity="center"
+                            android:inputType="numberPassword"
+                            >
+                    </EditText>
+
+                    <ImageView
+                            android:id="@+id/pass3image"
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content"
+                            android:layout_weight="1"
+                            android:adjustViewBounds="true"
+                            android:background="@drawable/pin_txt_bg"
+                            android:contentDescription="@string/app_name"
+                            android:gravity="center"/>
+
+                    <!-- Start Blank Space -->
+                    <View
+                            android:layout_width="0dp"
+                            android:layout_height="0dp"
+                            android:layout_weight=".2"/>
+                    <!-- End Blank Space -->
+
+                    <EditText
+                            android:id="@+id/pass4"
+                            android:layout_width="0dp"
+                            android:layout_height="0dp"
+                            android:gravity="center"
+                            android:inputType="numberPassword"
+                            >
+                    </EditText>
+
+                    <ImageView
+                            android:id="@+id/pass4image"
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content"
+                            android:layout_weight="1"
+                            android:adjustViewBounds="true"
+                            android:background="@drawable/pin_txt_bg"
+                            android:contentDescription="@string/app_name"
+                            android:gravity="center"/>
+
+                    <!-- Start Blank Space -->
+                    <View
+                            android:layout_width="0dp"
+                            android:layout_height="0dp"
+                            android:layout_weight=".2"/>
+                    <!-- End Blank Space -->
+
+                    <EditText
+                            android:id="@+id/passcode"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:gravity="center"
+                            android:visibility="gone"
+                            android:inputType="numberPassword" >
+
+                    </EditText>
+
+                </LinearLayout>
+
+
+            </LinearLayout>
+            <!-- End Linear Layout Content -->
+
+        </LinearLayout>
+
+        <!-- Start Relative Layout Footer -->
+        <RelativeLayout
+                android:id="@+id/FooterRelativeLayout"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:background="#FFF1B5"
+                android:layout_alignParentBottom="true">
+
+            <!-- Start Text Footer -->
+            <TextView
+                    android:id="@+id/text_footer"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_centerHorizontal="true"
+                    android:textColor="#D046F2"
+                    android:paddingTop="15dp"
+                    android:paddingBottom="15dp"
+                    android:text="@string/text_footer"
+                    style="@android:style/TextAppearance.DeviceDefault.Medium"/>
+            <!-- End Text Footer -->
+
+        </RelativeLayout>
+        <!-- End Relative Layout Footer -->
+
+    </RelativeLayout>
+
+</ScrollView>

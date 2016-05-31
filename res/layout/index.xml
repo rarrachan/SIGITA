@@ -7,6 +7,8 @@
             android:id="@+id/scrollView">
 
     <RelativeLayout
+            android:focusable="true"
+            android:focusableInTouchMode="true"
             android:layout_width="fill_parent"
             android:layout_height="wrap_content">
 
@@ -94,225 +96,238 @@
                     android:gravity="center"
                     android:orientation="vertical"
                     android:layout_gravity="center_vertical"
-                    android:layout_marginBottom="50dp">
+                    android:layout_marginBottom="70dp">
 
-                <!-- Start Blank Space -->
-                <View
-                    android:layout_width="wrap_content"
-                    android:layout_height="0dp"
-                    android:layout_weight=".2" android:layout_marginTop="10dp"/>
-                <!-- End Blank Space -->
-
-                <!-- Start Linear Layout Row -->
-                <LinearLayout
-                        android:layout_width="fill_parent"
-                        android:layout_height="0dp"
-                        android:layout_weight="1"
-                        android:orientation="horizontal"
-                        android:layout_gravity="center" android:layout_marginBottom="10dp">
-
-                    <!-- Start Blank Space -->
-                    <View
-                            android:layout_width="0dp"
-                            android:layout_height="0dp"
-                            android:layout_weight=".3"/>
-                    <!-- End Blank Space -->
-
-                    <!-- Start Linear Layout Gizi -->
-                    <LinearLayout
-                            android:id="@+id/GiziLinearLayout"
-                            android:layout_width="0dp"
-                            android:layout_height="wrap_content"
-                            android:orientation="vertical"
-                            android:layout_weight="1">
-
-                        <!-- Start Image View Gizi -->
-                        <ImageView
-                                android:id="@+id/button_gizi"
-                                android:layout_width="fill_parent"
-                                android:layout_height="0dp"
-                                android:layout_weight=".5"
-                                android:adjustViewBounds="true"
-                                android:src="@drawable/icon_gizi"
-                                android:contentDescription="@string/app_name"/>
-                        <!-- End Image View Gizi -->
-
-                        <!-- Start Text View Gizi -->
-                        <TextView
-                                android:id="@+id/text_button_gizi"
-                                android:layout_width="wrap_content"
-                                android:layout_height="wrap_content"
-                                android:textColor="#D046F2"
-                                android:text="@string/button_gizi"
-                                android:gravity="center"
-                                android:paddingTop="5dp"
-                                style="@android:style/TextAppearance.DeviceDefault.Medium"
-                                android:layout_gravity="center_horizontal"/>
-                        <!-- End Text View Gizi -->
-
-                    </LinearLayout>
-                    <!-- End Linear Layout Gizi -->
-
-                    <!-- Start Blank Space -->
-                    <View
-                            android:layout_width="0dp"
-                            android:layout_height="0dp"
-                            android:layout_weight=".3"/>
-                    <!-- End Blank Space -->
-
-                    <!-- Start Linear Layout Tumbuh Kembang -->
-                    <LinearLayout
-                            android:id="@+id/TumbuhKembangLinearLayout"
-                            android:layout_width="0dp"
-                            android:layout_height="wrap_content"
-                            android:orientation="vertical"
-                            android:layout_weight="1">
-
-                        <!-- Start Image View Tumbuh Kembang -->
-                        <ImageView
-                                android:id="@+id/button_tumbuhkembang"
-                                android:layout_width="fill_parent"
-                                android:layout_height="0dp"
-                                android:layout_weight=".5"
-                                android:adjustViewBounds="true"
-                                android:src="@drawable/icon_tumbuhkembang"
-                                android:contentDescription="@string/app_name"/>
-                        <!-- End Image View Tumbuh Kembang -->
-
-                        <!-- Start Text View Tumbuh Kembang -->
-                        <TextView
-                                android:id="@+id/text_button_tumbuhkembang"
-                                android:layout_width="wrap_content"
-                                android:layout_height="wrap_content"
-                                android:textColor="#D046F2"
-                                android:text="@string/button_tumbuhkembang"
-                                android:gravity="center"
-                                android:paddingTop="5dp"
-                                style="@android:style/TextAppearance.DeviceDefault.Medium"
-                                android:layout_gravity="center_horizontal"/>
-                        <!-- End Text View Tumbuh Kembang -->
-
-                    </LinearLayout>
-                    <!-- End Linear Layout Tumbuh Kembang -->
-
-                    <!-- Start Blank Space -->
-                    <View
-                            android:layout_width="0dp"
-                            android:layout_height="0dp"
-                            android:layout_weight=".3"/>
-                    <!-- End Blank Space -->
-
-                </LinearLayout>
-                <!-- End Linear Layout Row -->
-
-                <!-- Start Linear Layout Row -->
-                <LinearLayout
-                        android:layout_width="fill_parent"
-                        android:layout_height="0dp"
-                        android:orientation="horizontal"
-                        android:layout_gravity="center"
-                        android:layout_weight="1" android:layout_marginTop="10dp">
-
-                    <!-- Start Blank Space -->
-                    <View
-                            android:layout_width="0dp"
-                            android:layout_height="0dp"
-                            android:layout_weight=".3"/>
-                    <!-- End Blank Space -->
-
-                    <!-- Start Linear Layout Imunisasi -->
-                    <LinearLayout
-                            android:id="@+id/ImunisasiLinearLayout"
-                            android:layout_width="0dp"
-                            android:layout_height="wrap_content"
-                            android:orientation="vertical"
-                            android:layout_weight="1">
-
-                        <!-- Start Image View Imunisasi -->
-                        <ImageView
-                                android:id="@+id/button_imunisasi"
-                                android:layout_width="fill_parent"
-                                android:layout_height="0dp"
-                                android:layout_weight=".5"
-                                android:adjustViewBounds="true"
-                                android:src="@drawable/icon_imunisasi"
-                                android:contentDescription="@string/app_name"/>
-                        <!-- End Image View Imunisasi -->
-
-                        <!-- Start Text View Imunisasi -->
-                        <TextView
-                                android:id="@+id/text_button_imunisasi"
-                                android:layout_width="wrap_content"
-                                android:layout_height="wrap_content"
-                                android:textColor="#D046F2"
-                                android:text="@string/button_imunisasi"
-                                android:gravity="center"
-                                android:paddingTop="5dp"
-                                style="@android:style/TextAppearance.DeviceDefault.Medium"
-                                android:layout_gravity="center_horizontal"/>
-                        <!-- End Text View Imunisasi -->
-
-                    </LinearLayout>
-                    <!-- End Linear Layout Imunisasi -->
-
-                    <!-- Start Blank Space -->
-                    <View
-                            android:layout_width="0dp"
-                            android:layout_height="0dp"
-                            android:layout_weight=".3"/>
-                    <!-- End Blank Space -->
-
-                    <!-- Start Linear Layout Rekam Medis -->
-                    <LinearLayout
-                            android:id="@+id/RekamMedisLinearLayout"
-                            android:layout_width="0dp"
-                            android:layout_height="wrap_content"
-                            android:orientation="vertical"
-                            android:layout_weight="1">
-
-                        <!-- Start Image View Rekam Medis -->
-                        <ImageView
-                                android:id="@+id/button_rekammedis"
-                                android:layout_width="fill_parent"
-                                android:layout_height="0dp"
-                                android:layout_weight=".5"
-                                android:adjustViewBounds="true"
-                                android:src="@drawable/icon_rekammedis"
-                                android:contentDescription="@string/app_name"/>
-                        <!-- End Image View Rekam Medis -->
-
-                        <!-- Start Text View Rekam Medis -->
-                        <TextView
-                                android:id="@+id/text_button_rekammedis"
-                                android:layout_width="wrap_content"
-                                android:layout_height="wrap_content"
-                                android:textColor="#D046F2"
-                                android:text="@string/button_rekammedis"
-                                android:gravity="center"
-                                android:paddingTop="5dp"
-                                style="@android:style/TextAppearance.DeviceDefault.Medium"
-                                android:layout_gravity="center_horizontal"/>
-                        <!-- End Text View Rekam Medis -->
-
-                    </LinearLayout>
-                    <!-- End Linear Layout Rekam Medis -->
-
-                    <!-- Start Blank Space -->
-                    <View
-                            android:layout_width="0dp"
-                            android:layout_height="0dp"
-                            android:layout_weight=".3"/>
-                    <!-- End Blank Space -->
-
-                </LinearLayout>
-                <!-- End Linear Layout Row -->
-
-                <!-- Start Blank Space -->
-                <View
+                <com.syafira.SIGITA.ExpandableHeightGridView
+                        android:id="@+id/gridview"
                         android:layout_width="wrap_content"
-                        android:layout_height="0dp"
-                        android:layout_weight=".5" android:layout_marginBottom="30dp"/>
-                <!-- End Blank Space -->
+                        android:layout_height="wrap_content"
+                        android:gravity="center"
+                        android:layout_margin="20dp"
+                        android:numColumns="2"
+                        android:verticalSpacing="20dp"
+                        android:horizontalSpacing="20dp"
+                        android:stretchMode="columnWidth"
+                        android:listSelector="@null"
+                        android:focusable="false"/>
+
+                <!--&lt;!&ndash; Start Blank Space &ndash;&gt;-->
+                <!--<View-->
+                    <!--android:layout_width="wrap_content"-->
+                    <!--android:layout_height="0dp"-->
+                    <!--android:layout_weight=".2" android:layout_marginTop="10dp"/>-->
+                <!--&lt;!&ndash; End Blank Space &ndash;&gt;-->
+
+                <!--&lt;!&ndash; Start Linear Layout Row &ndash;&gt;-->
+                <!--<LinearLayout-->
+                        <!--android:layout_width="fill_parent"-->
+                        <!--android:layout_height="0dp"-->
+                        <!--android:layout_weight="1"-->
+                        <!--android:orientation="horizontal"-->
+                        <!--android:layout_gravity="center" android:layout_marginBottom="10dp">-->
+
+                    <!--&lt;!&ndash; Start Blank Space &ndash;&gt;-->
+                    <!--<View-->
+                            <!--android:layout_width="0dp"-->
+                            <!--android:layout_height="0dp"-->
+                            <!--android:layout_weight=".3"/>-->
+                    <!--&lt;!&ndash; End Blank Space &ndash;&gt;-->
+
+                    <!--&lt;!&ndash; Start Linear Layout Gizi &ndash;&gt;-->
+                    <!--<LinearLayout-->
+                            <!--android:id="@+id/GiziLinearLayout"-->
+                            <!--android:layout_width="0dp"-->
+                            <!--android:layout_height="wrap_content"-->
+                            <!--android:orientation="vertical"-->
+                            <!--android:layout_weight="1">-->
+
+                        <!--&lt;!&ndash; Start Image View Gizi &ndash;&gt;-->
+                        <!--<ImageView-->
+                                <!--android:id="@+id/button_gizi"-->
+                                <!--android:layout_width="fill_parent"-->
+                                <!--android:layout_height="0dp"-->
+                                <!--android:layout_weight=".5"-->
+                                <!--android:adjustViewBounds="true"-->
+                                <!--android:src="@drawable/icon_gizi"-->
+                                <!--android:contentDescription="@string/app_name"/>-->
+                        <!--&lt;!&ndash; End Image View Gizi &ndash;&gt;-->
+
+                        <!--&lt;!&ndash; Start Text View Gizi &ndash;&gt;-->
+                        <!--<TextView-->
+                                <!--android:id="@+id/text_button_gizi"-->
+                                <!--android:layout_width="wrap_content"-->
+                                <!--android:layout_height="wrap_content"-->
+                                <!--android:textColor="#D046F2"-->
+                                <!--android:text="@string/button_gizi"-->
+                                <!--android:gravity="center"-->
+                                <!--android:paddingTop="5dp"-->
+                                <!--style="@android:style/TextAppearance.DeviceDefault.Medium"-->
+                                <!--android:layout_gravity="center_horizontal"/>-->
+                        <!--&lt;!&ndash; End Text View Gizi &ndash;&gt;-->
+
+                    <!--</LinearLayout>-->
+                    <!--&lt;!&ndash; End Linear Layout Gizi &ndash;&gt;-->
+
+                    <!--&lt;!&ndash; Start Blank Space &ndash;&gt;-->
+                    <!--<View-->
+                            <!--android:layout_width="0dp"-->
+                            <!--android:layout_height="0dp"-->
+                            <!--android:layout_weight=".3"/>-->
+                    <!--&lt;!&ndash; End Blank Space &ndash;&gt;-->
+
+                    <!--&lt;!&ndash; Start Linear Layout Tumbuh Kembang &ndash;&gt;-->
+                    <!--<LinearLayout-->
+                            <!--android:id="@+id/TumbuhKembangLinearLayout"-->
+                            <!--android:layout_width="0dp"-->
+                            <!--android:layout_height="wrap_content"-->
+                            <!--android:orientation="vertical"-->
+                            <!--android:layout_weight="1">-->
+
+                        <!--&lt;!&ndash; Start Image View Tumbuh Kembang &ndash;&gt;-->
+                        <!--<ImageView-->
+                                <!--android:id="@+id/button_tumbuhkembang"-->
+                                <!--android:layout_width="fill_parent"-->
+                                <!--android:layout_height="0dp"-->
+                                <!--android:layout_weight=".5"-->
+                                <!--android:adjustViewBounds="true"-->
+                                <!--android:src="@drawable/icon_tumbuhkembang"-->
+                                <!--android:contentDescription="@string/app_name"/>-->
+                        <!--&lt;!&ndash; End Image View Tumbuh Kembang &ndash;&gt;-->
+
+                        <!--&lt;!&ndash; Start Text View Tumbuh Kembang &ndash;&gt;-->
+                        <!--<TextView-->
+                                <!--android:id="@+id/text_button_tumbuhkembang"-->
+                                <!--android:layout_width="wrap_content"-->
+                                <!--android:layout_height="wrap_content"-->
+                                <!--android:textColor="#D046F2"-->
+                                <!--android:text="@string/button_tumbuhkembang"-->
+                                <!--android:gravity="center"-->
+                                <!--android:paddingTop="5dp"-->
+                                <!--style="@android:style/TextAppearance.DeviceDefault.Medium"-->
+                                <!--android:layout_gravity="center_horizontal"/>-->
+                        <!--&lt;!&ndash; End Text View Tumbuh Kembang &ndash;&gt;-->
+
+                    <!--</LinearLayout>-->
+                    <!--&lt;!&ndash; End Linear Layout Tumbuh Kembang &ndash;&gt;-->
+
+                    <!--&lt;!&ndash; Start Blank Space &ndash;&gt;-->
+                    <!--<View-->
+                            <!--android:layout_width="0dp"-->
+                            <!--android:layout_height="0dp"-->
+                            <!--android:layout_weight=".3"/>-->
+                    <!--&lt;!&ndash; End Blank Space &ndash;&gt;-->
+
+                <!--</LinearLayout>-->
+                <!--&lt;!&ndash; End Linear Layout Row &ndash;&gt;-->
+
+                <!--&lt;!&ndash; Start Linear Layout Row &ndash;&gt;-->
+                <!--<LinearLayout-->
+                        <!--android:layout_width="fill_parent"-->
+                        <!--android:layout_height="0dp"-->
+                        <!--android:orientation="horizontal"-->
+                        <!--android:layout_gravity="center"-->
+                        <!--android:layout_weight="1" android:layout_marginTop="10dp">-->
+
+                    <!--&lt;!&ndash; Start Blank Space &ndash;&gt;-->
+                    <!--<View-->
+                            <!--android:layout_width="0dp"-->
+                            <!--android:layout_height="0dp"-->
+                            <!--android:layout_weight=".3"/>-->
+                    <!--&lt;!&ndash; End Blank Space &ndash;&gt;-->
+
+                    <!--&lt;!&ndash; Start Linear Layout Imunisasi &ndash;&gt;-->
+                    <!--<LinearLayout-->
+                            <!--android:id="@+id/ImunisasiLinearLayout"-->
+                            <!--android:layout_width="0dp"-->
+                            <!--android:layout_height="wrap_content"-->
+                            <!--android:orientation="vertical"-->
+                            <!--android:layout_weight="1">-->
+
+                        <!--&lt;!&ndash; Start Image View Imunisasi &ndash;&gt;-->
+                        <!--<ImageView-->
+                                <!--android:id="@+id/button_imunisasi"-->
+                                <!--android:layout_width="fill_parent"-->
+                                <!--android:layout_height="0dp"-->
+                                <!--android:layout_weight=".5"-->
+                                <!--android:adjustViewBounds="true"-->
+                                <!--android:src="@drawable/icon_imunisasi"-->
+                                <!--android:contentDescription="@string/app_name"/>-->
+                        <!--&lt;!&ndash; End Image View Imunisasi &ndash;&gt;-->
+
+                        <!--&lt;!&ndash; Start Text View Imunisasi &ndash;&gt;-->
+                        <!--<TextView-->
+                                <!--android:id="@+id/text_button_imunisasi"-->
+                                <!--android:layout_width="wrap_content"-->
+                                <!--android:layout_height="wrap_content"-->
+                                <!--android:textColor="#D046F2"-->
+                                <!--android:text="@string/button_imunisasi"-->
+                                <!--android:gravity="center"-->
+                                <!--android:paddingTop="5dp"-->
+                                <!--style="@android:style/TextAppearance.DeviceDefault.Medium"-->
+                                <!--android:layout_gravity="center_horizontal"/>-->
+                        <!--&lt;!&ndash; End Text View Imunisasi &ndash;&gt;-->
+
+                    <!--</LinearLayout>-->
+                    <!--&lt;!&ndash; End Linear Layout Imunisasi &ndash;&gt;-->
+
+                    <!--&lt;!&ndash; Start Blank Space &ndash;&gt;-->
+                    <!--<View-->
+                            <!--android:layout_width="0dp"-->
+                            <!--android:layout_height="0dp"-->
+                            <!--android:layout_weight=".3"/>-->
+                    <!--&lt;!&ndash; End Blank Space &ndash;&gt;-->
+
+                    <!--&lt;!&ndash; Start Linear Layout Rekam Medis &ndash;&gt;-->
+                    <!--<LinearLayout-->
+                            <!--android:id="@+id/RekamMedisLinearLayout"-->
+                            <!--android:layout_width="0dp"-->
+                            <!--android:layout_height="wrap_content"-->
+                            <!--android:orientation="vertical"-->
+                            <!--android:layout_weight="1">-->
+
+                        <!--&lt;!&ndash; Start Image View Rekam Medis &ndash;&gt;-->
+                        <!--<ImageView-->
+                                <!--android:id="@+id/button_rekammedis"-->
+                                <!--android:layout_width="fill_parent"-->
+                                <!--android:layout_height="0dp"-->
+                                <!--android:layout_weight=".5"-->
+                                <!--android:adjustViewBounds="true"-->
+                                <!--android:src="@drawable/icon_rekammedis"-->
+                                <!--android:contentDescription="@string/app_name"/>-->
+                        <!--&lt;!&ndash; End Image View Rekam Medis &ndash;&gt;-->
+
+                        <!--&lt;!&ndash; Start Text View Rekam Medis &ndash;&gt;-->
+                        <!--<TextView-->
+                                <!--android:id="@+id/text_button_rekammedis"-->
+                                <!--android:layout_width="wrap_content"-->
+                                <!--android:layout_height="wrap_content"-->
+                                <!--android:textColor="#D046F2"-->
+                                <!--android:text="@string/button_rekammedis"-->
+                                <!--android:gravity="center"-->
+                                <!--android:paddingTop="5dp"-->
+                                <!--style="@android:style/TextAppearance.DeviceDefault.Medium"-->
+                                <!--android:layout_gravity="center_horizontal"/>-->
+                        <!--&lt;!&ndash; End Text View Rekam Medis &ndash;&gt;-->
+
+                    <!--</LinearLayout>-->
+                    <!--&lt;!&ndash; End Linear Layout Rekam Medis &ndash;&gt;-->
+
+                    <!--&lt;!&ndash; Start Blank Space &ndash;&gt;-->
+                    <!--<View-->
+                            <!--android:layout_width="0dp"-->
+                            <!--android:layout_height="0dp"-->
+                            <!--android:layout_weight=".3"/>-->
+                    <!--&lt;!&ndash; End Blank Space &ndash;&gt;-->
+
+                <!--</LinearLayout>-->
+                <!--&lt;!&ndash; End Linear Layout Row &ndash;&gt;-->
+
+                <!--&lt;!&ndash; Start Blank Space &ndash;&gt;-->
+                <!--<View-->
+                        <!--android:layout_width="wrap_content"-->
+                        <!--android:layout_height="0dp"-->
+                        <!--android:layout_weight=".5" android:layout_marginBottom="30dp"/>-->
+                <!--&lt;!&ndash; End Blank Space &ndash;&gt;-->
 
             </LinearLayout>
             <!-- End Linear Layout Content -->

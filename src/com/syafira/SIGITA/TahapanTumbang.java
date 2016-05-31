@@ -199,6 +199,7 @@ public class TahapanTumbang extends Activity {
         Intent tumbang = new Intent(this, TumbuhKembang.class);
         lastActivity = System.currentTimeMillis();
         tumbang.putExtra("lastActivity", lastActivity);
+        tumbang.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TASK | Intent.FLAG_ACTIVITY_CLEAR_TOP);
         startActivity(tumbang);
 
         // Close This Activity

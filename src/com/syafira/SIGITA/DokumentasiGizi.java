@@ -83,6 +83,9 @@ public class DokumentasiGizi extends Activity {
             cursor.moveToFirst();
             if (!cursor.isAfterLast()) {
                 do {
+                    TextView text_dokumentasigizi_detail = (TextView) findViewById(R.id.text_dokumentasigizi_detail);
+                    text_dokumentasigizi_detail.setVisibility(View.VISIBLE);
+
                     TableRow row = new TableRow(this);
                     TableRow.LayoutParams gizi = new TableRow.LayoutParams(TableRow.LayoutParams.WRAP_CONTENT);
                     row.setLayoutParams(gizi);
@@ -178,6 +181,7 @@ public class DokumentasiGizi extends Activity {
                             lastActivity = System.currentTimeMillis();
                             detail_dokumentasi.putExtra("lastActivity", lastActivity);
                             detail_dokumentasi.putExtra("dokumentasiID", dokumentasiID);
+                            detail_dokumentasi.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TASK | Intent.FLAG_ACTIVITY_CLEAR_TOP);
                             startActivity(detail_dokumentasi);
 
                             // Close This Activity
@@ -215,6 +219,7 @@ public class DokumentasiGizi extends Activity {
                 Intent tambah_dokumentasi = new Intent(DokumentasiGizi.this, TambahDokumentasi.class);
                 lastActivity = System.currentTimeMillis();
                 tambah_dokumentasi.putExtra("lastActivity", lastActivity);
+                tambah_dokumentasi.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TASK | Intent.FLAG_ACTIVITY_CLEAR_TOP);
                 startActivity(tambah_dokumentasi);
 
                 finish();
@@ -230,6 +235,7 @@ public class DokumentasiGizi extends Activity {
         Intent gizi = new Intent(this, Gizi.class);
         lastActivity = System.currentTimeMillis();
         gizi.putExtra("lastActivity", lastActivity);
+        gizi.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TASK | Intent.FLAG_ACTIVITY_CLEAR_TOP);
         startActivity(gizi);
 
         // Close This Activity

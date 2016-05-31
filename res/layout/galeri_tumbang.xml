@@ -121,6 +121,7 @@
                         android:verticalSpacing="10dp"
                         android:horizontalSpacing="10dp"
                         android:stretchMode="columnWidth"
+                        android:listSelector="@null"
                         android:focusable="false"/>
 
 

@@ -114,6 +114,7 @@ public class DetailGaleri extends Activity {
                 lastActivity = System.currentTimeMillis();
                 ubah_galeri.putExtra("lastActivity", lastActivity);
                 ubah_galeri.putExtra("galeriID", galeriID);
+                ubah_galeri.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TASK | Intent.FLAG_ACTIVITY_CLEAR_TOP);
                 startActivity(ubah_galeri);
                 finish();
             }
@@ -214,6 +215,7 @@ public class DetailGaleri extends Activity {
                         Intent galeri = new Intent(DetailGaleri.this, GaleriTumbang.class);
                         lastActivity = System.currentTimeMillis();
                         galeri.putExtra("lastActivity", lastActivity);
+                        galeri.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TASK | Intent.FLAG_ACTIVITY_CLEAR_TOP);
                         startActivity(galeri);
 
                         // Clear Activity
@@ -231,6 +233,7 @@ public class DetailGaleri extends Activity {
         Intent galeri = new Intent(DetailGaleri.this, GaleriTumbang.class);
         lastActivity = System.currentTimeMillis();
         galeri.putExtra("lastActivity", lastActivity);
+        galeri.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TASK | Intent.FLAG_ACTIVITY_CLEAR_TOP);
         startActivity(galeri);
 
         // Close This Activity

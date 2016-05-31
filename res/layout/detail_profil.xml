@@ -377,6 +377,37 @@
                                     android:layout_margin="10dp"/>
                             <!-- End Text VIew Penyakit Kronis -->
 
+                            <LinearLayout
+                                    android:layout_width="fill_parent"
+                                    android:layout_height="wrap_content"
+                                    android:orientation="horizontal">
+
+                                <!-- Start Blank Space -->
+                                <View
+                                        android:layout_width="0dp"
+                                        android:layout_height="0dp"
+                                        android:layout_weight=".3"/>
+                                <!-- End Blank Space -->
+
+                                <!-- Start Image View Button Ubah -->
+                                <ImageView
+                                        android:id="@+id/button_passcode"
+                                        android:layout_width="0dp"
+                                        android:layout_height="wrap_content"
+                                        android:layout_weight="1"
+                                        android:adjustViewBounds="true"
+                                        android:src="@drawable/tombol_passcode"
+                                        android:contentDescription="@string/app_name"/>
+                                <!-- End Image View Button Ubah -->
+
+                                <!-- Start Blank Space -->
+                                <View
+                                        android:layout_width="0dp"
+                                        android:layout_height="0dp"
+                                        android:layout_weight=".3"/>
+                                <!-- End Blank Space -->
+
+                            </LinearLayout>
                         </LinearLayout>
                         <!-- End Linear Layout Profil -->
 

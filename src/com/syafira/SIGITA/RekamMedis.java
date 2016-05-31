@@ -80,6 +80,8 @@ public class RekamMedis extends Activity {
             cursor.moveToFirst();
             if (!cursor.isAfterLast()) {
                 do {
+                    TextView text_medis_detail = (TextView) findViewById(R.id.text_medis_detail);
+                    text_medis_detail.setVisibility(View.VISIBLE);
                     TableRow row = new TableRow(this);
                     TableRow.LayoutParams medis = new TableRow.LayoutParams(TableRow.LayoutParams.WRAP_CONTENT);
                     row.setLayoutParams(medis);
@@ -161,6 +163,7 @@ public class RekamMedis extends Activity {
                             lastActivity = System.currentTimeMillis();
                             detail_medis.putExtra("lastActivity", lastActivity);
                             detail_medis.putExtra("id", id);
+                            detail_medis.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TASK | Intent.FLAG_ACTIVITY_CLEAR_TOP);
                             startActivity(detail_medis);
 
                             // Close This Activity
@@ -198,6 +201,7 @@ public class RekamMedis extends Activity {
                 Intent tambah_medis = new Intent(RekamMedis.this, TambahMedis.class);
                 lastActivity = System.currentTimeMillis();
                 tambah_medis.putExtra("lastActivity", lastActivity);
+                tambah_medis.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TASK | Intent.FLAG_ACTIVITY_CLEAR_TOP);
                 startActivity(tambah_medis);
 
                 finish();
@@ -213,6 +217,7 @@ public class RekamMedis extends Activity {
         Intent index = new Intent(this, Index.class);
         lastActivity = System.currentTimeMillis();
         index.putExtra("lastActivity", lastActivity);
+        index.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TASK | Intent.FLAG_ACTIVITY_CLEAR_TOP);
         startActivity(index);
 
         // Close This Activity

@@ -152,7 +152,10 @@ public class DetailMedis extends Activity {
                 lastActivity = System.currentTimeMillis();
                 ubah_medis.putExtra("lastActivity", lastActivity);
                 ubah_medis.putExtra("id", medisID);
+                ubah_medis.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TASK | Intent.FLAG_ACTIVITY_CLEAR_TOP);
                 startActivity(ubah_medis);
+
+                finish();
             }
         });
 
@@ -214,6 +217,7 @@ public class DetailMedis extends Activity {
                         Intent medis = new Intent(DetailMedis.this, RekamMedis.class);
                         lastActivity = System.currentTimeMillis();
                         medis.putExtra("lastActivity", lastActivity);
+                        medis.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TASK | Intent.FLAG_ACTIVITY_CLEAR_TOP);
                         startActivity(medis);
 
                         // Clear Activity
@@ -232,6 +236,7 @@ public class DetailMedis extends Activity {
         Intent medis = new Intent(DetailMedis.this, RekamMedis.class);
         lastActivity = System.currentTimeMillis();
         medis.putExtra("lastActivity", lastActivity);
+        medis.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TASK | Intent.FLAG_ACTIVITY_CLEAR_TOP);
         startActivity(medis);
         // Close This Activity
         finish();
