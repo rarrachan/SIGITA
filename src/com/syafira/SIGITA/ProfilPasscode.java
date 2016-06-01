@@ -63,7 +63,7 @@ public class ProfilPasscode extends Activity {
         session = new SessionManager();
 
         // Fetch Intent Extra
-        Intent fetchID = getIntent();
+        final Intent fetchID = getIntent();
         lastActivity = fetchID.getLongExtra("lastActivity", 1L);
         final String nama = fetchID.getStringExtra("nama");
         final String tmptLahir = fetchID.getStringExtra("tmptLahir");
@@ -75,10 +75,10 @@ public class ProfilPasscode extends Activity {
         final String alergi = fetchID.getStringExtra("alergi");
         final String penyakitKronis = fetchID.getStringExtra("penyakitKronis");
         final String action = fetchID.getStringExtra("action");
+        final String pathbefore = fetchID.getStringExtra("pathbefore");
 
         // Intent Extra for Ubah Passcode
         final int id = fetchID.getIntExtra("id", 0);
-        final String pass = fetchID.getStringExtra("pass");
 
         // Load Widget
         text_footer = (TextView) findViewById(R.id.text_footer);
@@ -224,68 +224,69 @@ public class ProfilPasscode extends Activity {
                     String newpasscode = passcode.getText().toString();
 
                     // tambah profil
-                    if (action.equals("tambahprofil")) {
-                        final ImageView previewThumbnail = new ImageView(ProfilPasscode.this);
-                        Drawable image = new BitmapDrawable(getResources(), BitmapFactory.decodeByteArray(getIntent().getByteArrayExtra("byteArray"), 0, getIntent().getByteArrayExtra("byteArray").length));
-                        previewThumbnail.setImageDrawable(image);
-                        final BitmapDrawable drawable_foto = (BitmapDrawable) previewThumbnail.getDrawable();
+                    switch (action) {
+                        case "tambahprofil": {
+                            final ImageView previewThumbnail = new ImageView(ProfilPasscode.this);
+                            Drawable image = new BitmapDrawable(getResources(), BitmapFactory.decodeByteArray(getIntent().getByteArrayExtra("byteArray"), 0, getIntent().getByteArrayExtra("byteArray").length));
+                            previewThumbnail.setImageDrawable(image);
+                            final BitmapDrawable drawable_foto = (BitmapDrawable) previewThumbnail.getDrawable();
 
-                        // Change Space into UnderScore
-                        final String foto = "profil_" + nama.replaceAll(" ", "_").toLowerCase() + ".jpg";
-                        final String namaFolder = nama.replaceAll(" ", "_");
+                            // Change Space into UnderScore
+                            final String foto = "profil_" + nama.replaceAll(" ", "_").toLowerCase() + ".jpg";
+                            final String namaFolder = nama.replaceAll(" ", "_");
 
-                        //check sd card
-                        String state = Environment.getExternalStorageState();
-                        if (Environment.MEDIA_MOUNTED.equals(state)) {
-                            // Get Path Directory
-                            String sdCardDirectory = Environment.getExternalStorageDirectory().toString();
+                            //check sd card
+                            String state = Environment.getExternalStorageState();
+                            if (Environment.MEDIA_MOUNTED.equals(state)) {
+                                // Get Path Directory
+                                String sdCardDirectory = Environment.getExternalStorageDirectory().toString();
 
-                            // Create Directory
-                            File photoDirectory = new File(sdCardDirectory + "/SIGITA/" + namaFolder);
-                            photoDirectory.mkdirs();
-
-                            // Declare Condition
-                            boolean success = false;
-
-                            try {
-                                FileOutputStream outStream;
-
-                                // Set Location Directory
-                                File profil_foto = new File(photoDirectory, foto);
-                                outStream = new FileOutputStream(profil_foto);
-
-                                // Compressed Photo
-                                Bitmap bitmap = drawable_foto.getBitmap();
-                                bitmap.compress(Bitmap.CompressFormat.JPEG, 100, outStream);
-                            /* 100 to keep full quality of the image */
-
-                                // Put Photo into Directory
-                                outStream.flush();
-                                outStream.close();
-
-                                // Scan Gallery
-                                MediaScannerConnection.scanFile(ProfilPasscode.this,
-                                        new String[]{profil_foto.toString()}, null,
-                                        new MediaScannerConnection.OnScanCompletedListener() {
-                                            public void onScanCompleted(String path, Uri uri) {
-                                            }
-                                        });
+                                // Create Directory
+                                File photoDirectory = new File(sdCardDirectory + "/SIGITA/" + namaFolder);
+                                photoDirectory.mkdirs();
 
                                 // Declare Condition
-                                success = true;
-                            } catch (IOException e) {
-                                e.printStackTrace();
-                            }
+                                boolean success = false;
 
-                            // Check Condition
-                            if (success) {
-                                // Show Toast Success
-                                Toast.makeText(getApplicationContext(), "Profil Berhasil Tersimpan", Toast.LENGTH_LONG).show();
-                            } else {
-                                // Show Toast Failed
-                                Toast.makeText(getApplicationContext(), "Profil Gagal Tersimpan", Toast.LENGTH_LONG).show();
+                                try {
+                                    FileOutputStream outStream;
+
+                                    // Set Location Directory
+                                    File profil_foto = new File(photoDirectory, foto);
+                                    outStream = new FileOutputStream(profil_foto);
+
+                                    // Compressed Photo
+                                    Bitmap bitmap = drawable_foto.getBitmap();
+                                    bitmap.compress(Bitmap.CompressFormat.JPEG, 100, outStream);
+                            /* 100 to keep full quality of the image */
+
+                                    // Put Photo into Directory
+                                    outStream.flush();
+                                    outStream.close();
+
+                                    // Scan Gallery
+                                    MediaScannerConnection.scanFile(ProfilPasscode.this,
+                                            new String[]{profil_foto.toString()}, null,
+                                            new MediaScannerConnection.OnScanCompletedListener() {
+                                                public void onScanCompleted(String path, Uri uri) {
+                                                }
+                                            });
+
+                                    // Declare Condition
+                                    success = true;
+                                } catch (IOException e) {
+                                    e.printStackTrace();
+                                }
+
+                                // Check Condition
+                                if (success) {
+                                    // Show Toast Success
+                                    Toast.makeText(getApplicationContext(), "Profil Berhasil Tersimpan", Toast.LENGTH_LONG).show();
+                                } else {
+                                    // Show Toast Failed
+                                    Toast.makeText(getApplicationContext(), "Profil Gagal Tersimpan", Toast.LENGTH_LONG).show();
+                                }
                             }
-                        }
 //                        else
 //                    {
 //                        ContextWrapper cw = new ContextWrapper(getApplicationContext());
@@ -317,84 +318,93 @@ public class ProfilPasscode extends Activity {
 //                    File f = new File(android.os.Environment.getExternalStorageDirectory(), foto.replaceAll(" ", "_").toLowerCase());
 //                    String fotoPath = f.getAbsoluteFile().toString();
 
-                        // Load Database
-                        DBHelper db = new DBHelper(ProfilPasscode.this);
-                        db.open();
+                            // Load Database
+                            DBHelper db = new DBHelper(ProfilPasscode.this);
+                            db.open();
 
-                        // Insert Data into Database
-                        db.insertProfil(nama, tmptLahir, tglLahir, jenisKelamin, golonganDarah,
-                                panjangLahir, beratLahir, alergi, penyakitKronis, newpasscode, foto);
-
-                        // Start Profil Activity
-                        Intent profil = new Intent(ProfilPasscode.this, Profil.class);
-                        lastActivity = System.currentTimeMillis();
-                        profil.putExtra("lastActivity", lastActivity);
-                        profil.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TASK | Intent.FLAG_ACTIVITY_CLEAR_TOP);
-                        startActivity(profil);
-
-                        // Close This Activity
-                        finish();
-                    } else if (action.equals("tambahpasscode")) { //tambah passcode dari togglebutton
-                        // Load Database
-                        DBHelper db = new DBHelper(ProfilPasscode.this);
-                        db.open();
-
-                        boolean success = false;
-                        try {
                             // Insert Data into Database
-                            db.updateProfilPasscode(id, newpasscode);
-                            success = true;
-                        } catch (Exception e) {
-                            e.printStackTrace();
+                            db.insertProfil(nama, tmptLahir, tglLahir, jenisKelamin, golonganDarah,
+                                    panjangLahir, beratLahir, alergi, penyakitKronis, newpasscode, foto);
+
+                            // Start Profil Activity
+                            Intent profil = new Intent(ProfilPasscode.this, Profil.class);
+                            lastActivity = System.currentTimeMillis();
+                            profil.putExtra("lastActivity", lastActivity);
+                            profil.putExtra("pathbefore", pathbefore);
+                            profil.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TASK | Intent.FLAG_ACTIVITY_CLEAR_TOP);
+                            startActivity(profil);
+
+                            // Close This Activity
+                            finish();
+                            break;
                         }
+                        case "tambahpasscode": { //tambah passcode dari togglebutton
+                            // Load Database
+                            DBHelper db = new DBHelper(ProfilPasscode.this);
+                            db.open();
 
-                        if (success) {
-                            Toast.makeText(getApplicationContext(), "Passcode Berhasil Tersimpan", Toast.LENGTH_LONG).show();
-                        } else {
-                            Toast.makeText(getApplicationContext(), "Passcode Gagal Tersimpan", Toast.LENGTH_LONG).show();
+                            boolean success = false;
+                            try {
+                                // Insert Data into Database
+                                db.updateProfilPasscode(id, newpasscode);
+                                success = true;
+                            } catch (Exception e) {
+                                e.printStackTrace();
+                            }
+
+                            if (success) {
+                                Toast.makeText(getApplicationContext(), "Passcode Berhasil Tersimpan", Toast.LENGTH_LONG).show();
+                            } else {
+                                Toast.makeText(getApplicationContext(), "Passcode Gagal Tersimpan", Toast.LENGTH_LONG).show();
+                            }
+
+                            // Start Profil Activity
+                            Intent passcode = new Intent(ProfilPasscode.this, Passcode.class);
+                            lastActivity = System.currentTimeMillis();
+                            passcode.putExtra("lastActivity", lastActivity);
+                            passcode.putExtra("id", id);
+                            passcode.putExtra("pathbefore", pathbefore);
+                            startActivity(passcode);
+
+                            // Close This Activity
+                            finish();
+                            break;
                         }
+                        case "ubahpasscode": { //ubah passcode dari id
+                            // Load Database
+                            DBHelper db = new DBHelper(ProfilPasscode.this);
+                            db.open();
 
-                        // Start Profil Activity
-                        Intent passcode = new Intent(ProfilPasscode.this, Passcode.class);
-                        lastActivity = System.currentTimeMillis();
-                        passcode.putExtra("lastActivity", lastActivity);
-                        passcode.putExtra("id", id);
-                        startActivity(passcode);
+                            boolean success = false;
+                            try {
+                                // Insert Data into Database
+                                db.updateProfilPasscode(id, newpasscode);
+                                success = true;
+                            } catch (Exception e) {
+                                e.printStackTrace();
+                            }
 
-                        // Close This Activity
-                        finish();
-                    } else if (action.equals("ubahpasscode")) { //ubah passcode dari id
-                        // Load Database
-                        DBHelper db = new DBHelper(ProfilPasscode.this);
-                        db.open();
+                            if (success) {
+                                Toast.makeText(getApplicationContext(), "Passcode Berhasil Diubah", Toast.LENGTH_LONG).show();
+                            } else {
+                                Toast.makeText(getApplicationContext(), "Passcode Gagal Diubah", Toast.LENGTH_LONG).show();
+                            }
 
-                        boolean success = false;
-                        try {
-                            // Insert Data into Database
-                            db.updateProfilPasscode(id, newpasscode);
-                            success = true;
-                        } catch (Exception e) {
-                            e.printStackTrace();
+
+                            // Start Profil Activity
+                            Intent profil = new Intent(ProfilPasscode.this, DetailProfil.class);
+                            lastActivity = System.currentTimeMillis();
+                            profil.putExtra("lastActivity", lastActivity);
+                            profil.putExtra("id", id);
+                            profil.putExtra("pathbefore", pathbefore);
+                            profil.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TASK | Intent.FLAG_ACTIVITY_CLEAR_TOP);
+                            startActivity(profil);
+
+
+                            // Close This Activity
+                            finish();
+                            break;
                         }
-
-                        if (success) {
-                            Toast.makeText(getApplicationContext(), "Passcode Berhasil Diubah", Toast.LENGTH_LONG).show();
-                        } else {
-                            Toast.makeText(getApplicationContext(), "Passcode Gagal Diubah", Toast.LENGTH_LONG).show();
-                        }
-
-
-                        // Start Profil Activity
-                        Intent profil = new Intent(ProfilPasscode.this, DetailProfil.class);
-                        lastActivity = System.currentTimeMillis();
-                        profil.putExtra("lastActivity", lastActivity);
-                        profil.putExtra("id", id);
-                        profil.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TASK | Intent.FLAG_ACTIVITY_CLEAR_TOP);
-                        startActivity(profil);
-
-
-                        // Close This Activity
-                        finish();
                     }
 
                 }
@@ -450,6 +460,7 @@ public class ProfilPasscode extends Activity {
         Intent fetchID = getIntent();
         final String action = fetchID.getStringExtra("action");
         final int id = fetchID.getIntExtra("id", 0);
+        String pathbefore = fetchID.getStringExtra("pathbefore");
 
         switch (action) {
             case "pilihprofil":
@@ -458,6 +469,7 @@ public class ProfilPasscode extends Activity {
                 Intent profil = new Intent(ProfilPasscode.this, Profil.class);
                 lastActivity = System.currentTimeMillis();
                 profil.putExtra("lastActivity", lastActivity);
+                profil.putExtra("pathbefore", pathbefore);
                 profil.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TASK | Intent.FLAG_ACTIVITY_CLEAR_TOP);
                 startActivity(profil);
 
@@ -470,6 +482,7 @@ public class ProfilPasscode extends Activity {
                 lastActivity = System.currentTimeMillis();
                 detailprofil.putExtra("lastActivity", lastActivity);
                 detailprofil.putExtra("id", id);
+                detailprofil.putExtra("pathbefore", pathbefore);
                 detailprofil.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TASK | Intent.FLAG_ACTIVITY_CLEAR_TOP);
                 startActivity(detailprofil);
 
@@ -484,6 +497,7 @@ public class ProfilPasscode extends Activity {
                 lastActivity = System.currentTimeMillis();
                 passcode.putExtra("lastActivity", lastActivity);
                 passcode.putExtra("id", id);
+                passcode.putExtra("pathbefore", pathbefore);
                 passcode.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TASK | Intent.FLAG_ACTIVITY_CLEAR_TOP);
                 startActivity(passcode);
 

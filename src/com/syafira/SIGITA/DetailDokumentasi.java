@@ -97,7 +97,7 @@ public class DetailDokumentasi extends Activity {
         Cursor cursorTBU;
         Cursor cursorBBTB;
         Cursor cursorIMTU;
-        if ((session.loadSession(this, "gender")).equals("L")) {
+        if ((session.loadSession(this, "gender")).equals("Laki-laki")) {
             cursorBBU = db.getLakiBBUList(cursor.getColumnIndex("dokumentasi_bulan"));
             cursorTBU = db.getLakiTBUList(cursor.getColumnIndex("dokumentasi_bulan"));
             if (cursor.getColumnIndex("dokumentasi_bulan") <= 24) {
@@ -213,7 +213,7 @@ public class DetailDokumentasi extends Activity {
         List<String> BBUchart1sd = new ArrayList<>();
         List<String> BBUchart2sd = new ArrayList<>();
         List<String> BBUchart3sd = new ArrayList<>();
-        if ((session.loadSession(this, "gender").equals("L"))) {
+        if ((session.loadSession(this, "gender").equals("Laki-laki"))) {
             Cursor cursorBBUchart = db.getLakiBBUAllList();
             cursorBBUchart.moveToFirst();
             if (!cursorBBUchart.isAfterLast()) {
@@ -384,7 +384,7 @@ public class DetailDokumentasi extends Activity {
         List<String> TBUchart1sd = new ArrayList<>();
         List<String> TBUchart2sd = new ArrayList<>();
         List<String> TBUchart3sd = new ArrayList<>();
-        if ((session.loadSession(this, "gender").equals("L"))) {
+        if ((session.loadSession(this, "gender").equals("Laki-laki"))) {
             Cursor cursorTBUchart = db.getLakiTBUAllList();
             cursorTBUchart.moveToFirst();
             if (!cursorTBUchart.isAfterLast()) {
@@ -555,7 +555,7 @@ public class DetailDokumentasi extends Activity {
         List<String> BBTBchart1sd = new ArrayList<>();
         List<String> BBTBchart2sd = new ArrayList<>();
         List<String> BBTBchart3sd = new ArrayList<>();
-        if ((session.loadSession(this, "gender").equals("L"))) {
+        if ((session.loadSession(this, "gender").equals("Laki-laki"))) {
             if (cursor.getColumnIndex("dokumentasi_bulan") <= 24) {
                 Cursor cursorBBTBchart = db.getLakiBBTBAllList_0_24();
                 cursorBBTBchart.moveToFirst();

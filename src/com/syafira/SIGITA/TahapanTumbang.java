@@ -75,7 +75,10 @@ public class TahapanTumbang extends Activity {
                 Intent profil = new Intent(TahapanTumbang.this, Profil.class);
                 lastActivity = System.currentTimeMillis();
                 profil.putExtra("lastActivity", lastActivity);
+                profil.putExtra("pathbefore", "tahapantumbang");
+                profil.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TASK | Intent.FLAG_ACTIVITY_CLEAR_TOP);
                 startActivity(profil);
+                finish();
             }
         });
 

@@ -12,6 +12,7 @@ import android.media.MediaScannerConnection;
 import android.net.Uri;
 import android.os.Bundle;
 import android.os.Environment;
+import android.provider.MediaStore;
 import android.text.Editable;
 import android.text.TextWatcher;
 import android.view.KeyEvent;
@@ -29,6 +30,7 @@ import java.io.File;
 /**
  * Created by syafira rarra on 05/30/2016.
  */
+
 public class ProfilCekPasscode extends Activity {
 
     private TextView text_footer;
@@ -65,6 +67,7 @@ public class ProfilCekPasscode extends Activity {
         final String tanggallahir = fetchID.getStringExtra("tanggallahir");
         final String pass = fetchID.getStringExtra("passcode");
         final String action = fetchID.getStringExtra("action");
+        final String pathbefore = fetchID.getStringExtra("pathbefore");
 
         // Load Widget
         text_footer = (TextView) findViewById(R.id.text_footer);
@@ -222,11 +225,14 @@ public class ProfilCekPasscode extends Activity {
                                 session.createSession(ProfilCekPasscode.this, "gender", gender);
                                 session.createSession(ProfilCekPasscode.this, "tanggallahir", tanggallahir);
 
+                                // Show Toast
+                                Toast.makeText(ProfilCekPasscode.this, "Profil " + nama + " Dipilih", Toast.LENGTH_SHORT).show();
 
                                 // Start Index Activity
                                 lastActivity = System.currentTimeMillis();
                                 Intent index = new Intent(ProfilCekPasscode.this, Index.class);
                                 index.putExtra("lastActivity", lastActivity);
+                                index.putExtra("pathbefore", pathbefore);
                                 index.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TASK | Intent.FLAG_ACTIVITY_CLEAR_TOP);
                                 startActivity(index);
 
@@ -239,6 +245,7 @@ public class ProfilCekPasscode extends Activity {
                                 lastActivity = System.currentTimeMillis();
                                 Intent profil = new Intent(ProfilCekPasscode.this, Profil.class);
                                 profil.putExtra("lastActivity", lastActivity);
+                                profil.putExtra("pathbefore", pathbefore);
                                 profil.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TASK | Intent.FLAG_ACTIVITY_CLEAR_TOP);
                                 startActivity(profil);
 
@@ -253,6 +260,7 @@ public class ProfilCekPasscode extends Activity {
                                 Intent createnewpasscode = new Intent(ProfilCekPasscode.this, Passcode.class);
                                 createnewpasscode.putExtra("lastActivity", lastActivity);
                                 createnewpasscode.putExtra("id", id);
+                                createnewpasscode.putExtra("pathbefore", pathbefore);
                                 startActivity(createnewpasscode);
 
                                 // Close This Activity
@@ -272,6 +280,7 @@ public class ProfilCekPasscode extends Activity {
                                 lastActivity = System.currentTimeMillis();
                                 detail_profil.putExtra("lastActivity", lastActivity);
                                 detail_profil.putExtra("id", id);
+                                detail_profil.putExtra("pathbefore", pathbefore);
                                 startActivity(detail_profil);
 
                                 // Close This Activity
@@ -292,6 +301,7 @@ public class ProfilCekPasscode extends Activity {
                                 createnewpasscode.putExtra("id", id);
                                 createnewpasscode.putExtra("pass", pass);
                                 createnewpasscode.putExtra("action", "ubahpasscode");
+                                createnewpasscode.putExtra("pathbefore", pathbefore);
                                 startActivity(createnewpasscode);
 
                                 // Close This Activity
@@ -330,10 +340,101 @@ public class ProfilCekPasscode extends Activity {
                                 lastActivity = System.currentTimeMillis();
                                 passcode.putExtra("lastActivity", lastActivity);
                                 passcode.putExtra("id", id);
+                                passcode.putExtra("pathbefore", pathbefore);
                                 passcode.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TASK | Intent.FLAG_ACTIVITY_CLEAR_TOP);
                                 startActivity(passcode);
 
                                 // Close This Activity
+                                finish();
+                            } else {
+                                Toast.makeText(ProfilCekPasscode.this, "Passcode Salah", Toast.LENGTH_SHORT).show();
+
+                                // Close This Activity
+                                finish();
+                            }
+                            break;
+                        case "ubahprofil":
+                            if (newpasscode.equals(pass)) {
+                                Intent ubah_profil = new Intent(ProfilCekPasscode.this, UbahProfil.class);
+                                // Put Intent Extra
+                                lastActivity = System.currentTimeMillis();
+                                ubah_profil.putExtra("lastActivity", lastActivity);
+                                ubah_profil.putExtra("id", id);
+                                ubah_profil.putExtra("nama", nama);
+                                ubah_profil.putExtra("pathbefore", pathbefore);
+                                ubah_profil.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TASK | Intent.FLAG_ACTIVITY_CLEAR_TOP);
+                                startActivity(ubah_profil);
+                                finish();
+                            } else {
+                                Toast.makeText(ProfilCekPasscode.this, "Passcode Salah", Toast.LENGTH_SHORT).show();
+
+                                // Close This Activity
+                                finish();
+                            }
+                            break;
+                        case "hapusprofil":
+                            if (newpasscode.equals(pass)) {
+                                // Declare Condition
+                                boolean success = false;
+                                try {
+                                    // Turn Off Alarm Imunisasi
+                                    AlarmManager alarmManager = (AlarmManager) getSystemService(Context.ALARM_SERVICE);
+                                    if (PendingIntent.getBroadcast(ProfilCekPasscode.this, id,
+                                            new Intent(ProfilCekPasscode.this, AlarmReceiver.class), PendingIntent.FLAG_NO_CREATE) != null) {
+                                        PendingIntent.getBroadcast(ProfilCekPasscode.this, id,
+                                                new Intent(ProfilCekPasscode.this, AlarmReceiver.class), PendingIntent.FLAG_NO_CREATE).cancel();
+                                        alarmManager.cancel(PendingIntent.getBroadcast(ProfilCekPasscode.this, id,
+                                                new Intent(ProfilCekPasscode.this, AlarmReceiver.class), PendingIntent.FLAG_NO_CREATE));
+                                    }
+
+                                    // Delete Folder Directory
+                                    File profilDirectory = new File(Environment.getExternalStorageDirectory() + "/SIGITA/" + nama.replaceAll(" ", "_"));
+                                    if (profilDirectory.isDirectory()) {
+                                        String[] children = profilDirectory.list();
+                                        for (String aChildren : children) {
+                                            //Scan Gallery
+                                            getContentResolver().delete(MediaStore.Images.Media.EXTERNAL_CONTENT_URI, MediaStore.Images.Media.DATA + "=?", new String[]{profilDirectory + "/" + aChildren});
+                                        }
+                                        profilDirectory.delete();
+                                    }
+
+                                    // Delete From Database
+                                    DBHelper db = new DBHelper(ProfilCekPasscode.this);
+                                    db.open();
+                                    db.deleteDokumentasiProfilID(id);
+                                    db.deleteRiwayatProfilID(id);
+                                    db.deleteGaleriProfilID(id);
+                                    db.deleteMedisProfilID(id);
+                                    db.deleteProfil(id);
+
+                                    // Declare Condition
+                                    success = true;
+
+                                } catch (Exception e) {
+                                    e.printStackTrace();
+                                }
+
+                                // Check Condition
+                                if (success) {
+                                    // Show Toast Success
+                                    Toast.makeText(ProfilCekPasscode.this, "Profil Berhasil Terhapus", Toast.LENGTH_SHORT).show();
+                                } else {
+                                    // Show Toast Failed
+                                    Toast.makeText(ProfilCekPasscode.this, "Profil Gagal Terhapus", Toast.LENGTH_SHORT).show();
+                                }
+
+                                // Show Profil Activity
+                                Intent profil = new Intent(ProfilCekPasscode.this, Profil.class);
+                                lastActivity = System.currentTimeMillis();
+                                profil.putExtra("lastActivity", lastActivity);
+                                profil.putExtra("pathbefore", pathbefore);
+                                profil.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TASK | Intent.FLAG_ACTIVITY_CLEAR_TOP);
+                                startActivity(profil);
+
+                                // Clear Session
+                                session.clearSession(ProfilCekPasscode.this);
+
+                                // Clear Activity
                                 finish();
                             } else {
                                 Toast.makeText(ProfilCekPasscode.this, "Passcode Salah", Toast.LENGTH_SHORT).show();
@@ -412,6 +513,8 @@ public class ProfilCekPasscode extends Activity {
                     public void onClick(View v) {
                         // Close Dialog
                         dialog.dismiss();
+                        InputMethodManager imm = (InputMethodManager) getSystemService(Context.INPUT_METHOD_SERVICE);
+                        imm.toggleSoftInput(InputMethodManager.SHOW_FORCED, 0);
                     }
                 });
                 button_ok.setOnClickListener(new View.OnClickListener() {
@@ -451,8 +554,10 @@ public class ProfilCekPasscode extends Activity {
                                         }
                                     });
 
+                            // Clear Session
+                            session.clearSession(ProfilCekPasscode.this);
+
                             // Delete From Database
-                            // Load Database
                             DBHelper db = new DBHelper(ProfilCekPasscode.this);
                             db.open();
                             db.deleteDokumentasiProfilID(id);
@@ -484,6 +589,7 @@ public class ProfilCekPasscode extends Activity {
                         Intent profil = new Intent(ProfilCekPasscode.this, Profil.class);
                         lastActivity = System.currentTimeMillis();
                         profil.putExtra("lastActivity", lastActivity);
+                        profil.putExtra("pathbefore", pathbefore);
                         profil.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TASK | Intent.FLAG_ACTIVITY_CLEAR_TOP);
                         startActivity(profil);
 
@@ -508,6 +614,7 @@ public class ProfilCekPasscode extends Activity {
         Intent fetchID = getIntent();
         final String action = fetchID.getStringExtra("action");
         final int id = fetchID.getIntExtra("id", 0);
+        String pathbefore = fetchID.getStringExtra("pathbefore");
 
         switch (action) {
             case "pilihprofil":
@@ -516,6 +623,7 @@ public class ProfilCekPasscode extends Activity {
                 Intent profil = new Intent(ProfilCekPasscode.this, Profil.class);
                 lastActivity = System.currentTimeMillis();
                 profil.putExtra("lastActivity", lastActivity);
+                profil.putExtra("pathbefore", pathbefore);
                 profil.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TASK | Intent.FLAG_ACTIVITY_CLEAR_TOP);
                 startActivity(profil);
 
@@ -523,11 +631,14 @@ public class ProfilCekPasscode extends Activity {
                 finish();
                 break;
             case "passcode":
+            case "hapusprofil":
+            case "ubahprofil":
                 // Start Profil Activity
                 Intent detailprofil = new Intent(ProfilCekPasscode.this, DetailProfil.class);
                 lastActivity = System.currentTimeMillis();
                 detailprofil.putExtra("lastActivity", lastActivity);
                 detailprofil.putExtra("id", id);
+                detailprofil.putExtra("pathbefore", pathbefore);
                 detailprofil.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TASK | Intent.FLAG_ACTIVITY_CLEAR_TOP);
                 startActivity(detailprofil);
 
@@ -541,6 +652,7 @@ public class ProfilCekPasscode extends Activity {
                 lastActivity = System.currentTimeMillis();
                 passcode.putExtra("lastActivity", lastActivity);
                 passcode.putExtra("id", id);
+                passcode.putExtra("pathbefore", pathbefore);
                 passcode.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TASK | Intent.FLAG_ACTIVITY_CLEAR_TOP);
                 startActivity(passcode);
 

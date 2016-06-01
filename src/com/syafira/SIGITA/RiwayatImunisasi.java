@@ -73,7 +73,10 @@ public class RiwayatImunisasi extends Activity {
                 Intent profil = new Intent(RiwayatImunisasi.this, Profil.class);
                 lastActivity = System.currentTimeMillis();
                 profil.putExtra("lastActivity", lastActivity);
+                profil.putExtra("pathbefore", "riwayatimunisasi");
+                profil.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TASK | Intent.FLAG_ACTIVITY_CLEAR_TOP);
                 startActivity(profil);
+                finish();
             }
         });
 

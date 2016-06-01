@@ -36,7 +36,7 @@ public class AlarmReceiver extends BroadcastReceiver {
 
         Notification.Builder nb = new Notification.Builder(context)
                 .setContentTitle(alarm_nama)
-                .setContentText("Imunisasi \n" + alarm_vaksin + " Pada " + alarm_bulan)
+                .setContentText("Imunisasi \n" + alarm_vaksin.replaceAll("\n", ",") + " Pada " + alarm_bulan)
                 .setAutoCancel(true)
                 .setLargeIcon(BitmapFactory.decodeResource(context.getResources(), R.drawable.icon_notification))
                 .setSmallIcon(R.drawable.icon_smallnotification)

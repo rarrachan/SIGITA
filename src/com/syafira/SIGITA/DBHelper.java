@@ -2440,7 +2440,7 @@ public class DBHelper extends SQLiteOpenHelper {
 
     // Get One List Join Riwayat From Database
     public Cursor getListJoinRiwayatClosestValue(Integer bulan, Integer profilID) {
-        Cursor cursor = db.rawQuery("SELECT * FROM list_imunisasi LEFT OUTER JOIN riwayat_imunisasi ON list_imunisasi.list_vaksin = riwayat_imunisasi.riwayat_vaksin AND riwayat_imunisasi.riwayat_profilID = " + profilID + " WHERE list_imunisasi.list_bulan BETWEEN " + bulan + " AND " + bulan + "+1 AND riwayat_imunisasi.riwayatID ISNULL ORDER BY ABS( " + bulan + " - riwayat_imunisasi.riwayat_bulan)", null);
+        Cursor cursor = db.rawQuery("SELECT * FROM list_imunisasi LEFT OUTER JOIN riwayat_imunisasi ON list_imunisasi.list_vaksin = riwayat_imunisasi.riwayat_vaksin AND riwayat_imunisasi.riwayat_profilID = " + profilID + " WHERE list_imunisasi.list_bulan BETWEEN 0 AND " + bulan + "+1 AND riwayat_imunisasi.riwayatID ISNULL ORDER BY ABS( " + bulan + " - riwayat_imunisasi.riwayat_bulan)", null);
         cursor.moveToFirst();
         return cursor;
     }

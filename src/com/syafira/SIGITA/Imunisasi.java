@@ -86,7 +86,10 @@ public class Imunisasi extends Activity implements OnClickListener {
                 Intent profil = new Intent(this, Profil.class);
                 lastActivity = System.currentTimeMillis();
                 profil.putExtra("lastActivity", lastActivity);
+                profil.putExtra("pathbefore", "imunisasi");
+                profil.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TASK | Intent.FLAG_ACTIVITY_CLEAR_TOP);
                 startActivity(profil);
+                finish();
                 break;
             // Jadwal Imunisasi
             case R.id.JadwalImunisasiLinearLayout :
@@ -135,7 +138,10 @@ public class Imunisasi extends Activity implements OnClickListener {
                             Intent profil = new Intent(Imunisasi.this, Profil.class);
                             lastActivity = System.currentTimeMillis();
                             profil.putExtra("lastActivity", lastActivity);
+                            profil.putExtra("pathbefore", "imunisasi");
+                            profil.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TASK | Intent.FLAG_ACTIVITY_CLEAR_TOP);
                             startActivity(profil);
+                            finish();
                         }
                     });
                 }
@@ -179,7 +185,10 @@ public class Imunisasi extends Activity implements OnClickListener {
                             Intent profil = new Intent(Imunisasi.this, Profil.class);
                             lastActivity = System.currentTimeMillis();
                             profil.putExtra("lastActivity", lastActivity);
+                            profil.putExtra("pathbefore", "imunisasi");
+                            profil.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TASK | Intent.FLAG_ACTIVITY_CLEAR_TOP);
                             startActivity(profil);
+                            finish();
                         }
                     });
                 }

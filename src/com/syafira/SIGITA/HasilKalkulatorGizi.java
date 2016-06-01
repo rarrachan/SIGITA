@@ -97,7 +97,7 @@ public class HasilKalkulatorGizi extends Activity {
         Cursor cursorTBU;
         Cursor cursorBBTB;
         Cursor cursorIMTU;
-        if ((jenisKelamin).equals("L")) {
+        if ((jenisKelamin).equals("Laki-laki")) {
             cursorBBU = db.getLakiBBUList(Integer.valueOf(bulan));
             cursorTBU = db.getLakiTBUList(Integer.valueOf(bulan));
             if (Integer.valueOf(bulan) <= 24) {

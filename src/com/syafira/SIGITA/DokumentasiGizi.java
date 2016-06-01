@@ -208,7 +208,10 @@ public class DokumentasiGizi extends Activity {
                 Intent profil = new Intent(DokumentasiGizi.this, Profil.class);
                 lastActivity = System.currentTimeMillis();
                 profil.putExtra("lastActivity", lastActivity);
+                profil.putExtra("pathbefore", "dokumentasigizi");
+                profil.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TASK | Intent.FLAG_ACTIVITY_CLEAR_TOP);
                 startActivity(profil);
+                finish();
             }
         });
 

@@ -76,7 +76,10 @@ public class GaleriTumbang extends Activity {
                     Intent profil = new Intent(GaleriTumbang.this, Profil.class);
                     lastActivity = System.currentTimeMillis();
                     profil.putExtra("lastActivity", lastActivity);
+                    profil.putExtra("pathbefore", "galeritumbang");
+                    profil.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TASK | Intent.FLAG_ACTIVITY_CLEAR_TOP);
                     startActivity(profil);
+                    finish();
                 }
             });
 

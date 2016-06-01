@@ -182,12 +182,17 @@
                   android:configChanges="orientation|screenSize|keyboardHidden"
                   android:theme="@android:style/Theme.NoTitleBar.Fullscreen">
         </activity>
-        <activity android:name=".DetailMedis"
+        <activity android:name="com.syafira.SIGITA.DetailMedis"
                   android:label="@string/app_name"
                   android:configChanges="orientation|screenSize|keyboardHidden"
                   android:theme="@android:style/Theme.NoTitleBar.Fullscreen">
         </activity>
         <activity android:name="com.syafira.SIGITA.UbahMedis"
+                  android:label="@string/app_name"
+                  android:configChanges="orientation|screenSize|keyboardHidden"
+                  android:theme="@android:style/Theme.NoTitleBar.Fullscreen">
+        </activity>
+        <activity android:name="com.syafira.SIGITA.TentangSIGITA"
                   android:label="@string/app_name"
                   android:configChanges="orientation|screenSize|keyboardHidden"
                   android:theme="@android:style/Theme.NoTitleBar.Fullscreen">

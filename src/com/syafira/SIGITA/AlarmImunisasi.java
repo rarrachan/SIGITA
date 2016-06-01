@@ -58,7 +58,7 @@ public class AlarmImunisasi extends Activity {
         String getBirthdayDate = session.loadSession(AlarmImunisasi.this, "tanggallahir");
         String str[] = getBirthdayDate.split("/");
         int month = Integer.parseInt(str[1]);
-        final int year = Integer.parseInt(str[2]);
+        int year = Integer.parseInt(str[2]);
 
         final SimpleDateFormat dateFormatter = new SimpleDateFormat("dd/MM/yyyy", Locale.US);
         String getDate = dateFormatter.format(Calendar.getInstance().getTime());
@@ -66,21 +66,25 @@ public class AlarmImunisasi extends Activity {
         int monthDate = Integer.parseInt(strings[1]);
         int yearDate = Integer.parseInt(strings[2]);
 
-        final int years = yearDate - year;
-        int mon = monthDate - month;
+        int years = yearDate - year;
+        int months = monthDate - month;
+
+        if (months < 0) {
+            years--;
+            months += 12;
+        }
+
+        int mon = months;
         int y = 0;
         while (y < years) {
             mon += 12;
             y += 1;
         }
+        if (mon < 0)
+            mon += 12;
 
-        monthDate += 1;
-        if (monthDate > 12) {
-            monthDate = 1;
-            yearDate += 1;
-        }
-        final String months = new DateFormatSymbols(new Locale("id")).getMonths()[monthDate - 1];
-        String bulan_imunisasi = months + " " + yearDate;
+        final String bulan_alarm = new DateFormatSymbols(new Locale("id")).getMonths()[monthDate];
+        String bulan_imunisasi = bulan_alarm + " " + yearDate;
 
         // Load Database
         db = new DBHelper(this);
@@ -114,7 +118,8 @@ public class AlarmImunisasi extends Activity {
         // Check Session
         if (session.checkSession(this)) {
             // Set Profil Name
-            text_button_profil.setText(session.loadSession(this, "nama"));
+//            text_button_profil.setText(session.loadSession(this, "nama"));
+            text_button_profil.setText(String.valueOf(mon));
         }
 
         final List<String> list = new ArrayList<>();
@@ -142,18 +147,23 @@ public class AlarmImunisasi extends Activity {
                 Intent profil = new Intent(AlarmImunisasi.this, Profil.class);
                 lastActivity = System.currentTimeMillis();
                 profil.putExtra("lastActivity", lastActivity);
+                profil.putExtra("pathbefore", "alarmimunisasi");
+                profil.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TASK | Intent.FLAG_ACTIVITY_CLEAR_TOP);
                 startActivity(profil);
+                finish();
             }
         });
 
-        final int tahun = yearDate;
-        final int bulan = monthDate;
         final int IDs = Integer.parseInt(session.loadSession(this, "id"));
 
         final Calendar nextNotifTime = Calendar.getInstance();
 //        nextNotifTime.set(tahun, bulan, 1);
-        nextNotifTime.set(Calendar.YEAR, tahun);
-        nextNotifTime.set(Calendar.MONTH, bulan);
+        nextNotifTime.set(Calendar.DATE, 1);
+        nextNotifTime.set(Calendar.YEAR, yearDate);
+        nextNotifTime.set(Calendar.MONTH, monthDate);
+        nextNotifTime.set(Calendar.HOUR_OF_DAY, 0);
+        nextNotifTime.set(Calendar.MINUTE, 0);
+        nextNotifTime.set(Calendar.SECOND, 0);
 
         final Intent intentAlarm = new Intent(this, AlarmReceiver.class);
         intentAlarm.putExtra("alarm_nama", session.loadSession(this, "nama"));
@@ -166,28 +176,39 @@ public class AlarmImunisasi extends Activity {
         alarm_switch.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
+                SimpleDateFormat dateFormatter = new SimpleDateFormat("dd/MM/yyyy HH:mm:ss", Locale.US);
                 if (alarm_switch.isChecked()) {
-                    final PendingIntent pendingIntent = PendingIntent.getBroadcast(AlarmImunisasi.this, IDs, intentAlarm, PendingIntent.FLAG_UPDATE_CURRENT);
-                    alarmManager.setRepeating(AlarmManager.RTC_WAKEUP, nextNotifTime.getTimeInMillis(), AlarmManager.INTERVAL_DAY, pendingIntent);
+                    boolean success = false;
+                    try {
+                        final PendingIntent pendingIntent = PendingIntent.getBroadcast(AlarmImunisasi.this, IDs, intentAlarm, PendingIntent.FLAG_UPDATE_CURRENT);
+                        alarmManager.setRepeating(AlarmManager.RTC_WAKEUP, nextNotifTime.getTimeInMillis(), AlarmManager.INTERVAL_DAY, pendingIntent);
 //                        alarmManager.set(AlarmManager.RTC_WAKEUP, System.currentTimeMillis() + (60 * 1000), pendingIntent);
 //                    alarmManager.setRepeating(AlarmManager.RTC_WAKEUP, System.currentTimeMillis() + (60 * 1000), 60 * 1000, pendingIntent);
-                } else {
-//                        boolean success = false;
-                    try {
-                        PendingIntent.getBroadcast(AlarmImunisasi.this, IDs, intentAlarm, PendingIntent.FLAG_NO_CREATE).cancel();
-                        alarmManager.cancel(PendingIntent.getBroadcast(AlarmImunisasi.this, IDs, intentAlarm, PendingIntent.FLAG_NO_CREATE));
-//                            success = true;
+                        success = true;
                     } catch (Exception e) {
                         e.printStackTrace();
                     }
 
-//                        if (success){
+                    if (success){
+                        Toast.makeText(AlarmImunisasi.this, "Alarm Imunisasi " + alarm_vaksin.getText().toString().replaceAll("\n", ", ") + " untuk " + session.loadSession(AlarmImunisasi.this, "nama") + " akan aktif pada " + dateFormatter.format(nextNotifTime.getTime()), Toast.LENGTH_LONG).show();
+                    }
+                } else {
+                        boolean success = false;
+                    try {
+                        PendingIntent.getBroadcast(AlarmImunisasi.this, IDs, intentAlarm, PendingIntent.FLAG_NO_CREATE).cancel();
+                        alarmManager.cancel(PendingIntent.getBroadcast(AlarmImunisasi.this, IDs, intentAlarm, PendingIntent.FLAG_NO_CREATE));
+                            success = true;
+                    } catch (Exception e) {
+                        e.printStackTrace();
+                    }
+
+                        if (success){
 //                            SharedPreferences pref = AlarmImunisasi.this.getSharedPreferences("SIGITA_PREF", Context.MODE_PRIVATE);
 //                            SharedPreferences.Editor editor = pref.edit();
 //                            editor.putString("session_alarm", alarm_switch.getText().toString());
 //                            editor.apply();
-//                            Toast.makeText(AlarmImunisasi.this, "sukses", Toast.LENGTH_SHORT).show();
-//                        }
+                            Toast.makeText(AlarmImunisasi.this, "Alarm Imunisasi Berhasil Dinonaktifkan", Toast.LENGTH_SHORT).show();
+                        }
                 }
             }
         });

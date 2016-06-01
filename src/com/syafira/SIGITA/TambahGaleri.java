@@ -195,6 +195,7 @@ public class TambahGaleri extends Activity {
                                                   } catch (ParseException e) {
                                                       e.printStackTrace();
                                                   }
+                                                  mDatePicker.getDatePicker().setCalendarViewShown(false);
                                                   mDatePicker.show();
                                               }
                                           }
@@ -254,9 +255,12 @@ public class TambahGaleri extends Activity {
                                                  String foto = tgl.replaceAll("/", "") + "_" + nama.replaceAll(" ", "_").toLowerCase() + ".jpg";
                                                  String namaFolder = nama.replaceAll(" ", "_");
 
-                                                 if (TextUtils.isEmpty(keterangan) || TextUtils.isEmpty(tgl)) {
+                                                 if (TextUtils.isEmpty(keterangan)) {
                                                      // Show Toast
-                                                     Toast.makeText(TambahGaleri.this, "Kolom Belum Terisi", Toast.LENGTH_SHORT).show();
+                                                     Toast.makeText(TambahGaleri.this, "Kolom Keterangan Galeri Belum Terisi", Toast.LENGTH_SHORT).show();
+                                                 } else if (TextUtils.isEmpty(tgl)) {
+                                                     // Show Toast
+                                                     Toast.makeText(TambahGaleri.this, "Kolom Tanggal Belum Terisi", Toast.LENGTH_SHORT).show();
                                                  } else {
                                                      //check sd card
                                                      String state = Environment.getExternalStorageState();

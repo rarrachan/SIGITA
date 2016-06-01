@@ -80,7 +80,10 @@ public class Gizi extends Activity implements OnClickListener {
                 Intent profil = new Intent(this, Profil.class);
                 lastActivity = System.currentTimeMillis();
                 profil.putExtra("lastActivity", lastActivity);
+                profil.putExtra("pathbefore", "gizi");
+                profil.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TASK | Intent.FLAG_ACTIVITY_CLEAR_TOP);
                 startActivity(profil);
+                finish();
                 break;
 
             // Kalkulator Gizi
@@ -90,6 +93,7 @@ public class Gizi extends Activity implements OnClickListener {
                 kalkulatorgizi.putExtra("lastActivity", lastActivity);
                 kalkulatorgizi.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TASK | Intent.FLAG_ACTIVITY_CLEAR_TOP);
                 startActivity(kalkulatorgizi);
+                finish();
                 break;
 
             // Dokumentasi Gizi
@@ -128,7 +132,10 @@ public class Gizi extends Activity implements OnClickListener {
                             Intent profil = new Intent(Gizi.this, Profil.class);
                             lastActivity = System.currentTimeMillis();
                             profil.putExtra("lastActivity", lastActivity);
+                            profil.putExtra("pathbefore", "gizi");
+                            profil.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TASK | Intent.FLAG_ACTIVITY_CLEAR_TOP);
                             startActivity(profil);
+                            finish();
                         }
                     });
                 }

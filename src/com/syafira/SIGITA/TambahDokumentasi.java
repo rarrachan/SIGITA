@@ -170,6 +170,7 @@ public class TambahDokumentasi extends Activity {
                 } catch (ParseException e) {
                     e.printStackTrace();
                 }
+                mDatePicker.getDatePicker().setCalendarViewShown(false);
                 mDatePicker.show();
             }
         });
@@ -186,11 +187,17 @@ public class TambahDokumentasi extends Activity {
                 int profilID = Integer.parseInt(session.loadSession(TambahDokumentasi.this, "id"));
 
                 // Check if Value Empty
-                if (TextUtils.isEmpty(tanggal) ||
-                        TextUtils.isEmpty(tinggiBadan) ||
-                        TextUtils.isEmpty(beratBadan)) {
+                if (TextUtils.isEmpty(tanggal)) {
                     // Show Toast
-                    Toast.makeText(TambahDokumentasi.this, "Kolom Belum Terisi", Toast.LENGTH_SHORT).show();
+                    Toast.makeText(TambahDokumentasi.this, "Kolom Tanggal Lahir Belum Terisi", Toast.LENGTH_SHORT).show();
+
+                } else if (TextUtils.isEmpty(tinggiBadan)) {
+                    // Show Toast
+                    Toast.makeText(TambahDokumentasi.this, "Kolom Tinggi Badan Belum Terisi", Toast.LENGTH_SHORT).show();
+
+                } else if (TextUtils.isEmpty(beratBadan)) {
+                    // Show Toast
+                    Toast.makeText(TambahDokumentasi.this, "Kolom Berat Badan Belum Terisi", Toast.LENGTH_SHORT).show();
 
                 } else if (bulan > 60) {
                     // Show Toast

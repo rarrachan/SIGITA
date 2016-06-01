@@ -22,8 +22,6 @@
     <string name="profil_nama">Nama</string>
     <string name="profil_hint_nama">Nama Anak</string>
     <string name="profil_jeniskelamin">Jenis Kelamin</string>
-    <string name="profil_L">L</string>
-    <string name="profil_P">P</string>
     <string name="profil_tempatlahir">Tempat Lahir</string>
     <string name="profil_tanggallahir">Tanggal Lahir</string>
     <string name="profil_hint_tempatlahir">Tempat Lahir</string>
@@ -170,4 +168,14 @@
     <string name="ubah_rekam_medis">Ubah Rekam Medis</string>
     <string name="alert_hapus_medis">Apa anda yakin untuk menghapus rekam medis ini?</string>
 
+    <string name="button_tentangsigita">Tentang SIGITA</string>
+    <string name="tentang_sigita">SIGITA &#8211; Sistem Informasi Gizi, Imunisasi, dan Tumbuh-Kembang Anak &#8211; merupakan
+        sebuah sistem informasi berbasis android yang dapat memberikan serta menyimpan berbagai informasi seputar anak berusia 0 hingga 5 tahun.
+        Informasi tersebut antara lain perhitungan status gizi anak setiap
+        bulan serta perbandingan status gizi dengan kurva pertumbuhan anak yang dihitung
+        menggunakan indeks antropometri sebagai dasar penilaian status gizi, pencatatan
+        riwayat serta pengingat jadwal imunisasi, pencatatan rekam medis, hingga
+        perbandingan antara pertumbuhan dan perkembangan anak dengan developmental
+        milestones serta penyimpanan momen penting pada pertumbuhan dan perkembangan
+        anak. </string>
 </resources>

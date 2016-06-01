@@ -245,6 +245,7 @@ public class UbahRiwayat extends Activity {
                 } catch (ParseException e) {
                     e.printStackTrace();
                 }
+                mDatePicker.getDatePicker().setCalendarViewShown(false);
                 mDatePicker.show();
             }
         });
@@ -263,9 +264,12 @@ public class UbahRiwayat extends Activity {
                 String tinggi = riwayat_tinggibadan.getText().toString();
                 String berat = riwayat_beratbadan.getText().toString();
 
-                if (TextUtils.isEmpty(tanggal) || riwayat_jenisvaksin.getSelectedItemPosition() == 0) {
+                if (TextUtils.isEmpty(tanggal) ) {
                     //Show Toast
-                    Toast.makeText(UbahRiwayat.this, "Kolom Belum Terisi", Toast.LENGTH_SHORT).show();
+                    Toast.makeText(UbahRiwayat.this, "Kolom Tanggal Vaksinasi Belum Terisi", Toast.LENGTH_SHORT).show();
+                } else if (riwayat_jenisvaksin.getSelectedItemPosition() == 0) {
+                    //Show Toast
+                    Toast.makeText(UbahRiwayat.this, "Kolom Jenis Vaksinasi Belum Terpilih", Toast.LENGTH_SHORT).show();
                 } else {
                     // Declare Condition
                     boolean success = false;

@@ -157,6 +157,7 @@ public class KalkulatorGizi extends Activity {
                 }, mYear, mMonth, mDay);
                 mDatePicker.setTitle("Select date");
                 mDatePicker.getDatePicker().setMaxDate(Calendar.getInstance().getTimeInMillis());
+                mDatePicker.getDatePicker().setCalendarViewShown(false);
                 mDatePicker.show();
             }
         });
@@ -171,12 +172,21 @@ public class KalkulatorGizi extends Activity {
                 String bulan = kalkulatorgizi_bulan.getText().toString();
 
                 // Check if Value Empty
-                if (TextUtils.isEmpty(tanggalLahir) ||
-                        TextUtils.isEmpty(tinggiBadan) ||
-                        TextUtils.isEmpty(beratBadan) ||
-                        kalkulatorgizi_jeniskelamin.getCheckedRadioButtonId() == -1) {
+                if (TextUtils.isEmpty(tanggalLahir)) {
                     // Show Toast
-                    Toast.makeText(KalkulatorGizi.this, "Kolom Belum Terisi", Toast.LENGTH_SHORT).show();
+                    Toast.makeText(KalkulatorGizi.this, "Kolom Tanggal Lahir Belum Terisi", Toast.LENGTH_SHORT).show();
+
+                } else if (TextUtils.isEmpty(tinggiBadan)) {
+                    // Show Toast
+                    Toast.makeText(KalkulatorGizi.this, "Kolom Tinggi Badan Belum Terisi", Toast.LENGTH_SHORT).show();
+
+                } else if (TextUtils.isEmpty(beratBadan)) {
+                    // Show Toast
+                    Toast.makeText(KalkulatorGizi.this, "Kolom Berat Badan Belum Terisi", Toast.LENGTH_SHORT).show();
+
+                } else if (kalkulatorgizi_jeniskelamin.getCheckedRadioButtonId() == -1) {
+                    // Show Toast
+                    Toast.makeText(KalkulatorGizi.this, "Kolom Jenis Kelamin Belum Terisi", Toast.LENGTH_SHORT).show();
 
                 } else if (Integer.valueOf(bulan) > 60) {
                     // Show Toast
@@ -190,7 +200,7 @@ public class KalkulatorGizi extends Activity {
                     // Show Toast
                     Toast.makeText(KalkulatorGizi.this, "Berat Tidak Boleh Kurang Dari 2 kg", Toast.LENGTH_SHORT).show();
 
-                }else {
+                } else {
 
                     String jenisKelamin = ((RadioButton) findViewById(kalkulatorgizi_jeniskelamin.getCheckedRadioButtonId())).getText().toString();
 
@@ -249,11 +259,11 @@ public class KalkulatorGizi extends Activity {
     @Override
     public void onBackPressed() {
         // Start Index Activity
-        Intent index = new Intent(this, Index.class);
+        Intent gizi = new Intent(this, Gizi.class);
         lastActivity = System.currentTimeMillis();
-        index.putExtra("lastActivity", lastActivity);
-        index.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TASK | Intent.FLAG_ACTIVITY_CLEAR_TOP);
-        startActivity(index);
+        gizi.putExtra("lastActivity", lastActivity);
+        gizi.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TASK | Intent.FLAG_ACTIVITY_CLEAR_TOP);
+        startActivity(gizi);
 
         // Close This Activity
         finish();

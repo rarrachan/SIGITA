@@ -121,11 +121,6 @@ public class TambahRiwayat extends Activity {
 
         riwayat_nama.setText(session.loadSession(this, "nama"));
 
-//        final List<HashMap<String, String>> aList = new ArrayList<>();
-//        final HashMap<String, String> vaksin = new HashMap<>();
-//        vaksin.put("0", "Pilih");
-//        aList.add(vaksin);
-
         final List<String> list = new ArrayList<>();
         list.add(0, "Pilih");
         ArrayAdapter dataAdapter = new ArrayAdapter<String>(TambahRiwayat.this, android.R.layout.simple_spinner_item, list) {
@@ -234,6 +229,7 @@ public class TambahRiwayat extends Activity {
                 } catch (ParseException e) {
                     e.printStackTrace();
                 }
+                mDatePicker.getDatePicker().setCalendarViewShown(false);
                 mDatePicker.show();
             }
         });
@@ -252,9 +248,12 @@ public class TambahRiwayat extends Activity {
                 String tinggi = riwayat_tinggibadan.getText().toString();
                 String berat = riwayat_beratbadan.getText().toString();
 
-                if (TextUtils.isEmpty(tanggal) || riwayat_jenisvaksin.getSelectedItemPosition() == 0) {
+                if (TextUtils.isEmpty(tanggal) ) {
                     //Show Toast
-                    Toast.makeText(TambahRiwayat.this, "Kolom Belum Terisi", Toast.LENGTH_SHORT).show();
+                    Toast.makeText(TambahRiwayat.this, "Kolom Tanggal Vaksinasi Belum Terisi", Toast.LENGTH_SHORT).show();
+                } else if (riwayat_jenisvaksin.getSelectedItemPosition() == 0) {
+                    //Show Toast
+                    Toast.makeText(TambahRiwayat.this, "Kolom Jenis Vaksinasi Belum Terpilih", Toast.LENGTH_SHORT).show();
                 } else {
                     // Declare Condition
                     boolean success = false;

@@ -83,8 +83,12 @@ public class TumbuhKembang extends Activity implements OnClickListener {
                 Intent profil = new Intent(this, Profil.class);
                 lastActivity = System.currentTimeMillis();
                 profil.putExtra("lastActivity", lastActivity);
+                profil.putExtra("action", "tumbuhkembang");
+                profil.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TASK | Intent.FLAG_ACTIVITY_CLEAR_TOP);
                 startActivity(profil);
+                finish();
                 break;
+
             // Tahapan Tumbuh Kembang
             case R.id.TahapanTumbangLinearLayout :
                 Intent tahap_tumbang = new Intent(this, TahapanTumbang.class);
@@ -132,7 +136,10 @@ public class TumbuhKembang extends Activity implements OnClickListener {
                             Intent profil = new Intent(TumbuhKembang.this, Profil.class);
                             lastActivity = System.currentTimeMillis();
                             profil.putExtra("lastActivity", lastActivity);
+                            profil.putExtra("action", "tumbuhkembang");
+                            profil.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TASK | Intent.FLAG_ACTIVITY_CLEAR_TOP);
                             startActivity(profil);
+                            finish();
                         }
                     });
                 }

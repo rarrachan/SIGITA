@@ -184,6 +184,7 @@ public class UbahDokumentasi extends Activity {
                 } catch (ParseException e) {
                     e.printStackTrace();
                 }
+                mDatePicker.getDatePicker().setCalendarViewShown(false);
                 mDatePicker.show();
             }
         });

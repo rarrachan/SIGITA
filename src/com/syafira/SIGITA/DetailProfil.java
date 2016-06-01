@@ -14,10 +14,9 @@ import android.database.Cursor;
 import android.graphics.Typeface;
 import android.graphics.drawable.ColorDrawable;
 import android.graphics.drawable.Drawable;
-import android.media.MediaScannerConnection;
-import android.net.Uri;
 import android.os.Bundle;
 import android.os.Environment;
+import android.provider.MediaStore;
 import android.view.View;
 import android.view.View.OnClickListener;
 import android.widget.ImageView;
@@ -73,6 +72,7 @@ public class DetailProfil extends Activity {
         Intent fetchID = getIntent();
         final int id = fetchID.getIntExtra("id", 0);
         lastActivity = fetchID.getLongExtra("lastActivity", 1L);
+        final String pathbefore = fetchID.getStringExtra("pathbefore");
 
         // Load Database
         db = new DBHelper(this);
@@ -141,7 +141,6 @@ public class DetailProfil extends Activity {
         text_footer.setTypeface(typeface);
 
         // Show Data From Database
-        final int profil_id = cursor.getInt(cursor.getColumnIndex("profilID"));
         final String nama = cursor.getString(cursor.getColumnIndex("profil_nama"));
         profil_nama.setText(nama);
         profil_jeniskelamin.setText(cursor.getString(cursor.getColumnIndex("profil_jenisKelamin")));
@@ -158,31 +157,48 @@ public class DetailProfil extends Activity {
         }
         final String foto_path = android.os.Environment.getExternalStorageDirectory() + "/SIGITA/" + nama.replaceAll(" ", "_") + "/" + cursor.getString(cursor.getColumnIndex("profil_foto"));
         profil_foto.setImageDrawable(Drawable.createFromPath(foto_path));
+        if (profil_foto.getDrawable() == null){
+            profil_foto.setImageDrawable(getResources().getDrawable(R.drawable.icon_logo));
+        }
 
         final String pass = cursor.getString(cursor.getColumnIndex("profil_passcode"));
 
-
         // Set OnClickListener
+        if (profil_foto.getDrawable() == null){
+            profil_foto.setOnClickListener(new OnClickListener() {
+                @Override
+                public void onClick(View v) {
+                    // Show Image Zoom Activity
+                    Intent zoom = new Intent(DetailProfil.this, ImageZoom.class);
+                    lastActivity = System.currentTimeMillis();
+                    zoom.putExtra("lastActivity", lastActivity);
+                    zoom.putExtra("foto_path", foto_path);
+                    startActivity(zoom);
+                }
+            });
+        }
         button_passcode.setOnClickListener(new OnClickListener() {
             @Override
             public void onClick(View v) {
                 if(!pass.equals("")) {
                     // Show Image Zoom Activity
-                    Intent passcode = new Intent(DetailProfil.this, ProfilCekPasscode.class);
+                    Intent cekPasscode = new Intent(DetailProfil.this, ProfilCekPasscode.class);
                     lastActivity = System.currentTimeMillis();
-                    passcode.putExtra("lastActivity", lastActivity);
-                    passcode.putExtra("nama", nama);
-                    passcode.putExtra("passcode", pass);
-                    passcode.putExtra("id", id);
-                    passcode.putExtra("action", "passcode");
-                    startActivity(passcode);
+                    cekPasscode.putExtra("lastActivity", lastActivity);
+                    cekPasscode.putExtra("nama", nama);
+                    cekPasscode.putExtra("passcode", pass);
+                    cekPasscode.putExtra("id", id);
+                    cekPasscode.putExtra("action", "passcode");
+                    cekPasscode.putExtra("pathbefore", pathbefore);
+                    startActivity(cekPasscode);
                 } else {
                     // Start Index Activity
                     lastActivity = System.currentTimeMillis();
-                    Intent createnewpasscode = new Intent(DetailProfil.this, Passcode.class);
-                    createnewpasscode.putExtra("lastActivity", lastActivity);
-                    createnewpasscode.putExtra("id", id);
-                    startActivity(createnewpasscode);
+                    Intent passcode = new Intent(DetailProfil.this, Passcode.class);
+                    passcode.putExtra("lastActivity", lastActivity);
+                    passcode.putExtra("id", id);
+                    passcode.putExtra("pathbefore", pathbefore);
+                    startActivity(passcode);
                 }
             }
         });
@@ -190,27 +206,30 @@ public class DetailProfil extends Activity {
         button_ubah.setOnClickListener(new OnClickListener() {
             @Override
             public void onClick(View v) {
-                // Show Ubah Profil Activity
-                Intent ubah_profil = new Intent(DetailProfil.this, UbahProfil.class);
-                // Put Intent Extra
-                lastActivity = System.currentTimeMillis();
-                ubah_profil.putExtra("lastActivity", lastActivity);
-                ubah_profil.putExtra("id", profil_id);
-                ubah_profil.putExtra("nama", nama);
-                ubah_profil.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TASK | Intent.FLAG_ACTIVITY_CLEAR_TOP);
-                startActivity(ubah_profil);
-                finish();
-            }
-        });
-        profil_foto.setOnClickListener(new OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                // Show Image Zoom Activity
-                Intent zoom = new Intent(DetailProfil.this, ImageZoom.class);
-                lastActivity = System.currentTimeMillis();
-                zoom.putExtra("lastActivity", lastActivity);
-                zoom.putExtra("foto_path", foto_path);
-                startActivity(zoom);
+                if(!pass.equals("")) {
+                    // Show Image Zoom Activity
+                    Intent cekPasscode = new Intent(DetailProfil.this, ProfilCekPasscode.class);
+                    lastActivity = System.currentTimeMillis();
+                    cekPasscode.putExtra("lastActivity", lastActivity);
+                    cekPasscode.putExtra("nama", nama);
+                    cekPasscode.putExtra("passcode", pass);
+                    cekPasscode.putExtra("id", id);
+                    cekPasscode.putExtra("action", "ubahprofil");
+                    cekPasscode.putExtra("pathbefore", pathbefore);
+                    startActivity(cekPasscode);
+                } else {
+                    // Show Ubah Profil Activity
+                    Intent ubah_profil = new Intent(DetailProfil.this, UbahProfil.class);
+                    // Put Intent Extra
+                    lastActivity = System.currentTimeMillis();
+                    ubah_profil.putExtra("lastActivity", lastActivity);
+                    ubah_profil.putExtra("id", id);
+                    ubah_profil.putExtra("nama", nama);
+                    ubah_profil.putExtra("pathbefore", pathbefore);
+                    ubah_profil.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TASK | Intent.FLAG_ACTIVITY_CLEAR_TOP);
+                    startActivity(ubah_profil);
+                    finish();
+                }
             }
         });
         button_hapus.setOnClickListener(new OnClickListener() {
@@ -244,78 +263,84 @@ public class DetailProfil extends Activity {
                 button_ok.setOnClickListener(new OnClickListener() {
                     @Override
                     public void onClick(View v) {
-                        // Declare Condition
-                        boolean success = false;
-
-                        try {
-
-                            // Turn Off Alarm Imunisasi
-                            AlarmManager alarmManager = (AlarmManager) getSystemService(Context.ALARM_SERVICE);
-                            if (PendingIntent.getBroadcast(DetailProfil.this, profil_id,
-                                    new Intent(DetailProfil.this, AlarmReceiver.class), PendingIntent.FLAG_NO_CREATE) != null) {
-                                PendingIntent.getBroadcast(DetailProfil.this, profil_id,
-                                        new Intent(DetailProfil.this, AlarmReceiver.class), PendingIntent.FLAG_NO_CREATE).cancel();
-                                alarmManager.cancel(PendingIntent.getBroadcast(DetailProfil.this, profil_id,
-                                        new Intent(DetailProfil.this, AlarmReceiver.class), PendingIntent.FLAG_NO_CREATE));
-                            }
-
-                            // Delete Folder Directory
-                            File profilDirectory = new File(Environment.getExternalStorageDirectory() + "/SIGITA/" + nama.replaceAll(" ", "_"));
-                            if (profilDirectory.isDirectory()) {
-                                String[] children = profilDirectory.list();
-                                for (String aChildren : children) {
-                                    new File(profilDirectory, aChildren).delete();
-                                }
-                                profilDirectory.delete();
-                            }
-
-                            // Scan Gallery
-                            File scanGallery = new File(Environment.getExternalStorageDirectory() + "/SIGITA/" + nama.replaceAll(" ", "_"));
-                            MediaScannerConnection.scanFile(DetailProfil.this,
-                                    new String[]{scanGallery.toString()}, null,
-                                    new MediaScannerConnection.OnScanCompletedListener() {
-                                        public void onScanCompleted(String path, Uri uri) {
-                                        }
-                                    });
-
-                            // Delete From Database
-                            db.deleteDokumentasiProfilID(profil_id);
-                            db.deleteRiwayatProfilID(profil_id);
-                            db.deleteGaleriProfilID(profil_id);
-                            db.deleteMedisProfilID(profil_id);
-                            db.deleteProfil(profil_id);
-
-                            // Declare Condition
-                            success = true;
-
-                        } catch (Exception e) {
-                            e.printStackTrace();
-                        }
-
-                        // Check Condition
-                        if (success) {
-                            // Show Toast Success
-                            Toast.makeText(DetailProfil.this, "Profil Berhasil Terhapus", Toast.LENGTH_SHORT).show();
+                        if (!pass.equals("")) {
+                            // Show Image Zoom Activity
+                            Intent cekPasscode = new Intent(DetailProfil.this, ProfilCekPasscode.class);
+                            lastActivity = System.currentTimeMillis();
+                            cekPasscode.putExtra("lastActivity", lastActivity);
+                            cekPasscode.putExtra("nama", nama);
+                            cekPasscode.putExtra("passcode", pass);
+                            cekPasscode.putExtra("id", id);
+                            cekPasscode.putExtra("action", "hapusprofil");
+                            cekPasscode.putExtra("pathbefore", pathbefore);
+                            startActivity(cekPasscode);
                         } else {
-                            // Show Toast Failed
-                            Toast.makeText(DetailProfil.this, "Profil Gagal Terhapus", Toast.LENGTH_SHORT).show();
+                            // Declare Condition
+                            boolean success = false;
+                            try {
+                                // Turn Off Alarm Imunisasi
+                                AlarmManager alarmManager = (AlarmManager) getSystemService(Context.ALARM_SERVICE);
+                                if (PendingIntent.getBroadcast(DetailProfil.this, id,
+                                        new Intent(DetailProfil.this, AlarmReceiver.class), PendingIntent.FLAG_NO_CREATE) != null) {
+                                    PendingIntent.getBroadcast(DetailProfil.this, id,
+                                            new Intent(DetailProfil.this, AlarmReceiver.class), PendingIntent.FLAG_NO_CREATE).cancel();
+                                    alarmManager.cancel(PendingIntent.getBroadcast(DetailProfil.this, id,
+                                            new Intent(DetailProfil.this, AlarmReceiver.class), PendingIntent.FLAG_NO_CREATE));
+                                }
+
+                                // Delete Folder Directory
+                                File profilDirectory = new File(Environment.getExternalStorageDirectory() + "/SIGITA/" + nama.replaceAll(" ", "_"));
+                                if (profilDirectory.isDirectory()) {
+                                    String[] children = profilDirectory.list();
+                                    for (String aChildren : children) {
+                                        if(new File(profilDirectory, aChildren).delete()){
+                                            //Scan Gallery
+                                            getContentResolver().delete(MediaStore.Images.Media.EXTERNAL_CONTENT_URI, MediaStore.Images.Media.DATA + "=?", new String[]{profilDirectory + "/" + aChildren});
+                                        }
+                                    }
+                                    profilDirectory.delete();
+                                }
+
+                                // Delete From Database
+                                db.deleteDokumentasiProfilID(id);
+                                db.deleteRiwayatProfilID(id);
+                                db.deleteGaleriProfilID(id);
+                                db.deleteMedisProfilID(id);
+                                db.deleteProfil(id);
+
+                                // Declare Condition
+                                success = true;
+
+                            } catch (Exception e) {
+                                e.printStackTrace();
+                            }
+
+                            // Check Condition
+                            if (success) {
+                                // Show Toast Success
+                                Toast.makeText(DetailProfil.this, "Profil Berhasil Terhapus", Toast.LENGTH_SHORT).show();
+                            } else {
+                                // Show Toast Failed
+                                Toast.makeText(DetailProfil.this, "Profil Gagal Terhapus", Toast.LENGTH_SHORT).show();
+                            }
+
+                            // Close Dialog
+                            dialog.dismiss();
+
+                            // Show Profil Activity
+                            Intent profil = new Intent(DetailProfil.this, Profil.class);
+                            lastActivity = System.currentTimeMillis();
+                            profil.putExtra("lastActivity", lastActivity);
+                            profil.putExtra("pathbefore", pathbefore);
+                            profil.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TASK | Intent.FLAG_ACTIVITY_CLEAR_TOP);
+                            startActivity(profil);
+
+                            // Clear Session
+                            session.clearSession(DetailProfil.this);
+
+                            // Clear Activity
+                            finish();
                         }
-
-                        // Close Dialog
-                        dialog.dismiss();
-
-                        // Show Profil Activity
-                        Intent profil = new Intent(DetailProfil.this, Profil.class);
-                        lastActivity = System.currentTimeMillis();
-                        profil.putExtra("lastActivity", lastActivity);
-                        profil.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TASK | Intent.FLAG_ACTIVITY_CLEAR_TOP);
-                        startActivity(profil);
-
-                        // Clear Session
-                        session.clearSession(DetailProfil.this);
-
-                        // Clear Activity
-                        finish();
                     }
                 });
             }
@@ -325,10 +350,14 @@ public class DetailProfil extends Activity {
     // Pressed Back Button
     @Override
     public void onBackPressed() {
+        Intent fetchID = getIntent();
+        String pathbefore = fetchID.getStringExtra("pathbefore");
+
         // Start Profil Activity
         Intent profil = new Intent(DetailProfil.this, Profil.class);
         lastActivity = System.currentTimeMillis();
         profil.putExtra("lastActivity", lastActivity);
+        profil.putExtra("pathbefore", pathbefore);
         profil.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TASK | Intent.FLAG_ACTIVITY_CLEAR_TOP);
         startActivity(profil);
 

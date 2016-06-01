@@ -5,24 +5,16 @@ package com.syafira.SIGITA;
  */
 
 import android.app.Activity;
-import android.app.AlarmManager;
 import android.app.Dialog;
-import android.app.PendingIntent;
-import android.content.Context;
 import android.database.Cursor;
 import android.graphics.drawable.ColorDrawable;
 import android.graphics.drawable.Drawable;
-import android.media.MediaScannerConnection;
-import android.net.Uri;
 import android.os.Bundle;
 import android.content.Intent;
-import android.os.Environment;
 import android.view.View;
 import android.view.View.OnClickListener;
 import android.widget.*;
 import android.graphics.Typeface;
-
-import java.io.File;
 
 public class Profil extends Activity{
 
@@ -49,6 +41,7 @@ public class Profil extends Activity{
         // Fetch Intent Extra
         Intent fetchID = getIntent();
         lastActivity = fetchID.getLongExtra("lastActivity", 1L);
+        final String pathbefore = fetchID.getStringExtra("pathbefore");
 
         // Session Manager
         session = new SessionManager();
@@ -71,6 +64,7 @@ public class Profil extends Activity{
                 Intent tambah_profil = new Intent(Profil.this, TambahProfil.class);
                 lastActivity = System.currentTimeMillis();
                 tambah_profil.putExtra("lastActivity", lastActivity);
+                tambah_profil.putExtra("pathbefore", pathbefore);
                 startActivity(tambah_profil);
 
                 // Close This Activity
@@ -171,6 +165,7 @@ public class Profil extends Activity{
                                     profilCekPasscode.putExtra("tanggallahir", tanggallahir);
                                     profilCekPasscode.putExtra("passcode", passcode);
                                     profilCekPasscode.putExtra("action", "pilihprofil");
+                                    profilCekPasscode.putExtra("pathbefore", pathbefore);
                                     profilCekPasscode.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TASK | Intent.FLAG_ACTIVITY_CLEAR_TOP);
                                     startActivity(profilCekPasscode);
 
@@ -187,6 +182,9 @@ public class Profil extends Activity{
 
                                     // Close Dialog
                                     dialog_profil.dismiss();
+
+                                    // Show Toast
+                                    Toast.makeText(Profil.this, "Profil " + nama + " Dipilih", Toast.LENGTH_SHORT).show();
 
                                     // Start Index Activity
                                     lastActivity = System.currentTimeMillis();
@@ -214,6 +212,7 @@ public class Profil extends Activity{
                                     profilCekPasscode.putExtra("nama", nama);
                                     profilCekPasscode.putExtra("passcode", passcode);
                                     profilCekPasscode.putExtra("action", "detailprofil");
+                                    profilCekPasscode.putExtra("pathbefore", pathbefore);
                                     startActivity(profilCekPasscode);
                                 } else {
                                     // Close Dialog
@@ -224,6 +223,7 @@ public class Profil extends Activity{
                                     lastActivity = System.currentTimeMillis();
                                     detail_profil.putExtra("lastActivity", lastActivity);
                                     detail_profil.putExtra("id", id);
+                                    detail_profil.putExtra("pathbefore", pathbefore);
                                     startActivity(detail_profil);
 
                                     // Close This Activity
@@ -244,8 +244,137 @@ public class Profil extends Activity{
     // Pressed Back Button
     @Override
     public void onBackPressed() {
-        // Close This Activity
-        finish();
+        Intent fetchID = getIntent();
+        String pathbefore = fetchID.getStringExtra("pathbefore");
+        switch (pathbefore) {
+            case "index":
+                // Start Index Activity
+                Intent index = new Intent(this, Index.class);
+                lastActivity = System.currentTimeMillis();
+                index.putExtra("lastActivity", lastActivity);
+                index.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TASK | Intent.FLAG_ACTIVITY_CLEAR_TOP);
+                startActivity(index);
+
+                // Close This Activity
+                finish();
+                break;
+            case "gizi":
+                // Start Index Activity
+                Intent gizi = new Intent(this, Gizi.class);
+                lastActivity = System.currentTimeMillis();
+                gizi.putExtra("lastActivity", lastActivity);
+                gizi.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TASK | Intent.FLAG_ACTIVITY_CLEAR_TOP);
+                startActivity(gizi);
+
+                // Close This Activity
+                finish();
+                break;
+
+            case "imunisasi":
+                // Start Index Activity
+                Intent imunisasi = new Intent(this, Imunisasi.class);
+                lastActivity = System.currentTimeMillis();
+                imunisasi.putExtra("lastActivity", lastActivity);
+                imunisasi.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TASK | Intent.FLAG_ACTIVITY_CLEAR_TOP);
+                startActivity(imunisasi);
+
+                // Close This Activity
+                finish();
+                break;
+            case "tumbuhkembang":
+                // Start Index Activity
+                Intent tumbuhkembang = new Intent(this, TumbuhKembang.class);
+                lastActivity = System.currentTimeMillis();
+                tumbuhkembang.putExtra("lastActivity", lastActivity);
+                tumbuhkembang.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TASK | Intent.FLAG_ACTIVITY_CLEAR_TOP);
+                startActivity(tumbuhkembang);
+
+                // Close This Activity
+                finish();
+                break;
+            case "rekammedis":
+                // Start Index Activity
+                Intent rekammedis = new Intent(this, RekamMedis.class);
+                lastActivity = System.currentTimeMillis();
+                rekammedis.putExtra("lastActivity", lastActivity);
+                rekammedis.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TASK | Intent.FLAG_ACTIVITY_CLEAR_TOP);
+                startActivity(rekammedis);
+
+                // Close This Activity
+                finish();
+                break;
+            case "alarmimunisasi":
+                // Start Index Activity
+                Intent alarmimunisasi = new Intent(this, AlarmImunisasi.class);
+                lastActivity = System.currentTimeMillis();
+                alarmimunisasi.putExtra("lastActivity", lastActivity);
+                alarmimunisasi.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TASK | Intent.FLAG_ACTIVITY_CLEAR_TOP);
+                startActivity(alarmimunisasi);
+
+                // Close This Activity
+                finish();
+                break;
+
+            case "jadwalimunisasi":
+                // Start Index Activity
+                Intent jadwalimunisasi = new Intent(this, JadwalImunisasi.class);
+                lastActivity = System.currentTimeMillis();
+                jadwalimunisasi.putExtra("lastActivity", lastActivity);
+                jadwalimunisasi.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TASK | Intent.FLAG_ACTIVITY_CLEAR_TOP);
+                startActivity(jadwalimunisasi);
+
+                // Close This Activity
+                finish();
+                break;
+
+            case "riwayatimunisasi":
+                // Start Index Activity
+                Intent riwayatimunisasi = new Intent(this, RiwayatImunisasi.class);
+                lastActivity = System.currentTimeMillis();
+                riwayatimunisasi.putExtra("lastActivity", lastActivity);
+                riwayatimunisasi.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TASK | Intent.FLAG_ACTIVITY_CLEAR_TOP);
+                startActivity(riwayatimunisasi);
+
+                // Close This Activity
+                finish();
+                break;
+
+            case "dokumentasigizi":
+                // Start Index Activity
+                Intent dokumentasigizi = new Intent(this, DokumentasiGizi.class);
+                lastActivity = System.currentTimeMillis();
+                dokumentasigizi.putExtra("lastActivity", lastActivity);
+                dokumentasigizi.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TASK | Intent.FLAG_ACTIVITY_CLEAR_TOP);
+                startActivity(dokumentasigizi);
+
+                // Close This Activity
+                finish();
+                break;
+
+            case "tahapantumbang":
+                // Start Index Activity
+                Intent tahapantumbang = new Intent(this, TahapanTumbang.class);
+                lastActivity = System.currentTimeMillis();
+                tahapantumbang.putExtra("lastActivity", lastActivity);
+                tahapantumbang.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TASK | Intent.FLAG_ACTIVITY_CLEAR_TOP);
+                startActivity(tahapantumbang);
+
+                // Close This Activity
+                finish();
+                break;
+
+            case "galeritumbang":
+                // Start Index Activity
+                Intent galeritumbang = new Intent(this, GaleriTumbang.class);
+                lastActivity = System.currentTimeMillis();
+                galeritumbang.putExtra("lastActivity", lastActivity);
+                galeritumbang.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TASK | Intent.FLAG_ACTIVITY_CLEAR_TOP);
+                startActivity(galeritumbang);
+
+                // Close This Activity
+                finish();
+                break;
+        }
     }
 
     // Activity Resume

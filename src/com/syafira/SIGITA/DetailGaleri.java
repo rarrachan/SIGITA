@@ -11,6 +11,7 @@ import android.media.MediaScannerConnection;
 import android.net.Uri;
 import android.os.Bundle;
 import android.os.Environment;
+import android.provider.MediaStore;
 import android.view.View;
 import android.widget.ImageView;
 import android.widget.TextView;
@@ -178,7 +179,8 @@ public class DetailGaleri extends Activity {
 
                             // Remove Photo
                             if (foto.exists()) {
-                                foto.delete();
+                                if(foto.delete())
+                                getContentResolver().delete(MediaStore.Images.Media.EXTERNAL_CONTENT_URI, MediaStore.Images.Media.DATA + "=?", new String[]{new File(sdCardDirectory + "/SIGITA/" + nama.replaceAll(" ", "_")) + "/" + cursor.getString(cursor.getColumnIndex("galeri_foto"))});
                             }
 
                             // Scan on Gallery

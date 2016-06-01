@@ -250,6 +250,7 @@ public class UbahProfil extends Activity implements OnClickListener {
                 }, mYear, mMonth, mDay);
                 mDatePicker.setTitle("Select date");
                 mDatePicker.getDatePicker().setMaxDate(Calendar.getInstance().getTimeInMillis());
+                mDatePicker.getDatePicker().setCalendarViewShown(false);
                 mDatePicker.show();
                 break;
 
@@ -275,16 +276,34 @@ public class UbahProfil extends Activity implements OnClickListener {
                 String fotoPath = foto.replaceAll(" ", "_").toLowerCase();
 
                 // Check if Value Empty
-                if (TextUtils.isEmpty(nama) ||
-                        TextUtils.isEmpty(panjangLahir) ||
-                        TextUtils.isEmpty(beratLahir) ||
-                        TextUtils.isEmpty(tmptLahir) ||
-                        TextUtils.isEmpty(tglLahir) ||
-                        profil_jeniskelamin.getCheckedRadioButtonId() == -1 ||
-                        profil_golongandarah.getCheckedRadioButtonId() == -1) {
+                if (TextUtils.isEmpty(nama) ) {
                     // Show Toast
-                    Toast.makeText(this, "Kolom Belum Terisi", Toast.LENGTH_SHORT).show();
-                    return;
+                    Toast.makeText(this, "Kolom Nama Belum Terisi", Toast.LENGTH_SHORT).show();
+
+                } else if (TextUtils.isEmpty(panjangLahir)) {
+                    // Show Toast
+                    Toast.makeText(UbahProfil.this, "Kolom Panjang Lahir Belum Terisi", Toast.LENGTH_SHORT).show();
+
+                } else if (TextUtils.isEmpty(beratLahir)) {
+                    // Show Toast
+                    Toast.makeText(UbahProfil.this, "Kolom Berat Lahir Belum Terisi", Toast.LENGTH_SHORT).show();
+
+                } else if (TextUtils.isEmpty(tmptLahir)) {
+                    // Show Toast
+                    Toast.makeText(UbahProfil.this, "Kolom Tempat Lahir Belum Terisi", Toast.LENGTH_SHORT).show();
+
+                } else if (TextUtils.isEmpty(tglLahir)) {
+                    // Show Toast
+                    Toast.makeText(UbahProfil.this, "Kolom Tanggal Lahir Belum Terisi", Toast.LENGTH_SHORT).show();
+
+                } else if (profil_jeniskelamin.getCheckedRadioButtonId() == -1) {
+                    // Show Toast
+                    Toast.makeText(UbahProfil.this, "Kolom Jenis Kelamin Belum Terisi", Toast.LENGTH_SHORT).show();
+
+                } else if (profil_golongandarah.getCheckedRadioButtonId() == -1) {
+                    // Show Toast
+                    Toast.makeText(UbahProfil.this, "Kolom Golongan Darah Belum Terisi", Toast.LENGTH_SHORT).show();
+
                 } else {
 
                     String golonganDarah = ((RadioButton) findViewById(profil_golongandarah.getCheckedRadioButtonId())).getText().toString();
@@ -369,11 +388,16 @@ public class UbahProfil extends Activity implements OnClickListener {
                             session.createSession(UbahProfil.this, "tanggallahir", tglLahir);
                         }
                     }
+
+                    Intent fetchID = getIntent();
+                    String pathbefore = fetchID.getStringExtra("pathbefore");
+
                     // Start Profil Activity
                     Intent detail_profil = new Intent(this, DetailProfil.class);
                     lastActivity = System.currentTimeMillis();
                     detail_profil.putExtra("lastActivity", lastActivity);
                     detail_profil.putExtra("id", id);
+                    detail_profil.putExtra("pathbefore", pathbefore);
                     detail_profil.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TASK | Intent.FLAG_ACTIVITY_CLEAR_TOP);
                     startActivity(detail_profil);
 
@@ -530,12 +554,14 @@ public class UbahProfil extends Activity implements OnClickListener {
         // Fetch Intent Extra
         Intent fetchID = getIntent();
         int id = fetchID.getIntExtra("id", 0);
+        String pathbefore = fetchID.getStringExtra("pathbefore");
 
         // Start Profil Activity
         Intent detail_profil = new Intent(this, DetailProfil.class);
         lastActivity = System.currentTimeMillis();
         detail_profil.putExtra("lastActivity", lastActivity);
         detail_profil.putExtra("id", id);
+        detail_profil.putExtra("pathbefore", pathbefore);
         detail_profil.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TASK | Intent.FLAG_ACTIVITY_CLEAR_TOP);
         startActivity(detail_profil);
 

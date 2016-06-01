@@ -206,6 +206,7 @@ public class TambahProfil extends Activity implements OnClickListener {
                 }, mYear, mMonth, mDay);
                 mDatePicker.setTitle("Select date");
                 mDatePicker.getDatePicker().setMaxDate(Calendar.getInstance().getTimeInMillis());
+                mDatePicker.getDatePicker().setCalendarViewShown(false);
                 mDatePicker.show();
                 break;
 
@@ -227,17 +228,43 @@ public class TambahProfil extends Activity implements OnClickListener {
                 final String namaFolder = nama.replaceAll(" ", "_");
 
                 // Check if Value Empty
-                if (TextUtils.isEmpty(nama) ||
-                        TextUtils.isEmpty(panjangLahir) ||
-                        TextUtils.isEmpty(beratLahir) ||
-                        TextUtils.isEmpty(tmptLahir) ||
-                        TextUtils.isEmpty(tglLahir) ||
-                        profil_jeniskelamin.getCheckedRadioButtonId() == -1 ||
-                        profil_golongandarah.getCheckedRadioButtonId() == -1) {
+                if (TextUtils.isEmpty(nama) ) {
                     // Show Toast
-                    Toast.makeText(this, "Kolom Belum Terisi", Toast.LENGTH_SHORT).show();
-                    return;
-                } else {
+                    Toast.makeText(this, "Kolom Nama Belum Terisi", Toast.LENGTH_SHORT).show();
+
+                } else if (TextUtils.isEmpty(panjangLahir)) {
+                    // Show Toast
+                    Toast.makeText(TambahProfil.this, "Kolom Panjang Lahir Belum Terisi", Toast.LENGTH_SHORT).show();
+
+                } else if (TextUtils.isEmpty(beratLahir)) {
+                    // Show Toast
+                    Toast.makeText(TambahProfil.this, "Kolom Berat Lahir Belum Terisi", Toast.LENGTH_SHORT).show();
+
+                } else if (TextUtils.isEmpty(tmptLahir)) {
+                    // Show Toast
+                    Toast.makeText(TambahProfil.this, "Kolom Tempat Lahir Belum Terisi", Toast.LENGTH_SHORT).show();
+
+                } else if (TextUtils.isEmpty(tglLahir)) {
+                    // Show Toast
+                    Toast.makeText(TambahProfil.this, "Kolom Tanggal Lahir Belum Terisi", Toast.LENGTH_SHORT).show();
+
+                } else if (profil_jeniskelamin.getCheckedRadioButtonId() == -1) {
+                    // Show Toast
+                    Toast.makeText(TambahProfil.this, "Kolom Jenis Kelamin Belum Terisi", Toast.LENGTH_SHORT).show();
+
+                } else if (profil_golongandarah.getCheckedRadioButtonId() == -1) {
+                    // Show Toast
+                    Toast.makeText(TambahProfil.this, "Kolom Golongan Darah Belum Terisi", Toast.LENGTH_SHORT).show();
+
+                } else if (Float.parseFloat(panjangLahir) < 45) {
+                    // Show Toast
+                    Toast.makeText(TambahProfil.this, "Tinggi Tidak Boleh Kurang Dari 45 cm", Toast.LENGTH_SHORT).show();
+
+                }  else if (Float.parseFloat(beratLahir) < 2) {
+                    // Show Toast
+                    Toast.makeText(TambahProfil.this, "Berat Tidak Boleh Kurang Dari 2 kg", Toast.LENGTH_SHORT).show();
+
+                }else {
                     // Create Dialog
                     final Dialog dialog = new Dialog(TambahProfil.this);
                     dialog.setContentView(R.layout.tambah_passcode);
@@ -352,10 +379,15 @@ public class TambahProfil extends Activity implements OnClickListener {
                             db.insertProfil(nama, tmptLahir, tglLahir, jenisKelamin, golonganDarah,
                                     panjangLahir, beratLahir, alergi, penyakitKronis, passcode, foto);
 
+
+                            Intent fetchID = getIntent();
+                            String pathbefore = fetchID.getStringExtra("pathbefore");
+
                             // Start Profil Activity
                             Intent profil = new Intent(TambahProfil.this, Profil.class);
                             lastActivity = System.currentTimeMillis();
                             profil.putExtra("lastActivity", lastActivity);
+                            profil.putExtra("pathbefore", pathbefore);
                             profil.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TASK | Intent.FLAG_ACTIVITY_CLEAR_TOP);
                             startActivity(profil);
 
@@ -376,6 +408,9 @@ public class TambahProfil extends Activity implements OnClickListener {
                             ByteArrayOutputStream bs = new ByteArrayOutputStream();
                             bitmap.compress(Bitmap.CompressFormat.JPEG, 100, bs);
 
+                            Intent fetchID = getIntent();
+                            String pathbefore = fetchID.getStringExtra("pathbefore");
+
                             Intent profilPasscode = new Intent(TambahProfil.this, ProfilPasscode.class);
                             profilPasscode.putExtra("nama", nama);
                             profilPasscode.putExtra("tmptLahir", tmptLahir);
@@ -390,6 +425,7 @@ public class TambahProfil extends Activity implements OnClickListener {
                             lastActivity = System.currentTimeMillis();
                             profilPasscode.putExtra("lastActivity", lastActivity);
                             profilPasscode.putExtra("action", "tambahprofil");
+                            profilPasscode.putExtra("pathbefore", pathbefore);
                             profilPasscode.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TASK | Intent.FLAG_ACTIVITY_CLEAR_TOP);
                             startActivity(profilPasscode);
 
@@ -544,10 +580,14 @@ public class TambahProfil extends Activity implements OnClickListener {
     // Pressed Back Button
     @Override
     public void onBackPressed() {
+        Intent fetchID = getIntent();
+        String pathbefore = fetchID.getStringExtra("pathbefore");
+
         // Start Profil Activity
         Intent profil = new Intent(TambahProfil.this, Profil.class);
         lastActivity = System.currentTimeMillis();
         profil.putExtra("lastActivity", lastActivity);
+        profil.putExtra("pathbefore", pathbefore);
         profil.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TASK | Intent.FLAG_ACTIVITY_CLEAR_TOP);
         startActivity(profil);
 

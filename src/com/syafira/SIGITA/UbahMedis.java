@@ -175,6 +175,7 @@ public class UbahMedis extends Activity {
                 cal.setTime(date);
                 mDatePicker.getDatePicker().setMinDate(cal.getTime().getTime());
 
+                mDatePicker.getDatePicker().setCalendarViewShown(false);
                 mDatePicker.show();
             }
         });
@@ -194,12 +195,19 @@ public class UbahMedis extends Activity {
                 String obat = medis_obat.getText().toString();
 
                 // Check if Value Empty
-                if (TextUtils.isEmpty(tanggalberobat) ||
-                        TextUtils.isEmpty(keluhan) ||
-                        TextUtils.isEmpty(tindakan) ||
-                        TextUtils.isEmpty(obat)) {
+                // Check if Value Empty
+                if (TextUtils.isEmpty(tanggalberobat)) {
                     // Show Toast
-                    Toast.makeText(UbahMedis.this, "Kolom Belum Terisi", Toast.LENGTH_SHORT).show();
+                    Toast.makeText(UbahMedis.this, "Kolom Tanggal Berobat Belum Terisi", Toast.LENGTH_SHORT).show();
+                } else if (TextUtils.isEmpty(keluhan)) {
+                    // Show Toast
+                    Toast.makeText(UbahMedis.this, "Kolom Keluhan Belum Terisi", Toast.LENGTH_SHORT).show();
+                } else if (TextUtils.isEmpty(tindakan)) {
+                    // Show Toast
+                    Toast.makeText(UbahMedis.this, "Kolom Tindakan Belum Terisi", Toast.LENGTH_SHORT).show();
+                } else if (TextUtils.isEmpty(obat)) {
+                    // Show Toast
+                    Toast.makeText(UbahMedis.this, "Kolom Obat Belum Terisi", Toast.LENGTH_SHORT).show();
                 } else {
                     // Declare Condition
                     boolean success = false;

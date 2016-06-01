@@ -62,7 +62,10 @@ public class Index extends Activity {
                 Intent profil = new Intent(Index.this, Profil.class);
                 lastActivity = System.currentTimeMillis();
                 profil.putExtra("lastActivity", lastActivity);
+                profil.putExtra("pathbefore", "index");
+                profil.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TASK | Intent.FLAG_ACTIVITY_CLEAR_TOP);
                 startActivity(profil);
+                finish();
             }
         });
 
@@ -71,6 +74,7 @@ public class Index extends Activity {
         text_button_profil.setTypeface(typeface);
         text_footer.setTypeface(typeface);
 
+        // Grid Menu
         String[] menu = {"Profil", "Gizi", "Imunisasi", "Tumbuh Kembang", "Rekam Medis", "Tentang"};
         int[] menu_image = {R.drawable.icon_profil, R.drawable.icon_gizi, R.drawable.icon_imunisasi, R.drawable.icon_tumbuhkembang, R.drawable.icon_rekammedis, R.drawable.icon_logo};
 
@@ -112,7 +116,10 @@ public class Index extends Activity {
                         Intent profil = new Intent(Index.this, Profil.class);
                         lastActivity = System.currentTimeMillis();
                         profil.putExtra("lastActivity", lastActivity);
+                        profil.putExtra("pathbefore", "index");
+                        profil.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TASK | Intent.FLAG_ACTIVITY_CLEAR_TOP);
                         startActivity(profil);
+                        finish();
                         break;
 
                     // Gizi
@@ -183,10 +190,23 @@ public class Index extends Activity {
                                     Intent profil = new Intent(Index.this, Profil.class);
                                     lastActivity = System.currentTimeMillis();
                                     profil.putExtra("lastActivity", lastActivity);
+                                    profil.putExtra("pathbefore", "index");
+                                    profil.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TASK | Intent.FLAG_ACTIVITY_CLEAR_TOP);
                                     startActivity(profil);
+                                    finish();
                                 }
                             });
                         }
+                        break;
+
+                    // Tentang
+                    case 5:
+                        Intent tentang = new Intent(Index.this, TentangSIGITA.class);
+                        lastActivity = System.currentTimeMillis();
+                        tentang.putExtra("lastActivity", lastActivity);
+                        tentang.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TASK | Intent.FLAG_ACTIVITY_CLEAR_TOP);
+                        startActivity(tentang);
+                        finish();
                         break;
                 }
             }

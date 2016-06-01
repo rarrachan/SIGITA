@@ -14,7 +14,6 @@ import android.view.ViewGroup;
 import android.view.inputmethod.InputMethodManager;
 import android.widget.*;
 
-import java.text.DateFormat;
 import java.text.ParseException;
 import java.text.SimpleDateFormat;
 import java.util.Calendar;
@@ -169,6 +168,7 @@ public class TambahMedis extends Activity {
                 cal.setTime(date);
                 mDatePicker.getDatePicker().setMinDate(cal.getTime().getTime());
 
+                mDatePicker.getDatePicker().setCalendarViewShown(false);
                 mDatePicker.show();
             }
         });
@@ -188,12 +188,18 @@ public class TambahMedis extends Activity {
                 String obat = medis_obat.getText().toString();
 
                 // Check if Value Empty
-                if (TextUtils.isEmpty(tanggalberobat) ||
-                        TextUtils.isEmpty(keluhan) ||
-                        TextUtils.isEmpty(tindakan) ||
-                        TextUtils.isEmpty(obat)) {
+                if (TextUtils.isEmpty(tanggalberobat)) {
                     // Show Toast
-                    Toast.makeText(TambahMedis.this, "Kolom Belum Terisi", Toast.LENGTH_SHORT).show();
+                    Toast.makeText(TambahMedis.this, "Kolom Tanggal Berobat Belum Terisi", Toast.LENGTH_SHORT).show();
+                } else if (TextUtils.isEmpty(keluhan)) {
+                    // Show Toast
+                    Toast.makeText(TambahMedis.this, "Kolom Keluhan Belum Terisi", Toast.LENGTH_SHORT).show();
+                } else if (TextUtils.isEmpty(tindakan)) {
+                    // Show Toast
+                    Toast.makeText(TambahMedis.this, "Kolom Tindakan Belum Terisi", Toast.LENGTH_SHORT).show();
+                } else if (TextUtils.isEmpty(obat)) {
+                    // Show Toast
+                    Toast.makeText(TambahMedis.this, "Kolom Obat Belum Terisi", Toast.LENGTH_SHORT).show();
                 } else {
                     // Declare Condition
                     boolean success = false;
