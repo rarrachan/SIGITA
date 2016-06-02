@@ -198,6 +198,11 @@ public class DokumentasiGizi extends Activity {
 
             }
         } else {
+            Intent gizi = new Intent(this, Gizi.class);
+            lastActivity = System.currentTimeMillis();
+            gizi.putExtra("lastActivity", lastActivity);
+            gizi.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TASK | Intent.FLAG_ACTIVITY_CLEAR_TOP);
+            startActivity(gizi);
             finish();
         }
 
@@ -257,7 +262,10 @@ public class DokumentasiGizi extends Activity {
             session.clearSession(DokumentasiGizi.this);
 
             Intent splash = new Intent(this, Splash.class);
+            splash.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TASK | Intent.FLAG_ACTIVITY_CLEAR_TOP);
             startActivity(splash);
+            finish();
+
         } else {
             // Check Session
             if (session.checkSession(this)) {
@@ -268,6 +276,7 @@ public class DokumentasiGizi extends Activity {
                 Intent index = new Intent(DokumentasiGizi.this, Index.class);
                 lastActivity = System.currentTimeMillis();
                 index.putExtra("lastActivity", lastActivity);
+                index.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TASK | Intent.FLAG_ACTIVITY_CLEAR_TOP);
                 startActivity(index);
                 finish();
             }

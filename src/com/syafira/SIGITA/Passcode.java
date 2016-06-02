@@ -43,6 +43,7 @@ public class Passcode extends Activity {
         lastActivity = fetchID.getLongExtra("lastActivity", 1L);
         final int id = fetchID.getIntExtra("id", 0);
         final String pathbefore = fetchID.getStringExtra("pathbefore");
+        final int detailJadwalImunisasiID = fetchID.getIntExtra("detailJadwalImunisasiID", 0);
 
         // Load Database
         db = new DBHelper(this);
@@ -97,7 +98,10 @@ public class Passcode extends Activity {
                     passcode.putExtra("id", id);
                     passcode.putExtra("action", "tambahpasscode");
                     passcode.putExtra("pathbefore", pathbefore);
+                    passcode.putExtra("detailJadwalImunisasiID", detailJadwalImunisasiID);
+                    passcode.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TASK | Intent.FLAG_ACTIVITY_CLEAR_TOP);
                     startActivity(passcode);
+                    finish();
                 } else {
                     Intent passcode = new Intent(Passcode.this, ProfilCekPasscode.class);
                     lastActivity = System.currentTimeMillis();
@@ -106,7 +110,10 @@ public class Passcode extends Activity {
                     passcode.putExtra("id", id);
                     passcode.putExtra("action", "hapuspasscode");
                     passcode.putExtra("pathbefore", pathbefore);
+                    passcode.putExtra("detailJadwalImunisasiID", detailJadwalImunisasiID);
+                    passcode.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TASK | Intent.FLAG_ACTIVITY_CLEAR_TOP);
                     startActivity(passcode);
+                    finish();
                 }
             }
         });
@@ -123,7 +130,10 @@ public class Passcode extends Activity {
                 passcode.putExtra("id", id);
                 passcode.putExtra("action", "ubahpasscode");
                 passcode.putExtra("pathbefore", pathbefore);
+                passcode.putExtra("detailJadwalImunisasiID", detailJadwalImunisasiID);
+                passcode.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TASK | Intent.FLAG_ACTIVITY_CLEAR_TOP);
                 startActivity(passcode);
+                finish();
             }
         });
     }
@@ -135,6 +145,7 @@ public class Passcode extends Activity {
         Intent fetchID = getIntent();
         int id = fetchID.getIntExtra("id", 0);
         String pathbefore = fetchID.getStringExtra("pathbefore");
+        final int detailJadwalImunisasiID = fetchID.getIntExtra("detailJadwalImunisasiID", 0);
 
         // Start Profil Activity
         Intent detail_profil = new Intent(this, DetailProfil.class);
@@ -142,6 +153,7 @@ public class Passcode extends Activity {
         detail_profil.putExtra("lastActivity", lastActivity);
         detail_profil.putExtra("id", id);
         detail_profil.putExtra("pathbefore", pathbefore);
+        detail_profil.putExtra("detailJadwalImunisasiID", detailJadwalImunisasiID);
         detail_profil.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TASK | Intent.FLAG_ACTIVITY_CLEAR_TOP);
         startActivity(detail_profil);
 
@@ -182,7 +194,9 @@ public class Passcode extends Activity {
             session.clearSession(Passcode.this);
 
             Intent splash = new Intent(this, Splash.class);
+            splash.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TASK | Intent.FLAG_ACTIVITY_CLEAR_TOP);
             startActivity(splash);
+            finish();
         }
     }
 }

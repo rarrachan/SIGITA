@@ -254,7 +254,9 @@ public class DetailMedis extends Activity {
             session.clearSession(DetailMedis.this);
 
             Intent splash = new Intent(this, Splash.class);
+            splash.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TASK | Intent.FLAG_ACTIVITY_CLEAR_TOP);
             startActivity(splash);
+            finish();
         }
     }
 }

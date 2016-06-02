@@ -239,7 +239,9 @@ public class RekamMedis extends Activity {
             session.clearSession(RekamMedis.this);
 
             Intent splash = new Intent(this, Splash.class);
+            splash.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TASK | Intent.FLAG_ACTIVITY_CLEAR_TOP);
             startActivity(splash);
+            finish();
         } else {
             // Check Session
             if (session.checkSession(this)) {
@@ -250,6 +252,7 @@ public class RekamMedis extends Activity {
                 Intent index = new Intent(RekamMedis.this, Index.class);
                 lastActivity = System.currentTimeMillis();
                 index.putExtra("lastActivity", lastActivity);
+                index.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TASK | Intent.FLAG_ACTIVITY_CLEAR_TOP);
                 startActivity(index);
                 finish();
             }

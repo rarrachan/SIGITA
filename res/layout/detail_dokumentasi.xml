@@ -73,9 +73,6 @@
                         android:layout_gravity="center_vertical"
                         android:layout_margin="20dp"/>
 
-                <!-- Start Blank Space -->
-                <!-- End Blank Space -->
-
                 <!-- Start Linear Layout Row -->
                 <LinearLayout
                         android:layout_width="fill_parent"
@@ -451,8 +448,7 @@
                                 android:layout_width="fill_parent"
                                 android:layout_height="0dp"
                                 android:orientation="horizontal"
-                                android:layout_weight="1"
-                                android:layout_marginBottom="3dp">
+                                android:layout_weight="1">
 
                             <!-- Start Text View Berat Badan / Umur -->
                             <TextView
@@ -475,25 +471,25 @@
                                     android:layout_marginLeft="5dp"/>
                             <!-- End Text View Titik Dua -->
 
-                            <!-- Start Text View Berat Badan / Umur -->
-                            <TextView
-                                    android:id="@+id/hasil_bbu"
-                                    android:layout_width="0dp"
-                                    android:layout_height="wrap_content"
-                                    android:textColor="#FF0000"
-                                    style="@android:style/TextAppearance.DeviceDefault.Medium"
-                                    android:hint="@string/dash"
-                                    android:layout_weight=".4"
-                                    android:layout_marginLeft="5dp"/>
-                            <!-- End Text View Berat Badan / Umur -->
                         </LinearLayout>
+
+                        <!-- Start Text View Berat Badan / Umur -->
+                        <TextView
+                                android:id="@+id/hasil_bbu"
+                                android:layout_width="fill_parent"
+                                android:layout_height="0dp"
+                                android:layout_weight="1"
+                                android:textColor="#FF0000"
+                                style="@android:style/TextAppearance.DeviceDefault.Medium"
+                                android:hint="@string/dash"
+                                android:layout_margin="10dp"/>
+                        <!-- End Text View Berat Badan / Umur -->
 
                         <LinearLayout
                                 android:layout_width="fill_parent"
                                 android:layout_height="0dp"
                                 android:orientation="horizontal"
-                                android:layout_weight="1"
-                                android:layout_marginBottom="3dp">
+                                android:layout_weight="1">
 
                             <!-- Start Text View Tinggi Badan / Umur -->
                             <TextView
@@ -516,19 +512,19 @@
                                     android:layout_marginLeft="5dp"/>
                             <!-- End Text View Titik Dua -->
 
-                            <!-- Start Text View Tinggi Badan / Umur -->
-                            <TextView
-                                    android:id="@+id/hasil_tbu"
-                                    android:layout_width="0dp"
-                                    android:layout_height="wrap_content"
-                                    android:textColor="#FF0000"
-                                    style="@android:style/TextAppearance.DeviceDefault.Medium"
-                                    android:hint="@string/dash"
-                                    android:layout_weight=".4"
-                                    android:layout_marginLeft="5dp"/>
-                            <!-- End Text View Tinggi Badan / Umur -->
-
                         </LinearLayout>
+
+                        <!-- Start Text View Tinggi Badan / Umur -->
+                        <TextView
+                                android:id="@+id/hasil_tbu"
+                                android:layout_width="fill_parent"
+                                android:layout_height="0dp"
+                                android:textColor="#FF0000"
+                                style="@android:style/TextAppearance.DeviceDefault.Medium"
+                                android:hint="@string/dash"
+                                android:layout_weight="1"
+                                android:layout_margin="10dp"/>
+                        <!-- End Text View Tinggi Badan / Umur -->
 
                     </LinearLayout>
 
@@ -549,8 +545,7 @@
                                 android:layout_width="fill_parent"
                                 android:layout_height="0dp"
                                 android:orientation="horizontal"
-                                android:layout_weight="1"
-                                android:layout_marginBottom="3dp">
+                                android:layout_weight="1">
 
                             <!-- Start Text View Berat Badan / Tinggi Badan -->
                             <TextView
@@ -573,26 +568,25 @@
                                     android:layout_marginLeft="5dp"/>
                             <!-- End Text View Titik Dua -->
 
-                            <!-- Start Text View Berat Badan / Tinggi Badan  -->
-                            <TextView
-                                    android:id="@+id/hasil_bbtb"
-                                    android:layout_width="0dp"
-                                    android:layout_height="wrap_content"
-                                    android:textColor="#FF0000"
-                                    style="@android:style/TextAppearance.DeviceDefault.Medium"
-                                    android:hint="@string/dash"
-                                    android:layout_weight=".4"
-                                    android:layout_marginLeft="5dp"/>
-                            <!-- End Text View Berat Badan / Tinggi Badan -->
-
                         </LinearLayout>
+
+                        <!-- Start Text View Berat Badan / Tinggi Badan  -->
+                        <TextView
+                                android:id="@+id/hasil_bbtb"
+                                android:layout_width="fill_parent"
+                                android:layout_height="0dp"
+                                android:textColor="#FF0000"
+                                style="@android:style/TextAppearance.DeviceDefault.Medium"
+                                android:hint="@string/dash"
+                                android:layout_weight="1"
+                                android:layout_margin="10dp"/>
+                        <!-- End Text View Berat Badan / Tinggi Badan -->
 
                         <LinearLayout
                                 android:layout_width="fill_parent"
                                 android:layout_height="0dp"
                                 android:orientation="horizontal"
-                                android:layout_weight="1"
-                                android:layout_marginBottom="3dp">
+                                android:layout_weight="1">
 
                             <!-- Start Text View Iindeks Massa Tubuh / Umur -->
                             <TextView
@@ -615,19 +609,19 @@
                                     android:layout_marginLeft="5dp"/>
                             <!-- End Text View Titik Dua -->
 
-                            <!-- Start Text View Iindeks Massa Tubuh / Umur -->
-                            <TextView
-                                    android:id="@+id/hasil_imtu"
-                                    android:layout_width="0dp"
-                                    android:layout_height="wrap_content"
-                                    android:textColor="#FF0000"
-                                    style="@android:style/TextAppearance.DeviceDefault.Medium"
-                                    android:hint="@string/dash"
-                                    android:layout_weight=".4"
-                                    android:layout_marginLeft="5dp"/>
-                            <!-- End Text View Iindeks Massa Tubuh / Umur -->
-
                         </LinearLayout>
+
+                        <!-- Start Text View Iindeks Massa Tubuh / Umur -->
+                        <TextView
+                                android:id="@+id/hasil_imtu"
+                                android:layout_width="fill_parent"
+                                android:layout_height="0dp"
+                                android:textColor="#FF0000"
+                                style="@android:style/TextAppearance.DeviceDefault.Medium"
+                                android:hint="@string/dash"
+                                android:layout_weight="1"
+                                android:layout_margin="10dp"/>
+                        <!-- End Text View Iindeks Massa Tubuh / Umur -->
 
                     </LinearLayout>
                     <!-- End Linear Layout Hasil Kalkulator Gizi -->
@@ -663,44 +657,145 @@
                                      android:layout_height="fill_parent"
                                      android:padding="5dp">
 
-                            <LinearLayout android:id="@+id/bbu_layout"
+                            <LinearLayout android:id="@+id/bulanIniLayout"
                                           android:orientation="vertical"
                                           android:layout_width="fill_parent"
                                           android:layout_height="wrap_content"
                                           android:background="#FFFBC9"
-                                          android:paddingTop="10dp">
+                                          android:padding="10dp">
 
+                            <TabHost android:id="@+id/tabHostBulanIni"
+                                     android:layout_width="fill_parent"
+                                     android:layout_height="wrap_content"
+                                     android:background="#FFF1B5">
+
+                            <LinearLayout android:orientation="vertical"
+                                          android:layout_width="fill_parent"
+                                          android:layout_height="fill_parent"
+                                          android:padding="5dp">
+
+                                <TabWidget android:id="@android:id/tabs"
+                                           android:layout_width="fill_parent"
+                                           android:layout_height="wrap_content"
+                                           android:tabStripEnabled="false"/>
+
+                                <FrameLayout android:id="@android:id/tabcontent"
+                                             android:layout_width="fill_parent"
+                                             android:layout_height="fill_parent"
+                                             android:padding="5dp">
+
+                                    <LinearLayout android:id="@+id/bbu_bulanini_layout"
+                                                  android:orientation="vertical"
+                                                  android:layout_width="fill_parent"
+                                                  android:layout_height="wrap_content"
+                                                  android:background="#FFFBC9"
+                                                  android:paddingTop="10dp">
+
+                                    </LinearLayout>
+
+                                    <LinearLayout android:id="@+id/tbu_bulanini_layout"
+                                                  android:orientation="vertical"
+                                                  android:layout_width="fill_parent"
+                                                  android:layout_height="wrap_content"
+                                                  android:background="#FFFBC9"
+                                                  android:paddingTop="10dp">
+
+                                    </LinearLayout>
+
+                                    <LinearLayout android:id="@+id/bbtb_bulanini_layout"
+                                                  android:orientation="vertical"
+                                                  android:layout_width="fill_parent"
+                                                  android:layout_height="wrap_content"
+                                                  android:background="#FFFBC9"
+                                                  android:paddingTop="10dp">
+
+                                    </LinearLayout>
+
+                                    <LinearLayout android:id="@+id/imtu_bulanini_layout"
+                                                  android:orientation="vertical"
+                                                  android:layout_width="fill_parent"
+                                                  android:layout_height="wrap_content"
+                                                  android:background="#FFFBC9"
+                                                  android:paddingTop="10dp">
+
+                                    </LinearLayout>
+
+                                </FrameLayout>
+
+                                </LinearLayout>
+                                </TabHost>
                             </LinearLayout>
 
-                            <LinearLayout android:id="@+id/tbu_layout"
+                            <LinearLayout android:id="@+id/seluruhBulanLayout"
                                           android:orientation="vertical"
                                           android:layout_width="fill_parent"
                                           android:layout_height="wrap_content"
                                           android:background="#FFFBC9"
-                                          android:paddingTop="10dp">
+                                          android:padding="10dp">
 
-                            </LinearLayout>
+                            <TabHost android:id="@+id/tabHostSeluruhBulan"
+                                     android:layout_width="fill_parent"
+                                     android:layout_height="wrap_content"
+                                     android:background="#FFF1B5">
 
-                            <LinearLayout android:id="@+id/bbtb_layout"
-                                          android:orientation="vertical"
+                            <LinearLayout android:orientation="vertical"
                                           android:layout_width="fill_parent"
-                                          android:layout_height="wrap_content"
-                                          android:background="#FFFBC9"
-                                          android:paddingTop="10dp">
+                                          android:layout_height="fill_parent"
+                                          android:padding="5dp">
 
-                            </LinearLayout>
+                                <TabWidget android:id="@android:id/tabs"
+                                           android:layout_width="fill_parent"
+                                           android:layout_height="wrap_content"
+                                           android:tabStripEnabled="false"/>
 
-                            <LinearLayout android:id="@+id/imtu_layout"
-                                          android:orientation="vertical"
-                                          android:layout_width="fill_parent"
-                                          android:layout_height="wrap_content"
-                                          android:background="#FFFBC9"
-                                          android:paddingTop="10dp">
+                                <FrameLayout android:id="@android:id/tabcontent"
+                                             android:layout_width="fill_parent"
+                                             android:layout_height="fill_parent"
+                                             android:padding="5dp">
 
+                                    <LinearLayout android:id="@+id/bbu_seluruhbulan_layout"
+                                                  android:orientation="vertical"
+                                                  android:layout_width="fill_parent"
+                                                  android:layout_height="wrap_content"
+                                                  android:background="#FFFBC9"
+                                                  android:paddingTop="10dp">
+
+                                    </LinearLayout>
+
+                                    <LinearLayout android:id="@+id/tbu_seluruhbulan_layout"
+                                                  android:orientation="vertical"
+                                                  android:layout_width="fill_parent"
+                                                  android:layout_height="wrap_content"
+                                                  android:background="#FFFBC9"
+                                                  android:paddingTop="10dp">
+
+                                    </LinearLayout>
+
+                                    <LinearLayout android:id="@+id/bbtb_seluruhbulan_layout"
+                                                  android:orientation="vertical"
+                                                  android:layout_width="fill_parent"
+                                                  android:layout_height="wrap_content"
+                                                  android:background="#FFFBC9"
+                                                  android:paddingTop="10dp">
+
+                                    </LinearLayout>
+
+                                    <LinearLayout android:id="@+id/imtu_seluruhbulan_layout"
+                                                  android:orientation="vertical"
+                                                  android:layout_width="fill_parent"
+                                                  android:layout_height="wrap_content"
+                                                  android:background="#FFFBC9"
+                                                  android:paddingTop="10dp">
+
+                                    </LinearLayout>
+
+                                </FrameLayout>
+
+                                </LinearLayout>
+                                </TabHost>
                             </LinearLayout>
 
                         </FrameLayout>
-
                     </LinearLayout>
                 </TabHost>
 

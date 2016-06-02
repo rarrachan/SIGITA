@@ -58,19 +58,29 @@ public class DetailDokumentasi extends Activity {
     private DBHelper db;
     private long lastActivity;
     private TabHost tabHost;
+    private TabHost tabBulanIni;
+    private TabHost tabSeluruhBulan;
 
-    private XYMultipleSeriesDataset BBUdataset;
+    private XYMultipleSeriesDataset BBUdatasetSeluruhBulan;
+    private XYMultipleSeriesDataset BBUdatasetBulanIni;
     private XYMultipleSeriesRenderer BBUmultiRenderer;
-    private GraphicalView BBUChart;
-    private XYMultipleSeriesDataset TBUdataset;
+    private GraphicalView BBUChartSeluruhBulan;
+    private GraphicalView BBUChartBulanIni;
+    private XYMultipleSeriesDataset TBUdatasetSeluruhBulan;
+    private XYMultipleSeriesDataset TBUdatasetBulanIni;
     private XYMultipleSeriesRenderer TBUmultiRenderer;
-    private GraphicalView TBUChart;
-    private XYMultipleSeriesDataset BBTBdataset;
+    private GraphicalView TBUChartSeluruhBulan;
+    private GraphicalView TBUChartBulanIni;
+    private XYMultipleSeriesDataset BBTBdatasetSeluruhBulan;
+    private XYMultipleSeriesDataset BBTBdatasetBulanIni;
     private XYMultipleSeriesRenderer BBTBmultiRenderer;
-    private GraphicalView BBTBChart;
-    private XYMultipleSeriesDataset IMTUdataset;
+    private GraphicalView BBTBChartSeluruhBulan;
+    private GraphicalView BBTBChartBulanIni;
+    private XYMultipleSeriesDataset IMTUdatasetSeluruhBulan;
+    private XYMultipleSeriesDataset IMTUdatasetBulanIni;
     private XYMultipleSeriesRenderer IMTUmultiRenderer;
-    private GraphicalView IMTUChart;
+    private GraphicalView IMTUChartSeluruhBulan;
+    private GraphicalView IMTUChartBulanIni;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -186,13 +196,12 @@ public class DetailDokumentasi extends Activity {
         hasil_bbtb.setText(cursor.getString(cursor.getColumnIndex("dokumentasi_bbtb")));
         hasil_imtu.setText(cursor.getString(cursor.getColumnIndex("dokumentasi_imtu")));
 
-
         //chart profil
         List<String> dokumentasiChartID = new ArrayList<>();
         List<String> dokumentasiBulanChart = new ArrayList<>();
         List<String> dokumentasiTinggiChart = new ArrayList<>();
         List<String> dokumentasiBeratChart = new ArrayList<>();
-        Cursor cursorDokumentasichart = db.getDokumentasiChart(Integer.parseInt(session.loadSession(this, "id")), cursor.getInt(cursor.getColumnIndex("dokumentasi_bulan")));
+        Cursor cursorDokumentasichart = db.getDokumentasiChart(profilID, cursor.getInt(cursor.getColumnIndex("dokumentasi_bulan")));
         cursorDokumentasichart.moveToFirst();
         if (!cursorDokumentasichart.isAfterLast()) {
             do {
@@ -202,6 +211,7 @@ public class DetailDokumentasi extends Activity {
                 dokumentasiBeratChart.add(cursorDokumentasichart.getString(cursorDokumentasichart.getColumnIndex("dokumentasi_berat")));
             } while (cursorDokumentasichart.moveToNext());
         }
+//        }
 
         //chart BBU
         List<String> BBUchartID = new ArrayList<>();
@@ -257,6 +267,7 @@ public class DetailDokumentasi extends Activity {
         XYSeries BBUseries2sd = new XYSeries("2 SD");
         XYSeries BBUseries3sd = new XYSeries("3 SD");
         XYSeries BBUseriesBeratBadan = new XYSeries("Berat Badan");
+        XYSeries BBUseriesBeratBadanBulanIni = new XYSeries("Berat Badan");
 
         // Adding data to Income and Expense Series
         for (int i = 0; i < BBUchartID.size(); i++) {
@@ -273,17 +284,31 @@ public class DetailDokumentasi extends Activity {
             BBUseriesBeratBadan.add(Double.parseDouble(dokumentasiBulanChart.get(i)), Double.parseDouble(dokumentasiBeratChart.get(i)));
         }
 
+        BBUseriesBeratBadanBulanIni.add(Double.parseDouble(cursor.getString(cursor.getColumnIndex("dokumentasi_bulan"))), Double.parseDouble(cursor.getString(cursor.getColumnIndex("dokumentasi_berat"))));
+
         // Creating a dataset to hold each series
-        BBUdataset = new XYMultipleSeriesDataset();
+        BBUdatasetSeluruhBulan = new XYMultipleSeriesDataset();
         // Adding Income Series to the dataset
-        BBUdataset.addSeries(BBUseriesMin3sd);
-        BBUdataset.addSeries(BBUseriesMin2sd);
-        BBUdataset.addSeries(BBUseriesMin1sd);
-        BBUdataset.addSeries(BBUseriesMedian);
-        BBUdataset.addSeries(BBUseries1sd);
-        BBUdataset.addSeries(BBUseries2sd);
-        BBUdataset.addSeries(BBUseries3sd);
-        BBUdataset.addSeries(BBUseriesBeratBadan);
+        BBUdatasetSeluruhBulan.addSeries(BBUseriesMin3sd);
+        BBUdatasetSeluruhBulan.addSeries(BBUseriesMin2sd);
+        BBUdatasetSeluruhBulan.addSeries(BBUseriesMin1sd);
+        BBUdatasetSeluruhBulan.addSeries(BBUseriesMedian);
+        BBUdatasetSeluruhBulan.addSeries(BBUseries1sd);
+        BBUdatasetSeluruhBulan.addSeries(BBUseries2sd);
+        BBUdatasetSeluruhBulan.addSeries(BBUseries3sd);
+        BBUdatasetSeluruhBulan.addSeries(BBUseriesBeratBadan);
+
+        // Creating a dataset to hold each series
+        BBUdatasetBulanIni = new XYMultipleSeriesDataset();
+        // Adding Income Series to the dataset
+        BBUdatasetBulanIni.addSeries(BBUseriesMin3sd);
+        BBUdatasetBulanIni.addSeries(BBUseriesMin2sd);
+        BBUdatasetBulanIni.addSeries(BBUseriesMin1sd);
+        BBUdatasetBulanIni.addSeries(BBUseriesMedian);
+        BBUdatasetBulanIni.addSeries(BBUseries1sd);
+        BBUdatasetBulanIni.addSeries(BBUseries2sd);
+        BBUdatasetBulanIni.addSeries(BBUseries3sd);
+        BBUdatasetBulanIni.addSeries(BBUseriesBeratBadanBulanIni);
 
         // Creating XYSeriesRenderer to customize incomeSeries
         XYSeriesRenderer BBUrendererMin1sd = new XYSeriesRenderer();
@@ -365,13 +390,16 @@ public class DetailDokumentasi extends Activity {
         BBUmultiRenderer.addSeriesRenderer(BBUrendererBeratBadan);
 
         // Getting a reference to LinearLayout of the MainActivity Layout
-        LinearLayout BBUchartContainer = (LinearLayout) findViewById(R.id.bbu_layout);
+        LinearLayout BBUchartContainerSeluruhBulan = (LinearLayout) findViewById(R.id.bbu_seluruhbulan_layout);
+        LinearLayout BBUchartContainerBulanIni = (LinearLayout) findViewById(R.id.bbu_bulanini_layout);
 
         // Creating a Line Chart
-        BBUChart = ChartFactory.getLineChartView(DetailDokumentasi.this, BBUdataset, BBUmultiRenderer);
+        BBUChartSeluruhBulan = ChartFactory.getLineChartView(DetailDokumentasi.this, BBUdatasetSeluruhBulan, BBUmultiRenderer);
+        BBUChartBulanIni = ChartFactory.getLineChartView(DetailDokumentasi.this, BBUdatasetBulanIni, BBUmultiRenderer);
 
         // Adding the Line Chart to the LinearLayout
-        BBUchartContainer.addView(BBUChart, new LinearLayout.LayoutParams(LinearLayout.LayoutParams.MATCH_PARENT, 500));
+        BBUchartContainerSeluruhBulan.addView(BBUChartSeluruhBulan, new LinearLayout.LayoutParams(LinearLayout.LayoutParams.MATCH_PARENT, 500));
+        BBUchartContainerBulanIni.addView(BBUChartBulanIni, new LinearLayout.LayoutParams(LinearLayout.LayoutParams.MATCH_PARENT, 500));
 
 
         //chart TBU
@@ -427,7 +455,8 @@ public class DetailDokumentasi extends Activity {
         XYSeries TBUseries1sd = new XYSeries("1 SD");
         XYSeries TBUseries2sd = new XYSeries("2 SD");
         XYSeries TBUseries3sd = new XYSeries("3 SD");
-        XYSeries TBUseriesTinggiBadan = new XYSeries("Tinggi Badan");
+        XYSeries TBUseriesTinggiBadanSeluruhBulan = new XYSeries("Tinggi Badan");
+        XYSeries TBUseriesTinggiBadanBulanIni = new XYSeries("Tinggi Badan");
 
         // Adding data to Income and Expense Series
         for (int i = 0; i < TBUchartID.size(); i++) {
@@ -441,20 +470,34 @@ public class DetailDokumentasi extends Activity {
         }
 
         for (int i = 0; i < dokumentasiBulanChart.size(); i++) {
-            TBUseriesTinggiBadan.add(Double.parseDouble(dokumentasiBulanChart.get(i)), Double.parseDouble(dokumentasiTinggiChart.get(i)));
+            TBUseriesTinggiBadanSeluruhBulan.add(Double.parseDouble(dokumentasiBulanChart.get(i)), Double.parseDouble(dokumentasiTinggiChart.get(i)));
         }
 
+        TBUseriesTinggiBadanBulanIni.add(Double.parseDouble(cursor.getString(cursor.getColumnIndex("dokumentasi_bulan"))), Double.parseDouble(cursor.getString(cursor.getColumnIndex("dokumentasi_tinggi"))));
+
         // Creating a dataset to hold each series
-        TBUdataset = new XYMultipleSeriesDataset();
+        TBUdatasetSeluruhBulan = new XYMultipleSeriesDataset();
         // Adding Income Series to the dataset
-        TBUdataset.addSeries(TBUseriesMin3sd);
-        TBUdataset.addSeries(TBUseriesMin2sd);
-        TBUdataset.addSeries(TBUseriesMin1sd);
-        TBUdataset.addSeries(TBUseriesMedian);
-        TBUdataset.addSeries(TBUseries1sd);
-        TBUdataset.addSeries(TBUseries2sd);
-        TBUdataset.addSeries(TBUseries3sd);
-        TBUdataset.addSeries(TBUseriesTinggiBadan);
+        TBUdatasetSeluruhBulan.addSeries(TBUseriesMin3sd);
+        TBUdatasetSeluruhBulan.addSeries(TBUseriesMin2sd);
+        TBUdatasetSeluruhBulan.addSeries(TBUseriesMin1sd);
+        TBUdatasetSeluruhBulan.addSeries(TBUseriesMedian);
+        TBUdatasetSeluruhBulan.addSeries(TBUseries1sd);
+        TBUdatasetSeluruhBulan.addSeries(TBUseries2sd);
+        TBUdatasetSeluruhBulan.addSeries(TBUseries3sd);
+        TBUdatasetSeluruhBulan.addSeries(TBUseriesTinggiBadanSeluruhBulan);
+
+        // Creating a dataset to hold each series
+        TBUdatasetBulanIni = new XYMultipleSeriesDataset();
+        // Adding Income Series to the dataset
+        TBUdatasetBulanIni.addSeries(TBUseriesMin3sd);
+        TBUdatasetBulanIni.addSeries(TBUseriesMin2sd);
+        TBUdatasetBulanIni.addSeries(TBUseriesMin1sd);
+        TBUdatasetBulanIni.addSeries(TBUseriesMedian);
+        TBUdatasetBulanIni.addSeries(TBUseries1sd);
+        TBUdatasetBulanIni.addSeries(TBUseries2sd);
+        TBUdatasetBulanIni.addSeries(TBUseries3sd);
+        TBUdatasetBulanIni.addSeries(TBUseriesTinggiBadanBulanIni);
 
         // Creating XYSeriesRenderer to customize incomeSeries
         XYSeriesRenderer TBUrendererMin1sd = new XYSeriesRenderer();
@@ -536,13 +579,16 @@ public class DetailDokumentasi extends Activity {
         TBUmultiRenderer.addSeriesRenderer(TBUrendererBeratBadan);
 
         // Getting a reference to LinearLayout of the MainActivity Layout
-        LinearLayout TBUchartContainer = (LinearLayout) findViewById(R.id.tbu_layout);
+        LinearLayout TBUchartContainerSeluruhBulan = (LinearLayout) findViewById(R.id.tbu_seluruhbulan_layout);
+        LinearLayout TBUchartContainerBulanIni = (LinearLayout) findViewById(R.id.tbu_bulanini_layout);
 
         // Creating a Line Chart
-        TBUChart = ChartFactory.getLineChartView(DetailDokumentasi.this, TBUdataset, TBUmultiRenderer);
+        TBUChartSeluruhBulan = ChartFactory.getLineChartView(DetailDokumentasi.this, TBUdatasetSeluruhBulan, TBUmultiRenderer);
+        TBUChartBulanIni = ChartFactory.getLineChartView(DetailDokumentasi.this, TBUdatasetBulanIni, TBUmultiRenderer);
 
         // Adding the Line Chart to the LinearLayout
-        TBUchartContainer.addView(TBUChart, new LinearLayout.LayoutParams(LinearLayout.LayoutParams.MATCH_PARENT, 500));
+        TBUchartContainerSeluruhBulan.addView(TBUChartSeluruhBulan, new LinearLayout.LayoutParams(LinearLayout.LayoutParams.MATCH_PARENT, 500));
+        TBUchartContainerBulanIni.addView(TBUChartBulanIni, new LinearLayout.LayoutParams(LinearLayout.LayoutParams.MATCH_PARENT, 500));
 
 
         //chart BBTB
@@ -636,7 +682,8 @@ public class DetailDokumentasi extends Activity {
         XYSeries BBTBseries1sd = new XYSeries("1 SD");
         XYSeries BBTBseries2sd = new XYSeries("2 SD");
         XYSeries BBTBseries3sd = new XYSeries("3 SD");
-        XYSeries BBTBseriesBeratBadan = new XYSeries("Berat Badan");
+        XYSeries BBTBseriesBeratBadanSeluruhBulan = new XYSeries("Berat Badan");
+        XYSeries BBTBseriesBeratBadanBulanIni = new XYSeries("Berat Badan");
 
         // Adding data to Income and Expense Series
         for (int i = 0; i < BBTBchartID.size(); i++) {
@@ -650,20 +697,33 @@ public class DetailDokumentasi extends Activity {
         }
 
         for (int i = 0; i < dokumentasiBulanChart.size(); i++) {
-            BBTBseriesBeratBadan.add(Double.parseDouble(dokumentasiTinggiChart.get(i)), Double.parseDouble(dokumentasiBeratChart.get(i)));
+            BBTBseriesBeratBadanSeluruhBulan.add(Double.parseDouble(dokumentasiTinggiChart.get(i)), Double.parseDouble(dokumentasiBeratChart.get(i)));
         }
+        BBTBseriesBeratBadanBulanIni.add(Double.parseDouble(cursor.getString(cursor.getColumnIndex("dokumentasi_tinggi"))), Double.parseDouble(cursor.getString(cursor.getColumnIndex("dokumentasi_berat"))));
 
         // Creating a dataset to hold each series
-        BBTBdataset = new XYMultipleSeriesDataset();
+        BBTBdatasetSeluruhBulan = new XYMultipleSeriesDataset();
         // Adding Income Series to the dataset
-        BBTBdataset.addSeries(BBTBseriesMin3sd);
-        BBTBdataset.addSeries(BBTBseriesMin2sd);
-        BBTBdataset.addSeries(BBTBseriesMin1sd);
-        BBTBdataset.addSeries(BBTBseriesMedian);
-        BBTBdataset.addSeries(BBTBseries1sd);
-        BBTBdataset.addSeries(BBTBseries2sd);
-        BBTBdataset.addSeries(BBTBseries3sd);
-        BBTBdataset.addSeries(BBTBseriesBeratBadan);
+        BBTBdatasetSeluruhBulan.addSeries(BBTBseriesMin3sd);
+        BBTBdatasetSeluruhBulan.addSeries(BBTBseriesMin2sd);
+        BBTBdatasetSeluruhBulan.addSeries(BBTBseriesMin1sd);
+        BBTBdatasetSeluruhBulan.addSeries(BBTBseriesMedian);
+        BBTBdatasetSeluruhBulan.addSeries(BBTBseries1sd);
+        BBTBdatasetSeluruhBulan.addSeries(BBTBseries2sd);
+        BBTBdatasetSeluruhBulan.addSeries(BBTBseries3sd);
+        BBTBdatasetSeluruhBulan.addSeries(BBTBseriesBeratBadanSeluruhBulan);
+
+        // Creating a dataset to hold each series
+        BBTBdatasetBulanIni = new XYMultipleSeriesDataset();
+        // Adding Income Series to the dataset
+        BBTBdatasetBulanIni.addSeries(BBTBseriesMin3sd);
+        BBTBdatasetBulanIni.addSeries(BBTBseriesMin2sd);
+        BBTBdatasetBulanIni.addSeries(BBTBseriesMin1sd);
+        BBTBdatasetBulanIni.addSeries(BBTBseriesMedian);
+        BBTBdatasetBulanIni.addSeries(BBTBseries1sd);
+        BBTBdatasetBulanIni.addSeries(BBTBseries2sd);
+        BBTBdatasetBulanIni.addSeries(BBTBseries3sd);
+        BBTBdatasetBulanIni.addSeries(BBTBseriesBeratBadanBulanIni);
 
         // Creating XYSeriesRenderer to customize incomeSeries
         XYSeriesRenderer BBTBrendererMin1sd = new XYSeriesRenderer();
@@ -752,13 +812,16 @@ public class DetailDokumentasi extends Activity {
         BBTBmultiRenderer.addSeriesRenderer(BBTBrendererBeratBadan);
 
         // Getting a reference to LinearLayout of the MainActivity Layout
-        LinearLayout BBTBchartContainer = (LinearLayout) findViewById(R.id.bbtb_layout);
+        LinearLayout BBTBchartContainerSeluruhBulan = (LinearLayout) findViewById(R.id.bbtb_seluruhbulan_layout);
+        LinearLayout BBTBchartContainerBulanIni = (LinearLayout) findViewById(R.id.bbtb_bulanini_layout);
 
         // Creating a Line Chart
-        BBTBChart = ChartFactory.getLineChartView(DetailDokumentasi.this, BBTBdataset, BBTBmultiRenderer);
+        BBTBChartSeluruhBulan = ChartFactory.getLineChartView(DetailDokumentasi.this, BBTBdatasetSeluruhBulan, BBTBmultiRenderer);
+        BBTBChartBulanIni = ChartFactory.getLineChartView(DetailDokumentasi.this, BBTBdatasetBulanIni, BBTBmultiRenderer);
 
         // Adding the Line Chart to the LinearLayout
-        BBTBchartContainer.addView(BBTBChart, new LinearLayout.LayoutParams(LinearLayout.LayoutParams.MATCH_PARENT, 500));
+        BBTBchartContainerSeluruhBulan.addView(BBTBChartSeluruhBulan, new LinearLayout.LayoutParams(LinearLayout.LayoutParams.MATCH_PARENT, 500));
+        BBTBchartContainerBulanIni.addView(BBTBChartBulanIni, new LinearLayout.LayoutParams(LinearLayout.LayoutParams.MATCH_PARENT, 500));
 
 
         //chart IMTU
@@ -771,7 +834,7 @@ public class DetailDokumentasi extends Activity {
         List<String> IMTUchart1sd = new ArrayList<>();
         List<String> IMTUchart2sd = new ArrayList<>();
         List<String> IMTUchart3sd = new ArrayList<>();
-        if ((session.loadSession(this, "gender")).equals("L")) {
+        if ((session.loadSession(this, "gender")).equals("Laki-laki")) {
             Cursor cursorIMTUchart = db.getLakiIMTUAllList();
             cursorIMTUchart.moveToFirst();
             if (!cursorIMTUchart.isAfterLast()) {
@@ -814,7 +877,8 @@ public class DetailDokumentasi extends Activity {
         XYSeries IMTUseries1sd = new XYSeries("1 SD");
         XYSeries IMTUseries2sd = new XYSeries("2 SD");
         XYSeries IMTUseries3sd = new XYSeries("3 SD");
-        XYSeries IMTUseriesIMT = new XYSeries("Indeks Massa Tubuh");
+        XYSeries IMTUseriesIMTSeluruhBulan = new XYSeries("Indeks Massa Tubuh");
+        XYSeries IMTUseriesIMTBulanIni = new XYSeries("Indeks Massa Tubuh");
 
         // Adding data to Income and Expense Series
         for (int i = 0; i < IMTUchartID.size(); i++) {
@@ -828,21 +892,36 @@ public class DetailDokumentasi extends Activity {
         }
 
         for (int i = 0; i < dokumentasiBulanChart.size(); i++) {
-            float imt = Float.parseFloat(dokumentasiBulanChart.get(i)) / ((Float.parseFloat(dokumentasiTinggiChart.get(i)) / 100) * (Float.parseFloat(dokumentasiTinggiChart.get(i)) / 100));
-            IMTUseriesIMT.add(Double.parseDouble(dokumentasiBulanChart.get(i)), (double) imt);
+            float imtSeluruhBulan = Float.parseFloat(dokumentasiBeratChart.get(i)) / ((Float.parseFloat(dokumentasiTinggiChart.get(i)) / 100) * (Float.parseFloat(dokumentasiTinggiChart.get(i)) / 100));
+            IMTUseriesIMTSeluruhBulan.add(Double.parseDouble(dokumentasiBulanChart.get(i)), (double) imtSeluruhBulan);
         }
 
+        float imtBulanIni = Float.parseFloat(cursor.getString(cursor.getColumnIndex("dokumentasi_berat"))) / ((Float.parseFloat(cursor.getString(cursor.getColumnIndex("dokumentasi_tinggi"))) / 100) * (Float.parseFloat(cursor.getString(cursor.getColumnIndex("dokumentasi_tinggi"))) / 100));
+        IMTUseriesIMTSeluruhBulan.add(Double.parseDouble(cursor.getString(cursor.getColumnIndex("dokumentasi_bulan"))), (double) imtBulanIni);
+
         // Creating a dataset to hold each series
-        IMTUdataset = new XYMultipleSeriesDataset();
+        IMTUdatasetSeluruhBulan = new XYMultipleSeriesDataset();
         // Adding Income Series to the dataset
-        IMTUdataset.addSeries(IMTUseriesMin3sd);
-        IMTUdataset.addSeries(IMTUseriesMin2sd);
-        IMTUdataset.addSeries(IMTUseriesMin1sd);
-        IMTUdataset.addSeries(IMTUseriesMedian);
-        IMTUdataset.addSeries(IMTUseries1sd);
-        IMTUdataset.addSeries(IMTUseries2sd);
-        IMTUdataset.addSeries(IMTUseries3sd);
-        IMTUdataset.addSeries(IMTUseriesIMT);
+        IMTUdatasetSeluruhBulan.addSeries(IMTUseriesMin3sd);
+        IMTUdatasetSeluruhBulan.addSeries(IMTUseriesMin2sd);
+        IMTUdatasetSeluruhBulan.addSeries(IMTUseriesMin1sd);
+        IMTUdatasetSeluruhBulan.addSeries(IMTUseriesMedian);
+        IMTUdatasetSeluruhBulan.addSeries(IMTUseries1sd);
+        IMTUdatasetSeluruhBulan.addSeries(IMTUseries2sd);
+        IMTUdatasetSeluruhBulan.addSeries(IMTUseries3sd);
+        IMTUdatasetSeluruhBulan.addSeries(IMTUseriesIMTSeluruhBulan);
+
+        // Creating a dataset to hold each series
+        IMTUdatasetBulanIni = new XYMultipleSeriesDataset();
+        // Adding Income Series to the dataset
+        IMTUdatasetBulanIni.addSeries(IMTUseriesMin3sd);
+        IMTUdatasetBulanIni.addSeries(IMTUseriesMin2sd);
+        IMTUdatasetBulanIni.addSeries(IMTUseriesMin1sd);
+        IMTUdatasetBulanIni.addSeries(IMTUseriesMedian);
+        IMTUdatasetBulanIni.addSeries(IMTUseries1sd);
+        IMTUdatasetBulanIni.addSeries(IMTUseries2sd);
+        IMTUdatasetBulanIni.addSeries(IMTUseries3sd);
+        IMTUdatasetBulanIni.addSeries(IMTUseriesIMTBulanIni);
 
         // Creating XYSeriesRenderer to customize incomeSeries
         XYSeriesRenderer IMTUrendererMin1sd = new XYSeriesRenderer();
@@ -924,42 +1003,66 @@ public class DetailDokumentasi extends Activity {
         IMTUmultiRenderer.addSeriesRenderer(IMTUrendererBeratBadan);
 
         // Getting a reference to LinearLayout of the MainActivity Layout
-        LinearLayout IMTUchartContainer = (LinearLayout) findViewById(R.id.imtu_layout);
+        LinearLayout IMTUchartContainerSeluruhBulan = (LinearLayout) findViewById(R.id.imtu_seluruhbulan_layout);
+        LinearLayout IMTUchartContainerBulanIni = (LinearLayout) findViewById(R.id.imtu_bulanini_layout);
 
         // Creating a Line Chart
-        IMTUChart = ChartFactory.getLineChartView(DetailDokumentasi.this, IMTUdataset, IMTUmultiRenderer);
+        IMTUChartSeluruhBulan = ChartFactory.getLineChartView(DetailDokumentasi.this, IMTUdatasetSeluruhBulan, IMTUmultiRenderer);
+        IMTUChartBulanIni = ChartFactory.getLineChartView(DetailDokumentasi.this, IMTUdatasetBulanIni, IMTUmultiRenderer);
 
         // Adding the Line Chart to the LinearLayout
-        IMTUchartContainer.addView(IMTUChart, new LinearLayout.LayoutParams(LinearLayout.LayoutParams.MATCH_PARENT, 500));
-
+        IMTUchartContainerSeluruhBulan.addView(IMTUChartSeluruhBulan, new LinearLayout.LayoutParams(LinearLayout.LayoutParams.MATCH_PARENT, 500));
+        IMTUchartContainerBulanIni.addView(IMTUChartBulanIni, new LinearLayout.LayoutParams(LinearLayout.LayoutParams.MATCH_PARENT, 500));
 
         //Tab
         tabHost = (TabHost) findViewById(android.R.id.tabhost);     // The activity TabHost
         tabHost.setup();
 
         TabHost.TabSpec spec;
-        spec = tabHost.newTabSpec("BB/U").setIndicator("BB/U").setContent(R.id.bbu_layout);
+        spec = tabHost.newTabSpec("Grafik Bulan Ini").setIndicator("Grafik Bulan Ini").setContent(R.id.bulanIniLayout);
         tabHost.addTab(spec);
-        spec = tabHost.newTabSpec("TB/U").setIndicator("TB/U").setContent(R.id.tbu_layout);
+        spec = tabHost.newTabSpec("Grafik Seluruh Bulan").setIndicator("Grafik Seluruh Bulan").setContent(R.id.seluruhBulanLayout);
         tabHost.addTab(spec);
-        spec = tabHost.newTabSpec("BB/TB").setIndicator("BB/TB").setContent(R.id.bbtb_layout);
-        tabHost.addTab(spec);
-        spec = tabHost.newTabSpec("IMT/U").setIndicator("IMT/U").setContent(R.id.imtu_layout);
-        tabHost.addTab(spec);
-        tabHost.setCurrentTab(0);
+
+        tabBulanIni = (TabHost) findViewById(R.id.tabHostBulanIni);
+        tabBulanIni.setup();
+        TabHost.TabSpec specBulanIni;
+        specBulanIni = tabBulanIni.newTabSpec("BB/U").setIndicator("BB/U").setContent(R.id.bbu_bulanini_layout);
+        tabBulanIni.addTab(specBulanIni);
+        specBulanIni = tabBulanIni.newTabSpec("TB/U").setIndicator("TB/U").setContent(R.id.tbu_bulanini_layout);
+        tabBulanIni.addTab(specBulanIni);
+        specBulanIni = tabBulanIni.newTabSpec("BB/TB").setIndicator("BB/TB").setContent(R.id.bbtb_bulanini_layout);
+        tabBulanIni.addTab(specBulanIni);
+        specBulanIni = tabBulanIni.newTabSpec("IMT/U").setIndicator("IMT/U").setContent(R.id.imtu_bulanini_layout);
+        tabBulanIni.addTab(specBulanIni);
+        tabBulanIni.setCurrentTab(0);
+
+        tabSeluruhBulan = (TabHost) findViewById(R.id.tabHostSeluruhBulan);
+        tabSeluruhBulan.setup();
+        TabHost.TabSpec specSeluruhBulan;
+        specSeluruhBulan = tabSeluruhBulan.newTabSpec("BB/U").setIndicator("BB/U").setContent(R.id.bbu_seluruhbulan_layout);
+        tabSeluruhBulan.addTab(specSeluruhBulan);
+        specSeluruhBulan = tabSeluruhBulan.newTabSpec("TB/U").setIndicator("TB/U").setContent(R.id.tbu_seluruhbulan_layout);
+        tabSeluruhBulan.addTab(specSeluruhBulan);
+        specSeluruhBulan = tabSeluruhBulan.newTabSpec("BB/TB").setIndicator("BB/TB").setContent(R.id.bbtb_seluruhbulan_layout);
+        tabSeluruhBulan.addTab(specSeluruhBulan);
+        specSeluruhBulan = tabSeluruhBulan.newTabSpec("IMT/U").setIndicator("IMT/U").setContent(R.id.imtu_seluruhbulan_layout);
+        tabSeluruhBulan.addTab(specSeluruhBulan);
+        tabSeluruhBulan.setCurrentTab(0);
 
         for (int i = 0; i < tabHost.getTabWidget().getChildCount(); i++) {
             tabHost.getTabWidget().getChildAt(i).setBackgroundColor(Color.parseColor("#FFF1B5"));
             TextView tv = (TextView) tabHost.getTabWidget().getChildAt(i).findViewById(android.R.id.title); //Unselected Tabs
             tv.setTextColor(Color.parseColor("#FF0000"));
-            tv.setTypeface(typeface);
             tv.setTextAppearance(this, android.R.style.TextAppearance_DeviceDefault_Medium);
             if (i == tabHost.getCurrentTab()) {
                 tabHost.getTabWidget().getChildAt(tabHost.getCurrentTab()).setBackgroundColor(Color.parseColor("#FFFBC9"));
                 tv.setTextColor(Color.parseColor("#D046F2"));
+                tv.setTypeface(typeface);
             } else {
                 tabHost.getTabWidget().getChildAt(i).setBackgroundColor(Color.parseColor("#FFF1B5"));
                 tv.setTextColor(Color.parseColor("#FF0000"));
+                tv.setTypeface(typeface);
             }
 
             // Set Height Tab Title
@@ -994,9 +1097,125 @@ public class DetailDokumentasi extends Activity {
                     if (i == tabHost.getCurrentTab()) {
                         tabHost.getTabWidget().getChildAt(tabHost.getCurrentTab()).setBackgroundColor(Color.parseColor("#FFFBC9"));
                         tv.setTextColor(Color.parseColor("#D046F2"));
+                        tv.setTypeface(typeface);
                     } else {
                         tabHost.getTabWidget().getChildAt(i).setBackgroundColor(Color.parseColor("#FFF1B5"));
                         tv.setTextColor(Color.parseColor("#FF0000"));
+                        tv.setTypeface(typeface);
+                    }
+                }
+            }
+        });
+
+        for (int i = 0; i < tabBulanIni.getTabWidget().getChildCount(); i++) {
+            tabBulanIni.getTabWidget().getChildAt(i).setBackgroundColor(Color.parseColor("#FFF1B5"));
+            TextView tv = (TextView) tabBulanIni.getTabWidget().getChildAt(i).findViewById(android.R.id.title); //Unselected Tabs
+            tv.setTextColor(Color.parseColor("#FF0000"));
+            tv.setTextAppearance(this, android.R.style.TextAppearance_DeviceDefault_Medium);
+            if (i == tabBulanIni.getCurrentTab()) {
+                tabBulanIni.getTabWidget().getChildAt(tabBulanIni.getCurrentTab()).setBackgroundColor(Color.parseColor("#FFFBC9"));
+                tv.setTextColor(Color.parseColor("#D046F2"));
+                tv.setTypeface(typeface);
+            } else {
+                tabBulanIni.getTabWidget().getChildAt(i).setBackgroundColor(Color.parseColor("#FFF1B5"));
+                tv.setTextColor(Color.parseColor("#FF0000"));
+                tv.setTypeface(typeface);
+            }
+
+            // Set Height Tab Title
+            final View view = tabBulanIni.getTabWidget().getChildTabViewAt(i);
+            if (view != null) {
+                // reduce height of the tab
+                view.getLayoutParams().height *= 0.7;
+
+                //  get title text view
+                final View textView = view.findViewById(android.R.id.title);
+                if (textView instanceof TextView) {
+                    // just in case check the type
+
+                    // center text
+                    ((TextView) textView).setGravity(Gravity.CENTER_VERTICAL);
+                    // wrap text
+                    ((TextView) textView).setSingleLine(false);
+
+                    // explicitly set layout parameters
+                    textView.getLayoutParams().height = ViewGroup.LayoutParams.WRAP_CONTENT;
+                    textView.getLayoutParams().width = ViewGroup.LayoutParams.WRAP_CONTENT;
+                }
+            }
+        }
+
+        tabBulanIni.setOnTabChangedListener(new TabHost.OnTabChangeListener() {
+            public void onTabChanged(String arg0) {
+                for (int i = 0; i < tabBulanIni.getTabWidget().getChildCount(); i++) {
+                    tabBulanIni.getTabWidget().getChildAt(i).setBackgroundColor(Color.parseColor("#FFF1B5"));
+                    TextView tv = (TextView) tabBulanIni.getTabWidget().getChildAt(i).findViewById(android.R.id.title); //Unselected Tabs
+                    tv.setTextColor(Color.parseColor("#FF0000"));
+                    if (i == tabBulanIni.getCurrentTab()) {
+                        tabBulanIni.getTabWidget().getChildAt(tabBulanIni.getCurrentTab()).setBackgroundColor(Color.parseColor("#FFFBC9"));
+                        tv.setTextColor(Color.parseColor("#D046F2"));
+                        tv.setTypeface(typeface);
+                    } else {
+                        tabBulanIni.getTabWidget().getChildAt(i).setBackgroundColor(Color.parseColor("#FFF1B5"));
+                        tv.setTextColor(Color.parseColor("#FF0000"));
+                        tv.setTypeface(typeface);
+                    }
+                }
+            }
+        });
+
+        for (int i = 0; i < tabSeluruhBulan.getTabWidget().getChildCount(); i++) {
+            tabSeluruhBulan.getTabWidget().getChildAt(i).setBackgroundColor(Color.parseColor("#FFF1B5"));
+            TextView tv = (TextView) tabSeluruhBulan.getTabWidget().getChildAt(i).findViewById(android.R.id.title); //Unselected Tabs
+            tv.setTextColor(Color.parseColor("#FF0000"));
+            tv.setTextAppearance(this, android.R.style.TextAppearance_DeviceDefault_Medium);
+            if (i == tabSeluruhBulan.getCurrentTab()) {
+                tabSeluruhBulan.getTabWidget().getChildAt(tabSeluruhBulan.getCurrentTab()).setBackgroundColor(Color.parseColor("#FFFBC9"));
+                tv.setTextColor(Color.parseColor("#D046F2"));
+                tv.setTypeface(typeface);
+            } else {
+                tabSeluruhBulan.getTabWidget().getChildAt(i).setBackgroundColor(Color.parseColor("#FFF1B5"));
+                tv.setTextColor(Color.parseColor("#FF0000"));
+                tv.setTypeface(typeface);
+            }
+
+            // Set Height Tab Title
+            final View view = tabSeluruhBulan.getTabWidget().getChildTabViewAt(i);
+            if (view != null) {
+                // reduce height of the tab
+                view.getLayoutParams().height *= 0.7;
+
+                //  get title text view
+                final View textView = view.findViewById(android.R.id.title);
+                if (textView instanceof TextView) {
+                    // just in case check the type
+
+                    // center text
+                    ((TextView) textView).setGravity(Gravity.CENTER_VERTICAL);
+                    // wrap text
+                    ((TextView) textView).setSingleLine(false);
+
+                    // explicitly set layout parameters
+                    textView.getLayoutParams().height = ViewGroup.LayoutParams.WRAP_CONTENT;
+                    textView.getLayoutParams().width = ViewGroup.LayoutParams.WRAP_CONTENT;
+                }
+            }
+        }
+
+        tabSeluruhBulan.setOnTabChangedListener(new TabHost.OnTabChangeListener() {
+            public void onTabChanged(String arg0) {
+                for (int i = 0; i < tabSeluruhBulan.getTabWidget().getChildCount(); i++) {
+                    tabSeluruhBulan.getTabWidget().getChildAt(i).setBackgroundColor(Color.parseColor("#FFF1B5"));
+                    TextView tv = (TextView) tabSeluruhBulan.getTabWidget().getChildAt(i).findViewById(android.R.id.title); //Unselected Tabs
+                    tv.setTextColor(Color.parseColor("#FF0000"));
+                    if (i == tabSeluruhBulan.getCurrentTab()) {
+                        tabSeluruhBulan.getTabWidget().getChildAt(tabSeluruhBulan.getCurrentTab()).setBackgroundColor(Color.parseColor("#FFFBC9"));
+                        tv.setTextColor(Color.parseColor("#D046F2"));
+                        tv.setTypeface(typeface);
+                    } else {
+                        tabSeluruhBulan.getTabWidget().getChildAt(i).setBackgroundColor(Color.parseColor("#FFF1B5"));
+                        tv.setTextColor(Color.parseColor("#FF0000"));
+                        tv.setTypeface(typeface);
                     }
                 }
             }
@@ -1113,28 +1332,57 @@ public class DetailDokumentasi extends Activity {
             session.clearSession(DetailDokumentasi.this);
 
             Intent splash = new Intent(this, Splash.class);
+            splash.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TASK | Intent.FLAG_ACTIVITY_CLEAR_TOP);
             startActivity(splash);
+            finish();
         }
 
         //chart
-        if (BBUChart == null || TBUChart == null || BBTBChart == null) {
-            LinearLayout bbu_layout = (LinearLayout) findViewById(R.id.bbu_layout);
-            BBUChart = ChartFactory.getLineChartView(getBaseContext(), BBUdataset, BBUmultiRenderer);
-            bbu_layout.addView(BBUChart);
-            LinearLayout tbu_layout = (LinearLayout) findViewById(R.id.tbu_layout);
-            TBUChart = ChartFactory.getLineChartView(getBaseContext(), TBUdataset, TBUmultiRenderer);
-            tbu_layout.addView(TBUChart);
-            LinearLayout bbtb_layout = (LinearLayout) findViewById(R.id.bbtb_layout);
-            BBTBChart = ChartFactory.getLineChartView(getBaseContext(), BBTBdataset, BBTBmultiRenderer);
-            bbtb_layout.addView(BBTBChart);
-            LinearLayout imtu_layout = (LinearLayout) findViewById(R.id.imtu_layout);
-            IMTUChart = ChartFactory.getLineChartView(getBaseContext(), IMTUdataset, IMTUmultiRenderer);
-            imtu_layout.addView(IMTUChart);
+        if (BBUChartSeluruhBulan == null || BBUChartBulanIni == null ||
+                TBUChartSeluruhBulan == null || TBUChartBulanIni == null ||
+                BBTBChartSeluruhBulan == null || BBTBChartBulanIni == null) {
+            LinearLayout bbu_seluruhbulan_layout = (LinearLayout) findViewById(R.id.bbu_seluruhbulan_layout);
+            BBUChartSeluruhBulan = ChartFactory.getLineChartView(getBaseContext(), BBUdatasetSeluruhBulan, BBUmultiRenderer);
+            bbu_seluruhbulan_layout.addView(BBUChartSeluruhBulan);
+
+            LinearLayout bbu_bulaini_layout = (LinearLayout) findViewById(R.id.bbu_bulanini_layout);
+            BBUChartBulanIni = ChartFactory.getLineChartView(getBaseContext(), BBUdatasetBulanIni, BBUmultiRenderer);
+            bbu_bulaini_layout.addView(BBUChartBulanIni);
+
+            LinearLayout tbu_seluruhbulan_layout = (LinearLayout) findViewById(R.id.tbu_seluruhbulan_layout);
+            TBUChartSeluruhBulan = ChartFactory.getLineChartView(getBaseContext(), TBUdatasetSeluruhBulan, TBUmultiRenderer);
+            tbu_seluruhbulan_layout.addView(TBUChartSeluruhBulan);
+
+            LinearLayout tbu_bulanini_layout = (LinearLayout) findViewById(R.id.tbu_bulanini_layout);
+            TBUChartBulanIni = ChartFactory.getLineChartView(getBaseContext(), TBUdatasetBulanIni, TBUmultiRenderer);
+            tbu_bulanini_layout.addView(TBUChartBulanIni);
+
+            LinearLayout bbtb_seluruhbulan_layout = (LinearLayout) findViewById(R.id.bbtb_seluruhbulan_layout);
+            BBTBChartSeluruhBulan = ChartFactory.getLineChartView(getBaseContext(), BBTBdatasetSeluruhBulan, BBTBmultiRenderer);
+            bbtb_seluruhbulan_layout.addView(BBTBChartSeluruhBulan);
+
+            LinearLayout bbtb_bulanini_layout = (LinearLayout) findViewById(R.id.bbtb_bulanini_layout);
+            BBTBChartBulanIni = ChartFactory.getLineChartView(getBaseContext(), BBTBdatasetBulanIni, BBTBmultiRenderer);
+            bbtb_bulanini_layout.addView(BBTBChartBulanIni);
+
+            LinearLayout imtu_seluruhbulan_layout = (LinearLayout) findViewById(R.id.imtu_seluruhbulan_layout);
+            IMTUChartSeluruhBulan = ChartFactory.getLineChartView(getBaseContext(), IMTUdatasetSeluruhBulan, IMTUmultiRenderer);
+            imtu_seluruhbulan_layout.addView(IMTUChartSeluruhBulan);
+
+            LinearLayout imtu_bulanini_layout = (LinearLayout) findViewById(R.id.imtu_bulanini_layout);
+            IMTUChartBulanIni = ChartFactory.getLineChartView(getBaseContext(), IMTUdatasetBulanIni, IMTUmultiRenderer);
+            imtu_bulanini_layout.addView(IMTUChartBulanIni);
+
         } else {
-            BBUChart.repaint();
-            TBUChart.repaint();
-            BBTBChart.repaint();
-            IMTUChart.repaint();
+
+            BBUChartSeluruhBulan.repaint();
+            BBUChartBulanIni.repaint();
+            TBUChartSeluruhBulan.repaint();
+            TBUChartBulanIni.repaint();
+            BBTBChartSeluruhBulan.repaint();
+            BBTBChartBulanIni.repaint();
+            IMTUChartSeluruhBulan.repaint();
+            IMTUChartBulanIni.repaint();
         }
     }
 }

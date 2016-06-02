@@ -135,6 +135,7 @@ public class GaleriTumbang extends Activity {
                         Intent tambah_galeri = new Intent(GaleriTumbang.this, TambahGaleri.class);
                         lastActivity = System.currentTimeMillis();
                         tambah_galeri.putExtra("lastActivity", lastActivity);
+                        tambah_galeri.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TASK | Intent.FLAG_ACTIVITY_CLEAR_TOP);
                         startActivity(tambah_galeri);
 
                         // Close This Activity
@@ -147,6 +148,7 @@ public class GaleriTumbang extends Activity {
                         lastActivity = System.currentTimeMillis();
                         detail_galeri.putExtra("lastActivity", lastActivity);
                         detail_galeri.putExtra("galeriID", galeri_id);
+                        detail_galeri.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TASK | Intent.FLAG_ACTIVITY_CLEAR_TOP);
                         startActivity(detail_galeri);
                         finish();
                     }
@@ -157,6 +159,11 @@ public class GaleriTumbang extends Activity {
             cursor.close();
 
         } else {
+            Intent tumbang = new Intent(this, TumbuhKembang.class);
+            lastActivity = System.currentTimeMillis();
+            tumbang.putExtra("lastActivity", lastActivity);
+            tumbang.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TASK | Intent.FLAG_ACTIVITY_CLEAR_TOP);
+            startActivity(tumbang);
             finish();
         }
     }
@@ -167,6 +174,7 @@ public class GaleriTumbang extends Activity {
         Intent tumbang = new Intent(this, TumbuhKembang.class);
         lastActivity = System.currentTimeMillis();
         tumbang.putExtra("lastActivity", lastActivity);
+        tumbang.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TASK | Intent.FLAG_ACTIVITY_CLEAR_TOP);
         startActivity(tumbang);
 
         // Close This Activity
@@ -186,7 +194,10 @@ public class GaleriTumbang extends Activity {
             session.clearSession(GaleriTumbang.this);
 
             Intent splash = new Intent(this, Splash.class);
+            splash.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TASK | Intent.FLAG_ACTIVITY_CLEAR_TOP);
             startActivity(splash);
+            finish();
+
         } else {
             // Check Session
             if (session.checkSession(this)) {
@@ -199,6 +210,7 @@ public class GaleriTumbang extends Activity {
                 Intent tumbang = new Intent(GaleriTumbang.this, TumbuhKembang.class);
                 lastActivity = System.currentTimeMillis();
                 tumbang.putExtra("lastActivity", lastActivity);
+                tumbang.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TASK | Intent.FLAG_ACTIVITY_CLEAR_TOP);
                 startActivity(tumbang);
                 finish();
             }

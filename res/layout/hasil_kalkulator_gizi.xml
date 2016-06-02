@@ -391,8 +391,7 @@
                                 android:layout_width="fill_parent"
                                 android:layout_height="0dp"
                                 android:orientation="horizontal"
-                                android:layout_weight="1"
-                                android:layout_marginBottom="3dp">
+                                android:layout_weight="1">
 
                             <!-- Start Text View Berat Badan / Umur -->
                             <TextView
@@ -415,25 +414,25 @@
                                     android:layout_marginLeft="5dp"/>
                             <!-- End Text View Titik Dua -->
 
-                            <!-- Start Text View Berat Badan / Umur -->
-                            <TextView
-                                    android:id="@+id/hasil_bbu"
-                                    android:layout_width="0dp"
-                                    android:layout_height="wrap_content"
-                                    android:textColor="#FF0000"
-                                    style="@android:style/TextAppearance.DeviceDefault.Medium"
-                                    android:hint="@string/dash"
-                                    android:layout_weight=".4"
-                                    android:layout_marginLeft="5dp"/>
-                            <!-- End Text View Berat Badan / Umur -->
                         </LinearLayout>
+
+                        <!-- Start Text View Berat Badan / Umur -->
+                        <TextView
+                                android:id="@+id/hasil_bbu"
+                                android:layout_width="fill_parent"
+                                android:layout_height="0dp"
+                                android:layout_weight="1"
+                                android:textColor="#FF0000"
+                                style="@android:style/TextAppearance.DeviceDefault.Medium"
+                                android:hint="@string/dash"
+                                android:layout_margin="10dp"/>
+                        <!-- End Text View Berat Badan / Umur -->
 
                         <LinearLayout
                                 android:layout_width="fill_parent"
                                 android:layout_height="0dp"
                                 android:orientation="horizontal"
-                                android:layout_weight="1"
-                                android:layout_marginBottom="3dp">
+                                android:layout_weight="1">
 
                             <!-- Start Text View Tinggi Badan / Umur -->
                             <TextView
@@ -456,19 +455,19 @@
                                     android:layout_marginLeft="5dp"/>
                             <!-- End Text View Titik Dua -->
 
-                            <!-- Start Text View Tinggi Badan / Umur -->
-                            <TextView
-                                    android:id="@+id/hasil_tbu"
-                                    android:layout_width="0dp"
-                                    android:layout_height="wrap_content"
-                                    android:textColor="#FF0000"
-                                    style="@android:style/TextAppearance.DeviceDefault.Medium"
-                                    android:hint="@string/dash"
-                                    android:layout_weight=".4"
-                                    android:layout_marginLeft="5dp"/>
-                            <!-- End Text View Tinggi Badan / Umur -->
-
                         </LinearLayout>
+
+                        <!-- Start Text View Tinggi Badan / Umur -->
+                        <TextView
+                                android:id="@+id/hasil_tbu"
+                                android:layout_width="fill_parent"
+                                android:layout_height="0dp"
+                                android:textColor="#FF0000"
+                                style="@android:style/TextAppearance.DeviceDefault.Medium"
+                                android:hint="@string/dash"
+                                android:layout_weight="1"
+                                android:layout_margin="10dp"/>
+                        <!-- End Text View Tinggi Badan / Umur -->
 
                     </LinearLayout>
 
@@ -489,8 +488,7 @@
                                 android:layout_width="fill_parent"
                                 android:layout_height="0dp"
                                 android:orientation="horizontal"
-                                android:layout_weight="1"
-                                android:layout_marginBottom="3dp">
+                                android:layout_weight="1">
 
                             <!-- Start Text View Berat Badan / Tinggi Badan -->
                             <TextView
@@ -513,26 +511,25 @@
                                     android:layout_marginLeft="5dp"/>
                             <!-- End Text View Titik Dua -->
 
-                            <!-- Start Text View Berat Badan / Tinggi Badan  -->
-                            <TextView
-                                    android:id="@+id/hasil_bbtb"
-                                    android:layout_width="0dp"
-                                    android:layout_height="wrap_content"
-                                    android:textColor="#FF0000"
-                                    style="@android:style/TextAppearance.DeviceDefault.Medium"
-                                    android:hint="@string/dash"
-                                    android:layout_weight=".4"
-                                    android:layout_marginLeft="5dp"/>
-                            <!-- End Text View Berat Badan / Tinggi Badan -->
-
                         </LinearLayout>
+
+                        <!-- Start Text View Berat Badan / Tinggi Badan  -->
+                        <TextView
+                                android:id="@+id/hasil_bbtb"
+                                android:layout_width="fill_parent"
+                                android:layout_height="0dp"
+                                android:textColor="#FF0000"
+                                style="@android:style/TextAppearance.DeviceDefault.Medium"
+                                android:hint="@string/dash"
+                                android:layout_weight="1"
+                                android:layout_margin="10dp"/>
+                        <!-- End Text View Berat Badan / Tinggi Badan -->
 
                         <LinearLayout
                                 android:layout_width="fill_parent"
                                 android:layout_height="0dp"
                                 android:orientation="horizontal"
-                                android:layout_weight="1"
-                                android:layout_marginBottom="3dp">
+                                android:layout_weight="1">
 
                             <!-- Start Text View Iindeks Massa Tubuh / Umur -->
                             <TextView
@@ -555,19 +552,19 @@
                                     android:layout_marginLeft="5dp"/>
                             <!-- End Text View Titik Dua -->
 
-                            <!-- Start Text View Iindeks Massa Tubuh / Umur -->
-                            <TextView
-                                    android:id="@+id/hasil_imtu"
-                                    android:layout_width="0dp"
-                                    android:layout_height="wrap_content"
-                                    android:textColor="#FF0000"
-                                    style="@android:style/TextAppearance.DeviceDefault.Medium"
-                                    android:hint="@string/dash"
-                                    android:layout_weight=".4"
-                                    android:layout_marginLeft="5dp"/>
-                            <!-- End Text View Iindeks Massa Tubuh / Umur -->
-
                         </LinearLayout>
+
+                        <!-- Start Text View Iindeks Massa Tubuh / Umur -->
+                        <TextView
+                                android:id="@+id/hasil_imtu"
+                                android:layout_width="fill_parent"
+                                android:layout_height="0dp"
+                                android:textColor="#FF0000"
+                                style="@android:style/TextAppearance.DeviceDefault.Medium"
+                                android:hint="@string/dash"
+                                android:layout_weight="1"
+                                android:layout_margin="10dp"/>
+                        <!-- End Text View Iindeks Massa Tubuh / Umur -->
 
                     </LinearLayout>
                     <!-- End Linear Layout Hasil Kalkulator Gizi -->

@@ -196,9 +196,17 @@ public class KalkulatorGizi extends Activity {
                     // Show Toast
                     Toast.makeText(KalkulatorGizi.this, "Tinggi Tidak Boleh Kurang Dari 45 cm", Toast.LENGTH_SHORT).show();
 
-                }  else if (Float.parseFloat(beratBadan) < 2) {
+                }  else if (Float.parseFloat(tinggiBadan) > 120) {
+                    // Show Toast
+                    Toast.makeText(KalkulatorGizi.this, "Tinggi Tidak Boleh Lebih Dari 120 cm", Toast.LENGTH_SHORT).show();
+
+                } else if (Float.parseFloat(beratBadan) < 2) {
                     // Show Toast
                     Toast.makeText(KalkulatorGizi.this, "Berat Tidak Boleh Kurang Dari 2 kg", Toast.LENGTH_SHORT).show();
+
+                } else if (Float.parseFloat(beratBadan) > 30) {
+                    // Show Toast
+                    Toast.makeText(KalkulatorGizi.this, "Berat Tidak Boleh Lebih Dari 30 kg", Toast.LENGTH_SHORT).show();
 
                 } else {
 
@@ -281,7 +289,9 @@ public class KalkulatorGizi extends Activity {
             session.clearSession(KalkulatorGizi.this);
 
             Intent splash = new Intent(this, Splash.class);
+            splash.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TASK | Intent.FLAG_ACTIVITY_CLEAR_TOP);
             startActivity(splash);
+            finish();
         }
     }
 }

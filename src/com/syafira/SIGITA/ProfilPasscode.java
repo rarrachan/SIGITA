@@ -76,6 +76,7 @@ public class ProfilPasscode extends Activity {
         final String penyakitKronis = fetchID.getStringExtra("penyakitKronis");
         final String action = fetchID.getStringExtra("action");
         final String pathbefore = fetchID.getStringExtra("pathbefore");
+        final int detailJadwalImunisasiID = fetchID.getIntExtra("detailJadwalImunisasiID", 0);
 
         // Intent Extra for Ubah Passcode
         final int id = fetchID.getIntExtra("id", 0);
@@ -331,6 +332,7 @@ public class ProfilPasscode extends Activity {
                             lastActivity = System.currentTimeMillis();
                             profil.putExtra("lastActivity", lastActivity);
                             profil.putExtra("pathbefore", pathbefore);
+                            profil.putExtra("detailJadwalImunisasiID", detailJadwalImunisasiID);
                             profil.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TASK | Intent.FLAG_ACTIVITY_CLEAR_TOP);
                             startActivity(profil);
 
@@ -364,6 +366,8 @@ public class ProfilPasscode extends Activity {
                             passcode.putExtra("lastActivity", lastActivity);
                             passcode.putExtra("id", id);
                             passcode.putExtra("pathbefore", pathbefore);
+                            passcode.putExtra("detailJadwalImunisasiID", detailJadwalImunisasiID);
+                            passcode.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TASK | Intent.FLAG_ACTIVITY_CLEAR_TOP);
                             startActivity(passcode);
 
                             // Close This Activity
@@ -397,6 +401,7 @@ public class ProfilPasscode extends Activity {
                             profil.putExtra("lastActivity", lastActivity);
                             profil.putExtra("id", id);
                             profil.putExtra("pathbefore", pathbefore);
+                            profil.putExtra("detailJadwalImunisasiID", detailJadwalImunisasiID);
                             profil.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TASK | Intent.FLAG_ACTIVITY_CLEAR_TOP);
                             startActivity(profil);
 
@@ -461,15 +466,18 @@ public class ProfilPasscode extends Activity {
         final String action = fetchID.getStringExtra("action");
         final int id = fetchID.getIntExtra("id", 0);
         String pathbefore = fetchID.getStringExtra("pathbefore");
+        final int detailJadwalImunisasiID = fetchID.getIntExtra("detailJadwalImunisasiID", 0);
 
         switch (action) {
             case "pilihprofil":
             case "detailprofil":
+            case "tambahprofil":
                 // Start Profil Activity
                 Intent profil = new Intent(ProfilPasscode.this, Profil.class);
                 lastActivity = System.currentTimeMillis();
                 profil.putExtra("lastActivity", lastActivity);
                 profil.putExtra("pathbefore", pathbefore);
+                profil.putExtra("detailJadwalImunisasiID", detailJadwalImunisasiID);
                 profil.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TASK | Intent.FLAG_ACTIVITY_CLEAR_TOP);
                 startActivity(profil);
 
@@ -483,6 +491,7 @@ public class ProfilPasscode extends Activity {
                 detailprofil.putExtra("lastActivity", lastActivity);
                 detailprofil.putExtra("id", id);
                 detailprofil.putExtra("pathbefore", pathbefore);
+                detailprofil.putExtra("detailJadwalImunisasiID", detailJadwalImunisasiID);
                 detailprofil.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TASK | Intent.FLAG_ACTIVITY_CLEAR_TOP);
                 startActivity(detailprofil);
 
@@ -498,6 +507,7 @@ public class ProfilPasscode extends Activity {
                 passcode.putExtra("lastActivity", lastActivity);
                 passcode.putExtra("id", id);
                 passcode.putExtra("pathbefore", pathbefore);
+                passcode.putExtra("detailJadwalImunisasiID", detailJadwalImunisasiID);
                 passcode.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TASK | Intent.FLAG_ACTIVITY_CLEAR_TOP);
                 startActivity(passcode);
 
@@ -520,7 +530,9 @@ public class ProfilPasscode extends Activity {
             session.clearSession(ProfilPasscode.this);
 
             Intent splash = new Intent(this, Splash.class);
+            splash.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TASK | Intent.FLAG_ACTIVITY_CLEAR_TOP);
             startActivity(splash);
+            finish();
         }
     }
 }

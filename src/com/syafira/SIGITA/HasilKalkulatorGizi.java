@@ -1102,14 +1102,15 @@ public class HasilKalkulatorGizi extends Activity {
             tabHost.getTabWidget().getChildAt(i).setBackgroundColor(Color.parseColor("#FFF1B5"));
             TextView tv = (TextView) tabHost.getTabWidget().getChildAt(i).findViewById(android.R.id.title); //Unselected Tabs
             tv.setTextColor(Color.parseColor("#FF0000"));
-            tv.setTypeface(typeface);
             tv.setTextAppearance(this, android.R.style.TextAppearance_DeviceDefault_Medium);
             if (i == tabHost.getCurrentTab()) {
                 tabHost.getTabWidget().getChildAt(tabHost.getCurrentTab()).setBackgroundColor(Color.parseColor("#FFFBC9"));
                 tv.setTextColor(Color.parseColor("#D046F2"));
+                tv.setTypeface(typeface);
             } else {
                 tabHost.getTabWidget().getChildAt(i).setBackgroundColor(Color.parseColor("#FFF1B5"));
                 tv.setTextColor(Color.parseColor("#FF0000"));
+                tv.setTypeface(typeface);
             }
 
             // Set Height Tab Title
@@ -1179,7 +1180,9 @@ public class HasilKalkulatorGizi extends Activity {
             session.clearSession(HasilKalkulatorGizi.this);
 
             Intent splash = new Intent(this, Splash.class);
+            splash.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TASK | Intent.FLAG_ACTIVITY_CLEAR_TOP);
             startActivity(splash);
+            finish();
         }
 
         //chart

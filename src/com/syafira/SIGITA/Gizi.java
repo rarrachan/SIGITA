@@ -103,7 +103,10 @@ public class Gizi extends Activity implements OnClickListener {
                     Intent dokumentasi = new Intent(this, DokumentasiGizi.class);
                     lastActivity = System.currentTimeMillis();
                     dokumentasi.putExtra("lastActivity", lastActivity);
+                    dokumentasi.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TASK | Intent.FLAG_ACTIVITY_CLEAR_TOP);
                     startActivity(dokumentasi);
+                    finish();
+
                 } else {
                     final Dialog dialog = new Dialog(Gizi.this);
                     dialog.setContentView(R.layout.alert_akses);
@@ -170,7 +173,9 @@ public class Gizi extends Activity implements OnClickListener {
             session.clearSession(Gizi.this);
 
             Intent splash = new Intent(this, Splash.class);
+            splash.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TASK | Intent.FLAG_ACTIVITY_CLEAR_TOP);
             startActivity(splash);
+            finish();
         } else {
             // Check Session
             if (session.checkSession(this)) {

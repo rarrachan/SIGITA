@@ -42,6 +42,7 @@ public class Profil extends Activity{
         Intent fetchID = getIntent();
         lastActivity = fetchID.getLongExtra("lastActivity", 1L);
         final String pathbefore = fetchID.getStringExtra("pathbefore");
+        final int detailJadwalImunisasiID = fetchID.getIntExtra("detailJadwalImunisasiID", 0);
 
         // Session Manager
         session = new SessionManager();
@@ -65,6 +66,8 @@ public class Profil extends Activity{
                 lastActivity = System.currentTimeMillis();
                 tambah_profil.putExtra("lastActivity", lastActivity);
                 tambah_profil.putExtra("pathbefore", pathbefore);
+                tambah_profil.putExtra("detailJadwalImunisasiID", detailJadwalImunisasiID);
+                tambah_profil.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TASK | Intent.FLAG_ACTIVITY_CLEAR_TOP);
                 startActivity(tambah_profil);
 
                 // Close This Activity
@@ -166,8 +169,10 @@ public class Profil extends Activity{
                                     profilCekPasscode.putExtra("passcode", passcode);
                                     profilCekPasscode.putExtra("action", "pilihprofil");
                                     profilCekPasscode.putExtra("pathbefore", pathbefore);
+                                    profilCekPasscode.putExtra("detailJadwalImunisasiID", detailJadwalImunisasiID);
                                     profilCekPasscode.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TASK | Intent.FLAG_ACTIVITY_CLEAR_TOP);
                                     startActivity(profilCekPasscode);
+                                    finish();
 
                                     dialog_profil.dismiss();
                                 } else {
@@ -213,7 +218,10 @@ public class Profil extends Activity{
                                     profilCekPasscode.putExtra("passcode", passcode);
                                     profilCekPasscode.putExtra("action", "detailprofil");
                                     profilCekPasscode.putExtra("pathbefore", pathbefore);
+                                    profilCekPasscode.putExtra("detailJadwalImunisasiID", detailJadwalImunisasiID);
+                                    profilCekPasscode.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TASK | Intent.FLAG_ACTIVITY_CLEAR_TOP);
                                     startActivity(profilCekPasscode);
+                                    finish();
                                 } else {
                                     // Close Dialog
                                     dialog_profil.dismiss();
@@ -224,6 +232,8 @@ public class Profil extends Activity{
                                     detail_profil.putExtra("lastActivity", lastActivity);
                                     detail_profil.putExtra("id", id);
                                     detail_profil.putExtra("pathbefore", pathbefore);
+                                    detail_profil.putExtra("detailJadwalImunisasiID", detailJadwalImunisasiID);
+                                    detail_profil.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TASK | Intent.FLAG_ACTIVITY_CLEAR_TOP);
                                     startActivity(detail_profil);
 
                                     // Close This Activity
@@ -246,6 +256,7 @@ public class Profil extends Activity{
     public void onBackPressed() {
         Intent fetchID = getIntent();
         String pathbefore = fetchID.getStringExtra("pathbefore");
+        int detailJadwalImunisasiID = fetchID.getIntExtra("detailJadwalImunisasiID", 0);
         switch (pathbefore) {
             case "index":
                 // Start Index Activity
@@ -281,6 +292,7 @@ public class Profil extends Activity{
                 // Close This Activity
                 finish();
                 break;
+
             case "tumbuhkembang":
                 // Start Index Activity
                 Intent tumbuhkembang = new Intent(this, TumbuhKembang.class);
@@ -292,6 +304,7 @@ public class Profil extends Activity{
                 // Close This Activity
                 finish();
                 break;
+
             case "rekammedis":
                 // Start Index Activity
                 Intent rekammedis = new Intent(this, RekamMedis.class);
@@ -303,6 +316,7 @@ public class Profil extends Activity{
                 // Close This Activity
                 finish();
                 break;
+
             case "alarmimunisasi":
                 // Start Index Activity
                 Intent alarmimunisasi = new Intent(this, AlarmImunisasi.class);
@@ -322,6 +336,19 @@ public class Profil extends Activity{
                 jadwalimunisasi.putExtra("lastActivity", lastActivity);
                 jadwalimunisasi.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TASK | Intent.FLAG_ACTIVITY_CLEAR_TOP);
                 startActivity(jadwalimunisasi);
+
+                // Close This Activity
+                finish();
+                break;
+
+            case "detailjadwalimunisasi":
+                // Start Index Activity
+                Intent detailjadwalimunisasi = new Intent(this, DetailJadwalImunisasi.class);
+                lastActivity = System.currentTimeMillis();
+                detailjadwalimunisasi.putExtra("lastActivity", lastActivity);
+                detailjadwalimunisasi.putExtra("id", detailJadwalImunisasiID);
+                detailjadwalimunisasi.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TASK | Intent.FLAG_ACTIVITY_CLEAR_TOP);
+                startActivity(detailjadwalimunisasi);
 
                 // Close This Activity
                 finish();
@@ -389,7 +416,9 @@ public class Profil extends Activity{
             session.clearSession(Profil.this);
 
             Intent splash = new Intent(this, Splash.class);
+            splash.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TASK | Intent.FLAG_ACTIVITY_CLEAR_TOP);
             startActivity(splash);
+            finish();
         }
     }
 }

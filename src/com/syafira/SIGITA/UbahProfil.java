@@ -90,6 +90,7 @@ public class UbahProfil extends Activity implements OnClickListener {
         int id = fetchID.getIntExtra("id", 0);
         String nama_sebelumnya = fetchID.getStringExtra("nama");
         lastActivity = fetchID.getLongExtra("lastActivity", 1L);
+        int detailJadwalImunisasiID = fetchID.getIntExtra("detailJadwalImunisasiID", 0);
 
         // Open Database
         db = new DBHelper(this);
@@ -304,6 +305,22 @@ public class UbahProfil extends Activity implements OnClickListener {
                     // Show Toast
                     Toast.makeText(UbahProfil.this, "Kolom Golongan Darah Belum Terisi", Toast.LENGTH_SHORT).show();
 
+                } else if (Float.parseFloat(panjangLahir) < 45) {
+                    // Show Toast
+                    Toast.makeText(UbahProfil.this, "Panjang Lahir Tidak Boleh Kurang Dari 45 cm", Toast.LENGTH_SHORT).show();
+
+                }  else if (Float.parseFloat(panjangLahir) > 120) {
+                    // Show Toast
+                    Toast.makeText(UbahProfil.this, "Panjang Lahir Tidak Boleh Lebih Dari 120 cm", Toast.LENGTH_SHORT).show();
+
+                } else if (Float.parseFloat(beratLahir) < 2) {
+                    // Show Toast
+                    Toast.makeText(UbahProfil.this, "Berat Lahir Tidak Boleh Kurang Dari 2 kg", Toast.LENGTH_SHORT).show();
+
+                } else if (Float.parseFloat(beratLahir) > 30) {
+                    // Show Toast
+                    Toast.makeText(UbahProfil.this, "Berat Lahir Tidak Boleh Lebih Dari 30 kg", Toast.LENGTH_SHORT).show();
+
                 } else {
 
                     String golonganDarah = ((RadioButton) findViewById(profil_golongandarah.getCheckedRadioButtonId())).getText().toString();
@@ -391,6 +408,7 @@ public class UbahProfil extends Activity implements OnClickListener {
 
                     Intent fetchID = getIntent();
                     String pathbefore = fetchID.getStringExtra("pathbefore");
+                    int detailJadwalImunisasiID = fetchID.getIntExtra("detailJadwalImunisasiID", 0);
 
                     // Start Profil Activity
                     Intent detail_profil = new Intent(this, DetailProfil.class);
@@ -398,6 +416,7 @@ public class UbahProfil extends Activity implements OnClickListener {
                     detail_profil.putExtra("lastActivity", lastActivity);
                     detail_profil.putExtra("id", id);
                     detail_profil.putExtra("pathbefore", pathbefore);
+                    detail_profil.putExtra("detailJadwalImunisasiID", detailJadwalImunisasiID);
                     detail_profil.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TASK | Intent.FLAG_ACTIVITY_CLEAR_TOP);
                     startActivity(detail_profil);
 
@@ -555,6 +574,7 @@ public class UbahProfil extends Activity implements OnClickListener {
         Intent fetchID = getIntent();
         int id = fetchID.getIntExtra("id", 0);
         String pathbefore = fetchID.getStringExtra("pathbefore");
+        int detailJadwalImunisasiID = fetchID.getIntExtra("detailJadwalImunisasiID", 0);
 
         // Start Profil Activity
         Intent detail_profil = new Intent(this, DetailProfil.class);
@@ -562,6 +582,7 @@ public class UbahProfil extends Activity implements OnClickListener {
         detail_profil.putExtra("lastActivity", lastActivity);
         detail_profil.putExtra("id", id);
         detail_profil.putExtra("pathbefore", pathbefore);
+        detail_profil.putExtra("detailJadwalImunisasiID", detailJadwalImunisasiID);
         detail_profil.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TASK | Intent.FLAG_ACTIVITY_CLEAR_TOP);
         startActivity(detail_profil);
 
@@ -581,7 +602,9 @@ public class UbahProfil extends Activity implements OnClickListener {
             session.clearSession(UbahProfil.this);
 
             Intent splash = new Intent(this, Splash.class);
+            splash.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TASK | Intent.FLAG_ACTIVITY_CLEAR_TOP);
             startActivity(splash);
+            finish();
         }
     }
 }

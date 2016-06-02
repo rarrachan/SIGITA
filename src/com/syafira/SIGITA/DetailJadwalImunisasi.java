@@ -30,6 +30,7 @@ public class DetailJadwalImunisasi extends Activity {
     private TextView keterangan_vaksin;
     private TextView text_footer;
     private LinearLayout tanggalVaksinLayout;
+    private LinearLayout ProfilLinearLayout;
     private SessionManager session;
     private DBHelper db;
     private long lastActivity;
@@ -44,7 +45,7 @@ public class DetailJadwalImunisasi extends Activity {
 
         // Fetch Intent Extra
         Intent fetchID = getIntent();
-        int id = fetchID.getIntExtra("id", 0);
+        final int id = fetchID.getIntExtra("id", 0);
         lastActivity = fetchID.getLongExtra("lastActivity", 1L);
 
         // Session Manager
@@ -65,6 +66,7 @@ public class DetailJadwalImunisasi extends Activity {
         detail_jadwal_imunisasi = (TextView) findViewById(R.id.detail_jadwal_imunisasi);
         tanggalVaksinLayout = (LinearLayout) findViewById(R.id.tanggalVaksinLayout);
         text_button_profil = (TextView) findViewById(R.id.text_button_profil);
+        ProfilLinearLayout = (LinearLayout) findViewById(R.id.ProfilLinearLayout);
         text_jenis_vaksin = (TextView) findViewById(R.id.text_jenis_vaksin);
         titikdua = (TextView) findViewById(R.id.titikdua);
         jenis_vaksin = (TextView) findViewById(R.id.jenis_vaksin);
@@ -106,14 +108,18 @@ public class DetailJadwalImunisasi extends Activity {
             }
         }
 
-        text_button_profil.setOnClickListener(new View.OnClickListener() {
+        ProfilLinearLayout.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                // Show Profil Activity
+                // Show Detail Profil Activity
                 Intent profil = new Intent(DetailJadwalImunisasi.this, Profil.class);
                 lastActivity = System.currentTimeMillis();
+                profil.putExtra("detailJadwalImunisasiID", id);
                 profil.putExtra("lastActivity", lastActivity);
+                profil.putExtra("pathbefore", "detailjadwalimunisasi");
+                profil.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TASK | Intent.FLAG_ACTIVITY_CLEAR_TOP);
                 startActivity(profil);
+                finish();
             }
         });
 
@@ -151,7 +157,9 @@ public class DetailJadwalImunisasi extends Activity {
             session.clearSession(DetailJadwalImunisasi.this);
 
             Intent splash = new Intent(this, Splash.class);
+            splash.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TASK | Intent.FLAG_ACTIVITY_CLEAR_TOP);
             startActivity(splash);
+            finish();
         } else {
             // Check Session
             if (session.checkSession(this)) {

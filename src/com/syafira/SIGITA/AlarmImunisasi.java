@@ -120,7 +120,6 @@ public class AlarmImunisasi extends Activity {
             // Set Profil Name
 //            text_button_profil.setText(session.loadSession(this, "nama"));
             text_button_profil.setText(String.valueOf(mon));
-        }
 
         final List<String> list = new ArrayList<>();
         if (!cursor.isAfterLast()) {
@@ -233,6 +232,16 @@ public class AlarmImunisasi extends Activity {
                     intentAlarm, PendingIntent.FLAG_NO_CREATE));
         }
 
+        } else {
+            // Start Index Activity
+            Intent imunisasi = new Intent(this, Imunisasi.class);
+            long lastActivity = System.currentTimeMillis();
+            imunisasi.putExtra("lastActivity", lastActivity);
+            imunisasi.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TASK | Intent.FLAG_ACTIVITY_CLEAR_TOP);
+            startActivity(imunisasi);
+            finish();
+        }
+
     }
 
     // Pressed Back Button
@@ -242,6 +251,7 @@ public class AlarmImunisasi extends Activity {
         Intent imunisasi = new Intent(this, Imunisasi.class);
         long lastActivity = System.currentTimeMillis();
         imunisasi.putExtra("lastActivity", lastActivity);
+        imunisasi.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TASK | Intent.FLAG_ACTIVITY_CLEAR_TOP);
         startActivity(imunisasi);
 
         // Close This Activity
@@ -260,7 +270,9 @@ public class AlarmImunisasi extends Activity {
             session.clearSession(AlarmImunisasi.this);
 
             Intent splash = new Intent(this, Splash.class);
+            splash.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TASK | Intent.FLAG_ACTIVITY_CLEAR_TOP);
             startActivity(splash);
+            finish();
         } else {
             // Check Session
             if (session.checkSession(this)) {
@@ -271,6 +283,7 @@ public class AlarmImunisasi extends Activity {
                 Intent imunisasi = new Intent(AlarmImunisasi.this, Imunisasi.class);
                 lastActivity = System.currentTimeMillis();
                 imunisasi.putExtra("lastActivity", lastActivity);
+                imunisasi.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TASK | Intent.FLAG_ACTIVITY_CLEAR_TOP);
                 startActivity(imunisasi);
                 finish();
             }

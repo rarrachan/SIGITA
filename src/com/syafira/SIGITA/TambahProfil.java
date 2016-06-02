@@ -258,13 +258,21 @@ public class TambahProfil extends Activity implements OnClickListener {
 
                 } else if (Float.parseFloat(panjangLahir) < 45) {
                     // Show Toast
-                    Toast.makeText(TambahProfil.this, "Tinggi Tidak Boleh Kurang Dari 45 cm", Toast.LENGTH_SHORT).show();
+                    Toast.makeText(TambahProfil.this, "Panjang Lahir Tidak Boleh Kurang Dari 45 cm", Toast.LENGTH_SHORT).show();
 
-                }  else if (Float.parseFloat(beratLahir) < 2) {
+                }  else if (Float.parseFloat(panjangLahir) > 120) {
                     // Show Toast
-                    Toast.makeText(TambahProfil.this, "Berat Tidak Boleh Kurang Dari 2 kg", Toast.LENGTH_SHORT).show();
+                    Toast.makeText(TambahProfil.this, "Panjang Lahir Tidak Boleh Lebih Dari 120 cm", Toast.LENGTH_SHORT).show();
 
-                }else {
+                } else if (Float.parseFloat(beratLahir) < 2) {
+                    // Show Toast
+                    Toast.makeText(TambahProfil.this, "Berat Lahir Tidak Boleh Kurang Dari 2 kg", Toast.LENGTH_SHORT).show();
+
+                } else if (Float.parseFloat(beratLahir) > 30) {
+                    // Show Toast
+                    Toast.makeText(TambahProfil.this, "Berat Lahir Tidak Boleh Lebih Dari 30 kg", Toast.LENGTH_SHORT).show();
+
+                } else {
                     // Create Dialog
                     final Dialog dialog = new Dialog(TambahProfil.this);
                     dialog.setContentView(R.layout.tambah_passcode);
@@ -382,12 +390,14 @@ public class TambahProfil extends Activity implements OnClickListener {
 
                             Intent fetchID = getIntent();
                             String pathbefore = fetchID.getStringExtra("pathbefore");
+                            int detailJadwalImunisasiID = fetchID.getIntExtra("detailJadwalImunisasiID", 0);
 
                             // Start Profil Activity
                             Intent profil = new Intent(TambahProfil.this, Profil.class);
                             lastActivity = System.currentTimeMillis();
                             profil.putExtra("lastActivity", lastActivity);
                             profil.putExtra("pathbefore", pathbefore);
+                            profil.putExtra("detailJadwalImunisasiID", detailJadwalImunisasiID);
                             profil.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TASK | Intent.FLAG_ACTIVITY_CLEAR_TOP);
                             startActivity(profil);
 
@@ -410,6 +420,7 @@ public class TambahProfil extends Activity implements OnClickListener {
 
                             Intent fetchID = getIntent();
                             String pathbefore = fetchID.getStringExtra("pathbefore");
+                            int detailJadwalImunisasiID = fetchID.getIntExtra("detailJadwalImunisasiID", 0);
 
                             Intent profilPasscode = new Intent(TambahProfil.this, ProfilPasscode.class);
                             profilPasscode.putExtra("nama", nama);
@@ -426,6 +437,7 @@ public class TambahProfil extends Activity implements OnClickListener {
                             profilPasscode.putExtra("lastActivity", lastActivity);
                             profilPasscode.putExtra("action", "tambahprofil");
                             profilPasscode.putExtra("pathbefore", pathbefore);
+                            profilPasscode.putExtra("detailJadwalImunisasiID", detailJadwalImunisasiID);
                             profilPasscode.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TASK | Intent.FLAG_ACTIVITY_CLEAR_TOP);
                             startActivity(profilPasscode);
 
@@ -582,12 +594,14 @@ public class TambahProfil extends Activity implements OnClickListener {
     public void onBackPressed() {
         Intent fetchID = getIntent();
         String pathbefore = fetchID.getStringExtra("pathbefore");
+        int detailJadwalImunisasiID = fetchID.getIntExtra("detailJadwalImunisasiID", 0);
 
         // Start Profil Activity
         Intent profil = new Intent(TambahProfil.this, Profil.class);
         lastActivity = System.currentTimeMillis();
         profil.putExtra("lastActivity", lastActivity);
         profil.putExtra("pathbefore", pathbefore);
+        profil.putExtra("detailJadwalImunisasiID", detailJadwalImunisasiID);
         profil.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TASK | Intent.FLAG_ACTIVITY_CLEAR_TOP);
         startActivity(profil);
 
@@ -607,7 +621,9 @@ public class TambahProfil extends Activity implements OnClickListener {
             session.clearSession(TambahProfil.this);
 
             Intent splash = new Intent(this, Splash.class);
+            splash.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TASK | Intent.FLAG_ACTIVITY_CLEAR_TOP);
             startActivity(splash);
+            finish();
         }
     }
 }

@@ -136,7 +136,7 @@ public class TumbuhKembang extends Activity implements OnClickListener {
                             Intent profil = new Intent(TumbuhKembang.this, Profil.class);
                             lastActivity = System.currentTimeMillis();
                             profil.putExtra("lastActivity", lastActivity);
-                            profil.putExtra("action", "tumbuhkembang");
+                            profil.putExtra("pathbefore", "tumbuhkembang");
                             profil.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TASK | Intent.FLAG_ACTIVITY_CLEAR_TOP);
                             startActivity(profil);
                             finish();
@@ -173,7 +173,9 @@ public class TumbuhKembang extends Activity implements OnClickListener {
             session.clearSession(TumbuhKembang.this);
 
             Intent splash = new Intent(this, Splash.class);
+            splash.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TASK | Intent.FLAG_ACTIVITY_CLEAR_TOP);
             startActivity(splash);
+            finish();
         } else {
             // Check Session
             if (session.checkSession(this)) {
