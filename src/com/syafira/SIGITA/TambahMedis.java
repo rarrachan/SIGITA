@@ -134,7 +134,6 @@ public class TambahMedis extends Activity {
         medis_obat.setTypeface(typeface);
 
         final SimpleDateFormat dateFormatter = new SimpleDateFormat("dd/MM/yyyy", Locale.US);
-        medis_tanggalberobat.setText(dateFormatter.format(Calendar.getInstance().getTime()));
 
         medis_tanggalberobat.setOnClickListener(new View.OnClickListener() {
             @Override

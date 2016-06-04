@@ -379,8 +379,12 @@ public class TambahGaleri extends Activity {
                                 bitmap.getHeight(), matrix, true);
                     }
 
+                    // Resize Large Image
+                    int nh = (int) ( bitmap.getHeight() * (512.0 / bitmap.getWidth()) );
+                    Bitmap scaled = Bitmap.createScaledBitmap(bitmap, 512, nh, true);
+
                     // Set Image
-                    galeri_foto.setImageBitmap(bitmap);
+                    galeri_foto.setImageBitmap(scaled);
 
                     // Save Image Temporary
                     String path = android.os.Environment
@@ -439,8 +443,12 @@ public class TambahGaleri extends Activity {
                                 bitmap.getHeight(), matrix, true);
                     }
 
+                    // Resize Large Image
+                    int nh = (int) ( bitmap.getHeight() * (512.0 / bitmap.getWidth()) );
+                    Bitmap scaled = Bitmap.createScaledBitmap(bitmap, 512, nh, true);
+
                     // Set Image
-                    galeri_foto.setImageBitmap(bitmap);
+                    galeri_foto.setImageBitmap(scaled);
                 } catch (Exception e) {
                     e.printStackTrace();
                 }

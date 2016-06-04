@@ -174,11 +174,7 @@ public class HasilKalkulatorGizi extends Activity {
         kalkulatorgizi_usia.setText(umur);
         kalkulatorgizi_tinggibadan.setText(tinggiBadan);
         kalkulatorgizi_beratbadan.setText(beratBadan);
-        if ((jenisKelamin).equals("Laki-laki")) {
-            kalkulatorgizi_jeniskelamin.setText("Laki-Laki");
-        } else {
-            kalkulatorgizi_jeniskelamin.setText("Perempuan");
-        }
+        kalkulatorgizi_jeniskelamin.setText(jenisKelamin);
 
         // Berat Badan / Umur
         float bbu = 0;

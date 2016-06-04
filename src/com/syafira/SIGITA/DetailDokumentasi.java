@@ -897,7 +897,7 @@ public class DetailDokumentasi extends Activity {
         }
 
         float imtBulanIni = Float.parseFloat(cursor.getString(cursor.getColumnIndex("dokumentasi_berat"))) / ((Float.parseFloat(cursor.getString(cursor.getColumnIndex("dokumentasi_tinggi"))) / 100) * (Float.parseFloat(cursor.getString(cursor.getColumnIndex("dokumentasi_tinggi"))) / 100));
-        IMTUseriesIMTSeluruhBulan.add(Double.parseDouble(cursor.getString(cursor.getColumnIndex("dokumentasi_bulan"))), (double) imtBulanIni);
+        IMTUseriesIMTBulanIni.add(Double.parseDouble(cursor.getString(cursor.getColumnIndex("dokumentasi_bulan"))), (double) imtBulanIni);
 
         // Creating a dataset to hold each series
         IMTUdatasetSeluruhBulan = new XYMultipleSeriesDataset();
@@ -1305,6 +1305,13 @@ public class DetailDokumentasi extends Activity {
             }
         });
 
+        final ScrollView main = (ScrollView) findViewById(R.id.scrollView);
+        main.post(new Runnable() {
+            public void run() {
+                main.scrollTo(0,0);
+            }
+        });
+
     }
 
     // Pressed Back Button
@@ -1340,7 +1347,8 @@ public class DetailDokumentasi extends Activity {
         //chart
         if (BBUChartSeluruhBulan == null || BBUChartBulanIni == null ||
                 TBUChartSeluruhBulan == null || TBUChartBulanIni == null ||
-                BBTBChartSeluruhBulan == null || BBTBChartBulanIni == null) {
+                BBTBChartSeluruhBulan == null || BBTBChartBulanIni == null ||
+                IMTUChartSeluruhBulan == null || IMTUChartBulanIni == null) {
             LinearLayout bbu_seluruhbulan_layout = (LinearLayout) findViewById(R.id.bbu_seluruhbulan_layout);
             BBUChartSeluruhBulan = ChartFactory.getLineChartView(getBaseContext(), BBUdatasetSeluruhBulan, BBUmultiRenderer);
             bbu_seluruhbulan_layout.addView(BBUChartSeluruhBulan);

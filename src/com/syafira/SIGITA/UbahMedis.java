@@ -27,7 +27,7 @@ import java.util.Locale;
 public class UbahMedis extends Activity {
 
     // Declare
-    private TextView tambah_rekam_medis;
+    private TextView ubah_rekam_medis;
     private TextView text_footer;
     private TextView titikdua;
     private TextView text_medis_nama;
@@ -61,7 +61,7 @@ public class UbahMedis extends Activity {
         super.onCreate(savedInstanceState);
 
         // Load Layout
-        setContentView(R.layout.tambah_medis);
+        setContentView(R.layout.ubah_medis);
 
         // Load Session Manager
         session = new SessionManager();
@@ -79,7 +79,7 @@ public class UbahMedis extends Activity {
 
         // Load Widget
         text_footer = (TextView) findViewById(R.id.text_footer);
-        tambah_rekam_medis = (TextView) findViewById(R.id.tambah_rekam_medis);
+        ubah_rekam_medis = (TextView) findViewById(R.id.ubah_rekam_medis);
         titikdua = (TextView) findViewById(R.id.titikdua);
         text_medis_nama = (TextView) findViewById(R.id.text_medis_nama);
         medis_nama = (TextView) findViewById(R.id.medis_nama);
@@ -106,7 +106,7 @@ public class UbahMedis extends Activity {
 
         // Set Custom Font
         Typeface typeface = Typeface.createFromAsset(getAssets(), "teen-webfont.ttf");
-        tambah_rekam_medis.setTypeface(typeface);
+        ubah_rekam_medis.setTypeface(typeface);
         text_footer.setTypeface(typeface);
         titikdua.setTypeface(typeface);
         text_medis_nama.setTypeface(typeface);

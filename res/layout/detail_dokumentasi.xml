@@ -664,65 +664,65 @@
                                           android:background="#FFFBC9"
                                           android:padding="10dp">
 
-                            <TabHost android:id="@+id/tabHostBulanIni"
-                                     android:layout_width="fill_parent"
-                                     android:layout_height="wrap_content"
-                                     android:background="#FFF1B5">
+                                <TabHost android:id="@+id/tabHostBulanIni"
+                                         android:layout_width="fill_parent"
+                                         android:layout_height="wrap_content"
+                                         android:background="#FFF1B5">
 
-                            <LinearLayout android:orientation="vertical"
-                                          android:layout_width="fill_parent"
-                                          android:layout_height="fill_parent"
-                                          android:padding="5dp">
-
-                                <TabWidget android:id="@android:id/tabs"
-                                           android:layout_width="fill_parent"
-                                           android:layout_height="wrap_content"
-                                           android:tabStripEnabled="false"/>
-
-                                <FrameLayout android:id="@android:id/tabcontent"
-                                             android:layout_width="fill_parent"
-                                             android:layout_height="fill_parent"
-                                             android:padding="5dp">
-
-                                    <LinearLayout android:id="@+id/bbu_bulanini_layout"
-                                                  android:orientation="vertical"
+                                    <LinearLayout android:orientation="vertical"
                                                   android:layout_width="fill_parent"
-                                                  android:layout_height="wrap_content"
-                                                  android:background="#FFFBC9"
-                                                  android:paddingTop="10dp">
+                                                  android:layout_height="fill_parent"
+                                                  android:padding="5dp">
+
+                                        <TabWidget android:id="@android:id/tabs"
+                                                   android:layout_width="fill_parent"
+                                                   android:layout_height="wrap_content"
+                                                   android:tabStripEnabled="false"/>
+
+                                        <FrameLayout android:id="@android:id/tabcontent"
+                                                     android:layout_width="fill_parent"
+                                                     android:layout_height="fill_parent"
+                                                     android:padding="5dp">
+
+                                            <LinearLayout android:id="@+id/bbu_bulanini_layout"
+                                                          android:orientation="vertical"
+                                                          android:layout_width="fill_parent"
+                                                          android:layout_height="wrap_content"
+                                                          android:background="#FFFBC9"
+                                                          android:paddingTop="10dp">
+
+                                            </LinearLayout>
+
+                                            <LinearLayout android:id="@+id/tbu_bulanini_layout"
+                                                          android:orientation="vertical"
+                                                          android:layout_width="fill_parent"
+                                                          android:layout_height="wrap_content"
+                                                          android:background="#FFFBC9"
+                                                          android:paddingTop="10dp">
+
+                                            </LinearLayout>
+
+                                            <LinearLayout android:id="@+id/bbtb_bulanini_layout"
+                                                          android:orientation="vertical"
+                                                          android:layout_width="fill_parent"
+                                                          android:layout_height="wrap_content"
+                                                          android:background="#FFFBC9"
+                                                          android:paddingTop="10dp">
+
+                                            </LinearLayout>
+
+                                            <LinearLayout android:id="@+id/imtu_bulanini_layout"
+                                                          android:orientation="vertical"
+                                                          android:layout_width="fill_parent"
+                                                          android:layout_height="wrap_content"
+                                                          android:background="#FFFBC9"
+                                                          android:paddingTop="10dp">
+
+                                            </LinearLayout>
+
+                                        </FrameLayout>
 
                                     </LinearLayout>
-
-                                    <LinearLayout android:id="@+id/tbu_bulanini_layout"
-                                                  android:orientation="vertical"
-                                                  android:layout_width="fill_parent"
-                                                  android:layout_height="wrap_content"
-                                                  android:background="#FFFBC9"
-                                                  android:paddingTop="10dp">
-
-                                    </LinearLayout>
-
-                                    <LinearLayout android:id="@+id/bbtb_bulanini_layout"
-                                                  android:orientation="vertical"
-                                                  android:layout_width="fill_parent"
-                                                  android:layout_height="wrap_content"
-                                                  android:background="#FFFBC9"
-                                                  android:paddingTop="10dp">
-
-                                    </LinearLayout>
-
-                                    <LinearLayout android:id="@+id/imtu_bulanini_layout"
-                                                  android:orientation="vertical"
-                                                  android:layout_width="fill_parent"
-                                                  android:layout_height="wrap_content"
-                                                  android:background="#FFFBC9"
-                                                  android:paddingTop="10dp">
-
-                                    </LinearLayout>
-
-                                </FrameLayout>
-
-                                </LinearLayout>
                                 </TabHost>
                             </LinearLayout>
 
@@ -733,65 +733,65 @@
                                           android:background="#FFFBC9"
                                           android:padding="10dp">
 
-                            <TabHost android:id="@+id/tabHostSeluruhBulan"
-                                     android:layout_width="fill_parent"
-                                     android:layout_height="wrap_content"
-                                     android:background="#FFF1B5">
+                                <TabHost android:id="@+id/tabHostSeluruhBulan"
+                                         android:layout_width="fill_parent"
+                                         android:layout_height="wrap_content"
+                                         android:background="#FFF1B5">
 
-                            <LinearLayout android:orientation="vertical"
-                                          android:layout_width="fill_parent"
-                                          android:layout_height="fill_parent"
-                                          android:padding="5dp">
-
-                                <TabWidget android:id="@android:id/tabs"
-                                           android:layout_width="fill_parent"
-                                           android:layout_height="wrap_content"
-                                           android:tabStripEnabled="false"/>
-
-                                <FrameLayout android:id="@android:id/tabcontent"
-                                             android:layout_width="fill_parent"
-                                             android:layout_height="fill_parent"
-                                             android:padding="5dp">
-
-                                    <LinearLayout android:id="@+id/bbu_seluruhbulan_layout"
-                                                  android:orientation="vertical"
+                                    <LinearLayout android:orientation="vertical"
                                                   android:layout_width="fill_parent"
-                                                  android:layout_height="wrap_content"
-                                                  android:background="#FFFBC9"
-                                                  android:paddingTop="10dp">
+                                                  android:layout_height="fill_parent"
+                                                  android:padding="5dp">
+
+                                        <TabWidget android:id="@android:id/tabs"
+                                                   android:layout_width="fill_parent"
+                                                   android:layout_height="wrap_content"
+                                                   android:tabStripEnabled="false"/>
+
+                                        <FrameLayout android:id="@android:id/tabcontent"
+                                                     android:layout_width="fill_parent"
+                                                     android:layout_height="fill_parent"
+                                                     android:padding="5dp">
+
+                                            <LinearLayout android:id="@+id/bbu_seluruhbulan_layout"
+                                                          android:orientation="vertical"
+                                                          android:layout_width="fill_parent"
+                                                          android:layout_height="wrap_content"
+                                                          android:background="#FFFBC9"
+                                                          android:paddingTop="10dp">
+
+                                            </LinearLayout>
+
+                                            <LinearLayout android:id="@+id/tbu_seluruhbulan_layout"
+                                                          android:orientation="vertical"
+                                                          android:layout_width="fill_parent"
+                                                          android:layout_height="wrap_content"
+                                                          android:background="#FFFBC9"
+                                                          android:paddingTop="10dp">
+
+                                            </LinearLayout>
+
+                                            <LinearLayout android:id="@+id/bbtb_seluruhbulan_layout"
+                                                          android:orientation="vertical"
+                                                          android:layout_width="fill_parent"
+                                                          android:layout_height="wrap_content"
+                                                          android:background="#FFFBC9"
+                                                          android:paddingTop="10dp">
+
+                                            </LinearLayout>
+
+                                            <LinearLayout android:id="@+id/imtu_seluruhbulan_layout"
+                                                          android:orientation="vertical"
+                                                          android:layout_width="fill_parent"
+                                                          android:layout_height="wrap_content"
+                                                          android:background="#FFFBC9"
+                                                          android:paddingTop="10dp">
+
+                                            </LinearLayout>
+
+                                        </FrameLayout>
 
                                     </LinearLayout>
-
-                                    <LinearLayout android:id="@+id/tbu_seluruhbulan_layout"
-                                                  android:orientation="vertical"
-                                                  android:layout_width="fill_parent"
-                                                  android:layout_height="wrap_content"
-                                                  android:background="#FFFBC9"
-                                                  android:paddingTop="10dp">
-
-                                    </LinearLayout>
-
-                                    <LinearLayout android:id="@+id/bbtb_seluruhbulan_layout"
-                                                  android:orientation="vertical"
-                                                  android:layout_width="fill_parent"
-                                                  android:layout_height="wrap_content"
-                                                  android:background="#FFFBC9"
-                                                  android:paddingTop="10dp">
-
-                                    </LinearLayout>
-
-                                    <LinearLayout android:id="@+id/imtu_seluruhbulan_layout"
-                                                  android:orientation="vertical"
-                                                  android:layout_width="fill_parent"
-                                                  android:layout_height="wrap_content"
-                                                  android:background="#FFFBC9"
-                                                  android:paddingTop="10dp">
-
-                                    </LinearLayout>
-
-                                </FrameLayout>
-
-                                </LinearLayout>
                                 </TabHost>
                             </LinearLayout>
 
