@@ -91,23 +91,19 @@
 
                     <EditText
                             android:id="@+id/pass1"
-                            android:layout_width="0dp"
-                            android:layout_height="0dp"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_weight="1"
+                            android:padding="20dp"
                             android:gravity="center"
+                            android:background="@drawable/pin_txt_bg"
+                            android:adjustViewBounds="true"
+                            android:cursorVisible="false"
+                            android:textColor="@android:color/transparent"
                             android:inputType="numberPassword"
                             >
                         <requestFocus/>
                     </EditText>
-
-                    <ImageView
-                            android:id="@+id/pass1image"
-                            android:layout_width="0dp"
-                            android:layout_height="wrap_content"
-                            android:layout_weight="1"
-                            android:background="@drawable/pin_txt_bg"
-                            android:adjustViewBounds="true"
-                            android:contentDescription="@string/app_name"
-                            android:gravity="center"/>
 
                     <!-- Start Blank Space -->
                     <View
@@ -118,22 +114,18 @@
 
                     <EditText
                             android:id="@+id/pass2"
-                            android:layout_width="0dp"
-                            android:layout_height="0dp"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_weight="1"
+                            android:padding="20dp"
+                            android:background="@drawable/pin_txt_bg"
+                            android:adjustViewBounds="true"
+                            android:cursorVisible="false"
+                            android:textColor="@android:color/transparent"
                             android:gravity="center"
                             android:inputType="numberPassword"
                             >
                     </EditText>
-
-                    <ImageView
-                            android:id="@+id/pass2image"
-                            android:layout_width="0dp"
-                            android:layout_height="wrap_content"
-                            android:layout_weight="1"
-                            android:adjustViewBounds="true"
-                            android:background="@drawable/pin_txt_bg"
-                            android:contentDescription="@string/app_name"
-                            android:gravity="center"/>
 
                     <!-- Start Blank Space -->
                     <View
@@ -144,22 +136,18 @@
 
                     <EditText
                             android:id="@+id/pass3"
-                            android:layout_width="0dp"
-                            android:layout_height="0dp"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_weight="1"
+                            android:padding="20dp"
+                            android:background="@drawable/pin_txt_bg"
+                            android:adjustViewBounds="true"
+                            android:cursorVisible="false"
+                            android:textColor="@android:color/transparent"
                             android:gravity="center"
                             android:inputType="numberPassword"
                             >
                     </EditText>
-
-                    <ImageView
-                            android:id="@+id/pass3image"
-                            android:layout_width="0dp"
-                            android:layout_height="wrap_content"
-                            android:layout_weight="1"
-                            android:adjustViewBounds="true"
-                            android:background="@drawable/pin_txt_bg"
-                            android:contentDescription="@string/app_name"
-                            android:gravity="center"/>
 
                     <!-- Start Blank Space -->
                     <View
@@ -170,22 +158,18 @@
 
                     <EditText
                             android:id="@+id/pass4"
-                            android:layout_width="0dp"
-                            android:layout_height="0dp"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_weight="1"
+                            android:padding="20dp"
+                            android:background="@drawable/pin_txt_bg"
+                            android:adjustViewBounds="true"
+                            android:cursorVisible="false"
+                            android:textColor="@android:color/transparent"
                             android:gravity="center"
                             android:inputType="numberPassword"
                             >
                     </EditText>
-
-                    <ImageView
-                            android:id="@+id/pass4image"
-                            android:layout_width="0dp"
-                            android:layout_height="wrap_content"
-                            android:layout_weight="1"
-                            android:adjustViewBounds="true"
-                            android:background="@drawable/pin_txt_bg"
-                            android:contentDescription="@string/app_name"
-                            android:gravity="center"/>
 
                     <!-- Start Blank Space -->
                     <View
@@ -200,12 +184,11 @@
                             android:layout_height="wrap_content"
                             android:gravity="center"
                             android:visibility="gone"
-                            android:inputType="numberPassword" >
+                            android:inputType="numberPassword">
 
                     </EditText>
 
                 </LinearLayout>
-
 
             </LinearLayout>
             <!-- End Linear Layout Content -->

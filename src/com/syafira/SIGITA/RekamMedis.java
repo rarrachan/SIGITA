@@ -72,7 +72,6 @@ public class RekamMedis extends Activity {
             // Set Profil Name
             text_button_profil.setText(session.loadSession(this, "nama"));
 
-
             TableLayout rekam_medis = (TableLayout) findViewById(R.id.rekam_medis);
 
             // Get Data from Database

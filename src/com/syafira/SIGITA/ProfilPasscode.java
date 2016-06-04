@@ -19,6 +19,7 @@ import android.os.Environment;
 import android.text.Editable;
 import android.text.TextWatcher;
 import android.view.KeyEvent;
+import android.view.MotionEvent;
 import android.view.View;
 import android.view.WindowManager;
 import android.view.inputmethod.EditorInfo;
@@ -44,10 +45,6 @@ public class ProfilPasscode extends Activity {
     private EditText pass3;
     private EditText pass4;
     private EditText passcode;
-    private ImageView pass1image;
-    private ImageView pass2image;
-    private ImageView pass3image;
-    private ImageView pass4image;
     private SessionManager session;
     private long lastActivity;
 
@@ -89,10 +86,6 @@ public class ProfilPasscode extends Activity {
         pass3 = (EditText) findViewById(R.id.pass3);
         pass4 = (EditText) findViewById(R.id.pass4);
         passcode = (EditText) findViewById(R.id.passcode);
-        pass1image = (ImageView) findViewById(R.id.pass1image);
-        pass2image = (ImageView) findViewById(R.id.pass2image);
-        pass3image = (ImageView) findViewById(R.id.pass3image);
-        pass4image = (ImageView) findViewById(R.id.pass4image);
 
         // Set Custom Font
         final Typeface typeface = Typeface.createFromAsset(getAssets(), "teen-webfont.ttf");
@@ -142,7 +135,7 @@ public class ProfilPasscode extends Activity {
 
                     pass1.clearFocus();
                     pass2.requestFocus();
-                    pass1image.setBackgroundResource(R.drawable.pin_txt_bg_star);
+                    pass1.setBackgroundResource(R.drawable.pin_txt_bg_star);
                 }
             }
         });
@@ -168,7 +161,7 @@ public class ProfilPasscode extends Activity {
 
                     pass2.clearFocus();
                     pass3.requestFocus();
-                    pass2image.setBackgroundResource(R.drawable.pin_txt_bg_star);
+                    pass2.setBackgroundResource(R.drawable.pin_txt_bg_star);
                 }
             }
         });
@@ -190,7 +183,7 @@ public class ProfilPasscode extends Activity {
                     pass3.clearFocus();
                     pass4.requestFocus();
 
-                    pass3image.setBackgroundResource(R.drawable.pin_txt_bg_star);
+                    pass3.setBackgroundResource(R.drawable.pin_txt_bg_star);
                 }
 
             }
@@ -211,7 +204,7 @@ public class ProfilPasscode extends Activity {
                 if (pass4.getText().toString().trim().length() == 1) {
 
                     pass4.clearFocus();
-                    pass4image.setBackgroundResource(R.drawable.pin_txt_bg_star);
+                    pass4.setBackgroundResource(R.drawable.pin_txt_bg_star);
                     //Hide keyboard
                     InputMethodManager imm = (InputMethodManager) getSystemService(Context.INPUT_METHOD_SERVICE);
                     imm.hideSoftInputFromWindow(pass4.getWindowToken(), 0);
@@ -420,7 +413,7 @@ public class ProfilPasscode extends Activity {
             public boolean onKey(View paramView, int paramInt, KeyEvent paramKeyEvent) {
                 if ((paramKeyEvent.getAction() == KeyEvent.ACTION_DOWN) && (paramInt == 67) && (ProfilPasscode.this.pass2.getText().length() == 0)) {
                     pass1.requestFocus();
-                    pass1image.setBackgroundResource(R.drawable.pin_txt_bg);
+                    pass1.setBackgroundResource(R.drawable.pin_txt_bg);
                     pass1.setText("");
                 }
 
@@ -432,7 +425,7 @@ public class ProfilPasscode extends Activity {
             public boolean onKey(View paramView, int paramInt, KeyEvent paramKeyEvent) {
                 if ((paramKeyEvent.getAction() == KeyEvent.ACTION_DOWN) && (paramInt == 67) && (ProfilPasscode.this.pass3.getText().length() == 0)) {
                     pass2.requestFocus();
-                    pass2image.setBackgroundResource(R.drawable.pin_txt_bg);
+                    pass2.setBackgroundResource(R.drawable.pin_txt_bg);
                     pass2.setText("");
                 }
 
@@ -444,11 +437,83 @@ public class ProfilPasscode extends Activity {
             public boolean onKey(View paramView, int paramInt, KeyEvent paramKeyEvent) {
                 if ((paramKeyEvent.getAction() == KeyEvent.ACTION_DOWN) && (paramInt == 67) && (ProfilPasscode.this.pass4.getText().length() == 0)) {
                     pass3.requestFocus();
-                    pass3image.setBackgroundResource(R.drawable.pin_txt_bg);
+                    pass3.setBackgroundResource(R.drawable.pin_txt_bg);
                     pass3.setText("");
                 }
 
                 return false;
+            }
+        });
+
+        pass1.setOnTouchListener(new View.OnTouchListener() {
+            @Override
+            public boolean onTouch(View v, MotionEvent event) {
+                if (MotionEvent.ACTION_UP != event.getAction()) {
+                    if (pass1.getText().length() == 0) {
+                        pass1.requestFocus();
+                    } else if (pass2.getText().length() == 0) {
+                        pass2.requestFocus();
+                    } else if (pass3.getText().length() == 0) {
+                        pass3.requestFocus();
+                    } else if (pass4.getText().length() == 0) {
+                        pass4.requestFocus();
+                    }
+                }
+                return true;
+            }
+        });
+
+        pass2.setOnTouchListener(new View.OnTouchListener() {
+            @Override
+            public boolean onTouch(View v, MotionEvent event) {
+                if (MotionEvent.ACTION_UP != event.getAction()) {
+                    if (pass1.getText().length() == 0) {
+                        pass1.requestFocus();
+                    } else if (pass2.getText().length() == 0) {
+                        pass2.requestFocus();
+                    } else if (pass3.getText().length() == 0) {
+                        pass3.requestFocus();
+                    } else if (pass4.getText().length() == 0) {
+                        pass4.requestFocus();
+                    }
+                }
+                return true;
+            }
+        });
+
+        pass3.setOnTouchListener(new View.OnTouchListener() {
+            @Override
+            public boolean onTouch(View v, MotionEvent event) {
+                if (MotionEvent.ACTION_UP != event.getAction()) {
+                    if (pass1.getText().length() == 0) {
+                        pass1.requestFocus();
+                    } else if (pass2.getText().length() == 0) {
+                        pass2.requestFocus();
+                    } else if (pass3.getText().length() == 0) {
+                        pass3.requestFocus();
+                    } else if (pass4.getText().length() == 0) {
+                        pass4.requestFocus();
+                    }
+                }
+                return true;
+            }
+        });
+
+        pass4.setOnTouchListener(new View.OnTouchListener() {
+            @Override
+            public boolean onTouch(View v, MotionEvent event) {
+                if (MotionEvent.ACTION_UP != event.getAction()) {
+                    if (pass1.getText().length() == 0) {
+                        pass1.requestFocus();
+                    } else if (pass2.getText().length() == 0) {
+                        pass2.requestFocus();
+                    } else if (pass3.getText().length() == 0) {
+                        pass3.requestFocus();
+                    } else if (pass4.getText().length() == 0) {
+                        pass4.requestFocus();
+                    }
+                }
+                return true;
             }
         });
     }

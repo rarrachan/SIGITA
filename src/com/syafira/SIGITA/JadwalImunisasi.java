@@ -60,8 +60,6 @@ public class JadwalImunisasi extends Activity {
             text_button_profil.setText(session.loadSession(this, "nama"));
         }
 
-        TableLayout jadwal_imunisasi = (TableLayout) findViewById(R.id.jadwal_imunisasi);
-
         ProfilLinearLayout.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -83,6 +81,8 @@ public class JadwalImunisasi extends Activity {
         text_footer.setTypeface(typeface);
         text_jenis_vaksin.setTypeface(typeface);
         text_usia_vaksin.setTypeface(typeface);
+
+        TableLayout jadwal_imunisasi = (TableLayout) findViewById(R.id.jadwal_imunisasi);
 
         // Get Data from Database
         Cursor cursor = db.getList();

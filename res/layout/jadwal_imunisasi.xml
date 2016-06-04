@@ -71,7 +71,8 @@
                     android:layout_height="wrap_content"
                     android:layout_marginLeft="20dp"
                     android:paddingRight="10dp"
-                    android:background="@drawable/button_rounded" android:gravity="left">
+                    android:background="@drawable/button_rounded"
+                    android:gravity="left">
 
                 <!-- Start Button Profil -->
                 <Button
@@ -107,8 +108,8 @@
                     android:layout_gravity="center_vertical"
                     android:layout_marginBottom="50dp">
 
-                <!-- Start Blank Space -->
-                <!-- End Blank Space -->
+                <!-- Start Linear Layout Content -->
+                <!-- End Linear Layout Content -->
 
                 <HorizontalScrollView
                         android:layout_width="fill_parent"
@@ -139,17 +140,17 @@
                                     android:layout_height="0dp"
                                     android:padding="5dp"
                                     style="@android:style/TextAppearance.DeviceDefault.Medium"
-                                    android:text="@string/gerakan_halus"
+                                    android:text="@string/usia_tumbang"
                                     android:visibility="invisible"/>
-
 
                             <TextView
                                     android:layout_width="wrap_content"
                                     android:layout_height="0dp"
                                     android:padding="5dp"
                                     style="@android:style/TextAppearance.DeviceDefault.Medium"
-                                    android:text="@string/gerakan_halus"
+                                    android:text="@string/usia_tumbang"
                                     android:visibility="invisible"/>
+
                         </TableRow>
 
                         <TableRow>
@@ -157,8 +158,8 @@
                             <TextView
                                     android:id="@+id/text_jenis_vaksin"
                                     android:layout_width="0dp"
-                                    android:layout_height="match_parent"
                                     android:layout_weight="1"
+                                    android:layout_height="match_parent"
                                     android:padding="5dp"
                                     android:layout_marginTop="1dp"
                                     android:layout_marginBottom="1dp"
@@ -169,33 +170,35 @@
                                     style="@android:style/TextAppearance.DeviceDefault.Medium"
                                     android:background="@drawable/border_row"
                                     android:text="@string/jenis_vaksin"/>
+
                             <TextView
                                     android:id="@+id/text_usia_vaksin"
                                     android:layout_width="0dp"
-                                    android:layout_height="match_parent"
                                     android:layout_weight="1"
-                                    android:layout_margin="1dp"
-                                    android:padding="5dp"
-                                    android:textColor="#FF0000"
-                                    android:background="@drawable/border_row"
-                                    android:gravity="center_vertical"
-                                    style="@android:style/TextAppearance.DeviceDefault.Medium"
-                                    android:text="@string/usia_vaksin"/>
-                            <TextView
-                                    android:layout_width="0dp"
                                     android:layout_height="match_parent"
+                                    android:padding="5dp"
+                                    android:layout_margin="1dp"
+                                    android:gravity="center_vertical"
+                                    android:textColor="#FF0000"
+                                    style="@android:style/TextAppearance.DeviceDefault.Medium"
+                                    android:background="@drawable/border_row"
+                                    android:text="@string/usia_vaksin"/>
+
+                            <TextView
+                                    android:id="@+id/text_vaksin_detail"
+                                    android:layout_width="0dp"
                                     android:layout_weight=".5"
+                                    android:layout_height="match_parent"
                                     android:layout_marginTop="1dp"
                                     android:layout_marginBottom="1dp"
                                     android:layout_marginLeft="1dp"
                                     android:layout_marginRight="3dp"
                                     android:background="@drawable/border_row"
                                     android:padding="5dp"
-                                    android:textColor="#D046F2"
-                                    style="@android:style/TextAppearance.DeviceDefault.Medium"
-                                    android:text="@string/blank"/>
+                                    android:textColor="#FF0000"
+                                    android:gravity="center_vertical"
+                                    style="@android:style/TextAppearance.DeviceDefault.Medium"/>
                         </TableRow>
-
                     </TableLayout>
 
                 </HorizontalScrollView>

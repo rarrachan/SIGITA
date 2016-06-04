@@ -16,6 +16,7 @@ import android.provider.MediaStore;
 import android.text.Editable;
 import android.text.TextWatcher;
 import android.view.KeyEvent;
+import android.view.MotionEvent;
 import android.view.View;
 import android.view.WindowManager;
 import android.view.inputmethod.EditorInfo;
@@ -40,10 +41,6 @@ public class ProfilCekPasscode extends Activity {
     private EditText pass3;
     private EditText pass4;
     private EditText passcode;
-    private ImageView pass1image;
-    private ImageView pass2image;
-    private ImageView pass3image;
-    private ImageView pass4image;
     private SessionManager session;
     private long lastActivity;
 
@@ -78,10 +75,6 @@ public class ProfilCekPasscode extends Activity {
         pass3 = (EditText) findViewById(R.id.pass3);
         pass4 = (EditText) findViewById(R.id.pass4);
         passcode = (EditText) findViewById(R.id.passcode);
-        pass1image = (ImageView) findViewById(R.id.pass1image);
-        pass2image = (ImageView) findViewById(R.id.pass2image);
-        pass3image = (ImageView) findViewById(R.id.pass3image);
-        pass4image = (ImageView) findViewById(R.id.pass4image);
 
         // Set Custom Font
         final Typeface typeface = Typeface.createFromAsset(getAssets(), "teen-webfont.ttf");
@@ -131,7 +124,7 @@ public class ProfilCekPasscode extends Activity {
 
                     pass1.clearFocus();
                     pass2.requestFocus();
-                    pass1image.setBackgroundResource(R.drawable.pin_txt_bg_star);
+                    pass1.setBackgroundResource(R.drawable.pin_txt_bg_star);
                 }
             }
         });
@@ -157,7 +150,7 @@ public class ProfilCekPasscode extends Activity {
 
                     pass2.clearFocus();
                     pass3.requestFocus();
-                    pass2image.setBackgroundResource(R.drawable.pin_txt_bg_star);
+                    pass2.setBackgroundResource(R.drawable.pin_txt_bg_star);
                 }
             }
         });
@@ -179,7 +172,7 @@ public class ProfilCekPasscode extends Activity {
                     pass3.clearFocus();
                     pass4.requestFocus();
 
-                    pass3image.setBackgroundResource(R.drawable.pin_txt_bg_star);
+                    pass3.setBackgroundResource(R.drawable.pin_txt_bg_star);
                 }
 
             }
@@ -200,7 +193,7 @@ public class ProfilCekPasscode extends Activity {
                 if (pass4.getText().toString().trim().length() == 1) {
 
                     pass4.clearFocus();
-                    pass4image.setBackgroundResource(R.drawable.pin_txt_bg_star);
+                    pass4.setBackgroundResource(R.drawable.pin_txt_bg_star);
 
                     //Hide keyboard
                     InputMethodManager imm = (InputMethodManager) getSystemService(Context.INPUT_METHOD_SERVICE);
@@ -272,6 +265,16 @@ public class ProfilCekPasscode extends Activity {
                             } else {
                                 Toast.makeText(ProfilCekPasscode.this, "Passcode Salah", Toast.LENGTH_SHORT).show();
 
+                                // Start Profil Activity
+                                Intent detailprofil = new Intent(ProfilCekPasscode.this, DetailProfil.class);
+                                lastActivity = System.currentTimeMillis();
+                                detailprofil.putExtra("lastActivity", lastActivity);
+                                detailprofil.putExtra("id", id);
+                                detailprofil.putExtra("pathbefore", pathbefore);
+                                detailprofil.putExtra("detailJadwalImunisasiID", detailJadwalImunisasiID);
+                                detailprofil.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TASK | Intent.FLAG_ACTIVITY_CLEAR_TOP);
+                                startActivity(detailprofil);
+
                                 // Close This Activity
                                 finish();
                             }
@@ -292,6 +295,15 @@ public class ProfilCekPasscode extends Activity {
                                 finish();
                             } else {
                                 Toast.makeText(ProfilCekPasscode.this, "Passcode Salah", Toast.LENGTH_SHORT).show();
+
+                                // Start Profil Activity
+                                Intent profil = new Intent(ProfilCekPasscode.this, Profil.class);
+                                lastActivity = System.currentTimeMillis();
+                                profil.putExtra("lastActivity", lastActivity);
+                                profil.putExtra("pathbefore", pathbefore);
+                                profil.putExtra("detailJadwalImunisasiID", detailJadwalImunisasiID);
+                                profil.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TASK | Intent.FLAG_ACTIVITY_CLEAR_TOP);
+                                startActivity(profil);
 
                                 // Close This Activity
                                 finish();
@@ -315,6 +327,16 @@ public class ProfilCekPasscode extends Activity {
                                 finish();
                             } else {
                                 Toast.makeText(ProfilCekPasscode.this, "Passcode Salah", Toast.LENGTH_SHORT).show();
+
+                                // Start Profil Activity
+                                Intent passcode = new Intent(ProfilCekPasscode.this, Passcode.class);
+                                lastActivity = System.currentTimeMillis();
+                                passcode.putExtra("lastActivity", lastActivity);
+                                passcode.putExtra("id", id);
+                                passcode.putExtra("pathbefore", pathbefore);
+                                passcode.putExtra("detailJadwalImunisasiID", detailJadwalImunisasiID);
+                                passcode.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TASK | Intent.FLAG_ACTIVITY_CLEAR_TOP);
+                                startActivity(passcode);
 
                                 // Close This Activity
                                 finish();
@@ -357,6 +379,16 @@ public class ProfilCekPasscode extends Activity {
                             } else {
                                 Toast.makeText(ProfilCekPasscode.this, "Passcode Salah", Toast.LENGTH_SHORT).show();
 
+                                // Start Profil Activity
+                                Intent passcode = new Intent(ProfilCekPasscode.this, Passcode.class);
+                                lastActivity = System.currentTimeMillis();
+                                passcode.putExtra("lastActivity", lastActivity);
+                                passcode.putExtra("id", id);
+                                passcode.putExtra("pathbefore", pathbefore);
+                                passcode.putExtra("detailJadwalImunisasiID", detailJadwalImunisasiID);
+                                passcode.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TASK | Intent.FLAG_ACTIVITY_CLEAR_TOP);
+                                startActivity(passcode);
+
                                 // Close This Activity
                                 finish();
                             }
@@ -376,6 +408,16 @@ public class ProfilCekPasscode extends Activity {
                                 finish();
                             } else {
                                 Toast.makeText(ProfilCekPasscode.this, "Passcode Salah", Toast.LENGTH_SHORT).show();
+
+                                // Start Profil Activity
+                                Intent detailprofil = new Intent(ProfilCekPasscode.this, DetailProfil.class);
+                                lastActivity = System.currentTimeMillis();
+                                detailprofil.putExtra("lastActivity", lastActivity);
+                                detailprofil.putExtra("id", id);
+                                detailprofil.putExtra("pathbefore", pathbefore);
+                                detailprofil.putExtra("detailJadwalImunisasiID", detailJadwalImunisasiID);
+                                detailprofil.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TASK | Intent.FLAG_ACTIVITY_CLEAR_TOP);
+                                startActivity(detailprofil);
 
                                 // Close This Activity
                                 finish();
@@ -449,6 +491,16 @@ public class ProfilCekPasscode extends Activity {
                             } else {
                                 Toast.makeText(ProfilCekPasscode.this, "Passcode Salah", Toast.LENGTH_SHORT).show();
 
+                                // Start Profil Activity
+                                Intent detailprofil = new Intent(ProfilCekPasscode.this, DetailProfil.class);
+                                lastActivity = System.currentTimeMillis();
+                                detailprofil.putExtra("lastActivity", lastActivity);
+                                detailprofil.putExtra("id", id);
+                                detailprofil.putExtra("pathbefore", pathbefore);
+                                detailprofil.putExtra("detailJadwalImunisasiID", detailJadwalImunisasiID);
+                                detailprofil.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TASK | Intent.FLAG_ACTIVITY_CLEAR_TOP);
+                                startActivity(detailprofil);
+
                                 // Close This Activity
                                 finish();
                             }
@@ -462,7 +514,7 @@ public class ProfilCekPasscode extends Activity {
             public boolean onKey(View paramView, int paramInt, KeyEvent paramKeyEvent) {
                 if ((paramKeyEvent.getAction() == KeyEvent.ACTION_DOWN) && (paramInt == 67) && (ProfilCekPasscode.this.pass2.getText().length() == 0)) {
                     pass1.requestFocus();
-                    pass1image.setBackgroundResource(R.drawable.pin_txt_bg);
+                    pass1.setBackgroundResource(R.drawable.pin_txt_bg);
                     pass1.setText("");
                 }
 
@@ -474,7 +526,7 @@ public class ProfilCekPasscode extends Activity {
             public boolean onKey(View paramView, int paramInt, KeyEvent paramKeyEvent) {
                 if ((paramKeyEvent.getAction() == KeyEvent.ACTION_DOWN) && (paramInt == 67) && (ProfilCekPasscode.this.pass3.getText().length() == 0)) {
                     pass2.requestFocus();
-                    pass2image.setBackgroundResource(R.drawable.pin_txt_bg);
+                    pass2.setBackgroundResource(R.drawable.pin_txt_bg);
                     pass2.setText("");
                 }
 
@@ -486,7 +538,7 @@ public class ProfilCekPasscode extends Activity {
             public boolean onKey(View paramView, int paramInt, KeyEvent paramKeyEvent) {
                 if ((paramKeyEvent.getAction() == KeyEvent.ACTION_DOWN) && (paramInt == 67) && (ProfilCekPasscode.this.pass4.getText().length() == 0)) {
                     pass3.requestFocus();
-                    pass3image.setBackgroundResource(R.drawable.pin_txt_bg);
+                    pass3.setBackgroundResource(R.drawable.pin_txt_bg);
                     pass3.setText("");
                 }
 
@@ -550,19 +602,13 @@ public class ProfilCekPasscode extends Activity {
                             if (profilDirectory.isDirectory()) {
                                 String[] children = profilDirectory.list();
                                 for (String aChildren : children) {
-                                    new File(profilDirectory, aChildren).delete();
+                                    if(new File(profilDirectory, aChildren).delete()){
+                                        //Scan Gallery
+                                        getContentResolver().delete(MediaStore.Images.Media.EXTERNAL_CONTENT_URI, MediaStore.Images.Media.DATA + "=?", new String[]{profilDirectory + "/" + aChildren});
+                                    }
                                 }
                                 profilDirectory.delete();
                             }
-
-                            // Scan Gallery
-                            File scanGallery = new File(Environment.getExternalStorageDirectory() + "/SIGITA/" + nama.replaceAll(" ", "_"));
-                            MediaScannerConnection.scanFile(ProfilCekPasscode.this,
-                                    new String[]{scanGallery.toString()}, null,
-                                    new MediaScannerConnection.OnScanCompletedListener() {
-                                        public void onScanCompleted(String path, Uri uri) {
-                                        }
-                                    });
 
                             // Clear Session
                             session.clearSession(ProfilCekPasscode.this);
@@ -606,16 +652,87 @@ public class ProfilCekPasscode extends Activity {
 
                         // Clear Activity
                         finish();
-
                     }
                 });
+            }
+        });
+
+        pass1.setOnTouchListener(new View.OnTouchListener() {
+            @Override
+            public boolean onTouch(View v, MotionEvent event) {
+                if (MotionEvent.ACTION_UP != event.getAction()) {
+                    if (pass1.getText().length() == 0) {
+                        pass1.requestFocus();
+                    } else if (pass2.getText().length() == 0) {
+                        pass2.requestFocus();
+                    } else if (pass3.getText().length() == 0) {
+                        pass3.requestFocus();
+                    } else if (pass4.getText().length() == 0) {
+                        pass4.requestFocus();
+                    }
+                }
+                return true;
+            }
+        });
+
+        pass2.setOnTouchListener(new View.OnTouchListener() {
+            @Override
+            public boolean onTouch(View v, MotionEvent event) {
+                if (MotionEvent.ACTION_UP != event.getAction()) {
+                    if (pass1.getText().length() == 0) {
+                        pass1.requestFocus();
+                    } else if (pass2.getText().length() == 0) {
+                        pass2.requestFocus();
+                    } else if (pass3.getText().length() == 0) {
+                        pass3.requestFocus();
+                    } else if (pass4.getText().length() == 0) {
+                        pass4.requestFocus();
+                    }
+                }
+                return true;
+            }
+        });
+
+        pass3.setOnTouchListener(new View.OnTouchListener() {
+            @Override
+            public boolean onTouch(View v, MotionEvent event) {
+                if (MotionEvent.ACTION_UP != event.getAction()) {
+                    if (pass1.getText().length() == 0) {
+                        pass1.requestFocus();
+                    } else if (pass2.getText().length() == 0) {
+                        pass2.requestFocus();
+                    } else if (pass3.getText().length() == 0) {
+                        pass3.requestFocus();
+                    } else if (pass4.getText().length() == 0) {
+                        pass4.requestFocus();
+                    }
+                }
+                return true;
+            }
+        });
+
+        pass4.setOnTouchListener(new View.OnTouchListener() {
+            @Override
+            public boolean onTouch(View v, MotionEvent event) {
+                if (MotionEvent.ACTION_UP != event.getAction()) {
+                    if (pass1.getText().length() == 0) {
+                        pass1.requestFocus();
+                    } else if (pass2.getText().length() == 0) {
+                        pass2.requestFocus();
+                    } else if (pass3.getText().length() == 0) {
+                        pass3.requestFocus();
+                    } else if (pass4.getText().length() == 0) {
+                        pass4.requestFocus();
+                    }
+                }
+                return true;
             }
         });
     }
 
     // prevent switch focus when user clicked tab
     public boolean dispatchKeyEvent(KeyEvent event) {
-        return event.getKeyCode() == KeyEvent.KEYCODE_TAB && event.getAction() == KeyEvent.ACTION_DOWN || super.dispatchKeyEvent(event);
+        return event.getKeyCode() == KeyEvent.KEYCODE_TAB || super.dispatchKeyEvent(event);
     }
 
     // Pressed Back Button

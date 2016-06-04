@@ -2377,9 +2377,9 @@ public class DBHelper extends SQLiteOpenHelper {
         db.execSQL("insert into list_imunisasi (list_vaksin, list_umur, list_desc, list_bulan) values " +
                 "('Varisela', '1 - 18 Tahun', 'Vaksin ini dapat diberikan setelah umur 12 bulan, terbaik pada umur sebelum masuk sekolah dasar. Apabila diberikan pada umur lebih dari 12 tahun, perlu 2 dosis dengan interval minimal 4 minggu.', '12');");
         db.execSQL("insert into list_imunisasi (list_vaksin, list_umur, list_desc, list_bulan) values " +
-                "('Hib (4)', '15 - 18 Bulan / 1 Tahun 3 Bulan - 1 Tahun 6 Bulan', 'Diberikan mulai umur 2 bulan dengan interval 2 bulan. Diberikan terpisah atau kombinasi.', '15');");
-        db.execSQL("insert into list_imunisasi (list_vaksin, list_umur, list_desc, list_bulan) values " +
                 "('MMR (1)', '15 Bulan / 1 Tahun 3 Bulan', 'Diberikan pada umur 12 bulan, apabila belum mendapatkan vaksin campak umur 9 bulan. Selanjutnya MMR ulangan diberikan pada umur 5-7 tahun.', '15');");
+        db.execSQL("insert into list_imunisasi (list_vaksin, list_umur, list_desc, list_bulan) values " +
+                "('Hib (4)', '15 - 18 Bulan / 1 Tahun 3 Bulan - 1 Tahun 6 Bulan', 'Diberikan mulai umur 2 bulan dengan interval 2 bulan. Diberikan terpisah atau kombinasi.', '15');");
         db.execSQL("insert into list_imunisasi (list_vaksin, list_umur, list_desc, list_bulan) values " +
                 "('Polio (4)', '18 - 24 Bulan / 1 Tahun 6 Bulan - 2 Tahun', 'Polio-0 diberikan pada saat kunjungan pertama. Untuk bayi yang lahir di RB/RS OPV diberikan pada saat bayi dipulangkan (untuk menghindari transmisi virus vaksin kepada bayi lain).', '18');");
         db.execSQL("insert into list_imunisasi (list_vaksin, list_umur, list_desc, list_bulan) values " +
@@ -2387,11 +2387,11 @@ public class DBHelper extends SQLiteOpenHelper {
         db.execSQL("insert into list_imunisasi (list_vaksin, list_umur, list_desc, list_bulan) values " +
                 "('Influenza (2)', '18 Bulan / 1 Tahun 6 Bulan', 'Pemberian berulang 1x setiap tahun. Umur < 8 tahun yang mendapat vaksin influenza trivalen (TIV) pertama kalinya harus mendapat 2 dosis dengan interval minimal 4 minggu.', '18');");
         db.execSQL("insert into list_imunisasi (list_vaksin, list_umur, list_desc, list_bulan) values " +
-                "('Influenza (3)', '30 Bulan / 2 Tahun 6 Bulan', 'Pemberian berulang 1x setiap tahun.  Umur < 8 tahun yang mendapat vaksin influenza trivalen (TIV) pertama kalinya harus mendapat 2 dosis dengan interval minimal 4 minggu.', '30');");
-        db.execSQL("insert into list_imunisasi (list_vaksin, list_umur, list_desc, list_bulan) values " +
                 "('Tifoid (1)', '24 Bulan / 2 Tahun', 'Tifoid polisakarida injeksi diberikan pada umur > 2 tahun, diulang setiap 3 tahun.', '24');");
         db.execSQL("insert into list_imunisasi (list_vaksin, list_umur, list_desc, list_bulan) values " +
                 "('Hepatitis A (1)', '24 Bulan / 2 Tahun', 'Hepatitis A diberikan pada umur > 2 tahun, dua kali dengan interval 6 hingga 12 bulan.', '24');");
+        db.execSQL("insert into list_imunisasi (list_vaksin, list_umur, list_desc, list_bulan) values " +
+                "('Influenza (3)', '30 Bulan / 2 Tahun 6 Bulan', 'Pemberian berulang 1x setiap tahun.  Umur < 8 tahun yang mendapat vaksin influenza trivalen (TIV) pertama kalinya harus mendapat 2 dosis dengan interval minimal 4 minggu.', '30');");
         db.execSQL("insert into list_imunisasi (list_vaksin, list_umur, list_desc, list_bulan) values " +
                 "('Hepatitis A (2)', '36 Bulan / 3 Tahun', 'Hepatitis A diberikan pada umur > 2 tahun, dua kali dengan interval 6 hingga 12 bulan.', '36');");
         db.execSQL("insert into list_imunisasi (list_vaksin, list_umur, list_desc, list_bulan) values " +
