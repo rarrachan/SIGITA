@@ -149,8 +149,8 @@ public class Gizi extends Activity implements OnClickListener {
     // Pressed Back Button
     @Override
     public void onBackPressed() {
-        // Start Index Activity
-        Intent index = new Intent(this, Index.class);
+        // Start Home Activity
+        Intent index = new Intent(this, Home.class);
         lastActivity = System.currentTimeMillis();
         index.putExtra("lastActivity", lastActivity);
         index.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TASK | Intent.FLAG_ACTIVITY_CLEAR_TOP);

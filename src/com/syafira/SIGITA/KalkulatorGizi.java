@@ -266,7 +266,7 @@ public class KalkulatorGizi extends Activity {
     // Pressed Back Button
     @Override
     public void onBackPressed() {
-        // Start Index Activity
+        // Start Home Activity
         Intent gizi = new Intent(this, Gizi.class);
         lastActivity = System.currentTimeMillis();
         gizi.putExtra("lastActivity", lastActivity);

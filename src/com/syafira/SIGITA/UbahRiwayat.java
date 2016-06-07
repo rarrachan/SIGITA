@@ -157,7 +157,7 @@ public class UbahRiwayat extends Activity {
         riwayat_bulan.setText(String.valueOf(bulan));
         final String vaksin = cursor.getString(cursor.getColumnIndex("riwayat_vaksin"));
         riwayat_tanggal.setText(cursor.getString(cursor.getColumnIndex("riwayat_tanggal")));
-        riwayat_usia.setText(cursor.getString(cursor.getColumnIndex("riwayat_umur")));
+        riwayat_usia.setText(cursor.getString(cursor.getColumnIndex("riwayat_usia")));
         riwayat_beratbadan.setText(cursor.getString(cursor.getColumnIndex("riwayat_berat")));
         riwayat_tinggibadan.setText(cursor.getString(cursor.getColumnIndex("riwayat_tinggi")));
         riwayat_dokter.setText(cursor.getString(cursor.getColumnIndex("riwayat_dokter")));

@@ -150,9 +150,9 @@ public class TumbuhKembang extends Activity implements OnClickListener {
     // Pressed Back Button
     @Override
     public void onBackPressed() {
-        // Start Index Activity
+        // Start Home Activity
         lastActivity = System.currentTimeMillis();
-        Intent index = new Intent(this, Index.class);
+        Intent index = new Intent(this, Home.class);
         index.putExtra("lastActivity", lastActivity);
         index.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TASK | Intent.FLAG_ACTIVITY_CLEAR_TOP);
         startActivity(index);

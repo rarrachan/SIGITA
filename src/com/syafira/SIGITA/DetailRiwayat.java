@@ -120,7 +120,7 @@ public class DetailRiwayat extends Activity {
         final int riwayatID = Integer.parseInt(cursor.getString(cursor.getColumnIndex("riwayatID")));
         riwayat_bulan.setText(cursor.getString(cursor.getColumnIndex("riwayat_bulan")));
         riwayat_jenisvaksin.setText(cursor.getString(cursor.getColumnIndex("riwayat_vaksin")));
-        riwayat_usia.setText(cursor.getString(cursor.getColumnIndex("riwayat_umur")));
+        riwayat_usia.setText(cursor.getString(cursor.getColumnIndex("riwayat_usia")));
             riwayat_tanggal.setText(cursor.getString(cursor.getColumnIndex("riwayat_tanggal")));
         if(!cursor.getString(cursor.getColumnIndex("riwayat_berat")).equals("") ) {
             riwayat_beratbadan.setText(cursor.getString(cursor.getColumnIndex("riwayat_berat")));

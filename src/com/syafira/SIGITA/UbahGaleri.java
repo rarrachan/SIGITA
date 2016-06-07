@@ -38,7 +38,7 @@ import java.util.Locale;
  */
 public class UbahGaleri extends Activity {
 
-    private TextView tambah_galeri;
+    private TextView ubah_galeri;
     private TextView titikdua;
     private TextView text_footer;
     private TextView text_galeri_nama;
@@ -61,7 +61,7 @@ public class UbahGaleri extends Activity {
         super.onCreate(savedInstanceState);
 
         // Load Layout
-        setContentView(R.layout.tambah_galeri);
+        setContentView(R.layout.ubah_galeri);
 
         // Session Manager
         session = new SessionManager();
@@ -79,7 +79,7 @@ public class UbahGaleri extends Activity {
         cursor.moveToFirst();
 
         // Load Widget
-        tambah_galeri = (TextView) findViewById(R.id.tambah_galeri);
+        ubah_galeri = (TextView) findViewById(R.id.ubah_galeri);
         titikdua = (TextView) findViewById(R.id.titikdua);
         text_footer = (TextView) findViewById(R.id.text_footer);
         text_galeri_nama = (TextView) findViewById(R.id.text_galeri_nama);
@@ -96,7 +96,7 @@ public class UbahGaleri extends Activity {
 
         // Set Custom Font
         Typeface typeface = Typeface.createFromAsset(getAssets(), "teen-webfont.ttf");
-        tambah_galeri.setTypeface(typeface);
+        ubah_galeri.setTypeface(typeface);
         titikdua.setTypeface(typeface);
         text_footer.setTypeface(typeface);
         text_galeri_nama.setTypeface(typeface);
@@ -112,7 +112,7 @@ public class UbahGaleri extends Activity {
         final String nama = session.loadSession(this, "nama");
         galeri_nama.setText(nama);
         galeri_tanggal.setText(cursor.getString(cursor.getColumnIndex("galeri_tanggal")));
-        galeri_usia.setText(cursor.getString(cursor.getColumnIndex("galeri_umur")));
+        galeri_usia.setText(cursor.getString(cursor.getColumnIndex("galeri_usia")));
         keterangan_foto.setText(cursor.getString(cursor.getColumnIndex("galeri_desc")));
         final String foto_path = android.os.Environment.getExternalStorageDirectory() + "/SIGITA/" + nama.replaceAll(" ", "_") + "/" + cursor.getString(cursor.getColumnIndex("galeri_foto"));
         if (Drawable.createFromPath(foto_path) != null) {

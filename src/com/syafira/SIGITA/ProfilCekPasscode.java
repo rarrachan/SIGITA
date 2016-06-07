@@ -8,8 +8,6 @@ import android.content.Context;
 import android.content.Intent;
 import android.graphics.Typeface;
 import android.graphics.drawable.ColorDrawable;
-import android.media.MediaScannerConnection;
-import android.net.Uri;
 import android.os.Bundle;
 import android.os.Environment;
 import android.provider.MediaStore;
@@ -222,9 +220,9 @@ public class ProfilCekPasscode extends Activity {
                                 // Show Toast
                                 Toast.makeText(ProfilCekPasscode.this, "Profil " + nama + " Dipilih", Toast.LENGTH_SHORT).show();
 
-                                // Start Index Activity
+                                // Start Home Activity
                                 lastActivity = System.currentTimeMillis();
-                                Intent index = new Intent(ProfilCekPasscode.this, Index.class);
+                                Intent index = new Intent(ProfilCekPasscode.this, Home.class);
                                 index.putExtra("lastActivity", lastActivity);
                                 index.putExtra("pathbefore", pathbefore);
                                 index.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TASK | Intent.FLAG_ACTIVITY_CLEAR_TOP);
@@ -235,7 +233,7 @@ public class ProfilCekPasscode extends Activity {
                             } else {
                                 Toast.makeText(ProfilCekPasscode.this, "Passcode Salah", Toast.LENGTH_SHORT).show();
 
-                                // Start Index Activity
+                                // Start Home Activity
                                 lastActivity = System.currentTimeMillis();
                                 Intent profil = new Intent(ProfilCekPasscode.this, Profil.class);
                                 profil.putExtra("lastActivity", lastActivity);
@@ -243,37 +241,6 @@ public class ProfilCekPasscode extends Activity {
                                 profil.putExtra("detailJadwalImunisasiID", detailJadwalImunisasiID);
                                 profil.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TASK | Intent.FLAG_ACTIVITY_CLEAR_TOP);
                                 startActivity(profil);
-
-                                // Close This Activity
-                                finish();
-                            }
-                            break;
-                        case "passcode":
-                            if (newpasscode.equals(pass)) {
-                                // Start Index Activity
-                                lastActivity = System.currentTimeMillis();
-                                Intent passcode = new Intent(ProfilCekPasscode.this, Passcode.class);
-                                passcode.putExtra("lastActivity", lastActivity);
-                                passcode.putExtra("id", id);
-                                passcode.putExtra("pathbefore", pathbefore);
-                                passcode.putExtra("detailJadwalImunisasiID", detailJadwalImunisasiID);
-                                passcode.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TASK | Intent.FLAG_ACTIVITY_CLEAR_TOP);
-                                startActivity(passcode);
-
-                                // Close This Activity
-                                finish();
-                            } else {
-                                Toast.makeText(ProfilCekPasscode.this, "Passcode Salah", Toast.LENGTH_SHORT).show();
-
-                                // Start Profil Activity
-                                Intent detailprofil = new Intent(ProfilCekPasscode.this, DetailProfil.class);
-                                lastActivity = System.currentTimeMillis();
-                                detailprofil.putExtra("lastActivity", lastActivity);
-                                detailprofil.putExtra("id", id);
-                                detailprofil.putExtra("pathbefore", pathbefore);
-                                detailprofil.putExtra("detailJadwalImunisasiID", detailJadwalImunisasiID);
-                                detailprofil.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TASK | Intent.FLAG_ACTIVITY_CLEAR_TOP);
-                                startActivity(detailprofil);
 
                                 // Close This Activity
                                 finish();
@@ -311,7 +278,7 @@ public class ProfilCekPasscode extends Activity {
                             break;
                         case "ubahpasscode":
                             if (newpasscode.equals(pass)) {
-                                // Start Index Activity
+                                // Start Home Activity
                                 lastActivity = System.currentTimeMillis();
                                 Intent createnewpasscode = new Intent(ProfilCekPasscode.this, ProfilPasscode.class);
                                 createnewpasscode.putExtra("lastActivity", lastActivity);
@@ -760,7 +727,6 @@ public class ProfilCekPasscode extends Activity {
                 // Close This Activity
                 finish();
                 break;
-            case "passcode":
             case "hapusprofil":
             case "ubahprofil":
                 // Start Profil Activity

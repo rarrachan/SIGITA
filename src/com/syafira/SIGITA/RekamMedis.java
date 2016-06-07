@@ -215,8 +215,8 @@ public class RekamMedis extends Activity {
     // Pressed Back Button
     @Override
     public void onBackPressed() {
-        // Start Index Activity
-        Intent index = new Intent(this, Index.class);
+        // Start Home Activity
+        Intent index = new Intent(this, Home.class);
         lastActivity = System.currentTimeMillis();
         index.putExtra("lastActivity", lastActivity);
         index.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TASK | Intent.FLAG_ACTIVITY_CLEAR_TOP);
@@ -247,8 +247,8 @@ public class RekamMedis extends Activity {
                 // Set Profil Name
                 text_button_profil.setText(session.loadSession(this, "nama"));
             } else {
-                // Start Index Activity
-                Intent index = new Intent(RekamMedis.this, Index.class);
+                // Start Home Activity
+                Intent index = new Intent(RekamMedis.this, Home.class);
                 lastActivity = System.currentTimeMillis();
                 index.putExtra("lastActivity", lastActivity);
                 index.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TASK | Intent.FLAG_ACTIVITY_CLEAR_TOP);

@@ -100,7 +100,7 @@ public class DetailGaleri extends Activity {
         final String nama = session.loadSession(this, "nama");
         galeri_nama.setText(nama);
         galeri_tanggal.setText(cursor.getString(cursor.getColumnIndex("galeri_tanggal")));
-        galeri_usia.setText(cursor.getString(cursor.getColumnIndex("galeri_umur")));
+        galeri_usia.setText(cursor.getString(cursor.getColumnIndex("galeri_usia")));
         keterangan_foto.setText(cursor.getString(cursor.getColumnIndex("galeri_desc")));
         final String foto_path = android.os.Environment.getExternalStorageDirectory() + "/SIGITA/" + nama.replaceAll(" ", "_") + "/" + cursor.getString(cursor.getColumnIndex("galeri_foto"));
         galeri_foto.setImageDrawable(Drawable.createFromPath(foto_path));

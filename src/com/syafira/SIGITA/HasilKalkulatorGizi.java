@@ -374,7 +374,7 @@ public class HasilKalkulatorGizi extends Activity {
             if (!cursorBBUchart.isAfterLast()) {
                 do {
                     BBUchartID.add(cursorBBUchart.getString(cursorBBUchart.getColumnIndex("laki_bbu_ID")));
-                    BBUchartUmur.add(cursorBBUchart.getString(cursorBBUchart.getColumnIndex("laki_bbu_umur")));
+                    BBUchartUmur.add(cursorBBUchart.getString(cursorBBUchart.getColumnIndex("laki_bbu_usia")));
                     BBUchartMin3sd.add(cursorBBUchart.getString(cursorBBUchart.getColumnIndex("laki_bbu_min3sd")));
                     BBUchartMin2sd.add(cursorBBUchart.getString(cursorBBUchart.getColumnIndex("laki_bbu_min2sd")));
                     BBUchartMin1sd.add(cursorBBUchart.getString(cursorBBUchart.getColumnIndex("laki_bbu_min1sd")));
@@ -391,7 +391,7 @@ public class HasilKalkulatorGizi extends Activity {
             if (!cursorBBUchart.isAfterLast()) {
                 do {
                     BBUchartID.add(cursorBBUchart.getString(cursorBBUchart.getColumnIndex("perempuan_bbu_ID")));
-                    BBUchartUmur.add(cursorBBUchart.getString(cursorBBUchart.getColumnIndex("perempuan_bbu_umur")));
+                    BBUchartUmur.add(cursorBBUchart.getString(cursorBBUchart.getColumnIndex("perempuan_bbu_usia")));
                     BBUchartMin3sd.add(cursorBBUchart.getString(cursorBBUchart.getColumnIndex("perempuan_bbu_min3sd")));
                     BBUchartMin2sd.add(cursorBBUchart.getString(cursorBBUchart.getColumnIndex("perempuan_bbu_min2sd")));
                     BBUchartMin1sd.add(cursorBBUchart.getString(cursorBBUchart.getColumnIndex("perempuan_bbu_min1sd")));
@@ -543,7 +543,7 @@ public class HasilKalkulatorGizi extends Activity {
             if (!cursorTBUchart.isAfterLast()) {
                 do {
                     TBUchartID.add(cursorTBUchart.getString(cursorTBUchart.getColumnIndex("laki_tbu_ID")));
-                    TBUchartUmur.add(cursorTBUchart.getString(cursorTBUchart.getColumnIndex("laki_tbu_umur")));
+                    TBUchartUmur.add(cursorTBUchart.getString(cursorTBUchart.getColumnIndex("laki_tbu_usia")));
                     TBUchartMin3sd.add(cursorTBUchart.getString(cursorTBUchart.getColumnIndex("laki_tbu_min3sd")));
                     TBUchartMin2sd.add(cursorTBUchart.getString(cursorTBUchart.getColumnIndex("laki_tbu_min2sd")));
                     TBUchartMin1sd.add(cursorTBUchart.getString(cursorTBUchart.getColumnIndex("laki_tbu_min1sd")));
@@ -560,7 +560,7 @@ public class HasilKalkulatorGizi extends Activity {
             if (!cursorTBUchart.isAfterLast()) {
                 do {
                     TBUchartID.add(cursorTBUchart.getString(cursorTBUchart.getColumnIndex("perempuan_tbu_ID")));
-                    TBUchartUmur.add(cursorTBUchart.getString(cursorTBUchart.getColumnIndex("perempuan_tbu_umur")));
+                    TBUchartUmur.add(cursorTBUchart.getString(cursorTBUchart.getColumnIndex("perempuan_tbu_usia")));
                     TBUchartMin3sd.add(cursorTBUchart.getString(cursorTBUchart.getColumnIndex("perempuan_tbu_min3sd")));
                     TBUchartMin2sd.add(cursorTBUchart.getString(cursorTBUchart.getColumnIndex("perempuan_tbu_min2sd")));
                     TBUchartMin1sd.add(cursorTBUchart.getString(cursorTBUchart.getColumnIndex("perempuan_tbu_min1sd")));
@@ -926,7 +926,7 @@ public class HasilKalkulatorGizi extends Activity {
             if (!cursorIMTUchart.isAfterLast()) {
                 do {
                     IMTUchartID.add(cursorIMTUchart.getString(cursorIMTUchart.getColumnIndex("laki_imtu_ID")));
-                    IMTUchartUmur.add(cursorIMTUchart.getString(cursorIMTUchart.getColumnIndex("laki_imtu_umur")));
+                    IMTUchartUmur.add(cursorIMTUchart.getString(cursorIMTUchart.getColumnIndex("laki_imtu_usia")));
                     IMTUchartMin3sd.add(cursorIMTUchart.getString(cursorIMTUchart.getColumnIndex("laki_imtu_min3sd")));
                     IMTUchartMin2sd.add(cursorIMTUchart.getString(cursorIMTUchart.getColumnIndex("laki_imtu_min2sd")));
                     IMTUchartMin1sd.add(cursorIMTUchart.getString(cursorIMTUchart.getColumnIndex("laki_imtu_min1sd")));
@@ -943,7 +943,7 @@ public class HasilKalkulatorGizi extends Activity {
             if (!cursorIMTUchart.isAfterLast()) {
                 do {
                     IMTUchartID.add(cursorIMTUchart.getString(cursorIMTUchart.getColumnIndex("perempuan_imtu_ID")));
-                    IMTUchartUmur.add(cursorIMTUchart.getString(cursorIMTUchart.getColumnIndex("perempuan_imtu_umur")));
+                    IMTUchartUmur.add(cursorIMTUchart.getString(cursorIMTUchart.getColumnIndex("perempuan_imtu_usia")));
                     IMTUchartMin3sd.add(cursorIMTUchart.getString(cursorIMTUchart.getColumnIndex("perempuan_imtu_min3sd")));
                     IMTUchartMin2sd.add(cursorIMTUchart.getString(cursorIMTUchart.getColumnIndex("perempuan_imtu_min2sd")));
                     IMTUchartMin1sd.add(cursorIMTUchart.getString(cursorIMTUchart.getColumnIndex("perempuan_imtu_min1sd")));

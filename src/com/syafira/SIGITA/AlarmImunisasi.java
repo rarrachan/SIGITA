@@ -233,7 +233,7 @@ public class AlarmImunisasi extends Activity {
         }
 
         } else {
-            // Start Index Activity
+            // Start Home Activity
             Intent imunisasi = new Intent(this, Imunisasi.class);
             long lastActivity = System.currentTimeMillis();
             imunisasi.putExtra("lastActivity", lastActivity);
@@ -247,7 +247,7 @@ public class AlarmImunisasi extends Activity {
     // Pressed Back Button
     @Override
     public void onBackPressed() {
-        // Start Index Activity
+        // Start Home Activity
         Intent imunisasi = new Intent(this, Imunisasi.class);
         long lastActivity = System.currentTimeMillis();
         imunisasi.putExtra("lastActivity", lastActivity);

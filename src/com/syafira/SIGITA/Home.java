@@ -8,8 +8,6 @@ import android.app.Activity;
 import android.app.AlertDialog;
 import android.app.Dialog;
 import android.content.DialogInterface;
-import android.graphics.Bitmap;
-import android.graphics.Canvas;
 import android.graphics.drawable.ColorDrawable;
 import android.os.Bundle;
 import android.content.Intent;
@@ -22,7 +20,7 @@ import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.List;
 
-public class Index extends Activity {
+public class Home extends Activity {
 
     // Declare
     private TextView text_button_profil;
@@ -37,7 +35,7 @@ public class Index extends Activity {
         super.onCreate(savedInstanceState);
 
         //Load Layout
-        setContentView(R.layout.index);
+        setContentView(R.layout.home);
 
         // Load Session Manager
         session = new SessionManager();
@@ -61,10 +59,10 @@ public class Index extends Activity {
         ProfilLinearLayout.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Intent profil = new Intent(Index.this, Profil.class);
+                Intent profil = new Intent(Home.this, Profil.class);
                 lastActivity = System.currentTimeMillis();
                 profil.putExtra("lastActivity", lastActivity);
-                profil.putExtra("pathbefore", "index");
+                profil.putExtra("pathbefore", "home");
                 profil.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TASK | Intent.FLAG_ACTIVITY_CLEAR_TOP);
                 startActivity(profil);
                 finish();
@@ -91,7 +89,7 @@ public class Index extends Activity {
         final String[] from = {"foto_menu", "nama_menu"};
         int[] to = {R.id.index_menu, R.id.index_nama_menu};
 
-        SimpleAdapter adapter = new SimpleAdapter(getBaseContext(), aList, R.layout.index_grid, from, to) {
+        SimpleAdapter adapter = new SimpleAdapter(getBaseContext(), aList, R.layout.home_grid, from, to) {
             @Override
             public View getView(int position, View convertView, android.view.ViewGroup parent) {
                 View v = super.getView(position, convertView, parent);
@@ -115,10 +113,10 @@ public class Index extends Activity {
 
                     // Profil
                     case 0:
-                        Intent profil = new Intent(Index.this, Profil.class);
+                        Intent profil = new Intent(Home.this, Profil.class);
                         lastActivity = System.currentTimeMillis();
                         profil.putExtra("lastActivity", lastActivity);
-                        profil.putExtra("pathbefore", "index");
+                        profil.putExtra("pathbefore", "home");
                         profil.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TASK | Intent.FLAG_ACTIVITY_CLEAR_TOP);
                         startActivity(profil);
                         finish();
@@ -126,7 +124,7 @@ public class Index extends Activity {
 
                     // Gizi
                     case 1:
-                        Intent gizi = new Intent(Index.this, Gizi.class);
+                        Intent gizi = new Intent(Home.this, Gizi.class);
                         lastActivity = System.currentTimeMillis();
                         gizi.putExtra("lastActivity", lastActivity);
                         gizi.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TASK | Intent.FLAG_ACTIVITY_CLEAR_TOP);
@@ -136,7 +134,7 @@ public class Index extends Activity {
 
                     // Imunisasi
                     case 2:
-                        Intent imunisasi = new Intent(Index.this, Imunisasi.class);
+                        Intent imunisasi = new Intent(Home.this, Imunisasi.class);
                         lastActivity = System.currentTimeMillis();
                         imunisasi.putExtra("lastActivity", lastActivity);
                         imunisasi.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TASK | Intent.FLAG_ACTIVITY_CLEAR_TOP);
@@ -146,7 +144,7 @@ public class Index extends Activity {
 
                     // Tumbuh Kembang
                     case 3:
-                        Intent tumbang = new Intent(Index.this, TumbuhKembang.class);
+                        Intent tumbang = new Intent(Home.this, TumbuhKembang.class);
                         lastActivity = System.currentTimeMillis();
                         tumbang.putExtra("lastActivity", lastActivity);
                         tumbang.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TASK | Intent.FLAG_ACTIVITY_CLEAR_TOP);
@@ -157,15 +155,15 @@ public class Index extends Activity {
                     // Rekam Medis
                     case 4:
                         // Check Session
-                        if (session.checkSession(Index.this)) {
-                            Intent medis = new Intent(Index.this, RekamMedis.class);
+                        if (session.checkSession(Home.this)) {
+                            Intent medis = new Intent(Home.this, RekamMedis.class);
                             lastActivity = System.currentTimeMillis();
                             medis.putExtra("lastActivity", lastActivity);
                             medis.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TASK | Intent.FLAG_ACTIVITY_CLEAR_TOP);
                             startActivity(medis);
                             finish();
                         } else {
-                            final Dialog dialog = new Dialog(Index.this);
+                            final Dialog dialog = new Dialog(Home.this);
                             dialog.setContentView(R.layout.alert_akses);
                             dialog.setCanceledOnTouchOutside(true);
                             dialog.getWindow().setBackgroundDrawable(new ColorDrawable(android.graphics.Color.TRANSPARENT));
@@ -189,10 +187,10 @@ public class Index extends Activity {
                                     dialog.dismiss();
 
                                     // Start Profil Activity
-                                    Intent profil = new Intent(Index.this, Profil.class);
+                                    Intent profil = new Intent(Home.this, Profil.class);
                                     lastActivity = System.currentTimeMillis();
                                     profil.putExtra("lastActivity", lastActivity);
-                                    profil.putExtra("pathbefore", "index");
+                                    profil.putExtra("pathbefore", "home");
                                     profil.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TASK | Intent.FLAG_ACTIVITY_CLEAR_TOP);
                                     startActivity(profil);
                                     finish();
@@ -203,7 +201,7 @@ public class Index extends Activity {
 
                     // Tentang
                     case 5:
-                        Intent tentang = new Intent(Index.this, TentangSIGITA.class);
+                        Intent tentang = new Intent(Home.this, TentangSIGITA.class);
                         lastActivity = System.currentTimeMillis();
                         tentang.putExtra("lastActivity", lastActivity);
                         tentang.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TASK | Intent.FLAG_ACTIVITY_CLEAR_TOP);
@@ -227,8 +225,8 @@ public class Index extends Activity {
                 .setPositiveButton(android.R.string.yes, new DialogInterface.OnClickListener() {
                     public void onClick(DialogInterface arg0, int arg1) {
 //                        // Clear Session
-                        session.clearSession(Index.this);
-                        Index.super.onBackPressed();
+                        session.clearSession(Home.this);
+                        Home.super.onBackPressed();
 
                         // Close Application
                         Intent finish = new Intent(Intent.ACTION_MAIN);
@@ -250,7 +248,7 @@ public class Index extends Activity {
             finish();
 
             // Clear Session
-            session.clearSession(Index.this);
+            session.clearSession(Home.this);
 
             Intent splash = new Intent(this, Splash.class);
             splash.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TASK | Intent.FLAG_ACTIVITY_CLEAR_TOP);

@@ -162,7 +162,7 @@ public class RiwayatImunisasi extends Activity {
 
                     tanggal.setText(cursor.getString(cursor.getColumnIndex("riwayat_tanggal")));
                     jenisvaksin.setText(cursor.getString(cursor.getColumnIndex("riwayat_vaksin")));
-                    usia.setText(cursor.getString(cursor.getColumnIndex("riwayat_umur")));
+                    usia.setText(cursor.getString(cursor.getColumnIndex("riwayat_usia")));
                     final int id = cursor.getInt(cursor.getColumnIndex("riwayatID"));
 
                     tanggal.setTextAppearance(this, android.R.style.TextAppearance_DeviceDefault_Medium);

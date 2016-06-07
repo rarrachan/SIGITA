@@ -98,21 +98,33 @@ public class GaleriTumbang extends Activity {
                 do {
                     String foto_path = android.os.Environment.getExternalStorageDirectory() + "/SIGITA/" + nama.replaceAll(" ", "_") + "/" + cursor.getString(cursor.getColumnIndex("galeri_foto"));
                     int galeri_id = cursor.getInt(cursor.getColumnIndex("galeriID"));
+                    String foto_tanggal = cursor.getString(cursor.getColumnIndex("galeri_tanggal"));
 
                     HashMap<String, Object> hm = new HashMap<>();
                     hm.put("galeri_foto", foto_path);
+                    hm.put("galeri_tanggal", foto_tanggal);
                     hm.put("galeriID", galeri_id);
                     aList.add(hm);
                 } while (cursor.moveToNext());
             }
 
             // Keys used in Hashmap
-            final String[] from = {"galeri_foto"};
+            final String[] from = {"galeri_foto", "galeri_tanggal"};
 
             // Ids of views in listview_layout
-            int[] to = {R.id.galeri_foto};
+            int[] to = {R.id.galeri_foto, R.id.galeri_tanggal_foto};
 
-            final SimpleAdapter adapter = new SimpleAdapter(getBaseContext(), aList, R.layout.galeri_grid, from, to);
+            final SimpleAdapter adapter = new SimpleAdapter(getBaseContext(), aList, R.layout.galeri_grid, from, to){
+                @Override
+                public View getView(int position, View convertView, android.view.ViewGroup parent) {
+                    View v = super.getView(position, convertView, parent);
+
+                    TextView tv = (TextView) v.findViewById(R.id.galeri_tanggal_foto);
+                    tv.setLines(2);
+                    tv.setTypeface(typeface);
+                    return v;
+                }
+            };
             final ExpandableHeightGridView grid = (ExpandableHeightGridView) findViewById(R.id.gridview);
 
 //            float scalefactor = getResources().getDisplayMetrics().density * 100;

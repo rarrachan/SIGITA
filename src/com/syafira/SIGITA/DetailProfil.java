@@ -181,22 +181,7 @@ public class DetailProfil extends Activity {
         button_passcode.setOnClickListener(new OnClickListener() {
             @Override
             public void onClick(View v) {
-                if(!pass.equals("")) {
-                    // Show Image Zoom Activity
-                    Intent cekPasscode = new Intent(DetailProfil.this, ProfilCekPasscode.class);
-                    lastActivity = System.currentTimeMillis();
-                    cekPasscode.putExtra("lastActivity", lastActivity);
-                    cekPasscode.putExtra("nama", nama);
-                    cekPasscode.putExtra("passcode", pass);
-                    cekPasscode.putExtra("id", id);
-                    cekPasscode.putExtra("action", "passcode");
-                    cekPasscode.putExtra("pathbefore", pathbefore);
-                    cekPasscode.putExtra("detailJadwalImunisasiID", detailJadwalImunisasiID);
-                    cekPasscode.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TASK | Intent.FLAG_ACTIVITY_CLEAR_TOP);
-                    startActivity(cekPasscode);
-                    finish();
-                } else {
-                    // Start Index Activity
+                    // Start Home Activity
                     lastActivity = System.currentTimeMillis();
                     Intent passcode = new Intent(DetailProfil.this, Passcode.class);
                     passcode.putExtra("lastActivity", lastActivity);
@@ -207,7 +192,6 @@ public class DetailProfil extends Activity {
                     startActivity(passcode);
                     finish();
                 }
-            }
         });
 
         button_ubah.setOnClickListener(new OnClickListener() {

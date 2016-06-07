@@ -239,7 +239,7 @@ public class DokumentasiGizi extends Activity {
     // Pressed Back Button
     @Override
     public void onBackPressed() {
-        // Start Index Activity
+        // Start Home Activity
         Intent gizi = new Intent(this, Gizi.class);
         lastActivity = System.currentTimeMillis();
         gizi.putExtra("lastActivity", lastActivity);
@@ -272,8 +272,8 @@ public class DokumentasiGizi extends Activity {
                 // Set Profil Name
                 text_button_profil.setText(session.loadSession(this, "nama"));
             } else {
-                // Start Index Activity
-                Intent index = new Intent(DokumentasiGizi.this, Index.class);
+                // Start Home Activity
+                Intent index = new Intent(DokumentasiGizi.this, Home.class);
                 lastActivity = System.currentTimeMillis();
                 index.putExtra("lastActivity", lastActivity);
                 index.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TASK | Intent.FLAG_ACTIVITY_CLEAR_TOP);

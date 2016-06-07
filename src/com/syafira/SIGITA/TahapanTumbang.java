@@ -156,7 +156,7 @@ public class TahapanTumbang extends Activity {
                 komunikasi.setBackgroundResource(R.drawable.border_row);
                 sosial_kemandirian.setBackgroundResource(R.drawable.border_row);
 
-                usia_tumbang.setText(cursor.getString(cursor.getColumnIndex("tahap_umur")));
+                usia_tumbang.setText(cursor.getString(cursor.getColumnIndex("tahap_usia")));
                 gerakan_kasar.setText(cursor.getString(cursor.getColumnIndex("tahap_gerakan_kasar")));
                 gerakan_halus.setText(cursor.getString(cursor.getColumnIndex("tahap_gerakan_halus")));
                 komunikasi.setText(cursor.getString(cursor.getColumnIndex("tahap_komunikasi")));

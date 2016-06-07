@@ -134,7 +134,7 @@ public class JadwalImunisasi extends Activity {
                 detail.setBackgroundResource(R.drawable.border_row);
 
                 vaksin.setText(cursor.getString(cursor.getColumnIndex("list_vaksin")));
-                umur.setText(cursor.getString(cursor.getColumnIndex("list_umur")));
+                umur.setText(cursor.getString(cursor.getColumnIndex("list_usia")));
                 final int id = cursor.getInt(cursor.getColumnIndex("listID"));
 
                 vaksin.setTextAppearance(this, android.R.style.TextAppearance_DeviceDefault_Medium);

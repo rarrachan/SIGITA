@@ -191,9 +191,9 @@ public class Profil extends Activity{
                                     // Show Toast
                                     Toast.makeText(Profil.this, "Profil " + nama + " Dipilih", Toast.LENGTH_SHORT).show();
 
-                                    // Start Index Activity
+                                    // Start Home Activity
                                     lastActivity = System.currentTimeMillis();
-                                    Intent index = new Intent(Profil.this, Index.class);
+                                    Intent index = new Intent(Profil.this, Home.class);
                                     index.putExtra("lastActivity", lastActivity);
                                     index.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TASK | Intent.FLAG_ACTIVITY_CLEAR_TOP);
                                     startActivity(index);
@@ -258,9 +258,9 @@ public class Profil extends Activity{
         String pathbefore = fetchID.getStringExtra("pathbefore");
         int detailJadwalImunisasiID = fetchID.getIntExtra("detailJadwalImunisasiID", 0);
         switch (pathbefore) {
-            case "index":
-                // Start Index Activity
-                Intent index = new Intent(this, Index.class);
+            case "home":
+                // Start Home Activity
+                Intent index = new Intent(this, Home.class);
                 lastActivity = System.currentTimeMillis();
                 index.putExtra("lastActivity", lastActivity);
                 index.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TASK | Intent.FLAG_ACTIVITY_CLEAR_TOP);
@@ -270,7 +270,7 @@ public class Profil extends Activity{
                 finish();
                 break;
             case "gizi":
-                // Start Index Activity
+                // Start Home Activity
                 Intent gizi = new Intent(this, Gizi.class);
                 lastActivity = System.currentTimeMillis();
                 gizi.putExtra("lastActivity", lastActivity);
@@ -282,7 +282,7 @@ public class Profil extends Activity{
                 break;
 
             case "imunisasi":
-                // Start Index Activity
+                // Start Home Activity
                 Intent imunisasi = new Intent(this, Imunisasi.class);
                 lastActivity = System.currentTimeMillis();
                 imunisasi.putExtra("lastActivity", lastActivity);
@@ -294,7 +294,7 @@ public class Profil extends Activity{
                 break;
 
             case "tumbuhkembang":
-                // Start Index Activity
+                // Start Home Activity
                 Intent tumbuhkembang = new Intent(this, TumbuhKembang.class);
                 lastActivity = System.currentTimeMillis();
                 tumbuhkembang.putExtra("lastActivity", lastActivity);
@@ -306,7 +306,7 @@ public class Profil extends Activity{
                 break;
 
             case "rekammedis":
-                // Start Index Activity
+                // Start Home Activity
                 Intent rekammedis = new Intent(this, RekamMedis.class);
                 lastActivity = System.currentTimeMillis();
                 rekammedis.putExtra("lastActivity", lastActivity);
@@ -318,7 +318,7 @@ public class Profil extends Activity{
                 break;
 
             case "alarmimunisasi":
-                // Start Index Activity
+                // Start Home Activity
                 Intent alarmimunisasi = new Intent(this, AlarmImunisasi.class);
                 lastActivity = System.currentTimeMillis();
                 alarmimunisasi.putExtra("lastActivity", lastActivity);
@@ -330,7 +330,7 @@ public class Profil extends Activity{
                 break;
 
             case "jadwalimunisasi":
-                // Start Index Activity
+                // Start Home Activity
                 Intent jadwalimunisasi = new Intent(this, JadwalImunisasi.class);
                 lastActivity = System.currentTimeMillis();
                 jadwalimunisasi.putExtra("lastActivity", lastActivity);
@@ -342,7 +342,7 @@ public class Profil extends Activity{
                 break;
 
             case "detailjadwalimunisasi":
-                // Start Index Activity
+                // Start Home Activity
                 Intent detailjadwalimunisasi = new Intent(this, DetailJadwalImunisasi.class);
                 lastActivity = System.currentTimeMillis();
                 detailjadwalimunisasi.putExtra("lastActivity", lastActivity);
@@ -355,7 +355,7 @@ public class Profil extends Activity{
                 break;
 
             case "riwayatimunisasi":
-                // Start Index Activity
+                // Start Home Activity
                 Intent riwayatimunisasi = new Intent(this, RiwayatImunisasi.class);
                 lastActivity = System.currentTimeMillis();
                 riwayatimunisasi.putExtra("lastActivity", lastActivity);
@@ -367,7 +367,7 @@ public class Profil extends Activity{
                 break;
 
             case "dokumentasigizi":
-                // Start Index Activity
+                // Start Home Activity
                 Intent dokumentasigizi = new Intent(this, DokumentasiGizi.class);
                 lastActivity = System.currentTimeMillis();
                 dokumentasigizi.putExtra("lastActivity", lastActivity);
@@ -379,7 +379,7 @@ public class Profil extends Activity{
                 break;
 
             case "tahapantumbang":
-                // Start Index Activity
+                // Start Home Activity
                 Intent tahapantumbang = new Intent(this, TahapanTumbang.class);
                 lastActivity = System.currentTimeMillis();
                 tahapantumbang.putExtra("lastActivity", lastActivity);
@@ -391,7 +391,7 @@ public class Profil extends Activity{
                 break;
 
             case "galeritumbang":
-                // Start Index Activity
+                // Start Home Activity
                 Intent galeritumbang = new Intent(this, GaleriTumbang.class);
                 lastActivity = System.currentTimeMillis();
                 galeritumbang.putExtra("lastActivity", lastActivity);

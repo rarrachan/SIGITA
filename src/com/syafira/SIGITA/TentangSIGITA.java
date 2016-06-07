@@ -48,8 +48,8 @@ public class TentangSIGITA extends Activity {
     // Pressed Back Button
     @Override
     public void onBackPressed() {
-        // Start Index Activity
-        Intent index = new Intent(TentangSIGITA.this, Index.class);
+        // Start Home Activity
+        Intent index = new Intent(TentangSIGITA.this, Home.class);
         lastActivity = System.currentTimeMillis();
         index.putExtra("lastActivity", lastActivity);
         index.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TASK | Intent.FLAG_ACTIVITY_CLEAR_TOP);
