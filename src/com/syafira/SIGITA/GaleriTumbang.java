@@ -89,6 +89,7 @@ public class GaleriTumbang extends Activity {
             List<HashMap<String, ?>> aList = new ArrayList<>();
             final HashMap<String, String> tambah_galeri = new HashMap<>();
             tambah_galeri.put("galeri_foto", Integer.toString(R.drawable.icon_tambahfoto));
+            tambah_galeri.put("galeri_tanggal", "Tambah Galeri");
             aList.add(0, tambah_galeri);
 
             // Get Data from Database

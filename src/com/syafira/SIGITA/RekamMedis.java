@@ -8,6 +8,7 @@ import android.graphics.Typeface;
 import android.os.Bundle;
 import android.util.TypedValue;
 import android.view.Gravity;
+import android.view.LayoutInflater;
 import android.view.View;
 import android.widget.*;
 
@@ -81,6 +82,7 @@ public class RekamMedis extends Activity {
                 do {
                     TextView text_medis_detail = (TextView) findViewById(R.id.text_medis_detail);
                     text_medis_detail.setVisibility(View.VISIBLE);
+
                     TableRow row = new TableRow(this);
                     TableRow.LayoutParams medis = new TableRow.LayoutParams(TableRow.LayoutParams.WRAP_CONTENT);
                     row.setLayoutParams(medis);
@@ -94,6 +96,11 @@ public class RekamMedis extends Activity {
                     TableRow.LayoutParams keluhan_text_view = new TableRow.LayoutParams(0, TableRow.LayoutParams.MATCH_PARENT, 1f);
                     TableRow.LayoutParams obat_text_view = new TableRow.LayoutParams(0, TableRow.LayoutParams.MATCH_PARENT, 1f);
                     TableRow.LayoutParams detail_text_view = new TableRow.LayoutParams(0, TableRow.LayoutParams.MATCH_PARENT, .8f);
+
+//                    LinearLayout.LayoutParams layoutParams = new LinearLayout.LayoutParams(0, LinearLayout.LayoutParams.MATCH_PARENT, .8f);
+//                    layoutParams.gravity = Gravity.CENTER;
+//                    detail.setLayoutParams(layoutParams);
+//                    detail.setAdjustViewBounds(true);
 
                     detail.setImageResource(R.drawable.tombol_detail);
                     tanggal.setGravity(Gravity.CENTER_VERTICAL);

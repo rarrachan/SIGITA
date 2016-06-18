@@ -49,4 +49,7 @@ public class Splash extends Activity {
         }, SPLASH_TIME_OUT);
 
     }
+
+    @Override
+    public void onBackPressed() { }
 }

@@ -166,7 +166,7 @@
                                     android:layout_height="0dp"
                                     android:padding="5dp"
                                     style="@android:style/TextAppearance.DeviceDefault.Medium"
-                                    android:text="@string/dokumentasigizi_tinggibadan"
+                                    android:text="@string/gerakan_halus"
                                     android:visibility="invisible"/>
 
                             <TextView
@@ -174,7 +174,7 @@
                                     android:layout_height="0dp"
                                     android:padding="5dp"
                                     style="@android:style/TextAppearance.DeviceDefault.Medium"
-                                    android:text="@string/dokumentasigizi_tinggibadan"
+                                    android:text="@string/gerakan_halus"
                                     android:visibility="invisible"/>
 
                             <TextView
@@ -182,7 +182,7 @@
                                     android:layout_height="0dp"
                                     android:padding="5dp"
                                     style="@android:style/TextAppearance.DeviceDefault.Medium"
-                                    android:text="@string/dokumentasigizi_tinggibadan"
+                                    android:text="@string/gerakan_halus"
                                     android:visibility="invisible"/>
 
                             <TextView
@@ -190,7 +190,7 @@
                                     android:layout_height="0dp"
                                     android:padding="5dp"
                                     style="@android:style/TextAppearance.DeviceDefault.Medium"
-                                    android:text="@string/dokumentasigizi_tinggibadan"
+                                    android:text="@string/gerakan_halus"
                                     android:visibility="invisible"/>
 
                             <TextView
@@ -198,8 +198,9 @@
                                     android:layout_height="0dp"
                                     android:padding="5dp"
                                     style="@android:style/TextAppearance.DeviceDefault.Medium"
-                                    android:text="@string/dokumentasigizi_tinggibadan"
+                                    android:text="@string/gerakan_halus"
                                     android:visibility="invisible"/>
+
                         </TableRow>
 
                         <TableRow>

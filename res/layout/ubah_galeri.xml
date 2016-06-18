@@ -309,7 +309,7 @@
                                 android:id="@+id/galeri_keterangan_foto"
                                 android:layout_width="fill_parent"
                                 android:layout_height="fill_parent"
-                                android:textColor="#D046F2"
+                                android:textColor="#FF0000"
                                 android:hint="@string/galeri_keterangan_foto"
                                 android:minHeight="130dp"
                                 android:gravity="top"

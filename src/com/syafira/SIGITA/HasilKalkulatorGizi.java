@@ -101,18 +101,18 @@ public class HasilKalkulatorGizi extends Activity {
             cursorBBU = db.getLakiBBUList(Integer.valueOf(bulan));
             cursorTBU = db.getLakiTBUList(Integer.valueOf(bulan));
             if (Integer.valueOf(bulan) <= 24) {
-                cursorBBTB = db.getLakiBBTBList_0_24(Integer.valueOf(tinggiBadan));
+                cursorBBTB = db.getLakiBBTBList_0_24(Float.parseFloat(tinggiBadan));
             } else {
-                cursorBBTB = db.getLakiBBTBList_24_60(Integer.valueOf(tinggiBadan));
+                cursorBBTB = db.getLakiBBTBList_24_60(Float.parseFloat(tinggiBadan));
             }
             cursorIMTU = db.getLakiIMTUList(Integer.valueOf(bulan));
         } else {
             cursorBBU = db.getPerempuanBBUList(Integer.valueOf(bulan));
             cursorTBU = db.getPerempuanTBUList(Integer.valueOf(bulan));
             if (Integer.valueOf(bulan) <= 24) {
-                cursorBBTB = db.getPerempuanBBTBList_0_24(Integer.valueOf(tinggiBadan));
+                cursorBBTB = db.getPerempuanBBTBList_0_24(Float.parseFloat(tinggiBadan));
             } else {
-                cursorBBTB = db.getPerempuanBBTBList_24_60(Integer.valueOf(tinggiBadan));
+                cursorBBTB = db.getPerempuanBBTBList_24_60(Float.parseFloat(tinggiBadan));
             }
             cursorIMTU = db.getPerempuanIMTUList(Integer.valueOf(bulan));
         }

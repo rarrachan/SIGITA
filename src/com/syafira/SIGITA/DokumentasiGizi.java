@@ -122,7 +122,7 @@ public class DokumentasiGizi extends Activity {
                     berat_text_view.setMargins(margin_in_pixel_1, margin_in_pixel_1, margin_in_pixel_1, margin_in_pixel_1);
                     detail_text_view.setMargins(margin_in_pixel_1, margin_in_pixel_1, margin_in_pixel_3, margin_in_pixel_1);
 
-                    int padding_in_dp = 5 ;//value in dp
+                    int padding_in_dp = 5;//value in dp
                     int padding_in_pixel = (int) TypedValue.applyDimension(
                             TypedValue.COMPLEX_UNIT_DIP, padding_in_dp, getResources()
                                     .getDisplayMetrics());

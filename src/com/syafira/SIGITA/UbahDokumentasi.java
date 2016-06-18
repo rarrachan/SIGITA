@@ -106,7 +106,6 @@ public class UbahDokumentasi extends Activity {
         dokumentasigizi_kilogram.setTypeface(typeface);
 
         dokumentasigizi_nama.setText(session.loadSession(this, "nama"));
-        dokumentasigizi_nama.setText(session.loadSession(this, "nama"));
         dokumentasigizi_tanggal.setText(cursor.getString(cursor.getColumnIndex("dokumentasi_tanggal")));
         dokumentasigizi_usia.setText(cursor.getString(cursor.getColumnIndex("dokumentasi_usia")));
         dokumentasigizi_bulan.setText(cursor.getString(cursor.getColumnIndex("dokumentasi_bulan")));
@@ -201,23 +200,37 @@ public class UbahDokumentasi extends Activity {
                 int profilID = Integer.parseInt(session.loadSession(UbahDokumentasi.this, "id"));
 
                 // Check if Value Empty
-                if (TextUtils.isEmpty(tanggal) ||
-                        TextUtils.isEmpty(tinggiBadan) ||
-                        TextUtils.isEmpty(beratBadan)) {
+                if (TextUtils.isEmpty(tanggal)) {
                     // Show Toast
-                    Toast.makeText(UbahDokumentasi.this, "Kolom Belum Terisi", Toast.LENGTH_SHORT).show();
+                    Toast.makeText(UbahDokumentasi.this, "Kolom Tanggal Lahir Belum Terisi", Toast.LENGTH_SHORT).show();
+
+                } else if (TextUtils.isEmpty(tinggiBadan)) {
+                    // Show Toast
+                    Toast.makeText(UbahDokumentasi.this, "Kolom Tinggi Badan Belum Terisi", Toast.LENGTH_SHORT).show();
+
+                } else if (TextUtils.isEmpty(beratBadan)) {
+                    // Show Toast
+                    Toast.makeText(UbahDokumentasi.this, "Kolom Berat Badan Belum Terisi", Toast.LENGTH_SHORT).show();
+
+                } else if (bulan >= 0 && bulan <= 24 && Float.parseFloat(tinggiBadan) < 45) {
+                    // Show Toast
+                    Toast.makeText(UbahDokumentasi.this, "Tinggi Tidak Boleh Kurang Dari 45 cm", Toast.LENGTH_SHORT).show();
+
+                } else if (bulan >= 0 && bulan <= 24 && Float.parseFloat(tinggiBadan) > 110) {
+                    // Show Toast
+                    Toast.makeText(UbahDokumentasi.this, "Tinggi Tidak Boleh Lebih Dari 110 cm", Toast.LENGTH_SHORT).show();
+
+                } else if (bulan >= 24 && bulan <= 60 && Float.parseFloat(tinggiBadan) < 65) {
+                    // Show Toast
+                    Toast.makeText(UbahDokumentasi.this, "Tinggi Tidak Boleh Kurang Dari 65 cm", Toast.LENGTH_SHORT).show();
+
+                } else if (bulan >= 24 && bulan <= 60 && Float.parseFloat(tinggiBadan) > 120) {
+                    // Show Toast
+                    Toast.makeText(UbahDokumentasi.this, "Tinggi Tidak Boleh Lebih Dari 120 cm", Toast.LENGTH_SHORT).show();
 
                 } else if (bulan > 60) {
                     // Show Toast
                     Toast.makeText(UbahDokumentasi.this, "Umur Tidak Boleh Lebih Dari 5 Tahun / 60 Bulan", Toast.LENGTH_SHORT).show();
-
-                } else if (Float.parseFloat(tinggiBadan) < 45) {
-                    // Show Toast
-                    Toast.makeText(UbahDokumentasi.this, "Tinggi Tidak Boleh Kurang Dari 45 cm", Toast.LENGTH_SHORT).show();
-
-                } else if (Float.parseFloat(tinggiBadan) > 120) {
-                    // Show Toast
-                    Toast.makeText(UbahDokumentasi.this, "Tinggi Tidak Boleh Lebih Dari 120 cm", Toast.LENGTH_SHORT).show();
 
                 } else if (Float.parseFloat(beratBadan) < 2) {
                     // Show Toast
@@ -240,18 +253,18 @@ public class UbahDokumentasi extends Activity {
                         cursorBBU = db.getLakiBBUList(bulan);
                         cursorTBU = db.getLakiTBUList(bulan);
                         if (bulan <= 24) {
-                            cursorBBTB = db.getLakiBBTBList_0_24(Integer.valueOf(tinggiBadan));
+                            cursorBBTB = db.getLakiBBTBList_0_24(Float.parseFloat(tinggiBadan));
                         } else {
-                            cursorBBTB = db.getLakiBBTBList_24_60(Integer.valueOf(tinggiBadan));
+                            cursorBBTB = db.getLakiBBTBList_24_60(Float.parseFloat(tinggiBadan));
                         }
                         cursorIMTU = db.getLakiIMTUList(bulan);
                     } else {
                         cursorBBU = db.getPerempuanBBUList(bulan);
                         cursorTBU = db.getPerempuanTBUList(bulan);
                         if (bulan <= 24) {
-                            cursorBBTB = db.getPerempuanBBTBList_0_24(Integer.valueOf(tinggiBadan));
+                            cursorBBTB = db.getPerempuanBBTBList_0_24(Float.parseFloat(tinggiBadan));
                         } else {
-                            cursorBBTB = db.getPerempuanBBTBList_24_60(Integer.valueOf(tinggiBadan));
+                            cursorBBTB = db.getPerempuanBBTBList_24_60(Float.parseFloat(tinggiBadan));
                         }
                         cursorIMTU = db.getPerempuanIMTUList(bulan);
                     }

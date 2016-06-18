@@ -765,7 +765,7 @@ public class DBHelper extends SQLiteOpenHelper {
     }
 
     // Get One List From Database
-    public Cursor getLakiBBTBList_0_24(Integer tinggi) {
+    public Cursor getLakiBBTBList_0_24(Float tinggi) {
         Cursor cursor = db.rawQuery("SELECT * FROM antropometri_laki_bbtb_0_24 WHERE laki_bbtb_tb = " + tinggi, null);
         cursor.moveToFirst();
         return cursor;
@@ -1021,7 +1021,7 @@ public class DBHelper extends SQLiteOpenHelper {
     }
 
     // Get One List From Database
-    public Cursor getLakiBBTBList_24_60(Integer tinggi) {
+    public Cursor getLakiBBTBList_24_60(Float tinggi) {
         Cursor cursor = db.rawQuery("SELECT * FROM antropometri_laki_bbtb_24_60 WHERE laki_bbtb_tb = " + tinggi, null);
         cursor.moveToFirst();
         return cursor;
@@ -1791,7 +1791,7 @@ public class DBHelper extends SQLiteOpenHelper {
     }
 
     // Get One List From Database
-    public Cursor getPerempuanBBTBList_0_24(Integer tinggi) {
+    public Cursor getPerempuanBBTBList_0_24(Float tinggi) {
         Cursor cursor = db.rawQuery("SELECT * FROM antropometri_perempuan_bbtb_0_24 WHERE perempuan_bbtb_tb = " + tinggi, null);
         cursor.moveToFirst();
         return cursor;
@@ -2047,7 +2047,7 @@ public class DBHelper extends SQLiteOpenHelper {
     }
 
     // Get One List From Database
-    public Cursor getPerempuanBBTBList_24_60(Integer tinggi) {
+    public Cursor getPerempuanBBTBList_24_60(Float tinggi) {
         Cursor cursor = db.rawQuery("SELECT * FROM antropometri_perempuan_bbtb_24_60 WHERE perempuan_bbtb_tb = " + tinggi, null);
         cursor.moveToFirst();
         return cursor;
@@ -2263,7 +2263,7 @@ public class DBHelper extends SQLiteOpenHelper {
 
     // Get Riwayat Imunisasi from Database
     public Cursor getDokumentasi(Integer id) {
-        Cursor cursor = db.rawQuery("SELECT * FROM dokumentasi_gizi WHERE dokumentasi_profilID = " + id + " ORDER BY ORDER BY SUBSTR(dokumentasi_tanggal, 7, 4) DESC, SUBSTR(dokumentasi_tanggal, 4, 2) DESC, SUBSTR(dokumentasi_tanggal, 1, 2) DESC", null);
+        Cursor cursor = db.rawQuery("SELECT * FROM dokumentasi_gizi WHERE dokumentasi_profilID = " + id + " ORDER BY SUBSTR(dokumentasi_tanggal, 7, 4) DESC, SUBSTR(dokumentasi_tanggal, 4, 2) DESC, SUBSTR(dokumentasi_tanggal, 1, 2) DESC", null);
         cursor.moveToFirst();
         return cursor;
     }
@@ -2494,7 +2494,7 @@ public class DBHelper extends SQLiteOpenHelper {
 
     // Get Riwayat Imunisasi from Database
     public Cursor getRiwayat(Integer id) {
-        Cursor cursor = db.rawQuery("SELECT * FROM riwayat_imunisasi WHERE riwayat_profilID = " + id + " ORDER BY ORDER BY SUBSTR(riwayat_tanggal, 7, 4) DESC, SUBSTR(riwayat_tanggal, 4, 2) DESC, SUBSTR(riwayat_tanggal, 1, 2) DESC", null);
+        Cursor cursor = db.rawQuery("SELECT * FROM riwayat_imunisasi WHERE riwayat_profilID = " + id + " ORDER BY SUBSTR(riwayat_tanggal, 7, 4) DESC, SUBSTR(riwayat_tanggal, 4, 2) DESC, SUBSTR(riwayat_tanggal, 1, 2) DESC", null);
         cursor.moveToFirst();
         return cursor;
     }

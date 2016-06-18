@@ -206,7 +206,7 @@ public class AlarmImunisasi extends Activity {
 //                            SharedPreferences.Editor editor = pref.edit();
 //                            editor.putString("session_alarm", alarm_switch.getText().toString());
 //                            editor.apply();
-                            Toast.makeText(AlarmImunisasi.this, "Alarm Imunisasi Berhasil Dinonaktifkan", Toast.LENGTH_SHORT).show();
+                            Toast.makeText(AlarmImunisasi.this, "Alarm Imunisasi untuk " + session.loadSession(AlarmImunisasi.this, "nama") + " Berhasil Dinonaktifkan", Toast.LENGTH_SHORT).show();
                         }
                 }
             }

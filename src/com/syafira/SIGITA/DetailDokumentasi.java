@@ -111,18 +111,18 @@ public class DetailDokumentasi extends Activity {
             cursorBBU = db.getLakiBBUList(cursor.getColumnIndex("dokumentasi_bulan"));
             cursorTBU = db.getLakiTBUList(cursor.getColumnIndex("dokumentasi_bulan"));
             if (cursor.getColumnIndex("dokumentasi_bulan") <= 24) {
-                cursorBBTB = db.getLakiBBTBList_0_24(cursor.getColumnIndex("dokumentasi_tinggi"));
+                cursorBBTB = db.getLakiBBTBList_0_24(Float.parseFloat(cursor.getString(cursor.getColumnIndex("dokumentasi_tinggi"))));
             } else {
-                cursorBBTB = db.getLakiBBTBList_24_60(cursor.getColumnIndex("dokumentasi_tinggi"));
+                cursorBBTB = db.getLakiBBTBList_24_60(Float.parseFloat(cursor.getString(cursor.getColumnIndex("dokumentasi_tinggi"))));
             }
             cursorIMTU = db.getLakiIMTUList(cursor.getColumnIndex("dokumentasi_bulan"));
         } else {
             cursorBBU = db.getPerempuanBBUList(cursor.getColumnIndex("dokumentasi_bulan"));
             cursorTBU = db.getPerempuanTBUList(cursor.getColumnIndex("dokumentasi_bulan"));
             if (cursor.getColumnIndex("dokumentasi_bulan") <= 24) {
-                cursorBBTB = db.getPerempuanBBTBList_0_24(cursor.getColumnIndex("dokumentasi_bulan"));
+                cursorBBTB = db.getPerempuanBBTBList_0_24(Float.parseFloat(cursor.getString(cursor.getColumnIndex("dokumentasi_tinggi"))));
             } else {
-                cursorBBTB = db.getPerempuanBBTBList_24_60(cursor.getColumnIndex("dokumentasi_bulan"));
+                cursorBBTB = db.getPerempuanBBTBList_24_60(Float.parseFloat(cursor.getString(cursor.getColumnIndex("dokumentasi_tinggi"))));
             }
             cursorIMTU = db.getPerempuanIMTUList(cursor.getColumnIndex("dokumentasi_bulan"));
         }
@@ -1017,12 +1017,12 @@ public class DetailDokumentasi extends Activity {
         //Tab
         tabHost = (TabHost) findViewById(android.R.id.tabhost);     // The activity TabHost
         tabHost.setup();
-
         TabHost.TabSpec spec;
         spec = tabHost.newTabSpec("Grafik Bulan Ini").setIndicator("Grafik Bulan Ini").setContent(R.id.bulanIniLayout);
         tabHost.addTab(spec);
         spec = tabHost.newTabSpec("Grafik Seluruh Bulan").setIndicator("Grafik Seluruh Bulan").setContent(R.id.seluruhBulanLayout);
         tabHost.addTab(spec);
+        tabHost.setCurrentTab(0);
 
         tabBulanIni = (TabHost) findViewById(R.id.tabHostBulanIni);
         tabBulanIni.setup();
@@ -1049,6 +1049,10 @@ public class DetailDokumentasi extends Activity {
         specSeluruhBulan = tabSeluruhBulan.newTabSpec("IMT/U").setIndicator("IMT/U").setContent(R.id.imtu_seluruhbulan_layout);
         tabSeluruhBulan.addTab(specSeluruhBulan);
         tabSeluruhBulan.setCurrentTab(0);
+
+        tabHost.setFocusable(false);
+        tabSeluruhBulan.setFocusable(false);
+        tabBulanIni.setFocusable(false);
 
         for (int i = 0; i < tabHost.getTabWidget().getChildCount(); i++) {
             tabHost.getTabWidget().getChildAt(i).setBackgroundColor(Color.parseColor("#FFF1B5"));
@@ -1242,19 +1246,19 @@ public class DetailDokumentasi extends Activity {
             public void onClick(View v) {
                 // Create Dialog
                 final Dialog dialog = new Dialog(DetailDokumentasi.this);
-                dialog.setContentView(R.layout.hapus_medis);
+                dialog.setContentView(R.layout.hapus_dokumentasi);
                 dialog.setCanceledOnTouchOutside(true);
                 dialog.getWindow().setBackgroundDrawable(new ColorDrawable(android.graphics.Color.TRANSPARENT));
                 dialog.show();
 
                 // Load Dialog Widget
                 TextView alert_warning = (TextView) dialog.findViewById(R.id.alert_warning);
-                TextView alert_hapus_medis = (TextView) dialog.findViewById(R.id.alert_hapus);
+                TextView alert_hapus_dokumentasi = (TextView) dialog.findViewById(R.id.alert_hapus);
                 ImageView button_batal = (ImageView) dialog.findViewById(R.id.button_batal);
                 ImageView button_ok = (ImageView) dialog.findViewById(R.id.button_ok);
 
                 // Set Custom Font Dialog
-                alert_hapus_medis.setTypeface(typeface);
+                alert_hapus_dokumentasi.setTypeface(typeface);
                 alert_warning.setTypeface(typeface);
 
                 // Set OnClickListener Dialog
@@ -1391,6 +1395,7 @@ public class DetailDokumentasi extends Activity {
             BBTBChartBulanIni.repaint();
             IMTUChartSeluruhBulan.repaint();
             IMTUChartBulanIni.repaint();
+
         }
     }
 }

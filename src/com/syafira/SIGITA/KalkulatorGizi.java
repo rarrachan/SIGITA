@@ -98,6 +98,8 @@ public class KalkulatorGizi extends Activity {
         kalkulatorgizi_kilogram.setTypeface(typeface);
         text_footer.setTypeface(typeface);
 
+        kalkulatorgizi_bulan.setText("0");
+
         // Set OnClickListener
         kalkulatorgizi_tanggallahir.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -192,11 +194,19 @@ public class KalkulatorGizi extends Activity {
                     // Show Toast
                     Toast.makeText(KalkulatorGizi.this, "Umur Tidak Boleh Lebih Dari 5 Tahun / 60 Bulan", Toast.LENGTH_SHORT).show();
 
-                } else if (Float.parseFloat(tinggiBadan) < 45) {
+                } else if (Integer.valueOf(bulan) <= 24 && Float.parseFloat(tinggiBadan) < 45) {
                     // Show Toast
                     Toast.makeText(KalkulatorGizi.this, "Tinggi Tidak Boleh Kurang Dari 45 cm", Toast.LENGTH_SHORT).show();
 
-                }  else if (Float.parseFloat(tinggiBadan) > 120) {
+                } else if (Integer.valueOf(bulan) <= 24 && Float.parseFloat(tinggiBadan) > 110) {
+                    // Show Toast
+                    Toast.makeText(KalkulatorGizi.this, "Tinggi Tidak Boleh Lebih Dari 110 cm", Toast.LENGTH_SHORT).show();
+
+                } else if (Integer.valueOf(bulan) >= 24 && Float.parseFloat(tinggiBadan) < 65) {
+                    // Show Toast
+                    Toast.makeText(KalkulatorGizi.this, "Tinggi Tidak Boleh Kurang Dari 65 cm", Toast.LENGTH_SHORT).show();
+
+                } else if (Integer.valueOf(bulan) >= 24 && Float.parseFloat(tinggiBadan) > 120) {
                     // Show Toast
                     Toast.makeText(KalkulatorGizi.this, "Tinggi Tidak Boleh Lebih Dari 120 cm", Toast.LENGTH_SHORT).show();
 
