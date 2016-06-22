@@ -3,7 +3,9 @@
           package="com.syafira.SIGITA"
           android:versionCode="1"
           android:versionName="1.0">
+    <!-- Minimum SDK -->
     <uses-sdk android:minSdkVersion="15"/>
+    <!-- Permission -->
     <uses-permission android:name="android.permission.CAMERA"/>
     <uses-feature android:name="android.hardware.camera"
                   android:required="false"/>
@@ -12,186 +14,224 @@
     <uses-permission android:name="android.permission.VIBRATE"/>
     <application android:icon="@drawable/icon_logo"
                  android:label="@string/app_name">
+        <!-- Splash Activity -->
         <activity android:name="com.syafira.SIGITA.Splash"
                   android:label="@string/app_name"
                   android:configChanges="orientation|screenSize|keyboardHidden"
                   android:theme="@android:style/Theme.NoTitleBar.Fullscreen">
+            <!-- Filter for First Activity when application open -->
             <intent-filter>
                 <action android:name="android.intent.action.MAIN"/>
                 <category android:name="android.intent.category.LAUNCHER"/>
             </intent-filter>
         </activity>
+        <!-- Home Activity -->
         <activity android:name=".Home"
                   android:label="@string/app_name"
                   android:configChanges="orientation|screenSize|keyboardHidden"
                   android:theme="@android:style/Theme.NoTitleBar.Fullscreen">
         </activity>
+        <!-- ImageZoom Activity -->
         <activity android:name="com.syafira.SIGITA.ImageZoom"
                   android:label="@string/app_name"
                   android:configChanges="orientation|screenSize|keyboardHidden"
                   android:theme="@android:style/Theme.NoTitleBar.Fullscreen">
         </activity>
+        <!-- Profil Activity -->
         <activity android:name="com.syafira.SIGITA.Profil"
                   android:label="@string/app_name"
                   android:configChanges="orientation|screenSize|keyboardHidden"
                   android:theme="@android:style/Theme.NoTitleBar.Fullscreen">
         </activity>
+        <!-- Tambah Profil Activity -->
         <activity android:name="com.syafira.SIGITA.TambahProfil"
                   android:label="@string/app_name"
                   android:configChanges="orientation|screenSize|keyboardHidden"
                   android:theme="@android:style/Theme.NoTitleBar.Fullscreen">
         </activity>
+        <!-- Profil Tambah Passcode Activity -->
         <activity android:name="com.syafira.SIGITA.ProfilPasscode"
                   android:label="@string/app_name"
                   android:configChanges="orientation|screenSize|keyboardHidden"
                   android:theme="@android:style/Theme.NoTitleBar.Fullscreen">
         </activity>
+        <!-- Profil Cek Passcode Activity -->
         <activity android:name="com.syafira.SIGITA.ProfilCekPasscode"
                   android:label="@string/app_name"
                   android:configChanges="orientation|screenSize|keyboardHidden"
                   android:theme="@android:style/Theme.NoTitleBar.Fullscreen">
         </activity>
+        <!-- Passcode Activity -->
         <activity android:name="com.syafira.SIGITA.Passcode"
                   android:label="@string/app_name"
                   android:configChanges="orientation|screenSize|keyboardHidden"
                   android:theme="@android:style/Theme.NoTitleBar.Fullscreen">
         </activity>
+        <!-- Detail Profil Activity -->
         <activity android:name="com.syafira.SIGITA.DetailProfil"
                   android:label="@string/app_name"
                   android:configChanges="orientation|screenSize|keyboardHidden"
                   android:theme="@android:style/Theme.NoTitleBar.Fullscreen">
         </activity>
+        <!-- Ubah Profil Activity -->
         <activity android:name="com.syafira.SIGITA.UbahProfil"
                   android:label="@string/app_name"
                   android:configChanges="orientation|screenSize|keyboardHidden"
                   android:theme="@android:style/Theme.NoTitleBar.Fullscreen">
         </activity>
+        <!-- Gizi Activity -->
         <activity android:name="com.syafira.SIGITA.Gizi"
                   android:label="@string/app_name"
                   android:configChanges="orientation|screenSize|keyboardHidden"
                   android:theme="@android:style/Theme.NoTitleBar.Fullscreen">
         </activity>
+        <!-- Kalkulator Gizi Activity -->
         <activity android:name="com.syafira.SIGITA.KalkulatorGizi"
                   android:label="@string/app_name"
                   android:configChanges="orientation|screenSize|keyboardHidden"
                   android:theme="@android:style/Theme.NoTitleBar.Fullscreen">
         </activity>
+        <!-- Hasil Kalkulator Gizi Activity -->
         <activity android:name="com.syafira.SIGITA.HasilKalkulatorGizi"
                   android:label="@string/app_name"
                   android:configChanges="orientation|screenSize|keyboardHidden"
                   android:theme="@android:style/Theme.NoTitleBar.Fullscreen">
         </activity>
+        <!-- Dokumentasi Gizi Activity -->
         <activity android:name="com.syafira.SIGITA.DokumentasiGizi"
                   android:label="@string/app_name"
                   android:configChanges="orientation|screenSize|keyboardHidden"
                   android:theme="@android:style/Theme.NoTitleBar.Fullscreen">
         </activity>
+        <!-- Tambah Dokumentasi Gizi Activity -->
         <activity android:name="com.syafira.SIGITA.TambahDokumentasi"
                   android:label="@string/app_name"
                   android:configChanges="orientation|screenSize|keyboardHidden"
                   android:theme="@android:style/Theme.NoTitleBar.Fullscreen">
         </activity>
+        <!-- Detail Dokumentasi Gizi Activity -->
         <activity android:name="com.syafira.SIGITA.DetailDokumentasi"
                   android:label="@string/app_name"
                   android:configChanges="orientation|screenSize|keyboardHidden"
                   android:theme="@android:style/Theme.NoTitleBar.Fullscreen">
         </activity>
+        <!-- Ubah Dokumentasi Gizi Activity -->
         <activity android:name="com.syafira.SIGITA.UbahDokumentasi"
                   android:label="@string/app_name"
                   android:configChanges="orientation|screenSize|keyboardHidden"
                   android:theme="@android:style/Theme.NoTitleBar.Fullscreen">
         </activity>
+        <!-- Imunisasi Activity -->
         <activity android:name="com.syafira.SIGITA.Imunisasi"
                   android:label="@string/app_name"
                   android:configChanges="orientation|screenSize|keyboardHidden"
                   android:theme="@android:style/Theme.NoTitleBar.Fullscreen">
         </activity>
+        <!-- Jadwal Imunisasi Activity -->
         <activity android:name="com.syafira.SIGITA.JadwalImunisasi"
                   android:label="@string/app_name"
                   android:configChanges="orientation|screenSize|keyboardHidden"
                   android:theme="@android:style/Theme.NoTitleBar.Fullscreen">
         </activity>
+        <!-- Detail Jadwal Imunisasi Activity -->
         <activity android:name="com.syafira.SIGITA.DetailJadwalImunisasi"
                   android:label="@string/app_name"
                   android:configChanges="orientation|screenSize|keyboardHidden"
                   android:theme="@android:style/Theme.NoTitleBar.Fullscreen">
         </activity>
+        <!-- Riwayat Imunisasi Activity -->
         <activity android:name="com.syafira.SIGITA.RiwayatImunisasi"
                   android:label="@string/app_name"
                   android:configChanges="orientation|screenSize|keyboardHidden"
                   android:theme="@android:style/Theme.NoTitleBar.Fullscreen">
         </activity>
+        <!-- Tambah Riwayat Imunisasi Activity -->
         <activity android:name="com.syafira.SIGITA.TambahRiwayat"
                   android:label="@string/app_name"
                   android:configChanges="orientation|screenSize|keyboardHidden"
                   android:theme="@android:style/Theme.NoTitleBar.Fullscreen">
         </activity>
+        <!-- Detail Riwayat Imunisasi Activity -->
         <activity android:name="com.syafira.SIGITA.DetailRiwayat"
                   android:label="@string/app_name"
                   android:configChanges="orientation|screenSize|keyboardHidden"
                   android:theme="@android:style/Theme.NoTitleBar.Fullscreen">
         </activity>
+        <!-- Ubah Riwayat Imunisasi Activity -->
         <activity android:name="com.syafira.SIGITA.UbahRiwayat"
                   android:label="@string/app_name"
                   android:configChanges="orientation|screenSize|keyboardHidden"
                   android:theme="@android:style/Theme.NoTitleBar.Fullscreen">
         </activity>
+        <!-- Alarm Imunisasi Activity -->
         <activity android:name="com.syafira.SIGITA.AlarmImunisasi"
                   android:label="@string/app_name"
                   android:configChanges="orientation|screenSize|keyboardHidden"
                   android:theme="@android:style/Theme.NoTitleBar.Fullscreen">
         </activity>
+        <!-- Alarm Receiver -->
         <receiver android:name="com.syafira.SIGITA.AlarmReceiver"/>
+        <!-- Tumbuh Kembang Activity -->
         <activity android:name="com.syafira.SIGITA.TumbuhKembang"
                   android:label="@string/app_name"
                   android:configChanges="orientation|screenSize|keyboardHidden"
                   android:theme="@android:style/Theme.NoTitleBar.Fullscreen">
         </activity>
+        <!-- Tahapan Tumbuh Kembang Activity -->
         <activity android:name="com.syafira.SIGITA.TahapanTumbang"
                   android:label="@string/app_name"
                   android:configChanges="orientation|screenSize|keyboardHidden"
                   android:theme="@android:style/Theme.NoTitleBar.Fullscreen">
         </activity>
+        <!-- Galeri Tumbuh Kembang Activity -->
         <activity android:name="com.syafira.SIGITA.GaleriTumbang"
                   android:label="@string/app_name"
                   android:configChanges="orientation|screenSize|keyboardHidden"
                   android:theme="@android:style/Theme.NoTitleBar.Fullscreen">
         </activity>
+        <!-- Tambah Galeri Activity -->
         <activity android:name="com.syafira.SIGITA.TambahGaleri"
                   android:label="@string/app_name"
                   android:configChanges="orientation|screenSize|keyboardHidden"
                   android:theme="@android:style/Theme.NoTitleBar.Fullscreen">
         </activity>
+        <!-- Detail Galeri Activity -->
         <activity android:name="com.syafira.SIGITA.DetailGaleri"
                   android:label="@string/app_name"
                   android:configChanges="orientation|screenSize|keyboardHidden"
                   android:theme="@android:style/Theme.NoTitleBar.Fullscreen">
         </activity>
+        <!-- Ubah Galeri Activity -->
         <activity android:name="com.syafira.SIGITA.UbahGaleri"
                   android:label="@string/app_name"
                   android:configChanges="orientation|screenSize|keyboardHidden"
                   android:theme="@android:style/Theme.NoTitleBar.Fullscreen">
         </activity>
+        <!-- Rekam Medis Activity -->
         <activity android:name="com.syafira.SIGITA.RekamMedis"
                   android:label="@string/app_name"
                   android:configChanges="orientation|screenSize|keyboardHidden"
                   android:theme="@android:style/Theme.NoTitleBar.Fullscreen">
         </activity>
+        <!-- Tambah Rekam Medis Activity -->
         <activity android:name="com.syafira.SIGITA.TambahMedis"
                   android:label="@string/app_name"
                   android:configChanges="orientation|screenSize|keyboardHidden"
                   android:theme="@android:style/Theme.NoTitleBar.Fullscreen">
         </activity>
+        <!-- Detail Rekam Medis Activity -->
         <activity android:name="com.syafira.SIGITA.DetailMedis"
                   android:label="@string/app_name"
                   android:configChanges="orientation|screenSize|keyboardHidden"
                   android:theme="@android:style/Theme.NoTitleBar.Fullscreen">
         </activity>
+        <!-- Ubah Rekam Medis Activity -->
         <activity android:name="com.syafira.SIGITA.UbahMedis"
                   android:label="@string/app_name"
                   android:configChanges="orientation|screenSize|keyboardHidden"
                   android:theme="@android:style/Theme.NoTitleBar.Fullscreen">
         </activity>
+        <!-- Tentang Activity -->
         <activity android:name="com.syafira.SIGITA.TentangSIGITA"
                   android:label="@string/app_name"
                   android:configChanges="orientation|screenSize|keyboardHidden"

@@ -24,8 +24,10 @@ import java.util.Locale;
 /**
  * Created by syafira rarra on 05/25/2016.
  */
+
 public class TambahDokumentasi extends Activity {
 
+    // Declare
     private TextView tambah_dokumentasi;
     private TextView titikdua;
     private TextView text_footer;
@@ -62,6 +64,7 @@ public class TambahDokumentasi extends Activity {
         Intent fetchID = getIntent();
         lastActivity = fetchID.getLongExtra("lastActivity", 1L);
 
+        // Load Widget
         tambah_dokumentasi = (TextView) findViewById(R.id.tambah_dokumentasi);
         titikdua = (TextView) findViewById(R.id.titikdua);
         text_footer = (TextView) findViewById(R.id.text_footer);
@@ -98,6 +101,7 @@ public class TambahDokumentasi extends Activity {
         dokumentasigizi_beratbadan.setTypeface(typeface);
         dokumentasigizi_kilogram.setTypeface(typeface);
 
+        // Set Text
         dokumentasigizi_nama.setText(session.loadSession(this, "nama"));
         dokumentasigizi_bulan.setText("0");
 
@@ -200,11 +204,11 @@ public class TambahDokumentasi extends Activity {
                     // Show Toast
                     Toast.makeText(TambahDokumentasi.this, "Kolom Berat Badan Belum Terisi", Toast.LENGTH_SHORT).show();
 
-                } else if (bulan >= 0 && bulan <= 24 && Float.parseFloat(tinggiBadan) < 45) {
+                } else if (bulan >= 0 && bulan < 24 && Float.parseFloat(tinggiBadan) < 45) {
                     // Show Toast
                     Toast.makeText(TambahDokumentasi.this, "Tinggi Tidak Boleh Kurang Dari 45 cm", Toast.LENGTH_SHORT).show();
 
-                } else if (bulan >= 0 && bulan <= 24 && Float.parseFloat(tinggiBadan) > 110) {
+                } else if (bulan >= 0 && bulan < 24 && Float.parseFloat(tinggiBadan) > 110) {
                     // Show Toast
                     Toast.makeText(TambahDokumentasi.this, "Tinggi Tidak Boleh Lebih Dari 110 cm", Toast.LENGTH_SHORT).show();
 

@@ -106,6 +106,7 @@ public class Home extends Activity {
         grid.setExpanded(true);
         grid.setVisibility(View.VISIBLE);
 
+        // Grid OnClickListener
         grid.setOnItemClickListener(new AdapterView.OnItemClickListener() {
             @Override
             public void onItemClick(AdapterView<?> parent, View v, int position, long id) {
@@ -217,6 +218,7 @@ public class Home extends Activity {
     // Pressed Button Back
     @Override
     public void onBackPressed() {
+
         // Create Dialog
         new AlertDialog.Builder(this)
                 .setTitle("Keluar SIGITA")
@@ -224,7 +226,7 @@ public class Home extends Activity {
                 .setNegativeButton(android.R.string.no, null)
                 .setPositiveButton(android.R.string.yes, new DialogInterface.OnClickListener() {
                     public void onClick(DialogInterface arg0, int arg1) {
-//                        // Clear Session
+                        // Clear Session
                         session.clearSession(Home.this);
                         Home.super.onBackPressed();
 

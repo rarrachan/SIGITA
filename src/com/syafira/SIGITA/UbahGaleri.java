@@ -36,6 +36,7 @@ import java.util.Locale;
 /**
  * Created by syafira rarra on 05/07/2016.
  */
+
 public class UbahGaleri extends Activity {
 
     private TextView ubah_galeri;

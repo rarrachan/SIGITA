@@ -67,10 +67,9 @@
                         android:layout_height="wrap_content"
                         android:gravity="center"
                         android:orientation="vertical"
-                        android:layout_gravity="center_vertical"
-                        >
+                        android:layout_gravity="center_vertical">
 
-                    <!-- Start Linear Layout Row -->
+                    <!-- Start Text View Ubah Dokumentasi -->
                     <TextView
                             android:id="@+id/ubah_dokumentasi"
                             android:layout_width="wrap_content"
@@ -80,7 +79,9 @@
                             style="@android:style/TextAppearance.DeviceDefault.Medium"
                             android:layout_gravity="center_vertical"
                             android:layout_margin="20dp"/>
+                    <!-- End Text View Ubah Dokumentasi -->
 
+                    <!-- Start Linear Layout Row -->
                     <LinearLayout
                             android:layout_width="fill_parent"
                             android:layout_height="wrap_content"
@@ -101,13 +102,13 @@
                                 android:orientation="vertical"
                                 android:layout_weight="1">
 
+                            <!-- Start Linear Layout Nama -->
                             <LinearLayout
                                     android:layout_width="fill_parent"
                                     android:layout_height="wrap_content"
-                                    android:orientation="horizontal"
-                                    >
+                                    android:orientation="horizontal">
 
-                                <!-- Start Text View dokumentasi Nama -->
+                                <!-- Start Text View Nama -->
                                 <TextView
                                         android:id="@+id/text_dokumentasigizi_nama"
                                         android:layout_width="wrap_content"
@@ -115,7 +116,7 @@
                                         android:textColor="#D046F2"
                                         android:text="@string/dokumentasigizi_nama"
                                         style="@android:style/TextAppearance.DeviceDefault.Medium"/>
-                                <!-- End Text View dokumentasi Nama -->
+                                <!-- End Text View Nama -->
 
                                 <!-- Start Text View Titik Dua -->
                                 <TextView
@@ -129,6 +130,7 @@
                                 <!-- End Text View Titik Dua -->
 
                             </LinearLayout>
+                            <!-- End Linear Layout Nama -->
 
                             <!-- Start Edit Text dokumentasi Nama -->
                             <TextView
@@ -141,14 +143,13 @@
                                     android:layout_margin="10dp"/>
                             <!-- End Edit Text dokumentasi Nama -->
 
-                            <!-- Start Linear Layout Nama Dokter -->
+                            <!-- Start Linear Layout Usia -->
                             <LinearLayout
                                     android:layout_width="fill_parent"
                                     android:layout_height="wrap_content"
-                                    android:orientation="horizontal"
-                                    >
+                                    android:orientation="horizontal">
 
-                                <!-- Start Text View Nama Dokter -->
+                                <!-- Start Text View Usia -->
                                 <TextView
                                         android:id="@+id/text_dokumentasigizi_usia"
                                         android:layout_width="wrap_content"
@@ -156,7 +157,7 @@
                                         android:textColor="#D046F2"
                                         android:text="@string/usia_vaksin"
                                         style="@android:style/TextAppearance.DeviceDefault.Medium"/>
-                                <!-- End Text View Nama Dokter -->
+                                <!-- End Text View Usia -->
 
                                 <!-- Start Text View Titik Dua -->
                                 <TextView
@@ -170,9 +171,9 @@
                                 <!-- End Text View Titik Dua -->
 
                             </LinearLayout>
-                            <!-- End Linear Layout Nama Dokter -->
+                            <!-- End Linear Layout usia -->
 
-                            <!-- Start Edit Text Nama Dokter -->
+                            <!-- Start Text View Usia -->
                             <TextView
                                     android:id="@+id/dokumentasigizi_usia"
                                     android:layout_width="fill_parent"
@@ -180,27 +181,16 @@
                                     android:textColor="#FF0000"
                                     android:hint="@string/dash"
                                     android:layout_margin="10dp"
-                                    style="@android:style/TextAppearance.DeviceDefault.Medium"
-                                    />
+                                    style="@android:style/TextAppearance.DeviceDefault.Medium"/>
+                            <!-- End Text View Usia -->
 
+                            <!-- Start Text View Bulan -->
                             <TextView
                                     android:id="@+id/dokumentasigizi_bulan"
                                     android:layout_width="fill_parent"
                                     android:layout_height="wrap_content"
                                     android:visibility="gone"/>
-                            <!-- End Edit Text Nama Dokter -->
-
-                            <!-- Start Linear Layout Nama Dokter -->
-                            <!-- End Linear Layout Nama Dokter -->
-
-                            <!-- Start Edit Text Nama Dokter -->
-                            <!-- End Edit Text Nama Dokter -->
-
-                            <!-- Start Linear Layout Nama Rumah Sakit -->
-                            <!-- End Linear Layout Nama Rumah Sakit -->
-
-                            <!-- Start Edit Text Nama Rumah Sakit -->
-                            <!-- End Edit Text Nama Rumah Sakit -->
+                            <!-- End Text View Bulan -->
 
                         </LinearLayout>
                         <!-- End Linear Layout Content -->
@@ -212,21 +202,20 @@
                                 android:layout_weight=".05"/>
                         <!-- End Blank Space -->
 
-                        <!-- Start Linear Layout dokumentasi -->
+                        <!-- Start Linear Layout Content -->
                         <LinearLayout
                                 android:layout_width="0dp"
                                 android:layout_height="wrap_content"
                                 android:orientation="vertical"
                                 android:layout_weight=".8">
 
-                            <!-- Start Linear Layout Tanggal Lahir -->
+                            <!-- Start Linear Layout Tanggal -->
                             <LinearLayout
                                     android:layout_width="wrap_content"
                                     android:layout_height="wrap_content"
-                                    android:orientation="horizontal"
-                                    >
+                                    android:orientation="horizontal">
 
-                                <!-- Start Text View Tanggal Lahir -->
+                                <!-- Start Text View Tanggal -->
                                 <TextView
                                         android:id="@+id/text_dokumentasigizi_tanggal"
                                         android:layout_width="fill_parent"
@@ -234,7 +223,7 @@
                                         android:textColor="#D046F2"
                                         android:text="@string/dokumentasigizi_tanggal"
                                         style="@android:style/TextAppearance.DeviceDefault.Medium"/>
-                                <!-- End Text View Tanggal Lahir -->
+                                <!-- End Text View Tanggal -->
 
                                 <!-- Start Text View Titik Dua -->
                                 <TextView
@@ -248,9 +237,9 @@
                                 <!-- End Text View Titik Dua -->
 
                             </LinearLayout>
-                            <!-- End Linear Layout Tanggal Lahir -->
+                            <!-- End Linear Layout Tanggal  -->
 
-                            <!-- Start Edit Text Tanggal Lahir -->
+                            <!-- Start Edit Text Tanggal -->
                             <EditText
                                     android:id="@+id/dokumentasigizi_tanggal"
                                     android:layout_width="fill_parent"
@@ -259,11 +248,10 @@
                                     android:hint="@string/profil_hint_tanggallahir"
                                     android:focusable="false"
                                     style="@android:style/TextAppearance.DeviceDefault.Medium"/>
-                            <!-- End Edit Text Tanggal lahir -->
-
+                            <!-- End Edit Text Tanggal -->
 
                         </LinearLayout>
-                        <!-- End Linear Layout dokumentasi -->
+                        <!-- End Linear Layout Content -->
 
                         <!-- Start Blank Space -->
                         <View
@@ -299,28 +287,7 @@
                             android:orientation="vertical"
                             android:layout_weight="1">
 
-                        <!-- Start Edit Text dokumentasi Nama -->
-                        <!-- End Edit Text dokumentasi Nama -->
-
-                        <!-- Start Linear Layout Nama Dokter -->
-                        <!-- End Linear Layout Nama Dokter -->
-
-                        <!-- Start Edit Text Nama Dokter -->
-
-                        <!-- End Edit Text Nama Dokter -->
-
-                        <!-- Start Linear Layout Nama Dokter -->
-                        <!-- End Linear Layout Nama Dokter -->
-
-                        <!-- Start Edit Text Nama Dokter -->
-                        <!-- End Edit Text Nama Dokter -->
-
-                        <!-- Start Linear Layout Nama Rumah Sakit -->
-                        <!-- End Linear Layout Nama Rumah Sakit -->
-
-                        <!-- Start Edit Text Nama Rumah Sakit -->
-                        <!-- End Edit Text Nama Rumah Sakit -->
-
+                        <!-- Start Linear Layout Tinggi Badan -->
                         <LinearLayout
                                 android:layout_width="fill_parent"
                                 android:layout_height="wrap_content"
@@ -334,8 +301,10 @@
                                     android:layout_height="wrap_content"
                                     android:textColor="#D046F2"
                                     android:text="@string/dokumentasigizi_tinggibadan"
-                                    style="@android:style/TextAppearance.DeviceDefault.Medium"
-                                    />
+                                    style="@android:style/TextAppearance.DeviceDefault.Medium"/>
+                            <!-- End Text View Berat Badan -->
+
+                            <!-- Start Text View Titik Dua -->
                             <TextView
                                     android:id="@+id/titikdua"
                                     android:layout_width="wrap_content"
@@ -344,9 +313,12 @@
                                     android:text="@string/titikdua"
                                     style="@android:style/TextAppearance.DeviceDefault.Medium"
                                     android:layout_marginLeft="5dp"/>
-                            <!-- End Text View Panjang Lahir -->
+                            <!-- End Text View Titik Dua -->
 
                         </LinearLayout>
+                        <!-- End Linear Layout Tinggi Badan -->
+
+                        <!-- Start Linear Layout Tinggi Badan -->
                         <LinearLayout
                                 android:layout_width="fill_parent"
                                 android:layout_height="wrap_content"
@@ -376,6 +348,8 @@
                             <!-- End Text View Centimeter -->
 
                         </LinearLayout>
+                        <!-- End Linear Layout Tinggi Badan -->
+
                     </LinearLayout>
                     <!-- End Linear Layout Content -->
 
@@ -386,27 +360,14 @@
                             android:layout_weight=".05"/>
                     <!-- End Blank Space -->
 
-                    <!-- Start Linear Layout dokumentasi -->
+                    <!-- Start Linear Layout Content -->
                     <LinearLayout
                             android:layout_width="0dp"
                             android:layout_height="wrap_content"
                             android:orientation="vertical"
                             android:layout_weight=".8">
 
-                        <!-- Start Linear Layout Tanggal Lahir -->
-                        <!-- End Linear Layout Tanggal Lahir -->
-
-                        <!-- Start Edit Text Tanggal Lahir -->
-                        <!-- End Edit Text Tanggal lahir -->
-
-                        <!-- Start Linear Layout Nama Dokter -->
-                        <!-- End Linear Layout Nama Dokter -->
-
-                        <!-- Start Edit Text Nama Dokter -->
-                        <!-- End Edit Text Nama Dokter -->
-
-                        <!-- Start Linear Layout Tinggi Badan -->
-
+                        <!-- Start Linear Layout Berat Badan -->
                         <LinearLayout
                                 android:layout_width="fill_parent"
                                 android:layout_height="wrap_content"
@@ -420,8 +381,10 @@
                                     android:layout_height="wrap_content"
                                     android:textColor="#D046F2"
                                     android:text="@string/dokumentasigizi_beratbadan"
-                                    style="@android:style/TextAppearance.DeviceDefault.Medium"
-                                    />
+                                    style="@android:style/TextAppearance.DeviceDefault.Medium"/>
+                            <!-- End Text View Berat Badan -->
+
+                            <!-- Start Text View Titik Dua -->
                             <TextView
                                     android:id="@+id/titikdua"
                                     android:layout_width="wrap_content"
@@ -430,10 +393,12 @@
                                     android:text="@string/titikdua"
                                     style="@android:style/TextAppearance.DeviceDefault.Medium"
                                     android:layout_marginLeft="5dp"/>
-                            <!-- End Text View Berat Lahir -->
+                            <!-- End Text View Titik Dua -->
 
                         </LinearLayout>
+                        <!-- End Linear Layout Berat Badan -->
 
+                        <!-- Start Linear Layout Berat Badan -->
                         <LinearLayout
                                 android:layout_width="fill_parent"
                                 android:layout_height="wrap_content"
@@ -463,9 +428,10 @@
                             <!-- End Text View kilogram -->
 
                         </LinearLayout>
+                        <!-- End Linear Layout Berat Badan -->
 
                     </LinearLayout>
-                    <!-- End Linear Layout dokumentasi -->
+                    <!-- End Linear Layout Content -->
 
                     <!-- Start Blank Space -->
                     <View
@@ -483,7 +449,8 @@
                         android:layout_height="wrap_content"
                         android:orientation="horizontal"
                         android:layout_gravity="center"
-                        android:layout_marginBottom="30dp" android:layout_marginTop="20dp">
+                        android:layout_marginBottom="30dp" 
+                        android:layout_marginTop="20dp">
 
                     <!-- Start Blank Space -->
                     <View

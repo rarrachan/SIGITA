@@ -13,6 +13,7 @@ import android.net.Uri;
 /**
  * Created by syafira rarra on 05/15/2016.
  */
+
 public class AlarmReceiver extends BroadcastReceiver {
     @Override
     public void onReceive(Context context, Intent intent) {
@@ -22,16 +23,20 @@ public class AlarmReceiver extends BroadcastReceiver {
         String alarm_bulan = intent.getStringExtra("alarm_bulan");
         int IDs = intent.getIntExtra("IDs", 0);
 
+        // notification sound
         Uri alarmSound = RingtoneManager.getDefaultUri(RingtoneManager.TYPE_NOTIFICATION);
         Intent notificationIntent = new Intent(context, Splash.class);
         notificationIntent.putExtra("IDs", IDs);
+
         // set intent so it does not start a new activity
         notificationIntent.setFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP | Intent.FLAG_ACTIVITY_SINGLE_TOP | PendingIntent.FLAG_ONE_SHOT);
         PendingIntent pendingIntent = PendingIntent.getActivity(context, IDs, notificationIntent, 0);
 
+        // cancel open activity when notification dismissed
         PendingIntent cancelIntent = PendingIntent.getActivity(context, IDs, new Intent(context, AlarmImunisasi.class), 0);
         cancelIntent.cancel();
 
+        // notification builder
         Notification.Builder nb = new Notification.Builder(context)
                 .setContentTitle(alarm_nama)
                 .setContentText("Imunisasi \n" + alarm_vaksin.replaceAll("\n", ",") + " Pada " + alarm_bulan)

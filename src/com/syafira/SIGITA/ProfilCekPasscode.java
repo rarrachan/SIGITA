@@ -101,25 +101,15 @@ public class ProfilCekPasscode extends Activity {
             }
         });
 
+        // when text change
         pass1.addTextChangedListener(new TextWatcher() {
-
             @Override
-            public void onTextChanged(CharSequence s, int start, int before, int count) {
-                // TODO Auto-generated method stub
-
-            }
-
+            public void onTextChanged(CharSequence s, int start, int before, int count) {}
             @Override
-            public void beforeTextChanged(CharSequence s, int start, int count,
-                                          int after) {
-                // TODO Auto-generated method stub
-
-            }
-
+            public void beforeTextChanged(CharSequence s, int start, int count, int after) {}
             @Override
             public void afterTextChanged(Editable s) {
                 if (pass1.getText().toString().trim().length() == 1) {
-
                     pass1.clearFocus();
                     pass2.requestFocus();
                     pass1.setBackgroundResource(R.drawable.pin_txt_bg_star);
@@ -128,24 +118,13 @@ public class ProfilCekPasscode extends Activity {
         });
 
         pass2.addTextChangedListener(new TextWatcher() {
-
             @Override
-            public void onTextChanged(CharSequence s, int start, int before, int count) {
-                // TODO Auto-generated method stub
-
-            }
-
+            public void onTextChanged(CharSequence s, int start, int before, int count) {}
             @Override
-            public void beforeTextChanged(CharSequence s, int start, int count,
-                                          int after) {
-                // TODO Auto-generated method stub
-
-            }
-
+            public void beforeTextChanged(CharSequence s, int start, int count, int after) {}
             @Override
             public void afterTextChanged(Editable s) {
                 if (pass2.getText().toString().trim().length() == 1) {
-
                     pass2.clearFocus();
                     pass3.requestFocus();
                     pass2.setBackgroundResource(R.drawable.pin_txt_bg_star);
@@ -155,21 +134,14 @@ public class ProfilCekPasscode extends Activity {
 
         pass3.addTextChangedListener(new TextWatcher() {
             @Override
-            public void onTextChanged(CharSequence s, int start, int before, int count) {
-            }
-
+            public void onTextChanged(CharSequence s, int start, int before, int count) {}
             @Override
-            public void beforeTextChanged(CharSequence s, int start, int count,
-                                          int after) {
-            }
-
+            public void beforeTextChanged(CharSequence s, int start, int count, int after) {}
             @Override
             public void afterTextChanged(Editable s) {
                 if (pass3.getText().toString().trim().length() == 1) {
-
                     pass3.clearFocus();
                     pass4.requestFocus();
-
                     pass3.setBackgroundResource(R.drawable.pin_txt_bg_star);
                 }
 
@@ -178,14 +150,9 @@ public class ProfilCekPasscode extends Activity {
 
         pass4.addTextChangedListener(new TextWatcher() {
             @Override
-            public void onTextChanged(CharSequence s, int start, int before, int count) {
-            }
-
+            public void onTextChanged(CharSequence s, int start, int before, int count) {}
             @Override
-            public void beforeTextChanged(CharSequence s, int start, int count,
-                                          int after) {
-            }
-
+            public void beforeTextChanged(CharSequence s, int start, int count, int after) {}
             @Override
             public void afterTextChanged(Editable s) {
                 if (pass4.getText().toString().trim().length() == 1) {
@@ -207,6 +174,7 @@ public class ProfilCekPasscode extends Activity {
 
                     switch (action) {
                         case "pilihprofil":
+                            // Passcode True
                             if (newpasscode.equals(pass)) {
                                 // Create Session
                                 if (session.checkSession(ProfilCekPasscode.this)) {
@@ -230,6 +198,8 @@ public class ProfilCekPasscode extends Activity {
 
                                 // Close This Activity
                                 finish();
+                            
+                            // Passcode False
                             } else {
                                 Toast.makeText(ProfilCekPasscode.this, "Passcode Salah", Toast.LENGTH_SHORT).show();
 
@@ -246,7 +216,9 @@ public class ProfilCekPasscode extends Activity {
                                 finish();
                             }
                             break;
+
                         case "detailprofil":
+                            // Passcode True
                             if (newpasscode.equals(pass)) {
                                 // Show Detail Profil Activity
                                 lastActivity = System.currentTimeMillis();
@@ -260,6 +232,8 @@ public class ProfilCekPasscode extends Activity {
 
                                 // Close This Activity
                                 finish();
+
+                            // Passcode False
                             } else {
                                 Toast.makeText(ProfilCekPasscode.this, "Passcode Salah", Toast.LENGTH_SHORT).show();
 
@@ -276,8 +250,11 @@ public class ProfilCekPasscode extends Activity {
                                 finish();
                             }
                             break;
+
                         case "ubahpasscode":
+                            // Passcode True
                             if (newpasscode.equals(pass)) {
+
                                 // Start Home Activity
                                 lastActivity = System.currentTimeMillis();
                                 Intent createnewpasscode = new Intent(ProfilCekPasscode.this, ProfilPasscode.class);
@@ -292,6 +269,8 @@ public class ProfilCekPasscode extends Activity {
 
                                 // Close This Activity
                                 finish();
+
+                            // Passcode False
                             } else {
                                 Toast.makeText(ProfilCekPasscode.this, "Passcode Salah", Toast.LENGTH_SHORT).show();
 
@@ -309,7 +288,9 @@ public class ProfilCekPasscode extends Activity {
                                 finish();
                             }
                             break;
+
                         case "hapuspasscode":
+                            // Passcode True
                             if (newpasscode.equals(pass)) {
                                 // Load Database
                                 DBHelper db = new DBHelper(ProfilCekPasscode.this);
@@ -343,6 +324,8 @@ public class ProfilCekPasscode extends Activity {
 
                                 // Close This Activity
                                 finish();
+
+                            // Passcode False
                             } else {
                                 Toast.makeText(ProfilCekPasscode.this, "Passcode Salah", Toast.LENGTH_SHORT).show();
 
@@ -360,7 +343,9 @@ public class ProfilCekPasscode extends Activity {
                                 finish();
                             }
                             break;
+
                         case "ubahprofil":
+                            // Passcode True
                             if (newpasscode.equals(pass)) {
                                 Intent ubah_profil = new Intent(ProfilCekPasscode.this, UbahProfil.class);
                                 // Put Intent Extra
@@ -373,6 +358,8 @@ public class ProfilCekPasscode extends Activity {
                                 ubah_profil.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TASK | Intent.FLAG_ACTIVITY_CLEAR_TOP);
                                 startActivity(ubah_profil);
                                 finish();
+
+                            // Passcode False                                
                             } else {
                                 Toast.makeText(ProfilCekPasscode.this, "Passcode Salah", Toast.LENGTH_SHORT).show();
 
@@ -390,7 +377,9 @@ public class ProfilCekPasscode extends Activity {
                                 finish();
                             }
                             break;
+
                         case "hapusprofil":
+                            // Passcode True
                             if (newpasscode.equals(pass)) {
                                 // Declare Condition
                                 boolean success = false;
@@ -455,6 +444,8 @@ public class ProfilCekPasscode extends Activity {
 
                                 // Clear Activity
                                 finish();
+
+                            // Passcode False
                             } else {
                                 Toast.makeText(ProfilCekPasscode.this, "Passcode Salah", Toast.LENGTH_SHORT).show();
 
@@ -477,6 +468,7 @@ public class ProfilCekPasscode extends Activity {
             }
         });
 
+        // pressed backspace button
         this.pass2.setOnKeyListener(new View.OnKeyListener() {
             public boolean onKey(View paramView, int paramInt, KeyEvent paramKeyEvent) {
                 if ((paramKeyEvent.getAction() == KeyEvent.ACTION_DOWN) && (paramInt == 67) && (ProfilCekPasscode.this.pass2.getText().length() == 0)) {
@@ -484,7 +476,6 @@ public class ProfilCekPasscode extends Activity {
                     pass1.setBackgroundResource(R.drawable.pin_txt_bg);
                     pass1.setText("");
                 }
-
                 return false;
             }
         });
@@ -496,7 +487,6 @@ public class ProfilCekPasscode extends Activity {
                     pass2.setBackgroundResource(R.drawable.pin_txt_bg);
                     pass2.setText("");
                 }
-
                 return false;
             }
         });
@@ -508,11 +498,11 @@ public class ProfilCekPasscode extends Activity {
                     pass3.setBackgroundResource(R.drawable.pin_txt_bg);
                     pass3.setText("");
                 }
-
                 return false;
             }
         });
 
+        // Lupa Passcode
         TextView lupa_passcode = (TextView) findViewById(R.id.lupa_passcode);
         lupa_passcode.setTypeface(typeface);
         lupa_passcode.setOnClickListener(new View.OnClickListener() {
@@ -546,6 +536,7 @@ public class ProfilCekPasscode extends Activity {
                         imm.toggleSoftInput(InputMethodManager.SHOW_FORCED, 0);
                     }
                 });
+
                 button_ok.setOnClickListener(new View.OnClickListener() {
                     @Override
                     public void onClick(View v) {
@@ -624,6 +615,7 @@ public class ProfilCekPasscode extends Activity {
             }
         });
 
+        // Set OnTouchListener
         pass1.setOnTouchListener(new View.OnTouchListener() {
             @Override
             public boolean onTouch(View v, MotionEvent event) {
@@ -727,6 +719,7 @@ public class ProfilCekPasscode extends Activity {
                 // Close This Activity
                 finish();
                 break;
+
             case "hapusprofil":
             case "ubahprofil":
                 // Start Profil Activity
@@ -742,6 +735,7 @@ public class ProfilCekPasscode extends Activity {
                 // Close This Activity
                 finish();
                 break;
+                
             case "hapuspasscode":
             case "ubahpasscode":
                 // Start Profil Activity

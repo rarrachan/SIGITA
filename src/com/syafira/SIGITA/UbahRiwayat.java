@@ -23,8 +23,10 @@ import java.util.*;
 /**
  * Created by syafira rarra on 05/12/2016.
  */
+
 public class UbahRiwayat extends Activity {
 
+    // Declare
     private TextView ubah_riwayat;
     private TextView text_footer;
     private TextView titikdua;
@@ -122,6 +124,7 @@ public class UbahRiwayat extends Activity {
         riwayat_beratbadan.setTypeface(typeface);
         riwayat_kilogram.setTypeface(typeface);
 
+        // Create List Spinner
         final List<String> list = new ArrayList<>();
         list.add(0, "Pilih");
         final ArrayAdapter dataAdapter = new ArrayAdapter<String>(UbahRiwayat.this, android.R.layout.simple_spinner_item, list) {
@@ -151,6 +154,7 @@ public class UbahRiwayat extends Activity {
         dataAdapter.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
         riwayat_jenisvaksin.setAdapter(dataAdapter);
 
+        // Set Text
         riwayat_nama.setText(session.loadSession(this, "nama"));
         final int riwayatID = Integer.parseInt(cursor.getString(cursor.getColumnIndex("riwayatID")));
         final int bulan = Integer.parseInt(cursor.getString(cursor.getColumnIndex("riwayat_bulan")));
@@ -162,7 +166,8 @@ public class UbahRiwayat extends Activity {
         riwayat_tinggibadan.setText(cursor.getString(cursor.getColumnIndex("riwayat_tinggi")));
         riwayat_dokter.setText(cursor.getString(cursor.getColumnIndex("riwayat_dokter")));
 
-        Cursor cursor_vaksin = db.getOneListByBulan(bulan);
+        // List Spinner Vaksin
+        Cursor cursor_vaksin = db.getOneListByBulanLeftJoinRiwayatID(bulan, riwayatID);
         cursor_vaksin.moveToFirst();
         if (!cursor_vaksin.isAfterLast()) {
             do {
@@ -175,6 +180,7 @@ public class UbahRiwayat extends Activity {
             } while (cursor_vaksin.moveToNext());
         }
 
+        // Set OnClickListener
         riwayat_tanggal.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {

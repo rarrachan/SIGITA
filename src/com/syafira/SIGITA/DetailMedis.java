@@ -13,6 +13,7 @@ import android.widget.*;
 /**
  * Created by syafira rarra on 05/01/2016.
  */
+
 public class DetailMedis extends Activity {
 
     // Declare
@@ -232,6 +233,7 @@ public class DetailMedis extends Activity {
     // Pressed Back Button
     @Override
     public void onBackPressed() {
+        
         // Show Rekam Medis Activity
         Intent medis = new Intent(DetailMedis.this, RekamMedis.class);
         lastActivity = System.currentTimeMillis();

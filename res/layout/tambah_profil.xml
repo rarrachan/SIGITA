@@ -67,9 +67,9 @@
                         android:layout_height="wrap_content"
                         android:gravity="center"
                         android:orientation="vertical"
-                        android:layout_gravity="center_vertical"
-                        >
+                        android:layout_gravity="center_vertical">
 
+                    <!-- Start Text View Tambah Profil -->
                     <TextView
                             android:id="@+id/tambah_profil"
                             android:layout_width="wrap_content"
@@ -79,6 +79,7 @@
                             style="@android:style/TextAppearance.DeviceDefault.Medium"
                             android:layout_gravity="center_vertical"
                             android:layout_margin="20dp"/>
+                    <!-- End Text View Tambah Profil-->
 
                     <!-- Start Linear Layout Row -->
                     <LinearLayout
@@ -101,11 +102,11 @@
                                 android:orientation="vertical"
                                 android:layout_weight="1">
 
+                            <!-- Start Linear Layout Nama-->
                             <LinearLayout
                                     android:layout_width="fill_parent"
                                     android:layout_height="wrap_content"
-                                    android:orientation="horizontal"
-                                    >
+                                    android:orientation="horizontal">
 
                                 <!-- Start Text View Profil Nama -->
                                 <TextView
@@ -129,6 +130,7 @@
                                 <!-- End Text View Titik Dua -->
 
                             </LinearLayout>
+                            <!-- End Linear Layout Nama -->
 
                             <!-- Start Edit Text Profil Nama -->
                             <EditText
@@ -137,16 +139,14 @@
                                     android:layout_height="wrap_content"
                                     android:textColor="#FF0000"
                                     android:hint="@string/profil_hint_nama"
-                                    style="@android:style/TextAppearance.DeviceDefault.Medium"
-                                    />
+                                    style="@android:style/TextAppearance.DeviceDefault.Medium"/>
                             <!-- End Edit Text Profil Nama -->
 
                             <!-- Start Linear Layout Golongan Darah -->
                             <LinearLayout
                                     android:layout_width="fill_parent"
                                     android:layout_height="wrap_content"
-                                    android:orientation="horizontal"
-                                    >
+                                    android:orientation="horizontal">
 
                                 <!-- Start Text View Golongan Darah -->
                                 <TextView
@@ -257,8 +257,7 @@
                                         android:layout_height="wrap_content"
                                         android:textColor="#D046F2"
                                         android:text="@string/profil_panjanglahir"
-                                        style="@android:style/TextAppearance.DeviceDefault.Medium"
-                                        />
+                                        style="@android:style/TextAppearance.DeviceDefault.Medium"/>
                                 <!-- End Text View Panjang Lahir -->
 
                                 <!-- Start Linear Layout Panjang Lahir -->
@@ -276,12 +275,11 @@
                             <!-- End Linear Layout Panjang Lahir -->
 
 
-                            <!-- Start Linear Layout Alergi -->
+                            <!-- Start Linear Layout Panjang Lahir -->
                             <LinearLayout
                                     android:layout_width="fill_parent"
                                     android:layout_height="wrap_content"
-                                    android:orientation="horizontal"
-                                    >
+                                    android:orientation="horizontal">
 
                                 <!-- Start Edit Text Panjang Lahir -->
                                 <EditText
@@ -307,6 +305,7 @@
                                 <!-- End Text View Centimeter -->
 
                             </LinearLayout>
+                            <!-- End Linear Layout Panjang Lahir -->
 
                             <!-- Start Linear Layout Berat Lahir -->
                             <LinearLayout
@@ -322,8 +321,7 @@
                                         android:layout_height="wrap_content"
                                         android:textColor="#D046F2"
                                         android:text="@string/profil_beratlahir"
-                                        style="@android:style/TextAppearance.DeviceDefault.Medium"
-                                        />
+                                        style="@android:style/TextAppearance.DeviceDefault.Medium"/>
                                 <!-- End Text View Berat Lahir -->
 
                                 <!-- Start Linear Layout Berat Lahir -->
@@ -340,12 +338,11 @@
                             </LinearLayout>
                             <!-- End Linear Layout Berat Lahir -->
 
-                            <!-- Start Linear Layout Foto -->
+                            <!-- Start Linear Layout Berat Lahir -->
                             <LinearLayout
                                     android:layout_width="fill_parent"
                                     android:layout_height="wrap_content"
-                                    android:orientation="horizontal"
-                                    >
+                                    android:orientation="horizontal">
 
                                 <!-- Start Edit Text Berat Lahir -->
                                 <EditText
@@ -370,14 +367,14 @@
                                         android:layout_weight=".5"/>
                                 <!-- End Text View Gram -->
 
-
                             </LinearLayout>
+                            <!-- End Linear Layout Berat Lahir -->
 
+                            <!-- Start Linear Layout Alergi -->
                             <LinearLayout
                                     android:layout_width="fill_parent"
                                     android:layout_height="wrap_content"
-                                    android:orientation="horizontal"
-                                    >
+                                    android:orientation="horizontal">
 
                                 <!-- Start Text View Alergi -->
                                 <TextView
@@ -386,8 +383,7 @@
                                         android:layout_height="wrap_content"
                                         android:textColor="#D046F2"
                                         android:text="@string/profil_alergi"
-                                        style="@android:style/TextAppearance.DeviceDefault.Medium"
-                                        />
+                                        style="@android:style/TextAppearance.DeviceDefault.Medium"/>
                                 <!-- End Text View Alergi -->
 
                                 <!-- Start Text View Titik Dua -->
@@ -401,11 +397,10 @@
                                         android:layout_marginLeft="5dp"/>
                                 <!-- End Text View Titik Dua-->
 
-
                             </LinearLayout>
                             <!-- End Linear Layout Alergi -->
 
-                            <!-- Start Linear Layout Penyakit Kronis -->
+                            <!-- Start Edit Text Alergi -->
                             <EditText
                                     android:id="@+id/profil_alergi"
                                     android:layout_width="fill_parent"
@@ -413,11 +408,13 @@
                                     android:textColor="#FF0000"
                                     android:hint="@string/profil_hint_alergi"
                                     style="@android:style/TextAppearance.DeviceDefault.Medium"/>
+                            <!-- End Edit Text Alergi -->
+                            
+                            <!-- Start Linear Layout Penyakit Kronis -->
                             <LinearLayout
                                     android:layout_width="fill_parent"
                                     android:layout_height="wrap_content"
-                                    android:orientation="horizontal"
-                                    >
+                                    android:orientation="horizontal">
 
                                 <!-- Start Text View Penyakit Kronis -->
                                 <TextView
@@ -450,12 +447,11 @@
                                     android:layout_height="wrap_content"
                                     android:textColor="#FF0000"
                                     android:hint="@string/profil_hint_penyakitkronis"
-                                    style="@android:style/TextAppearance.DeviceDefault.Medium"
-                                    />
+                                    style="@android:style/TextAppearance.DeviceDefault.Medium"/>
                             <!-- End Edit Text Penyakit Kronis -->
 
                         </LinearLayout>
-                        <!-- End Linear Layout Profil -->
+                        <!-- End Linear Layout Content -->
 
                         <!-- Start Blank Space -->
                         <View
@@ -464,7 +460,7 @@
                                 android:layout_weight=".05"/>
                         <!-- End Blank Space -->
 
-                        <!-- Start Linear Layout Profil -->
+                        <!-- Start Linear Layout Content -->
                         <LinearLayout
                                 android:layout_width="0dp"
                                 android:layout_height="wrap_content"
@@ -502,6 +498,7 @@
                             </LinearLayout>
                             <!-- End Text View Jenis Kelamin -->
 
+                            <!-- Start Radio Group Jenis Kelamin -->
                             <RadioGroup
                                     android:id="@+id/profil_jeniskelamin"
                                     android:layout_width="fill_parent"
@@ -537,8 +534,7 @@
                             <LinearLayout
                                     android:layout_width="fill_parent"
                                     android:layout_height="wrap_content"
-                                    android:orientation="horizontal"
-                                    >
+                                    android:orientation="horizontal">
 
                                 <!-- Start Text View Tempat Lahir -->
                                 <TextView
@@ -578,8 +574,7 @@
                             <LinearLayout
                                     android:layout_width="fill_parent"
                                     android:layout_height="wrap_content"
-                                    android:orientation="horizontal"
-                                    >
+                                    android:orientation="horizontal">
 
                                 <!-- Start Text View Tanggal Lahir -->
                                 <TextView
@@ -616,11 +611,11 @@
                                     style="@android:style/TextAppearance.DeviceDefault.Medium"/>
                             <!-- End Edit Text Tanggal lahir -->
 
+                            <!-- Start Linear Layout Foto -->
                             <LinearLayout
                                     android:layout_width="fill_parent"
                                     android:layout_height="wrap_content"
-                                    android:orientation="horizontal"
-                                    >
+                                    android:orientation="horizontal">
 
                                 <!-- Start Text View Foto -->
                                 <TextView
@@ -658,9 +653,8 @@
                                     android:layout_gravity="center"/>
                             <!-- End Image View Foto -->
 
-
                         </LinearLayout>
-                        <!-- End Linear Layout Profil -->
+                        <!-- End Linear Layout Content -->
 
                         <!-- Start Blank Space -->
                         <View

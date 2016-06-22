@@ -12,6 +12,7 @@ import android.widget.TextView;
 /**
  * Created by syafira rarra on 04/27/2016.
  */
+
 public class DetailJadwalImunisasi extends Activity {
 
     // Declare
@@ -108,6 +109,7 @@ public class DetailJadwalImunisasi extends Activity {
             }
         }
 
+        // Set OnClickListener
         ProfilLinearLayout.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {

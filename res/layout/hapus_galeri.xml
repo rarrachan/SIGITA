@@ -20,7 +20,7 @@
                 android:layout_weight=".2"/>
         <!-- End Blank Space -->
 
-        <!-- Start Linear Layout Hapus Profil -->
+        <!-- Start Linear Layout Hapus Galeri -->
         <LinearLayout
                 android:layout_width="0dp"
                 android:layout_height="wrap_content"
@@ -93,7 +93,7 @@
             <!-- End Linear Layout Button -->
 
         </LinearLayout>
-        <!-- End Linear Layout Profil -->
+        <!-- End Linear Layout Hapus Galeri -->
 
         <!-- Start Blank Space -->
         <View

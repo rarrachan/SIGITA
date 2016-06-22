@@ -98,6 +98,7 @@ public class TumbuhKembang extends Activity implements OnClickListener {
                 startActivity(tahap_tumbang);
                 finish();
                 break;
+                
             // Galeri Tumbuh Kembang
             case R.id.GaleriTumbangLinearLayout :
                 // Check Session

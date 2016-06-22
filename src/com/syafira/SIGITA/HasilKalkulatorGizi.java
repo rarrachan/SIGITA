@@ -97,19 +97,22 @@ public class HasilKalkulatorGizi extends Activity {
         Cursor cursorTBU;
         Cursor cursorBBTB;
         Cursor cursorIMTU;
+        // Gender Laki-laki
         if ((jenisKelamin).equals("Laki-laki")) {
             cursorBBU = db.getLakiBBUList(Integer.valueOf(bulan));
             cursorTBU = db.getLakiTBUList(Integer.valueOf(bulan));
-            if (Integer.valueOf(bulan) <= 24) {
+            if (Integer.valueOf(bulan) < 24) {
                 cursorBBTB = db.getLakiBBTBList_0_24(Float.parseFloat(tinggiBadan));
             } else {
                 cursorBBTB = db.getLakiBBTBList_24_60(Float.parseFloat(tinggiBadan));
             }
             cursorIMTU = db.getLakiIMTUList(Integer.valueOf(bulan));
+
+        // Gender Perempuan
         } else {
             cursorBBU = db.getPerempuanBBUList(Integer.valueOf(bulan));
             cursorTBU = db.getPerempuanTBUList(Integer.valueOf(bulan));
-            if (Integer.valueOf(bulan) <= 24) {
+            if (Integer.valueOf(bulan) < 24) {
                 cursorBBTB = db.getPerempuanBBTBList_0_24(Float.parseFloat(tinggiBadan));
             } else {
                 cursorBBTB = db.getPerempuanBBTBList_24_60(Float.parseFloat(tinggiBadan));
@@ -178,36 +181,51 @@ public class HasilKalkulatorGizi extends Activity {
 
         // Berat Badan / Umur
         float bbu = 0;
+
+        // Gender Laki-laki
         if ((jenisKelamin).equals("Laki-laki")) {
+
             // Berat badan < Median
             if (Float.parseFloat(beratBadan) < Float.parseFloat(cursorBBU.getString(cursorBBU.getColumnIndex("laki_bbu_median")))) {
                 bbu = (Float.parseFloat(beratBadan) - Float.parseFloat(cursorBBU.getString(cursorBBU.getColumnIndex("laki_bbu_median")))) /
                         (Float.parseFloat(cursorBBU.getString(cursorBBU.getColumnIndex("laki_bbu_median"))) - Float.parseFloat(cursorBBU.getString(cursorBBU.getColumnIndex("laki_bbu_min1sd"))));
-            } // Berat Badan > Median
+            }
+            
+            // Berat Badan > Median
             else if (Float.parseFloat(beratBadan) > Float.parseFloat(cursorBBU.getString(cursorBBU.getColumnIndex("laki_bbu_median")))) {
                 bbu = (Float.parseFloat(beratBadan) - Float.parseFloat(cursorBBU.getString(cursorBBU.getColumnIndex("laki_bbu_median")))) /
                         (Float.parseFloat(cursorBBU.getString(cursorBBU.getColumnIndex("laki_bbu_1sd"))) - Float.parseFloat(cursorBBU.getString(cursorBBU.getColumnIndex("laki_bbu_median"))));
-            } // Berat Badan == Median
+            }
+
+            // Berat Badan == Median
             else if (Float.parseFloat(beratBadan) == Float.parseFloat(cursorBBU.getString(cursorBBU.getColumnIndex("laki_bbu_median")))) {
                 bbu = (Float.parseFloat(cursorBBU.getString(cursorBBU.getColumnIndex("laki_bbu_median"))) - Float.parseFloat(cursorBBU.getString(cursorBBU.getColumnIndex("laki_bbu_1sd")))) /
                         (Float.parseFloat(cursorBBU.getString(cursorBBU.getColumnIndex("laki_bbu_1sd"))) - Float.parseFloat(cursorBBU.getString(cursorBBU.getColumnIndex("laki_bbu_min1sd"))));
             }
+
+        // Gender Perempuan
         } else {
+
             // Berat badan < Median
             if (Float.parseFloat(beratBadan) < Float.parseFloat(cursorBBU.getString(cursorBBU.getColumnIndex("perempuan_bbu_median")))) {
                 bbu = (Float.parseFloat(beratBadan) - Float.parseFloat(cursorBBU.getString(cursorBBU.getColumnIndex("perempuan_bbu_median")))) /
                         (Float.parseFloat(cursorBBU.getString(cursorBBU.getColumnIndex("perempuan_bbu_median"))) - Float.parseFloat(cursorBBU.getString(cursorBBU.getColumnIndex("perempuan_bbu_min1sd"))));
-            } // Berat Badan > Median
+            }
+
+            // Berat Badan > Median
             else if (Float.parseFloat(beratBadan) > Float.parseFloat(cursorBBU.getString(cursorBBU.getColumnIndex("perempuan_bbu_median")))) {
                 bbu = (Float.parseFloat(beratBadan) - Float.parseFloat(cursorBBU.getString(cursorBBU.getColumnIndex("perempuan_bbu_median")))) /
                         (Float.parseFloat(cursorBBU.getString(cursorBBU.getColumnIndex("perempuan_bbu_1sd"))) - Float.parseFloat(cursorBBU.getString(cursorBBU.getColumnIndex("perempuan_bbu_median"))));
-            } // Berat Badan == Median
+            }
+
+            // Berat Badan == Median
             else if (Float.parseFloat(beratBadan) == Float.parseFloat(cursorBBU.getString(cursorBBU.getColumnIndex("perempuan_bbu_median")))) {
                 bbu = (Float.parseFloat(cursorBBU.getString(cursorBBU.getColumnIndex("perempuan_bbu_median"))) - Float.parseFloat(cursorBBU.getString(cursorBBU.getColumnIndex("perempuan_bbu_1sd")))) /
                         (Float.parseFloat(cursorBBU.getString(cursorBBU.getColumnIndex("perempuan_bbu_1sd"))) - Float.parseFloat(cursorBBU.getString(cursorBBU.getColumnIndex("perempuan_bbu_min1sd"))));
             }
         }
 
+        // Status BBU
         String status_bbu = null;
         if (bbu < Float.parseFloat("-3")) {
             status_bbu = "Gizi Buruk";
@@ -219,40 +237,56 @@ public class HasilKalkulatorGizi extends Activity {
             status_bbu = "Gizi Lebih";
         }
 
+        // Set Text
         hasil_bbu.setText(status_bbu);
 
         // Tinggi Badan / Umur
         float tbu = 0;
+
+        // Gender Laki-laki
         if ((jenisKelamin).equals("Laki-laki")) {
+
             // Tinggi Badan < Median
             if (Float.parseFloat(tinggiBadan) < Float.parseFloat(cursorTBU.getString(cursorTBU.getColumnIndex("laki_tbu_median")))) {
                 tbu = (Float.parseFloat(tinggiBadan) - Float.parseFloat(cursorTBU.getString(cursorTBU.getColumnIndex("laki_tbu_median")))) /
                         (Float.parseFloat(cursorTBU.getString(cursorTBU.getColumnIndex("laki_tbu_median"))) - Float.parseFloat(cursorTBU.getString(cursorTBU.getColumnIndex("laki_tbu_min1sd"))));
-            } // Tinggi Badan > Median
+            }
+
+            // Tinggi Badan > Median
             else if (Float.parseFloat(tinggiBadan) > Float.parseFloat(cursorTBU.getString(cursorTBU.getColumnIndex("laki_tbu_median")))) {
                 tbu = (Float.parseFloat(tinggiBadan) - Float.parseFloat(cursorTBU.getString(cursorTBU.getColumnIndex("laki_tbu_median")))) /
                         (Float.parseFloat(cursorTBU.getString(cursorTBU.getColumnIndex("laki_tbu_1sd"))) - Float.parseFloat(cursorTBU.getString(cursorTBU.getColumnIndex("laki_tbu_median"))));
-            } // Tinggi Badan == Median
+            }
+
+            // Tinggi Badan == Median
             else if (Float.parseFloat(tinggiBadan) == Float.parseFloat(cursorTBU.getString(cursorTBU.getColumnIndex("laki_tbu_median")))) {
                 tbu = (Float.parseFloat(cursorTBU.getString(cursorTBU.getColumnIndex("laki_tbu_median"))) - Float.parseFloat(cursorTBU.getString(cursorTBU.getColumnIndex("laki_tbu_1sd")))) /
                         (Float.parseFloat(cursorTBU.getString(cursorTBU.getColumnIndex("laki_tbu_1sd"))) - Float.parseFloat(cursorTBU.getString(cursorTBU.getColumnIndex("laki_tbu_min1sd"))));
             }
+
+        // Gender Perempuan
         } else {
+
             // Tinggi Badan < Median
             if (Float.parseFloat(tinggiBadan) < Float.parseFloat(cursorTBU.getString(cursorTBU.getColumnIndex("perempuan_tbu_median")))) {
                 tbu = (Float.parseFloat(tinggiBadan) - Float.parseFloat(cursorTBU.getString(cursorTBU.getColumnIndex("perempuan_tbu_median")))) /
                         (Float.parseFloat(cursorTBU.getString(cursorTBU.getColumnIndex("perempuan_tbu_median"))) - Float.parseFloat(cursorTBU.getString(cursorTBU.getColumnIndex("perempuan_tbu_min1sd"))));
-            } // Tinggi Badan > Median
+            }
+
+            // Tinggi Badan > Median
             else if (Float.parseFloat(tinggiBadan) > Float.parseFloat(cursorTBU.getString(cursorTBU.getColumnIndex("perempuan_tbu_median")))) {
                 tbu = (Float.parseFloat(tinggiBadan) - Float.parseFloat(cursorTBU.getString(cursorTBU.getColumnIndex("perempuan_tbu_median")))) /
                         (Float.parseFloat(cursorTBU.getString(cursorTBU.getColumnIndex("perempuan_tbu_1sd"))) - Float.parseFloat(cursorTBU.getString(cursorTBU.getColumnIndex("perempuan_tbu_median"))));
-            } // Tinggi Badan == Median
+            }
+
+            // Tinggi Badan == Median
             else if (Float.parseFloat(tinggiBadan) == Float.parseFloat(cursorTBU.getString(cursorTBU.getColumnIndex("perempuan_tbu_median")))) {
                 tbu = (Float.parseFloat(cursorTBU.getString(cursorTBU.getColumnIndex("perempuan_tbu_median"))) - Float.parseFloat(cursorTBU.getString(cursorTBU.getColumnIndex("perempuan_tbu_1sd")))) /
                         (Float.parseFloat(cursorTBU.getString(cursorTBU.getColumnIndex("perempuan_tbu_1sd"))) - Float.parseFloat(cursorTBU.getString(cursorTBU.getColumnIndex("perempuan_tbu_min1sd"))));
             }
         }
 
+        // Status TBU
         String status_tbu = null;
         if (tbu < Float.parseFloat("-3")) {
             status_tbu = "Sangat Pendek";
@@ -264,41 +298,57 @@ public class HasilKalkulatorGizi extends Activity {
             status_tbu = "Tinggi";
         }
 
+        // Set Text
         hasil_tbu.setText(status_tbu);
 
 
         // Berat Badan / Tinggi Badan
         float bbtb = 0;
+
+        // Gender Laki-laki
         if ((jenisKelamin).equals("Laki-laki")) {
+            
             // Tinggi Badan < Median
             if (Float.parseFloat(tinggiBadan) < Float.parseFloat(cursorBBTB.getString(cursorBBTB.getColumnIndex("laki_bbtb_median")))) {
                 bbtb = (Float.parseFloat(tinggiBadan) - Float.parseFloat(cursorBBTB.getString(cursorBBTB.getColumnIndex("laki_bbtb_median")))) /
                         (Float.parseFloat(cursorBBTB.getString(cursorBBTB.getColumnIndex("laki_bbtb_median"))) - Float.parseFloat(cursorBBTB.getString(cursorBBTB.getColumnIndex("laki_bbtb_min1sd"))));
-            } // Tinggi Badan > Median
+            }
+
+            // Tinggi Badan > Median
             else if (Float.parseFloat(tinggiBadan) > Float.parseFloat(cursorBBTB.getString(cursorBBTB.getColumnIndex("laki_bbtb_median")))) {
                 bbtb = (Float.parseFloat(tinggiBadan) - Float.parseFloat(cursorTBU.getString(cursorBBTB.getColumnIndex("laki_bbtb_median")))) /
                         (Float.parseFloat(cursorBBTB.getString(cursorBBTB.getColumnIndex("laki_bbtb_1sd"))) - Float.parseFloat(cursorBBTB.getString(cursorBBTB.getColumnIndex("laki_bbtb_median"))));
-            } // Tinggi Badan == Median
+            }
+
+            // Tinggi Badan == Median
             else if (Float.parseFloat(tinggiBadan) == Float.parseFloat(cursorBBTB.getString(cursorBBTB.getColumnIndex("laki_bbtb_median")))) {
                 bbtb = (Float.parseFloat(cursorBBTB.getString(cursorBBTB.getColumnIndex("laki_bbtb_median"))) - Float.parseFloat(cursorBBTB.getString(cursorBBTB.getColumnIndex("laki_bbtb_1sd")))) /
                         (Float.parseFloat(cursorBBTB.getString(cursorBBTB.getColumnIndex("laki_bbtb_1sd"))) - Float.parseFloat(cursorBBTB.getString(cursorBBTB.getColumnIndex("laki_bbtb_min1sd"))));
             }
+
+        // Gender Perempuan
         } else {
+
             // Tinggi Badan < Median
             if (Float.parseFloat(tinggiBadan) < Float.parseFloat(cursorBBTB.getString(cursorBBTB.getColumnIndex("perempuan_bbtb_median")))) {
                 bbtb = (Float.parseFloat(tinggiBadan) - Float.parseFloat(cursorBBTB.getString(cursorBBTB.getColumnIndex("perempuan_bbtb_median")))) /
                         (Float.parseFloat(cursorBBTB.getString(cursorBBTB.getColumnIndex("perempuan_bbtb_median"))) - Float.parseFloat(cursorBBTB.getString(cursorBBTB.getColumnIndex("perempuan_bbtb_min1sd"))));
-            } // Tinggi Badan > Median
+            }
+
+            // Tinggi Badan > Median
             else if (Float.parseFloat(tinggiBadan) > Float.parseFloat(cursorBBTB.getString(cursorBBTB.getColumnIndex("perempuan_bbtb_median")))) {
                 bbtb = (Float.parseFloat(tinggiBadan) - Float.parseFloat(cursorTBU.getString(cursorBBTB.getColumnIndex("perempuan_bbtb_median")))) /
                         (Float.parseFloat(cursorBBTB.getString(cursorBBTB.getColumnIndex("perempuan_bbtb_1sd"))) - Float.parseFloat(cursorBBTB.getString(cursorBBTB.getColumnIndex("perempuan_bbtb_median"))));
-            } // Tinggi Badan == Median
+            }
+
+            // Tinggi Badan == Median
             else if (Float.parseFloat(tinggiBadan) == Float.parseFloat(cursorBBTB.getString(cursorBBTB.getColumnIndex("perempuan_bbtb_median")))) {
                 bbtb = (Float.parseFloat(cursorBBTB.getString(cursorBBTB.getColumnIndex("perempuan_bbtb_median"))) - Float.parseFloat(cursorBBTB.getString(cursorBBTB.getColumnIndex("perempuan_bbtb_1sd")))) /
                         (Float.parseFloat(cursorBBTB.getString(cursorBBTB.getColumnIndex("perempuan_bbtb_1sd"))) - Float.parseFloat(cursorBBTB.getString(cursorBBTB.getColumnIndex("perempuan_bbtb_min1sd"))));
             }
         }
 
+        // Status BBTB
         String status_bbtb = null;
         if (bbtb < Float.parseFloat("-3")) {
             status_bbtb = "Sangat Kurus";
@@ -310,41 +360,57 @@ public class HasilKalkulatorGizi extends Activity {
             status_bbtb = "Gemuk";
         }
 
+        // Set Text
         hasil_bbtb.setText(status_bbtb);
 
         // Indeks Massa Tubuh / Umur
         float imt = Float.parseFloat(beratBadan) / ((Float.parseFloat(tinggiBadan) / 100) * (Float.parseFloat(tinggiBadan) / 100));
         float imtu = 0;
+
+        // Gender Laki-laki
         if ((jenisKelamin).equals("Laki-laki")) {
+            
             // Indeks Massa Tubuh < Median
             if (imt < Float.parseFloat(cursorIMTU.getString(cursorIMTU.getColumnIndex("laki_imtu_median")))) {
                 imtu = (imt - Float.parseFloat(cursorIMTU.getString(cursorIMTU.getColumnIndex("laki_imtu_median")))) /
                         (Float.parseFloat(cursorIMTU.getString(cursorIMTU.getColumnIndex("laki_imtu_median"))) - Float.parseFloat(cursorIMTU.getString(cursorIMTU.getColumnIndex("laki_imtu_min1sd"))));
-            } // Indeks Massa Tubuh > Median
+            }
+
+            // Indeks Massa Tubuh > Median
             else if (imt > Float.parseFloat(cursorIMTU.getString(cursorIMTU.getColumnIndex("laki_imtu_median")))) {
                 imtu = (imt - Float.parseFloat(cursorIMTU.getString(cursorIMTU.getColumnIndex("laki_imtu_median")))) /
                         (Float.parseFloat(cursorIMTU.getString(cursorIMTU.getColumnIndex("laki_imtu_1sd"))) - Float.parseFloat(cursorIMTU.getString(cursorIMTU.getColumnIndex("laki_imtu_median"))));
-            } // Indeks Massa Tubuh == Median
+            }
+
+            // Indeks Massa Tubuh == Median
             else if (imt == Float.parseFloat(cursorIMTU.getString(cursorIMTU.getColumnIndex("laki_imtu_median")))) {
                 imtu = (Float.parseFloat(cursorIMTU.getString(cursorIMTU.getColumnIndex("laki_imtu_median"))) - Float.parseFloat(cursorIMTU.getString(cursorIMTU.getColumnIndex("laki_imtu_1sd")))) /
                         (Float.parseFloat(cursorIMTU.getString(cursorIMTU.getColumnIndex("laki_imtu_1sd"))) - Float.parseFloat(cursorIMTU.getString(cursorIMTU.getColumnIndex("laki_imtu_min1sd"))));
             }
+
+        // Gender Perempuan
         } else {
+
             // Indeks Massa Tubuh < Median
             if (imt < Float.parseFloat(cursorIMTU.getString(cursorIMTU.getColumnIndex("perempuan_imtu_median")))) {
                 imtu = (imt - Float.parseFloat(cursorIMTU.getString(cursorIMTU.getColumnIndex("perempuan_imtu_median")))) /
                         (Float.parseFloat(cursorIMTU.getString(cursorIMTU.getColumnIndex("perempuan_imtu_median"))) - Float.parseFloat(cursorIMTU.getString(cursorIMTU.getColumnIndex("perempuan_imtu_min1sd"))));
-            } // Indeks Massa Tubuh > Median
+            }
+
+            // Indeks Massa Tubuh > Median
             else if (imt > Float.parseFloat(cursorIMTU.getString(cursorIMTU.getColumnIndex("perempuan_imtu_median")))) {
                 imtu = (imt - Float.parseFloat(cursorIMTU.getString(cursorIMTU.getColumnIndex("perempuan_imtu_median")))) /
                         (Float.parseFloat(cursorIMTU.getString(cursorIMTU.getColumnIndex("perempuan_imtu_1sd"))) - Float.parseFloat(cursorIMTU.getString(cursorIMTU.getColumnIndex("perempuan_imtu_median"))));
-            } // Indeks Massa Tubuh == Median
+            }
+
+            // Indeks Massa Tubuh == Median
             else if (imt == Float.parseFloat(cursorIMTU.getString(cursorIMTU.getColumnIndex("perempuan_imtu_median")))) {
                 imtu = (Float.parseFloat(cursorIMTU.getString(cursorIMTU.getColumnIndex("perempuan_imtu_median"))) - Float.parseFloat(cursorIMTU.getString(cursorIMTU.getColumnIndex("perempuan_imtu_1sd")))) /
                         (Float.parseFloat(cursorIMTU.getString(cursorIMTU.getColumnIndex("perempuan_imtu_1sd"))) - Float.parseFloat(cursorIMTU.getString(cursorIMTU.getColumnIndex("perempuan_imtu_min1sd"))));
             }
         }
 
+        // Status IMTU
         String status_imtu = null;
         if (imtu < Float.parseFloat("-3")) {
             status_imtu = "Sangat Kurus";
@@ -356,9 +422,10 @@ public class HasilKalkulatorGizi extends Activity {
             status_imtu = "Gemuk";
         }
 
+        // Set Text
         hasil_imtu.setText(status_imtu);
 
-        //chart BBU
+        // Chart BBU
         List<String> BBUchartID = new ArrayList<>();
         List<String> BBUchartUmur = new ArrayList<>();
         List<String> BBUchartMin1sd = new ArrayList<>();
@@ -368,6 +435,8 @@ public class HasilKalkulatorGizi extends Activity {
         List<String> BBUchart1sd = new ArrayList<>();
         List<String> BBUchart2sd = new ArrayList<>();
         List<String> BBUchart3sd = new ArrayList<>();
+
+        // Gender Laki-laki
         if ((jenisKelamin).equals("Laki-laki")) {
             Cursor cursorBBUchart = db.getLakiBBUAllList();
             cursorBBUchart.moveToFirst();
@@ -385,6 +454,8 @@ public class HasilKalkulatorGizi extends Activity {
 
                 } while (cursorBBUchart.moveToNext());
             }
+
+        // Gender Perempuan
         } else {
             Cursor cursorBBUchart = db.getPerempuanBBUAllList();
             cursorBBUchart.moveToFirst();
@@ -403,7 +474,8 @@ public class HasilKalkulatorGizi extends Activity {
                 } while (cursorBBUchart.moveToNext());
             }
         }
-        // Creating an  XYSeries for Income
+
+        // Creating an  XYSeries BBU
         XYSeries BBUseriesMin3sd = new XYSeries("-3 SD");
         XYSeries BBUseriesMin2sd = new XYSeries("-2 SD");
         XYSeries BBUseriesMin1sd = new XYSeries("-1 SD");
@@ -413,7 +485,7 @@ public class HasilKalkulatorGizi extends Activity {
         XYSeries BBUseries3sd = new XYSeries("3 SD");
         XYSeries BBUseriesBeratBadan = new XYSeries("Berat Badan");
 
-        // Adding data to Income and Expense Series
+        // Adding data to BBU to Chart
         for (int i = 0; i < BBUchartID.size(); i++) {
             BBUseriesMin3sd.add(Double.parseDouble(BBUchartUmur.get(i)), Double.parseDouble(BBUchartMin3sd.get(i)));
             BBUseriesMin2sd.add(Double.parseDouble(BBUchartUmur.get(i)), Double.parseDouble(BBUchartMin2sd.get(i)));
@@ -424,11 +496,13 @@ public class HasilKalkulatorGizi extends Activity {
             BBUseries3sd.add(Double.parseDouble(BBUchartUmur.get(i)), Double.parseDouble(BBUchart3sd.get(i)));
         }
 
+        // Adding data from kalkulator gizi to Chart
         BBUseriesBeratBadan.add(Double.parseDouble(bulan), Double.parseDouble(beratBadan));
 
         // Creating a dataset to hold each series
         BBUdataset = new XYMultipleSeriesDataset();
-        // Adding Income Series to the dataset
+
+        // Adding BBU Series to the dataset
         BBUdataset.addSeries(BBUseriesMin3sd);
         BBUdataset.addSeries(BBUseriesMin2sd);
         BBUdataset.addSeries(BBUseriesMin1sd);
@@ -438,40 +512,42 @@ public class HasilKalkulatorGizi extends Activity {
         BBUdataset.addSeries(BBUseries3sd);
         BBUdataset.addSeries(BBUseriesBeratBadan);
 
-        // Creating XYSeriesRenderer to customize incomeSeries
+        // Creating XYSeriesRenderer to customize min1sd
         XYSeriesRenderer BBUrendererMin1sd = new XYSeriesRenderer();
         BBUrendererMin1sd.setColor(Color.parseColor("#FF33CC"));
+        BBUrendererMin1sd.setFillPoints(true);
 
-        // Creating XYSeriesRenderer to customize expenseSeries
+        // Creating XYSeriesRenderer to customize min2sd
         XYSeriesRenderer BBUrendererMin2sd = new XYSeriesRenderer();
         BBUrendererMin2sd.setColor(Color.parseColor("#FA9339"));
+        BBUrendererMin2sd.setFillPoints(true);
 
-        // Creating XYSeriesRenderer to customize expenseSeries
+        // Creating XYSeriesRenderer to customize min3sd
         XYSeriesRenderer BBUrendererMin3sd = new XYSeriesRenderer();
         BBUrendererMin3sd.setColor(Color.parseColor("#E31025"));
         BBUrendererMin3sd.setFillPoints(true);
 
-        // Creating XYSeriesRenderer to customize expenseSeries
+        // Creating XYSeriesRenderer to customize median
         XYSeriesRenderer BBUrendererMedian = new XYSeriesRenderer();
         BBUrendererMedian.setColor(Color.parseColor("#17C21A"));
         BBUrendererMedian.setFillPoints(true);
 
-        // Creating XYSeriesRenderer to customize expenseSeries
+        // Creating XYSeriesRenderer to customize 1sd
         XYSeriesRenderer BBUrenderer1sd = new XYSeriesRenderer();
         BBUrenderer1sd.setColor(Color.parseColor("#2517C2"));
         BBUrenderer1sd.setFillPoints(true);
 
-        // Creating XYSeriesRenderer to customize expenseSeries
+        // Creating XYSeriesRenderer to customize 2sd
         XYSeriesRenderer BBUrenderer2sd = new XYSeriesRenderer();
         BBUrenderer2sd.setColor(Color.parseColor("#C2B617"));
         BBUrenderer2sd.setFillPoints(true);
 
-        // Creating XYSeriesRenderer to customize expenseSeries
+        // Creating XYSeriesRenderer to customize 3sd
         XYSeriesRenderer BBUrenderer3sd = new XYSeriesRenderer();
         BBUrenderer3sd.setColor(Color.parseColor("#C26717"));
         BBUrenderer3sd.setFillPoints(true);
 
-        // Creating XYSeriesRenderer to customize expenseSeries
+        // Creating XYSeriesRenderer to customize beratbadan
         XYSeriesRenderer BBUrendererBeratBadan = new XYSeriesRenderer();
         BBUrendererBeratBadan.setColor(Color.parseColor("#000000"));
         BBUrendererBeratBadan.setPointStyle(PointStyle.CIRCLE);
@@ -505,7 +581,7 @@ public class HasilKalkulatorGizi extends Activity {
         BBUmultiRenderer.setYAxisMin(0, 0);
         BBUmultiRenderer.setYAxisMax(31, 0);
 
-        // Adding incomeRenderer and expenseRenderer to multipleRenderer
+        // Adding All Renderer to multipleRenderer
         // Note: The order of adding dataseries to dataset and renderers to multipleRenderer
         // should be same
         BBUmultiRenderer.addSeriesRenderer(BBUrendererMin3sd);
@@ -527,7 +603,7 @@ public class HasilKalkulatorGizi extends Activity {
         BBUchartContainer.addView(BBUChart, new LinearLayout.LayoutParams(LinearLayout.LayoutParams.MATCH_PARENT, 500));
 
 
-        //chart TBU
+        // Chart TBU
         List<String> TBUchartID = new ArrayList<>();
         List<String> TBUchartUmur = new ArrayList<>();
         List<String> TBUchartMin1sd = new ArrayList<>();
@@ -537,6 +613,8 @@ public class HasilKalkulatorGizi extends Activity {
         List<String> TBUchart1sd = new ArrayList<>();
         List<String> TBUchart2sd = new ArrayList<>();
         List<String> TBUchart3sd = new ArrayList<>();
+
+        // Gender Laki-laki
         if ((jenisKelamin).equals("Laki-laki")) {
             Cursor cursorTBUchart = db.getLakiTBUAllList();
             cursorTBUchart.moveToFirst();
@@ -554,6 +632,8 @@ public class HasilKalkulatorGizi extends Activity {
 
                 } while (cursorTBUchart.moveToNext());
             }
+
+        // Gender Perempuan
         } else {
             Cursor cursorTBUchart = db.getPerempuanTBUAllList();
             cursorTBUchart.moveToFirst();
@@ -572,7 +652,8 @@ public class HasilKalkulatorGizi extends Activity {
                 } while (cursorTBUchart.moveToNext());
             }
         }
-        // Creating an  XYSeries for Income
+
+        // Creating an  XYSeries for TBU
         XYSeries TBUseriesMin3sd = new XYSeries("-3 SD");
         XYSeries TBUseriesMin2sd = new XYSeries("-2 SD");
         XYSeries TBUseriesMin1sd = new XYSeries("-1 SD");
@@ -582,7 +663,7 @@ public class HasilKalkulatorGizi extends Activity {
         XYSeries TBUseries3sd = new XYSeries("3 SD");
         XYSeries TBUseriesTinggiBadan = new XYSeries("Tinggi Badan");
 
-        // Adding data to Income and Expense Series
+        // Adding data to TBU to Chart
         for (int i = 0; i < TBUchartID.size(); i++) {
             TBUseriesMin3sd.add(Double.parseDouble(TBUchartUmur.get(i)), Double.parseDouble(TBUchartMin3sd.get(i)));
             TBUseriesMin2sd.add(Double.parseDouble(TBUchartUmur.get(i)), Double.parseDouble(TBUchartMin2sd.get(i)));
@@ -593,11 +674,13 @@ public class HasilKalkulatorGizi extends Activity {
             TBUseries3sd.add(Double.parseDouble(TBUchartUmur.get(i)), Double.parseDouble(TBUchart3sd.get(i)));
         }
 
+        // Adding data from kalkulator gizi to Chart
         TBUseriesTinggiBadan.add(Double.parseDouble(bulan), Double.parseDouble(tinggiBadan));
 
         // Creating a dataset to hold each series
         TBUdataset = new XYMultipleSeriesDataset();
-        // Adding Income Series to the dataset
+        
+        // Adding TBU to the dataset
         TBUdataset.addSeries(TBUseriesMin3sd);
         TBUdataset.addSeries(TBUseriesMin2sd);
         TBUdataset.addSeries(TBUseriesMin1sd);
@@ -607,45 +690,47 @@ public class HasilKalkulatorGizi extends Activity {
         TBUdataset.addSeries(TBUseries3sd);
         TBUdataset.addSeries(TBUseriesTinggiBadan);
 
-        // Creating XYSeriesRenderer to customize incomeSeries
+        // Creating XYSeriesRenderer to customize min1sd
         XYSeriesRenderer TBUrendererMin1sd = new XYSeriesRenderer();
         TBUrendererMin1sd.setColor(Color.parseColor("#FF33CC"));
+        TBUrendererMin1sd.setFillPoints(true);
 
-        // Creating XYSeriesRenderer to customize expenseSeries
+        // Creating XYSeriesRenderer to customize min2sd
         XYSeriesRenderer TBUrendererMin2sd = new XYSeriesRenderer();
         TBUrendererMin2sd.setColor(Color.parseColor("#FA9339"));
+        TBUrendererMin2sd.setFillPoints(true);
 
-        // Creating XYSeriesRenderer to customize expenseSeries
+        // Creating XYSeriesRenderer to customize min3sd
         XYSeriesRenderer TBUrendererMin3sd = new XYSeriesRenderer();
         TBUrendererMin3sd.setColor(Color.parseColor("#E31025"));
         TBUrendererMin3sd.setFillPoints(true);
 
-        // Creating XYSeriesRenderer to customize expenseSeries
+        // Creating XYSeriesRenderer to customize median
         XYSeriesRenderer TBUrendererMedian = new XYSeriesRenderer();
         TBUrendererMedian.setColor(Color.parseColor("#17C21A"));
         TBUrendererMedian.setFillPoints(true);
 
-        // Creating XYSeriesRenderer to customize expenseSeries
+        // Creating XYSeriesRenderer to customize 1sd
         XYSeriesRenderer TBUrenderer1sd = new XYSeriesRenderer();
         TBUrenderer1sd.setColor(Color.parseColor("#2517C2"));
         TBUrenderer1sd.setFillPoints(true);
 
-        // Creating XYSeriesRenderer to customize expenseSeries
+        // Creating XYSeriesRenderer to customize 2sd
         XYSeriesRenderer TBUrenderer2sd = new XYSeriesRenderer();
         TBUrenderer2sd.setColor(Color.parseColor("#C2B617"));
         TBUrenderer2sd.setFillPoints(true);
 
-        // Creating XYSeriesRenderer to customize expenseSeries
+        // Creating XYSeriesRenderer to customize 3sd
         XYSeriesRenderer TBUrenderer3sd = new XYSeriesRenderer();
         TBUrenderer3sd.setColor(Color.parseColor("#C26717"));
         TBUrenderer3sd.setFillPoints(true);
 
-        // Creating XYSeriesRenderer to customize expenseSeries
-        XYSeriesRenderer TBUrendererBeratBadan = new XYSeriesRenderer();
-        TBUrendererBeratBadan.setColor(Color.parseColor("#000000"));
-        TBUrendererBeratBadan.setPointStyle(PointStyle.CIRCLE);
-        TBUrendererBeratBadan.setFillPoints(true);
-        TBUrendererBeratBadan.setLineWidth(2);
+        // Creating XYSeriesRenderer to customize tinggibadan
+        XYSeriesRenderer TBUrendererTinggiBadan = new XYSeriesRenderer();
+        TBUrendererTinggiBadan.setColor(Color.parseColor("#000000"));
+        TBUrendererTinggiBadan.setPointStyle(PointStyle.CIRCLE);
+        TBUrendererTinggiBadan.setFillPoints(true);
+        TBUrendererTinggiBadan.setLineWidth(2);
 
         // Creating a XYMultipleSeriesRenderer to customize the whole chart
         TBUmultiRenderer = new XYMultipleSeriesRenderer();
@@ -674,7 +759,7 @@ public class HasilKalkulatorGizi extends Activity {
         TBUmultiRenderer.setYAxisMin(40, 0);
         TBUmultiRenderer.setYAxisMax(126, 0);
 
-        // Adding incomeRenderer and expenseRenderer to multipleRenderer
+        // Adding All Renderer to multipleRenderer
         // Note: The order of adding dataseries to dataset and renderers to multipleRenderer
         // should be same
         TBUmultiRenderer.addSeriesRenderer(TBUrendererMin3sd);
@@ -684,7 +769,7 @@ public class HasilKalkulatorGizi extends Activity {
         TBUmultiRenderer.addSeriesRenderer(TBUrenderer1sd);
         TBUmultiRenderer.addSeriesRenderer(TBUrenderer2sd);
         TBUmultiRenderer.addSeriesRenderer(TBUrenderer3sd);
-        TBUmultiRenderer.addSeriesRenderer(TBUrendererBeratBadan);
+        TBUmultiRenderer.addSeriesRenderer(TBUrendererTinggiBadan);
 
         // Getting a reference to LinearLayout of the MainActivity Layout
         LinearLayout TBUchartContainer = (LinearLayout) findViewById(R.id.tbu_layout);
@@ -696,7 +781,7 @@ public class HasilKalkulatorGizi extends Activity {
         TBUchartContainer.addView(TBUChart, new LinearLayout.LayoutParams(LinearLayout.LayoutParams.MATCH_PARENT, 500));
 
 
-        //chart BBTB
+        // Chart BBTB
         List<String> BBTBchartID = new ArrayList<>();
         List<String> BBTBchartTinggi = new ArrayList<>();
         List<String> BBTBchartMin1sd = new ArrayList<>();
@@ -706,8 +791,10 @@ public class HasilKalkulatorGizi extends Activity {
         List<String> BBTBchart1sd = new ArrayList<>();
         List<String> BBTBchart2sd = new ArrayList<>();
         List<String> BBTBchart3sd = new ArrayList<>();
+
+        // Gender Laki-laki
         if ((jenisKelamin).equals("Laki-laki")) {
-            if (Integer.valueOf(bulan) <= 24) {
+            if (Integer.valueOf(bulan) < 24) {
                 Cursor cursorBBTBchart = db.getLakiBBTBAllList_0_24();
                 cursorBBTBchart.moveToFirst();
                 if (!cursorBBTBchart.isAfterLast()) {
@@ -724,6 +811,7 @@ public class HasilKalkulatorGizi extends Activity {
 
                     } while (cursorBBTBchart.moveToNext());
                 }
+
             } else {
                 Cursor cursorBBTBchart = db.getLakiBBTBAllList_24_60();
                 cursorBBTBchart.moveToFirst();
@@ -742,8 +830,10 @@ public class HasilKalkulatorGizi extends Activity {
                     } while (cursorBBTBchart.moveToNext());
                 }
             }
+
+        // Gender Perempuan
         } else {
-            if (Integer.valueOf(bulan) <= 24) {
+            if (Integer.valueOf(bulan) < 24) {
                 Cursor cursorBBTBchart = db.getPerempuanBBTBAllList_0_24();
                 cursorBBTBchart.moveToFirst();
                 if (!cursorBBTBchart.isAfterLast()) {
@@ -760,6 +850,7 @@ public class HasilKalkulatorGizi extends Activity {
 
                     } while (cursorBBTBchart.moveToNext());
                 }
+
             } else {
                 Cursor cursorBBTBchart = db.getPerempuanBBTBAllList_24_60();
                 cursorBBTBchart.moveToFirst();
@@ -779,7 +870,8 @@ public class HasilKalkulatorGizi extends Activity {
                 }
             }
         }
-        // Creating an  XYSeries for Income
+
+        // Creating an  XYSeries for BBTB
         XYSeries BBTBseriesMin3sd = new XYSeries("-3 SD");
         XYSeries BBTBseriesMin2sd = new XYSeries("-2 SD");
         XYSeries BBTBseriesMin1sd = new XYSeries("-1 SD");
@@ -789,7 +881,7 @@ public class HasilKalkulatorGizi extends Activity {
         XYSeries BBTBseries3sd = new XYSeries("3 SD");
         XYSeries BBTBseriesBeratBadan = new XYSeries("Berat Badan");
 
-        // Adding data to Income and Expense Series
+        // Adding data BBTB to Chart
         for (int i = 0; i < BBTBchartID.size(); i++) {
             BBTBseriesMin3sd.add(Double.parseDouble(BBTBchartTinggi.get(i)), Double.parseDouble(BBTBchartMin3sd.get(i)));
             BBTBseriesMin2sd.add(Double.parseDouble(BBTBchartTinggi.get(i)), Double.parseDouble(BBTBchartMin2sd.get(i)));
@@ -800,11 +892,13 @@ public class HasilKalkulatorGizi extends Activity {
             BBTBseries3sd.add(Double.parseDouble(BBTBchartTinggi.get(i)), Double.parseDouble(BBTBchart3sd.get(i)));
         }
 
+        // Adding data from kalkulator gizi to Chart
         BBTBseriesBeratBadan.add(Double.parseDouble(tinggiBadan), Double.parseDouble(beratBadan));
 
         // Creating a dataset to hold each series
         BBTBdataset = new XYMultipleSeriesDataset();
-        // Adding Income Series to the dataset
+        
+        // Adding BBTB Series to the dataset
         BBTBdataset.addSeries(BBTBseriesMin3sd);
         BBTBdataset.addSeries(BBTBseriesMin2sd);
         BBTBdataset.addSeries(BBTBseriesMin1sd);
@@ -814,40 +908,42 @@ public class HasilKalkulatorGizi extends Activity {
         BBTBdataset.addSeries(BBTBseries3sd);
         BBTBdataset.addSeries(BBTBseriesBeratBadan);
 
-        // Creating XYSeriesRenderer to customize incomeSeries
+        // Creating XYSeriesRenderer to customize min1sd
         XYSeriesRenderer BBTBrendererMin1sd = new XYSeriesRenderer();
         BBTBrendererMin1sd.setColor(Color.parseColor("#FF33CC"));
+        BBTBrendererMin1sd.setFillPoints(true);
 
-        // Creating XYSeriesRenderer to customize expenseSeries
+        // Creating XYSeriesRenderer to customize min2sd
         XYSeriesRenderer BBTBrendererMin2sd = new XYSeriesRenderer();
         BBTBrendererMin2sd.setColor(Color.parseColor("#FA9339"));
+        BBTBrendererMin2sd.setFillPoints(true);
 
-        // Creating XYSeriesRenderer to customize expenseSeries
+        // Creating XYSeriesRenderer to customize min3sd
         XYSeriesRenderer BBTBrendererMin3sd = new XYSeriesRenderer();
         BBTBrendererMin3sd.setColor(Color.parseColor("#E31025"));
         BBTBrendererMin3sd.setFillPoints(true);
 
-        // Creating XYSeriesRenderer to customize expenseSeries
+        // Creating XYSeriesRenderer to customize median
         XYSeriesRenderer BBTBrendererMedian = new XYSeriesRenderer();
         BBTBrendererMedian.setColor(Color.parseColor("#17C21A"));
         BBTBrendererMedian.setFillPoints(true);
 
-        // Creating XYSeriesRenderer to customize expenseSeries
+        // Creating XYSeriesRenderer to customize 1sd
         XYSeriesRenderer BBTBrenderer1sd = new XYSeriesRenderer();
         BBTBrenderer1sd.setColor(Color.parseColor("#2517C2"));
         BBTBrenderer1sd.setFillPoints(true);
 
-        // Creating XYSeriesRenderer to customize expenseSeries
+        // Creating XYSeriesRenderer to customize 2sd
         XYSeriesRenderer BBTBrenderer2sd = new XYSeriesRenderer();
         BBTBrenderer2sd.setColor(Color.parseColor("#C2B617"));
         BBTBrenderer2sd.setFillPoints(true);
 
-        // Creating XYSeriesRenderer to customize expenseSeries
+        // Creating XYSeriesRenderer to customize 3sd
         XYSeriesRenderer BBTBrenderer3sd = new XYSeriesRenderer();
         BBTBrenderer3sd.setColor(Color.parseColor("#C26717"));
         BBTBrenderer3sd.setFillPoints(true);
 
-        // Creating XYSeriesRenderer to customize expenseSeries
+        // Creating XYSeriesRenderer to customize beratbadan
         XYSeriesRenderer BBTBrendererBeratBadan = new XYSeriesRenderer();
         BBTBrendererBeratBadan.setColor(Color.parseColor("#000000"));
         BBTBrendererBeratBadan.setPointStyle(PointStyle.CIRCLE);
@@ -876,7 +972,7 @@ public class HasilKalkulatorGizi extends Activity {
         BBTBmultiRenderer.setYLabelsPadding(5);
         BBTBmultiRenderer.setXLabels(20);
         BBTBmultiRenderer.setYLabels(10);
-        if (Integer.valueOf(bulan) <= 24) {
+        if (Integer.valueOf(bulan) < 24) {
             BBTBmultiRenderer.setXAxisMin(44, 0);
             BBTBmultiRenderer.setXAxisMax(111, 0);
             BBTBmultiRenderer.setYAxisMin(1, 0);
@@ -888,7 +984,7 @@ public class HasilKalkulatorGizi extends Activity {
             BBTBmultiRenderer.setYAxisMax(31, 0);
         }
 
-        // Adding incomeRenderer and expenseRenderer to multipleRenderer
+        // Adding All Renderer to multipleRenderer
         // Note: The order of adding dataseries to dataset and renderers to multipleRenderer
         // should be same
         BBTBmultiRenderer.addSeriesRenderer(BBTBrendererMin3sd);
@@ -910,7 +1006,7 @@ public class HasilKalkulatorGizi extends Activity {
         BBTBchartContainer.addView(BBTBChart, new LinearLayout.LayoutParams(LinearLayout.LayoutParams.MATCH_PARENT, 500));
 
 
-        //chart IMTU
+        // Chart IMTU
         List<String> IMTUchartID = new ArrayList<>();
         List<String> IMTUchartUmur = new ArrayList<>();
         List<String> IMTUchartMin1sd = new ArrayList<>();
@@ -920,6 +1016,8 @@ public class HasilKalkulatorGizi extends Activity {
         List<String> IMTUchart1sd = new ArrayList<>();
         List<String> IMTUchart2sd = new ArrayList<>();
         List<String> IMTUchart3sd = new ArrayList<>();
+
+        // Gender Laki-laki
         if ((jenisKelamin).equals("Laki-laki")) {
             Cursor cursorIMTUchart = db.getLakiIMTUAllList();
             cursorIMTUchart.moveToFirst();
@@ -937,6 +1035,8 @@ public class HasilKalkulatorGizi extends Activity {
 
                 } while (cursorIMTUchart.moveToNext());
             }
+
+        // Gender Perempuan
         } else {
             Cursor cursorIMTUchart = db.getPerempuanIMTUAllList();
             cursorIMTUchart.moveToFirst();
@@ -955,7 +1055,8 @@ public class HasilKalkulatorGizi extends Activity {
                 } while (cursorIMTUchart.moveToNext());
             }
         }
-        // Creating an  XYSeries for Income
+
+        // Creating an  XYSeries for IMTU
         XYSeries IMTUseriesMin3sd = new XYSeries("-3 SD");
         XYSeries IMTUseriesMin2sd = new XYSeries("-2 SD");
         XYSeries IMTUseriesMin1sd = new XYSeries("-1 SD");
@@ -965,7 +1066,7 @@ public class HasilKalkulatorGizi extends Activity {
         XYSeries IMTUseries3sd = new XYSeries("3 SD");
         XYSeries IMTUseriesIMT = new XYSeries("Indeks Massa Tubuh");
 
-        // Adding data to Income and Expense Series
+        // Adding data IMTU to Chart
         for (int i = 0; i < IMTUchartID.size(); i++) {
             IMTUseriesMin3sd.add(Double.parseDouble(IMTUchartUmur.get(i)), Double.parseDouble(IMTUchartMin3sd.get(i)));
             IMTUseriesMin2sd.add(Double.parseDouble(IMTUchartUmur.get(i)), Double.parseDouble(IMTUchartMin2sd.get(i)));
@@ -976,11 +1077,13 @@ public class HasilKalkulatorGizi extends Activity {
             IMTUseries3sd.add(Double.parseDouble(IMTUchartUmur.get(i)), Double.parseDouble(IMTUchart3sd.get(i)));
         }
 
+        // Adding data from kalkulator gizi to Chart
         IMTUseriesIMT.add(Double.parseDouble(bulan), (double) imt);
 
         // Creating a dataset to hold each series
         IMTUdataset = new XYMultipleSeriesDataset();
-        // Adding Income Series to the dataset
+
+        // Adding IMTU Series to the dataset
         IMTUdataset.addSeries(IMTUseriesMin3sd);
         IMTUdataset.addSeries(IMTUseriesMin2sd);
         IMTUdataset.addSeries(IMTUseriesMin1sd);
@@ -990,45 +1093,47 @@ public class HasilKalkulatorGizi extends Activity {
         IMTUdataset.addSeries(IMTUseries3sd);
         IMTUdataset.addSeries(IMTUseriesIMT);
 
-        // Creating XYSeriesRenderer to customize incomeSeries
+        // Creating XYSeriesRenderer to customize min1sd
         XYSeriesRenderer IMTUrendererMin1sd = new XYSeriesRenderer();
         IMTUrendererMin1sd.setColor(Color.parseColor("#FF33CC"));
+        IMTUrendererMin1sd.setFillPoints(true);
 
-        // Creating XYSeriesRenderer to customize expenseSeries
+        // Creating XYSeriesRenderer to customize min2sd
         XYSeriesRenderer IMTUrendererMin2sd = new XYSeriesRenderer();
         IMTUrendererMin2sd.setColor(Color.parseColor("#FA9339"));
+        IMTUrendererMin2sd.setFillPoints(true);
 
-        // Creating XYSeriesRenderer to customize expenseSeries
+        // Creating XYSeriesRenderer to customize min3sd
         XYSeriesRenderer IMTUrendererMin3sd = new XYSeriesRenderer();
         IMTUrendererMin3sd.setColor(Color.parseColor("#E31025"));
         IMTUrendererMin3sd.setFillPoints(true);
 
-        // Creating XYSeriesRenderer to customize expenseSeries
+        // Creating XYSeriesRenderer to customize median
         XYSeriesRenderer IMTUrendererMedian = new XYSeriesRenderer();
         IMTUrendererMedian.setColor(Color.parseColor("#17C21A"));
         IMTUrendererMedian.setFillPoints(true);
 
-        // Creating XYSeriesRenderer to customize expenseSeries
+        // Creating XYSeriesRenderer to customize 1sd
         XYSeriesRenderer IMTUrenderer1sd = new XYSeriesRenderer();
         IMTUrenderer1sd.setColor(Color.parseColor("#2517C2"));
         IMTUrenderer1sd.setFillPoints(true);
 
-        // Creating XYSeriesRenderer to customize expenseSeries
+        // Creating XYSeriesRenderer to customize 2sd
         XYSeriesRenderer IMTUrenderer2sd = new XYSeriesRenderer();
         IMTUrenderer2sd.setColor(Color.parseColor("#C2B617"));
         IMTUrenderer2sd.setFillPoints(true);
 
-        // Creating XYSeriesRenderer to customize expenseSeries
+        // Creating XYSeriesRenderer to customize 3sd
         XYSeriesRenderer IMTUrenderer3sd = new XYSeriesRenderer();
         IMTUrenderer3sd.setColor(Color.parseColor("#C26717"));
         IMTUrenderer3sd.setFillPoints(true);
 
-        // Creating XYSeriesRenderer to customize expenseSeries
-        XYSeriesRenderer IMTUrendererBeratBadan = new XYSeriesRenderer();
-        IMTUrendererBeratBadan.setColor(Color.parseColor("#000000"));
-        IMTUrendererBeratBadan.setPointStyle(PointStyle.CIRCLE);
-        IMTUrendererBeratBadan.setFillPoints(true);
-        IMTUrendererBeratBadan.setLineWidth(2);
+        // Creating XYSeriesRenderer to customize beratbadan
+        XYSeriesRenderer IMTUrendererIMT = new XYSeriesRenderer();
+        IMTUrendererIMT.setColor(Color.parseColor("#000000"));
+        IMTUrendererIMT.setPointStyle(PointStyle.CIRCLE);
+        IMTUrendererIMT.setFillPoints(true);
+        IMTUrendererIMT.setLineWidth(2);
 
         // Creating a XYMultipleSeriesRenderer to customize the whole chart
         IMTUmultiRenderer = new XYMultipleSeriesRenderer();
@@ -1057,7 +1162,7 @@ public class HasilKalkulatorGizi extends Activity {
         IMTUmultiRenderer.setYAxisMin(10, 0);
         IMTUmultiRenderer.setYAxisMax(23, 0);
 
-        // Adding incomeRenderer and expenseRenderer to multipleRenderer
+        // Adding All Renderer to multipleRenderer
         // Note: The order of adding dataseries to dataset and renderers to multipleRenderer
         // should be same
         IMTUmultiRenderer.addSeriesRenderer(IMTUrendererMin3sd);
@@ -1067,7 +1172,7 @@ public class HasilKalkulatorGizi extends Activity {
         IMTUmultiRenderer.addSeriesRenderer(IMTUrenderer1sd);
         IMTUmultiRenderer.addSeriesRenderer(IMTUrenderer2sd);
         IMTUmultiRenderer.addSeriesRenderer(IMTUrenderer3sd);
-        IMTUmultiRenderer.addSeriesRenderer(IMTUrendererBeratBadan);
+        IMTUmultiRenderer.addSeriesRenderer(IMTUrendererIMT);
 
         // Getting a reference to LinearLayout of the MainActivity Layout
         LinearLayout IMTUchartContainer = (LinearLayout) findViewById(R.id.imtu_layout);
@@ -1079,8 +1184,8 @@ public class HasilKalkulatorGizi extends Activity {
         IMTUchartContainer.addView(IMTUChart, new LinearLayout.LayoutParams(LinearLayout.LayoutParams.MATCH_PARENT, 500));
 
 
-        //Tab
-        tabHost = (TabHost) findViewById(android.R.id.tabhost);     // The activity TabHost
+        // TabHost
+        tabHost = (TabHost) findViewById(android.R.id.tabhost);
         tabHost.setup();
 
         TabHost.TabSpec spec;
@@ -1094,6 +1199,7 @@ public class HasilKalkulatorGizi extends Activity {
         tabHost.addTab(spec);
         tabHost.setCurrentTab(0);
 
+        // Background color and text color tab
         for (int i = 0; i < tabHost.getTabWidget().getChildCount(); i++) {
             tabHost.getTabWidget().getChildAt(i).setBackgroundColor(Color.parseColor("#FFF1B5"));
             TextView tv = (TextView) tabHost.getTabWidget().getChildAt(i).findViewById(android.R.id.title); //Unselected Tabs
@@ -1132,6 +1238,7 @@ public class HasilKalkulatorGizi extends Activity {
             }
         }
 
+        // Tab OnChangeListener
         tabHost.setOnTabChangedListener(new TabHost.OnTabChangeListener() {
             public void onTabChanged(String arg0) {
                 for (int i = 0; i < tabHost.getTabWidget().getChildCount(); i++) {
@@ -1181,7 +1288,7 @@ public class HasilKalkulatorGizi extends Activity {
             finish();
         }
 
-        //chart
+        // Chart
         if (BBUChart == null || TBUChart == null || BBTBChart == null) {
             LinearLayout bbu_layout = (LinearLayout) findViewById(R.id.bbu_layout);
             BBUChart = ChartFactory.getLineChartView(getBaseContext(), BBUdataset, BBUmultiRenderer);
@@ -1196,6 +1303,7 @@ public class HasilKalkulatorGizi extends Activity {
             IMTUChart = ChartFactory.getLineChartView(getBaseContext(), IMTUdataset, IMTUmultiRenderer);
             imtu_layout.addView(IMTUChart);
         } else {
+            
             BBUChart.repaint();
             TBUChart.repaint();
             BBTBChart.repaint();

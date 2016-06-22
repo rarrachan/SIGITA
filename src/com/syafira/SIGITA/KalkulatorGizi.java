@@ -98,6 +98,7 @@ public class KalkulatorGizi extends Activity {
         kalkulatorgizi_kilogram.setTypeface(typeface);
         text_footer.setTypeface(typeface);
 
+        // Set Text
         kalkulatorgizi_bulan.setText("0");
 
         // Set OnClickListener
@@ -114,15 +115,20 @@ public class KalkulatorGizi extends Activity {
                 // Create Dialog DataPicker
                 final DatePickerDialog mDatePicker = new DatePickerDialog(KalkulatorGizi.this, new DatePickerDialog.OnDateSetListener() {
                     public void onDateSet(DatePicker datepicker, int selectedyear, int selectedmonth, int selectedday) {
-                    /*      Your code   to get date and time    */
+                        
+                        // Set DateFormatter
                         SimpleDateFormat dateFormatter = new SimpleDateFormat("dd/MM/yyyy", Locale.US);
+
+                        // Get Today Date
                         Calendar newDate = Calendar.getInstance();
                         newDate.set(selectedyear, selectedmonth, selectedday);
                         String tglLahir = dateFormatter.format(newDate.getTime());
                         String hariIni = dateFormatter.format(Calendar.getInstance().getTimeInMillis());
 
+                        // Set Text
                         kalkulatorgizi_tanggallahir.setText(tglLahir);
 
+                        // Split Calender by "/" ==> dd/MM/yyyy into strings[0]/strings[1]/strings[2]
                         String str[] = tglLahir.split("/");
                         int day = Integer.parseInt(str[0]);
                         int month = Integer.parseInt(str[1]);
@@ -133,18 +139,24 @@ public class KalkulatorGizi extends Activity {
                         int monthDate = Integer.parseInt(strings[1]);
                         int yearDate = Integer.parseInt(strings[2]);
 
+                        // (today calendar) - (birthday calendar)
                         int years = yearDate - year;
                         int months = monthDate - month;
                         int days = dayDate - day;
+
+                        // days not negative
                         if (days < 0) {
                             months--;
                             days += newDate.getActualMaximum(Calendar.DAY_OF_MONTH);
                         }
+
+                        // months not negative
                         if (months < 0) {
                             years--;
                             months += 12;
                         }
 
+                        // for bulan and umur
                         int mon = monthDate - month;
                         int y = 0;
                         while (y < years) {
@@ -152,6 +164,7 @@ public class KalkulatorGizi extends Activity {
                             y += 1;
                         }
 
+                        // Set Text
                         String umur = mon + " bulan / " + years + " tahun " + months + " bulan " + days + " hari";
                         kalkulatorgizi_bulan.setText(Integer.toString(mon));
                         kalkulatorgizi_umur.setText(umur);
@@ -163,6 +176,7 @@ public class KalkulatorGizi extends Activity {
                 mDatePicker.show();
             }
         });
+
         button_hitung.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -194,11 +208,11 @@ public class KalkulatorGizi extends Activity {
                     // Show Toast
                     Toast.makeText(KalkulatorGizi.this, "Umur Tidak Boleh Lebih Dari 5 Tahun / 60 Bulan", Toast.LENGTH_SHORT).show();
 
-                } else if (Integer.valueOf(bulan) <= 24 && Float.parseFloat(tinggiBadan) < 45) {
+                } else if (Integer.valueOf(bulan) < 24 && Float.parseFloat(tinggiBadan) < 45) {
                     // Show Toast
                     Toast.makeText(KalkulatorGizi.this, "Tinggi Tidak Boleh Kurang Dari 45 cm", Toast.LENGTH_SHORT).show();
 
-                } else if (Integer.valueOf(bulan) <= 24 && Float.parseFloat(tinggiBadan) > 110) {
+                } else if (Integer.valueOf(bulan) < 24 && Float.parseFloat(tinggiBadan) > 110) {
                     // Show Toast
                     Toast.makeText(KalkulatorGizi.this, "Tinggi Tidak Boleh Lebih Dari 110 cm", Toast.LENGTH_SHORT).show();
 
@@ -218,6 +232,7 @@ public class KalkulatorGizi extends Activity {
                     // Show Toast
                     Toast.makeText(KalkulatorGizi.this, "Berat Tidak Boleh Lebih Dari 30 kg", Toast.LENGTH_SHORT).show();
 
+                // everything is not empty
                 } else {
 
                     String jenisKelamin = ((RadioButton) findViewById(kalkulatorgizi_jeniskelamin.getCheckedRadioButtonId())).getText().toString();

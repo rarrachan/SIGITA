@@ -9,6 +9,7 @@ import android.widget.TextView;
 /**
  * Created by syafira rarra on 06/01/2016.
  */
+
 public class TentangSIGITA extends Activity {
 
     // Declare

@@ -59,7 +59,7 @@
                 </LinearLayout>
                 <!-- End Linear Layout Header -->
 
-
+                <!-- Start Text View Passcode -->
                 <TextView
                         android:id="@+id/button_passcode"
                         android:layout_width="wrap_content"
@@ -72,8 +72,9 @@
                         android:layout_marginTop="10dp"
                         android:layout_marginRight="20dp"
                         android:layout_marginBottom="10dp"/>
+                <!-- End Text View Passcode -->
 
-                <!-- Start Linear Layout Content -->
+                <!-- Start Linear Layout Row -->
                 <LinearLayout
                         android:layout_width="fill_parent"
                         android:layout_height="wrap_content"
@@ -83,7 +84,7 @@
                         android:layout_marginTop="30dp"
                         android:layout_marginBottom="30dp">
 
-                    <!-- Start Linear Layout Row -->
+                    <!-- Start Linear Layout Content -->
                     <LinearLayout
                             android:layout_width="fill_parent"
                             android:layout_height="wrap_content"
@@ -97,21 +98,21 @@
                                 android:layout_weight=".1"/>
                         <!-- End Blank Space -->
 
-                        <!-- Start Linear Layout Detail Jadwal Imunisasi -->
+                        <!-- Start Linear Layout Content -->
                         <LinearLayout
                                 android:layout_width="0dp"
                                 android:layout_height="wrap_content"
                                 android:orientation="vertical"
                                 android:layout_weight="1.3">
 
-                            <!-- Start Linear Layout Profil Nama -->
+                            <!-- Start Linear Layout Nama -->
                             <LinearLayout
                                     android:layout_width="fill_parent"
                                     android:layout_height="wrap_content"
                                     android:orientation="horizontal"
                                     android:layout_marginBottom="10dp">
 
-                                <!-- Start Text View Jenis Vaksin -->
+                                <!-- Start Text View Nama -->
                                 <TextView
                                         android:id="@+id/text_passcode_nama"
                                         android:layout_width="wrap_content"
@@ -119,7 +120,7 @@
                                         android:textColor="#D046F2"
                                         android:text="@string/profil_hint_nama"
                                         style="@android:style/TextAppearance.DeviceDefault.Medium"/>
-                                <!-- End Text View Jenis Vaksin -->
+                                <!-- End Text View Nama -->
 
                                 <!-- Start Text View Titik Dua -->
                                 <TextView
@@ -130,6 +131,9 @@
                                         android:text="@string/titikdua"
                                         style="@android:style/TextAppearance.DeviceDefault.Medium"
                                         android:layout_marginLeft="5dp"/>
+                                <!-- End Text View Titik Dua -->
+
+                                <!-- Start Text View Nama -->
                                 <TextView
                                         android:id="@+id/passcode_nama"
                                         android:layout_width="wrap_content"
@@ -138,28 +142,27 @@
                                         android:hint="@string/profil_hint_nama"
                                         style="@android:style/TextAppearance.DeviceDefault.Medium"
                                         android:layout_marginLeft="5dp"/>
-                                <!-- End Text View Titik Dua -->
+                                <!-- End Text View Nama -->
 
                             </LinearLayout>
-                            <!-- End Linear Layout Jenis Vaksin -->
+                            <!-- End Linear Layout Nama -->
 
-                            <!-- Start Linear Layout Usia Vaksin -->
+                            <!-- Start Linear Layout Switch -->
                             <LinearLayout
                                     android:layout_width="fill_parent"
                                     android:layout_height="wrap_content"
                                     android:orientation="horizontal"
                                     android:layout_marginBottom="10dp">
 
-                                <!-- Start Text View Jenis Vaksin -->
+                                <!-- Start Text View Switch -->
                                 <TextView
                                         android:id="@+id/text_passcode_switch"
                                         android:layout_width="wrap_content"
                                         android:layout_height="wrap_content"
                                         android:textColor="#D046F2"
                                         android:text="@string/button_passcode"
-                                        style="@android:style/TextAppearance.DeviceDefault.Medium"
-                                        />
-                                <!-- End Text View Jenis Vaksin -->
+                                        style="@android:style/TextAppearance.DeviceDefault.Medium"/>
+                                <!-- End Text View Switch -->
 
                                 <!-- Start Text View Titik Dua -->
                                 <TextView
@@ -170,7 +173,9 @@
                                         android:text="@string/titikdua"
                                         style="@android:style/TextAppearance.DeviceDefault.Medium"
                                         android:layout_marginLeft="5dp"/>
+                                <!-- End Text View Titik Dua-->
 
+                                <!-- Start Passcode Switch -->
                                 <ToggleButton
                                         android:id="@+id/passcode_switch"
                                         android:layout_width="wrap_content"
@@ -178,10 +183,12 @@
                                         android:textColor="#FF0000"
                                         style="@android:style/TextAppearance.DeviceDefault.Medium"
                                         android:layout_marginLeft="5dp"/>
+                                <!-- End Passcode Switch -->
 
                             </LinearLayout>
-                            <!-- End Linear Layout Usia Vaksin -->
+                            <!-- End Linear Layout Switch -->
 
+                            <!-- Start Linear Layout Ubah Passcode -->
                             <LinearLayout
                                     android:id="@+id/UbahPasscodeLinearLayout"
                                     android:layout_width="fill_parent"
@@ -189,7 +196,7 @@
                                     android:orientation="horizontal"
                                     android:background="#FFF1B5">
 
-                                <!-- Start Text View Tambah Profil -->
+                                <!-- Start Text View Ubah Passcode -->
                                 <TextView
                                         android:id="@+id/text_passcode_ubah"
                                         android:layout_width="0dp"
@@ -200,7 +207,7 @@
                                         android:layout_weight="1.8"
                                         android:gravity="left|center"
                                         android:layout_marginLeft="10dp"/>
-                                <!-- End Text View Tambah Profil -->
+                                <!-- End Text View Ubah Passcode -->
 
                                 <!-- Start Blank Space -->
                                 <View
@@ -209,7 +216,7 @@
                                         android:layout_weight=".005"/>
                                 <!-- End Blank Space -->
 
-                                <!-- Start Image View Tambah Profil -->
+                                <!-- Start Image View Ubah Passcode -->
                                 <ImageView
                                         android:id="@+id/button_passcode_ubah"
                                         android:layout_width="0dp"
@@ -219,12 +226,13 @@
                                         android:src="@drawable/icon_passcode"
                                         android:contentDescription="@string/app_name"
                                         android:layout_margin="5dp"/>
-                                <!-- End Image View Tambah Profil -->
+                                <!-- End Image View Ubah Passcode -->
 
                             </LinearLayout>
+                            <!-- End Linear Layout Ubah Passcode -->
 
                         </LinearLayout>
-                        <!-- End Linear Layout Detail Jadwal Imunisasi -->
+                        <!-- End Linear Layout Content -->
 
                         <!-- Start Blank Space -->
                         <View
@@ -234,10 +242,10 @@
                         <!-- End Blank Space -->
 
                     </LinearLayout>
-                    <!-- End Linear Layout Row -->
+                    <!-- End Linear Layout Content -->
 
                 </LinearLayout>
-                <!-- End Linear Layout Content -->
+                <!-- End Linear Layout Row -->
 
             </LinearLayout>
 

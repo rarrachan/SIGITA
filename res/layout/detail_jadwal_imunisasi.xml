@@ -59,7 +59,7 @@
                 </LinearLayout>
                 <!-- End Linear Layout Header -->
 
-
+                <!-- Start Text View Detail Jadwal Imunisasi -->
                 <TextView
                         android:id="@+id/detail_jadwal_imunisasi"
                         android:layout_width="wrap_content"
@@ -72,6 +72,7 @@
                         android:layout_marginTop="10dp"
                         android:layout_marginRight="20dp"
                         android:layout_marginBottom="10dp"/>
+                <!-- End Text View Detail Jadwal Imunisasi -->
 
                 <!-- Start Linear Layout Profil -->
                 <LinearLayout
@@ -137,7 +138,7 @@
                                 android:orientation="vertical"
                                 android:layout_weight="1.3">
 
-                            <!-- Start Linear Layout Profil Nama -->
+                            <!-- Start Linear Layout Jenis Vaksin -->
                             <LinearLayout
                                     android:layout_width="fill_parent"
                                     android:layout_height="wrap_content"
@@ -163,6 +164,9 @@
                                         android:text="@string/titikdua"
                                         style="@android:style/TextAppearance.DeviceDefault.Medium"
                                         android:layout_marginLeft="5dp"/>
+                                <!-- End Text View Titik Dua -->
+
+                                <!-- Start Text View Jenis Vaksin -->
                                 <TextView
                                         android:id="@+id/jenis_vaksin"
                                         android:layout_width="wrap_content"
@@ -260,13 +264,14 @@
                             </LinearLayout>
                             <!-- End Linear Layout Status Vaksin -->
 
-                            <!-- Start Linear Layout Status Vaksin -->
+                            <!-- Start Linear Layout Tanggal Vaksin -->
                             <LinearLayout
                                     android:id="@+id/tanggalVaksinLayout"
                                     android:layout_width="fill_parent"
                                     android:layout_height="wrap_content"
                                     android:orientation="horizontal"
-                                    android:layout_marginBottom="4dp" android:visibility="gone">
+                                    android:layout_marginBottom="4dp"
+                                    android:visibility="gone">
 
                                 <!-- Start Text View Tanggal Vaksin -->
                                 <TextView
@@ -276,7 +281,7 @@
                                         android:textColor="#D046F2"
                                         android:text="@string/detail_tanggal_vaksin"
                                         style="@android:style/TextAppearance.DeviceDefault.Medium"/>
-                                <!-- End Text View Status Vaksin -->
+                                <!-- End Text View Tanggal Vaksin -->
 
                                 <!-- Start Text View Titik Dua -->
                                 <TextView
@@ -301,7 +306,7 @@
                                 <!-- End Text View Tanggal Vaksin -->
 
                             </LinearLayout>
-                            <!-- End Linear Layout Status Vaksin -->
+                            <!-- End Linear Layout Tanggal Vaksin -->
 
                             <!-- Start Linear Layout Keterangan Vaksin -->
                             <LinearLayout
@@ -354,19 +359,10 @@
                                 android:layout_weight=".05"/>
                         <!-- End Blank Space -->
 
-                        <!-- Start Linear Layout Profil -->
-                        <!-- End Linear Layout Profil -->
-
-                        <!-- Start Blank Space -->
-                        <!-- End Blank Space -->
-
                     </LinearLayout>
                     <!-- End Linear Layout Row -->
 
                 </LinearLayout>
-                <!-- End Linear Layout Content -->
-
-                <!-- Start Linear Layout Content -->
                 <!-- End Linear Layout Content -->
 
             </LinearLayout>

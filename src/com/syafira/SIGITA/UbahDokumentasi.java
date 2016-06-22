@@ -24,8 +24,10 @@ import java.util.Locale;
 /**
  * Created by syafira rarra on 05/25/2016.
  */
+
 public class UbahDokumentasi extends Activity {
 
+    // Declare
     private TextView ubah_dokumentasi;
     private TextView titikdua;
     private TextView text_footer;
@@ -105,6 +107,7 @@ public class UbahDokumentasi extends Activity {
         dokumentasigizi_beratbadan.setTypeface(typeface);
         dokumentasigizi_kilogram.setTypeface(typeface);
 
+        // set Text
         dokumentasigizi_nama.setText(session.loadSession(this, "nama"));
         dokumentasigizi_tanggal.setText(cursor.getString(cursor.getColumnIndex("dokumentasi_tanggal")));
         dokumentasigizi_usia.setText(cursor.getString(cursor.getColumnIndex("dokumentasi_usia")));

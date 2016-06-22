@@ -161,7 +161,6 @@ public class DetailProfil extends Activity {
         if (profil_foto.getDrawable() == null){
             profil_foto.setImageDrawable(getResources().getDrawable(R.drawable.icon_logo));
         }
-
         final String pass = cursor.getString(cursor.getColumnIndex("profil_passcode"));
 
         // Set OnClickListener
@@ -227,6 +226,7 @@ public class DetailProfil extends Activity {
                 }
             }
         });
+        
         button_hapus.setOnClickListener(new OnClickListener() {
             @Override
             public void onClick(View v) {

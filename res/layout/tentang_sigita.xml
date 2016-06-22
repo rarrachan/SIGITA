@@ -63,6 +63,7 @@
                     android:layout_gravity="center_vertical"
                     android:layout_marginBottom="70dp">
 
+                <!-- Start Text View Tentang -->
                 <TextView
                         android:id="@+id/button_tentangsigita"
                         android:layout_width="wrap_content"
@@ -75,6 +76,7 @@
                         android:layout_marginTop="10dp"
                         android:layout_marginRight="20dp"
                         android:layout_marginBottom="10dp"/>
+                <!-- End Text View Tentang-->
 
                 <LinearLayout
                         android:layout_width="fill_parent"
@@ -96,6 +98,7 @@
                             android:orientation="vertical"
                             android:layout_weight="1">
 
+                        <!-- Start Text View Tentang -->
                         <TextView
                                 android:id="@+id/tentang_sigita"
                                 android:layout_width="wrap_content"
@@ -103,7 +106,9 @@
                                 android:textColor="#D046F2"
                                 android:text="@string/tentang_sigita"
                                 style="@android:style/TextAppearance.DeviceDefault.Medium"
-                                android:layout_gravity="center_vertical" android:gravity="center"/>
+                                android:layout_gravity="center_vertical"
+                                android:gravity="center"/>
+                        <!-- End Text View Tentang -->
 
                     </LinearLayout>
 

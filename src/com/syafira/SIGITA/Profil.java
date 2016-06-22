@@ -102,11 +102,15 @@ public class Profil extends Activity{
                 final String foto_path = android.os.Environment.getExternalStorageDirectory() + "/SIGITA/" + nama.replaceAll(" ", "_") + "/" + cursor.getString(cursor.getColumnIndex("profil_foto"));
                 final String gender = cursor.getString(cursor.getColumnIndex("profil_jenisKelamin"));
                 final String passcode = cursor.getString(cursor.getColumnIndex("profil_passcode"));
+                
+                // Check Gender
                 if (gender.equals("Laki-laki")) {
+
                     // Hide Perempuan Image
                     button_anakperempuan = (ImageView) profil_layout.findViewById(R.id.button_anakperempuan);
                     button_anakperempuan.setVisibility(View.GONE);
                 } else {
+
                     // Hide Lakilaki Image
                     button_anaklaki = (ImageView) profil_layout.findViewById(R.id.button_anaklaki);
                     button_anaklaki.setVisibility(View.GONE);
@@ -154,10 +158,12 @@ public class Profil extends Activity{
                                 startActivity(zoom);
                             }
                         });
+
                         button_pilih.setOnClickListener(new OnClickListener() {
                             @Override
                             public void onClick(View v) {
 
+                                // Has Passcode
                                 if (!passcode.equals("")) {
                                     Intent profilCekPasscode = new Intent(Profil.this, ProfilCekPasscode.class);
                                     lastActivity = System.currentTimeMillis();
@@ -175,6 +181,8 @@ public class Profil extends Activity{
                                     finish();
 
                                     dialog_profil.dismiss();
+
+                                // Has no Passcode
                                 } else {
                                     // Create Session
                                     if (session.checkSession(Profil.this)) {
@@ -203,9 +211,12 @@ public class Profil extends Activity{
                                 }
                             }
                         });
+
                         button_detail_profil.setOnClickListener(new OnClickListener() {
                             @Override
                             public void onClick(View v) {
+
+                                // Has Passcode
                                 if (!passcode.equals("")) {
                                     // Close Dialog
                                     dialog_profil.dismiss();
@@ -222,6 +233,8 @@ public class Profil extends Activity{
                                     profilCekPasscode.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TASK | Intent.FLAG_ACTIVITY_CLEAR_TOP);
                                     startActivity(profilCekPasscode);
                                     finish();
+
+                                // Has no Passcode
                                 } else {
                                     // Close Dialog
                                     dialog_profil.dismiss();
@@ -257,7 +270,9 @@ public class Profil extends Activity{
         Intent fetchID = getIntent();
         String pathbefore = fetchID.getStringExtra("pathbefore");
         int detailJadwalImunisasiID = fetchID.getIntExtra("detailJadwalImunisasiID", 0);
+        
         switch (pathbefore) {
+
             case "home":
                 // Start Home Activity
                 Intent index = new Intent(this, Home.class);
@@ -269,8 +284,9 @@ public class Profil extends Activity{
                 // Close This Activity
                 finish();
                 break;
+
             case "gizi":
-                // Start Home Activity
+                // Start Gizi Activity
                 Intent gizi = new Intent(this, Gizi.class);
                 lastActivity = System.currentTimeMillis();
                 gizi.putExtra("lastActivity", lastActivity);
@@ -282,7 +298,7 @@ public class Profil extends Activity{
                 break;
 
             case "imunisasi":
-                // Start Home Activity
+                // Start Imunisasi Activity
                 Intent imunisasi = new Intent(this, Imunisasi.class);
                 lastActivity = System.currentTimeMillis();
                 imunisasi.putExtra("lastActivity", lastActivity);
@@ -294,7 +310,7 @@ public class Profil extends Activity{
                 break;
 
             case "tumbuhkembang":
-                // Start Home Activity
+                // Start Tumbuh Kembang Activity
                 Intent tumbuhkembang = new Intent(this, TumbuhKembang.class);
                 lastActivity = System.currentTimeMillis();
                 tumbuhkembang.putExtra("lastActivity", lastActivity);
@@ -306,7 +322,7 @@ public class Profil extends Activity{
                 break;
 
             case "rekammedis":
-                // Start Home Activity
+                // Start Rekam Medis Activity
                 Intent rekammedis = new Intent(this, RekamMedis.class);
                 lastActivity = System.currentTimeMillis();
                 rekammedis.putExtra("lastActivity", lastActivity);
@@ -318,7 +334,7 @@ public class Profil extends Activity{
                 break;
 
             case "alarmimunisasi":
-                // Start Home Activity
+                // Start Alarm Imunisasi Activity
                 Intent alarmimunisasi = new Intent(this, AlarmImunisasi.class);
                 lastActivity = System.currentTimeMillis();
                 alarmimunisasi.putExtra("lastActivity", lastActivity);
@@ -330,7 +346,7 @@ public class Profil extends Activity{
                 break;
 
             case "jadwalimunisasi":
-                // Start Home Activity
+                // Start Jadwal Imunisasi Activity
                 Intent jadwalimunisasi = new Intent(this, JadwalImunisasi.class);
                 lastActivity = System.currentTimeMillis();
                 jadwalimunisasi.putExtra("lastActivity", lastActivity);
@@ -342,7 +358,7 @@ public class Profil extends Activity{
                 break;
 
             case "detailjadwalimunisasi":
-                // Start Home Activity
+                // Start Detail Jadwal Imunisasi Activity
                 Intent detailjadwalimunisasi = new Intent(this, DetailJadwalImunisasi.class);
                 lastActivity = System.currentTimeMillis();
                 detailjadwalimunisasi.putExtra("lastActivity", lastActivity);
@@ -355,7 +371,7 @@ public class Profil extends Activity{
                 break;
 
             case "riwayatimunisasi":
-                // Start Home Activity
+                // Start Riwayat Imunisasi Activity
                 Intent riwayatimunisasi = new Intent(this, RiwayatImunisasi.class);
                 lastActivity = System.currentTimeMillis();
                 riwayatimunisasi.putExtra("lastActivity", lastActivity);
@@ -367,7 +383,7 @@ public class Profil extends Activity{
                 break;
 
             case "dokumentasigizi":
-                // Start Home Activity
+                // Start Dokumentasi Gizi Activity
                 Intent dokumentasigizi = new Intent(this, DokumentasiGizi.class);
                 lastActivity = System.currentTimeMillis();
                 dokumentasigizi.putExtra("lastActivity", lastActivity);
@@ -379,7 +395,7 @@ public class Profil extends Activity{
                 break;
 
             case "tahapantumbang":
-                // Start Home Activity
+                // Start Tahapan Tumbuh Kembang Activity
                 Intent tahapantumbang = new Intent(this, TahapanTumbang.class);
                 lastActivity = System.currentTimeMillis();
                 tahapantumbang.putExtra("lastActivity", lastActivity);
@@ -391,7 +407,7 @@ public class Profil extends Activity{
                 break;
 
             case "galeritumbang":
-                // Start Home Activity
+                // Start Galeri Tumbuh Kembang Activity
                 Intent galeritumbang = new Intent(this, GaleriTumbang.class);
                 lastActivity = System.currentTimeMillis();
                 galeritumbang.putExtra("lastActivity", lastActivity);

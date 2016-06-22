@@ -23,8 +23,10 @@ import java.util.*;
 /**
  * Created by syafira rarra on 05/12/2016.
  */
+
 public class TambahRiwayat extends Activity {
 
+    // Declare
     private TextView tambah_riwayat;
     private TextView text_footer;
     private TextView titikdua;
@@ -119,8 +121,10 @@ public class TambahRiwayat extends Activity {
         riwayat_beratbadan.setTypeface(typeface);
         riwayat_kilogram.setTypeface(typeface);
 
+        // Set Text
         riwayat_nama.setText(session.loadSession(this, "nama"));
 
+        // Create List Spinner
         final List<String> list = new ArrayList<>();
         list.add(0, "Pilih");
         ArrayAdapter dataAdapter = new ArrayAdapter<String>(TambahRiwayat.this, android.R.layout.simple_spinner_item, list) {
@@ -150,6 +154,7 @@ public class TambahRiwayat extends Activity {
         dataAdapter.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
         riwayat_jenisvaksin.setAdapter(dataAdapter);
 
+        // set OnClickListener
         riwayat_tanggal.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {

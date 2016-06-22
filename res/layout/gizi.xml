@@ -99,7 +99,8 @@
                 <View
                         android:layout_width="wrap_content"
                         android:layout_height="0dp"
-                        android:layout_weight=".2" android:layout_marginTop="10dp"/>
+                        android:layout_weight=".2"
+                        android:layout_marginTop="10dp"/>
                 <!-- End Blank Space -->
 
                 <!-- Start Linear Layout Row -->
@@ -108,7 +109,8 @@
                         android:layout_height="0dp"
                         android:layout_weight=".5"
                         android:orientation="horizontal"
-                        android:layout_gravity="center" android:layout_marginBottom="10dp">
+                        android:layout_gravity="center"
+                        android:layout_marginBottom="10dp">
 
                     <!-- Start Blank Space -->
                     <View
@@ -176,7 +178,8 @@
                         android:layout_height="0dp"
                         android:layout_weight=".5"
                         android:orientation="horizontal"
-                        android:layout_gravity="center" android:layout_marginTop="10dp">
+                        android:layout_gravity="center"
+                        android:layout_marginTop="10dp">
 
                     <!-- Start Blank Space -->
                     <View
@@ -184,6 +187,7 @@
                             android:layout_height="0dp"
                             android:layout_weight=".1"/>
 
+                    <!-- Start Linear Layout Dokumentasi Gizi -->
                     <LinearLayout
                             android:id="@+id/DokumentasiGiziLinearLayout"
                             android:layout_width="0dp"
@@ -225,6 +229,7 @@
                         <!-- End Image View Dokumentasi Gizi -->
 
                     </LinearLayout>
+                    <!-- End Linear Layout Dokumentasi Gizi -->
 
                     <!-- Start Blank Space -->
                     <View
@@ -240,7 +245,8 @@
                 <View
                         android:layout_width="wrap_content"
                         android:layout_height="0dp"
-                        android:layout_weight=".2" android:layout_marginBottom="30dp"/>
+                        android:layout_weight=".2"
+                        android:layout_marginBottom="30dp"/>
                 <!-- End Blank Space -->
 
             </LinearLayout>

@@ -14,6 +14,7 @@ import android.widget.*;
 /**
  * Created by syafira rarra on 05/01/2016.
  */
+
 public class RiwayatImunisasi extends Activity {
 
     // Declare
@@ -65,6 +66,7 @@ public class RiwayatImunisasi extends Activity {
 
             TableLayout riwayat_imunisasi = (TableLayout) findViewById(R.id.riwayat_imunisasi);
 
+            // Ser OnClickListener
             ProfilLinearLayout.setOnClickListener(new View.OnClickListener() {
                 @Override
                 public void onClick(View v) {
@@ -205,8 +207,9 @@ public class RiwayatImunisasi extends Activity {
                 db.close();
                 cursor.close();
             }
+
+        // No session
         } else {
-            finish();
             // Start Imunisasi Activity
             Intent imunisasi = new Intent(RiwayatImunisasi.this, Imunisasi.class);
             lastActivity = System.currentTimeMillis();
@@ -221,6 +224,7 @@ public class RiwayatImunisasi extends Activity {
     // Pressed Back Button
     @Override
     public void onBackPressed() {
+
         // Start Imunisasi Activity
         Intent imunisasi = new Intent(RiwayatImunisasi.this, Imunisasi.class);
         lastActivity = System.currentTimeMillis();
@@ -247,6 +251,7 @@ public class RiwayatImunisasi extends Activity {
             splash.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TASK | Intent.FLAG_ACTIVITY_CLEAR_TOP);
             startActivity(splash);
             finish();
+            
         } else {
             // Check Session
             if (session.checkSession(this)) {

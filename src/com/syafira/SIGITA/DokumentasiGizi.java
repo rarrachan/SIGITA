@@ -14,6 +14,7 @@ import android.widget.*;
 /**
  * Created by syafira rarra on 05/25/2016.
  */
+
 public class DokumentasiGizi extends Activity {
 
     // Declare

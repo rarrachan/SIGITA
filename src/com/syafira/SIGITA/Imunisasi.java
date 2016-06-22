@@ -91,6 +91,7 @@ public class Imunisasi extends Activity implements OnClickListener {
                 startActivity(profil);
                 finish();
                 break;
+
             // Jadwal Imunisasi
             case R.id.JadwalImunisasiLinearLayout :
                 Intent jadwal = new Intent(this, JadwalImunisasi.class);
@@ -100,6 +101,7 @@ public class Imunisasi extends Activity implements OnClickListener {
                 startActivity(jadwal);
                 finish();
                 break;
+
             // Riwayat Imunisasi
             case R.id.RiwayatImunisasiLinearLayout :
                 // Check Session
@@ -146,6 +148,7 @@ public class Imunisasi extends Activity implements OnClickListener {
                     });
                 }
                 break;
+
             // Alarm Imunisasi
             case R.id.AlarmImunisasiLinearLayout :
                 // Check Session
@@ -199,6 +202,7 @@ public class Imunisasi extends Activity implements OnClickListener {
     // Pressed Back Button
     @Override
     public void onBackPressed() {
+        
         // Start Home Activity
         Intent index = new Intent(this, Home.class);
         lastActivity = System.currentTimeMillis();

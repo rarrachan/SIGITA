@@ -15,8 +15,10 @@ import android.widget.Toast;
 /**
  * Created by syafira rarra on 05/13/2016.
  */
+
 public class DetailRiwayat extends Activity {
 
+    // Declare
     private TextView detail_riwayat;
     private TextView text_footer;
     private TextView titikdua;
@@ -116,6 +118,7 @@ public class DetailRiwayat extends Activity {
         riwayat_beratbadan.setTypeface(typeface);
         riwayat_kilogram.setTypeface(typeface);
 
+        // Set Text
         riwayat_nama.setText(session.loadSession(this, "nama"));
         final int riwayatID = Integer.parseInt(cursor.getString(cursor.getColumnIndex("riwayatID")));
         riwayat_bulan.setText(cursor.getString(cursor.getColumnIndex("riwayat_bulan")));

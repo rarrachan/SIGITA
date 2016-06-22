@@ -67,10 +67,9 @@
                         android:layout_height="wrap_content"
                         android:gravity="center"
                         android:orientation="vertical"
-                        android:layout_gravity="center_vertical"
-                        >
+                        android:layout_gravity="center_vertical">
 
-                    <!-- Start Linear Layout Row -->
+                    <!-- Start Text View Detail Rekam Medis-->
                     <TextView
                             android:id="@+id/detail_rekam_medis"
                             android:layout_width="wrap_content"
@@ -80,6 +79,7 @@
                             style="@android:style/TextAppearance.DeviceDefault.Medium"
                             android:layout_gravity="center_vertical"
                             android:layout_margin="20dp"/>
+                    <!-- End Text View Detail Rekam Medis -->
 
                     <LinearLayout
                             android:layout_width="fill_parent"
@@ -104,8 +104,7 @@
                             <LinearLayout
                                     android:layout_width="fill_parent"
                                     android:layout_height="wrap_content"
-                                    android:orientation="horizontal"
-                                    >
+                                    android:orientation="horizontal">
 
                                 <!-- Start Text View medis Nama -->
                                 <TextView
@@ -188,8 +187,7 @@
                             <LinearLayout
                                     android:layout_width="fill_parent"
                                     android:layout_height="wrap_content"
-                                    android:orientation="horizontal"
-                                    >
+                                    android:orientation="horizontal">
 
                                 <!-- Start Text View Nama Rumah Sakit -->
                                 <TextView
@@ -236,21 +234,20 @@
                                 android:layout_weight=".05"/>
                         <!-- End Blank Space -->
 
-                        <!-- Start Linear Layout medis -->
+                        <!-- Start Linear Layout Content -->
                         <LinearLayout
                                 android:layout_width="0dp"
                                 android:layout_height="wrap_content"
                                 android:orientation="vertical"
                                 android:layout_weight=".8">
 
-                            <!-- Start Linear Layout Tanggal Lahir -->
+                            <!-- Start Linear Layout Tanggal Berobat -->
                             <LinearLayout
                                     android:layout_width="fill_parent"
                                     android:layout_height="wrap_content"
-                                    android:orientation="horizontal"
-                                    >
+                                    android:orientation="horizontal">
 
-                                <!-- Start Text View Tanggal Lahir -->
+                                <!-- Start Text View Tanggal Berobat -->
                                 <TextView
                                         android:id="@+id/text_medis_tanggalberobat"
                                         android:layout_width="wrap_content"
@@ -258,7 +255,7 @@
                                         android:textColor="#D046F2"
                                         android:text="@string/medis_tanggalberobat"
                                         style="@android:style/TextAppearance.DeviceDefault.Medium"/>
-                                <!-- End Text View Tanggal Lahir -->
+                                <!-- End Text View Tanggal Berobat -->
 
                                 <!-- Start Text View Titik Dua -->
                                 <TextView
@@ -272,9 +269,9 @@
                                 <!-- End Text View Titik Dua -->
 
                             </LinearLayout>
-                            <!-- End Linear Layout Tanggal Lahir -->
+                            <!-- End Linear Layout Tanggal Berobat -->
 
-                            <!-- Start Edit Text Tanggal Lahir -->
+                            <!-- Start Edit Text Tanggal Berobat -->
                             <TextView
                                     android:id="@+id/medis_tanggalberobat"
                                     android:layout_width="fill_parent"
@@ -284,7 +281,7 @@
                                     android:focusable="false"
                                     style="@android:style/TextAppearance.DeviceDefault.Medium"
                                     android:layout_margin="10dp"/>
-                            <!-- End Edit Text Tanggal lahir -->
+                            <!-- End Edit Text Tanggal Berobat -->
 
                             <!-- Start Linear Layout Tinggi Badan -->
                             <LinearLayout
@@ -300,8 +297,10 @@
                                         android:layout_height="wrap_content"
                                         android:textColor="#D046F2"
                                         android:text="@string/medis_tinggibadan"
-                                        style="@android:style/TextAppearance.DeviceDefault.Medium"
-                                        />
+                                        style="@android:style/TextAppearance.DeviceDefault.Medium"/>
+                                <!-- End Text View Tinggi Badan -->
+
+                                <!-- Start Text View Titik Dua -->                                
                                 <TextView
                                         android:id="@+id/titikdua"
                                         android:layout_width="wrap_content"
@@ -310,14 +309,15 @@
                                         android:text="@string/titikdua"
                                         style="@android:style/TextAppearance.DeviceDefault.Medium"
                                         android:layout_marginLeft="5dp"/>
-                                <!-- End Text View Panjang Lahir -->
+                                <!-- End Text View Titik Dua -->
 
                             </LinearLayout>
 
                             <LinearLayout
                                     android:layout_width="fill_parent"
                                     android:layout_height="wrap_content"
-                                    android:orientation="horizontal" android:layout_margin="10dp">
+                                    android:orientation="horizontal"
+                                    android:layout_margin="10dp">
 
                                 <!-- Start Edit Text Tinggi Badan -->
                                 <TextView
@@ -356,8 +356,10 @@
                                         android:layout_height="wrap_content"
                                         android:textColor="#D046F2"
                                         android:text="@string/medis_beratbadan"
-                                        style="@android:style/TextAppearance.DeviceDefault.Medium"
-                                        />
+                                        style="@android:style/TextAppearance.DeviceDefault.Medium"/>
+                                <!-- Start Text View Berat Badan -->
+                                
+                                <!-- Start Text View Titik Dua -->
                                 <TextView
                                         android:id="@+id/titikdua"
                                         android:layout_width="wrap_content"
@@ -366,14 +368,15 @@
                                         android:text="@string/titikdua"
                                         style="@android:style/TextAppearance.DeviceDefault.Medium"
                                         android:layout_marginLeft="5dp"/>
-                                <!-- End Text View Berat Lahir -->
+                                <!-- End Text View Titik Dua -->
 
                             </LinearLayout>
 
                             <LinearLayout
                                     android:layout_width="fill_parent"
                                     android:layout_height="wrap_content"
-                                    android:orientation="horizontal" android:layout_margin="10dp">
+                                    android:orientation="horizontal"
+                                    android:layout_margin="10dp">
 
                                 <!-- Start Edit Text Berat Badan -->
                                 <TextView
@@ -395,12 +398,12 @@
                                         android:text="@string/medis_kilogram"
                                         style="@android:style/TextAppearance.DeviceDefault.Medium"
                                         android:layout_weight=".5"/>
-                                <!-- End Text View kilogram -->
+                                <!-- End Text View Kilogram -->
 
                             </LinearLayout>
 
                         </LinearLayout>
-                        <!-- End Linear Layout medis -->
+                        <!-- End Linear Layout Content -->
 
                         <!-- Start Blank Space -->
                         <View
@@ -434,15 +437,15 @@
                             android:layout_width="0dp"
                             android:layout_height="wrap_content"
                             android:layout_weight="1"
-                            android:orientation="vertical" android:layout_margin="2dp">
+                            android:orientation="vertical"
+                            android:layout_margin="2dp">
 
                         <LinearLayout
                                 android:layout_width="fill_parent"
                                 android:layout_height="wrap_content"
-                                android:orientation="horizontal"
-                                >
+                                android:orientation="horizontal">
 
-                            <!-- Start Text View medis Nama -->
+                            <!-- Start Text View Keluhan -->
                             <TextView
                                     android:id="@+id/text_medis_keluhan"
                                     android:layout_width="wrap_content"
@@ -450,7 +453,7 @@
                                     android:textColor="#D046F2"
                                     android:text="@string/medis_keluhan"
                                     style="@android:style/TextAppearance.DeviceDefault.Medium"/>
-                            <!-- End Text View medis Nama -->
+                            <!-- End Text View Keluhan -->
 
                             <!-- Start Text View Titik Dua -->
                             <TextView
@@ -465,7 +468,7 @@
 
                         </LinearLayout>
 
-                        <!-- Start Edit Text Berat Badan -->
+                        <!-- Start Edit Text Keluhan -->
                         <TextView
                                 android:id="@+id/medis_keluhan"
                                 android:layout_width="fill_parent"
@@ -474,7 +477,7 @@
                                 android:textColor="#FF0000"
                                 android:hint="@string/medis_keluhan"
                                 android:layout_margin="10dp"/>
-                        <!-- End Edit Text Berat Lahir -->
+                        <!-- End Edit Text Keluhan -->
 
                     </LinearLayout>
 
@@ -482,15 +485,15 @@
                             android:layout_width="0dp"
                             android:layout_height="wrap_content"
                             android:layout_weight="1"
-                            android:orientation="vertical" android:layout_margin="2dp">
+                            android:orientation="vertical"
+                            android:layout_margin="2dp">
 
                         <LinearLayout
                                 android:layout_width="fill_parent"
                                 android:layout_height="wrap_content"
-                                android:orientation="horizontal"
-                                >
+                                android:orientation="horizontal">
 
-                            <!-- Start Text View medis Nama -->
+                            <!-- Start Text View Tindakan -->
                             <TextView
                                     android:id="@+id/text_medis_tindakan"
                                     android:layout_width="wrap_content"
@@ -498,7 +501,7 @@
                                     android:textColor="#D046F2"
                                     android:text="@string/medis_tindakan"
                                     style="@android:style/TextAppearance.DeviceDefault.Medium"/>
-                            <!-- End Text View medis Nama -->
+                            <!-- End Text View Tindakan -->
 
                             <!-- Start Text View Titik Dua -->
                             <TextView
@@ -513,15 +516,16 @@
 
                         </LinearLayout>
 
-                        <!-- Start Edit Text Berat Badan -->
+                        <!-- Start Text View Tindakan -->
                         <TextView
                                 android:id="@+id/medis_tindakan"
                                 android:layout_width="fill_parent"
                                 android:layout_height="fill_parent"
                                 style="@android:style/TextAppearance.DeviceDefault.Medium"
                                 android:textColor="#FF0000"
-                                android:hint="@string/medis_tindakan" android:layout_margin="10dp"/>
-                        <!-- End Edit Text Berat Lahir -->
+                                android:hint="@string/medis_tindakan"
+                                android:layout_margin="10dp"/>
+                        <!-- End Text View Tindakan -->
 
                     </LinearLayout>
 
@@ -529,15 +533,15 @@
                             android:layout_width="0dp"
                             android:layout_height="wrap_content"
                             android:layout_weight="1"
-                            android:orientation="vertical" android:layout_margin="2dp">
+                            android:orientation="vertical"
+                            android:layout_margin="2dp">
 
                         <LinearLayout
                                 android:layout_width="fill_parent"
                                 android:layout_height="wrap_content"
-                                android:orientation="horizontal"
-                                >
+                                android:orientation="horizontal">
 
-                            <!-- Start Text View medis Nama -->
+                            <!-- Start Text View Obat -->
                             <TextView
                                     android:id="@+id/text_medis_obat"
                                     android:layout_width="wrap_content"
@@ -545,7 +549,7 @@
                                     android:textColor="#D046F2"
                                     android:text="@string/medis_obat"
                                     style="@android:style/TextAppearance.DeviceDefault.Medium"/>
-                            <!-- End Text View medis Nama -->
+                            <!-- End Text View Obat -->
 
                             <!-- Start Text View Titik Dua -->
                             <TextView
@@ -560,15 +564,16 @@
 
                         </LinearLayout>
 
-                        <!-- Start Edit Text Berat Badan -->
+                        <!-- Start Edit Text Obat -->
                         <TextView
                                 android:id="@+id/medis_obat"
                                 android:layout_width="fill_parent"
                                 android:layout_height="fill_parent"
                                 style="@android:style/TextAppearance.DeviceDefault.Medium"
                                 android:textColor="#FF0000"
-                                android:hint="@string/medis_obat" android:layout_margin="10dp"/>
-                        <!-- End Edit Text Berat Lahir -->
+                                android:hint="@string/medis_obat"
+                                android:layout_margin="10dp"/>
+                        <!-- End Edit Text Obat -->
 
                     </LinearLayout>
 
@@ -588,7 +593,8 @@
                         android:layout_height="wrap_content"
                         android:orientation="horizontal"
                         android:layout_gravity="center"
-                        android:layout_marginBottom="30dp" android:layout_marginTop="20dp">
+                        android:layout_marginBottom="30dp"
+                        android:layout_marginTop="20dp">
 
                     <!-- Start Blank Space -->
                     <View

@@ -97,11 +97,6 @@ public class RekamMedis extends Activity {
                     TableRow.LayoutParams obat_text_view = new TableRow.LayoutParams(0, TableRow.LayoutParams.MATCH_PARENT, 1f);
                     TableRow.LayoutParams detail_text_view = new TableRow.LayoutParams(0, TableRow.LayoutParams.MATCH_PARENT, .8f);
 
-//                    LinearLayout.LayoutParams layoutParams = new LinearLayout.LayoutParams(0, LinearLayout.LayoutParams.MATCH_PARENT, .8f);
-//                    layoutParams.gravity = Gravity.CENTER;
-//                    detail.setLayoutParams(layoutParams);
-//                    detail.setAdjustViewBounds(true);
-
                     detail.setImageResource(R.drawable.tombol_detail);
                     tanggal.setGravity(Gravity.CENTER_VERTICAL);
                     keluhan.setGravity(Gravity.CENTER_VERTICAL);
@@ -185,10 +180,19 @@ public class RekamMedis extends Activity {
                 cursor.close();
 
             }
+
+        // No session
         } else {
+            // Start Home Activity
+            Intent index = new Intent(RekamMedis.this, Home.class);
+            lastActivity = System.currentTimeMillis();
+            index.putExtra("lastActivity", lastActivity);
+            index.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TASK | Intent.FLAG_ACTIVITY_CLEAR_TOP);
+            startActivity(index);
             finish();
         }
 
+        // Set OnClickListener
         ProfilLinearLayout.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -222,6 +226,7 @@ public class RekamMedis extends Activity {
     // Pressed Back Button
     @Override
     public void onBackPressed() {
+
         // Start Home Activity
         Intent index = new Intent(this, Home.class);
         lastActivity = System.currentTimeMillis();
@@ -249,6 +254,7 @@ public class RekamMedis extends Activity {
             startActivity(splash);
             finish();
         } else {
+            
             // Check Session
             if (session.checkSession(this)) {
                 // Set Profil Name

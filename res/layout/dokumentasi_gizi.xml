@@ -51,6 +51,7 @@
             </LinearLayout>
             <!-- End Linear Layout Header -->
 
+            <!-- Start Text View Dokumentasi Gizi -->
             <TextView
                     android:id="@+id/button_dokumentasigizi"
                     android:layout_width="wrap_content"
@@ -63,6 +64,7 @@
                     android:layout_marginTop="10dp"
                     android:layout_marginRight="20dp"
                     android:layout_marginBottom="10dp"/>
+            <!-- End Text View Dokumentasi Gizi -->
 
             <!-- Start Linear Layout Profil -->
             <LinearLayout
@@ -145,6 +147,7 @@
                 </LinearLayout>
                 <!-- End Linear Layout Content -->
 
+                <!-- Start Horizontal Scroll View -->
                 <HorizontalScrollView
                         android:layout_width="fill_parent"
                         android:layout_height="wrap_content"
@@ -152,6 +155,7 @@
                         android:padding="20dp"
                         android:scrollbars="none">
 
+                    <!-- Start Table Layout -->
                     <TableLayout
                             android:id="@+id/dokumentasi_gizi"
                             android:layout_width="wrap_content"
@@ -159,8 +163,8 @@
                             android:stretchColumns="*"
                             android:background="@drawable/border_table">
 
+                        <!-- Start Hidden Row for Horizontal Scroll View -->
                         <TableRow>
-
                             <TextView
                                     android:layout_width="wrap_content"
                                     android:layout_height="0dp"
@@ -168,7 +172,6 @@
                                     style="@android:style/TextAppearance.DeviceDefault.Medium"
                                     android:text="@string/gerakan_halus"
                                     android:visibility="invisible"/>
-
                             <TextView
                                     android:layout_width="wrap_content"
                                     android:layout_height="0dp"
@@ -176,7 +179,6 @@
                                     style="@android:style/TextAppearance.DeviceDefault.Medium"
                                     android:text="@string/gerakan_halus"
                                     android:visibility="invisible"/>
-
                             <TextView
                                     android:layout_width="wrap_content"
                                     android:layout_height="0dp"
@@ -184,7 +186,6 @@
                                     style="@android:style/TextAppearance.DeviceDefault.Medium"
                                     android:text="@string/gerakan_halus"
                                     android:visibility="invisible"/>
-
                             <TextView
                                     android:layout_width="wrap_content"
                                     android:layout_height="0dp"
@@ -192,7 +193,6 @@
                                     style="@android:style/TextAppearance.DeviceDefault.Medium"
                                     android:text="@string/gerakan_halus"
                                     android:visibility="invisible"/>
-
                             <TextView
                                     android:layout_width="wrap_content"
                                     android:layout_height="0dp"
@@ -200,11 +200,11 @@
                                     style="@android:style/TextAppearance.DeviceDefault.Medium"
                                     android:text="@string/gerakan_halus"
                                     android:visibility="invisible"/>
-
                         </TableRow>
 
                         <TableRow>
 
+                            <!-- Start Text View Tanggal -->
                             <TextView
                                     android:id="@+id/text_dokumentasigizi_tanggal"
                                     android:layout_width="0dp"
@@ -220,7 +220,9 @@
                                     style="@android:style/TextAppearance.DeviceDefault.Medium"
                                     android:background="@drawable/border_row"
                                     android:text="@string/dokumentasigizi_tanggal"/>
+                            <!-- End Text View Tanggal -->
 
+                            <!-- Start Text View Usia -->
                             <TextView
                                     android:id="@+id/text_dokumentasigizi_usia"
                                     android:layout_width="0dp"
@@ -233,7 +235,9 @@
                                     android:gravity="center_vertical"
                                     style="@android:style/TextAppearance.DeviceDefault.Medium"
                                     android:text="@string/dokumentasigizi_usia"/>
+                            <!-- End Text View Usia -->
 
+                            <!-- Start Text View Tinggi Badan-->
                             <TextView
                                     android:id="@+id/text_dokumentasigizi_tinggibadan"
                                     android:layout_width="0dp"
@@ -246,7 +250,9 @@
                                     android:gravity="center_vertical"
                                     style="@android:style/TextAppearance.DeviceDefault.Medium"
                                     android:text="@string/dokumentasigizi_tinggibadan"/>
+                            <!-- End Text View Tinggi Badan -->
 
+                            <!-- Start Text View Berat Badan -->
                             <TextView
                                     android:id="@+id/text_dokumentasigizi_beratbadan"
                                     android:layout_width="0dp"
@@ -259,7 +265,9 @@
                                     android:gravity="center_vertical"
                                     style="@android:style/TextAppearance.DeviceDefault.Medium"
                                     android:text="@string/dokumentasigizi_beratbadan"/>
+                            <!-- End Text View Berat Badan -->
 
+                            <!-- Start Text View Detail-->
                             <TextView
                                     android:layout_width="0dp"
                                     android:layout_height="match_parent"
@@ -272,12 +280,17 @@
                                     android:padding="5dp"
                                     android:textColor="#D046F2"
                                     style="@android:style/TextAppearance.DeviceDefault.Medium"
-                                    android:text="@string/blank" android:id="@+id/text_dokumentasigizi_detail"
+                                    android:text="@string/blank"
+                                    android:id="@+id/text_dokumentasigizi_detail"
                                     android:visibility="gone"/>
+                            <!-- Start Text View Detail-->
                         </TableRow>
                     </TableLayout>
+                    <!-- End Table Layout-->
 
                 </HorizontalScrollView>
+                <!-- End Horizontal Scroll View -->
+
                 <!-- Start Blank Space -->
                 <View
                         android:layout_width="wrap_content"

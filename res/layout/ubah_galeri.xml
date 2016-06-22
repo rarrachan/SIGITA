@@ -53,6 +53,7 @@
             </LinearLayout>
             <!-- End Linear Layout Header -->
 
+            <!-- Start Text View Ubah Galeri -->
             <TextView
                     android:id="@+id/ubah_galeri"
                     android:layout_width="wrap_content"
@@ -62,6 +63,7 @@
                     style="@android:style/TextAppearance.DeviceDefault.Medium"
                     android:layout_gravity="center_vertical"
                     android:layout_margin="20dp"/>
+            <!-- End Text View Ubah Galeri -->
 
             <!-- Start Linear Layout Content -->
             <LinearLayout
@@ -78,7 +80,7 @@
                         android:layout_marginLeft="20dp"
                         android:layout_marginBottom="5dp">
 
-                    <!-- Start Text View Tanggal Lahir -->
+                    <!-- Start Text View Nama -->
                     <TextView
                             android:id="@+id/text_galeri_nama"
                             android:layout_width="wrap_content"
@@ -99,6 +101,7 @@
                             android:layout_marginLeft="5dp"/>
                     <!-- End Text View Titik Dua -->
 
+                    <!-- Start Text View Nama -->
                     <TextView
                             android:id="@+id/galeri_nama"
                             android:layout_width="wrap_content"
@@ -108,6 +111,7 @@
                             android:focusable="false"
                             style="@android:style/TextAppearance.DeviceDefault.Medium"
                             android:layout_marginLeft="5dp"/>
+                    <!-- End Text View Nama-->
 
                 </LinearLayout>
                 <!-- End Linear Layout Nama -->
@@ -117,9 +121,10 @@
                         android:layout_width="fill_parent"
                         android:layout_height="wrap_content"
                         android:orientation="horizontal"
-                        android:layout_marginLeft="20dp" android:layout_marginBottom="5dp">
+                        android:layout_marginLeft="20dp" 
+                        android:layout_marginBottom="5dp">
 
-                    <!-- Start Text View Tanggal  -->
+                    <!-- Start Text View Tanggal -->
                     <TextView
                             android:id="@+id/text_galeri_tanggal"
                             android:layout_width="wrap_content"
@@ -127,7 +132,7 @@
                             android:textColor="#D046F2"
                             android:text="@string/galeri_tanggal"
                             style="@android:style/TextAppearance.DeviceDefault.Medium"/>
-                    <!-- End Text View Tanggal  -->
+                    <!-- End Text View Tanggal -->
 
                     <!-- Start Text View Titik Dua -->
                     <TextView
@@ -140,6 +145,7 @@
                             android:layout_marginLeft="5dp"/>
                     <!-- End Text View Titik Dua -->
 
+                    <!-- Start Edit Text Tanggal -->
                     <EditText
                             android:id="@+id/galeri_tanggal"
                             android:layout_width="wrap_content"
@@ -147,8 +153,8 @@
                             android:textColor="#FF0000"
                             android:focusable="false"
                             android:hint="@string/hint_galeri_tanggal"
-                            style="@android:style/TextAppearance.DeviceDefault.Medium"
-                            />
+                            style="@android:style/TextAppearance.DeviceDefault.Medium"/>
+                    <!-- End Edit Text Tanggal -->
 
                 </LinearLayout>
                 <!-- End Linear Layout Tanggal -->
@@ -160,7 +166,7 @@
                         android:orientation="horizontal"
                         android:layout_marginLeft="20dp">
 
-                    <!-- Start Text View Tanggal Lahir -->
+                    <!-- Start Text View Usia -->
                     <TextView
                             android:id="@+id/text_galeri_usia"
                             android:layout_width="wrap_content"
@@ -168,7 +174,7 @@
                             android:textColor="#D046F2"
                             android:text="@string/galeri_usia"
                             style="@android:style/TextAppearance.DeviceDefault.Medium"/>
-                    <!-- End Text View Tanggal Lahir -->
+                    <!-- End Text View Usia -->
 
                     <!-- Start Text View Titik Dua -->
                     <TextView
@@ -181,6 +187,7 @@
                             android:layout_marginLeft="5dp"/>
                     <!-- End Text View Titik Dua -->
 
+                    <!-- Start Text View Usia -->
                     <TextView
                             android:id="@+id/galeri_usia"
                             android:layout_width="wrap_content"
@@ -190,6 +197,7 @@
                             android:focusable="false"
                             style="@android:style/TextAppearance.DeviceDefault.Medium"
                             android:layout_marginLeft="5dp"/>
+                    <!-- End Text View Usia -->
 
                 </LinearLayout>
                 <!-- End Linear Layout Usia -->
@@ -216,12 +224,14 @@
                             android:orientation="vertical"
                             android:layout_gravity="center"
                             android:layout_weight="1">
+
                         <!-- Start Linear Layout Foto -->
                         <LinearLayout
                                 android:layout_width="fill_parent"
                                 android:layout_height="wrap_content"
                                 android:orientation="horizontal"
-                                android:layout_weight="1" android:layout_marginBottom="5dp">
+                                android:layout_weight="1" 
+                                android:layout_marginBottom="5dp">
 
                             <!-- Start Text View Foto -->
                             <TextView
@@ -258,6 +268,7 @@
                                 android:layout_weight="1"
                                 android:layout_gravity="center"/>
                         <!-- End Image View Foto -->
+
                     </LinearLayout>
 
                     <!-- Start Blank Space -->
@@ -272,14 +283,16 @@
                             android:layout_height="wrap_content"
                             android:orientation="vertical"
                             android:layout_weight="1">
-                        <!-- Start Linear Layout Foto -->
+
+                        <!-- Start Linear Layout Keterangan -->
                         <LinearLayout
                                 android:layout_width="fill_parent"
                                 android:layout_height="0dp"
                                 android:orientation="horizontal"
-                                android:layout_weight="1" android:layout_gravity="center">
+                                android:layout_weight="1" 
+                                android:layout_gravity="center">
 
-                            <!-- Start Text View Foto -->
+                            <!-- Start Text View Keterangan -->
                             <TextView
                                     android:id="@+id/text_galeri_keterangan_foto"
                                     android:layout_width="wrap_content"
@@ -288,7 +301,7 @@
                                     android:text="@string/galeri_keterangan_foto"
                                     style="@android:style/TextAppearance.DeviceDefault.Medium"
                                     android:layout_marginBottom="5dp"/>
-                            <!-- End Text View Foto -->
+                            <!-- End Text View Keterangan -->
 
                             <!-- Start Text View Titik Dua -->
                             <TextView
@@ -302,9 +315,9 @@
                             <!-- End Text View Titik Dua -->
 
                         </LinearLayout>
-                        <!-- End Linear Layout Foto -->
+                        <!-- End Linear Layout Keterangan -->
 
-                        <!-- Start Text View Foto -->
+                        <!-- Start Text View Keterangan -->
                         <EditText
                                 android:id="@+id/galeri_keterangan_foto"
                                 android:layout_width="fill_parent"
@@ -313,9 +326,9 @@
                                 android:hint="@string/galeri_keterangan_foto"
                                 android:minHeight="130dp"
                                 android:gravity="top"
-                                style="@android:style/TextAppearance.DeviceDefault.Medium"
-                                />
-                        <!-- End Text View Foto -->
+                                style="@android:style/TextAppearance.DeviceDefault.Medium"/>
+                        <!-- End Text View Keterangan-->
+
                     </LinearLayout>
 
                     <!-- Start Blank Space -->
@@ -324,6 +337,7 @@
                             android:layout_height="0dp"
                             android:layout_weight=".3"/>
                     <!-- End Blank Space -->
+                    
                 </LinearLayout>
                 <!-- End Linear Layout Content -->
 

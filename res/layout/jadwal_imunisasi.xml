@@ -51,6 +51,7 @@
             </LinearLayout>
             <!-- End Linear Layout Header -->
 
+            <!-- Start Text View Jadwal Imunisasi -->
             <TextView
                     android:id="@+id/button_jadwalimunisasi"
                     android:layout_width="wrap_content"
@@ -63,6 +64,7 @@
                     android:layout_marginTop="10dp"
                     android:layout_marginRight="20dp"
                     android:layout_marginBottom="10dp"/>
+            <!-- End Text View Jadwal Imunisasi -->
 
             <!-- Start Linear Layout Profil -->
             <LinearLayout
@@ -108,9 +110,7 @@
                     android:layout_gravity="center_vertical"
                     android:layout_marginBottom="50dp">
 
-                <!-- Start Linear Layout Content -->
-                <!-- End Linear Layout Content -->
-
+                <!-- Start Horizontal Scroll View -->
                 <HorizontalScrollView
                         android:layout_width="fill_parent"
                         android:layout_height="wrap_content"
@@ -118,6 +118,7 @@
                         android:padding="20dp"
                         android:scrollbars="none">
 
+                    <!-- Start Table Layout-->
                     <TableLayout
                             android:id="@+id/jadwal_imunisasi"
                             android:layout_width="wrap_content"
@@ -125,8 +126,8 @@
                             android:stretchColumns="*"
                             android:background="@drawable/border_table">
 
+                        <!-- Start Hidden Table Row for Horizontal Scroll View -->
                         <TableRow>
-
                             <TextView
                                     android:layout_width="wrap_content"
                                     android:layout_height="0dp"
@@ -134,7 +135,6 @@
                                     style="@android:style/TextAppearance.DeviceDefault.Medium"
                                     android:text="@string/gerakan_halus"
                                     android:visibility="invisible"/>
-
                             <TextView
                                     android:layout_width="wrap_content"
                                     android:layout_height="0dp"
@@ -142,7 +142,6 @@
                                     style="@android:style/TextAppearance.DeviceDefault.Medium"
                                     android:text="@string/usia_tumbang"
                                     android:visibility="invisible"/>
-
                             <TextView
                                     android:layout_width="wrap_content"
                                     android:layout_height="0dp"
@@ -150,11 +149,11 @@
                                     style="@android:style/TextAppearance.DeviceDefault.Medium"
                                     android:text="@string/usia_tumbang"
                                     android:visibility="invisible"/>
-
                         </TableRow>
 
                         <TableRow>
 
+                            <!-- Start Text View Jenis Vaksin -->
                             <TextView
                                     android:id="@+id/text_jenis_vaksin"
                                     android:layout_width="0dp"
@@ -170,7 +169,9 @@
                                     style="@android:style/TextAppearance.DeviceDefault.Medium"
                                     android:background="@drawable/border_row"
                                     android:text="@string/jenis_vaksin"/>
+                            <!-- End Text View Jenis Vaksin -->
 
+                            <!-- Start Text View Usia Vaksin -->
                             <TextView
                                     android:id="@+id/text_usia_vaksin"
                                     android:layout_width="0dp"
@@ -183,7 +184,9 @@
                                     style="@android:style/TextAppearance.DeviceDefault.Medium"
                                     android:background="@drawable/border_row"
                                     android:text="@string/usia_vaksin"/>
+                            <!-- End Text View Usia Vaksin -->
 
+                            <!-- Start Text View Detail -->
                             <TextView
                                     android:id="@+id/text_vaksin_detail"
                                     android:layout_width="0dp"
@@ -198,16 +201,19 @@
                                     android:textColor="#FF0000"
                                     android:gravity="center_vertical"
                                     style="@android:style/TextAppearance.DeviceDefault.Medium"/>
+                            <!-- End Text View Detail -->
                         </TableRow>
                     </TableLayout>
+                    <!-- End Table Layout -->
 
                 </HorizontalScrollView>
+                <!-- End Horizontal Scroll View -->
+
                 <!-- Start Blank Space -->
                 <View
                         android:layout_width="wrap_content"
                         android:layout_height="0dp"
-                        android:layout_weight=".2"
-                        />
+                        android:layout_weight=".2"/>
                 <!-- End Blank Space -->
 
             </LinearLayout>

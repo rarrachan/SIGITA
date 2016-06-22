@@ -14,6 +14,7 @@ import android.widget.ToggleButton;
 /**
  * Created by syafira rarra on 05/31/2016.
  */
+
 public class Passcode extends Activity {
 
     // Declare
@@ -53,9 +54,10 @@ public class Passcode extends Activity {
         final String nama = cursor.getString(cursor.getColumnIndex("profil_nama"));
         final String pass = cursor.getString(cursor.getColumnIndex("profil_passcode"));
 
-        // Load Session Manager
+        // Session Manager
         session = new SessionManager();
-
+        
+        // Load Widget
         button_passcode = (TextView) findViewById(R.id.button_passcode);
         text_passcode_nama = (TextView) findViewById(R.id.text_passcode_nama);
         passcode_nama = (TextView) findViewById(R.id.passcode_nama);
@@ -77,8 +79,10 @@ public class Passcode extends Activity {
         text_footer.setTypeface(typeface);
         titikdua.setTypeface(typeface);
 
+        // Set Text
         passcode_nama.setText(nama);
 
+        // CheckPasscode
         if(pass.equals("")){
            passcode_switch.setChecked(false);
             UbahPasscodeLinearLayout.setVisibility(View.GONE);
@@ -87,9 +91,11 @@ public class Passcode extends Activity {
             UbahPasscodeLinearLayout.setVisibility(View.VISIBLE);
         }
 
+        // Switch Passcode
         passcode_switch.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
+                // Switch ON
                 if (passcode_switch.isChecked()) {
                     Intent passcode = new Intent(Passcode.this, ProfilPasscode.class);
                     lastActivity = System.currentTimeMillis();
@@ -102,6 +108,8 @@ public class Passcode extends Activity {
                     passcode.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TASK | Intent.FLAG_ACTIVITY_CLEAR_TOP);
                     startActivity(passcode);
                     finish();
+
+                // Switch OFF
                 } else {
                     Intent passcode = new Intent(Passcode.this, ProfilCekPasscode.class);
                     lastActivity = System.currentTimeMillis();

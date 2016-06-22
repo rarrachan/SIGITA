@@ -65,9 +65,9 @@
                         android:layout_height="wrap_content"
                         android:gravity="center"
                         android:orientation="vertical"
-                        android:layout_gravity="center_vertical"
-                        >
+                        android:layout_gravity="center_vertical">
 
+                    <!-- Start Text View Detail Profil -->
                     <TextView
                             android:id="@+id/detail_profil"
                             android:layout_width="wrap_content"
@@ -77,6 +77,7 @@
                             style="@android:style/TextAppearance.DeviceDefault.Medium"
                             android:layout_gravity="center_vertical"
                             android:layout_margin="20dp"/>
+                    <!-- End Text View Detail Profil -->
 
                     <!-- Start Linear Layout Row -->
                     <LinearLayout
@@ -155,8 +156,7 @@
                                         android:layout_height="wrap_content"
                                         android:textColor="#D046F2"
                                         android:text="@string/profil_panjanglahir"
-                                        style="@android:style/TextAppearance.DeviceDefault.Medium"
-                                        />
+                                        style="@android:style/TextAppearance.DeviceDefault.Medium"/>
                                 <!-- End Text View Panjang Lahir -->
 
                                 <!-- Start Text View Titik Dua -->
@@ -204,6 +204,8 @@
                                 <!-- End text View Centimeter-->
 
                             </LinearLayout>
+                            <!-- End Linear Layout Panjang Lahir -->
+
                             <!-- Start Linear Layout Berat Lahir -->
                             <LinearLayout
                                     android:layout_width="fill_parent"
@@ -218,8 +220,7 @@
                                         android:layout_height="wrap_content"
                                         android:textColor="#D046F2"
                                         android:text="@string/profil_beratlahir"
-                                        style="@android:style/TextAppearance.DeviceDefault.Medium"
-                                        />
+                                        style="@android:style/TextAppearance.DeviceDefault.Medium"/>
                                 <!-- End Text View Berat Lahir -->
 
                                 <!-- Start Text View Titik Dua -->
@@ -267,13 +268,13 @@
                                 <!-- End Text View Gram -->
 
                             </LinearLayout>
+                            <!-- Start Linear Layout Berat Lahir -->
 
                             <!-- Start Linear Layout Alergi -->
                             <LinearLayout
                                     android:layout_width="fill_parent"
                                     android:layout_height="wrap_content"
-                                    android:orientation="horizontal"
-                                    >
+                                    android:orientation="horizontal">
 
                                 <!-- Start Text View Alergi -->
                                 <TextView
@@ -314,8 +315,7 @@
                             <LinearLayout
                                     android:layout_width="fill_parent"
                                     android:layout_height="wrap_content"
-                                    android:orientation="horizontal"
-                                    >
+                                    android:orientation="horizontal">
 
                                 <!-- Start Text View Penyakit Kronis -->
                                 <TextView
@@ -407,8 +407,7 @@
                             <LinearLayout
                                     android:layout_width="fill_parent"
                                     android:layout_height="wrap_content"
-                                    android:orientation="horizontal"
-                                    >
+                                    android:orientation="horizontal">
 
                                 <!-- Start Text View Jenis Kelamin -->
                                 <TextView
@@ -450,8 +449,7 @@
                             <LinearLayout
                                     android:layout_width="fill_parent"
                                     android:layout_height="wrap_content"
-                                    android:orientation="horizontal"
-                                    >
+                                    android:orientation="horizontal">
 
                                 <!-- Start Text View Golongan Darah -->
                                 <TextView
@@ -478,6 +476,7 @@
                             </LinearLayout>
                             <!-- End Linear Layout Golongan Darah -->
 
+                            <!-- Start Linear Layout Golongan Darah -->
                             <LinearLayout
                                     android:layout_width="fill_parent"
                                     android:layout_height="wrap_content"
@@ -496,13 +495,13 @@
                                 <!-- End Text View Titik Dua -->
 
                             </LinearLayout>
+                            <!-- Start Linear Layout Golongan Darah -->
 
                             <!-- Start Linear Layout Tempat Lahir -->
                             <LinearLayout
                                     android:layout_width="fill_parent"
                                     android:layout_height="wrap_content"
-                                    android:orientation="horizontal"
-                                    >
+                                    android:orientation="horizontal">
 
                                 <!-- Start Text View Tempat Lahir -->
                                 <TextView
@@ -543,8 +542,7 @@
                             <LinearLayout
                                     android:layout_width="fill_parent"
                                     android:layout_height="wrap_content"
-                                    android:orientation="horizontal"
-                                    >
+                                    android:orientation="horizontal">
 
                                 <!-- Start Text View Tanggal Lahir -->
                                 <TextView
@@ -585,8 +583,7 @@
                             <LinearLayout
                                     android:layout_width="fill_parent"
                                     android:layout_height="wrap_content"
-                                    android:orientation="horizontal"
-                                    >
+                                    android:orientation="horizontal">
 
                                 <!-- Start Text View Foto -->
                                 <TextView
@@ -644,7 +641,8 @@
                         android:layout_height="wrap_content"
                         android:orientation="horizontal"
                         android:layout_gravity="center"
-                        android:layout_marginBottom="30dp" android:layout_marginTop="20dp">
+                        android:layout_marginBottom="30dp"
+                        android:layout_marginTop="20dp">
 
                     <!-- Start Blank Space -->
                     <View

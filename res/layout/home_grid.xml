@@ -5,13 +5,16 @@
               android:orientation="vertical"
               android:background="#FFF1B5">
 
+    <!-- Start Grid View Item -->
     <com.syafira.SIGITA.GridViewItem
             android:id="@+id/index_menu"
             android:layout_width="match_parent"
             android:layout_height="match_parent"
             android:contentDescription="@string/app_name"
             android:layout_gravity="center"/>
+    <!-- End Grid View Item -->
 
+    <!-- Start Text View Menu -->
     <TextView
             android:id="@+id/index_nama_menu"
             android:layout_width="match_parent"
@@ -20,5 +23,6 @@
             style="@android:style/TextAppearance.DeviceDefault.Medium"
             android:textColor="#D046F2"
             android:gravity="center"/>
+    <!-- End Text View Menu -->
 
 </LinearLayout>

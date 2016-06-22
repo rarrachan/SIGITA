@@ -114,25 +114,15 @@ public class ProfilPasscode extends Activity {
             }
         });
 
+        // when text change
         pass1.addTextChangedListener(new TextWatcher() {
-
             @Override
-            public void onTextChanged(CharSequence s, int start, int before, int count) {
-                // TODO Auto-generated method stub
-
-            }
-
+            public void onTextChanged(CharSequence s, int start, int before, int count) {}
             @Override
-            public void beforeTextChanged(CharSequence s, int start, int count,
-                                          int after) {
-                // TODO Auto-generated method stub
-
-            }
-
+            public void beforeTextChanged(CharSequence s, int start, int count, int after) {}
             @Override
             public void afterTextChanged(Editable s) {
                 if (pass1.getText().toString().trim().length() == 1) {
-
                     pass1.clearFocus();
                     pass2.requestFocus();
                     pass1.setBackgroundResource(R.drawable.pin_txt_bg_star);
@@ -141,24 +131,13 @@ public class ProfilPasscode extends Activity {
         });
 
         pass2.addTextChangedListener(new TextWatcher() {
-
             @Override
-            public void onTextChanged(CharSequence s, int start, int before, int count) {
-                // TODO Auto-generated method stub
-
-            }
-
+            public void onTextChanged(CharSequence s, int start, int before, int count) {}
             @Override
-            public void beforeTextChanged(CharSequence s, int start, int count,
-                                          int after) {
-                // TODO Auto-generated method stub
-
-            }
-
+            public void beforeTextChanged(CharSequence s, int start, int count, int after) {}
             @Override
             public void afterTextChanged(Editable s) {
                 if (pass2.getText().toString().trim().length() == 1) {
-
                     pass2.clearFocus();
                     pass3.requestFocus();
                     pass2.setBackgroundResource(R.drawable.pin_txt_bg_star);
@@ -168,43 +147,30 @@ public class ProfilPasscode extends Activity {
 
         pass3.addTextChangedListener(new TextWatcher() {
             @Override
-            public void onTextChanged(CharSequence s, int start, int before, int count) {
-            }
-
+            public void onTextChanged(CharSequence s, int start, int before, int count) {}
             @Override
-            public void beforeTextChanged(CharSequence s, int start, int count,
-                                          int after) {
-            }
-
+            public void beforeTextChanged(CharSequence s, int start, int count, int after) {}
             @Override
             public void afterTextChanged(Editable s) {
                 if (pass3.getText().toString().trim().length() == 1) {
-
                     pass3.clearFocus();
                     pass4.requestFocus();
-
                     pass3.setBackgroundResource(R.drawable.pin_txt_bg_star);
                 }
-
             }
         });
 
         pass4.addTextChangedListener(new TextWatcher() {
             @Override
-            public void onTextChanged(CharSequence s, int start, int before, int count) {
-            }
-
+            public void onTextChanged(CharSequence s, int start, int before, int count) {}
             @Override
-            public void beforeTextChanged(CharSequence s, int start, int count,
-                                          int after) {
-            }
-
+            public void beforeTextChanged(CharSequence s, int start, int count, int after) {}
             @Override
             public void afterTextChanged(Editable s) {
                 if (pass4.getText().toString().trim().length() == 1) {
-
                     pass4.clearFocus();
                     pass4.setBackgroundResource(R.drawable.pin_txt_bg_star);
+
                     //Hide keyboard
                     InputMethodManager imm = (InputMethodManager) getSystemService(Context.INPUT_METHOD_SERVICE);
                     imm.hideSoftInputFromWindow(pass4.getWindowToken(), 0);
@@ -219,7 +185,7 @@ public class ProfilPasscode extends Activity {
 
                     // tambah profil
                     switch (action) {
-                        case "tambahprofil": {
+                        case "tambahprofil":
                             final ImageView previewThumbnail = new ImageView(ProfilPasscode.this);
                             Drawable image = new BitmapDrawable(getResources(), BitmapFactory.decodeByteArray(getIntent().getByteArrayExtra("byteArray"), 0, getIntent().getByteArrayExtra("byteArray").length));
                             previewThumbnail.setImageDrawable(image);
@@ -252,7 +218,7 @@ public class ProfilPasscode extends Activity {
                                     // Compressed Photo
                                     Bitmap bitmap = drawable_foto.getBitmap();
                                     bitmap.compress(Bitmap.CompressFormat.JPEG, 100, outStream);
-                            /* 100 to keep full quality of the image */
+                                    /* 100 to keep full quality of the image */
 
                                     // Put Photo into Directory
                                     outStream.flush();
@@ -281,36 +247,6 @@ public class ProfilPasscode extends Activity {
                                     Toast.makeText(getApplicationContext(), "Profil Gagal Tersimpan", Toast.LENGTH_LONG).show();
                                 }
                             }
-//                        else
-//                    {
-//                        ContextWrapper cw = new ContextWrapper(getApplicationContext());
-//                        File directory = cw.getDir("SIGITA/" + nama, Context.MODE_PRIVATE);
-//                        File profil_foto = new File(directory, foto);
-//                        Bitmap bitmap = drawable_foto.getBitmap();
-//                        FileOutputStream outStream;
-//                        boolean success = false;
-//                        try {
-//
-//                            outStream = new FileOutputStream(profil_foto);
-//                            bitmap.compress(Bitmap.CompressFormat.JPEG, 100, outStream);
-//        /* 100 to keep full quality of the image */
-//                            outStream.flush();
-//                            outStream.close();
-//                            success = true;
-//                        } catch (Exception e) {
-//                            e.printStackTrace();
-//                        }
-//                        if (success) {
-//                            Toast.makeText(getApplicationContext(), "Image saved with success in INTERNAL",
-//                                    Toast.LENGTH_LONG).show();
-//                        } else {
-//                            Toast.makeText(getApplicationContext(),
-//                                    "Error during image saving in INTERNAL", Toast.LENGTH_LONG).show();
-//                        }
-//                    }
-//                    File f = new File(android.os.Environment.getExternalStorageDirectory() + "/SIGITA/" + namaFolder, foto.replaceAll(" ", "_").toLowerCase());
-//                    File f = new File(android.os.Environment.getExternalStorageDirectory(), foto.replaceAll(" ", "_").toLowerCase());
-//                    String fotoPath = f.getAbsoluteFile().toString();
 
                             // Load Database
                             DBHelper db = new DBHelper(ProfilPasscode.this);
@@ -332,10 +268,10 @@ public class ProfilPasscode extends Activity {
                             // Close This Activity
                             finish();
                             break;
-                        }
-                        case "tambahpasscode": { //tambah passcode dari togglebutton
+
+                        case "tambahpasscode":  //tambah passcode dari switch
                             // Load Database
-                            DBHelper db = new DBHelper(ProfilPasscode.this);
+                            db = new DBHelper(ProfilPasscode.this);
                             db.open();
 
                             boolean success = false;
@@ -366,13 +302,13 @@ public class ProfilPasscode extends Activity {
                             // Close This Activity
                             finish();
                             break;
-                        }
-                        case "ubahpasscode": { //ubah passcode dari id
+                        
+                        case "ubahpasscode": //ubah passcode dari id
                             // Load Database
-                            DBHelper db = new DBHelper(ProfilPasscode.this);
+                            db = new DBHelper(ProfilPasscode.this);
                             db.open();
 
-                            boolean success = false;
+                            success = false;
                             try {
                                 // Insert Data into Database
                                 db.updateProfilPasscode(id, newpasscode);
@@ -389,7 +325,7 @@ public class ProfilPasscode extends Activity {
 
 
                             // Start Profil Activity
-                            Intent profil = new Intent(ProfilPasscode.this, DetailProfil.class);
+                            profil = new Intent(ProfilPasscode.this, DetailProfil.class);
                             lastActivity = System.currentTimeMillis();
                             profil.putExtra("lastActivity", lastActivity);
                             profil.putExtra("id", id);
@@ -402,13 +338,12 @@ public class ProfilPasscode extends Activity {
                             // Close This Activity
                             finish();
                             break;
-                        }
                     }
-
                 }
             }
         });
 
+        // when pressed backspace
         this.pass2.setOnKeyListener(new View.OnKeyListener() {
             public boolean onKey(View paramView, int paramInt, KeyEvent paramKeyEvent) {
                 if ((paramKeyEvent.getAction() == KeyEvent.ACTION_DOWN) && (paramInt == 67) && (ProfilPasscode.this.pass2.getText().length() == 0)) {
@@ -416,7 +351,6 @@ public class ProfilPasscode extends Activity {
                     pass1.setBackgroundResource(R.drawable.pin_txt_bg);
                     pass1.setText("");
                 }
-
                 return false;
             }
         });
@@ -428,7 +362,6 @@ public class ProfilPasscode extends Activity {
                     pass2.setBackgroundResource(R.drawable.pin_txt_bg);
                     pass2.setText("");
                 }
-
                 return false;
             }
         });
@@ -440,11 +373,11 @@ public class ProfilPasscode extends Activity {
                     pass3.setBackgroundResource(R.drawable.pin_txt_bg);
                     pass3.setText("");
                 }
-
                 return false;
             }
         });
 
+        // set OnTouchListener
         pass1.setOnTouchListener(new View.OnTouchListener() {
             @Override
             public boolean onTouch(View v, MotionEvent event) {
@@ -526,6 +459,7 @@ public class ProfilPasscode extends Activity {
     // Pressed Back Button
     @Override
     public void onBackPressed() {
+
         // Fetch Intent Extra
         Intent fetchID = getIntent();
         final String action = fetchID.getStringExtra("action");
@@ -549,6 +483,7 @@ public class ProfilPasscode extends Activity {
                 // Close This Activity
                 finish();
                 break;
+
             case "passcode":
                 // Start Profil Activity
                 Intent detailprofil = new Intent(ProfilPasscode.this, DetailProfil.class);
@@ -563,6 +498,7 @@ public class ProfilPasscode extends Activity {
                 // Close This Activity
                 finish();
                 break;
+                
             case "hapuspasscode":
             case "ubahpasscode":
             case "tambahpasscode":

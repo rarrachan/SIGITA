@@ -53,6 +53,7 @@
             </LinearLayout>
             <!-- End Linear Layout Header -->
 
+            <!-- Start Text View Detail Galeri -->
             <TextView
                     android:id="@+id/detail_galeri"
                     android:layout_width="wrap_content"
@@ -62,6 +63,7 @@
                     style="@android:style/TextAppearance.DeviceDefault.Medium"
                     android:layout_gravity="center_vertical"
                     android:layout_margin="20dp"/>
+            <!-- End Text View Detail Galeri -->
 
             <!-- Start Linear Layout Content -->
             <LinearLayout
@@ -70,7 +72,7 @@
                     android:orientation="vertical"
                     android:layout_marginBottom="50dp">
 
-                <!-- Start Linear Layout Nama -->
+                <!-- Start Linear Layout Galeri Nama -->
                 <LinearLayout
                         android:layout_width="fill_parent"
                         android:layout_height="wrap_content"
@@ -78,7 +80,7 @@
                         android:layout_marginLeft="20dp"
                         android:layout_marginBottom="5dp">
 
-                    <!-- Start Text View Tanggal Lahir -->
+                    <!-- Start Text View Galeri Nama -->
                     <TextView
                             android:id="@+id/text_galeri_nama"
                             android:layout_width="wrap_content"
@@ -86,7 +88,7 @@
                             android:textColor="#D046F2"
                             android:text="@string/galeri_nama"
                             style="@android:style/TextAppearance.DeviceDefault.Medium"/>
-                    <!-- End Text View Tanggal Lahir -->
+                    <!-- End Text View Galeri Nama -->
 
                     <!-- Start Text View Titik Dua -->
                     <TextView
@@ -99,6 +101,7 @@
                             android:layout_marginLeft="5dp"/>
                     <!-- End Text View Titik Dua -->
 
+                    <!-- Start Text View Galeri Nama -->
                     <TextView
                             android:id="@+id/galeri_nama"
                             android:layout_width="wrap_content"
@@ -108,18 +111,20 @@
                             android:focusable="false"
                             style="@android:style/TextAppearance.DeviceDefault.Medium"
                             android:layout_marginLeft="5dp"/>
+                    <!-- End Text View Galeri Nama -->
 
                 </LinearLayout>
-                <!-- End Linear Layout Nama -->
+                <!-- End Linear Layout Galeri Nama -->
 
-                <!-- Start Linear Layout Tanggal -->
+                <!-- Start Linear Layout Galeri Tanggal -->
                 <LinearLayout
                         android:layout_width="fill_parent"
                         android:layout_height="wrap_content"
                         android:orientation="horizontal"
-                        android:layout_marginLeft="20dp" android:layout_marginBottom="5dp">
+                        android:layout_marginLeft="20dp"
+                        android:layout_marginBottom="5dp">
 
-                    <!-- Start Text View Tanggal  -->
+                    <!-- Start Text View Galeri Tanggal -->
                     <TextView
                             android:id="@+id/text_galeri_tanggal"
                             android:layout_width="wrap_content"
@@ -127,7 +132,7 @@
                             android:textColor="#D046F2"
                             android:text="@string/galeri_tanggal"
                             style="@android:style/TextAppearance.DeviceDefault.Medium"/>
-                    <!-- End Text View Tanggal  -->
+                    <!-- End Text View Galeri Tanggal -->
 
                     <!-- Start Text View Titik Dua -->
                     <TextView
@@ -140,6 +145,7 @@
                             android:layout_marginLeft="5dp"/>
                     <!-- End Text View Titik Dua -->
 
+                    <!-- Start Text View Galeri Tanggal -->
                     <TextView
                             android:id="@+id/galeri_tanggal"
                             android:layout_width="wrap_content"
@@ -150,18 +156,19 @@
                             android:layout_marginBottom="5dp"
                             style="@android:style/TextAppearance.DeviceDefault.Medium"
                             android:layout_marginLeft="5dp"/>
+                    <!-- End Text View Galeri Tanggal -->
 
                 </LinearLayout>
-                <!-- End Linear Layout Tanggal -->
+                <!-- End Linear Layout Galeri Tanggal -->
 
-                <!-- Start Linear Layout Usia -->
+                <!-- Start Linear Layout Galeri Usia -->
                 <LinearLayout
                         android:layout_width="fill_parent"
                         android:layout_height="wrap_content"
                         android:orientation="horizontal"
                         android:layout_marginLeft="20dp">
 
-                    <!-- Start Text View Tanggal Lahir -->
+                    <!-- Start Text View Galeri Usia -->
                     <TextView
                             android:id="@+id/text_galeri_usia"
                             android:layout_width="wrap_content"
@@ -169,7 +176,7 @@
                             android:textColor="#D046F2"
                             android:text="@string/galeri_usia"
                             style="@android:style/TextAppearance.DeviceDefault.Medium"/>
-                    <!-- End Text View Tanggal Lahir -->
+                    <!-- End Text View Galeri Usia -->
 
                     <!-- Start Text View Titik Dua -->
                     <TextView
@@ -182,6 +189,7 @@
                             android:layout_marginLeft="5dp"/>
                     <!-- End Text View Titik Dua -->
 
+                    <!-- Start Text View Galeri Usia -->
                     <TextView
                             android:id="@+id/galeri_usia"
                             android:layout_width="wrap_content"
@@ -191,9 +199,10 @@
                             android:focusable="false"
                             style="@android:style/TextAppearance.DeviceDefault.Medium"
                             android:layout_marginLeft="5dp"/>
+                    <!-- Start Text View Galeri Usia -->
 
                 </LinearLayout>
-                <!-- End Linear Layout Usia -->
+                <!-- End Linear Layout Galeri Usia -->
 
                 <!-- Start Linear Layout Content -->
                 <LinearLayout
@@ -217,12 +226,14 @@
                             android:orientation="vertical"
                             android:layout_gravity="center"
                             android:layout_weight="1">
+
                         <!-- Start Linear Layout Foto -->
                         <LinearLayout
                                 android:layout_width="fill_parent"
                                 android:layout_height="wrap_content"
                                 android:orientation="horizontal"
-                                android:layout_weight="1" android:layout_marginBottom="5dp">
+                                android:layout_weight="1"
+                                android:layout_marginBottom="5dp">
 
                             <!-- Start Text View Foto -->
                             <TextView
@@ -259,6 +270,7 @@
                                 android:layout_weight="1"
                                 android:layout_gravity="center"/>
                         <!-- End Image View Foto -->
+
                     </LinearLayout>
 
                     <!-- Start Blank Space -->
@@ -273,6 +285,7 @@
                             android:layout_height="wrap_content"
                             android:orientation="vertical"
                             android:layout_weight="1">
+
                         <!-- Start Linear Layout Foto -->
                         <LinearLayout
                                 android:layout_width="fill_parent"
@@ -325,6 +338,7 @@
                             android:layout_height="0dp"
                             android:layout_weight=".3"/>
                     <!-- End Blank Space -->
+                    
                 </LinearLayout>
                 <!-- End Linear Layout Content -->
 

@@ -14,6 +14,7 @@ import android.widget.*;
 /**
  * Created by syafira rarra on 04/20/2016.
  */
+
 public class JadwalImunisasi extends Activity {
 
     // Declare
@@ -60,6 +61,7 @@ public class JadwalImunisasi extends Activity {
             text_button_profil.setText(session.loadSession(this, "nama"));
         }
 
+        // Set OnClickListener
         ProfilLinearLayout.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {

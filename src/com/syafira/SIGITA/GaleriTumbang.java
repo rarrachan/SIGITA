@@ -24,6 +24,7 @@ import java.util.*;
 /**
  * Created by syafira rarra on 05/04/2016.
  */
+
 public class GaleriTumbang extends Activity {
 
     // Declare
@@ -67,9 +68,11 @@ public class GaleriTumbang extends Activity {
 
         // Check Session
         if (session.checkSession(this)) {
+
             // Set Profil Name
             text_button_profil.setText(session.loadSession(this, "nama"));
 
+            // Set OnClickListener
             ProfilLinearLayout.setOnClickListener(new View.OnClickListener() {
                 @Override
                 public void onClick(View v) {
@@ -83,9 +86,11 @@ public class GaleriTumbang extends Activity {
                 }
             });
 
+            // Set Text
             int id = Integer.parseInt(session.loadSession(GaleriTumbang.this, "id"));
             String nama = session.loadSession(GaleriTumbang.this, "nama");
 
+            // Set List
             List<HashMap<String, ?>> aList = new ArrayList<>();
             final HashMap<String, String> tambah_galeri = new HashMap<>();
             tambah_galeri.put("galeri_foto", Integer.toString(R.drawable.icon_tambahfoto));
@@ -128,13 +133,14 @@ public class GaleriTumbang extends Activity {
             };
             final ExpandableHeightGridView grid = (ExpandableHeightGridView) findViewById(R.id.gridview);
 
-//            float scalefactor = getResources().getDisplayMetrics().density * 100;
-//            Display display = getWindowManager().getDefaultDisplay();
-//            Point size = new Point();
-//            display.getSize(size);
-//            int number = size.x;
-//            int columns = (int) ((float) number / scalefactor);
-//            grid.setNumColumns(columns);
+            // for Column based on width
+            // float scalefactor = getResources().getDisplayMetrics().density * 100;
+            // Display display = getWindowManager().getDefaultDisplay();
+            // Point size = new Point();
+            // display.getSize(size);
+            // int number = size.x;
+            // int columns = (int) ((float) number / scalefactor);
+            // grid.setNumColumns(columns);
 
             grid.setFocusable(false);
             grid.setAdapter(adapter);
@@ -144,6 +150,8 @@ public class GaleriTumbang extends Activity {
             grid.setOnItemClickListener(new AdapterView.OnItemClickListener() {
                 @Override
                 public void onItemClick(AdapterView parent, View v, int position, long id) {
+
+                    // Tambah Galeri
                     if (position == 0) {
                         Intent tambah_galeri = new Intent(GaleriTumbang.this, TambahGaleri.class);
                         lastActivity = System.currentTimeMillis();
@@ -153,7 +161,10 @@ public class GaleriTumbang extends Activity {
 
                         // Close This Activity
                         finish();
+
                     }else{
+
+                        // View Galeri
                         HashMap<String, Object> obj = (HashMap<String, Object>) adapter.getItem(position);
                         int galeri_id = (Integer) obj.get("galeriID");
 
@@ -171,6 +182,7 @@ public class GaleriTumbang extends Activity {
             db.close();
             cursor.close();
 
+        // if No session
         } else {
             Intent tumbang = new Intent(this, TumbuhKembang.class);
             lastActivity = System.currentTimeMillis();
@@ -212,6 +224,7 @@ public class GaleriTumbang extends Activity {
             finish();
 
         } else {
+
             // Check Session
             if (session.checkSession(this)) {
                 // Set Profil Name
@@ -219,6 +232,7 @@ public class GaleriTumbang extends Activity {
                 ExpandableHeightGridView grid = (ExpandableHeightGridView) findViewById(R.id.gridview);
                 grid.setFocusable(false);
             } else {
+                
                 // Start Tumbuh Kembang Activity
                 Intent tumbang = new Intent(GaleriTumbang.this, TumbuhKembang.class);
                 lastActivity = System.currentTimeMillis();

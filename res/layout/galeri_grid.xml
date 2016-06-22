@@ -4,7 +4,8 @@
               android:layout_height="match_parent"
               android:orientation="vertical"
               android:background="#FFF1B5">
-
+    
+    <!-- Start Grid View Item -->
     <com.syafira.SIGITA.GridViewItem
             android:id="@+id/galeri_foto"
             android:layout_width="match_parent"
@@ -13,7 +14,9 @@
             android:contentDescription="@string/app_name"
             android:layout_gravity="center"
             android:scaleType="centerCrop"/>
+    <!-- End Grid View Item-->
 
+    <!-- Start Text View Tanggal -->
     <TextView
             android:id="@+id/galeri_tanggal_foto"
             android:layout_width="match_parent"
@@ -22,5 +25,6 @@
             style="@android:style/TextAppearance.DeviceDefault.Medium"
             android:textColor="#D046F2"
             android:gravity="center"/>
+    <!-- End Text View Tanggal -->
 
 </LinearLayout>

@@ -22,8 +22,10 @@ import java.io.File;
 /**
  * Created by syafira rarra on 05/07/2016.
  */
+
 public class DetailGaleri extends Activity {
 
+    // Declare
     private TextView detail_galeri;
     private TextView titikdua;
     private TextView text_footer;
@@ -97,6 +99,7 @@ public class DetailGaleri extends Activity {
         keterangan_foto.setTypeface(typeface);
         text_galeri_foto.setTypeface(typeface);
 
+        // Set Text
         final String nama = session.loadSession(this, "nama");
         galeri_nama.setText(nama);
         galeri_tanggal.setText(cursor.getString(cursor.getColumnIndex("galeri_tanggal")));
@@ -109,6 +112,7 @@ public class DetailGaleri extends Activity {
         button_ubah.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
+
                 // Show Ubah Profil Activity
                 Intent ubah_galeri = new Intent(DetailGaleri.this, UbahGaleri.class);
                 // Put Intent Extra
@@ -161,6 +165,7 @@ public class DetailGaleri extends Activity {
                         dialog.dismiss();
                     }
                 });
+                
                 button_ok.setOnClickListener(new View.OnClickListener() {
                     @Override
                     public void onClick(View v) {

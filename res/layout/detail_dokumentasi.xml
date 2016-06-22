@@ -63,6 +63,7 @@
                     android:layout_gravity="center_vertical"
                     android:layout_marginBottom="50dp">
 
+                <!-- Start TextView Detail Dokumentasi Gizi -->
                 <TextView
                         android:id="@+id/detail_dokumentasigizi"
                         android:layout_width="wrap_content"
@@ -72,6 +73,7 @@
                         style="@android:style/TextAppearance.DeviceDefault.Medium"
                         android:layout_gravity="center_vertical"
                         android:layout_margin="20dp"/>
+                <!-- End TextView Detail Dokumentasi Gizi -->
 
                 <!-- Start Linear Layout Row -->
                 <LinearLayout
@@ -87,13 +89,14 @@
                             android:layout_weight=".2"/>
                     <!-- End Blank Space -->
 
-                    <!-- Start Blank Space -->
+                    <!-- Start Linear Layout Content -->
                     <LinearLayout
                             android:layout_width="0dp"
                             android:layout_height="wrap_content"
                             android:orientation="vertical"
                             android:layout_weight="1">
 
+                        <!-- Start Linear Layout Dokumentasi Gizi Nama -->
                         <LinearLayout
                                 android:layout_width="fill_parent"
                                 android:layout_height="0dp"
@@ -101,7 +104,7 @@
                                 android:layout_weight="1"
                                 android:layout_marginBottom="3dp">
 
-                            <!-- Start Text View Kalkulator Gizi Usia  -->
+                            <!-- Start Text View Dokumentasi Gizi Nama -->
                             <TextView
                                     android:id="@+id/text_dokumentasigizi_nama"
                                     android:layout_width="wrap_content"
@@ -109,7 +112,7 @@
                                     android:textColor="#D046F2"
                                     android:text="@string/dokumentasigizi_nama"
                                     style="@android:style/TextAppearance.DeviceDefault.Medium"/>
-                            <!-- End Text View Kalkulator Gizi -->
+                            <!-- End Text View Dokumentasi Gizi Nama -->
 
                             <!-- Start Text View Titik Dua -->
                             <TextView
@@ -123,7 +126,9 @@
                             <!-- End Text View Titik Dua -->
 
                         </LinearLayout>
+                        <!-- End Linear Layout Dokumentasi Gizi Nama -->
 
+                        <!-- Start Text View Dokumentasi Gizi Nama -->
                         <TextView
                                 android:id="@+id/dokumentasigizi_nama"
                                 android:layout_width="fill_parent"
@@ -132,7 +137,9 @@
                                 style="@android:style/TextAppearance.DeviceDefault.Medium"
                                 android:hint="@string/dokumentasigizi_nama"
                                 android:layout_margin="10dp"/>
+                        <!-- End Text View Dokumentasi Gizi Nama -->
 
+                        <!-- Start Linear Layout Dokumentasi Gizi Usia -->
                         <LinearLayout
                                 android:layout_width="fill_parent"
                                 android:layout_height="0dp"
@@ -140,7 +147,7 @@
                                 android:layout_weight="1"
                                 android:layout_marginBottom="3dp">
 
-                            <!-- Start Text View Kalkulator Gizi Usia  -->
+                            <!-- Start Text View Dokumentasi Gizi Usia  -->
                             <TextView
                                     android:id="@+id/text_dokumentasigizi_usia"
                                     android:layout_width="wrap_content"
@@ -148,7 +155,7 @@
                                     android:textColor="#D046F2"
                                     android:text="@string/dokumentasigizi_usia"
                                     style="@android:style/TextAppearance.DeviceDefault.Medium"/>
-                            <!-- End Text View Kalkulator Gizi -->
+                            <!-- End Text View Dokumentasi Gizi Usia-->
 
                             <!-- Start Text View Titik Dua -->
                             <TextView
@@ -162,7 +169,9 @@
                             <!-- End Text View Titik Dua -->
 
                         </LinearLayout>
+                        <!-- End Linear Layout Dokumentasi Gizi Usia -->
 
+                        <!-- Start Text View Dokumentasi Gizi Usia  -->
                         <TextView
                                 android:id="@+id/dokumentasigizi_usia"
                                 android:layout_width="fill_parent"
@@ -171,24 +180,26 @@
                                 style="@android:style/TextAppearance.DeviceDefault.Medium"
                                 android:hint="@string/dokumentasigizi_usia"
                                 android:layout_margin="10dp"/>
+                        <!-- Start Text View Dokumentasi Gizi Usia  -->
 
                     </LinearLayout>
+                    <!-- End Linear Layout Content -->
 
+                    <!-- Start Blank Space -->
                     <View
-                            android:layout_width="0dp"
-                            android:layout_height="0dp"
-                            android:layout_weight=".1"/>
+                        android:layout_width="0dp"
+                        android:layout_height="0dp"
+                        android:layout_weight=".1"/>
                     <!-- End Blank Space -->
 
-                    <!-- Start Linear Layout Kalkulator Gizi -->
+                    <!-- Start Linear Layout Content -->
                     <LinearLayout
                             android:layout_width="0dp"
                             android:layout_height="wrap_content"
                             android:orientation="vertical"
                             android:layout_weight="1">
 
-                        <!-- End Linear Layout Kalkulator Gizi Usia -->
-
+                        <!-- Start Linear Layout Dokumentasi Gizi Tanggal -->
                         <LinearLayout
                                 android:layout_width="fill_parent"
                                 android:layout_height="0dp"
@@ -196,7 +207,7 @@
                                 android:layout_weight="1"
                                 android:layout_marginBottom="3dp">
 
-                            <!-- Start Text View Kalkulator Gizi Usia  -->
+                            <!-- Start Text View Dokumentasi Gizi Tanggal -->
                             <TextView
                                     android:id="@+id/text_dokumentasigizi_tanggal"
                                     android:layout_width="wrap_content"
@@ -204,7 +215,7 @@
                                     android:textColor="#D046F2"
                                     android:text="@string/dokumentasigizi_tanggal"
                                     style="@android:style/TextAppearance.DeviceDefault.Medium"/>
-                            <!-- End Text View Kalkulator Gizi -->
+                            <!-- End Text View Dokumentasi Gizi Tanggal-->
 
                             <!-- Start Text View Titik Dua -->
                             <TextView
@@ -218,7 +229,9 @@
                             <!-- End Text View Titik Dua -->
 
                         </LinearLayout>
+                        <!-- End Linear Layout Dokumentasi Gizi Tanggal -->
 
+                        <!-- Start Text View Dokumentasi Gizi Tanggal -->
                         <TextView
                                 android:id="@+id/dokumentasigizi_tanggal"
                                 android:layout_width="fill_parent"
@@ -227,15 +240,16 @@
                                 style="@android:style/TextAppearance.DeviceDefault.Medium"
                                 android:hint="@string/profil_hint_tanggallahir"
                                 android:layout_margin="10dp"/>
+                        <!-- Start Text View Dokumentasi Gizi Tanggal -->
 
-                        <!-- Start Linear Layout Tinggi Badan -->
+                        <!-- Start Linear Layout Dokumentasi Gizi Tinggi Badan -->
                         <LinearLayout
                                 android:layout_width="fill_parent"
                                 android:layout_height="wrap_content"
                                 android:orientation="horizontal"
                                 android:gravity="center_vertical">
 
-                            <!-- Start Text View Tinggi Badan -->
+                            <!-- Start Text View Dokumentasi Gizi Tinggi Badan -->
                             <TextView
                                     android:id="@+id/text_dokumentasigizi_tinggibadan"
                                     android:layout_width="wrap_content"
@@ -243,6 +257,9 @@
                                     android:textColor="#D046F2"
                                     android:text="@string/dokumentasigizi_tinggibadan"
                                     style="@android:style/TextAppearance.DeviceDefault.Medium"/>
+                            <!-- End Text View Dokumentasi Gizi Tinggi Badan -->
+
+                            <!-- Start Text View Titik Dua -->
                             <TextView
                                     android:id="@+id/titikdua"
                                     android:layout_width="wrap_content"
@@ -251,28 +268,29 @@
                                     android:text="@string/titikdua"
                                     style="@android:style/TextAppearance.DeviceDefault.Medium"
                                     android:layout_marginLeft="5dp"/>
-                            <!-- End Text View Panjang Lahir -->
+                            <!-- End Text View Titik Dua -->
 
                         </LinearLayout>
+                        <!-- End Linear Layout Dokumentasi Gizi Tinggi Badan -->
 
+                        <!-- Start Linear Layout Dokumentasi Gizi Tinggi Badan -->
                         <LinearLayout
                                 android:layout_width="fill_parent"
                                 android:layout_height="wrap_content"
                                 android:orientation="horizontal"
                                 android:layout_margin="10dp">
 
-                            <!-- Start Text View Tinggi Badan -->
+                            <!-- Start Text View Dokumentasi Gizi Tinggi Badan -->
                             <TextView
                                     android:id="@+id/dokumentasigizi_tinggibadan"
                                     android:layout_width="wrap_content"
                                     android:layout_height="wrap_content"
                                     android:textColor="#FF0000"
                                     style="@android:style/TextAppearance.DeviceDefault.Medium"
-                                    android:hint="@string/kalkulatorgizi_hint_tinggibadan"
-                                    />
-                            <!-- End Text View Tinggi Badan -->
+                                    android:hint="@string/kalkulatorgizi_hint_tinggibadan"/>
+                            <!-- End Text View Dokumentasi Gizi Tinggi Badan -->
 
-                            <!-- Start Text View Centimeter -->
+                            <!-- Start Text View Dokumentasi Gizi Centimeter -->
                             <TextView
                                     android:id="@+id/dokumentasigizi_centimeter"
                                     android:layout_width="0dp"
@@ -281,25 +299,29 @@
                                     android:text="@string/kalkulatorgizi_centimeter"
                                     style="@android:style/TextAppearance.DeviceDefault.Medium"
                                     android:layout_weight=".5" android:layout_marginLeft="5dp"/>
-                            <!-- End Text View Centimeter -->
+                            <!-- End Text View Dokumentasi Gizi Centimeter -->
 
                         </LinearLayout>
+                        <!-- End Linear Layout Dokumentasi Gizi Tinggi Badan -->
 
+                        <!-- Start Linear Layout Dokumentasi Gizi Berat Badan -->
                         <LinearLayout
                                 android:layout_width="fill_parent"
                                 android:layout_height="wrap_content"
                                 android:orientation="horizontal"
                                 android:gravity="center_vertical">
 
-                            <!-- Start Text View Berat Badan -->
+                            <!-- Start Text View Dokumentasi Gizi Berat Badan -->
                             <TextView
                                     android:id="@+id/text_dokumentasigizi_beratbadan"
                                     android:layout_width="wrap_content"
                                     android:layout_height="wrap_content"
                                     android:textColor="#D046F2"
                                     android:text="@string/dokumentasigizi_beratbadan"
-                                    style="@android:style/TextAppearance.DeviceDefault.Medium"
-                                    />
+                                    style="@android:style/TextAppearance.DeviceDefault.Medium"/>
+                            <!-- End Text View Dokumentasi Gizi Berat Badan -->
+
+                            <!-- Start Text View Titik Dua -->
                             <TextView
                                     android:id="@+id/titikdua"
                                     android:layout_width="wrap_content"
@@ -308,27 +330,28 @@
                                     android:text="@string/titikdua"
                                     style="@android:style/TextAppearance.DeviceDefault.Medium"
                                     android:layout_marginLeft="5dp"/>
-                            <!-- End Text View Berat Lahir -->
+                            <!-- End Text View Titik Dua -->
 
                         </LinearLayout>
+                        <!-- End Linear Layout Dokumentasi Gizi Berat Badan -->
 
+                        <!-- Start Linear Layout Dokumentasi Gizi Berat Badan -->
                         <LinearLayout
                                 android:layout_width="fill_parent"
                                 android:layout_height="wrap_content"
                                 android:orientation="horizontal" android:layout_margin="10dp">
 
-                            <!-- Start Text View Berat Badan -->
+                            <!-- Start Text View Dokumentasi Gizi Berat Badan -->
                             <TextView
                                     android:id="@+id/dokumentasigizi_beratbadan"
                                     android:layout_width="wrap_content"
                                     android:layout_height="wrap_content"
                                     style="@android:style/TextAppearance.DeviceDefault.Medium"
                                     android:textColor="#FF0000"
-                                    android:hint="@string/kalkulatorgizi_hint_beratbadan"
-                                    />
-                            <!-- End Text View Berat Lahir -->
+                                    android:hint="@string/kalkulatorgizi_hint_beratbadan"/>
+                            <!-- End Text View Dokumentasi Gizi Berat Lahir -->
 
-                            <!-- Start Text View Kilogram -->
+                            <!-- Start Text View Dokumentasi Gizi Kilogram -->
                             <TextView
                                     android:id="@+id/dokumentasigizi_kilogram"
                                     android:layout_width="0dp"
@@ -337,12 +360,13 @@
                                     android:text="@string/kalkulatorgizi_kilogram"
                                     style="@android:style/TextAppearance.DeviceDefault.Medium"
                                     android:layout_weight=".5" android:layout_marginLeft="5dp"/>
-                            <!-- End Text View kilogram -->
+                            <!-- End Text View Dokumentasi Gizi kilogram -->
 
                         </LinearLayout>
+                        <!-- End Linear Layout Dokumentasi Gizi Berat Badan -->
 
                     </LinearLayout>
-                    <!-- End Linear Layout Kalkulator Gizi -->
+                    <!-- End Linear Layout Content -->
 
                     <!-- Start Blank Space -->
                     <View
@@ -367,8 +391,7 @@
                         android:layout_width="fill_parent"
                         android:layout_height="wrap_content"
                         android:orientation="horizontal"
-                        android:layout_gravity="center"
-                        >
+                        android:layout_gravity="center">
 
                     <!-- Start Blank Space -->
                     <View
@@ -437,13 +460,14 @@
                             android:layout_weight=".2"/>
                     <!-- End Blank Space -->
 
-                    <!-- Start Blank Space -->
+                    <!-- Start Linear Layout Content -->
                     <LinearLayout
                             android:layout_width="0dp"
                             android:layout_height="wrap_content"
                             android:orientation="vertical"
                             android:layout_weight="1">
 
+                        <!-- Start Linear Layout Berat Badan / Umur -->
                         <LinearLayout
                                 android:layout_width="fill_parent"
                                 android:layout_height="0dp"
@@ -472,6 +496,7 @@
                             <!-- End Text View Titik Dua -->
 
                         </LinearLayout>
+                        <!-- End Linear Layout Berat Badan / Umur -->
 
                         <!-- Start Text View Berat Badan / Umur -->
                         <TextView
@@ -485,6 +510,7 @@
                                 android:layout_margin="10dp"/>
                         <!-- End Text View Berat Badan / Umur -->
 
+                        <!-- Start Linear Layout Tinggi Badan / Umur -->
                         <LinearLayout
                                 android:layout_width="fill_parent"
                                 android:layout_height="0dp"
@@ -513,6 +539,7 @@
                             <!-- End Text View Titik Dua -->
 
                         </LinearLayout>
+                        <!-- End Linear Layout Tinggi Badan / Umur -->
 
                         <!-- Start Text View Tinggi Badan / Umur -->
                         <TextView
@@ -527,20 +554,23 @@
                         <!-- End Text View Tinggi Badan / Umur -->
 
                     </LinearLayout>
+                    <!-- End Linear Layout Content -->
 
+                    <!-- Start Blank Space -->
                     <View
                             android:layout_width="0dp"
                             android:layout_height="0dp"
                             android:layout_weight=".2"/>
                     <!-- End Blank Space -->
 
-                    <!-- Start Linear Layout Hasil Kalkulator Gizi -->
+                    <!-- Start Linear Layout Content -->
                     <LinearLayout
                             android:layout_width="0dp"
                             android:layout_height="wrap_content"
                             android:orientation="vertical"
                             android:layout_weight="1">
 
+                        <!-- Start Linear Layout Berat Badan / Tinggi Badan -->
                         <LinearLayout
                                 android:layout_width="fill_parent"
                                 android:layout_height="0dp"
@@ -569,6 +599,7 @@
                             <!-- End Text View Titik Dua -->
 
                         </LinearLayout>
+                        <!-- End Linear Layout Berat Badan / Tinggi Badan -->
 
                         <!-- Start Text View Berat Badan / Tinggi Badan  -->
                         <TextView
@@ -582,13 +613,14 @@
                                 android:layout_margin="10dp"/>
                         <!-- End Text View Berat Badan / Tinggi Badan -->
 
+                        <!-- Start Linear Layout Indeks Massa Tubuh / Umur -->
                         <LinearLayout
                                 android:layout_width="fill_parent"
                                 android:layout_height="0dp"
                                 android:orientation="horizontal"
                                 android:layout_weight="1">
 
-                            <!-- Start Text View Iindeks Massa Tubuh / Umur -->
+                            <!-- Start Text View Indeks Massa Tubuh / Umur -->
                             <TextView
                                     android:id="@+id/imtu"
                                     android:layout_width="wrap_content"
@@ -596,7 +628,7 @@
                                     android:textColor="#D046F2"
                                     android:text="@string/imtu"
                                     style="@android:style/TextAppearance.DeviceDefault.Medium"/>
-                            <!-- End Text View Iindeks Massa Tubuh / Umur  -->
+                            <!-- End Text View Indeks Massa Tubuh / Umur  -->
 
                             <!-- Start Text View Titik Dua -->
                             <TextView
@@ -610,8 +642,9 @@
                             <!-- End Text View Titik Dua -->
 
                         </LinearLayout>
+                        <!-- End Linear Layout Indeks Massa Tubuh / Umur -->
 
-                        <!-- Start Text View Iindeks Massa Tubuh / Umur -->
+                        <!-- Start Text View Indeks Massa Tubuh / Umur -->
                         <TextView
                                 android:id="@+id/hasil_imtu"
                                 android:layout_width="fill_parent"
@@ -624,7 +657,7 @@
                         <!-- End Text View Iindeks Massa Tubuh / Umur -->
 
                     </LinearLayout>
-                    <!-- End Linear Layout Hasil Kalkulator Gizi -->
+                    <!-- End Linear Layout Content -->
 
                     <!-- Start Blank Space -->
                     <View
@@ -636,6 +669,7 @@
                 </LinearLayout>
                 <!-- End Linear Layout Row -->
 
+                <!-- Start TabHost -->
                 <TabHost android:id="@android:id/tabhost"
                          android:layout_width="fill_parent"
                          android:layout_height="wrap_content"
@@ -657,6 +691,7 @@
                                      android:layout_height="fill_parent"
                                      android:padding="5dp">
 
+                            <!-- Start Linear Layout Bulan Ini -->
                             <LinearLayout android:id="@+id/bulanIniLayout"
                                           android:orientation="vertical"
                                           android:layout_width="fill_parent"
@@ -664,6 +699,7 @@
                                           android:background="#FFFBC9"
                                           android:padding="10dp">
 
+                                <!-- Start TabHost Bulan Ini -->
                                 <TabHost android:id="@+id/tabHostBulanIni"
                                          android:layout_width="fill_parent"
                                          android:layout_height="wrap_content"
@@ -684,48 +720,55 @@
                                                      android:layout_height="fill_parent"
                                                      android:padding="5dp">
 
+                                            <!-- Start Linear Layout BBU Bulan Ini -->
                                             <LinearLayout android:id="@+id/bbu_bulanini_layout"
                                                           android:orientation="vertical"
                                                           android:layout_width="fill_parent"
                                                           android:layout_height="wrap_content"
                                                           android:background="#FFFBC9"
                                                           android:paddingTop="10dp">
-
                                             </LinearLayout>
+                                            <!-- End Linear Layout BBU Bulan Ini -->
 
+                                            <!-- Start Linear Layout TBU Bulan Ini -->
                                             <LinearLayout android:id="@+id/tbu_bulanini_layout"
                                                           android:orientation="vertical"
                                                           android:layout_width="fill_parent"
                                                           android:layout_height="wrap_content"
                                                           android:background="#FFFBC9"
                                                           android:paddingTop="10dp">
-
                                             </LinearLayout>
+                                            <!-- End Linear Layout TBU Bulan Ini -->
 
+                                            <!-- Start Linear Layout BBTB Bulan Ini -->
                                             <LinearLayout android:id="@+id/bbtb_bulanini_layout"
                                                           android:orientation="vertical"
                                                           android:layout_width="fill_parent"
                                                           android:layout_height="wrap_content"
                                                           android:background="#FFFBC9"
                                                           android:paddingTop="10dp">
-
                                             </LinearLayout>
+                                            <!-- End Linear Layout BBTB Bulan Ini -->
 
+                                            <!-- Start Linear Layout IMTU Bulan Ini -->
                                             <LinearLayout android:id="@+id/imtu_bulanini_layout"
                                                           android:orientation="vertical"
                                                           android:layout_width="fill_parent"
                                                           android:layout_height="wrap_content"
                                                           android:background="#FFFBC9"
                                                           android:paddingTop="10dp">
-
                                             </LinearLayout>
+                                            <!-- End Linear Layout IMTU Bulan Ini -->
 
                                         </FrameLayout>
-
                                     </LinearLayout>
                                 </TabHost>
-                            </LinearLayout>
+                                <!-- End TabHost Bulan Ini -->
 
+                            </LinearLayout>
+                            <!-- End Linear Layout Bulan Ini -->
+
+                            <!-- Start Linear Layout Seluruh Bulan -->
                             <LinearLayout android:id="@+id/seluruhBulanLayout"
                                           android:orientation="vertical"
                                           android:layout_width="fill_parent"
@@ -733,6 +776,7 @@
                                           android:background="#FFFBC9"
                                           android:padding="10dp">
 
+                                <!-- Start TabHost Seluruh Bulan -->
                                 <TabHost android:id="@+id/tabHostSeluruhBulan"
                                          android:layout_width="fill_parent"
                                          android:layout_height="wrap_content"
@@ -753,51 +797,58 @@
                                                      android:layout_height="fill_parent"
                                                      android:padding="5dp">
 
+                                            <!-- Start Linear Layout BBU Seluruh Bulan -->
                                             <LinearLayout android:id="@+id/bbu_seluruhbulan_layout"
                                                           android:orientation="vertical"
                                                           android:layout_width="fill_parent"
                                                           android:layout_height="wrap_content"
                                                           android:background="#FFFBC9"
                                                           android:paddingTop="10dp">
-
                                             </LinearLayout>
+                                            <!-- End Linear Layout BBU Seluruh Bulan -->
 
+                                            <!-- Start Linear Layout TBU Seluruh Bulan -->
                                             <LinearLayout android:id="@+id/tbu_seluruhbulan_layout"
                                                           android:orientation="vertical"
                                                           android:layout_width="fill_parent"
                                                           android:layout_height="wrap_content"
                                                           android:background="#FFFBC9"
                                                           android:paddingTop="10dp">
-
                                             </LinearLayout>
+                                            <!-- End Linear Layout TBU Seluruh Bulan -->
 
+                                            <!-- Start Linear Layout BBTB Seluruh Bulan -->
                                             <LinearLayout android:id="@+id/bbtb_seluruhbulan_layout"
                                                           android:orientation="vertical"
                                                           android:layout_width="fill_parent"
                                                           android:layout_height="wrap_content"
                                                           android:background="#FFFBC9"
                                                           android:paddingTop="10dp">
-
                                             </LinearLayout>
+                                            <!-- End Linear Layout BBTB Seluruh Bulan -->
 
+                                            <!-- Start Linear Layout IMTU Seluruh Bulan -->
                                             <LinearLayout android:id="@+id/imtu_seluruhbulan_layout"
                                                           android:orientation="vertical"
                                                           android:layout_width="fill_parent"
                                                           android:layout_height="wrap_content"
                                                           android:background="#FFFBC9"
                                                           android:paddingTop="10dp">
-
                                             </LinearLayout>
+                                            <!-- End Linear Layout IMTU Seluruh Bulan -->
 
                                         </FrameLayout>
-
                                     </LinearLayout>
                                 </TabHost>
+                                <!-- End TabHost Seluruh Bulan -->
+
                             </LinearLayout>
+                            <!-- End Linear Layout Seluruh Bulan -->
 
                         </FrameLayout>
                     </LinearLayout>
                 </TabHost>
+                <!-- End TabHost -->
 
                 <!-- Start Blank Space -->
                 <View

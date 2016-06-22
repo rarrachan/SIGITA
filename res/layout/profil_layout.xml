@@ -38,7 +38,8 @@
                     android:adjustViewBounds="true"
                     android:src="@drawable/icon_lakilaki"
                     android:contentDescription="@string/app_name"
-                    android:layout_margin="5dp" android:visibility="visible"/>
+                    android:layout_margin="5dp"
+                    android:visibility="visible"/>
             <!-- End Image View Profil LakiLaki -->
 
             <!-- Start Image View Profil Perempuan-->
@@ -50,7 +51,8 @@
                     android:adjustViewBounds="true"
                     android:src="@drawable/icon_perempuan"
                     android:contentDescription="@string/app_name"
-                    android:layout_margin="5dp" android:visibility="visible"/>
+                    android:layout_margin="5dp"
+                    android:visibility="visible"/>
             <!-- End Image View Profil Perempuan -->
 
             <!-- Start Blank Space -->
@@ -71,10 +73,10 @@
                     android:layout_weight="1.8"
                     android:gravity="right|center"
                     android:layout_marginRight="10dp"/>
-            <!-- End Text View Profil LakiLaki -->
+            <!-- End Text View Profil -->
 
         </LinearLayout>
-        <!-- End Linear Layout Profil LakiLaki -->
+        <!-- End Linear Layout Profil -->
 
         <!-- Start Blank Space -->
         <View

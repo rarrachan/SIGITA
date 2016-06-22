@@ -14,6 +14,7 @@ import android.widget.*;
 /**
  * Created by syafira rarra on 05/04/2016.
  */
+
 public class TahapanTumbang extends Activity {
 
     // Declare
@@ -224,6 +225,7 @@ public class TahapanTumbang extends Activity {
             splash.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TASK | Intent.FLAG_ACTIVITY_CLEAR_TOP);
             startActivity(splash);
             finish();
+            
         } else {
             // Check Session
             if (session.checkSession(this)) {

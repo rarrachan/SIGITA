@@ -352,36 +352,6 @@ public class TambahProfil extends Activity implements OnClickListener {
                                     Toast.makeText(getApplicationContext(), "Profil Gagal Tersimpan", Toast.LENGTH_LONG).show();
                                 }
                             }
-//                        else
-//                    {
-//                        ContextWrapper cw = new ContextWrapper(getApplicationContext());
-//                        File directory = cw.getDir("SIGITA/" + nama, Context.MODE_PRIVATE);
-//                        File profil_foto = new File(directory, foto);
-//                        Bitmap bitmap = drawable_foto.getBitmap();
-//                        FileOutputStream outStream;
-//                        boolean success = false;
-//                        try {
-//
-//                            outStream = new FileOutputStream(profil_foto);
-//                            bitmap.compress(Bitmap.CompressFormat.JPEG, 100, outStream);
-//        /* 100 to keep full quality of the image */
-//                            outStream.flush();
-//                            outStream.close();
-//                            success = true;
-//                        } catch (Exception e) {
-//                            e.printStackTrace();
-//                        }
-//                        if (success) {
-//                            Toast.makeText(getApplicationContext(), "Image saved with success in INTERNAL",
-//                                    Toast.LENGTH_LONG).show();
-//                        } else {
-//                            Toast.makeText(getApplicationContext(),
-//                                    "Error during image saving in INTERNAL", Toast.LENGTH_LONG).show();
-//                        }
-//                    }
-//                    File f = new File(android.os.Environment.getExternalStorageDirectory() + "/SIGITA/" + namaFolder, foto.replaceAll(" ", "_").toLowerCase());
-//                    File f = new File(android.os.Environment.getExternalStorageDirectory(), foto.replaceAll(" ", "_").toLowerCase());
-//                    String fotoPath = f.getAbsoluteFile().toString();
 
                             // Insert Data into Database
                             db.insertProfil(nama, tmptLahir, tglLahir, jenisKelamin, golonganDarah,
@@ -405,6 +375,7 @@ public class TambahProfil extends Activity implements OnClickListener {
                             finish();
                         }
                     });
+
                     button_ok.setOnClickListener(new OnClickListener() {
                         @Override
                         public void onClick(View v) {

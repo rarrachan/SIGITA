@@ -57,11 +57,10 @@
                     android:layout_height="fill_parent"
                     android:orientation="vertical"
                     android:layout_gravity="center_vertical"
-                    android:layout_marginBottom="70dp" android:id="@+id/ListProfilLinearLayout"
-                    android:layout_marginTop="20dp" android:gravity="center">
-
-                <!-- Start Blank Space -->
-                <!-- End Blank Space -->
+                    android:layout_marginBottom="70dp"
+                    android:id="@+id/ListProfilLinearLayout"
+                    android:layout_marginTop="20dp" 
+                    android:gravity="center">
 
                 <!-- Start Linear Layout Row -->
                 <LinearLayout
@@ -77,6 +76,7 @@
                             android:layout_height="0dp"
                             android:layout_weight=".1"/>
 
+                    <!-- Start Linear Layout Tambah Profil -->
                     <LinearLayout
                             android:id="@+id/TambahProfilLinearLayout"
                             android:layout_width="0dp"
@@ -118,7 +118,7 @@
                         <!-- End Image View Tambah Profil -->
 
                     </LinearLayout>
-                    <!-- End Linear Layout Kalkulator Gizi -->
+                    <!-- End Linear Layout Tambah Profil -->
 
                     <!-- Start Blank Space -->
                     <View
@@ -128,9 +128,6 @@
                     <!-- End Blank Space -->
 
                 </LinearLayout>
-
-                <!-- Start Blank Space -->
-                <!-- End Blank Space -->
 
             </LinearLayout>
             <!-- End Linear Layout Content -->

@@ -18,6 +18,7 @@ public class DBHelper extends SQLiteOpenHelper {
     private static final int db_version = 1;
     private SQLiteDatabase db;
 
+    // Create Database
     public DBHelper(Context context) {
         super(context, db_name, null, db_version);
     }
@@ -25,6 +26,7 @@ public class DBHelper extends SQLiteOpenHelper {
     //Start Activity
     @Override
     public void onCreate(SQLiteDatabase db) {
+
         // Create All Table Inside Database
         createProfil(db);
         createLakiBBU(db);
@@ -39,8 +41,8 @@ public class DBHelper extends SQLiteOpenHelper {
         createPerempuanIMTU(db);
         createDokumentasi(db);
         createList(db);
-        createTahap(db);
         createRiwayat(db);
+        createTahap(db);
         createGaleri(db);
         createMedis(db);
     }
@@ -49,6 +51,22 @@ public class DBHelper extends SQLiteOpenHelper {
     @Override
     public void onUpgrade(SQLiteDatabase db, int oldVersion, int newVersion) {
         db.execSQL("DROP TABLE IF EXISTS profil");
+        db.execSQL("DROP TABLE IF EXISTS antropometri_laki_bbu");
+        db.execSQL("DROP TABLE IF EXISTS antropometri_laki_tbu");
+        db.execSQL("DROP TABLE IF EXISTS antropometri_laki_bbtb_0_24");
+        db.execSQL("DROP TABLE IF EXISTS antropometri_laki_bbtb_24_60");
+        db.execSQL("DROP TABLE IF EXISTS antropometri_laki_imtu");
+        db.execSQL("DROP TABLE IF EXISTS antropometri_perempuan_bbu");
+        db.execSQL("DROP TABLE IF EXISTS antropometri_perempuan_tbu");
+        db.execSQL("DROP TABLE IF EXISTS antropometri_perempuan_bbtb_0_24");
+        db.execSQL("DROP TABLE IF EXISTS antropometri_perempuan_bbtb_24_60");
+        db.execSQL("DROP TABLE IF EXISTS antropometri_perempuan_imtu");
+        db.execSQL("DROP TABLE IF EXISTS dokumentasi_gizi");
+        db.execSQL("DROP TABLE IF EXISTS list_imunisasi");
+        db.execSQL("DROP TABLE IF EXISTS riwayat_imunisasi");
+        db.execSQL("DROP TABLE IF EXISTS tahap_tumbang");
+        db.execSQL("DROP TABLE IF EXISTS galeri_tumbang");
+        db.execSQL("DROP TABLE IF EXISTS rekam_medis");
         onCreate(db);
     }
 
@@ -64,6 +82,7 @@ public class DBHelper extends SQLiteOpenHelper {
 
     // Create Table Profil
     public void createProfil(SQLiteDatabase db) {
+    	
         // Create Table Profil
         String create_profil = "create table profil (" +
                 "profilID integer primary key autoincrement, " +
@@ -146,7 +165,7 @@ public class DBHelper extends SQLiteOpenHelper {
         return db.update("profil", values, "profilID = " + id, null);
     }
 
-    // Update Profil to Database
+    // Update Profil Passcode to Database
     public long updateProfilPasscode(Integer id, String passcode) {
 
         // Open Database to Write
@@ -162,13 +181,15 @@ public class DBHelper extends SQLiteOpenHelper {
 
     // Delete Profil from Database
     public boolean deleteProfil(int id) {
+
         // Delete Data
         return db.delete("profil", "profilID =" + id, null) < 1;
     }
 
-    // Create Table Tahapan Tumbuh Kembang
+    // Create Table Laki-laki BBU
     public void createLakiBBU(SQLiteDatabase db) {
-        // Create Table Tahap Tumbuh Kembang
+
+        // Create Table Laki-laki BBU
         String create_laki_bbu = "create table antropometri_laki_bbu (" +
                 "laki_bbu_ID integer primary key autoincrement, " +
                 "laki_bbu_usia real not null," +
@@ -181,11 +202,14 @@ public class DBHelper extends SQLiteOpenHelper {
                 "laki_bbu_3sd real not null " +
                 ");";
         db.execSQL(create_laki_bbu);
+
+        // Insert Laki-laki BBU After Create Table
         insertLakiBBU(db);
     }
 
-    // Insert List Imunisasi
+    // Insert Laki-laki BBU to Database
     public void insertLakiBBU(SQLiteDatabase db) {
+
         db.execSQL("insert into antropometri_laki_bbu (laki_bbu_usia, laki_bbu_min3sd, laki_bbu_min2sd, laki_bbu_min1sd, laki_bbu_median, laki_bbu_1sd, laki_bbu_2sd, laki_bbu_3sd) values " +
                 "('0', '2.1', '2.5', '2.9', '3.3', '3.9', '4.4', '5.0');");
         db.execSQL("insert into antropometri_laki_bbu (laki_bbu_usia, laki_bbu_min3sd, laki_bbu_min2sd, laki_bbu_min1sd, laki_bbu_median, laki_bbu_1sd, laki_bbu_2sd, laki_bbu_3sd) values " +
@@ -310,23 +334,24 @@ public class DBHelper extends SQLiteOpenHelper {
                 "('60', '12.4', '14.1', '16.0', '18.3', '21.0', '24.2', '27.9');");
     }
 
-    // Get One List From Database
-    public Cursor getLakiBBUList(Integer umur) {
-        Cursor cursor = db.rawQuery("SELECT * FROM antropometri_laki_bbu WHERE laki_bbu_usia = " + umur, null);
+    // Get One Laki-laki BBU List From Database
+    public Cursor getLakiBBUList(Integer usia) {
+        Cursor cursor = db.rawQuery("SELECT * FROM antropometri_laki_bbu WHERE laki_bbu_usia = " + usia, null);
         cursor.moveToFirst();
         return cursor;
     }
 
-    // Get One List From Database
+    // Get All Laki-laki BBU From Database
     public Cursor getLakiBBUAllList() {
         Cursor cursor = db.rawQuery("SELECT * FROM antropometri_laki_bbu", null);
         cursor.moveToFirst();
         return cursor;
     }
 
-    // Create Table Tahapan Tumbuh Kembang
+    // Create Table Laki-laki TBU
     public void createLakiTBU(SQLiteDatabase db) {
-        // Create Table Tahap Tumbuh Kembang
+
+        // Create Table Laki-laki TBU
         String create_laki_tbu = "create table antropometri_laki_tbu (" +
                 "laki_tbu_ID integer primary key autoincrement, " +
                 "laki_tbu_usia real not null," +
@@ -339,11 +364,14 @@ public class DBHelper extends SQLiteOpenHelper {
                 "laki_tbu_3sd real not null " +
                 ");";
         db.execSQL(create_laki_tbu);
+
+        // Insert Laki-laki TBU After Create Table
         insertLakiTBU(db);
     }
 
-    // Insert List Imunisasi
+    // Insert  Laki-laki TBU
     public void insertLakiTBU(SQLiteDatabase db) {
+
         db.execSQL("insert into antropometri_laki_tbu (laki_tbu_usia, laki_tbu_min3sd, laki_tbu_min2sd, laki_tbu_min1sd, laki_tbu_median, laki_tbu_1sd, laki_tbu_2sd, laki_tbu_3sd) values " +
                 "('0', '44.2', '46.1', '48.0', '49.9', '51.8', '53.7', '55.6');");
         db.execSQL("insert into antropometri_laki_tbu (laki_tbu_usia, laki_tbu_min3sd, laki_tbu_min2sd, laki_tbu_min1sd, laki_tbu_median, laki_tbu_1sd, laki_tbu_2sd, laki_tbu_3sd) values " +
@@ -468,23 +496,24 @@ public class DBHelper extends SQLiteOpenHelper {
                 "('60', '96.1', '100.7', '105.3', '110.0', '114.6', '119.2', '123.9');");
     }
 
-    // Get One List From Database
-    public Cursor getLakiTBUList(Integer umur) {
-        Cursor cursor = db.rawQuery("SELECT * FROM antropometri_laki_tbu WHERE laki_tbu_usia = " + umur, null);
+    // Get One Laki-laki TBU List From Database
+    public Cursor getLakiTBUList(Integer usia) {
+        Cursor cursor = db.rawQuery("SELECT * FROM antropometri_laki_tbu WHERE laki_tbu_usia = " + usia, null);
         cursor.moveToFirst();
         return cursor;
     }
 
-    // Get One List From Database
+    // Get All Laki-laki TBU List From Database
     public Cursor getLakiTBUAllList() {
         Cursor cursor = db.rawQuery("SELECT * FROM antropometri_laki_tbu", null);
         cursor.moveToFirst();
         return cursor;
     }
 
-    // Create Table Tahapan Tumbuh Kembang
+    // Create Table Laki-laki BBTB 0-24
     public void createLakiBBTB_0_24(SQLiteDatabase db) {
-        // Create Table Tahap Tumbuh Kembang
+
+        // Create Table Laki-laki BBTB 0-24
         String create_laki_bbtb_0_24 = "create table antropometri_laki_bbtb_0_24 (" +
                 "laki_bbtb_ID integer primary key autoincrement, " +
                 "laki_bbtb_tb real not null," +
@@ -497,11 +526,14 @@ public class DBHelper extends SQLiteOpenHelper {
                 "laki_bbtb_3sd real not null " +
                 ");";
         db.execSQL(create_laki_bbtb_0_24);
+
+        // Insert Laki-laki BBTB 0-24 After Create Table
         insertLakiBBTB_0_24(db);
     }
 
-    // Insert List Imunisasi
+    // Insert Laki-laki BBTB 0-24
     public void insertLakiBBTB_0_24(SQLiteDatabase db) {
+
         db.execSQL("insert into antropometri_laki_bbtb_0_24 (laki_bbtb_tb, laki_bbtb_min3sd, laki_bbtb_min2sd, laki_bbtb_min1sd, laki_bbtb_median, laki_bbtb_1sd, laki_bbtb_2sd, laki_bbtb_3sd) values " +
                 "('45.0', '1.9', '2.0', '2.2', '2.4', '2.7', '3.0', '3.3');");
         db.execSQL("insert into antropometri_laki_bbtb_0_24 (laki_bbtb_tb, laki_bbtb_min3sd, laki_bbtb_min2sd, laki_bbtb_min1sd, laki_bbtb_median, laki_bbtb_1sd, laki_bbtb_2sd, laki_bbtb_3sd) values " +
@@ -764,23 +796,24 @@ public class DBHelper extends SQLiteOpenHelper {
                 "('110.0', '14.2', '15.4', '16.8', '18.3', '20.0', '21.9', '24.1');");
     }
 
-    // Get One List From Database
+    // Get One Laki-laki BBTB 0-24 List From Database
     public Cursor getLakiBBTBList_0_24(Float tinggi) {
         Cursor cursor = db.rawQuery("SELECT * FROM antropometri_laki_bbtb_0_24 WHERE laki_bbtb_tb = " + tinggi, null);
         cursor.moveToFirst();
         return cursor;
     }
 
-    // Get One List From Database
+    // Get All Laki-laki BBTB 0-24 List From Database
     public Cursor getLakiBBTBAllList_0_24() {
         Cursor cursor = db.rawQuery("SELECT * FROM antropometri_laki_bbtb_0_24", null);
         cursor.moveToFirst();
         return cursor;
     }
 
-    // Create Table Tahapan Tumbuh Kembang
+    // Create Table Laki-laki BBTB 24-60
     public void createLakiBBTB_24_60(SQLiteDatabase db) {
-        // Create Table Tahap Tumbuh Kembang
+
+        // Create Table Laki-laki BBTB 24-60
         String create_laki_bbtb_24_60 = "create table antropometri_laki_bbtb_24_60(" +
                 "laki_bbtb_ID integer primary key autoincrement, " +
                 "laki_bbtb_tb real not null," +
@@ -793,11 +826,14 @@ public class DBHelper extends SQLiteOpenHelper {
                 "laki_bbtb_3sd real not null " +
                 ");";
         db.execSQL(create_laki_bbtb_24_60);
+
+        // Insert Laki-laki BBTB 24-60 After Create Table
         insertLakiBBTB_24_60(db);
     }
 
-    // Insert List Imunisasi
+    // Insert Laki-laki BBTB 24-60
     public void insertLakiBBTB_24_60(SQLiteDatabase db) {
+
         db.execSQL("insert into antropometri_laki_bbtb_24_60 (laki_bbtb_tb, laki_bbtb_min3sd, laki_bbtb_min2sd, laki_bbtb_min1sd, laki_bbtb_median, laki_bbtb_1sd, laki_bbtb_2sd, laki_bbtb_3sd) values " +
                 "('65.0', '5.9', '6.3', '6.9', '7.4', '8.1', '8.8', '9.6');");
         db.execSQL("insert into antropometri_laki_bbtb_24_60 (laki_bbtb_tb, laki_bbtb_min3sd, laki_bbtb_min2sd, laki_bbtb_min1sd, laki_bbtb_median, laki_bbtb_1sd, laki_bbtb_2sd, laki_bbtb_3sd) values " +
@@ -1020,23 +1056,24 @@ public class DBHelper extends SQLiteOpenHelper {
                 "('120.0', '17.1', '18.6', '20.4', '22.4', '24.6', '27.2', '30.1');");
     }
 
-    // Get One List From Database
+    // Get One Laki-laki BBTB 24-60 List From Database
     public Cursor getLakiBBTBList_24_60(Float tinggi) {
         Cursor cursor = db.rawQuery("SELECT * FROM antropometri_laki_bbtb_24_60 WHERE laki_bbtb_tb = " + tinggi, null);
         cursor.moveToFirst();
         return cursor;
     }
 
-    // Get One List From Database
+    // Get All Laki-laki BBTB 24-60 List From Database
     public Cursor getLakiBBTBAllList_24_60() {
         Cursor cursor = db.rawQuery("SELECT * FROM antropometri_laki_bbtb_24_60", null);
         cursor.moveToFirst();
         return cursor;
     }
 
-    // Create Table Tahapan Tumbuh Kembang
+    // Create Table Laki-laki IMTU
     public void createLakiIMTU(SQLiteDatabase db) {
-        // Create Table Tahap Tumbuh Kembang
+
+        // Create Table Laki-laki IMTU
         String create_laki_imtu = "create table antropometri_laki_imtu (" +
                 "laki_imtu_ID integer primary key autoincrement, " +
                 "laki_imtu_usia real not null," +
@@ -1049,11 +1086,14 @@ public class DBHelper extends SQLiteOpenHelper {
                 "laki_imtu_3sd real not null " +
                 ");";
         db.execSQL(create_laki_imtu);
+
+        // Insert Laki-laki IMTU After Create Table
         insertLakiIMTU(db);
     }
 
-    // Insert List Imunisasi
+    // Insert Laki-laki IMTU
     public void insertLakiIMTU(SQLiteDatabase db) {
+
         db.execSQL("insert into antropometri_laki_imtu (laki_imtu_usia, laki_imtu_min3sd, laki_imtu_min2sd, laki_imtu_min1sd, laki_imtu_median, laki_imtu_1sd, laki_imtu_2sd, laki_imtu_3sd) values " +
                 "('0', '10.2', '11.1', '12.2', '13.4', '14.8', '16.3', '18.1');");
         db.execSQL("insert into antropometri_laki_imtu (laki_imtu_usia, laki_imtu_min3sd, laki_imtu_min2sd, laki_imtu_min1sd, laki_imtu_median, laki_imtu_1sd, laki_imtu_2sd, laki_imtu_3sd) values " +
@@ -1178,23 +1218,24 @@ public class DBHelper extends SQLiteOpenHelper {
                 "('60', '12.0', '12.9', '14.0', '15.2', '16.6', '18.3', '20.3');");
     }
 
-    // Get One List From Database
-    public Cursor getLakiIMTUList(Integer umur) {
-        Cursor cursor = db.rawQuery("SELECT * FROM antropometri_laki_imtu WHERE laki_imtu_usia = " + umur, null);
+    // Get One Laki-laki IMTU List From Database
+    public Cursor getLakiIMTUList(Integer usia) {
+        Cursor cursor = db.rawQuery("SELECT * FROM antropometri_laki_imtu WHERE laki_imtu_usia = " + usia, null);
         cursor.moveToFirst();
         return cursor;
     }
 
-    // Get One List From Database
+    // Get All Laki-laki IMTU List From Database
     public Cursor getLakiIMTUAllList() {
         Cursor cursor = db.rawQuery("SELECT * FROM antropometri_laki_imtu", null);
         cursor.moveToFirst();
         return cursor;
     }
 
-    // Create Table Tahapan Tumbuh Kembang
+    // Create Table Perempuan BBU
     public void createPerempuanBBU(SQLiteDatabase db) {
-        // Create Table Tahap Tumbuh Kembang
+
+        // Create Table Perempuan BBU
         String create_perempuan_bbu = "create table antropometri_perempuan_bbu (" +
                 "perempuan_bbu_ID integer primary key autoincrement, " +
                 "perempuan_bbu_usia real not null," +
@@ -1207,11 +1248,14 @@ public class DBHelper extends SQLiteOpenHelper {
                 "perempuan_bbu_3sd real not null " +
                 ");";
         db.execSQL(create_perempuan_bbu);
+
+        // Insert Perempuan BBU After Create Table
         insertPerempuanBBU(db);
     }
 
-    // Insert List Imunisasi
+    // Insert Perempuan BBU
     public void insertPerempuanBBU(SQLiteDatabase db) {
+
         db.execSQL("insert into antropometri_perempuan_bbu (perempuan_bbu_usia, perempuan_bbu_min3sd, perempuan_bbu_min2sd, perempuan_bbu_min1sd, perempuan_bbu_median, perempuan_bbu_1sd, perempuan_bbu_2sd, perempuan_bbu_3sd) values " +
                 "('0', '2.0', '2.4', '2.8', '3.2', '3.7', '4.2', '4.8');");
         db.execSQL("insert into antropometri_perempuan_bbu (perempuan_bbu_usia, perempuan_bbu_min3sd, perempuan_bbu_min2sd, perempuan_bbu_min1sd, perempuan_bbu_median, perempuan_bbu_1sd, perempuan_bbu_2sd, perempuan_bbu_3sd) values " +
@@ -1334,23 +1378,24 @@ public class DBHelper extends SQLiteOpenHelper {
                 "('60', '12.1', '13.7', '15.8', '18.2', '21.2', '24.9', '29.5');");
     }
 
-    // Get One List From Database
-    public Cursor getPerempuanBBUList(Integer umur) {
-        Cursor cursor = db.rawQuery("SELECT * FROM antropometri_perempuan_bbu WHERE perempuan_bbu_usia = " + umur, null);
+    // Get One Perempuan BBU List From Database
+    public Cursor getPerempuanBBUList(Integer usia) {
+        Cursor cursor = db.rawQuery("SELECT * FROM antropometri_perempuan_bbu WHERE perempuan_bbu_usia = " + usia, null);
         cursor.moveToFirst();
         return cursor;
     }
 
-    // Get One List From Database
+    // Get All Perempuan BBU List From Database
     public Cursor getPerempuanBBUAllList() {
         Cursor cursor = db.rawQuery("SELECT * FROM antropometri_perempuan_bbu", null);
         cursor.moveToFirst();
         return cursor;
     }
 
-    // Create Table Tahapan Tumbuh Kembang
+    // Create Table Perempuan TBU
     public void createPerempuanTBU(SQLiteDatabase db) {
-        // Create Table Tahap Tumbuh Kembang
+
+        // Create Table Perempuan TBU
         String create_perempuan_tbu = "create table antropometri_perempuan_tbu (" +
                 "perempuan_tbu_ID integer primary key autoincrement, " +
                 "perempuan_tbu_usia real not null," +
@@ -1363,11 +1408,14 @@ public class DBHelper extends SQLiteOpenHelper {
                 "perempuan_tbu_3sd real not null " +
                 ");";
         db.execSQL(create_perempuan_tbu);
+
+        // Insert Perempuan TBU After Create Table
         insertPerempuanTBU(db);
     }
 
-    // Insert List Imunisasi
+    // Insert Perempuan TBU
     public void insertPerempuanTBU(SQLiteDatabase db) {
+
         db.execSQL("insert into antropometri_perempuan_tbu (perempuan_tbu_usia, perempuan_tbu_min3sd, perempuan_tbu_min2sd, perempuan_tbu_min1sd, perempuan_tbu_median, perempuan_tbu_1sd, perempuan_tbu_2sd, perempuan_tbu_3sd) values " +
                 "('0', '43.6', '45.4', '47.3', '49.1', '51.0', '52.9', '54.7');");
         db.execSQL("insert into antropometri_perempuan_tbu (perempuan_tbu_usia, perempuan_tbu_min3sd, perempuan_tbu_min2sd, perempuan_tbu_min1sd, perempuan_tbu_median, perempuan_tbu_1sd, perempuan_tbu_2sd, perempuan_tbu_3sd) values " +
@@ -1492,23 +1540,24 @@ public class DBHelper extends SQLiteOpenHelper {
                 "('60', '95.2', '99.9', '104.7', '109.4', '114.2', '118.9', '123.7');");
     }
 
-    // Get One List From Database
-    public Cursor getPerempuanTBUList(Integer umur) {
-        Cursor cursor = db.rawQuery("SELECT * FROM antropometri_perempuan_tbu WHERE perempuan_tbu_usia = " + umur, null);
+    // Get One Perempuan TBU List From Database
+    public Cursor getPerempuanTBUList(Integer usia) {
+        Cursor cursor = db.rawQuery("SELECT * FROM antropometri_perempuan_tbu WHERE perempuan_tbu_usia = " + usia, null);
         cursor.moveToFirst();
         return cursor;
     }
 
-    // Get One List From Database
+    // Get All Perempuan TBU List From Database
     public Cursor getPerempuanTBUAllList() {
         Cursor cursor = db.rawQuery("SELECT * FROM antropometri_perempuan_tbu", null);
         cursor.moveToFirst();
         return cursor;
     }
 
-    // Create Table Tahapan Tumbuh Kembang
+    // Create Table Perempuan BBTB 0-24
     public void createPerempuanBBTB_0_24(SQLiteDatabase db) {
-        // Create Table Tahap Tumbuh Kembang
+
+        // Create Table Perempuan BBTB 0-24
         String create_perempuan_bbtb_0_24 = "create table antropometri_perempuan_bbtb_0_24 (" +
                 "perempuan_bbtb_ID integer primary key autoincrement, " +
                 "perempuan_bbtb_tb real not null," +
@@ -1521,11 +1570,14 @@ public class DBHelper extends SQLiteOpenHelper {
                 "perempuan_bbtb_3sd real not null " +
                 ");";
         db.execSQL(create_perempuan_bbtb_0_24);
+
+        // Insert Perempuan BBTB 0-24 After Create Table
         insertPerempuanBBTB_0_24(db);
     }
 
-    // Insert List Imunisasi
+    // Insert Perempuan BBTB 0-24
     public void insertPerempuanBBTB_0_24(SQLiteDatabase db) {
+
         db.execSQL("insert into antropometri_perempuan_bbtb_0_24 (perempuan_bbtb_tb, perempuan_bbtb_min3sd, perempuan_bbtb_min2sd, perempuan_bbtb_min1sd, perempuan_bbtb_median, perempuan_bbtb_1sd, perempuan_bbtb_2sd, perempuan_bbtb_3sd) values " +
                 "('45.0', '1.9', '2.1', '2.3', '2.5', '2.7', '3.0', '3.3');");
         db.execSQL("insert into antropometri_perempuan_bbtb_0_24 (perempuan_bbtb_tb, perempuan_bbtb_min3sd, perempuan_bbtb_min2sd, perempuan_bbtb_min1sd, perempuan_bbtb_median, perempuan_bbtb_1sd, perempuan_bbtb_2sd, perempuan_bbtb_3sd) values " +
@@ -1790,23 +1842,24 @@ public class DBHelper extends SQLiteOpenHelper {
                 "('110.0', '14.0', '15.3', '16.7', '18.3', '20.2', '22.3', '24.7');");
     }
 
-    // Get One List From Database
+    // Get One Perempuan BBTB 0-24 List From Database
     public Cursor getPerempuanBBTBList_0_24(Float tinggi) {
         Cursor cursor = db.rawQuery("SELECT * FROM antropometri_perempuan_bbtb_0_24 WHERE perempuan_bbtb_tb = " + tinggi, null);
         cursor.moveToFirst();
         return cursor;
     }
 
-    // Get One List From Database
+    // Get All Perempuan BBTB 0-24 List From Database
     public Cursor getPerempuanBBTBAllList_0_24() {
         Cursor cursor = db.rawQuery("SELECT * FROM antropometri_perempuan_bbtb_0_24", null);
         cursor.moveToFirst();
         return cursor;
     }
 
-    // Create Table Tahapan Tumbuh Kembang
+    // Create Table Perempuan BBTB 24-60
     public void createPerempuanBBTB_24_60(SQLiteDatabase db) {
-        // Create Table Tahap Tumbuh Kembang
+
+        // Create Table Perempuan BBTB 24-60
         String create_perempuan_bbtb_24_60 = "create table antropometri_perempuan_bbtb_24_60(" +
                 "perempuan_bbtb_ID integer primary key autoincrement, " +
                 "perempuan_bbtb_tb real not null," +
@@ -1819,11 +1872,14 @@ public class DBHelper extends SQLiteOpenHelper {
                 "perempuan_bbtb_3sd real not null " +
                 ");";
         db.execSQL(create_perempuan_bbtb_24_60);
+
+        // Insert Perempuan BBTB 24-60 After Create Table
         insertPerempuanBBTB_24_60(db);
     }
 
-    // Insert List Imunisasi
+	// Insert Perempuan BBTB 24-60
     public void insertPerempuanBBTB_24_60(SQLiteDatabase db) {
+
         db.execSQL("insert into antropometri_perempuan_bbtb_24_60 (perempuan_bbtb_tb, perempuan_bbtb_min3sd, perempuan_bbtb_min2sd, perempuan_bbtb_min1sd, perempuan_bbtb_median, perempuan_bbtb_1sd, perempuan_bbtb_2sd, perempuan_bbtb_3sd) values " +
                 "('65.0', '5.6', '6.1', '6.6', '7.2', '7.9', '8.7', '9.7');");
         db.execSQL("insert into antropometri_perempuan_bbtb_24_60 (perempuan_bbtb_tb, perempuan_bbtb_min3sd, perempuan_bbtb_min2sd, perempuan_bbtb_min1sd, perempuan_bbtb_median, perempuan_bbtb_1sd, perempuan_bbtb_2sd, perempuan_bbtb_3sd) values " +
@@ -2046,23 +2102,24 @@ public class DBHelper extends SQLiteOpenHelper {
                 "('120.0', '17.3', '18.9', '20.7', '22.8', '25.2', '28.0', '31.2');");
     }
 
-    // Get One List From Database
+    // Get One Perempuan BBTB 24-60 List From Database
     public Cursor getPerempuanBBTBList_24_60(Float tinggi) {
         Cursor cursor = db.rawQuery("SELECT * FROM antropometri_perempuan_bbtb_24_60 WHERE perempuan_bbtb_tb = " + tinggi, null);
         cursor.moveToFirst();
         return cursor;
     }
 
-    // Get One List From Database
+    // Get All Perempuan BBTB 24-60 List From Database
     public Cursor getPerempuanBBTBAllList_24_60() {
         Cursor cursor = db.rawQuery("SELECT * FROM antropometri_perempuan_bbtb_24_60", null);
         cursor.moveToFirst();
         return cursor;
     }
 
-    // Create Table Tahapan Tumbuh Kembang
+    // Create Table Perempuan IMTU
     public void createPerempuanIMTU(SQLiteDatabase db) {
-        // Create Table Tahap Tumbuh Kembang
+
+        // Create Table Perempuan IMTU
         String create_perempuan_imtu = "create table antropometri_perempuan_imtu (" +
                 "perempuan_imtu_ID integer primary key autoincrement, " +
                 "perempuan_imtu_usia real not null," +
@@ -2075,11 +2132,14 @@ public class DBHelper extends SQLiteOpenHelper {
                 "perempuan_imtu_3sd real not null " +
                 ");";
         db.execSQL(create_perempuan_imtu);
+
+        // Insert Perempuan IMTU After Create Table
         insertPerempuanIMTU(db);
     }
 
-    // Insert List Imunisasi
+    // Insert Perempuan IMTU 
     public void insertPerempuanIMTU(SQLiteDatabase db) {
+
         db.execSQL("insert into antropometri_perempuan_imtu (perempuan_imtu_usia, perempuan_imtu_min3sd, perempuan_imtu_min2sd, perempuan_imtu_min1sd, perempuan_imtu_median, perempuan_imtu_1sd, perempuan_imtu_2sd, perempuan_imtu_3sd) values " +
                 "('0', '10.1', '11.1', '12.1', '13.3', '14.6', '16.0', '17.5');");
         db.execSQL("insert into antropometri_perempuan_imtu (perempuan_imtu_usia, perempuan_imtu_min3sd, perempuan_imtu_min2sd, perempuan_imtu_min1sd, perempuan_imtu_median, perempuan_imtu_1sd, perempuan_imtu_2sd, perempuan_imtu_3sd) values " +
@@ -2204,23 +2264,24 @@ public class DBHelper extends SQLiteOpenHelper {
                 "('60', '11.6', '12.7', '13.9', '15.3', '16.9', '18.8', '21.1');");
     }
 
-    // Get One List From Database
-    public Cursor getPerempuanIMTUList(Integer umur) {
-        Cursor cursor = db.rawQuery("SELECT * FROM antropometri_perempuan_imtu WHERE perempuan_imtu_usia = " + umur, null);
+    // Get One Perempuan IMTU List From Database
+    public Cursor getPerempuanIMTUList(Integer usia) {
+        Cursor cursor = db.rawQuery("SELECT * FROM antropometri_perempuan_imtu WHERE perempuan_imtu_usia = " + usia, null);
         cursor.moveToFirst();
         return cursor;
     }
 
-    // Get One List From Database
+    // Get All Perempuan IMTU List From Database
     public Cursor getPerempuanIMTUAllList() {
         Cursor cursor = db.rawQuery("SELECT * FROM antropometri_perempuan_imtu", null);
         cursor.moveToFirst();
         return cursor;
     }
 
-    // Create Table List Imunisasi
+    // Create Table Dokumentasi Gizi 
     public void createDokumentasi(SQLiteDatabase db) {
-        // Create Table List Imunisasi
+
+        // Create Table Dokumentasi Gizi
         String create_dokumentasi = "create table dokumentasi_gizi (" +
                 "dokumentasiID integer primary key autoincrement, " +
                 "dokumentasi_profilID integer not null, " +
@@ -2237,7 +2298,7 @@ public class DBHelper extends SQLiteOpenHelper {
         db.execSQL(create_dokumentasi);
     }
 
-    // Insert Riwayat Imunisasi to Database
+    // Insert Dokumentasi Gizi to Database
     public long insertDokumentasi(Integer profilID, String tanggal, String usia, Integer bulan,
                                   String beratBadan, String tinggiBadan, String status_bbu, String status_tbu, String status_bbtb, String status_imtu) {
 
@@ -2261,28 +2322,28 @@ public class DBHelper extends SQLiteOpenHelper {
         return db.insert("dokumentasi_gizi", null, values);
     }
 
-    // Get Riwayat Imunisasi from Database
+    // Get Dokumentasi Gizi from Database
     public Cursor getDokumentasi(Integer id) {
         Cursor cursor = db.rawQuery("SELECT * FROM dokumentasi_gizi WHERE dokumentasi_profilID = " + id + " ORDER BY SUBSTR(dokumentasi_tanggal, 7, 4) DESC, SUBSTR(dokumentasi_tanggal, 4, 2) DESC, SUBSTR(dokumentasi_tanggal, 1, 2) DESC", null);
         cursor.moveToFirst();
         return cursor;
     }
 
-    // Get Riwayat Imunisasi from Database
+    // Get Dokumentasi Gizi Chart from Database
     public Cursor getDokumentasiChart(Integer id, Integer bulan) {
         Cursor cursor = db.rawQuery("SELECT * FROM dokumentasi_gizi WHERE dokumentasi_profilID = " + id + " AND dokumentasi_bulan BETWEEN 0 AND " + bulan, null);
         cursor.moveToFirst();
         return cursor;
     }
 
-    // Get One Profil From Database
+    // Get One Dokumentasi Gizi From Database
     public Cursor getOneDokumentasi(Integer id) {
         Cursor cursor = db.rawQuery("SELECT * FROM dokumentasi_gizi WHERE dokumentasiID = " + id, null);
         cursor.moveToFirst();
         return cursor;
     }
 
-    // Update Riwayat Imunisasi to Database
+    // Update Dokumentasi Gizi to Database
     public long updateDokumentasi(Integer dokumentasiID, Integer profilID, String tanggal, String usia, Integer bulan,
                                   String berat, String tinggi, String bbu, String tbu, String bbtb, String imtu) {
 
@@ -2306,20 +2367,23 @@ public class DBHelper extends SQLiteOpenHelper {
         return db.update("dokumentasi_gizi", values, "dokumentasiID = " + dokumentasiID, null);
     }
 
-    // Delete Riwayat Imunisasi from Database
+    // Delete Dokumentasi Gizi  from Database
     public boolean deleteDokumentasi(int id) {
+        
         // Delete Data
         return db.delete("dokumentasi_gizi", "dokumentasiID =" + id, null) < 1;
     }
 
-    // Delete Riwyat Imunisasi from ProfilID from Database
+    // Delete Dokumentasi Gizi from ProfilID from Database
     public boolean deleteDokumentasiProfilID(int profilID) {
+        
         // Delete Data
         return db.delete("dokumentasi_gizi", "dokumentasi_profilID =" + profilID, null) < 1;
     }
 
     // Create Table List Imunisasi
     public void createList(SQLiteDatabase db) {
+
         // Create Table List Imunisasi
         String create_list_imunisasi = "create table list_imunisasi (" +
                 "listID integer primary key autoincrement, " +
@@ -2329,11 +2393,14 @@ public class DBHelper extends SQLiteOpenHelper {
                 "list_bulan real not null" +
                 ");";
         db.execSQL(create_list_imunisasi);
+
+        // Insert List Imunisasi After Create Table
         insertList(db);
     }
 
     // Insert List Imunisasi
     public void insertList(SQLiteDatabase db) {
+
         db.execSQL("insert into list_imunisasi (list_vaksin, list_usia, list_desc, list_bulan) values " +
                 "('BCG', '0 - 3 Bulan', 'BCG merupakan singkatan dari Bacille Calmette-Guerin. BCG diberikan sejak lahir. Apabila umur > 3 bulan harus dilakukan uji tuberkulin terlebih dulu, BCG diberikan apabila uji tuberkulin negatif.', '0');");
         db.execSQL("insert into list_imunisasi (list_vaksin, list_usia, list_desc, list_bulan) values " +
@@ -2410,41 +2477,42 @@ public class DBHelper extends SQLiteOpenHelper {
                 "('MMR (2)', '60 - 84 Bulan / 5 - 7 Tahun', 'Diberikan pada umur 12 bulan, apabila belum mendapatkan vaksin campak umur 9 bulan. Selanjutnya MMR ulangan diberikan pada umur 5-7 tahun.', '60');");
     }
 
-    // Get List from Database
+    // Get List Imunisasi from Database
     public Cursor getList() {
         Cursor cursor = db.rawQuery("SELECT * FROM list_imunisasi", null);
         cursor.moveToFirst();
         return cursor;
     }
 
-    // Get One List From Database
+    // Get One List Imunisasi From Database
     public Cursor getOneList(Integer id) {
         Cursor cursor = db.rawQuery("SELECT * FROM list_imunisasi WHERE listID = " + id, null);
         cursor.moveToFirst();
         return cursor;
     }
 
-    // Get One List Join Riwayat From Database
+    // Get One List Imunisasi Join Riwayat Imunisasi From Database
     public Cursor getListJoinRiwayat(Integer id, Integer profilID) {
         Cursor cursor = db.rawQuery("SELECT * FROM list_imunisasi LEFT OUTER JOIN riwayat_imunisasi ON list_imunisasi.list_vaksin = riwayat_imunisasi.riwayat_vaksin AND riwayat_imunisasi.riwayat_profilID = " + profilID + " WHERE list_imunisasi.listID = " + id, null);
         cursor.moveToFirst();
         return cursor;
     }
 
-    // Get One List From Database
+    // Get One List Imunisasi By Bulan Join Riwayat Imunisasi From Database For Tambah Riwayat
     public Cursor getOneListByBulanLeftJoinRiwayat(Integer bulan) {
         Cursor cursor = db.rawQuery("SELECT * FROM list_imunisasi LEFT OUTER JOIN riwayat_imunisasi on list_imunisasi.list_vaksin = riwayat_imunisasi.riwayat_vaksin WHERE list_imunisasi.list_bulan <= " + bulan + " AND riwayat_imunisasi.riwayatID ISNULL", null);
         cursor.moveToFirst();
         return cursor;
     }
 
-    public Cursor getOneListByBulan(Integer bulan) {
-        Cursor cursor = db.rawQuery("SELECT * FROM list_imunisasi WHERE list_bulan <= " + bulan, null);
+    // Get One List Imunisasi By Bulan Join Riwayat Imunisasi From Database For Ubah Riwayat
+    public Cursor getOneListByBulanLeftJoinRiwayatID(Integer bulan, Integer riwayatID) {
+        Cursor cursor = db.rawQuery("SELECT * FROM list_imunisasi LEFT OUTER JOIN riwayat_imunisasi on list_imunisasi.list_vaksin = riwayat_imunisasi.riwayat_vaksin WHERE list_imunisasi.list_bulan <= " + bulan + " AND (riwayat_imunisasi.riwayatID == " + riwayatID + " OR riwayat_imunisasi.riwayatID ISNULL)", null);
         cursor.moveToFirst();
         return cursor;
     }
 
-    // Get One List Join Riwayat From Database
+    // Get One List Imunisasi Join Riwayat Imunisasi Closest Value From Database
     public Cursor getListJoinRiwayatClosestValue(Integer bulan, Integer profilID) {
         Cursor cursor = db.rawQuery("SELECT * FROM list_imunisasi LEFT OUTER JOIN riwayat_imunisasi ON list_imunisasi.list_vaksin = riwayat_imunisasi.riwayat_vaksin AND riwayat_imunisasi.riwayat_profilID = " + profilID + " WHERE list_imunisasi.list_bulan BETWEEN 0 AND " + bulan + "+1 AND riwayat_imunisasi.riwayatID ISNULL ORDER BY ABS( " + bulan + " - riwayat_imunisasi.riwayat_bulan)", null);
         cursor.moveToFirst();
@@ -2453,7 +2521,8 @@ public class DBHelper extends SQLiteOpenHelper {
 
     // Create Table Riwayat Imunisasi
     public void createRiwayat(SQLiteDatabase db) {
-        // Create Table Profil
+
+        // Create Table Riwayat Imunisasi
         String create_riwayat = "create table riwayat_imunisasi (" +
                 "riwayatID integer primary key autoincrement, " +
                 "riwayat_profilID integer not null, " +
@@ -2470,7 +2539,7 @@ public class DBHelper extends SQLiteOpenHelper {
     }
 
     // Insert Riwayat Imunisasi to Database
-    public long insertRiwayat(Integer profilID, String tanggal, String vaksin, String umur, Integer bulan,
+    public long insertRiwayat(Integer profilID, String tanggal, String vaksin, String usia, Integer bulan,
                               String berat, String tinggi, String dokter, String rumahsakit) {
 
         // Open Database to Write
@@ -2481,7 +2550,7 @@ public class DBHelper extends SQLiteOpenHelper {
         values.put("riwayat_profilID", profilID);
         values.put("riwayat_tanggal", tanggal);
         values.put("riwayat_vaksin", vaksin);
-        values.put("riwayat_usia", umur);
+        values.put("riwayat_usia", usia);
         values.put("riwayat_bulan", bulan);
         values.put("riwayat_berat", berat);
         values.put("riwayat_tinggi", tinggi);
@@ -2499,7 +2568,7 @@ public class DBHelper extends SQLiteOpenHelper {
         return cursor;
     }
 
-    // Get One Profil From Database
+    // Get One Riwayat Imunisasi From Database
     public Cursor getOneRiwayat(Integer id) {
         Cursor cursor = db.rawQuery("SELECT * FROM riwayat_imunisasi WHERE riwayatID = " + id, null);
         cursor.moveToFirst();
@@ -2507,7 +2576,7 @@ public class DBHelper extends SQLiteOpenHelper {
     }
 
     // Update Riwayat Imunisasi to Database
-    public long updateRiwayat(Integer riwayatID, Integer profilID, String tanggal, String vaksin, String umur, int bulan,
+    public long updateRiwayat(Integer riwayatID, Integer profilID, String tanggal, String vaksin, String usia, int bulan,
                               String berat, String tinggi, String dokter, String rumahsakit) {
 
         // Open Database to Write
@@ -2518,7 +2587,7 @@ public class DBHelper extends SQLiteOpenHelper {
         values.put("riwayat_profilID", profilID);
         values.put("riwayat_tanggal", tanggal);
         values.put("riwayat_vaksin", vaksin);
-        values.put("riwayat_usia", umur);
+        values.put("riwayat_usia", usia);
         values.put("riwayat_bulan", bulan);
         values.put("riwayat_berat", berat);
         values.put("riwayat_tinggi", tinggi);
@@ -2531,18 +2600,21 @@ public class DBHelper extends SQLiteOpenHelper {
 
     // Delete Riwayat Imunisasi from Database
     public boolean deleteRiwayat(int id) {
+        
         // Delete Data
         return db.delete("riwayat_imunisasi", "riwayatID =" + id, null) < 1;
     }
 
-    // Delete Riwyat Imunisasi from ProfilID from Database
+    // Delete Riwayat Imunisasi from ProfilID from Database
     public boolean deleteRiwayatProfilID(int profilID) {
+       
         // Delete Data
         return db.delete("riwayat_imunisasi", "riwayat_profilID =" + profilID, null) < 1;
     }
 
     // Create Table Tahapan Tumbuh Kembang
     public void createTahap(SQLiteDatabase db) {
+
         // Create Table Tahap Tumbuh Kembang
         String create_tahap_tumbang = "create table tahap_tumbang (" +
                 "tahapID integer primary key autoincrement, " +
@@ -2553,11 +2625,14 @@ public class DBHelper extends SQLiteOpenHelper {
                 "tahap_sosial_kemandirian text " +
                 ");";
         db.execSQL(create_tahap_tumbang);
+
+        // Insert Tahapan Tumbuh Kembang After Create Table
         insertTahapan(db);
     }
 
     // Insert Tahapan Tumbuh Kembang
     public void insertTahapan(SQLiteDatabase db) {
+
         db.execSQL("insert into tahap_tumbang (tahap_usia, tahap_gerakan_kasar, tahap_gerakan_halus, tahap_komunikasi, tahap_sosial_kemandirian) values " +
                 "('1 Bulan', 'Tangan dan kaki bergerak aktif', 'Kepala menoleh ke samping kanan-kiri', 'Bereaksi terhadap bunyi lonceng', 'Menatap wajah ibu / pengasuh');");
         db.execSQL("insert into tahap_tumbang (tahap_usia, tahap_gerakan_kasar, tahap_gerakan_halus, tahap_komunikasi, tahap_sosial_kemandirian) values " +
@@ -2602,16 +2677,17 @@ public class DBHelper extends SQLiteOpenHelper {
                 "('62 Bulan / 5 Tahun', '', '', 'Menghitung mainan', 'Mengambil makanan sendiri');");
     }
 
-    // Get Tahapan from Database
+    // Get Tahapan Tumbuh Kembang from Database
     public Cursor getTahap() {
         Cursor cursor = db.rawQuery("SELECT * FROM tahap_tumbang", null);
         cursor.moveToFirst();
         return cursor;
     }
 
-    // Create Table Galeri
+    // Create Table Galeri Tumbuh Kembang
     public void createGaleri(SQLiteDatabase db) {
-        // Create Table Profil
+
+        // Create Table Galeri Tumbuh Kembang
         String create_galeri = "create table galeri_tumbang(" +
                 "galeriID integer primary key autoincrement, " +
                 "galeri_profilID integer not null, " +
@@ -2623,8 +2699,8 @@ public class DBHelper extends SQLiteOpenHelper {
         db.execSQL(create_galeri);
     }
 
-    // Insert Galeri to Database
-    public long insertGaleri(Integer profilID, String tanggal, String umur, String foto, String desc) {
+    // Insert Galeri Tumbuh Kembang to Database
+    public long insertGaleri(Integer profilID, String tanggal, String usia, String foto, String desc) {
 
         // Open Database to Write
         SQLiteDatabase db = this.getWritableDatabase();
@@ -2633,7 +2709,7 @@ public class DBHelper extends SQLiteOpenHelper {
         ContentValues values = new ContentValues();
         values.put("galeri_profilID", profilID);
         values.put("galeri_tanggal", tanggal);
-        values.put("galeri_usia", umur);
+        values.put("galeri_usia", usia);
         values.put("galeri_foto", foto);
         values.put("galeri_desc", desc);
 
@@ -2641,22 +2717,22 @@ public class DBHelper extends SQLiteOpenHelper {
         return db.insert("galeri_tumbang", null, values);
     }
 
-    // Get Profil from Database
+    // Get Galeri Tumbuh Kembang from Database
     public Cursor getGaleri(Integer id) {
         Cursor cursor = db.rawQuery("SELECT * FROM galeri_tumbang WHERE galeri_profilID = " + id + " ORDER BY SUBSTR(galeri_tanggal, 7, 4) DESC, SUBSTR(galeri_tanggal, 4, 2) DESC, SUBSTR(galeri_tanggal, 1, 2) DESC", null);
         cursor.moveToFirst();
         return cursor;
     }
 
-    // Get One Galeri From Database
+    // Get One Galeri Tumbuh Kembang From Database
     public Cursor getOneGaleri(Integer galeriID, Integer profilID) {
         Cursor cursor = db.rawQuery("SELECT * FROM galeri_tumbang WHERE galeriID = " + galeriID + " AND galeri_profilID = " + profilID, null);
         cursor.moveToFirst();
         return cursor;
     }
 
-    // Insert Galeri to Database
-    public long updateGaleri(Integer galeriID, Integer profilID, String tanggal, String umur, String foto, String desc) {
+    // Insert Galeri Tumbuh Kembang to Database
+    public long updateGaleri(Integer galeriID, Integer profilID, String tanggal, String usia, String foto, String desc) {
 
         // Open Database to Write
         SQLiteDatabase db = this.getWritableDatabase();
@@ -2664,7 +2740,7 @@ public class DBHelper extends SQLiteOpenHelper {
         // Get Value
         ContentValues values = new ContentValues();
         values.put("galeri_tanggal", tanggal);
-        values.put("galeri_usia", umur);
+        values.put("galeri_usia", usia);
         values.put("galeri_foto", foto);
         values.put("galeri_desc", desc);
 
@@ -2672,21 +2748,24 @@ public class DBHelper extends SQLiteOpenHelper {
         return db.update("galeri_tumbang", values, "galeriID = " + galeriID + " AND galeri_profilID = " + profilID, null);
     }
 
-    // Delete Galeri from Database
+    // Delete Galeri Tumbuh Kembang from Database
     public boolean deleteGaleri(int id) {
+        
         // Delete Data
         return db.delete("galeri_tumbang", "galeriID =" + id, null) < 1;
     }
 
-    // Delete Galeri from ProfilID from Database
+    // Delete Galeri Tumbuh Kembang from ProfilID from Database
     public boolean deleteGaleriProfilID(int id) {
+        
         // Delete Data
         return db.delete("galeri_tumbang", "galeri_profilID =" + id, null) < 1;
     }
 
     // Create Table Rekam Medis
     public void createMedis(SQLiteDatabase db) {
-        // Create Table List Imunisasi
+
+        // Create Table Rekam Medis
         String create_rekam_medis = "create table rekam_medis (" +
                 " medisID integer primary key autoincrement, " +
                 " medis_profilID integer not null, " +
@@ -2761,14 +2840,16 @@ public class DBHelper extends SQLiteOpenHelper {
         return db.update("rekam_medis", values, "medisID = " + medisID + " AND medis_profilID = " + profilID, null);
     }
 
-    // Delete Medis from Database
+    // Delete Rekam Medis from Database
     public boolean deleteMedis(int id) {
+        
         // Delete Data
         return db.delete("rekam_medis", "medisID =" + id, null) < 1;
     }
 
-    // Delete Medis from ProfilID from Database
+    // Delete Rekam Medis from ProfilID from Database
     public boolean deleteMedisProfilID(int profilID) {
+        
         // Delete Data
         return db.delete("rekam_medis", "medis_profilID =" + profilID, null) < 1;
     }

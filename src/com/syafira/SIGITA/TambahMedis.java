@@ -133,8 +133,10 @@ public class TambahMedis extends Activity {
         text_medis_obat.setTypeface(typeface);
         medis_obat.setTypeface(typeface);
 
+        // set DateFormatter
         final SimpleDateFormat dateFormatter = new SimpleDateFormat("dd/MM/yyyy", Locale.US);
 
+        // Set OnClickListener
         medis_tanggalberobat.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {

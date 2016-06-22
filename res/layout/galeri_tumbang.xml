@@ -51,6 +51,7 @@
             </LinearLayout>
             <!-- End Linear Layout Header -->
 
+            <!-- Start Text View Galeri Tumbuh Kembang -->
             <TextView
                     android:id="@+id/button_galeritumbang"
                     android:layout_width="wrap_content"
@@ -63,6 +64,7 @@
                     android:layout_marginTop="10dp"
                     android:layout_marginRight="20dp"
                     android:layout_marginBottom="10dp"/>
+            <!-- End Text View Galeri Tumbuh Kembang -->
 
             <!-- Start Linear Layout Profil -->
             <LinearLayout
@@ -71,7 +73,8 @@
                     android:layout_height="wrap_content"
                     android:layout_marginLeft="20dp"
                     android:paddingRight="10dp"
-                    android:background="@drawable/button_rounded" android:gravity="left">
+                    android:background="@drawable/button_rounded"
+                    android:gravity="left">
 
                 <!-- Start Button Profil -->
                 <Button
@@ -105,11 +108,7 @@
                     android:orientation="vertical"
                     android:layout_marginBottom="50dp">
 
-                <!-- Start Linear Layout Tanggal -->
-                <!-- End Linear Layout Tanggal -->
-
-                <!-- Start Linear Layout Tanggal -->
-                <!-- End Linear Layout Usia -->
+                <!-- Start Expandale Height Grid View -->
 
                 <com.syafira.SIGITA.ExpandableHeightGridView
                         android:id="@+id/gridview"
@@ -123,7 +122,7 @@
                         android:stretchMode="columnWidth"
                         android:listSelector="@null"
                         android:focusable="false"/>
-
+                <!-- End Expandable Height Grid View -->
 
                 <!-- Start Blank Space -->
                 <View

@@ -63,7 +63,7 @@
                     android:layout_gravity="center_vertical"
                     android:layout_marginBottom="70dp">
 
-                <!-- Start Text Footer -->
+                <!-- Start Text Cek Passcode -->
                 <TextView
                         android:id="@+id/profil_passcode"
                         android:layout_width="wrap_content"
@@ -73,9 +73,9 @@
                         android:paddingBottom="15dp"
                         android:text="@string/profil_cek_passcode"
                         style="@android:style/TextAppearance.DeviceDefault.Medium"/>
-                <!-- End Text Footer -->
+                <!-- End Text Cek Passcode -->
 
-                <!-- Start Text View Nama Profil -->
+                <!-- Start Text View Lupa Passcode -->
                 <TextView
                         android:id="@+id/lupa_passcode"
                         android:layout_width="wrap_content"
@@ -85,8 +85,9 @@
                         android:layout_marginRight="10dp"
                         style="@android:style/TextAppearance.DeviceDefault.Small"
                         android:layout_gravity="right"/>
-                <!-- End Text View Nama Profil -->
+                <!-- End Text View Lupa Passcode -->
 
+                <!-- Start Linear Layout Passcode -->
                 <LinearLayout
                         android:layout_width="fill_parent"
                         android:layout_height="fill_parent"
@@ -101,6 +102,7 @@
                             android:layout_weight=".2"/>
                     <!-- End Blank Space -->
 
+                    <!-- Start Edit Text Passcode -->
                     <EditText
                             android:id="@+id/pass1"
                             android:layout_width="wrap_content"
@@ -112,10 +114,10 @@
                             android:adjustViewBounds="true"
                             android:cursorVisible="false"
                             android:textColor="@android:color/transparent"
-                            android:inputType="numberPassword"
-                            >
+                            android:inputType="numberPassword">
                         <requestFocus/>
                     </EditText>
+                    <!-- End Edit Text Passcode -->
 
                     <!-- Start Blank Space -->
                     <View
@@ -124,6 +126,7 @@
                             android:layout_weight=".2"/>
                     <!-- End Blank Space -->
 
+                    <!-- Start Edit Text Passcode -->
                     <EditText
                             android:id="@+id/pass2"
                             android:layout_width="wrap_content"
@@ -135,9 +138,9 @@
                             android:cursorVisible="false"
                             android:textColor="@android:color/transparent"
                             android:gravity="center"
-                            android:inputType="numberPassword"
-                            >
+                            android:inputType="numberPassword">
                     </EditText>
+                    <!-- End Edit Text Passcode -->
 
                     <!-- Start Blank Space -->
                     <View
@@ -146,6 +149,7 @@
                             android:layout_weight=".2"/>
                     <!-- End Blank Space -->
 
+                    <!-- Start Edit Text Passcode -->
                     <EditText
                             android:id="@+id/pass3"
                             android:layout_width="wrap_content"
@@ -157,9 +161,9 @@
                             android:cursorVisible="false"
                             android:textColor="@android:color/transparent"
                             android:gravity="center"
-                            android:inputType="numberPassword"
-                            >
+                            android:inputType="numberPassword">
                     </EditText>
+                    <!-- End Edit Text Passcode -->
 
                     <!-- Start Blank Space -->
                     <View
@@ -168,6 +172,7 @@
                             android:layout_weight=".2"/>
                     <!-- End Blank Space -->
 
+                    <!-- Start Edit Text Passcode -->
                     <EditText
                             android:id="@+id/pass4"
                             android:layout_width="wrap_content"
@@ -179,9 +184,9 @@
                             android:cursorVisible="false"
                             android:textColor="@android:color/transparent"
                             android:gravity="center"
-                            android:inputType="numberPassword"
-                            >
+                            android:inputType="numberPassword">
                     </EditText>
+                    <!-- End Edit Text Passcode -->
 
                     <!-- Start Blank Space -->
                     <View
@@ -190,19 +195,19 @@
                             android:layout_weight=".2"/>
                     <!-- End Blank Space -->
 
+                    <!-- Start Edit Text Passcode -->
                     <EditText
                             android:id="@+id/passcode"
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
                             android:gravity="center"
                             android:visibility="gone"
-                            android:inputType="numberPassword">
-
-                    </EditText>
+                            android:inputType="numberPassword"/>
+                    <!-- End Edit Text Passcode -->
 
                 </LinearLayout>
-
-
+                <!-- End Linear Layout Passcode -->
+                
             </LinearLayout>
             <!-- End Linear Layout Content -->
 
