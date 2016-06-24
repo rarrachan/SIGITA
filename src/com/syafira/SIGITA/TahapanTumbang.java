@@ -95,7 +95,7 @@ public class TahapanTumbang extends Activity {
         text_sosial_kemandirian.setTypeface(typeface);
 
         // Get Data from Database
-        Cursor cursor = db.getTahap();
+        Cursor cursor = db.getTahapan();
         cursor.moveToFirst();
         if (!cursor.isAfterLast()) {
             do {

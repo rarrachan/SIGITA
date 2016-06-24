@@ -167,7 +167,7 @@ public class UbahRiwayat extends Activity {
         riwayat_dokter.setText(cursor.getString(cursor.getColumnIndex("riwayat_dokter")));
 
         // List Spinner Vaksin
-        Cursor cursor_vaksin = db.getOneListByBulanLeftJoinRiwayatID(bulan, riwayatID);
+        Cursor cursor_vaksin = db.getListByBulanLeftJoinRiwayatID(bulan, riwayatID);
         cursor_vaksin.moveToFirst();
         if (!cursor_vaksin.isAfterLast()) {
             do {

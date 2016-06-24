@@ -42,7 +42,7 @@ public class DBHelper extends SQLiteOpenHelper {
         createDokumentasi(db);
         createList(db);
         createRiwayat(db);
-        createTahap(db);
+        createTahapan(db);
         createGaleri(db);
         createMedis(db);
     }
@@ -180,7 +180,7 @@ public class DBHelper extends SQLiteOpenHelper {
     }
 
     // Delete Profil from Database
-    public boolean deleteProfil(int id) {
+    public boolean deleteProfil(Integer id) {
 
         // Delete Data
         return db.delete("profil", "profilID =" + id, null) < 1;
@@ -2368,14 +2368,14 @@ public class DBHelper extends SQLiteOpenHelper {
     }
 
     // Delete Dokumentasi Gizi  from Database
-    public boolean deleteDokumentasi(int id) {
+    public boolean deleteDokumentasi(Integer id) {
         
         // Delete Data
         return db.delete("dokumentasi_gizi", "dokumentasiID =" + id, null) < 1;
     }
 
     // Delete Dokumentasi Gizi from ProfilID from Database
-    public boolean deleteDokumentasiProfilID(int profilID) {
+    public boolean deleteDokumentasiProfilID(Integer profilID) {
         
         // Delete Data
         return db.delete("dokumentasi_gizi", "dokumentasi_profilID =" + profilID, null) < 1;
@@ -2499,20 +2499,20 @@ public class DBHelper extends SQLiteOpenHelper {
     }
 
     // Get One List Imunisasi By Bulan Join Riwayat Imunisasi From Database For Tambah Riwayat
-    public Cursor getOneListByBulanLeftJoinRiwayat(Integer bulan) {
+    public Cursor getListByBulanLeftJoinRiwayat(Integer bulan) {
         Cursor cursor = db.rawQuery("SELECT * FROM list_imunisasi LEFT OUTER JOIN riwayat_imunisasi on list_imunisasi.list_vaksin = riwayat_imunisasi.riwayat_vaksin WHERE list_imunisasi.list_bulan <= " + bulan + " AND riwayat_imunisasi.riwayatID ISNULL", null);
         cursor.moveToFirst();
         return cursor;
     }
 
     // Get One List Imunisasi By Bulan Join Riwayat Imunisasi From Database For Ubah Riwayat
-    public Cursor getOneListByBulanLeftJoinRiwayatID(Integer bulan, Integer riwayatID) {
+    public Cursor getListByBulanLeftJoinRiwayatID(Integer bulan, Integer riwayatID) {
         Cursor cursor = db.rawQuery("SELECT * FROM list_imunisasi LEFT OUTER JOIN riwayat_imunisasi on list_imunisasi.list_vaksin = riwayat_imunisasi.riwayat_vaksin WHERE list_imunisasi.list_bulan <= " + bulan + " AND (riwayat_imunisasi.riwayatID == " + riwayatID + " OR riwayat_imunisasi.riwayatID ISNULL)", null);
         cursor.moveToFirst();
         return cursor;
     }
 
-    // Get One List Imunisasi Join Riwayat Imunisasi Closest Value From Database
+    // Get One List Imunisasi Join Riwayat Imunisasi Closest Value From Database For Alarm Imunisasi
     public Cursor getListJoinRiwayatClosestValue(Integer bulan, Integer profilID) {
         Cursor cursor = db.rawQuery("SELECT * FROM list_imunisasi LEFT OUTER JOIN riwayat_imunisasi ON list_imunisasi.list_vaksin = riwayat_imunisasi.riwayat_vaksin AND riwayat_imunisasi.riwayat_profilID = " + profilID + " WHERE list_imunisasi.list_bulan BETWEEN 0 AND " + bulan + "+1 AND riwayat_imunisasi.riwayatID ISNULL ORDER BY ABS( " + bulan + " - riwayat_imunisasi.riwayat_bulan)", null);
         cursor.moveToFirst();
@@ -2576,7 +2576,7 @@ public class DBHelper extends SQLiteOpenHelper {
     }
 
     // Update Riwayat Imunisasi to Database
-    public long updateRiwayat(Integer riwayatID, Integer profilID, String tanggal, String vaksin, String usia, int bulan,
+    public long updateRiwayat(Integer riwayatID, Integer profilID, String tanggal, String vaksin, String usia, Integer bulan,
                               String berat, String tinggi, String dokter, String rumahsakit) {
 
         // Open Database to Write
@@ -2599,21 +2599,21 @@ public class DBHelper extends SQLiteOpenHelper {
     }
 
     // Delete Riwayat Imunisasi from Database
-    public boolean deleteRiwayat(int id) {
+    public boolean deleteRiwayat(Integer id) {
         
         // Delete Data
         return db.delete("riwayat_imunisasi", "riwayatID =" + id, null) < 1;
     }
 
     // Delete Riwayat Imunisasi from ProfilID from Database
-    public boolean deleteRiwayatProfilID(int profilID) {
+    public boolean deleteRiwayatProfilID(Integer profilID) {
        
         // Delete Data
         return db.delete("riwayat_imunisasi", "riwayat_profilID =" + profilID, null) < 1;
     }
 
     // Create Table Tahapan Tumbuh Kembang
-    public void createTahap(SQLiteDatabase db) {
+    public void createTahapan(SQLiteDatabase db) {
 
         // Create Table Tahap Tumbuh Kembang
         String create_tahap_tumbang = "create table tahap_tumbang (" +
@@ -2678,7 +2678,7 @@ public class DBHelper extends SQLiteOpenHelper {
     }
 
     // Get Tahapan Tumbuh Kembang from Database
-    public Cursor getTahap() {
+    public Cursor getTahapan() {
         Cursor cursor = db.rawQuery("SELECT * FROM tahap_tumbang", null);
         cursor.moveToFirst();
         return cursor;
@@ -2749,14 +2749,14 @@ public class DBHelper extends SQLiteOpenHelper {
     }
 
     // Delete Galeri Tumbuh Kembang from Database
-    public boolean deleteGaleri(int id) {
+    public boolean deleteGaleri(Integer id) {
         
         // Delete Data
         return db.delete("galeri_tumbang", "galeriID =" + id, null) < 1;
     }
 
     // Delete Galeri Tumbuh Kembang from ProfilID from Database
-    public boolean deleteGaleriProfilID(int id) {
+    public boolean deleteGaleriProfilID(Integer id) {
         
         // Delete Data
         return db.delete("galeri_tumbang", "galeri_profilID =" + id, null) < 1;
@@ -2782,7 +2782,7 @@ public class DBHelper extends SQLiteOpenHelper {
     }
 
     // Insert Rekam Medis to Database
-    public long insertMedis(int id, String tanggalberobat, String namadokter, String rumahsakit, String tinggibadan,
+    public long insertMedis(Integer id, String tanggalberobat, String namadokter, String rumahsakit, String tinggibadan,
                             String beratbadan, String keluhan, String tindakan, String obat) {
 
         // Open Database to Write
@@ -2819,7 +2819,7 @@ public class DBHelper extends SQLiteOpenHelper {
     }
 
     // Update Rekam Medis to Database
-    public long updateMedis(int medisID, int profilID, String tanggalberobat, String namadokter, String rumahsakit, String tinggibadan,
+    public long updateMedis(Integer medisID, Integer profilID, String tanggalberobat, String namadokter, String rumahsakit, String tinggibadan,
                             String beratbadan, String keluhan, String tindakan, String obat) {
 
         // Open Database to Write
@@ -2841,14 +2841,14 @@ public class DBHelper extends SQLiteOpenHelper {
     }
 
     // Delete Rekam Medis from Database
-    public boolean deleteMedis(int id) {
+    public boolean deleteMedis(Integer id) {
         
         // Delete Data
         return db.delete("rekam_medis", "medisID =" + id, null) < 1;
     }
 
     // Delete Rekam Medis from ProfilID from Database
-    public boolean deleteMedisProfilID(int profilID) {
+    public boolean deleteMedisProfilID(Integer profilID) {
         
         // Delete Data
         return db.delete("rekam_medis", "medis_profilID =" + profilID, null) < 1;

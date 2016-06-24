@@ -629,6 +629,8 @@ public class ProfilCekPasscode extends Activity {
                     } else if (pass4.getText().length() == 0) {
                         pass4.requestFocus();
                     }
+                    InputMethodManager imm = (InputMethodManager) getSystemService(Context.INPUT_METHOD_SERVICE);
+                    imm.toggleSoftInput(InputMethodManager.SHOW_FORCED, InputMethodManager.HIDE_IMPLICIT_ONLY);
                 }
                 return true;
             }
@@ -647,6 +649,8 @@ public class ProfilCekPasscode extends Activity {
                     } else if (pass4.getText().length() == 0) {
                         pass4.requestFocus();
                     }
+                    InputMethodManager imm = (InputMethodManager) getSystemService(Context.INPUT_METHOD_SERVICE);
+                    imm.toggleSoftInput(InputMethodManager.SHOW_FORCED, InputMethodManager.HIDE_IMPLICIT_ONLY);
                 }
                 return true;
             }
@@ -665,6 +669,8 @@ public class ProfilCekPasscode extends Activity {
                     } else if (pass4.getText().length() == 0) {
                         pass4.requestFocus();
                     }
+                    InputMethodManager imm = (InputMethodManager) getSystemService(Context.INPUT_METHOD_SERVICE);
+                    imm.toggleSoftInput(InputMethodManager.SHOW_FORCED, InputMethodManager.HIDE_IMPLICIT_ONLY);
                 }
                 return true;
             }
@@ -683,6 +689,8 @@ public class ProfilCekPasscode extends Activity {
                     } else if (pass4.getText().length() == 0) {
                         pass4.requestFocus();
                     }
+                    InputMethodManager imm = (InputMethodManager) getSystemService(Context.INPUT_METHOD_SERVICE);
+                    imm.toggleSoftInput(InputMethodManager.SHOW_FORCED, InputMethodManager.HIDE_IMPLICIT_ONLY);
                 }
                 return true;
             }

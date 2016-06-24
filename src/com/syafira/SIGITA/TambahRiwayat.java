@@ -215,7 +215,7 @@ public class TambahRiwayat extends Activity {
 
                         riwayat_jenisvaksin.setClickable(true);
                         riwayat_jenisvaksin.setSelection(0);
-                        Cursor cursor = db.getOneListByBulanLeftJoinRiwayat(mon);
+                        Cursor cursor = db.getListByBulanLeftJoinRiwayat(mon);
                         cursor.moveToFirst();
                         if (!cursor.isAfterLast()) {
                             do {

@@ -164,7 +164,7 @@ public class DetailProfil extends Activity {
         final String pass = cursor.getString(cursor.getColumnIndex("profil_passcode"));
 
         // Set OnClickListener
-        if (profil_foto.getDrawable() == null){
+        if (profil_foto.getDrawable() != null){
             profil_foto.setOnClickListener(new OnClickListener() {
                 @Override
                 public void onClick(View v) {
@@ -177,6 +177,7 @@ public class DetailProfil extends Activity {
                 }
             });
         }
+
         button_passcode.setOnClickListener(new OnClickListener() {
             @Override
             public void onClick(View v) {
