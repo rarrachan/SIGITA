@@ -29,7 +29,6 @@ public class UbahRiwayat extends Activity {
     // Declare
     private TextView ubah_riwayat;
     private TextView text_footer;
-    private TextView titikdua;
     private TextView text_riwayat_nama;
     private TextView riwayat_nama;
     private TextView text_riwayat_usia;
@@ -79,7 +78,6 @@ public class UbahRiwayat extends Activity {
         // Load Widget
         ubah_riwayat = (TextView) findViewById(R.id.ubah_riwayat);
         text_footer = (TextView) findViewById(R.id.text_footer);
-        titikdua = (TextView) findViewById(R.id.titikdua);
         text_riwayat_nama = (TextView) findViewById(R.id.text_riwayat_nama);
         riwayat_nama = (TextView) findViewById(R.id.riwayat_nama);
         text_riwayat_usia = (TextView) findViewById(R.id.text_riwayat_usia);
@@ -105,7 +103,6 @@ public class UbahRiwayat extends Activity {
         final Typeface typeface = Typeface.createFromAsset(getAssets(), "teen-webfont.ttf");
         ubah_riwayat.setTypeface(typeface);
         text_footer.setTypeface(typeface);
-        titikdua.setTypeface(typeface);
         text_riwayat_nama.setTypeface(typeface);
         riwayat_nama.setTypeface(typeface);
         text_riwayat_usia.setTypeface(typeface);

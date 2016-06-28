@@ -118,33 +118,15 @@
                                 android:orientation="vertical"
                                 android:layout_weight="1">
 
-                            <LinearLayout
-                                    android:layout_width="fill_parent"
+                            <!-- Start Text View Profil Nama -->
+                            <TextView
+                                    android:id="@+id/text_profil_nama"
+                                    android:layout_width="wrap_content"
                                     android:layout_height="wrap_content"
-                                    android:orientation="horizontal">
-
-                                <!-- Start Text View Profil Nama -->
-                                <TextView
-                                        android:id="@+id/text_profil_nama"
-                                        android:layout_width="wrap_content"
-                                        android:layout_height="wrap_content"
-                                        android:textColor="#D046F2"
-                                        android:text="@string/profil_nama"
-                                        style="@android:style/TextAppearance.DeviceDefault.Medium"/>
-                                <!-- End Text View Profil Nama -->
-
-                                <!-- Start Text View Titik Dua -->
-                                <TextView
-                                        android:id="@+id/titikdua"
-                                        android:layout_width="wrap_content"
-                                        android:layout_height="wrap_content"
-                                        android:textColor="#D046F2"
-                                        android:text="@string/titikdua"
-                                        style="@android:style/TextAppearance.DeviceDefault.Medium"
-                                        android:layout_marginLeft="5dp"/>
-                                <!-- End Text View Titik Dua -->
-
-                            </LinearLayout>
+                                    android:textColor="#D046F2"
+                                    android:text="@string/profil_nama"
+                                    style="@android:style/TextAppearance.DeviceDefault.Medium"/>
+                            <!-- End Text View Profil Nama -->
 
                             <!-- Start Edit Text Profil Nama -->
                             <EditText
@@ -156,44 +138,22 @@
                                     style="@android:style/TextAppearance.DeviceDefault.Medium"/>
                             <!-- End Edit Text Profil Nama -->
 
-                            <!-- Start Linear Layout Golongan Darah -->
-                            <LinearLayout
-                                    android:layout_width="fill_parent"
+                            <!-- Start Text View Golongan Darah -->
+                            <TextView
+                                    android:id="@+id/text_profil_golongandarah"
+                                    android:layout_width="wrap_content"
                                     android:layout_height="wrap_content"
-                                    android:orientation="horizontal"
-                                    android:layout_weight="1">
-
-                                <!-- Start Text View Golongan Darah -->
-                                <TextView
-                                        android:id="@+id/text_profil_golongandarah"
-                                        android:layout_width="wrap_content"
-                                        android:layout_height="wrap_content"
-                                        android:textColor="#D046F2"
-                                        android:text="@string/profil_golongandarah"
-                                        style="@android:style/TextAppearance.DeviceDefault.Medium"/>
-                                <!-- End Text View Golongan Darah -->
-
-                                <!-- Start Text View Titik Dua -->
-                                <TextView
-                                        android:id="@+id/titikdua"
-                                        android:layout_width="wrap_content"
-                                        android:layout_height="wrap_content"
-                                        android:textColor="#D046F2"
-                                        android:text="@string/titikdua"
-                                        style="@android:style/TextAppearance.DeviceDefault.Medium"
-                                        android:layout_marginLeft="5dp"/>
-                                <!-- End Text View Titik Dua -->
-
-                            </LinearLayout>
-                            <!-- End Linear Layout Golongan Darah -->
+                                    android:textColor="#D046F2"
+                                    android:text="@string/profil_golongandarah"
+                                    style="@android:style/TextAppearance.DeviceDefault.Medium"/>
+                            <!-- End Text View Golongan Darah -->
 
                             <!-- Start Radio Group Golongan Darah -->
                             <RadioGroup
                                     android:id="@+id/profil_golongandarah"
                                     android:layout_width="fill_parent"
                                     android:layout_height="wrap_content"
-                                    android:orientation="horizontal"
-                                    android:layout_weight="1">
+                                    android:orientation="horizontal">
 
                                 <!-- Start Radio Button Golongan Darah A -->
                                 <RadioButton
@@ -258,37 +218,15 @@
                             </RadioGroup>
                             <!-- End Radio Group Golongan Darah -->
 
-                            <!-- Start Linear Layout Panjang Lahir -->
-                            <LinearLayout
-                                    android:layout_width="fill_parent"
+                            <!-- Start Text View Panjang Lahir -->
+                            <TextView
+                                    android:id="@+id/text_profil_panjanglahir"
+                                    android:layout_width="wrap_content"
                                     android:layout_height="wrap_content"
-                                    android:orientation="horizontal"
-                                    android:gravity="center_vertical" 
-                                    android:layout_weight="1">
-
-                                <!-- Start Text View Panjang Lahir -->
-                                <TextView
-                                        android:id="@+id/text_profil_panjanglahir"
-                                        android:layout_width="wrap_content"
-                                        android:layout_height="wrap_content"
-                                        android:textColor="#D046F2"
-                                        android:text="@string/profil_panjanglahir"
-                                        style="@android:style/TextAppearance.DeviceDefault.Medium"/>
-                                <!-- End Text View Panjang Lahir -->
-
-                                <!-- Start Linear Layout Panjang Lahir -->
-                                <TextView
-                                        android:id="@+id/titikdua"
-                                        android:layout_width="wrap_content"
-                                        android:layout_height="wrap_content"
-                                        android:textColor="#D046F2"
-                                        android:text="@string/titikdua"
-                                        style="@android:style/TextAppearance.DeviceDefault.Medium"
-                                        android:layout_marginLeft="5dp"/>
-                                <!-- End Linear Layout Panjang Lahir -->
-
-                            </LinearLayout>
-                            <!-- End Linear Layout Panjang Lahir -->
+                                    android:textColor="#D046F2"
+                                    android:text="@string/profil_panjanglahir"
+                                    style="@android:style/TextAppearance.DeviceDefault.Medium"/>
+                            <!-- End Text View Panjang Lahir -->
 
                             <!-- Start Linear Layout Panjang Lahir -->
                             <LinearLayout
@@ -322,36 +260,15 @@
                             </LinearLayout>
                             <!-- End Linear Layout Panjang Lahir -->
 
-                            <!-- Start Linear Layout Berat Lahir -->
-                            <LinearLayout
-                                    android:layout_width="fill_parent"
+                            <!-- Start Text View Berat Lahir -->
+                            <TextView
+                                    android:id="@+id/text_profil_beratlahir"
+                                    android:layout_width="wrap_content"
                                     android:layout_height="wrap_content"
-                                    android:orientation="horizontal"
-                                    android:gravity="center_vertical">
-
-                                <!-- Start Text View Berat Lahir -->
-                                <TextView
-                                        android:id="@+id/text_profil_beratlahir"
-                                        android:layout_width="wrap_content"
-                                        android:layout_height="wrap_content"
-                                        android:textColor="#D046F2"
-                                        android:text="@string/profil_beratlahir"
-                                        style="@android:style/TextAppearance.DeviceDefault.Medium"/>
-                                <!-- End Text View Berat Lahir -->
-
-                                <!-- Start Linear Layout Berat Lahir -->
-                                <TextView
-                                        android:id="@+id/titikdua"
-                                        android:layout_width="wrap_content"
-                                        android:layout_height="wrap_content"
-                                        android:textColor="#D046F2"
-                                        android:text="@string/titikdua"
-                                        style="@android:style/TextAppearance.DeviceDefault.Medium"
-                                        android:layout_marginLeft="5dp"/>
-                                <!-- End Linear Layout Berat Lahir -->
-
-                            </LinearLayout>
-                            <!-- End Linear Layout Berat Lahir -->
+                                    android:textColor="#D046F2"
+                                    android:text="@string/profil_beratlahir"
+                                    style="@android:style/TextAppearance.DeviceDefault.Medium"/>
+                            <!-- End Text View Berat Lahir -->
 
                             <!-- Start Linear Layout Berat Lahir -->
                             <LinearLayout
@@ -377,7 +294,7 @@
                                         android:layout_width="0dp"
                                         android:layout_height="wrap_content"
                                         android:textColor="#D046F2"
-                                        android:text="@string/profil_gram"
+                                        android:text="@string/profil_kilogram"
                                         style="@android:style/TextAppearance.DeviceDefault.Medium"
                                         android:layout_weight=".5"/>
                                 <!-- End Text View Gram -->
@@ -385,36 +302,15 @@
                             </LinearLayout>
                             <!-- End Linear Layout Berat Lahir -->
 
-                            <!-- Start Linear Layout Alergi -->
-                            <LinearLayout
-                                    android:layout_width="fill_parent"
+                            <!-- Start Text View Alergi -->
+                            <TextView
+                                    android:id="@+id/text_profil_alergi"
+                                    android:layout_width="wrap_content"
                                     android:layout_height="wrap_content"
-                                    android:orientation="horizontal"
-                                    android:layout_weight="1">
-
-                                <!-- Start Text View Alergi -->
-                                <TextView
-                                        android:id="@+id/text_profil_alergi"
-                                        android:layout_width="wrap_content"
-                                        android:layout_height="wrap_content"
-                                        android:textColor="#D046F2"
-                                        android:text="@string/profil_alergi"
-                                        style="@android:style/TextAppearance.DeviceDefault.Medium"/>
-                                <!-- End Text View Alergi -->
-
-                                <!-- Start Text View Titik Dua -->
-                                <TextView
-                                        android:id="@+id/titikdua"
-                                        android:layout_width="wrap_content"
-                                        android:layout_height="wrap_content"
-                                        android:textColor="#D046F2"
-                                        android:text="@string/titikdua"
-                                        style="@android:style/TextAppearance.DeviceDefault.Medium"
-                                        android:layout_marginLeft="5dp"/>
-                                <!-- End Text View Titik Dua-->
-
-                            </LinearLayout>
-                            <!-- End Linear Layout Alergi -->
+                                    android:textColor="#D046F2"
+                                    android:text="@string/profil_alergi"
+                                    style="@android:style/TextAppearance.DeviceDefault.Medium"/>
+                            <!-- End Text View Alergi -->
 
                             <!-- Start Edit Text Alergi -->
                             <EditText
@@ -425,36 +321,16 @@
                                     android:hint="@string/profil_hint_alergi"
                                     style="@android:style/TextAppearance.DeviceDefault.Medium"/>
                             <!-- End Edit Text Alergi -->
-                            
-                            <!-- Start Linear Layout Penyakit Kronis -->
-                            <LinearLayout
-                                    android:layout_width="fill_parent"
+
+                            <!-- Start Text View Penyakit Kronis -->
+                            <TextView
+                                    android:id="@+id/text_profil_penyakitkronis"
+                                    android:layout_width="wrap_content"
                                     android:layout_height="wrap_content"
-                                    android:orientation="horizontal">
-
-                                <!-- Start Text View Penyakit Kronis -->
-                                <TextView
-                                        android:id="@+id/text_profil_penyakitkronis"
-                                        android:layout_width="wrap_content"
-                                        android:layout_height="wrap_content"
-                                        android:textColor="#D046F2"
-                                        android:text="@string/profil_penyakitkronis"
-                                        style="@android:style/TextAppearance.DeviceDefault.Medium"/>
-                                <!-- End Text View Penyakit Kronis -->
-
-                                <!-- Start Text View Titik Dua -->
-                                <TextView
-                                        android:id="@+id/titikdua"
-                                        android:layout_width="wrap_content"
-                                        android:layout_height="wrap_content"
-                                        android:textColor="#D046F2"
-                                        android:text="@string/titikdua"
-                                        style="@android:style/TextAppearance.DeviceDefault.Medium"
-                                        android:layout_marginLeft="5dp"/>
-                                <!-- End Text View Titik Dua -->
-
-                            </LinearLayout>
-                            <!-- End Linear Layout Penyakit Kronis -->
+                                    android:textColor="#D046F2"
+                                    android:text="@string/profil_penyakitkronis"
+                                    style="@android:style/TextAppearance.DeviceDefault.Medium"/>
+                            <!-- End Text View Penyakit Kronis -->
 
                             <!-- Start Edit Text Penyakit Kronis -->
                             <EditText
@@ -483,34 +359,14 @@
                                 android:orientation="vertical"
                                 android:layout_weight="1">
 
-                            <!-- Start Linear Layout Jenis Kelamin -->
-                            <LinearLayout
-                                    android:layout_width="fill_parent"
+                            <!-- Start Text View Jenis Kelamin -->
+                            <TextView
+                                    android:id="@+id/text_profil_jeniskelamin"
+                                    android:layout_width="wrap_content"
                                     android:layout_height="wrap_content"
-                                    android:orientation="horizontal">
-
-                                <!-- Start Text View Jenis Kelamin -->
-                                <TextView
-                                        android:id="@+id/text_profil_jeniskelamin"
-                                        android:layout_width="wrap_content"
-                                        android:layout_height="wrap_content"
-                                        android:textColor="#D046F2"
-                                        android:text="@string/profil_jeniskelamin"
-                                        style="@android:style/TextAppearance.DeviceDefault.Medium"/>
-                                <!-- End Text View Jenis Kelamin -->
-
-                                <!-- Start Text View Titik Dua -->
-                                <TextView
-                                        android:id="@+id/titikdua"
-                                        android:layout_width="wrap_content"
-                                        android:layout_height="wrap_content"
-                                        android:textColor="#D046F2"
-                                        android:text="@string/titikdua"
-                                        style="@android:style/TextAppearance.DeviceDefault.Medium"
-                                        android:layout_marginLeft="5dp"/>
-                                <!-- End Text View Titik Dua -->
-
-                            </LinearLayout>
+                                    android:textColor="#D046F2"
+                                    android:text="@string/profil_jeniskelamin"
+                                    style="@android:style/TextAppearance.DeviceDefault.Medium"/>
                             <!-- End Text View Jenis Kelamin -->
 
                             <!-- Start Radio Group Jenis Kelamin -->
@@ -545,35 +401,15 @@
                             </RadioGroup>
                             <!-- End Radio Group Jenis Kelamin -->
 
-                            <!-- Start Linear Layout Tempat Lahir -->
-                            <LinearLayout
-                                    android:layout_width="fill_parent"
+                            <!-- Start Text View Tempat Lahir -->
+                            <TextView
+                                    android:id="@+id/text_profil_tempatlahir"
+                                    android:layout_width="wrap_content"
                                     android:layout_height="wrap_content"
-                                    android:orientation="horizontal">
-
-                                <!-- Start Text View Tempat Lahir -->
-                                <TextView
-                                        android:id="@+id/text_profil_tempatlahir"
-                                        android:layout_width="wrap_content"
-                                        android:layout_height="wrap_content"
-                                        android:textColor="#D046F2"
-                                        android:text="@string/profil_tempatlahir"
-                                        style="@android:style/TextAppearance.DeviceDefault.Medium"/>
-                                <!-- End Text View Tempat Lahir -->
-
-                                <!-- Start Text View Titik Dua -->
-                                <TextView
-                                        android:id="@+id/titikdua"
-                                        android:layout_width="wrap_content"
-                                        android:layout_height="wrap_content"
-                                        android:textColor="#D046F2"
-                                        android:text="@string/titikdua"
-                                        style="@android:style/TextAppearance.DeviceDefault.Medium"
-                                        android:layout_marginLeft="5dp"/>
-                                <!-- End Text View Titik Dua -->
-
-                            </LinearLayout>
-                            <!-- End Linear Layout Tempat Lahir -->
+                                    android:textColor="#D046F2"
+                                    android:text="@string/profil_tempatlahir"
+                                    style="@android:style/TextAppearance.DeviceDefault.Medium"/>
+                            <!-- End Text View Tempat Lahir -->
 
                             <!-- Start Edit Text Tempat Lahir -->
                             <EditText
@@ -585,35 +421,15 @@
                                     style="@android:style/TextAppearance.DeviceDefault.Medium"/>
                             <!-- End Edit Text Tempat Lahir -->
 
-                            <!-- Start Linear Layout Tanggal Lahir -->
-                            <LinearLayout
-                                    android:layout_width="fill_parent"
+                            <!-- Start Text View Tanggal Lahir -->
+                            <TextView
+                                    android:id="@+id/text_profil_tanggallahir"
+                                    android:layout_width="wrap_content"
                                     android:layout_height="wrap_content"
-                                    android:orientation="horizontal">
-
-                                <!-- Start Text View Tanggal Lahir -->
-                                <TextView
-                                        android:id="@+id/text_profil_tanggallahir"
-                                        android:layout_width="wrap_content"
-                                        android:layout_height="wrap_content"
-                                        android:textColor="#D046F2"
-                                        android:text="@string/profil_tanggallahir"
-                                        style="@android:style/TextAppearance.DeviceDefault.Medium"/>
-                                <!-- End Text View Tanggal Lahir -->
-
-                                <!-- Start Text View Titik Dua -->
-                                <TextView
-                                        android:id="@+id/titikdua"
-                                        android:layout_width="wrap_content"
-                                        android:layout_height="wrap_content"
-                                        android:textColor="#D046F2"
-                                        android:text="@string/titikdua"
-                                        style="@android:style/TextAppearance.DeviceDefault.Medium"
-                                        android:layout_marginLeft="5dp"/>
-                                <!-- End Text View Titik Dua -->
-
-                            </LinearLayout>
-                            <!-- End Linear Layout Tanggal Lahir -->
+                                    android:textColor="#D046F2"
+                                    android:text="@string/profil_tanggallahir"
+                                    style="@android:style/TextAppearance.DeviceDefault.Medium"/>
+                            <!-- End Text View Tanggal Lahir -->
 
                             <!-- Start Edit Text Tanggal Lahir -->
                             <EditText
@@ -626,35 +442,15 @@
                                     style="@android:style/TextAppearance.DeviceDefault.Medium"/>
                             <!-- End Edit Text Tanggal lahir -->
 
-                            <!-- Start Linear Layout Foto -->
-                            <LinearLayout
-                                    android:layout_width="fill_parent"
+                            <!-- Start Text View Foto -->
+                            <TextView
+                                    android:id="@+id/text_profil_foto"
+                                    android:layout_width="wrap_content"
                                     android:layout_height="wrap_content"
-                                    android:orientation="horizontal">
-
-                                <!-- Start Text View Foto -->
-                                <TextView
-                                        android:id="@+id/text_profil_foto"
-                                        android:layout_width="wrap_content"
-                                        android:layout_height="wrap_content"
-                                        android:textColor="#D046F2"
-                                        android:text="@string/profil_foto"
-                                        style="@android:style/TextAppearance.DeviceDefault.Medium"/>
-                                <!-- End Text View Foto -->
-
-                                <!-- Start Text View Titik Dua -->
-                                <TextView
-                                        android:id="@+id/titikdua"
-                                        android:layout_width="wrap_content"
-                                        android:layout_height="wrap_content"
-                                        android:textColor="#D046F2"
-                                        android:text="@string/titikdua"
-                                        style="@android:style/TextAppearance.DeviceDefault.Medium"
-                                        android:layout_marginLeft="5dp"/>
-                                <!-- End Text View Titik Dua -->
-
-                            </LinearLayout>
-                            <!-- End Linear Layout Foto -->
+                                    android:textColor="#D046F2"
+                                    android:text="@string/profil_foto"
+                                    style="@android:style/TextAppearance.DeviceDefault.Medium"/>
+                            <!-- End Text View Foto -->
 
                             <!-- Start Image View Foto -->
                             <ImageView
@@ -664,7 +460,6 @@
                                     android:adjustViewBounds="true"
                                     android:src="@drawable/icon_tambahfoto"
                                     android:contentDescription="@string/app_name"
-                                    android:layout_weight="1"
                                     android:layout_gravity="center"/>
                             <!-- End Image View Foto -->
 

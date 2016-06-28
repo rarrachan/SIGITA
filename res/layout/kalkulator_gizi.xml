@@ -95,36 +95,15 @@
                             android:orientation="vertical"
                             android:layout_weight="1">
 
-                        <!-- Start Linear Layout Tanggal Lahir -->
-                        <LinearLayout
-                                android:layout_width="wrap_content"
-                                android:layout_height="0dp"
-                                android:orientation="horizontal"
-                                android:layout_weight="1">
-
-                            <!-- Start Text View Tanggal Lahir -->
-                            <TextView
-                                    android:id="@+id/text_kalkulatorgizi_tanggallahir"
-                                    android:layout_width="fill_parent"
-                                    android:layout_height="wrap_content"
-                                    android:textColor="#D046F2"
-                                    android:text="@string/kalkulatorgizi_tanggallahir"
-                                    style="@android:style/TextAppearance.DeviceDefault.Medium"/>
-                            <!-- End Text View Tanggal Lahir -->
-
-                            <!-- Start Text View Titik Dua -->
-                            <TextView
-                                    android:id="@+id/titikdua"
-                                    android:layout_width="wrap_content"
-                                    android:layout_height="wrap_content"
-                                    android:textColor="#D046F2"
-                                    android:text="@string/titikdua"
-                                    style="@android:style/TextAppearance.DeviceDefault.Medium"
-                                    android:layout_marginLeft="5dp"/>
-                            <!-- End Text View Titik Dua -->
-
-                        </LinearLayout>
-                        <!-- End Linear Layout Tanggal Lahir -->
+                        <!-- Start Text View Tanggal Lahir -->
+                        <TextView
+                                android:id="@+id/text_kalkulatorgizi_tanggallahir"
+                                android:layout_width="fill_parent"
+                                android:layout_height="wrap_content"
+                                android:textColor="#D046F2"
+                                android:text="@string/kalkulatorgizi_tanggallahir"
+                                style="@android:style/TextAppearance.DeviceDefault.Medium"/>
+                        <!-- End Text View Tanggal Lahir -->
 
                         <!-- Start Edit Text Tanggal Lahir -->
                         <EditText
@@ -154,36 +133,15 @@
                                 android:visibility="gone"/>
                         <!-- End Text View Bulan -->
 
-                        <!-- Start Linear Layout Jenis Kelamin -->
-                        <LinearLayout
-                                android:layout_width="wrap_content"
-                                android:layout_height="0dp"
-                                android:orientation="horizontal"
-                                android:layout_weight="1">
-
-                            <!-- Start Text View Jenis Kelamin -->
-                            <TextView
-                                    android:id="@+id/text_kalkulatorgizi_jeniskelamin"
-                                    android:layout_width="fill_parent"
-                                    android:layout_height="wrap_content"
-                                    android:textColor="#D046F2"
-                                    android:text="@string/kalkulatorgizi_jeniskelamin"
-                                    style="@android:style/TextAppearance.DeviceDefault.Medium"/>
-                            <!-- End Text View Jenis Kelamin -->
-
-                            <!-- Start Text View Titik Dua -->
-                            <TextView
-                                    android:id="@+id/titikdua"
-                                    android:layout_width="wrap_content"
-                                    android:layout_height="wrap_content"
-                                    android:textColor="#D046F2"
-                                    android:text="@string/titikdua"
-                                    style="@android:style/TextAppearance.DeviceDefault.Medium"
-                                    android:layout_marginLeft="5dp"/>
-                            <!-- End Text View Titik Dua -->
-
-                        </LinearLayout>
-                        <!-- End Linear Layout Jenis Kelamin -->
+                        <!-- Start Text View Jenis Kelamin -->
+                        <TextView
+                                android:id="@+id/text_kalkulatorgizi_jeniskelamin"
+                                android:layout_width="fill_parent"
+                                android:layout_height="wrap_content"
+                                android:textColor="#D046F2"
+                                android:text="@string/kalkulatorgizi_jeniskelamin"
+                                style="@android:style/TextAppearance.DeviceDefault.Medium"/>
+                        <!-- End Text View Jenis Kelamin -->
 
                         <!-- Start Radio Group Jenis Kelamin -->
                         <RadioGroup
@@ -198,7 +156,7 @@
                                     android:layout_width="wrap_content"
                                     android:layout_weight="1"
                                     android:layout_height="0dp"
-                                    android:text="@string/kalkulatorgizi_lakilaki"
+                                    android:text="@string/profil_lakilaki"
                                     android:textColor="#FF0000"
                                     style="@android:style/TextAppearance.DeviceDefault.Medium"/>
                             <!-- End Radio Button LakiLaki -->
@@ -209,7 +167,7 @@
                                     android:layout_width="wrap_content"
                                     android:layout_weight="1"
                                     android:layout_height="0dp"
-                                    android:text="@string/kalkulatorgizi_perempuan"
+                                    android:text="@string/profil_perempuan"
                                     android:textColor="#FF0000"
                                     style="@android:style/TextAppearance.DeviceDefault.Medium"/>
                             <!-- End Radio Button Perempuan -->
@@ -234,36 +192,15 @@
                             android:orientation="vertical"
                             android:layout_weight="1">
 
-                        <!-- Start Linear Layout Tinggi Badan -->
-                        <LinearLayout
-                                android:layout_width="fill_parent"
+                        <!-- Start Text View Tinggi Badan -->
+                        <TextView
+                                android:id="@+id/text_kalkulatorgizi_tinggibadan"
+                                android:layout_width="wrap_content"
                                 android:layout_height="wrap_content"
-                                android:orientation="horizontal"
-                                android:gravity="center_vertical">
-
-                            <!-- Start Text View Tinggi Badan -->
-                            <TextView
-                                    android:id="@+id/text_kalkulatorgizi_tinggibadan"
-                                    android:layout_width="wrap_content"
-                                    android:layout_height="wrap_content"
-                                    android:textColor="#D046F2"
-                                    android:text="@string/kalkulatorgizi_tinggibadan"
-                                    style="@android:style/TextAppearance.DeviceDefault.Medium"/>
-                            <!-- End Text View Tinggi Badan -->
-
-                            <!-- Start Text View Titik Dua -->
-                            <TextView
-                                    android:id="@+id/titikdua"
-                                    android:layout_width="wrap_content"
-                                    android:layout_height="wrap_content"
-                                    android:textColor="#D046F2"
-                                    android:text="@string/titikdua"
-                                    style="@android:style/TextAppearance.DeviceDefault.Medium"
-                                    android:layout_marginLeft="5dp"/>
-                            <!-- End Text View Titik Dua-->
-
-                        </LinearLayout>
-                        <!-- End Linear Layout Tinggi Badan -->
+                                android:textColor="#D046F2"
+                                android:text="@string/kalkulatorgizi_tinggibadan"
+                                style="@android:style/TextAppearance.DeviceDefault.Medium"/>
+                        <!-- End Text View Tinggi Badan -->
 
                         <!-- Start Linear Layout Tinggi badan-->
                         <LinearLayout
@@ -297,36 +234,16 @@
                         </LinearLayout>
                         <!-- End Linear Layout Tinggi Badan -->
 
-                        <!-- Start Linear Layout Berat Badan -->
-                        <LinearLayout
-                                android:layout_width="fill_parent"
+                        <!-- Start Text View Berat Badan -->
+                        <TextView
+                                android:id="@+id/text_kalkulatorgizi_beratbadan"
+                                android:layout_width="wrap_content"
                                 android:layout_height="wrap_content"
-                                android:orientation="horizontal"
-                                android:gravity="center_vertical">
+                                android:textColor="#D046F2"
+                                android:text="@string/kalkulatorgizi_beratbadan"
+                                style="@android:style/TextAppearance.DeviceDefault.Medium"/>
+                        <!-- Start Text View Jenis Vaksin -->
 
-                            <!-- Start Text View Berat Badan -->
-                            <TextView
-                                    android:id="@+id/text_kalkulatorgizi_beratbadan"
-                                    android:layout_width="wrap_content"
-                                    android:layout_height="wrap_content"
-                                    android:textColor="#D046F2"
-                                    android:text="@string/kalkulatorgizi_beratbadan"
-                                    style="@android:style/TextAppearance.DeviceDefault.Medium"/>
-                            <!-- Start Text View Jenis Vaksin -->
-
-                            <!-- Start Text View Titik Dua-->
-                            <TextView
-                                    android:id="@+id/titikdua"
-                                    android:layout_width="wrap_content"
-                                    android:layout_height="wrap_content"
-                                    android:textColor="#D046F2"
-                                    android:text="@string/titikdua"
-                                    style="@android:style/TextAppearance.DeviceDefault.Medium"
-                                    android:layout_marginLeft="5dp"/>
-                            <!-- End Text View Titik Dua -->
-
-                        </LinearLayout>
-                        <!-- End Linear Layout Berat Badan -->
 
                         <!-- Start Linear Layout Berat Badan -->
                         <LinearLayout

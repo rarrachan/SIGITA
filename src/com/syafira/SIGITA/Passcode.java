@@ -27,7 +27,6 @@ public class Passcode extends Activity {
     private TextView text_passcode_ubah;
     private ImageView button_passcode_ubah;
     private TextView text_footer;
-    private TextView titikdua;
     private SessionManager session;
     private DBHelper db;
     private long lastActivity;
@@ -67,7 +66,6 @@ public class Passcode extends Activity {
         text_passcode_ubah = (TextView) findViewById(R.id.text_passcode_ubah);
         button_passcode_ubah = (ImageView) findViewById(R.id.button_passcode_ubah);
         text_footer = (TextView) findViewById(R.id.text_footer);
-        titikdua = (TextView) findViewById(R.id.titikdua);
 
         // Set Custtom Layout
         final Typeface typeface = Typeface.createFromAsset(getAssets(), "teen-webfont.ttf");
@@ -77,7 +75,6 @@ public class Passcode extends Activity {
         text_passcode_switch.setTypeface(typeface);
         text_passcode_ubah.setTypeface(typeface);
         text_footer.setTypeface(typeface);
-        titikdua.setTypeface(typeface);
 
         // Set Text
         passcode_nama.setText(nama);

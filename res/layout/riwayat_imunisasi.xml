@@ -219,7 +219,7 @@
                                     android:textColor="#FF0000"
                                     style="@android:style/TextAppearance.DeviceDefault.Medium"
                                     android:background="@drawable/border_row"
-                                    android:text="@string/jenis_vaksin"/>
+                                    android:text="@string/jenis_hint_vaksin"/>
                             <!-- End Text View Jenis Vaksin -->
 
                             <!-- Start Text View Usia -->
@@ -234,7 +234,7 @@
                                     android:background="@drawable/border_row"
                                     android:gravity="center_vertical"
                                     style="@android:style/TextAppearance.DeviceDefault.Medium"
-                                    android:text="@string/usia_vaksin"/>
+                                    android:text="@string/usia_hint_vaksin"/>
                             <!-- End Text View Usia -->
 
                             <!-- Start Text View Detail -->

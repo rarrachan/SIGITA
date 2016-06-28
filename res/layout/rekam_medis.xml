@@ -204,7 +204,7 @@
                                     android:textColor="#FF0000"
                                     style="@android:style/TextAppearance.DeviceDefault.Medium"
                                     android:background="@drawable/border_row"
-                                    android:text="@string/tanggal_vaksin"/>
+                                    android:text="@string/medis_tanggalberobat_tabel"/>
                             <!-- End Text View Tanggal -->
 
                             <!-- Start Text View Keluhan -->
@@ -219,7 +219,7 @@
                                     android:textColor="#FF0000"
                                     style="@android:style/TextAppearance.DeviceDefault.Medium"
                                     android:background="@drawable/border_row"
-                                    android:text="@string/medis_keluhan"/>
+                                    android:text="@string/medis_hint_keluhan"/>
                             <!-- End Text View Keluhan -->
 
                             <!-- Start Text View Obat -->
@@ -234,7 +234,7 @@
                                     android:background="@drawable/border_row"
                                     android:gravity="center_vertical"
                                     style="@android:style/TextAppearance.DeviceDefault.Medium"
-                                    android:text="@string/medis_obat"/>
+                                    android:text="@string/medis_hint_obat"/>
                             <!-- End Text View Obat -->
 
                             <!-- Start Text View Detail -->

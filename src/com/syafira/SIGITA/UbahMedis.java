@@ -30,7 +30,6 @@ public class UbahMedis extends Activity {
     // Declare
     private TextView ubah_rekam_medis;
     private TextView text_footer;
-    private TextView titikdua;
     private TextView text_medis_nama;
     private TextView medis_nama;
     private TextView text_medis_tanggalberobat;
@@ -81,7 +80,6 @@ public class UbahMedis extends Activity {
         // Load Widget
         text_footer = (TextView) findViewById(R.id.text_footer);
         ubah_rekam_medis = (TextView) findViewById(R.id.ubah_rekam_medis);
-        titikdua = (TextView) findViewById(R.id.titikdua);
         text_medis_nama = (TextView) findViewById(R.id.text_medis_nama);
         medis_nama = (TextView) findViewById(R.id.medis_nama);
         text_medis_tanggalberobat = (TextView) findViewById(R.id.text_medis_tanggalberobat);
@@ -109,7 +107,6 @@ public class UbahMedis extends Activity {
         Typeface typeface = Typeface.createFromAsset(getAssets(), "teen-webfont.ttf");
         ubah_rekam_medis.setTypeface(typeface);
         text_footer.setTypeface(typeface);
-        titikdua.setTypeface(typeface);
         text_medis_nama.setTypeface(typeface);
         medis_nama.setTypeface(typeface);
         text_medis_tanggalberobat.setTypeface(typeface);

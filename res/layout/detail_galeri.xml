@@ -90,17 +90,6 @@
                             style="@android:style/TextAppearance.DeviceDefault.Medium"/>
                     <!-- End Text View Galeri Nama -->
 
-                    <!-- Start Text View Titik Dua -->
-                    <TextView
-                            android:id="@+id/titikdua"
-                            android:layout_width="wrap_content"
-                            android:layout_height="wrap_content"
-                            android:textColor="#D046F2"
-                            android:text="@string/titikdua"
-                            style="@android:style/TextAppearance.DeviceDefault.Medium"
-                            android:layout_marginLeft="5dp"/>
-                    <!-- End Text View Titik Dua -->
-
                     <!-- Start Text View Galeri Nama -->
                     <TextView
                             android:id="@+id/galeri_nama"
@@ -134,17 +123,6 @@
                             style="@android:style/TextAppearance.DeviceDefault.Medium"/>
                     <!-- End Text View Galeri Tanggal -->
 
-                    <!-- Start Text View Titik Dua -->
-                    <TextView
-                            android:id="@+id/titikdua"
-                            android:layout_width="wrap_content"
-                            android:layout_height="wrap_content"
-                            android:textColor="#D046F2"
-                            android:text="@string/titikdua"
-                            style="@android:style/TextAppearance.DeviceDefault.Medium"
-                            android:layout_marginLeft="5dp"/>
-                    <!-- End Text View Titik Dua -->
-
                     <!-- Start Text View Galeri Tanggal -->
                     <TextView
                             android:id="@+id/galeri_tanggal"
@@ -153,7 +131,6 @@
                             android:textColor="#FF0000"
                             android:focusable="false"
                             android:text="@string/hint_galeri_tanggal"
-                            android:layout_marginBottom="5dp"
                             style="@android:style/TextAppearance.DeviceDefault.Medium"
                             android:layout_marginLeft="5dp"/>
                     <!-- End Text View Galeri Tanggal -->
@@ -166,7 +143,8 @@
                         android:layout_width="fill_parent"
                         android:layout_height="wrap_content"
                         android:orientation="horizontal"
-                        android:layout_marginLeft="20dp">
+                        android:layout_marginLeft="20dp"
+                        android:layout_marginBottom="5dp">
 
                     <!-- Start Text View Galeri Usia -->
                     <TextView
@@ -178,16 +156,6 @@
                             style="@android:style/TextAppearance.DeviceDefault.Medium"/>
                     <!-- End Text View Galeri Usia -->
 
-                    <!-- Start Text View Titik Dua -->
-                    <TextView
-                            android:id="@+id/titikdua"
-                            android:layout_width="wrap_content"
-                            android:layout_height="wrap_content"
-                            android:textColor="#D046F2"
-                            android:text="@string/titikdua"
-                            style="@android:style/TextAppearance.DeviceDefault.Medium"
-                            android:layout_marginLeft="5dp"/>
-                    <!-- End Text View Titik Dua -->
 
                     <!-- Start Text View Galeri Usia -->
                     <TextView
@@ -241,20 +209,9 @@
                                     android:layout_width="wrap_content"
                                     android:layout_height="wrap_content"
                                     android:textColor="#D046F2"
-                                    android:text="@string/profil_foto"
+                                    android:text="@string/galeri_foto"
                                     style="@android:style/TextAppearance.DeviceDefault.Medium"/>
                             <!-- End Text View Foto -->
-
-                            <!-- Start Text View Titik Dua -->
-                            <TextView
-                                    android:id="@+id/titikdua"
-                                    android:layout_width="wrap_content"
-                                    android:layout_height="wrap_content"
-                                    android:textColor="#D046F2"
-                                    android:text="@string/titikdua"
-                                    style="@android:style/TextAppearance.DeviceDefault.Medium"
-                                    android:layout_marginLeft="5dp"/>
-                            <!-- End Text View Titik Dua -->
 
                         </LinearLayout>
                         <!-- End Linear Layout Foto -->
@@ -304,17 +261,6 @@
                                     android:layout_marginBottom="5dp"/>
                             <!-- End Text View Foto -->
 
-                            <!-- Start Text View Titik Dua -->
-                            <TextView
-                                    android:id="@+id/titikdua"
-                                    android:layout_width="wrap_content"
-                                    android:layout_height="wrap_content"
-                                    android:textColor="#D046F2"
-                                    android:text="@string/titikdua"
-                                    style="@android:style/TextAppearance.DeviceDefault.Medium"
-                                    android:layout_marginLeft="5dp"/>
-                            <!-- End Text View Titik Dua -->
-
                         </LinearLayout>
                         <!-- End Linear Layout Foto -->
 
@@ -324,12 +270,12 @@
                                 android:layout_width="fill_parent"
                                 android:layout_height="fill_parent"
                                 android:textColor="#FF0000"
-                                android:text="@string/galeri_keterangan_foto"
+                                android:text="@string/galeri_keterangan_hint_foto"
                                 android:minHeight="130dp"
                                 android:gravity="top"
-                                style="@android:style/TextAppearance.DeviceDefault.Medium"
-                                />
+                                style="@android:style/TextAppearance.DeviceDefault.Medium"/>
                         <!-- End Text View Foto -->
+
                     </LinearLayout>
 
                     <!-- Start Blank Space -->

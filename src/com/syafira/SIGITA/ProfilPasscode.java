@@ -1,16 +1,12 @@
 package com.syafira.SIGITA;
 
 import android.app.Activity;
-import android.app.AlarmManager;
-import android.app.Dialog;
-import android.app.PendingIntent;
 import android.content.Context;
 import android.content.Intent;
 import android.graphics.Bitmap;
 import android.graphics.BitmapFactory;
 import android.graphics.Typeface;
 import android.graphics.drawable.BitmapDrawable;
-import android.graphics.drawable.ColorDrawable;
 import android.graphics.drawable.Drawable;
 import android.media.MediaScannerConnection;
 import android.net.Uri;
@@ -21,7 +17,6 @@ import android.text.TextWatcher;
 import android.view.KeyEvent;
 import android.view.MotionEvent;
 import android.view.View;
-import android.view.WindowManager;
 import android.view.inputmethod.EditorInfo;
 import android.view.inputmethod.InputMethodManager;
 import android.widget.EditText;
@@ -54,7 +49,7 @@ public class ProfilPasscode extends Activity {
         super.onCreate(savedInstanceState);
 
         //Load Layout
-        setContentView(R.layout.profil_passcode);
+        setContentView(R.layout.passcode_tambah);
 
         // Load Session Manager
         session = new SessionManager();

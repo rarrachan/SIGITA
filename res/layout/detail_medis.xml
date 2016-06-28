@@ -101,33 +101,15 @@
                                 android:orientation="vertical"
                                 android:layout_weight="1">
 
-                            <LinearLayout
-                                    android:layout_width="fill_parent"
+                            <!-- Start Text View medis Nama -->
+                            <TextView
+                                    android:id="@+id/text_medis_nama"
+                                    android:layout_width="wrap_content"
                                     android:layout_height="wrap_content"
-                                    android:orientation="horizontal">
-
-                                <!-- Start Text View medis Nama -->
-                                <TextView
-                                        android:id="@+id/text_medis_nama"
-                                        android:layout_width="wrap_content"
-                                        android:layout_height="wrap_content"
-                                        android:textColor="#D046F2"
-                                        android:text="@string/medis_nama"
-                                        style="@android:style/TextAppearance.DeviceDefault.Medium"/>
-                                <!-- End Text View medis Nama -->
-
-                                <!-- Start Text View Titik Dua -->
-                                <TextView
-                                        android:id="@+id/titikdua"
-                                        android:layout_width="wrap_content"
-                                        android:layout_height="wrap_content"
-                                        android:textColor="#D046F2"
-                                        android:text="@string/titikdua"
-                                        style="@android:style/TextAppearance.DeviceDefault.Medium"
-                                        android:layout_marginLeft="5dp"/>
-                                <!-- End Text View Titik Dua -->
-
-                            </LinearLayout>
+                                    android:textColor="#D046F2"
+                                    android:text="@string/medis_nama"
+                                    style="@android:style/TextAppearance.DeviceDefault.Medium"/>
+                            <!-- End Text View medis Nama -->
 
                             <!-- Start Edit Text medis Nama -->
                             <TextView
@@ -140,37 +122,15 @@
                                     android:layout_margin="10dp"/>
                             <!-- End Edit Text medis Nama -->
 
-
-                            <!-- Start Linear Layout Nama Dokter -->
-                            <LinearLayout
-                                    android:layout_width="fill_parent"
-                                    android:layout_height="0dp"
-                                    android:orientation="horizontal"
-                                    android:layout_weight="1">
-
-                                <!-- Start Text View Nama Dokter -->
-                                <TextView
-                                        android:id="@+id/text_medis_dokter"
-                                        android:layout_width="wrap_content"
-                                        android:layout_height="wrap_content"
-                                        android:textColor="#D046F2"
-                                        android:text="@string/medis_dokter"
-                                        style="@android:style/TextAppearance.DeviceDefault.Medium"/>
-                                <!-- End Text View Nama Dokter -->
-
-                                <!-- Start Text View Titik Dua -->
-                                <TextView
-                                        android:id="@+id/titikdua"
-                                        android:layout_width="wrap_content"
-                                        android:layout_height="wrap_content"
-                                        android:textColor="#D046F2"
-                                        android:text="@string/titikdua"
-                                        style="@android:style/TextAppearance.DeviceDefault.Medium"
-                                        android:layout_marginLeft="5dp"/>
-                                <!-- End Text View Titik Dua -->
-
-                            </LinearLayout>
-                            <!-- End Linear Layout Nama Dokter -->
+                            <!-- Start Text View Nama Dokter -->
+                            <TextView
+                                    android:id="@+id/text_medis_dokter"
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:textColor="#D046F2"
+                                    android:text="@string/medis_dokter"
+                                    style="@android:style/TextAppearance.DeviceDefault.Medium"/>
+                            <!-- End Text View Nama Dokter -->
 
                             <!-- Start Edit Text Nama Dokter -->
                             <TextView
@@ -183,35 +143,15 @@
                                     android:layout_margin="10dp"/>
                             <!-- End Edit Text Nama Dokter -->
 
-                            <!-- Start Linear Layout Nama Rumah Sakit -->
-                            <LinearLayout
-                                    android:layout_width="fill_parent"
+                            <!-- Start Text View Nama Rumah Sakit -->
+                            <TextView
+                                    android:id="@+id/text_medis_rumahsakit"
+                                    android:layout_width="wrap_content"
                                     android:layout_height="wrap_content"
-                                    android:orientation="horizontal">
-
-                                <!-- Start Text View Nama Rumah Sakit -->
-                                <TextView
-                                        android:id="@+id/text_medis_rumahsakit"
-                                        android:layout_width="wrap_content"
-                                        android:layout_height="wrap_content"
-                                        android:textColor="#D046F2"
-                                        android:text="@string/medis_rumahsakit"
-                                        style="@android:style/TextAppearance.DeviceDefault.Medium"/>
-                                <!-- End Text View Nama Rumah Sakit -->
-
-                                <!-- Start Text View Titik Dua -->
-                                <TextView
-                                        android:id="@+id/titikdua"
-                                        android:layout_width="wrap_content"
-                                        android:layout_height="wrap_content"
-                                        android:textColor="#D046F2"
-                                        android:text="@string/titikdua"
-                                        style="@android:style/TextAppearance.DeviceDefault.Medium"
-                                        android:layout_marginLeft="5dp"/>
-                                <!-- End Text View Titik Dua -->
-
-                            </LinearLayout>
-                            <!-- End Linear Layout Nama Rumah Sakit -->
+                                    android:textColor="#D046F2"
+                                    android:text="@string/medis_rumahsakit"
+                                    style="@android:style/TextAppearance.DeviceDefault.Medium"/>
+                            <!-- End Text View Nama Rumah Sakit -->
 
                             <!-- Start Edit Text Nama Rumah Sakit -->
                             <TextView
@@ -241,35 +181,15 @@
                                 android:orientation="vertical"
                                 android:layout_weight=".8">
 
-                            <!-- Start Linear Layout Tanggal Berobat -->
-                            <LinearLayout
-                                    android:layout_width="fill_parent"
+                            <!-- Start Text View Tanggal Berobat -->
+                            <TextView
+                                    android:id="@+id/text_medis_tanggalberobat"
+                                    android:layout_width="wrap_content"
                                     android:layout_height="wrap_content"
-                                    android:orientation="horizontal">
-
-                                <!-- Start Text View Tanggal Berobat -->
-                                <TextView
-                                        android:id="@+id/text_medis_tanggalberobat"
-                                        android:layout_width="wrap_content"
-                                        android:layout_height="wrap_content"
-                                        android:textColor="#D046F2"
-                                        android:text="@string/medis_tanggalberobat"
-                                        style="@android:style/TextAppearance.DeviceDefault.Medium"/>
-                                <!-- End Text View Tanggal Berobat -->
-
-                                <!-- Start Text View Titik Dua -->
-                                <TextView
-                                        android:id="@+id/titikdua"
-                                        android:layout_width="wrap_content"
-                                        android:layout_height="wrap_content"
-                                        android:textColor="#D046F2"
-                                        android:text="@string/titikdua"
-                                        style="@android:style/TextAppearance.DeviceDefault.Medium"
-                                        android:layout_marginLeft="5dp"/>
-                                <!-- End Text View Titik Dua -->
-
-                            </LinearLayout>
-                            <!-- End Linear Layout Tanggal Berobat -->
+                                    android:textColor="#D046F2"
+                                    android:text="@string/medis_tanggalberobat"
+                                    style="@android:style/TextAppearance.DeviceDefault.Medium"/>
+                            <!-- End Text View Tanggal Berobat -->
 
                             <!-- Start Edit Text Tanggal Berobat -->
                             <TextView
@@ -283,35 +203,15 @@
                                     android:layout_margin="10dp"/>
                             <!-- End Edit Text Tanggal Berobat -->
 
-                            <!-- Start Linear Layout Tinggi Badan -->
-                            <LinearLayout
-                                    android:layout_width="fill_parent"
+                            <!-- Start Text View Tinggi Badan -->
+                            <TextView
+                                    android:id="@+id/text_medis_tinggibadan"
+                                    android:layout_width="wrap_content"
                                     android:layout_height="wrap_content"
-                                    android:orientation="horizontal"
-                                    android:gravity="center_vertical">
-
-                                <!-- Start Text View Tinggi Badan -->
-                                <TextView
-                                        android:id="@+id/text_medis_tinggibadan"
-                                        android:layout_width="wrap_content"
-                                        android:layout_height="wrap_content"
-                                        android:textColor="#D046F2"
-                                        android:text="@string/medis_tinggibadan"
-                                        style="@android:style/TextAppearance.DeviceDefault.Medium"/>
-                                <!-- End Text View Tinggi Badan -->
-
-                                <!-- Start Text View Titik Dua -->                                
-                                <TextView
-                                        android:id="@+id/titikdua"
-                                        android:layout_width="wrap_content"
-                                        android:layout_height="wrap_content"
-                                        android:textColor="#D046F2"
-                                        android:text="@string/titikdua"
-                                        style="@android:style/TextAppearance.DeviceDefault.Medium"
-                                        android:layout_marginLeft="5dp"/>
-                                <!-- End Text View Titik Dua -->
-
-                            </LinearLayout>
+                                    android:textColor="#D046F2"
+                                    android:text="@string/medis_tinggibadan"
+                                    style="@android:style/TextAppearance.DeviceDefault.Medium"/>
+                            <!-- End Text View Tinggi Badan -->
 
                             <LinearLayout
                                     android:layout_width="fill_parent"
@@ -343,34 +243,15 @@
 
                             </LinearLayout>
 
-                            <LinearLayout
-                                    android:layout_width="fill_parent"
+                            <!-- Start Text View Berat Badan -->
+                            <TextView
+                                    android:id="@+id/text_medis_beratbadan"
+                                    android:layout_width="wrap_content"
                                     android:layout_height="wrap_content"
-                                    android:orientation="horizontal"
-                                    android:gravity="center_vertical">
-
-                                <!-- Start Text View Berat Badan -->
-                                <TextView
-                                        android:id="@+id/text_medis_beratbadan"
-                                        android:layout_width="wrap_content"
-                                        android:layout_height="wrap_content"
-                                        android:textColor="#D046F2"
-                                        android:text="@string/medis_beratbadan"
-                                        style="@android:style/TextAppearance.DeviceDefault.Medium"/>
-                                <!-- Start Text View Berat Badan -->
-                                
-                                <!-- Start Text View Titik Dua -->
-                                <TextView
-                                        android:id="@+id/titikdua"
-                                        android:layout_width="wrap_content"
-                                        android:layout_height="wrap_content"
-                                        android:textColor="#D046F2"
-                                        android:text="@string/titikdua"
-                                        style="@android:style/TextAppearance.DeviceDefault.Medium"
-                                        android:layout_marginLeft="5dp"/>
-                                <!-- End Text View Titik Dua -->
-
-                            </LinearLayout>
+                                    android:textColor="#D046F2"
+                                    android:text="@string/medis_beratbadan"
+                                    style="@android:style/TextAppearance.DeviceDefault.Medium"/>
+                            <!-- Start Text View Berat Badan -->
 
                             <LinearLayout
                                     android:layout_width="fill_parent"
@@ -440,33 +321,15 @@
                             android:orientation="vertical"
                             android:layout_margin="2dp">
 
-                        <LinearLayout
-                                android:layout_width="fill_parent"
+                        <!-- Start Text View Keluhan -->
+                        <TextView
+                                android:id="@+id/text_medis_keluhan"
+                                android:layout_width="wrap_content"
                                 android:layout_height="wrap_content"
-                                android:orientation="horizontal">
-
-                            <!-- Start Text View Keluhan -->
-                            <TextView
-                                    android:id="@+id/text_medis_keluhan"
-                                    android:layout_width="wrap_content"
-                                    android:layout_height="wrap_content"
-                                    android:textColor="#D046F2"
-                                    android:text="@string/medis_keluhan"
-                                    style="@android:style/TextAppearance.DeviceDefault.Medium"/>
-                            <!-- End Text View Keluhan -->
-
-                            <!-- Start Text View Titik Dua -->
-                            <TextView
-                                    android:id="@+id/titikdua"
-                                    android:layout_width="wrap_content"
-                                    android:layout_height="wrap_content"
-                                    android:textColor="#D046F2"
-                                    android:text="@string/titikdua"
-                                    style="@android:style/TextAppearance.DeviceDefault.Medium"
-                                    android:layout_marginLeft="5dp"/>
-                            <!-- End Text View Titik Dua -->
-
-                        </LinearLayout>
+                                android:textColor="#D046F2"
+                                android:text="@string/medis_keluhan"
+                                style="@android:style/TextAppearance.DeviceDefault.Medium"/>
+                        <!-- End Text View Keluhan -->
 
                         <!-- Start Edit Text Keluhan -->
                         <TextView
@@ -475,7 +338,7 @@
                                 android:layout_height="fill_parent"
                                 style="@android:style/TextAppearance.DeviceDefault.Medium"
                                 android:textColor="#FF0000"
-                                android:hint="@string/medis_keluhan"
+                                android:hint="@string/medis_hint_keluhan"
                                 android:layout_margin="10dp"/>
                         <!-- End Edit Text Keluhan -->
 
@@ -488,33 +351,15 @@
                             android:orientation="vertical"
                             android:layout_margin="2dp">
 
-                        <LinearLayout
-                                android:layout_width="fill_parent"
+                        <!-- Start Text View Tindakan -->
+                        <TextView
+                                android:id="@+id/text_medis_tindakan"
+                                android:layout_width="wrap_content"
                                 android:layout_height="wrap_content"
-                                android:orientation="horizontal">
-
-                            <!-- Start Text View Tindakan -->
-                            <TextView
-                                    android:id="@+id/text_medis_tindakan"
-                                    android:layout_width="wrap_content"
-                                    android:layout_height="wrap_content"
-                                    android:textColor="#D046F2"
-                                    android:text="@string/medis_tindakan"
-                                    style="@android:style/TextAppearance.DeviceDefault.Medium"/>
-                            <!-- End Text View Tindakan -->
-
-                            <!-- Start Text View Titik Dua -->
-                            <TextView
-                                    android:id="@+id/titikdua"
-                                    android:layout_width="wrap_content"
-                                    android:layout_height="wrap_content"
-                                    android:textColor="#D046F2"
-                                    android:text="@string/titikdua"
-                                    style="@android:style/TextAppearance.DeviceDefault.Medium"
-                                    android:layout_marginLeft="5dp"/>
-                            <!-- End Text View Titik Dua -->
-
-                        </LinearLayout>
+                                android:textColor="#D046F2"
+                                android:text="@string/medis_tindakan"
+                                style="@android:style/TextAppearance.DeviceDefault.Medium"/>
+                        <!-- End Text View Tindakan -->
 
                         <!-- Start Text View Tindakan -->
                         <TextView
@@ -523,7 +368,7 @@
                                 android:layout_height="fill_parent"
                                 style="@android:style/TextAppearance.DeviceDefault.Medium"
                                 android:textColor="#FF0000"
-                                android:hint="@string/medis_tindakan"
+                                android:hint="@string/medis_hint_tindakan"
                                 android:layout_margin="10dp"/>
                         <!-- End Text View Tindakan -->
 
@@ -536,33 +381,15 @@
                             android:orientation="vertical"
                             android:layout_margin="2dp">
 
-                        <LinearLayout
-                                android:layout_width="fill_parent"
+                        <!-- Start Text View Obat -->
+                        <TextView
+                                android:id="@+id/text_medis_obat"
+                                android:layout_width="wrap_content"
                                 android:layout_height="wrap_content"
-                                android:orientation="horizontal">
-
-                            <!-- Start Text View Obat -->
-                            <TextView
-                                    android:id="@+id/text_medis_obat"
-                                    android:layout_width="wrap_content"
-                                    android:layout_height="wrap_content"
-                                    android:textColor="#D046F2"
-                                    android:text="@string/medis_obat"
-                                    style="@android:style/TextAppearance.DeviceDefault.Medium"/>
-                            <!-- End Text View Obat -->
-
-                            <!-- Start Text View Titik Dua -->
-                            <TextView
-                                    android:id="@+id/titikdua"
-                                    android:layout_width="wrap_content"
-                                    android:layout_height="wrap_content"
-                                    android:textColor="#D046F2"
-                                    android:text="@string/titikdua"
-                                    style="@android:style/TextAppearance.DeviceDefault.Medium"
-                                    android:layout_marginLeft="5dp"/>
-                            <!-- End Text View Titik Dua -->
-
-                        </LinearLayout>
+                                android:textColor="#D046F2"
+                                android:text="@string/medis_obat"
+                                style="@android:style/TextAppearance.DeviceDefault.Medium"/>
+                        <!-- End Text View Obat -->
 
                         <!-- Start Edit Text Obat -->
                         <TextView
@@ -571,7 +398,7 @@
                                 android:layout_height="fill_parent"
                                 style="@android:style/TextAppearance.DeviceDefault.Medium"
                                 android:textColor="#FF0000"
-                                android:hint="@string/medis_obat"
+                                android:hint="@string/medis_hint_obat"
                                 android:layout_margin="10dp"/>
                         <!-- End Edit Text Obat -->
 

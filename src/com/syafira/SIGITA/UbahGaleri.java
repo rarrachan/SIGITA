@@ -40,7 +40,6 @@ import java.util.Locale;
 public class UbahGaleri extends Activity {
 
     private TextView ubah_galeri;
-    private TextView titikdua;
     private TextView text_footer;
     private TextView text_galeri_nama;
     private TextView galeri_nama;
@@ -81,7 +80,6 @@ public class UbahGaleri extends Activity {
 
         // Load Widget
         ubah_galeri = (TextView) findViewById(R.id.ubah_galeri);
-        titikdua = (TextView) findViewById(R.id.titikdua);
         text_footer = (TextView) findViewById(R.id.text_footer);
         text_galeri_nama = (TextView) findViewById(R.id.text_galeri_nama);
         galeri_nama = (TextView) findViewById(R.id.galeri_nama);
@@ -98,7 +96,6 @@ public class UbahGaleri extends Activity {
         // Set Custom Font
         Typeface typeface = Typeface.createFromAsset(getAssets(), "teen-webfont.ttf");
         ubah_galeri.setTypeface(typeface);
-        titikdua.setTypeface(typeface);
         text_footer.setTypeface(typeface);
         text_galeri_nama.setTypeface(typeface);
         galeri_nama.setTypeface(typeface);

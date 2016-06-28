@@ -51,7 +51,6 @@ public class DetailDokumentasi extends Activity {
     private TextView hasil_bbtb;
     private TextView imtu;
     private TextView hasil_imtu;
-    private TextView titikdua;
     private TextView text_footer;
     private ImageView button_ubah;
     private ImageView button_hapus;
@@ -135,7 +134,6 @@ public class DetailDokumentasi extends Activity {
 
         // Load Widget
         detail_dokumentasigizi = (TextView) findViewById(R.id.detail_dokumentasigizi);
-        titikdua = (TextView) findViewById(R.id.titikdua);
         text_dokumentasigizi_nama = (TextView) findViewById(R.id.text_dokumentasigizi_nama);
         dokumentasigizi_nama = (TextView) findViewById(R.id.dokumentasigizi_nama);
         text_dokumentasigizi_usia = (TextView) findViewById(R.id.text_dokumentasigizi_usia);
@@ -163,7 +161,6 @@ public class DetailDokumentasi extends Activity {
         // Set Custom Font
         final Typeface typeface = Typeface.createFromAsset(getAssets(), "teen-webfont.ttf");
         detail_dokumentasigizi.setTypeface(typeface);
-        titikdua.setTypeface(typeface);
         text_dokumentasigizi_nama.setTypeface(typeface);
         dokumentasigizi_nama.setTypeface(typeface);
         text_dokumentasigizi_usia.setTypeface(typeface);

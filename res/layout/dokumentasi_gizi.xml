@@ -219,7 +219,7 @@
                                     android:textColor="#FF0000"
                                     style="@android:style/TextAppearance.DeviceDefault.Medium"
                                     android:background="@drawable/border_row"
-                                    android:text="@string/dokumentasigizi_tanggal"/>
+                                    android:text="@string/dokumentasigizi_tanggal_tabel"/>
                             <!-- End Text View Tanggal -->
 
                             <!-- Start Text View Usia -->
@@ -234,7 +234,7 @@
                                     android:background="@drawable/border_row"
                                     android:gravity="center_vertical"
                                     style="@android:style/TextAppearance.DeviceDefault.Medium"
-                                    android:text="@string/dokumentasigizi_usia"/>
+                                    android:text="@string/dokumentasigizi_usia_tabel"/>
                             <!-- End Text View Usia -->
 
                             <!-- Start Text View Tinggi Badan-->
@@ -249,7 +249,7 @@
                                     android:background="@drawable/border_row"
                                     android:gravity="center_vertical"
                                     style="@android:style/TextAppearance.DeviceDefault.Medium"
-                                    android:text="@string/dokumentasigizi_tinggibadan"/>
+                                    android:text="@string/dokumentasigizi_tinggibadan_tabel"/>
                             <!-- End Text View Tinggi Badan -->
 
                             <!-- Start Text View Berat Badan -->
@@ -264,7 +264,7 @@
                                     android:background="@drawable/border_row"
                                     android:gravity="center_vertical"
                                     style="@android:style/TextAppearance.DeviceDefault.Medium"
-                                    android:text="@string/dokumentasigizi_beratbadan"/>
+                                    android:text="@string/dokumentasigizi_beratbadan_tabel"/>
                             <!-- End Text View Berat Badan -->
 
                             <!-- Start Text View Detail-->

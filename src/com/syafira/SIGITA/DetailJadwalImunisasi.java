@@ -19,7 +19,6 @@ public class DetailJadwalImunisasi extends Activity {
     private TextView detail_jadwal_imunisasi;
     private TextView text_button_profil;
     private TextView text_jenis_vaksin;
-    private TextView titikdua;
     private TextView jenis_vaksin;
     private TextView text_usia_vaksin;
     private TextView usia_vaksin;
@@ -31,6 +30,7 @@ public class DetailJadwalImunisasi extends Activity {
     private TextView keterangan_vaksin;
     private TextView text_footer;
     private LinearLayout tanggalVaksinLayout;
+    private LinearLayout statusVaksinLayout;
     private LinearLayout ProfilLinearLayout;
     private SessionManager session;
     private DBHelper db;
@@ -66,10 +66,10 @@ public class DetailJadwalImunisasi extends Activity {
         // Load Widget
         detail_jadwal_imunisasi = (TextView) findViewById(R.id.detail_jadwal_imunisasi);
         tanggalVaksinLayout = (LinearLayout) findViewById(R.id.tanggalVaksinLayout);
+        statusVaksinLayout = (LinearLayout) findViewById(R.id.statusVaksinLayout);
         text_button_profil = (TextView) findViewById(R.id.text_button_profil);
         ProfilLinearLayout = (LinearLayout) findViewById(R.id.ProfilLinearLayout);
         text_jenis_vaksin = (TextView) findViewById(R.id.text_jenis_vaksin);
-        titikdua = (TextView) findViewById(R.id.titikdua);
         jenis_vaksin = (TextView) findViewById(R.id.jenis_vaksin);
         text_usia_vaksin = (TextView) findViewById(R.id.text_usia_vaksin);
         usia_vaksin = (TextView) findViewById(R.id.usia_vaksin);
@@ -88,7 +88,6 @@ public class DetailJadwalImunisasi extends Activity {
         tanggal_vaksin.setTypeface(typeface);
         text_button_profil.setTypeface(typeface);
         text_jenis_vaksin.setTypeface(typeface);
-        titikdua.setTypeface(typeface);
         jenis_vaksin.setTypeface(typeface);
         text_usia_vaksin.setTypeface(typeface);
         usia_vaksin.setTypeface(typeface);
@@ -104,6 +103,7 @@ public class DetailJadwalImunisasi extends Activity {
             text_button_profil.setText(session.loadSession(this, "nama"));
             if (cursor.getString(cursor.getColumnIndex("list_vaksin")).equals(cursor.getString(cursor.getColumnIndex("riwayat_vaksin")))) {
                 tanggalVaksinLayout.setVisibility(View.VISIBLE);
+                statusVaksinLayout.setVisibility(View.VISIBLE);
                 status_vaksin.setText("Sudah");
                 tanggal_vaksin.setText(cursor.getString(cursor.getColumnIndex("riwayat_tanggal")));
             }

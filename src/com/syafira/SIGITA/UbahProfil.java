@@ -67,7 +67,6 @@ public class UbahProfil extends Activity implements OnClickListener {
     private EditText profil_beratlahir;
     private TextView profil_gram;
     private TextView text_footer;
-    private TextView titikdua;
     private ImageView profil_foto;
     private ImageView button_simpan;
     private DBHelper db;
@@ -102,7 +101,6 @@ public class UbahProfil extends Activity implements OnClickListener {
         ubah_profil = (TextView) findViewById(R.id.ubah_profil);
         profil_id = (TextView) findViewById(R.id.profil_id);
         profil_nama_sebelumnya = (TextView) findViewById(R.id.profil_nama_sebelumnya);
-        titikdua = (TextView) findViewById(R.id.titikdua);
         text_profil_nama = (TextView) findViewById(R.id.text_profil_nama);
         profil_nama = (EditText) findViewById(R.id.profil_nama);
         text_profil_jeniskelamin = (TextView) findViewById(R.id.text_profil_jeniskelamin);
@@ -140,7 +138,6 @@ public class UbahProfil extends Activity implements OnClickListener {
         // Set Custom Font
         Typeface typeface = Typeface.createFromAsset(getAssets(), "teen-webfont.ttf");
         ubah_profil.setTypeface(typeface);
-        titikdua.setTypeface(typeface);
         text_profil_nama.setTypeface(typeface);
         profil_nama.setTypeface(typeface);
         text_profil_jeniskelamin.setTypeface(typeface);

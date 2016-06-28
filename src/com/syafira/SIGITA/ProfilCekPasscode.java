@@ -48,7 +48,7 @@ public class ProfilCekPasscode extends Activity {
         super.onCreate(savedInstanceState);
 
         //Load Layout
-        setContentView(R.layout.profil_cek_passcode);
+        setContentView(R.layout.passcode_cek);
 
         // Load Session Manager
         session = new SessionManager();

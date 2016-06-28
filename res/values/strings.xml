@@ -19,33 +19,34 @@
     <string name="button_tambahprofil">Tambah Profil</string>
 
     <string name="tambah_profil">Tambah Profil</string>
-    <string name="profil_nama">Nama</string>
+    <string name="profil_nama">Nama Anak :</string>
     <string name="profil_hint_nama">Nama Anak</string>
-    <string name="profil_jeniskelamin">Jenis Kelamin</string>
-    <string name="profil_tempatlahir">Tempat Lahir</string>
-    <string name="profil_tanggallahir">Tanggal Lahir</string>
+    <string name="profil_jeniskelamin">Jenis Kelamin :</string>
+    <string name="profil_tempatlahir">Tempat Lahir :</string>
+    <string name="profil_tanggallahir">Tanggal Lahir :</string>
     <string name="profil_hint_tempatlahir">Tempat Lahir</string>
     <string name="profil_hint_tanggallahir">01/01/1990</string>
-    <string name="profil_golongandarah">Golongan Darah</string>
+    <string name="profil_golongandarah">Golongan Darah :</string>
     <string name="profil_A">A</string>
     <string name="profil_B">B</string>
     <string name="profil_AB">AB</string>
     <string name="profil_O">O</string>
-    <string name="profil_panjanglahir">Panjang Lahir</string>
+    <string name="profil_panjanglahir">Panjang Lahir :</string>
     <string name="profil_hint_panjanglahir">00.00</string>
     <string name="profil_centimeter">CM</string>
-    <string name="profil_beratlahir">Berat Lahir</string>
+    <string name="profil_beratlahir">Berat Lahir :</string>
     <string name="profil_hint_beratlahir">00.00</string>
-    <string name="profil_gram">GR</string>
-    <string name="profil_alergi">Alergi</string>
+    <string name="profil_kilogram">KG</string>
+    <string name="profil_alergi">Alergi :</string>
     <string name="profil_hint_alergi">Nama Alergi</string>
-    <string name="profil_penyakitkronis">Penyakit Kronis</string>
-    <string name="profil_hint_penyakitkronis">Nama Penyakit Kronis</string>
-    <string name="profil_foto">Foto</string>
+    <string name="profil_penyakitkronis">Penyakit Kronis :</string>
+    <string name="profil_hint_penyakitkronis">Penyakit Kronis</string>
+    <string name="profil_foto">Foto :</string>
     <string name="alert_tambah_passcode">Apakah anda mau menambahkan passcode untuk profil ini?</string>
 
     <string name="lupa_passcode">Lupa Passcode?</string>
     <string name="button_passcode">Passcode</string>
+    <string name="text_passcode">Passcode :</string>
     <string name="button_passcode_ubah">Ubah Passcode</string>
     <string name="profil_passcode">Masukkan Passcode Baru</string>
     <string name="profil_cek_passcode">Masukkan Passcode</string>
@@ -67,61 +68,75 @@
     <string name="button_kalkulatorgizi">Kalkulator Gizi</string>
     <string name="button_dokumentasigizi">Dokumentasi Gizi</string>
 
-    <string name="kalkulatorgizi_tanggallahir">Tanggal Lahir</string>
-    <string name="kalkulatorgizi_usia">Usia</string>
-    <string name="kalkulatorgizi_jeniskelamin">Jenis Kelamin</string>
-    <string name="kalkulatorgizi_lakilaki">Laki-laki</string>
-    <string name="kalkulatorgizi_perempuan">Perempuan</string>
-    <string name="kalkulatorgizi_tinggibadan">Tinggi Badan</string>
+    <string name="kalkulatorgizi_tanggallahir">Tanggal Lahir :</string>
+    <string name="kalkulatorgizi_usia">Usia :</string>
+    <string name="kalkulatorgizi_jeniskelamin">Jenis Kelamin :</string>
+    <string name="kalkulatorgizi_tinggibadan">Tinggi Badan :</string>
     <string name="kalkulatorgizi_hint_tinggibadan">00.00</string>
     <string name="kalkulatorgizi_centimeter">CM</string>
-    <string name="kalkulatorgizi_beratbadan">Berat Badan</string>
+    <string name="kalkulatorgizi_beratbadan">Berat Badan :</string>
     <string name="kalkulatorgizi_hint_beratbadan">00.00</string>
     <string name="kalkulatorgizi_kilogram">KG</string>
 
     <string name="hasilkalkulatorgizi">Hasil Kalkulator Gizi</string>
-    <string name="bbu">BB/U</string>
-    <string name="tbu">TB/U</string>
-    <string name="bbtb">BB/TB</string>
-    <string name="imtu">IMT/U</string>
+    <string name="bbu">BB/U :</string>
+    <string name="tbu">TB/U :</string>
+    <string name="bbtb">BB/TB :</string>
+    <string name="imtu">IMT/U :</string>
 
-    <string name="dokumentasigizi_tanggal">Tanggal</string>
-    <string name="dokumentasigizi_usia">Usia</string>
-    <string name="dokumentasigizi_tinggibadan">Tinggi Badan</string>
-    <string name="dokumentasigizi_beratbadan">Berat Badan</string>
+    <string name="dokumentasigizi_tanggal_tabel">Tanggal Perhitungan</string>
+    <string name="dokumentasigizi_usia_tabel">Usia</string>
+    <string name="dokumentasigizi_tinggibadan_tabel">Tinggi Badan</string>
+    <string name="dokumentasigizi_beratbadan_tabel">Berat Badan</string>
+
+    <string name="dokumentasigizi_tanggal">Tanggal Perhitungan :</string>
+    <string name="dokumentasigizi_usia">Usia :</string>
+    <string name="dokumentasigizi_tinggibadan">Tinggi Badan :</string>
+    <string name="dokumentasigizi_beratbadan">Berat Badan :</string>
 
     <string name="tambah_dokumentasigizi">Tambah Dokumentasi Gizi</string>
-    <string name="dokumentasigizi_nama">Nama Anak</string>
+    <string name="dokumentasigizi_nama">Nama Anak :</string>
+    <string name="dokumentasigizi_hint_nama">Nama Anak</string>
+    <string name="dokumentasigizi_hint_usia">Usia</string>
     <string name="detail_dokumentasigizi">Detail Dokumentasi Gizi</string>
     <string name="ubah_dokumentasigizi">Ubah Dokumentasi Gizi</string>
     <string name="alert_hapus_dokumentasi">Apa anda yakin untuk menghapus dokumentasi gizi ini?</string>
 
     <string name="button_jadwalimunisasi">Jadwal Imunisasi</string>
-    <string name="jenis_vaksin">Jenis Vaksin</string>
-    <string name="usia_vaksin">Usia</string>
-    <string name="status_vaksin">Status Vaksinasi</string>
-    <string name="keterangan_vaksin">Keterangan Vaksin</string>
+    <string name="jenis_vaksin">Jenis Vaksin :</string>
+    <string name="jenis_hint_vaksin">Jenis Vaksin</string>
+    <string name="usia_vaksin">Usia Pemberian Vaksin :</string>
+    <string name="usia_vaksin_tabel">Usia Pemberian Vaksin</string>
+    <string name="usia_hint_vaksin">Usia</string>
+    <string name="usia_vaksin_detail">Usia :</string>
+    <string name="status_vaksin">Status Vaksinasi :</string>
+    <string name="keterangan_vaksin">Keterangan Vaksin :</string>
+    <string name="keterangan_hint_vaksin">Keterangan Vaksin</string>
     <string name="blank"> </string>
     <string name="detail_jadwal_imunisasi">Detail Jadwal Imunisasi</string>
-    <string name="detail_tanggal_vaksin">Tanggal Vaksinasi</string>
+    <string name="detail_tanggal_vaksin">Tanggal Vaksinasi :</string>
 
     <string name="button_riwayatimunisasi">Riwayat Imunisasi</string>
-    <string name="tanggal_vaksin">Tanggal</string>
+    <string name="tanggal_vaksin">Tanggal Vaksinasi</string>
     <string name="button_alarmimunisasi">Alarm Imunisasi</string>
 
     <string name="tambah_riwayat">Tambah Riwayat Imunisasi</string>
-    <string name="riwayat_nama">Nama Anak</string>
-    <string name="riwayat_dokter">Nama Dokter</string>
-    <string name="riwayat_rumahsakit">Nama Rumah Sakit</string>
+    <string name="riwayat_nama">Nama Anak :</string>
+    <string name="riwayat_hint_nama">Nama Anak</string>
+    <string name="riwayat_dokter">Nama Dokter :</string>
+    <string name="riwayat_hint_dokter">Nama Dokter</string>
+    <string name="riwayat_rumahsakit">Nama Rumah Sakit :</string>
+    <string name="riwayat_hint_rumahsakit">Nama Rumah Sakit</string>
     <string name="riwayat_tanggal">Tanggal Vaksinasi</string>
-    <string name="riwayat_tinggibadan">Tinggi Badan</string>
-    <string name="riwayat_beratbadan">Berat Badan</string>
+    <string name="riwayat_tinggibadan">Tinggi Badan :</string>
+    <string name="riwayat_beratbadan">Berat Badan :</string>
     <string name="ubah_riwayat">Ubah Riwayat Imunisasi</string>
     <string name="detail_riwayat">Detail Riwayat Imunisasi</string>
     <string name="alert_hapus_riwayat">Apa anda yakin untuk menghapus riwayat imunisasi ini?</string>
 
-    <string name="alarm_imunisasi">Alarm</string>
-    <string name="alarm_bulan">Bulan Imunisasi</string>
+    <string name="alarm_jenis_vaksin">Jenis Vaksin :</string>
+    <string name="alarm_imunisasi">Alarm :</string>
+    <string name="alarm_bulan">Bulan Imunisasi :</string>
 
     <string name="alarm_reminder">REMINDER !</string>
     <string name="alarm_aktif">Imunisasi Polio pada Februari 2017</string>
@@ -134,35 +149,43 @@
     <string name="sosial_kemandirian">Sosial dan Kemandirian</string>
 
     <string name="button_galeritumbang">Galeri Tumbuh Kembang</string>
-    <string name="galeri_tanggal">Tanggal</string>
+    <string name="galeri_tanggal">Tanggal Galeri :</string>
     <string name="hint_galeri_tanggal">01/01/1990</string>
-    <string name="galeri_usia">Usia</string>
-    <string name="galeri_kategori">Kategori</string>
+    <string name="galeri_usia">Usia :</string>
 
     <string name="tambah_galeri">Tambah Galeri</string>
-    <string name="galeri_nama">Nama</string>
-    <string name="galeri_keterangan_foto">Keterangan</string>
+    <string name="galeri_nama">Nama Anak :</string>
+    <string name="galeri_foto">Foto :</string>
+    <string name="galeri_keterangan_foto">Keterangan :</string>
+    <string name="galeri_keterangan_hint_foto">Keterangan</string>
 
     <string name="detail_galeri">Detail Galeri</string>
     <string name="ubah_galeri">Ubah Galeri</string>
     <string name="alert_hapus_galeri">Apa anda yakin untuk menghapus galeri ini?</string>
 
-    <string name="medis_keluhan">Keluhan</string>
-    <string name="medis_obat">Obat</string>
+    <string name="medis_keluhan">Keluhan :</string>
+    <string name="medis_hint_keluhan">Keluhan</string>
+    <string name="medis_obat">Obat :</string>
+    <string name="medis_hint_obat">Obat</string>
 
-    <string name="medis_nama">Nama Anak</string>
-    <string name="medis_tanggalberobat">Tanggal Berobat</string>
+    <string name="medis_tanggalberobat_tabel">Tanggal Berobat</string>
+    <string name="medis_nama">Nama Anak :</string>
+    <string name="medis_hint_nama">Nama Anak</string>
+    <string name="medis_tanggalberobat">Tanggal Berobat :</string>
     <string name="medis_hint_tanggalberobat">01/01/1990</string>
     <string name="tambah_rekam_medis">Tambah Rekam Medis</string>
-    <string name="medis_dokter">Nama Dokter</string>
-    <string name="medis_rumahsakit">Nama Rumah Sakit</string>
-    <string name="medis_tinggibadan">Tinggi Badan</string>
+    <string name="medis_dokter">Nama Dokter :</string>
+    <string name="medis_hint_dokter">Nama Dokter</string>
+    <string name="medis_rumahsakit">Nama Rumah Sakit :</string>
+    <string name="medis_hint_rumahsakit">Nama Rumah Sakit</string>
+    <string name="medis_tinggibadan">Tinggi Badan :</string>
     <string name="medis_hint_tinggibadan">00.00</string>
     <string name="medis_centimeter">CM</string>
-    <string name="medis_beratbadan">Berat Badan</string>
+    <string name="medis_beratbadan">Berat Badan :</string>
     <string name="medis_hint_beratbadan">00.00</string>
     <string name="medis_kilogram">KG</string>
-    <string name="medis_tindakan">Tindakan</string>
+    <string name="medis_tindakan">Tindakan :</string>
+    <string name="medis_hint_tindakan">Tindakan</string>
 
     <string name="detail_rekam_medis">Detail Rekam Medis</string>
     <string name="ubah_rekam_medis">Ubah Rekam Medis</string>
@@ -177,5 +200,9 @@
         riwayat serta pengingat jadwal imunisasi, pencatatan rekam medis, hingga
         perbandingan antara pertumbuhan dan perkembangan anak dengan developmental
         milestones serta penyimpanan momen penting pada pertumbuhan dan perkembangan
-        anak. </string>
+        anak.
+    \n
+    \n
+    Menu Kalkulator Gizi, Jadwal Imunisasi, dan Tahapan Tumbuh Kembang dapat diakses tanpa harus memilih profil terlebih dahulu. Sedangkan menu
+    Dokumentasi Gizi, Riwayat Imunisasi, Alarm Imunisasi, Galeri Tumbuh Kembang, dan Rekam Medis dapat diakses setelah memilih profil.</string>
 </resources>

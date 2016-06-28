@@ -27,7 +27,6 @@ public class KalkulatorGizi extends Activity {
     // Declare
     private TextView kalkulator_gizi;
     private TextView text_kalkulatorgizi_tanggallahir;
-    private TextView titikdua;
     private EditText kalkulatorgizi_tanggallahir;
     private TextView kalkulatorgizi_umur;
     private TextView kalkulatorgizi_bulan;
@@ -64,7 +63,6 @@ public class KalkulatorGizi extends Activity {
         // Load Widget
         kalkulator_gizi = (TextView) findViewById(R.id.kalkulator_gizi);
         text_kalkulatorgizi_tanggallahir = (TextView) findViewById(R.id.text_kalkulatorgizi_tanggallahir);
-        titikdua = (TextView) findViewById(R.id.titikdua);
         kalkulatorgizi_tanggallahir = (EditText) findViewById(R.id.kalkulatorgizi_tanggallahir);
         kalkulatorgizi_umur = (TextView) findViewById(R.id.kalkulatorgizi_umur);
         kalkulatorgizi_bulan = (TextView) findViewById(R.id.kalkulatorgizi_bulan);
@@ -85,7 +83,6 @@ public class KalkulatorGizi extends Activity {
         Typeface typeface = Typeface.createFromAsset(getAssets(), "teen-webfont.ttf");
         kalkulator_gizi.setTypeface(typeface);
         text_kalkulatorgizi_tanggallahir.setTypeface(typeface);
-        titikdua.setTypeface(typeface);
         kalkulatorgizi_tanggallahir.setTypeface(typeface);
         text_kalkulatorgizi_jeniskelamin.setTypeface(typeface);
         kalkulatorgizi_lakilaki.setTypeface(typeface);
@@ -166,7 +163,7 @@ public class KalkulatorGizi extends Activity {
 
                         // Set Text
                         String umur = mon + " bulan / " + years + " tahun " + months + " bulan " + days + " hari";
-                        kalkulatorgizi_bulan.setText(Integer.toString(mon));
+                        kalkulatorgizi_bulan.setText(String.valueOf(mon));
                         kalkulatorgizi_umur.setText(umur);
                     }
                 }, mYear, mMonth, mDay);

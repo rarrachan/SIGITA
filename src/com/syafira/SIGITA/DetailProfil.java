@@ -50,7 +50,6 @@ public class DetailProfil extends Activity {
     private TextView profil_beratlahir;
     private TextView profil_gram;
     private TextView text_footer;
-    private TextView titikdua;
     private TextView text_profil_foto;
     private ImageView button_ubah;
     private ImageView button_hapus;
@@ -86,7 +85,6 @@ public class DetailProfil extends Activity {
 
         // Load Widget
         detail_profil = (TextView) findViewById(R.id.detail_profil);
-        titikdua = (TextView) findViewById(R.id.titikdua);
         text_profil_nama = (TextView) findViewById(R.id.text_profil_nama);
         profil_nama = (TextView) findViewById(R.id.profil_nama);
         text_profil_jeniskelamin = (TextView) findViewById(R.id.text_profil_jeniskelamin);
@@ -118,7 +116,6 @@ public class DetailProfil extends Activity {
         final Typeface typeface = Typeface.createFromAsset(getAssets(), "teen-webfont.ttf");
         detail_profil.setTypeface(typeface);
         text_profil_foto.setTypeface(typeface);
-        titikdua.setTypeface(typeface);
         text_profil_nama.setTypeface(typeface);
         profil_nama.setTypeface(typeface);
         text_profil_jeniskelamin.setTypeface(typeface);

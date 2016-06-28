@@ -43,7 +43,6 @@ public class HasilKalkulatorGizi extends Activity {
     private TextView text_kalkulatorgizi_beratbadan;
     private TextView kalkulatorgizi_beratbadan;
     private TextView bbu;
-    private TextView titikdua;
     private TextView hasil_bbu;
     private TextView tbu;
     private TextView hasil_tbu;
@@ -138,7 +137,6 @@ public class HasilKalkulatorGizi extends Activity {
         text_kalkulatorgizi_beratbadan = (TextView) findViewById(R.id.text_kalkulatorgizi_beratbadan);
         kalkulatorgizi_beratbadan = (TextView) findViewById(R.id.kalkulatorgizi_beratbadan);
         bbu = (TextView) findViewById(R.id.bbu);
-        titikdua = (TextView) findViewById(R.id.titikdua);
         hasil_bbu = (TextView) findViewById(R.id.hasil_bbu);
         tbu = (TextView) findViewById(R.id.tbu);
         hasil_tbu = (TextView) findViewById(R.id.hasil_tbu);
@@ -163,7 +161,6 @@ public class HasilKalkulatorGizi extends Activity {
         text_kalkulatorgizi_beratbadan.setTypeface(typeface);
         kalkulatorgizi_beratbadan.setTypeface(typeface);
         bbu.setTypeface(typeface);
-        titikdua.setTypeface(typeface);
         hasil_bbu.setTypeface(typeface);
         tbu.setTypeface(typeface);
         hasil_tbu.setTypeface(typeface);
@@ -308,20 +305,20 @@ public class HasilKalkulatorGizi extends Activity {
         // Gender Laki-laki
         if ((jenisKelamin).equals("Laki-laki")) {
             
-            // Tinggi Badan < Median
-            if (Float.parseFloat(tinggiBadan) < Float.parseFloat(cursorBBTB.getString(cursorBBTB.getColumnIndex("laki_bbtb_median")))) {
-                bbtb = (Float.parseFloat(tinggiBadan) - Float.parseFloat(cursorBBTB.getString(cursorBBTB.getColumnIndex("laki_bbtb_median")))) /
+            // Berat Badan < Median
+            if (Float.parseFloat(beratBadan) < Float.parseFloat(cursorBBTB.getString(cursorBBTB.getColumnIndex("laki_bbtb_median")))) {
+                bbtb = (Float.parseFloat(beratBadan) - Float.parseFloat(cursorBBTB.getString(cursorBBTB.getColumnIndex("laki_bbtb_median")))) /
                         (Float.parseFloat(cursorBBTB.getString(cursorBBTB.getColumnIndex("laki_bbtb_median"))) - Float.parseFloat(cursorBBTB.getString(cursorBBTB.getColumnIndex("laki_bbtb_min1sd"))));
             }
 
-            // Tinggi Badan > Median
-            else if (Float.parseFloat(tinggiBadan) > Float.parseFloat(cursorBBTB.getString(cursorBBTB.getColumnIndex("laki_bbtb_median")))) {
-                bbtb = (Float.parseFloat(tinggiBadan) - Float.parseFloat(cursorTBU.getString(cursorBBTB.getColumnIndex("laki_bbtb_median")))) /
+            // Berat Badan > Median
+            else if (Float.parseFloat(beratBadan) > Float.parseFloat(cursorBBTB.getString(cursorBBTB.getColumnIndex("laki_bbtb_median")))) {
+                bbtb = (Float.parseFloat(beratBadan) - Float.parseFloat(cursorBBTB.getString(cursorBBTB.getColumnIndex("laki_bbtb_median")))) /
                         (Float.parseFloat(cursorBBTB.getString(cursorBBTB.getColumnIndex("laki_bbtb_1sd"))) - Float.parseFloat(cursorBBTB.getString(cursorBBTB.getColumnIndex("laki_bbtb_median"))));
             }
 
-            // Tinggi Badan == Median
-            else if (Float.parseFloat(tinggiBadan) == Float.parseFloat(cursorBBTB.getString(cursorBBTB.getColumnIndex("laki_bbtb_median")))) {
+            // Berat Badan == Median
+            else if (Float.parseFloat(beratBadan) == Float.parseFloat(cursorBBTB.getString(cursorBBTB.getColumnIndex("laki_bbtb_median")))) {
                 bbtb = (Float.parseFloat(cursorBBTB.getString(cursorBBTB.getColumnIndex("laki_bbtb_median"))) - Float.parseFloat(cursorBBTB.getString(cursorBBTB.getColumnIndex("laki_bbtb_1sd")))) /
                         (Float.parseFloat(cursorBBTB.getString(cursorBBTB.getColumnIndex("laki_bbtb_1sd"))) - Float.parseFloat(cursorBBTB.getString(cursorBBTB.getColumnIndex("laki_bbtb_min1sd"))));
             }
@@ -329,20 +326,20 @@ public class HasilKalkulatorGizi extends Activity {
         // Gender Perempuan
         } else {
 
-            // Tinggi Badan < Median
-            if (Float.parseFloat(tinggiBadan) < Float.parseFloat(cursorBBTB.getString(cursorBBTB.getColumnIndex("perempuan_bbtb_median")))) {
-                bbtb = (Float.parseFloat(tinggiBadan) - Float.parseFloat(cursorBBTB.getString(cursorBBTB.getColumnIndex("perempuan_bbtb_median")))) /
+            // Berat Badan < Median
+            if (Float.parseFloat(beratBadan) < Float.parseFloat(cursorBBTB.getString(cursorBBTB.getColumnIndex("perempuan_bbtb_median")))) {
+                bbtb = (Float.parseFloat(beratBadan) - Float.parseFloat(cursorBBTB.getString(cursorBBTB.getColumnIndex("perempuan_bbtb_median")))) /
                         (Float.parseFloat(cursorBBTB.getString(cursorBBTB.getColumnIndex("perempuan_bbtb_median"))) - Float.parseFloat(cursorBBTB.getString(cursorBBTB.getColumnIndex("perempuan_bbtb_min1sd"))));
             }
 
-            // Tinggi Badan > Median
-            else if (Float.parseFloat(tinggiBadan) > Float.parseFloat(cursorBBTB.getString(cursorBBTB.getColumnIndex("perempuan_bbtb_median")))) {
-                bbtb = (Float.parseFloat(tinggiBadan) - Float.parseFloat(cursorTBU.getString(cursorBBTB.getColumnIndex("perempuan_bbtb_median")))) /
+            // Berat Badan > Median
+            else if (Float.parseFloat(beratBadan) > Float.parseFloat(cursorBBTB.getString(cursorBBTB.getColumnIndex("perempuan_bbtb_median")))) {
+                bbtb = (Float.parseFloat(beratBadan) - Float.parseFloat(cursorBBTB.getString(cursorBBTB.getColumnIndex("perempuan_bbtb_median")))) /
                         (Float.parseFloat(cursorBBTB.getString(cursorBBTB.getColumnIndex("perempuan_bbtb_1sd"))) - Float.parseFloat(cursorBBTB.getString(cursorBBTB.getColumnIndex("perempuan_bbtb_median"))));
             }
 
-            // Tinggi Badan == Median
-            else if (Float.parseFloat(tinggiBadan) == Float.parseFloat(cursorBBTB.getString(cursorBBTB.getColumnIndex("perempuan_bbtb_median")))) {
+            // Berat Badan == Median
+            else if (Float.parseFloat(beratBadan) == Float.parseFloat(cursorBBTB.getString(cursorBBTB.getColumnIndex("perempuan_bbtb_median")))) {
                 bbtb = (Float.parseFloat(cursorBBTB.getString(cursorBBTB.getColumnIndex("perempuan_bbtb_median"))) - Float.parseFloat(cursorBBTB.getString(cursorBBTB.getColumnIndex("perempuan_bbtb_1sd")))) /
                         (Float.parseFloat(cursorBBTB.getString(cursorBBTB.getColumnIndex("perempuan_bbtb_1sd"))) - Float.parseFloat(cursorBBTB.getString(cursorBBTB.getColumnIndex("perempuan_bbtb_min1sd"))));
             }

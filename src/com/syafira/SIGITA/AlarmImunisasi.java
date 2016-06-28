@@ -30,7 +30,6 @@ public class AlarmImunisasi extends Activity {
     private TextView text_button_profil;
     private LinearLayout ProfilLinearLayout;
     private TextView text_alarm_vaksin;
-    private TextView titikdua;
     private TextView alarm_vaksin;
     private TextView text_alarm_bulan;
     private TextView alarm_bulan;
