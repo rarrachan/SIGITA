@@ -50,13 +50,13 @@
                   android:theme="@android:style/Theme.NoTitleBar.Fullscreen">
         </activity>
         <!-- Profil Tambah Passcode Activity -->
-        <activity android:name="com.syafira.SIGITA.ProfilPasscode"
+        <activity android:name=".PasscodeTambah"
                   android:label="@string/app_name"
                   android:configChanges="orientation|screenSize|keyboardHidden"
                   android:theme="@android:style/Theme.NoTitleBar.Fullscreen">
         </activity>
         <!-- Profil Cek Passcode Activity -->
-        <activity android:name="com.syafira.SIGITA.ProfilCekPasscode"
+        <activity android:name=".PasscodeCek"
                   android:label="@string/app_name"
                   android:configChanges="orientation|screenSize|keyboardHidden"
                   android:theme="@android:style/Theme.NoTitleBar.Fullscreen">

@@ -196,7 +196,7 @@ public class DetailProfil extends Activity {
             public void onClick(View v) {
                 if(!pass.equals("")) {
                     // Show Image Zoom Activity
-                    Intent cekPasscode = new Intent(DetailProfil.this, ProfilCekPasscode.class);
+                    Intent cekPasscode = new Intent(DetailProfil.this, PasscodeCek.class);
                     lastActivity = System.currentTimeMillis();
                     cekPasscode.putExtra("lastActivity", lastActivity);
                     cekPasscode.putExtra("nama", nama);
@@ -258,7 +258,7 @@ public class DetailProfil extends Activity {
                     public void onClick(View v) {
                         if (!pass.equals("")) {
                             // Show Image Zoom Activity
-                            Intent cekPasscode = new Intent(DetailProfil.this, ProfilCekPasscode.class);
+                            Intent cekPasscode = new Intent(DetailProfil.this, PasscodeCek.class);
                             lastActivity = System.currentTimeMillis();
                             cekPasscode.putExtra("lastActivity", lastActivity);
                             cekPasscode.putExtra("nama", nama);

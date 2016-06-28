@@ -94,7 +94,7 @@ public class Passcode extends Activity {
             public void onClick(View v) {
                 // Switch ON
                 if (passcode_switch.isChecked()) {
-                    Intent passcode = new Intent(Passcode.this, ProfilPasscode.class);
+                    Intent passcode = new Intent(Passcode.this, PasscodeTambah.class);
                     lastActivity = System.currentTimeMillis();
                     passcode.putExtra("lastActivity", lastActivity);
                     passcode.putExtra("passcode", pass);
@@ -108,7 +108,7 @@ public class Passcode extends Activity {
 
                 // Switch OFF
                 } else {
-                    Intent passcode = new Intent(Passcode.this, ProfilCekPasscode.class);
+                    Intent passcode = new Intent(Passcode.this, PasscodeCek.class);
                     lastActivity = System.currentTimeMillis();
                     passcode.putExtra("lastActivity", lastActivity);
                     passcode.putExtra("passcode", pass);
@@ -128,7 +128,7 @@ public class Passcode extends Activity {
             @Override
             public void onClick(View v) {
                 // Show Image Zoom Activity
-                Intent passcode = new Intent(Passcode.this, ProfilCekPasscode.class);
+                Intent passcode = new Intent(Passcode.this, PasscodeCek.class);
                 lastActivity = System.currentTimeMillis();
                 passcode.putExtra("lastActivity", lastActivity);
                 passcode.putExtra("passcode", pass);

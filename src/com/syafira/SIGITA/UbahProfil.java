@@ -15,6 +15,7 @@ import android.graphics.*;
 import android.graphics.drawable.BitmapDrawable;
 import android.graphics.drawable.Drawable;
 import android.media.ExifInterface;
+import android.media.MediaScannerConnection;
 import android.net.Uri;
 import android.os.Bundle;
 import android.os.Environment;
@@ -364,6 +365,14 @@ public class UbahProfil extends Activity implements OnClickListener {
                             // Put Photo Into Directory
                             outStream.flush();
                             outStream.close();
+
+                            // Scan Gallery
+                            MediaScannerConnection.scanFile(UbahProfil.this,
+                                    new String[]{profil_foto.toString()}, null,
+                                    new MediaScannerConnection.OnScanCompletedListener() {
+                                        public void onScanCompleted(String path, Uri uri) {
+                                        }
+                                    });
 
                             // Declare Condition
                             success = true;

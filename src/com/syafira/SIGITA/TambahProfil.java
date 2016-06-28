@@ -390,7 +390,7 @@ public class TambahProfil extends Activity implements OnClickListener {
                             String pathbefore = fetchID.getStringExtra("pathbefore");
                             int detailJadwalImunisasiID = fetchID.getIntExtra("detailJadwalImunisasiID", 0);
 
-                            Intent profilPasscode = new Intent(TambahProfil.this, ProfilPasscode.class);
+                            Intent profilPasscode = new Intent(TambahProfil.this, PasscodeTambah.class);
                             profilPasscode.putExtra("nama", nama);
                             profilPasscode.putExtra("tmptLahir", tmptLahir);
                             profilPasscode.putExtra("tglLahir", tglLahir);

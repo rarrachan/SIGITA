@@ -165,7 +165,7 @@ public class Profil extends Activity{
 
                                 // Has Passcode
                                 if (!passcode.equals("")) {
-                                    Intent profilCekPasscode = new Intent(Profil.this, ProfilCekPasscode.class);
+                                    Intent profilCekPasscode = new Intent(Profil.this, PasscodeCek.class);
                                     lastActivity = System.currentTimeMillis();
                                     profilCekPasscode.putExtra("lastActivity", lastActivity);
                                     profilCekPasscode.putExtra("id", id);
@@ -221,7 +221,7 @@ public class Profil extends Activity{
                                     // Close Dialog
                                     dialog_profil.dismiss();
 
-                                    Intent profilCekPasscode = new Intent(Profil.this, ProfilCekPasscode.class);
+                                    Intent profilCekPasscode = new Intent(Profil.this, PasscodeCek.class);
                                     lastActivity = System.currentTimeMillis();
                                     profilCekPasscode.putExtra("lastActivity", lastActivity);
                                     profilCekPasscode.putExtra("id", id);
