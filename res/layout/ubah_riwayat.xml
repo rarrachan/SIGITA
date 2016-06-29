@@ -118,7 +118,7 @@
                                     android:layout_width="fill_parent"
                                     android:layout_height="wrap_content"
                                     android:textColor="#FF0000"
-                                    android:hint="@string/riwayat_nama"
+                                    android:hint="@string/riwayat_hint_nama"
                                     style="@android:style/TextAppearance.DeviceDefault.Medium"
                                     android:layout_margin="10dp"/>
                             <!-- End Text View Nama -->
@@ -168,7 +168,7 @@
                                     android:layout_width="fill_parent"
                                     android:layout_height="wrap_content"
                                     android:textColor="#FF0000"
-                                    android:hint="@string/riwayat_dokter"
+                                    android:hint="@string/riwayat_hint_dokter"
                                     style="@android:style/TextAppearance.DeviceDefault.Medium"/>
                             <!-- End Edit Text Nama Dokter -->
 
@@ -188,7 +188,7 @@
                                     android:layout_width="fill_parent"
                                     android:layout_height="wrap_content"
                                     android:textColor="#FF0000"
-                                    android:hint="@string/riwayat_rumahsakit"
+                                    android:hint="@string/riwayat_hint_rumahsakit"
                                     style="@android:style/TextAppearance.DeviceDefault.Medium"/>
                             <!-- End Edit Text Nama Rumah Sakit -->
 

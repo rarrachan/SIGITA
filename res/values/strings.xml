@@ -127,7 +127,7 @@
     <string name="riwayat_hint_dokter">Nama Dokter</string>
     <string name="riwayat_rumahsakit">Nama Rumah Sakit :</string>
     <string name="riwayat_hint_rumahsakit">Nama Rumah Sakit</string>
-    <string name="riwayat_tanggal">Tanggal Vaksinasi</string>
+    <string name="riwayat_tanggal">Tanggal Vaksinasi :</string>
     <string name="riwayat_tinggibadan">Tinggi Badan :</string>
     <string name="riwayat_beratbadan">Berat Badan :</string>
     <string name="ubah_riwayat">Ubah Riwayat Imunisasi</string>
