@@ -59,7 +59,7 @@
                 </LinearLayout>
                 <!-- End Linear Layout Header -->
 
-                <!-- Start Text View Passcode -->
+                <!-- Start Text View ProfilPasscode -->
                 <TextView
                         android:id="@+id/button_passcode"
                         android:layout_width="wrap_content"
@@ -72,7 +72,7 @@
                         android:layout_marginTop="10dp"
                         android:layout_marginRight="20dp"
                         android:layout_marginBottom="10dp"/>
-                <!-- End Text View Passcode -->
+                <!-- End Text View ProfilPasscode -->
 
                 <!-- Start Linear Layout Row -->
                 <LinearLayout
@@ -153,7 +153,7 @@
                                         style="@android:style/TextAppearance.DeviceDefault.Medium"/>
                                 <!-- End Text View Switch -->
 
-                                <!-- Start Passcode Switch -->
+                                <!-- Start ProfilPasscode Switch -->
                                 <ToggleButton
                                         android:id="@+id/passcode_switch"
                                         android:layout_width="wrap_content"
@@ -161,12 +161,12 @@
                                         android:textColor="#FF0000"
                                         style="@android:style/TextAppearance.DeviceDefault.Medium"
                                         android:layout_marginLeft="5dp"/>
-                                <!-- End Passcode Switch -->
+                                <!-- End ProfilPasscode Switch -->
 
                             </LinearLayout>
                             <!-- End Linear Layout Switch -->
 
-                            <!-- Start Linear Layout Ubah Passcode -->
+                            <!-- Start Linear Layout Ubah ProfilPasscode -->
                             <LinearLayout
                                     android:id="@+id/UbahPasscodeLinearLayout"
                                     android:layout_width="fill_parent"
@@ -174,7 +174,7 @@
                                     android:orientation="horizontal"
                                     android:background="#FFF1B5">
 
-                                <!-- Start Text View Ubah Passcode -->
+                                <!-- Start Text View Ubah ProfilPasscode -->
                                 <TextView
                                         android:id="@+id/text_passcode_ubah"
                                         android:layout_width="0dp"
@@ -185,7 +185,7 @@
                                         android:layout_weight="1.8"
                                         android:gravity="left|center"
                                         android:layout_marginLeft="10dp"/>
-                                <!-- End Text View Ubah Passcode -->
+                                <!-- End Text View Ubah ProfilPasscode -->
 
                                 <!-- Start Blank Space -->
                                 <View
@@ -194,7 +194,7 @@
                                         android:layout_weight=".005"/>
                                 <!-- End Blank Space -->
 
-                                <!-- Start Image View Ubah Passcode -->
+                                <!-- Start Image View Ubah ProfilPasscode -->
                                 <ImageView
                                         android:id="@+id/button_passcode_ubah"
                                         android:layout_width="0dp"
@@ -204,10 +204,10 @@
                                         android:src="@drawable/icon_passcode"
                                         android:contentDescription="@string/app_name"
                                         android:layout_margin="5dp"/>
-                                <!-- End Image View Ubah Passcode -->
+                                <!-- End Image View Ubah ProfilPasscode -->
 
                             </LinearLayout>
-                            <!-- End Linear Layout Ubah Passcode -->
+                            <!-- End Linear Layout Ubah ProfilPasscode -->
 
                         </LinearLayout>
                         <!-- End Linear Layout Content -->

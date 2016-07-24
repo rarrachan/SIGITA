@@ -31,7 +31,7 @@ public class Home extends Activity {
 
     // Start Activity
     @Override
-    public void onCreate(Bundle savedInstanceState) {
+    protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
 
         //Load Layout

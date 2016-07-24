@@ -4,7 +4,6 @@ package com.syafira.SIGITA;
  * Created by syafira rarra on 04/03/2016.
  */
 
-import android.app.Activity;
 import android.app.Dialog;
 import android.content.Intent;
 import android.graphics.Typeface;
@@ -14,7 +13,7 @@ import android.view.View;
 import android.view.View.OnClickListener;
 import android.widget.*;
 
-public class Imunisasi extends Activity implements OnClickListener {
+public class Imunisasi extends Home implements OnClickListener {
 
     // Declare
     private TextView text_button_profil;
@@ -30,7 +29,7 @@ public class Imunisasi extends Activity implements OnClickListener {
     private long lastActivity;
 
     @Override
-    public void onCreate(Bundle savedInstanceState) {
+    protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
 
         // Load Layout
@@ -94,7 +93,7 @@ public class Imunisasi extends Activity implements OnClickListener {
 
             // Jadwal Imunisasi
             case R.id.JadwalImunisasiLinearLayout :
-                Intent jadwal = new Intent(this, JadwalImunisasi.class);
+                Intent jadwal = new Intent(this, ImunisasiJadwal.class);
                 lastActivity = System.currentTimeMillis();
                 jadwal.putExtra("lastActivity", lastActivity);
                 jadwal.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TASK | Intent.FLAG_ACTIVITY_CLEAR_TOP);
@@ -106,7 +105,7 @@ public class Imunisasi extends Activity implements OnClickListener {
             case R.id.RiwayatImunisasiLinearLayout :
                 // Check Session
                 if (session.checkSession(this)) {
-                    Intent riwayat = new Intent(this, RiwayatImunisasi.class);
+                    Intent riwayat = new Intent(this, ImunisasiRiwayat.class);
                     lastActivity = System.currentTimeMillis();
                     riwayat.putExtra("lastActivity", lastActivity);
                     riwayat.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TASK | Intent.FLAG_ACTIVITY_CLEAR_TOP);
@@ -153,7 +152,7 @@ public class Imunisasi extends Activity implements OnClickListener {
             case R.id.AlarmImunisasiLinearLayout :
                 // Check Session
                 if (session.checkSession(this)) {
-                    Intent alarm = new Intent(this, AlarmImunisasi.class);
+                    Intent alarm = new Intent(this, ImunisasiAlarm.class);
                     lastActivity = System.currentTimeMillis();
                     alarm.putExtra("lastActivity", lastActivity);
                     alarm.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TASK | Intent.FLAG_ACTIVITY_CLEAR_TOP);

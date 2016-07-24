@@ -345,7 +345,7 @@
                                         android:textColor="#FF0000"
                                         android:text="@string/dash"
                                         style="@android:style/TextAppearance.DeviceDefault.Medium"/>
-                                <!-- End Text View Titik Dua -->
+                                <!-- End Text View Golongan Darah -->
 
                             </LinearLayout>
                             <!-- Start Linear Layout Golongan Darah -->

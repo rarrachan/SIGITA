@@ -164,7 +164,7 @@
                                         android:hint="@string/jenis_hint_vaksin"
                                         style="@android:style/TextAppearance.DeviceDefault.Medium"
                                         android:layout_marginLeft="5dp"/>
-                                <!-- End Text View Titik Dua -->
+                                <!-- End Text View Jenis Vaksin -->
 
                             </LinearLayout>
                             <!-- End Linear Layout Jenis Vaksin -->

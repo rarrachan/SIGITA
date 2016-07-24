@@ -20,7 +20,7 @@
                 android:layout_weight=".2"/>
         <!-- End Blank Space -->
 
-        <!-- Start Linear Layout Lupa Passcode -->
+        <!-- Start Linear Layout Lupa ProfilPasscode -->
         <LinearLayout
                 android:layout_width="0dp"
                 android:layout_height="wrap_content"

@@ -4,7 +4,6 @@ package com.syafira.SIGITA;
  * Created by syafira rarra on 04/03/2016.
  */
 
-import android.app.Activity;
 import android.app.Dialog;
 import android.content.Intent;
 import android.graphics.Typeface;
@@ -14,24 +13,22 @@ import android.view.View;
 import android.view.View.OnClickListener;
 import android.widget.*;
 
-public class TumbuhKembang extends Activity implements OnClickListener {
+public class TumbuhKembang extends Home implements OnClickListener {
 
     // Declare
     private TextView text_button_profil;
     private LinearLayout ProfilLinearLayout;
     private TextView text_footer;
     private TextView text_button_galeritumbang;
-    private ImageView button_galeritumbang;
     private LinearLayout GaleriTumbangLinearLayout;
     private TextView text_button_tahapantumbang;
-    private ImageView button_tahapantumbang;
     private LinearLayout TahapanTumbangLinearLayout;
     private SessionManager session;
     private long lastActivity;
 
     // Start Activity
     @Override
-    public void onCreate(Bundle savedInstanceState) {
+    protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
 
         // Load Layout
@@ -49,7 +46,7 @@ public class TumbuhKembang extends Activity implements OnClickListener {
         text_button_profil = (TextView) findViewById(R.id.text_button_profil);
         text_footer = (TextView) findViewById(R.id.text_footer);
         TahapanTumbangLinearLayout = (LinearLayout) findViewById(R.id.TahapanTumbangLinearLayout);
-        text_button_tahapantumbang= (TextView) findViewById(R.id.text_button_tahapantumbang);
+        text_button_tahapantumbang = (TextView) findViewById(R.id.text_button_tahapantumbang);
         GaleriTumbangLinearLayout = (LinearLayout) findViewById(R.id.GaleriTumbangLinearLayout);
         text_button_galeritumbang= (TextView) findViewById(R.id.text_button_galeritumbang);
 
@@ -91,7 +88,7 @@ public class TumbuhKembang extends Activity implements OnClickListener {
 
             // Tahapan Tumbuh Kembang
             case R.id.TahapanTumbangLinearLayout :
-                Intent tahap_tumbang = new Intent(this, TahapanTumbang.class);
+                Intent tahap_tumbang = new Intent(this, TumbuhKembangTahapan.class);
                 lastActivity = System.currentTimeMillis();
                 tahap_tumbang.putExtra("lastActivity", lastActivity);
                 tahap_tumbang.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TASK | Intent.FLAG_ACTIVITY_CLEAR_TOP);
@@ -103,7 +100,7 @@ public class TumbuhKembang extends Activity implements OnClickListener {
             case R.id.GaleriTumbangLinearLayout :
                 // Check Session
                 if (session.checkSession(this)) {
-                    Intent galeri = new Intent(this, GaleriTumbang.class);
+                    Intent galeri = new Intent(this, TumbuhKembangGaleri.class);
                     lastActivity = System.currentTimeMillis();
                     galeri.putExtra("lastActivity", lastActivity);
                     galeri.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TASK | Intent.FLAG_ACTIVITY_CLEAR_TOP);

@@ -1,6 +1,5 @@
 package com.syafira.SIGITA;
 
-import android.app.Activity;
 import android.content.Intent;
 import android.database.Cursor;
 import android.graphics.Color;
@@ -8,14 +7,14 @@ import android.graphics.Typeface;
 import android.os.Bundle;
 import android.util.TypedValue;
 import android.view.Gravity;
-import android.view.LayoutInflater;
 import android.view.View;
 import android.widget.*;
 
 /**
  * Created by syafira rarra on 05/01/2016.
  */
-public class RekamMedis extends Activity {
+
+public class RekamMedis extends Home{
 
     // Declare
     private TextView button_rekammedis;
@@ -160,7 +159,7 @@ public class RekamMedis extends Activity {
                         @Override
                         public void onClick(View v) {
                             // Show Detail Profil Activity
-                            Intent detail_medis = new Intent(RekamMedis.this, DetailMedis.class);
+                            Intent detail_medis = new Intent(RekamMedis.this, RekamMedisDetail.class);
                             lastActivity = System.currentTimeMillis();
                             detail_medis.putExtra("lastActivity", lastActivity);
                             detail_medis.putExtra("id", id);
@@ -211,7 +210,7 @@ public class RekamMedis extends Activity {
             @Override
             public void onClick(View v) {
                 // Show Detail Profil Activity
-                Intent tambah_medis = new Intent(RekamMedis.this, TambahMedis.class);
+                Intent tambah_medis = new Intent(RekamMedis.this, RekamMedisTambah.class);
                 lastActivity = System.currentTimeMillis();
                 tambah_medis.putExtra("lastActivity", lastActivity);
                 tambah_medis.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TASK | Intent.FLAG_ACTIVITY_CLEAR_TOP);

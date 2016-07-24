@@ -20,7 +20,7 @@
                 android:layout_weight=".2"/>
         <!-- End Blank Space -->
 
-        <!-- Start Linear Layout Tambah Passcode -->
+        <!-- Start Linear Layout Tambah ProfilPasscode -->
         <LinearLayout
                 android:layout_width="0dp"
                 android:layout_height="wrap_content"
@@ -92,7 +92,7 @@
             <!-- End Linear Layout Button -->
 
         </LinearLayout>
-        <!-- End Linear Layout Tambah Passcode -->
+        <!-- End Linear Layout Tambah ProfilPasscode -->
 
         <!-- Start Blank Space -->
         <View

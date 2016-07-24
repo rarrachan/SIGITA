@@ -1,6 +1,5 @@
 package com.syafira.SIGITA;
 
-import android.app.Activity;
 import android.content.Intent;
 import android.graphics.Typeface;
 import android.os.Bundle;
@@ -10,7 +9,7 @@ import android.widget.TextView;
  * Created by syafira rarra on 06/01/2016.
  */
 
-public class TentangSIGITA extends Activity {
+public class TentangSIGITA extends Home {
 
     // Declare
     private TextView button_tentangsigita;

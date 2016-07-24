@@ -4,7 +4,6 @@ package com.syafira.SIGITA;
  * Created by syafira rarra on 04/03/2016.
  */
 
-import android.app.Activity;
 import android.app.Dialog;
 import android.content.Intent;
 import android.graphics.Typeface;
@@ -14,7 +13,7 @@ import android.view.View;
 import android.view.View.OnClickListener;
 import android.widget.*;
 
-public class Gizi extends Activity implements OnClickListener {
+public class Gizi extends Home implements OnClickListener {
 
     // Declare
     private TextView text_button_profil;
@@ -29,7 +28,7 @@ public class Gizi extends Activity implements OnClickListener {
 
     // Start Activity
     @Override
-    public void onCreate(Bundle savedInstanceState) {
+    protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
 
         // Load Layout
@@ -88,7 +87,7 @@ public class Gizi extends Activity implements OnClickListener {
 
             // Kalkulator Gizi
             case R.id.KalkulatorGiziLinearLayout:
-                Intent kalkulatorgizi = new Intent(this, KalkulatorGizi.class);
+                Intent kalkulatorgizi = new Intent(this, GiziKalkulatorGizi.class);
                 lastActivity = System.currentTimeMillis();
                 kalkulatorgizi.putExtra("lastActivity", lastActivity);
                 kalkulatorgizi.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TASK | Intent.FLAG_ACTIVITY_CLEAR_TOP);
@@ -100,7 +99,7 @@ public class Gizi extends Activity implements OnClickListener {
             case R.id.DokumentasiGiziLinearLayout:
                 // Check Session
                 if (session.checkSession(this)) {
-                    Intent dokumentasi = new Intent(this, DokumentasiGizi.class);
+                    Intent dokumentasi = new Intent(this, GiziDokumentasi.class);
                     lastActivity = System.currentTimeMillis();
                     dokumentasi.putExtra("lastActivity", lastActivity);
                     dokumentasi.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TASK | Intent.FLAG_ACTIVITY_CLEAR_TOP);

@@ -138,7 +138,7 @@ public class ImageZoomer extends ImageView {
         }
     }
 
-    void fixTrans() {
+    public void fixTrans() {
         matrix.getValues(m);
         float transX = m[Matrix.MTRANS_X];
         float transY = m[Matrix.MTRANS_Y];
@@ -150,7 +150,7 @@ public class ImageZoomer extends ImageView {
     }
 
 
-    float getFixTrans(float trans, float viewSize, float contentSize) {
+    public float getFixTrans(float trans, float viewSize, float contentSize) {
         float minTrans, maxTrans;
 
         if (contentSize <= viewSize) {
@@ -170,7 +170,7 @@ public class ImageZoomer extends ImageView {
         return 0;
     }
 
-    float getFixDragTrans(float delta, float viewSize, float contentSize) {
+    public float getFixDragTrans(float delta, float viewSize, float contentSize) {
         if (contentSize <= viewSize) {
             return 0;
         }

@@ -4,7 +4,6 @@ package com.syafira.SIGITA;
  * Created by syafira rarra on 03/27/2016.
  */
 
-import android.app.Activity;
 import android.app.Dialog;
 import android.database.Cursor;
 import android.graphics.drawable.ColorDrawable;
@@ -16,7 +15,7 @@ import android.view.View.OnClickListener;
 import android.widget.*;
 import android.graphics.Typeface;
 
-public class Profil extends Activity{
+public class Profil extends Home {
 
     // Declare
     private TextView text_button_tambahprofil;
@@ -62,7 +61,7 @@ public class Profil extends Activity{
             @Override
             public void onClick(View v) {
                 // Show Tambah Profil Activity
-                Intent tambah_profil = new Intent(Profil.this, TambahProfil.class);
+                Intent tambah_profil = new Intent(Profil.this, ProfilTambah.class);
                 lastActivity = System.currentTimeMillis();
                 tambah_profil.putExtra("lastActivity", lastActivity);
                 tambah_profil.putExtra("pathbefore", pathbefore);
@@ -163,9 +162,9 @@ public class Profil extends Activity{
                             @Override
                             public void onClick(View v) {
 
-                                // Has Passcode
+                                // Has ProfilPasscode
                                 if (!passcode.equals("")) {
-                                    Intent profilCekPasscode = new Intent(Profil.this, PasscodeCek.class);
+                                    Intent profilCekPasscode = new Intent(Profil.this, ProfilPasscodeCek.class);
                                     lastActivity = System.currentTimeMillis();
                                     profilCekPasscode.putExtra("lastActivity", lastActivity);
                                     profilCekPasscode.putExtra("id", id);
@@ -182,7 +181,7 @@ public class Profil extends Activity{
 
                                     dialog_profil.dismiss();
 
-                                // Has no Passcode
+                                // Has no ProfilPasscode
                                 } else {
                                     // Create Session
                                     if (session.checkSession(Profil.this)) {
@@ -216,12 +215,12 @@ public class Profil extends Activity{
                             @Override
                             public void onClick(View v) {
 
-                                // Has Passcode
+                                // Has ProfilPasscode
                                 if (!passcode.equals("")) {
                                     // Close Dialog
                                     dialog_profil.dismiss();
 
-                                    Intent profilCekPasscode = new Intent(Profil.this, PasscodeCek.class);
+                                    Intent profilCekPasscode = new Intent(Profil.this, ProfilPasscodeCek.class);
                                     lastActivity = System.currentTimeMillis();
                                     profilCekPasscode.putExtra("lastActivity", lastActivity);
                                     profilCekPasscode.putExtra("id", id);
@@ -234,13 +233,13 @@ public class Profil extends Activity{
                                     startActivity(profilCekPasscode);
                                     finish();
 
-                                // Has no Passcode
+                                // Has no ProfilPasscode
                                 } else {
                                     // Close Dialog
                                     dialog_profil.dismiss();
 
                                     // Show Detail Profil Activity
-                                    Intent detail_profil = new Intent(Profil.this, DetailProfil.class);
+                                    Intent detail_profil = new Intent(Profil.this, ProfilDetail.class);
                                     lastActivity = System.currentTimeMillis();
                                     detail_profil.putExtra("lastActivity", lastActivity);
                                     detail_profil.putExtra("id", id);
@@ -335,7 +334,7 @@ public class Profil extends Activity{
 
             case "alarmimunisasi":
                 // Start Alarm Imunisasi Activity
-                Intent alarmimunisasi = new Intent(this, AlarmImunisasi.class);
+                Intent alarmimunisasi = new Intent(this, ImunisasiAlarm.class);
                 lastActivity = System.currentTimeMillis();
                 alarmimunisasi.putExtra("lastActivity", lastActivity);
                 alarmimunisasi.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TASK | Intent.FLAG_ACTIVITY_CLEAR_TOP);
@@ -347,7 +346,7 @@ public class Profil extends Activity{
 
             case "jadwalimunisasi":
                 // Start Jadwal Imunisasi Activity
-                Intent jadwalimunisasi = new Intent(this, JadwalImunisasi.class);
+                Intent jadwalimunisasi = new Intent(this, ImunisasiJadwal.class);
                 lastActivity = System.currentTimeMillis();
                 jadwalimunisasi.putExtra("lastActivity", lastActivity);
                 jadwalimunisasi.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TASK | Intent.FLAG_ACTIVITY_CLEAR_TOP);
@@ -359,7 +358,7 @@ public class Profil extends Activity{
 
             case "detailjadwalimunisasi":
                 // Start Detail Jadwal Imunisasi Activity
-                Intent detailjadwalimunisasi = new Intent(this, DetailJadwalImunisasi.class);
+                Intent detailjadwalimunisasi = new Intent(this, ImunisasiJadwalDetail.class);
                 lastActivity = System.currentTimeMillis();
                 detailjadwalimunisasi.putExtra("lastActivity", lastActivity);
                 detailjadwalimunisasi.putExtra("id", detailJadwalImunisasiID);
@@ -372,7 +371,7 @@ public class Profil extends Activity{
 
             case "riwayatimunisasi":
                 // Start Riwayat Imunisasi Activity
-                Intent riwayatimunisasi = new Intent(this, RiwayatImunisasi.class);
+                Intent riwayatimunisasi = new Intent(this, ImunisasiRiwayat.class);
                 lastActivity = System.currentTimeMillis();
                 riwayatimunisasi.putExtra("lastActivity", lastActivity);
                 riwayatimunisasi.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TASK | Intent.FLAG_ACTIVITY_CLEAR_TOP);
@@ -384,7 +383,7 @@ public class Profil extends Activity{
 
             case "dokumentasigizi":
                 // Start Dokumentasi Gizi Activity
-                Intent dokumentasigizi = new Intent(this, DokumentasiGizi.class);
+                Intent dokumentasigizi = new Intent(this, GiziDokumentasi.class);
                 lastActivity = System.currentTimeMillis();
                 dokumentasigizi.putExtra("lastActivity", lastActivity);
                 dokumentasigizi.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TASK | Intent.FLAG_ACTIVITY_CLEAR_TOP);
@@ -396,7 +395,7 @@ public class Profil extends Activity{
 
             case "tahapantumbang":
                 // Start Tahapan Tumbuh Kembang Activity
-                Intent tahapantumbang = new Intent(this, TahapanTumbang.class);
+                Intent tahapantumbang = new Intent(this, TumbuhKembangTahapan.class);
                 lastActivity = System.currentTimeMillis();
                 tahapantumbang.putExtra("lastActivity", lastActivity);
                 tahapantumbang.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TASK | Intent.FLAG_ACTIVITY_CLEAR_TOP);
@@ -408,7 +407,7 @@ public class Profil extends Activity{
 
             case "galeritumbang":
                 // Start Galeri Tumbuh Kembang Activity
-                Intent galeritumbang = new Intent(this, GaleriTumbang.class);
+                Intent galeritumbang = new Intent(this, TumbuhKembangGaleri.class);
                 lastActivity = System.currentTimeMillis();
                 galeritumbang.putExtra("lastActivity", lastActivity);
                 galeritumbang.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TASK | Intent.FLAG_ACTIVITY_CLEAR_TOP);

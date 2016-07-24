@@ -165,7 +165,7 @@ public class DBHelper extends SQLiteOpenHelper {
         return db.update("profil", values, "profilID = " + id, null);
     }
 
-    // Update Profil Passcode to Database
+    // Update Profil ProfilPasscode to Database
     public long updateProfilPasscode(Integer id, String passcode) {
 
         // Open Database to Write
@@ -625,6 +625,8 @@ public class DBHelper extends SQLiteOpenHelper {
         db.execSQL("insert into antropometri_laki_bbtb_0_24 (laki_bbtb_tb, laki_bbtb_min3sd, laki_bbtb_min2sd, laki_bbtb_min1sd, laki_bbtb_median, laki_bbtb_1sd, laki_bbtb_2sd, laki_bbtb_3sd) values " +
                 "('67.0', '6.1', '6.6', '7.1', '7.7', '8.4', '9.2', '10.0');");
         db.execSQL("insert into antropometri_laki_bbtb_0_24 (laki_bbtb_tb, laki_bbtb_min3sd, laki_bbtb_min2sd, laki_bbtb_min1sd, laki_bbtb_median, laki_bbtb_1sd, laki_bbtb_2sd, laki_bbtb_3sd) values " +
+                "('67.5', '6.2', '6.7', '7.2', '7.9', '8.5', '9.3', '10.2');");
+        db.execSQL("insert into antropometri_laki_bbtb_0_24 (laki_bbtb_tb, laki_bbtb_min3sd, laki_bbtb_min2sd, laki_bbtb_min1sd, laki_bbtb_median, laki_bbtb_1sd, laki_bbtb_2sd, laki_bbtb_3sd) values " +
                 "('68.0', '6.3', '6.8', '7.3', '8.0', '8.7', '9.4', '10.3');");
         db.execSQL("insert into antropometri_laki_bbtb_0_24 (laki_bbtb_tb, laki_bbtb_min3sd, laki_bbtb_min2sd, laki_bbtb_min1sd, laki_bbtb_median, laki_bbtb_1sd, laki_bbtb_2sd, laki_bbtb_3sd) values " +
                 "('68.5', '6.4', '6.9', '7.5', '8.1', '8.8', '9.6', '10.5');");
@@ -997,6 +999,8 @@ public class DBHelper extends SQLiteOpenHelper {
         db.execSQL("insert into antropometri_laki_bbtb_24_60 (laki_bbtb_tb, laki_bbtb_min3sd, laki_bbtb_min2sd, laki_bbtb_min1sd, laki_bbtb_median, laki_bbtb_1sd, laki_bbtb_2sd, laki_bbtb_3sd) values " +
                 "('105.0', '13.2', '14.3', '15.5', '16.8', '18.4', '20.1', '22.0');");
         db.execSQL("insert into antropometri_laki_bbtb_24_60 (laki_bbtb_tb, laki_bbtb_min3sd, laki_bbtb_min2sd, laki_bbtb_min1sd, laki_bbtb_median, laki_bbtb_1sd, laki_bbtb_2sd, laki_bbtb_3sd) values " +
+                "('105.5', '13.3', '14.4', '15.6', '17.0', '18.5', '20.3', '22.2');");
+        db.execSQL("insert into antropometri_laki_bbtb_24_60 (laki_bbtb_tb, laki_bbtb_min3sd, laki_bbtb_min2sd, laki_bbtb_min1sd, laki_bbtb_median, laki_bbtb_1sd, laki_bbtb_2sd, laki_bbtb_3sd) values " +
                 "('106.0', '13.4', '14.5', '15.8', '17.2', '18.7', '20.5', '22.5');");
         db.execSQL("insert into antropometri_laki_bbtb_24_60 (laki_bbtb_tb, laki_bbtb_min3sd, laki_bbtb_min2sd, laki_bbtb_min1sd, laki_bbtb_median, laki_bbtb_1sd, laki_bbtb_2sd, laki_bbtb_3sd) values " +
                 "('106.5', '13.5', '14.7', '15.9', '17.3', '18.9', '20.7', '22.7');");
@@ -1321,7 +1325,9 @@ public class DBHelper extends SQLiteOpenHelper {
         db.execSQL("insert into antropometri_perempuan_bbu (perempuan_bbu_usia, perempuan_bbu_min3sd, perempuan_bbu_min2sd, perempuan_bbu_min1sd, perempuan_bbu_median, perempuan_bbu_1sd, perempuan_bbu_2sd, perempuan_bbu_3sd) values " +
                 "('31', '9.0', '10.1', '11.4', '12.9', '14.7', '16.8', '19.3');");
         db.execSQL("insert into antropometri_perempuan_bbu (perempuan_bbu_usia, perempuan_bbu_min3sd, perempuan_bbu_min2sd, perempuan_bbu_min1sd, perempuan_bbu_median, perempuan_bbu_1sd, perempuan_bbu_2sd, perempuan_bbu_3sd) values " +
-                "('32', '9.1', '10.3', '11.6', '13.1', '15.1', '17.3', '20.0');");
+                "('32', '9.1', '10.3', '11.6', '13.1', '14.9', '17.1', '19.6');");
+        db.execSQL("insert into antropometri_perempuan_bbu (perempuan_bbu_usia, perempuan_bbu_min3sd, perempuan_bbu_min2sd, perempuan_bbu_min1sd, perempuan_bbu_median, perempuan_bbu_1sd, perempuan_bbu_2sd, perempuan_bbu_3sd) values " +
+                "('33', '9.3', '10.4', '11.7', '13.3', '15.1', '17.3', '20.0');");
         db.execSQL("insert into antropometri_perempuan_bbu (perempuan_bbu_usia, perempuan_bbu_min3sd, perempuan_bbu_min2sd, perempuan_bbu_min1sd, perempuan_bbu_median, perempuan_bbu_1sd, perempuan_bbu_2sd, perempuan_bbu_3sd) values " +
                 "('34', '9.4', '10.5', '11.9', '13.5', '15.4', '17.6', '20.3');");
         db.execSQL("insert into antropometri_perempuan_bbu (perempuan_bbu_usia, perempuan_bbu_min3sd, perempuan_bbu_min2sd, perempuan_bbu_min1sd, perempuan_bbu_median, perempuan_bbu_1sd, perempuan_bbu_2sd, perempuan_bbu_3sd) values " +
@@ -2059,7 +2065,9 @@ public class DBHelper extends SQLiteOpenHelper {
         db.execSQL("insert into antropometri_perempuan_bbtb_24_60 (perempuan_bbtb_tb, perempuan_bbtb_min3sd, perempuan_bbtb_min2sd, perempuan_bbtb_min1sd, perempuan_bbtb_median, perempuan_bbtb_1sd, perempuan_bbtb_2sd, perempuan_bbtb_3sd) values " +
                 "('109.0', '13.9', '15.2', '16.6', '18.2', '20.0', '22.1', '24.5');");
         db.execSQL("insert into antropometri_perempuan_bbtb_24_60 (perempuan_bbtb_tb, perempuan_bbtb_min3sd, perempuan_bbtb_min2sd, perempuan_bbtb_min1sd, perempuan_bbtb_median, perempuan_bbtb_1sd, perempuan_bbtb_2sd, perempuan_bbtb_3sd) values " +
-                "('110.0', '14.1', '15.4', '16.8', '18.4', '20.3', '22.4', '24.8');");
+                "('109.5', '14.1', '15.4', '16.8', '18.4', '20.3', '22.4', '24.8');");
+        db.execSQL("insert into antropometri_perempuan_bbtb_24_60 (perempuan_bbtb_tb, perempuan_bbtb_min3sd, perempuan_bbtb_min2sd, perempuan_bbtb_min1sd, perempuan_bbtb_median, perempuan_bbtb_1sd, perempuan_bbtb_2sd, perempuan_bbtb_3sd) values " +
+                "('110.0', '14.2', '15.5', '17.0', '18.6', '20.5', '22.6', '25.1');");
         db.execSQL("insert into antropometri_perempuan_bbtb_24_60 (perempuan_bbtb_tb, perempuan_bbtb_min3sd, perempuan_bbtb_min2sd, perempuan_bbtb_min1sd, perempuan_bbtb_median, perempuan_bbtb_1sd, perempuan_bbtb_2sd, perempuan_bbtb_3sd) values " +
                 "('110.5', '14.4', '15.7', '17.1', '18.8', '20.7', '22.9', '25.4');");
         db.execSQL("insert into antropometri_perempuan_bbtb_24_60 (perempuan_bbtb_tb, perempuan_bbtb_min3sd, perempuan_bbtb_min2sd, perempuan_bbtb_min1sd, perempuan_bbtb_median, perempuan_bbtb_1sd, perempuan_bbtb_2sd, perempuan_bbtb_3sd) values " +
