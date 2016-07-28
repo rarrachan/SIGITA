@@ -49,7 +49,7 @@ public class ProfilPasscodeUbah extends ProfilPasscode {
         final String pathbefore = fetchID.getStringExtra("pathbefore");
         final int detailJadwalImunisasiID = fetchID.getIntExtra("detailJadwalImunisasiID", 0);
 
-        // Intent Extra for Ubah ProfilPasscode
+        // Intent Extra for Ubah Passcode
         final int id = fetchID.getIntExtra("id", 0);
 
         // Load Widget
@@ -171,9 +171,9 @@ public class ProfilPasscodeUbah extends ProfilPasscode {
                     }
 
                     if (success) {
-                        Toast.makeText(getApplicationContext(), "ProfilPasscode Berhasil Diubah", Toast.LENGTH_LONG).show();
+                        Toast.makeText(getApplicationContext(), "Passcode Berhasil Diubah", Toast.LENGTH_LONG).show();
                     } else {
-                        Toast.makeText(getApplicationContext(), "ProfilPasscode Gagal Diubah", Toast.LENGTH_LONG).show();
+                        Toast.makeText(getApplicationContext(), "Passcode Gagal Diubah", Toast.LENGTH_LONG).show();
                     }
 
                     // Start Profil Activity

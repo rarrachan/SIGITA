@@ -84,7 +84,7 @@ public class ProfilPasscode extends Profil {
             UbahPasscodeLinearLayout.setVisibility(View.VISIBLE);
         }
 
-        // Switch ProfilPasscode
+        // Switch Passcode
         passcode_switch.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {

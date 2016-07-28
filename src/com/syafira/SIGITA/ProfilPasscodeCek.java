@@ -192,9 +192,9 @@ public class ProfilPasscodeCek extends ProfilPasscode {
                                 // Close This Activity
                                 finish();
                             
-                            // ProfilPasscode False
+                            // Passcode False
                             } else {
-                                Toast.makeText(ProfilPasscodeCek.this, "ProfilPasscode Salah", Toast.LENGTH_SHORT).show();
+                                Toast.makeText(ProfilPasscodeCek.this, "Passcode Salah", Toast.LENGTH_SHORT).show();
 
                                 // Start Home Activity
                                 lastActivity = System.currentTimeMillis();
@@ -211,7 +211,7 @@ public class ProfilPasscodeCek extends ProfilPasscode {
                             break;
 
                         case "detailprofil":
-                            // ProfilPasscode True
+                            // Passcode True
                             if (newpasscode.equals(pass)) {
                                 // Show Detail Profil Activity
                                 lastActivity = System.currentTimeMillis();
@@ -226,9 +226,9 @@ public class ProfilPasscodeCek extends ProfilPasscode {
                                 // Close This Activity
                                 finish();
 
-                            // ProfilPasscode False
+                            // Passcode False
                             } else {
-                                Toast.makeText(ProfilPasscodeCek.this, "ProfilPasscode Salah", Toast.LENGTH_SHORT).show();
+                                Toast.makeText(ProfilPasscodeCek.this, "Passcode Salah", Toast.LENGTH_SHORT).show();
 
                                 // Start Profil Activity
                                 Intent profil = new Intent(ProfilPasscodeCek.this, Profil.class);
@@ -245,7 +245,7 @@ public class ProfilPasscodeCek extends ProfilPasscode {
                             break;
 
                         case "ubahpasscode":
-                            // ProfilPasscode True
+                            // Passcode True
                             if (newpasscode.equals(pass)) {
 
                                 // Start Home Activity
@@ -263,9 +263,9 @@ public class ProfilPasscodeCek extends ProfilPasscode {
                                 // Close This Activity
                                 finish();
 
-                            // ProfilPasscode False
+                            // Passcode False
                             } else {
-                                Toast.makeText(ProfilPasscodeCek.this, "ProfilPasscode Salah", Toast.LENGTH_SHORT).show();
+                                Toast.makeText(ProfilPasscodeCek.this, "Passcode Salah", Toast.LENGTH_SHORT).show();
 
                                 // Start Profil Activity
                                 Intent passcode = new Intent(ProfilPasscodeCek.this, ProfilPasscode.class);
@@ -283,7 +283,7 @@ public class ProfilPasscodeCek extends ProfilPasscode {
                             break;
 
                         case "hapuspasscode":
-                            // ProfilPasscode True
+                            // Passcode True
                             if (newpasscode.equals(pass)) {
                                 // Start Profil Activity
                                 Intent passcodehapus = new Intent(ProfilPasscodeCek.this, ProfilPasscodeHapus.class);
@@ -298,9 +298,9 @@ public class ProfilPasscodeCek extends ProfilPasscode {
                                 // Close This Activity
                                 finish();
 
-                            // ProfilPasscode False
+                            // Passcode False
                             } else {
-                                Toast.makeText(ProfilPasscodeCek.this, "ProfilPasscode Salah", Toast.LENGTH_SHORT).show();
+                                Toast.makeText(ProfilPasscodeCek.this, "Passcode Salah", Toast.LENGTH_SHORT).show();
 
                                 // Start Profil Activity
                                 Intent passcode = new Intent(ProfilPasscodeCek.this, ProfilPasscode.class);
@@ -318,7 +318,7 @@ public class ProfilPasscodeCek extends ProfilPasscode {
                             break;
 
                         case "ubahprofil":
-                            // ProfilPasscode True
+                            // Passcode True
                             if (newpasscode.equals(pass)) {
                                 Intent ubah_profil = new Intent(ProfilPasscodeCek.this, ProfilUbah.class);
                                 // Put Intent Extra
@@ -332,9 +332,9 @@ public class ProfilPasscodeCek extends ProfilPasscode {
                                 startActivity(ubah_profil);
                                 finish();
 
-                            // ProfilPasscode False
+                            // Passcode False
                             } else {
-                                Toast.makeText(ProfilPasscodeCek.this, "ProfilPasscode Salah", Toast.LENGTH_SHORT).show();
+                                Toast.makeText(ProfilPasscodeCek.this, "Passcode Salah", Toast.LENGTH_SHORT).show();
 
                                 // Start Profil Activity
                                 Intent detailprofil = new Intent(ProfilPasscodeCek.this, ProfilDetail.class);
@@ -352,7 +352,7 @@ public class ProfilPasscodeCek extends ProfilPasscode {
                             break;
 
                         case "hapusprofil":
-                            // ProfilPasscode True
+                            // Passcode True
                             if (newpasscode.equals(pass)) {
                                 // Show Hapus Profil Activity
                                 Intent hapusprofil = new Intent(ProfilPasscodeCek.this, ProfilHapus.class);
@@ -365,9 +365,9 @@ public class ProfilPasscodeCek extends ProfilPasscode {
                                 startActivity(hapusprofil);
                                 finish();
 
-                            // ProfilPasscode False
+                            // Passcode False
                             } else {
-                                Toast.makeText(ProfilPasscodeCek.this, "ProfilPasscode Salah", Toast.LENGTH_SHORT).show();
+                                Toast.makeText(ProfilPasscodeCek.this, "Passcode Salah", Toast.LENGTH_SHORT).show();
 
                                 // Start Detail Profil Activity
                                 Intent detailprofil = new Intent(ProfilPasscodeCek.this, ProfilDetail.class);
@@ -422,7 +422,7 @@ public class ProfilPasscodeCek extends ProfilPasscode {
             }
         });
 
-        // Lupa ProfilPasscode
+        // Lupa Passcode
         TextView lupa_passcode = (TextView) findViewById(R.id.lupa_passcode);
         lupa_passcode.setTypeface(typeface);
         lupa_passcode.setOnClickListener(new View.OnClickListener() {

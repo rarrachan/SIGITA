@@ -137,326 +137,11 @@
   </component>
   <component name="FileEditorManager">
     <leaf>
-      <file leaf-file-name="JAVA/com.syafira.SIGITA" pinned="false" current-in-tab="false">
-        <entry file="uml://JAVA/com.syafira.SIGITA">
-          <provider selected="true" editor-type-id="UmlEditorProvider">
-            <state>
-              <ID>JAVA</ID>
-              <OriginalElement>com.syafira.SIGITA</OriginalElement>
-              <nodes>
-                <node x="3985.0" y="3300.0">com.syafira.SIGITA.BuildConfig</node>
-                <node x="9454.691113945577" y="369.0">com.syafira.SIGITA.Splash</node>
-                <node x="193.5" y="798.0">com.syafira.SIGITA.GiziKalkulatorGizi</node>
-                <node x="2949.0" y="2027.5">com.syafira.SIGITA.ProfilHapus</node>
-                <node x="2285.0" y="1807.0">com.syafira.SIGITA.GiziDokumentasiTambah</node>
-                <node x="3787.9375" y="628.0">com.syafira.SIGITA.ProfilTambah</node>
-                <node x="4112.379109977324" y="1907.0">com.syafira.SIGITA.ProfilPasscodeCek</node>
-                <node x="1115.75" y="2706.0">com.syafira.SIGITA.GiziDokumentasiUbah</node>
-                <node x="4279.0" y="3300.0">com.syafira.SIGITA.R</node>
-                <node x="1016.0" y="1507.0">com.syafira.SIGITA.GiziDokumentasiDetail</node>
-                <node x="8618.941113945577" y="269.0">com.syafira.SIGITA.TumbuhKembang</node>
-                <node x="2921.25" y="698.0">com.syafira.SIGITA.ProfilDetail</node>
-                <node x="1767.75" y="2926.5">com.syafira.SIGITA.GiziDokumentasiHapus</node>
-                <node x="6368.254109977324" y="1747.0">com.syafira.SIGITA.ImunisasiRiwayatTambah</node>
-                <node x="2698.0" y="3300.0">com.syafira.SIGITA.SessionManager</node>
-                <node x="3513.0" y="3300.0">com.syafira.SIGITA.ImunisasiAlarmReceiver</node>
-                <node x="8723.980938208617" y="878.0">com.syafira.SIGITA.TumbuhKembangTahapan</node>
-                <node x="10552.480938208617" y="2027.5">com.syafira.SIGITA.RekamMedisHapus</node>
-                <node x="0.0" y="1627.0">com.syafira.SIGITA.GiziKalkulatorGiziHasil</node>
-                <node x="8266.504109977324" y="2726.0">com.syafira.SIGITA.TumbuhKembangGaleriUbah</node>
-                <node x="8315.980938208617" y="928.0">com.syafira.SIGITA.TumbuhKembangGaleri</node>
-                <node x="5532.254109977324" y="2027.5">com.syafira.SIGITA.ProfilPasscodeHapus</node>
-                <node x="6896.504109977324" y="2646.0">com.syafira.SIGITA.ImunisasiRiwayatUbah</node>
-                <node x="5815.254109977324" y="908.0">com.syafira.SIGITA.ImunisasiJadwal</node>
-                <node x="7360.254109977324" y="0.0">com.syafira.SIGITA.Home</node>
-                <node x="7350.445223922901" y="319.0">com.syafira.SIGITA.TentangSIGITA</node>
-                <node x="4755.9375" y="888.0">com.syafira.SIGITA.ProfilPasscode</node>
-                <node x="2988.0" y="3300.0">com.syafira.SIGITA.ImageZoom</node>
-                <node x="7001.980938208616" y="888.0">com.syafira.SIGITA.ImunisasiRiwayat</node>
-                <node x="9758.480938208617" y="1737.0">com.syafira.SIGITA.RekamMedisUbah</node>
-                <node x="10051.980938208617" y="728.0">com.syafira.SIGITA.RekamMedisDetail</node>
-                <node x="1777.6952239229022" y="878.0">com.syafira.SIGITA.GiziDokumentasi</node>
-                <node x="4159.0" y="3300.0">com.syafira.SIGITA.Manifest</node>
-                <node x="4554.816609977324" y="1897.0">com.syafira.SIGITA.ProfilPasscodeUbah</node>
-                <node x="9245.980938208617" y="728.0">com.syafira.SIGITA.RekamMedisTambah</node>
-                <node x="4033.316609977324" y="269.0">com.syafira.SIGITA.Profil</node>
-                <node x="8844.504109977324" y="2926.5">com.syafira.SIGITA.TumbuhKembangGaleriHapus</node>
-                <node x="4992.816609977324" y="1897.0">com.syafira.SIGITA.ProfilPasscodeTambah</node>
-                <node x="9902.941113945577" y="259.0">com.syafira.SIGITA.RekamMedis</node>
-                <node x="3132.0" y="1627.0">com.syafira.SIGITA.ProfilUbah</node>
-                <node x="7878.254109977324" y="1827.0">com.syafira.SIGITA.TumbuhKembangGaleriTambah</node>
-                <node x="8468.254109977324" y="1837.0">com.syafira.SIGITA.TumbuhKembangGaleriDetail</node>
-                <node x="2035.0" y="3300.0">com.syafira.SIGITA.ImageZoomer</node>
-                <node x="3264.0" y="3300.0">com.syafira.SIGITA.ExpandableHeightGridView</node>
-                <node x="0.0" y="3300.0">com.syafira.SIGITA.DBHelper</node>
-                <node x="5796.754109977324" y="249.0">com.syafira.SIGITA.Imunisasi</node>
-                <node x="7128.254109977324" y="1747.0">com.syafira.SIGITA.ImunisasiRiwayatDetail</node>
-                <node x="5220.9375" y="868.0">com.syafira.SIGITA.ImunisasiAlarm</node>
-                <node x="3770.0" y="3300.0">com.syafira.SIGITA.GridViewItem</node>
-                <node x="7644.504109977324" y="2926.5">com.syafira.SIGITA.ImunisasiRiwayatHapus</node>
-                <node x="1177.0702239229022" y="269.0">com.syafira.SIGITA.Gizi</node>
-                <node x="5715.254109977324" y="1817.0">com.syafira.SIGITA.ImunisasiJadwalDetail</node>
-              </nodes>
-              <notes />
-              <edges>
-                <edge source="com.syafira.SIGITA.Gizi" target="com.syafira.SIGITA.Home">
-                  <point x="0.0" y="-144.5" />
-                  <point x="1392.0702239229022" y="209.0" />
-                  <point x="7383.825538548752" y="209.0" />
-                  <point x="-141.42857142857156" y="94.5" />
-                </edge>
-                <edge source="com.syafira.SIGITA.GiziKalkulatorGiziHasil" target="com.syafira.SIGITA.GiziKalkulatorGizi">
-                  <point x="0.0" y="-424.5" />
-                  <point x="0.0" y="244.5" />
-                </edge>
-                <edge source="com.syafira.SIGITA.Splash" target="com.syafira.SIGITA.Home">
-                  <point x="0.0" y="-44.5" />
-                  <point x="9556.691113945577" y="219.0" />
-                  <point x="7619.539824263038" y="219.0" />
-                  <point x="94.28571428571468" y="94.5" />
-                </edge>
-                <edge source="com.syafira.SIGITA.RekamMedisUbah" target="com.syafira.SIGITA.RekamMedisDetail">
-                  <point x="0.0" y="-314.5" />
-                  <point x="10145.480938208617" y="1487.0" />
-                  <point x="10245.980938208617" y="1487.0" />
-                  <point x="-194.0" y="314.5" />
-                </edge>
-                <edge source="com.syafira.SIGITA.RekamMedisDetail" target="com.syafira.SIGITA.RekamMedis">
-                  <point x="0.0" y="-314.5" />
-                  <point x="10439.980938208617" y="603.0" />
-                  <point x="10244.941113945577" y="603.0" />
-                  <point x="114.0" y="154.5" />
-                </edge>
-                <edge source="com.syafira.SIGITA.GiziDokumentasi" target="com.syafira.SIGITA.Gizi">
-                  <point x="0.0" y="-164.5" />
-                  <point x="2025.1952239229022" y="603.0" />
-                  <point x="1499.5702239229022" y="603.0" />
-                  <point x="107.5" y="144.5" />
-                </edge>
-                <edge source="com.syafira.SIGITA.RekamMedisTambah" target="com.syafira.SIGITA.RekamMedis">
-                  <point x="0.0" y="-314.5" />
-                  <point x="9638.980938208617" y="603.0" />
-                  <point x="10016.941113945577" y="603.0" />
-                  <point x="-114.0" y="154.5" />
-                </edge>
-                <edge source="com.syafira.SIGITA.ProfilPasscode" target="com.syafira.SIGITA.Profil">
-                  <point x="0.0" y="-154.5" />
-                  <point x="4978.4375" y="603.0" />
-                  <point x="4421.649943310656" y="603.0" />
-                  <point x="155.33333333333303" y="144.5" />
-                </edge>
-                <edge source="com.syafira.SIGITA.TumbuhKembangGaleriDetail" target="com.syafira.SIGITA.TumbuhKembangGaleri">
-                  <point x="0.0" y="-214.5" />
-                  <point x="8738.254109977324" y="1487.0" />
-                  <point x="8606.980938208617" y="1487.0" />
-                  <point x="97.0" y="114.5" />
-                </edge>
-                <edge source="com.syafira.SIGITA.ImunisasiJadwalDetail" target="com.syafira.SIGITA.ImunisasiJadwal">
-                  <point x="0.0" y="-234.5" />
-                  <point x="0.0" y="134.5" />
-                </edge>
-                <edge source="com.syafira.SIGITA.ImunisasiRiwayatTambah" target="com.syafira.SIGITA.ImunisasiRiwayat">
-                  <point x="0.0" y="-304.5" />
-                  <point x="6738.254109977324" y="1487.0" />
-                  <point x="7121.980938208616" y="1487.0" />
-                  <point x="-120.0" y="154.5" />
-                </edge>
-                <edge source="com.syafira.SIGITA.RekamMedisHapus" target="com.syafira.SIGITA.RekamMedisDetail">
-                  <point x="0.0" y="-24.0" />
-                  <point x="194.0" y="314.5" />
-                </edge>
-                <edge source="com.syafira.SIGITA.ProfilUbah" target="com.syafira.SIGITA.ProfilDetail">
-                  <point x="0.0" y="-424.5" />
-                  <point x="3610.0" y="1487.0" />
-                  <point x="3519.75" y="1487.0" />
-                  <point x="199.5" y="344.5" />
-                </edge>
-                <edge source="com.syafira.SIGITA.GiziKalkulatorGizi" target="com.syafira.SIGITA.Gizi">
-                  <point x="0.0" y="-244.5" />
-                  <point x="498.0" y="603.0" />
-                  <point x="1284.5702239229022" y="603.0" />
-                  <point x="-107.5" y="144.5" />
-                </edge>
-                <edge source="com.syafira.SIGITA.GiziDokumentasiTambah" target="com.syafira.SIGITA.GiziDokumentasi">
-                  <point x="0.0" y="-244.5" />
-                  <point x="2607.0" y="1487.0" />
-                  <point x="2148.945223922902" y="1487.0" />
-                  <point x="123.75" y="164.5" />
-                </edge>
-                <edge source="com.syafira.SIGITA.ProfilPasscodeHapus" target="com.syafira.SIGITA.ProfilPasscode">
-                  <point x="0.0" y="-24.0" />
-                  <point x="5613.754109977324" y="1477.0" />
-                  <point x="5145.3125" y="1477.0" />
-                  <point x="166.875" y="154.5" />
-                </edge>
-                <edge source="com.syafira.SIGITA.TentangSIGITA" target="com.syafira.SIGITA.Home">
-                  <point x="0.0" y="-94.5" />
-                  <point x="7521.945223922901" y="229.0" />
-                  <point x="7525.254109977324" y="229.0" />
-                  <point x="0.0" y="94.5" />
-                </edge>
-                <edge source="com.syafira.SIGITA.TumbuhKembangTahapan" target="com.syafira.SIGITA.TumbuhKembang">
-                  <point x="0.0" y="-164.5" />
-                  <point x="8974.980938208617" y="603.0" />
-                  <point x="8941.441113945577" y="603.0" />
-                  <point x="107.5" y="144.5" />
-                </edge>
-                <edge source="com.syafira.SIGITA.TumbuhKembangGaleri" target="com.syafira.SIGITA.TumbuhKembang">
-                  <point x="0.0" y="-114.5" />
-                  <point x="8509.980938208617" y="603.0" />
-                  <point x="8726.441113945577" y="603.0" />
-                  <point x="-107.5" y="144.5" />
-                </edge>
-                <edge source="com.syafira.SIGITA.ProfilPasscodeTambah" target="com.syafira.SIGITA.ProfilPasscode">
-                  <point x="0.0" y="-154.5" />
-                  <point x="5201.816609977324" y="1487.0" />
-                  <point x="5034.0625" y="1487.0" />
-                  <point x="55.625" y="154.5" />
-                </edge>
-                <edge source="com.syafira.SIGITA.Profil" target="com.syafira.SIGITA.Home">
-                  <point x="0.0" y="-144.5" />
-                  <point x="4266.316609977324" y="219.0" />
-                  <point x="7430.968395691609" y="219.0" />
-                  <point x="-94.28571428571468" y="94.5" />
-                </edge>
-                <edge source="com.syafira.SIGITA.TumbuhKembangGaleriUbah" target="com.syafira.SIGITA.TumbuhKembangGaleriDetail">
-                  <point x="0.0" y="-224.5" />
-                  <point x="8545.504109977324" y="2621.0" />
-                  <point x="8603.254109977324" y="2621.0" />
-                  <point x="-135.0" y="214.5" />
-                </edge>
-                <edge source="com.syafira.SIGITA.ProfilTambah" target="com.syafira.SIGITA.Profil">
-                  <point x="0.0" y="-414.5" />
-                  <point x="4261.9375" y="603.0" />
-                  <point x="4266.316609977324" y="603.0" />
-                  <point x="0.0" y="144.5" />
-                </edge>
-                <edge source="com.syafira.SIGITA.GiziDokumentasiUbah" target="com.syafira.SIGITA.GiziDokumentasiDetail">
-                  <point x="0.0" y="-244.5" />
-                  <point x="1431.75" y="2621.0" />
-                  <point x="1328.25" y="2621.0" />
-                  <point x="-312.25" y="544.5" />
-                </edge>
-                <edge source="com.syafira.SIGITA.ImunisasiAlarm" target="com.syafira.SIGITA.Imunisasi">
-                  <point x="0.0" y="-174.5" />
-                  <point x="5474.9375" y="603.0" />
-                  <point x="5875.087443310657" y="603.0" />
-                  <point x="-156.66666666666652" y="164.5" />
-                </edge>
-                <edge source="com.syafira.SIGITA.ProfilDetail" target="com.syafira.SIGITA.Profil">
-                  <point x="0.0" y="-344.5" />
-                  <point x="3320.25" y="603.0" />
-                  <point x="4110.98327664399" y="603.0" />
-                  <point x="-155.33333333333303" y="144.5" />
-                </edge>
-                <edge source="com.syafira.SIGITA.ImunisasiRiwayatHapus" target="com.syafira.SIGITA.ImunisasiRiwayatDetail">
-                  <point x="0.0" y="-24.0" />
-                  <point x="7726.004109977324" y="2621.0" />
-                  <point x="7675.754109977324" y="2621.0" />
-                  <point x="182.5" y="304.5" />
-                </edge>
-                <edge source="com.syafira.SIGITA.ProfilPasscodeUbah" target="com.syafira.SIGITA.ProfilPasscode">
-                  <point x="0.0" y="-154.5" />
-                  <point x="4763.816609977324" y="1487.0" />
-                  <point x="4922.8125" y="1487.0" />
-                  <point x="-55.625" y="154.5" />
-                </edge>
-                <edge source="com.syafira.SIGITA.ImunisasiRiwayatUbah" target="com.syafira.SIGITA.ImunisasiRiwayatDetail">
-                  <point x="4.547473508864641E-13" y="-304.5" />
-                  <point x="7260.504109977324" y="2621.0" />
-                  <point x="7310.754109977324" y="2621.0" />
-                  <point x="-182.5" y="304.5" />
-                </edge>
-                <edge source="com.syafira.SIGITA.Imunisasi" target="com.syafira.SIGITA.Home">
-                  <point x="0.0" y="-164.5" />
-                  <point x="6031.754109977324" y="229.0" />
-                  <point x="7478.111252834467" y="229.0" />
-                  <point x="-47.14285714285688" y="94.5" />
-                </edge>
-                <edge source="com.syafira.SIGITA.ProfilPasscodeCek" target="com.syafira.SIGITA.ProfilPasscode">
-                  <point x="0.0" y="-144.5" />
-                  <point x="4311.379109977324" y="1477.0" />
-                  <point x="4811.5625" y="1477.0" />
-                  <point x="-166.875" y="154.5" />
-                </edge>
-                <edge source="com.syafira.SIGITA.TumbuhKembang" target="com.syafira.SIGITA.Home">
-                  <point x="0.0" y="-144.5" />
-                  <point x="8833.941113945577" y="229.0" />
-                  <point x="7572.396967120181" y="229.0" />
-                  <point x="47.14285714285688" y="94.5" />
-                </edge>
-                <edge source="com.syafira.SIGITA.ImunisasiRiwayatDetail" target="com.syafira.SIGITA.ImunisasiRiwayat">
-                  <point x="0.0" y="-304.5" />
-                  <point x="7493.254109977324" y="1487.0" />
-                  <point x="7361.980938208616" y="1487.0" />
-                  <point x="120.0" y="154.5" />
-                </edge>
-                <edge source="com.syafira.SIGITA.TumbuhKembangGaleriHapus" target="com.syafira.SIGITA.TumbuhKembangGaleriDetail">
-                  <point x="0.0" y="-24.0" />
-                  <point x="8931.004109977324" y="2621.0" />
-                  <point x="8873.254109977324" y="2621.0" />
-                  <point x="135.0" y="214.5" />
-                </edge>
-                <edge source="com.syafira.SIGITA.TumbuhKembangGaleriTambah" target="com.syafira.SIGITA.TumbuhKembangGaleri">
-                  <point x="0.0" y="-224.5" />
-                  <point x="8163.254109977324" y="1487.0" />
-                  <point x="8412.980938208617" y="1487.0" />
-                  <point x="-97.0" y="114.5" />
-                </edge>
-                <edge source="com.syafira.SIGITA.GiziDokumentasiDetail" target="com.syafira.SIGITA.GiziDokumentasi">
-                  <point x="0.0" y="-544.5" />
-                  <point x="1640.5" y="1487.0" />
-                  <point x="1901.4452239229022" y="1487.0" />
-                  <point x="-123.75" y="164.5" />
-                </edge>
-                <edge source="com.syafira.SIGITA.ImunisasiRiwayat" target="com.syafira.SIGITA.Imunisasi">
-                  <point x="0.0" y="-154.5" />
-                  <point x="7241.980938208616" y="603.0" />
-                  <point x="6188.42077664399" y="603.0" />
-                  <point x="156.66666666666652" y="164.5" />
-                </edge>
-                <edge source="com.syafira.SIGITA.RekamMedis" target="com.syafira.SIGITA.Home">
-                  <point x="0.0" y="-154.5" />
-                  <point x="10130.941113945577" y="209.0" />
-                  <point x="7666.682681405895" y="209.0" />
-                  <point x="141.42857142857156" y="94.5" />
-                </edge>
-                <edge source="com.syafira.SIGITA.ImunisasiJadwal" target="com.syafira.SIGITA.Imunisasi">
-                  <point x="0.0" y="-134.5" />
-                  <point x="0.0" y="164.5" />
-                </edge>
-                <edge source="com.syafira.SIGITA.GiziDokumentasiHapus" target="com.syafira.SIGITA.GiziDokumentasiDetail">
-                  <point x="0.0" y="-24.0" />
-                  <point x="1849.25" y="2621.0" />
-                  <point x="1952.75" y="2621.0" />
-                  <point x="312.25" y="544.5" />
-                </edge>
-                <edge source="com.syafira.SIGITA.ProfilHapus" target="com.syafira.SIGITA.ProfilDetail">
-                  <point x="0.0" y="-24.0" />
-                  <point x="3030.5" y="1487.0" />
-                  <point x="3120.75" y="1487.0" />
-                  <point x="-199.5" y="344.5" />
-                </edge>
-              </edges>
-              <settings layout="Hierarchic Group" zoom="0.30000000000000004" x="3604.0547755246316" y="732.3673658669235" />
-              <SelectedNodes>
-                <node>com.syafira.SIGITA.BuildConfig</node>
-              </SelectedNodes>
-              <Categories>
-                <Category>Fields</Category>
-                <Category>Methods</Category>
-              </Categories>
-              <SCOPE>All</SCOPE>
-              <VISIBILITY>private</VISIBILITY>
-            </state>
-          </provider>
-        </entry>
-      </file>
       <file leaf-file-name="ProfilPasscodeTambah.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/com/syafira/SIGITA/ProfilPasscodeTambah.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.0">
-              <caret line="23" column="33" selection-start-line="23" selection-start-column="33" selection-end-line="23" selection-end-column="33" />
+            <state vertical-scroll-proportion="-6.1538463">
+              <caret line="384" column="43" selection-start-line="384" selection-start-column="33" selection-end-line="384" selection-end-column="43" />
               <folding>
                 <element signature="imports" expanded="true" />
               </folding>
@@ -464,14 +149,12 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="ProfilDetail.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/com/syafira/SIGITA/ProfilDetail.java">
+      <file leaf-file-name="ProfilPasscodeUbah.java" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/src/com/syafira/SIGITA/ProfilPasscodeUbah.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="-9.346154">
-              <caret line="175" column="48" selection-start-line="175" selection-start-column="48" selection-end-line="175" selection-end-column="48" />
-              <folding>
-                <element signature="imports" expanded="true" />
-              </folding>
+            <state vertical-scroll-proportion="0.426506">
+              <caret line="387" column="43" selection-start-line="387" selection-start-column="33" selection-end-line="387" selection-end-column="43" />
+              <folding />
             </state>
           </provider>
         </entry>
@@ -488,14 +171,44 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="ImunisasiAlarmReceiver.java" pinned="false" current-in-tab="true">
+      <file leaf-file-name="ImunisasiAlarmReceiver.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/com/syafira/SIGITA/ImunisasiAlarmReceiver.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.76870745">
+            <state vertical-scroll-proportion="0.0">
               <caret line="56" column="0" selection-start-line="56" selection-start-column="0" selection-end-line="56" selection-end-column="0" />
               <folding>
                 <element signature="imports" expanded="true" />
               </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="ProfilPasscodeCek.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/com/syafira/SIGITA/ProfilPasscodeCek.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state vertical-scroll-proportion="-6.1538463">
+              <caret line="636" column="42" selection-start-line="636" selection-start-column="33" selection-end-line="636" selection-end-column="42" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="ProfilPasscodeHapus.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/com/syafira/SIGITA/ProfilPasscodeHapus.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state vertical-scroll-proportion="-5.230769">
+              <caret line="10" column="23" selection-start-line="10" selection-start-column="13" selection-end-line="10" selection-end-column="23" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="ProfilPasscode.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/com/syafira/SIGITA/ProfilPasscode.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state vertical-scroll-proportion="-6.1538463">
+              <caret line="194" column="42" selection-start-line="194" selection-start-column="33" selection-end-line="194" selection-end-column="42" />
+              <folding />
             </state>
           </provider>
         </entry>
@@ -512,37 +225,24 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="GiziDokumentasiTambah.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/com/syafira/SIGITA/GiziDokumentasiTambah.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.0">
-              <caret line="289" column="149" selection-start-line="289" selection-start-column="149" selection-end-line="289" selection-end-column="149" />
-              <folding>
-                <element signature="imports" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="DBHelper.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/com/syafira/SIGITA/DBHelper.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="-10.5">
-              <caret line="2348" column="22" selection-start-line="2348" selection-start-column="22" selection-end-line="2348" selection-end-column="22" />
-              <folding>
-                <element signature="imports" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
       <file leaf-file-name="TumbuhKembangGaleriTambah.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/com/syafira/SIGITA/TumbuhKembangGaleriTambah.java">
           <provider selected="true" editor-type-id="text-editor">
             <state vertical-scroll-proportion="0.0">
               <caret line="412" column="75" selection-start-line="410" selection-start-column="9" selection-end-line="412" selection-end-column="75" />
               <folding>
-                <element signature="imports" expanded="true" />
+                <element signature="e#3789#6922#0" expanded="false" />
+                <element signature="e#4478#6380#0" expanded="false" />
+                <element signature="e#6379#6380#0" expanded="false" />
+                <element signature="e#6921#6922#0" expanded="false" />
+                <element signature="e#6965#8515#0" expanded="false" />
+                <element signature="e#7439#8463#0" expanded="false" />
+                <element signature="e#8462#8463#0" expanded="false" />
+                <element signature="e#8514#8515#0" expanded="false" />
+                <element signature="e#8560#12817#0" expanded="false" />
+                <element signature="e#12816#12817#0" expanded="false" />
+                <element signature="e#18129#18316#0" expanded="false" />
+                <element signature="e#18315#18316#0" expanded="false" />
               </folding>
             </state>
           </provider>
@@ -554,7 +254,18 @@
             <state vertical-scroll-proportion="0.0">
               <caret line="434" column="85" selection-start-line="434" selection-start-column="85" selection-end-line="434" selection-end-column="85" />
               <folding>
-                <element signature="imports" expanded="true" />
+                <element signature="e#4747#8127#0" expanded="false" />
+                <element signature="e#5468#7536#0" expanded="false" />
+                <element signature="e#7535#7536#0" expanded="false" />
+                <element signature="e#8126#8127#0" expanded="false" />
+                <element signature="e#8170#9922#0" expanded="false" />
+                <element signature="e#8674#9864#0" expanded="false" />
+                <element signature="e#9863#9864#0" expanded="false" />
+                <element signature="e#9921#9922#0" expanded="false" />
+                <element signature="e#9967#14943#0" expanded="false" />
+                <element signature="e#14942#14943#0" expanded="false" />
+                <element signature="e#21522#21733#0" expanded="false" />
+                <element signature="e#21732#21733#0" expanded="false" />
               </folding>
             </state>
           </provider>
@@ -589,10 +300,6 @@
   <component name="IdeDocumentHistory">
     <option name="CHANGED_PATHS">
       <list>
-        <option value="$PROJECT_DIR$/src/com/syafira/SIGITA/HapusRiwayat.java" />
-        <option value="$PROJECT_DIR$/AndroidManifest.xml" />
-        <option value="$PROJECT_DIR$/src/com/syafira/SIGITA/HapusMedis.java" />
-        <option value="$PROJECT_DIR$/src/com/syafira/SIGITA/PasscodeTambah.java" />
         <option value="$PROJECT_DIR$/src/com/syafira/SIGITA/PasscodeUbah.java" />
         <option value="$PROJECT_DIR$/src/com/syafira/SIGITA/AlarmImunisasi.java" />
         <option value="$PROJECT_DIR$/src/com/syafira/SIGITA/DetailDokumentasi.java" />
@@ -631,7 +338,6 @@
         <option value="$PROJECT_DIR$/src/com/syafira/SIGITA/DokumentasiTambah.java" />
         <option value="$PROJECT_DIR$/src/com/syafira/SIGITA/GiziDokumentasiGiziTambah.java" />
         <option value="$PROJECT_DIR$/src/com/syafira/SIGITA/ImunisasiAlarm.java" />
-        <option value="$PROJECT_DIR$/src/com/syafira/SIGITA/ProfilPasscodeTambah.java" />
         <option value="$PROJECT_DIR$/src/com/syafira/SIGITA/Splash.java" />
         <option value="$PROJECT_DIR$/src/com/syafira/SIGITA/GiziDokumentasiTambah.java" />
         <option value="$PROJECT_DIR$/src/com/syafira/SIGITA/DBHelper.java" />
@@ -640,6 +346,11 @@
         <option value="$PROJECT_DIR$/src/com/syafira/SIGITA/ProfilUbah.java" />
         <option value="$PROJECT_DIR$/src/com/syafira/SIGITA/ProfilTambah.java" />
         <option value="$PROJECT_DIR$/src/com/syafira/SIGITA/ImunisasiAlarmReceiver.java" />
+        <option value="$PROJECT_DIR$/src/com/syafira/SIGITA/ProfilPasscode.java" />
+        <option value="$PROJECT_DIR$/src/com/syafira/SIGITA/ProfilPasscodeCek.java" />
+        <option value="$PROJECT_DIR$/src/com/syafira/SIGITA/ProfilPasscodeHapus.java" />
+        <option value="$PROJECT_DIR$/src/com/syafira/SIGITA/ProfilPasscodeTambah.java" />
+        <option value="$PROJECT_DIR$/src/com/syafira/SIGITA/ProfilPasscodeUbah.java" />
       </list>
     </option>
   </component>
@@ -714,6 +425,7 @@
       <sortByType />
     </navigator>
     <panes>
+      <pane id="Scratches" />
       <pane id="ProjectPane">
         <subPane>
           <PATH>
@@ -750,78 +462,8 @@
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
           </PATH>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="SIGITA" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="SIGITA" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="res" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="values" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-          </PATH>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="SIGITA" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="SIGITA" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="res" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="layout" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-          </PATH>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="SIGITA" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="SIGITA" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="res" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="drawable" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-          </PATH>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="SIGITA" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="SIGITA" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="libs" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-          </PATH>
         </subPane>
       </pane>
-      <pane id="Scratches" />
-      <pane id="PackagesPane" />
       <pane id="Scope">
         <subPane subId="Project Files">
           <PATH>
@@ -854,6 +496,7 @@
           </PATH>
         </subPane>
       </pane>
+      <pane id="PackagesPane" />
     </panes>
   </component>
   <component name="PropertiesComponent">
@@ -861,7 +504,7 @@
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="recentsLimit" value="5" />
     <property name="last_opened_file_path" value="$PROJECT_DIR$" />
-    <property name="ANDROID_EXTENDED_DEVICE_CHOOSER_SERIALS" value="c16071d7d60bc31" />
+    <property name="ANDROID_EXTENDED_DEVICE_CHOOSER_SERIALS" value="emulator-5554" />
     <property name="ANDROID_EXTENDED_DEVICE_CHOOSER_AVD" value="Nexus_4_API_15" />
     <property name="UI_DESIGNER_EDITOR_MODE.UIDesignerToolWindowManager2.WIDTH" value="281" />
     <property name="settings.editor.selected.configurable" value="preferences.lookFeel" />
@@ -1306,11 +949,14 @@
       <workItem from="1468475549115" duration="21331000" />
       <workItem from="1468647258953" duration="3576000" />
       <workItem from="1468817243263" duration="9587000" />
+      <workItem from="1469707071967" duration="724000" />
+      <workItem from="1469707974895" duration="476000" />
+      <workItem from="1469708964015" duration="4909000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="1157276000" />
+    <option name="totallyTimeSpent" value="1163385000" />
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
@@ -1345,7 +991,7 @@
       <window_info id="Ant Build" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
       <window_info id="UI Designer" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
       <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="2" side_tool="true" content_ui="tabs" />
-      <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.20578231" sideWeight="0.4689864" order="10" side_tool="false" content_ui="tabs" />
+      <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.20578231" sideWeight="0.4689864" order="10" side_tool="false" content_ui="tabs" />
       <window_info id="Cvs" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="11" side_tool="false" content_ui="tabs" />
       <window_info id="Message" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Commander" active="false" anchor="right" auto_hide="false" internal_type="SLIDING" type="SLIDING" visible="false" weight="0.4" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
@@ -1387,7 +1033,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0">
           <caret line="7" column="13" selection-start-line="7" selection-start-column="13" selection-end-line="7" selection-end-column="13" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -1395,7 +1040,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0">
           <caret line="186" column="0" selection-start-line="186" selection-start-column="0" selection-end-line="186" selection-end-column="0" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -1410,9 +1054,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0">
           <caret line="90" column="47" selection-start-line="90" selection-start-column="47" selection-end-line="90" selection-end-column="47" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -1420,7 +1061,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0">
           <caret line="10" column="4" selection-start-line="10" selection-start-column="4" selection-end-line="10" selection-end-column="4" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -1481,30 +1121,24 @@
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0">
           <caret line="20" column="28" selection-start-line="20" selection-start-column="28" selection-end-line="20" selection-end-column="28" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/res/layout/tambah_profil.xml">
-      <provider selected="true" editor-type-id="android-designer">
-        <state />
-      </provider>
       <provider editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0">
           <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
           <folding />
         </state>
       </provider>
+      <provider selected="true" editor-type-id="android-designer">
+        <state />
+      </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/com/syafira/SIGITA/TumbuhKembangGaleriDetail.java">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0">
           <caret line="11" column="31" selection-start-line="11" selection-start-column="31" selection-end-line="11" selection-end-column="31" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -1512,7 +1146,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0">
           <caret line="1" column="0" selection-start-line="1" selection-start-column="0" selection-end-line="1" selection-end-column="0" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -1520,9 +1153,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0">
           <caret line="15" column="13" selection-start-line="15" selection-start-column="13" selection-end-line="15" selection-end-column="13" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -1530,9 +1160,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0">
           <caret line="10" column="32" selection-start-line="10" selection-start-column="32" selection-end-line="10" selection-end-column="32" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -1540,9 +1167,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0">
           <caret line="1" column="0" selection-start-line="1" selection-start-column="0" selection-end-line="1" selection-end-column="0" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -1550,9 +1174,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0">
           <caret line="15" column="0" selection-start-line="15" selection-start-column="0" selection-end-line="15" selection-end-column="0" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -1570,23 +1191,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/com/syafira/SIGITA/ProfilPasscode.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="25" column="40" selection-start-line="25" selection-start-column="40" selection-end-line="25" selection-end-column="40" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/com/syafira/SIGITA/ProfilPasscodeHapus.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="9" column="0" selection-start-line="9" selection-start-column="0" selection-end-line="9" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/com/syafira/SIGITA/Profil.java">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0">
@@ -1598,7 +1202,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0">
           <caret line="8" column="28" selection-start-line="8" selection-start-column="28" selection-end-line="8" selection-end-column="28" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -1613,9 +1216,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0">
           <caret line="1" column="0" selection-start-line="1" selection-start-column="0" selection-end-line="1" selection-end-column="0" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -1623,9 +1223,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0">
           <caret line="1" column="0" selection-start-line="1" selection-start-column="0" selection-end-line="1" selection-end-column="0" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -1647,9 +1244,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0">
           <caret line="111" column="105" selection-start-line="111" selection-start-column="105" selection-end-line="111" selection-end-column="105" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -1657,9 +1251,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0">
           <caret line="1" column="0" selection-start-line="1" selection-start-column="0" selection-end-line="1" selection-end-column="0" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -1667,26 +1258,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0">
           <caret line="1" column="0" selection-start-line="1" selection-start-column="0" selection-end-line="1" selection-end-column="0" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/com/syafira/SIGITA/ProfilPasscodeUbah.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="21" column="13" selection-start-line="21" selection-start-column="13" selection-end-line="21" selection-end-column="13" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/com/syafira/SIGITA/ProfilPasscodeCek.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="33" column="30" selection-start-line="33" selection-start-column="30" selection-end-line="33" selection-end-column="30" />
         </state>
       </provider>
     </entry>
@@ -1694,9 +1265,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0">
           <caret line="164" column="54" selection-start-line="164" selection-start-column="54" selection-end-line="164" selection-end-column="54" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -1704,9 +1272,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0">
           <caret line="130" column="43" selection-start-line="130" selection-start-column="43" selection-end-line="130" selection-end-column="43" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -1721,9 +1286,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0">
           <caret line="15" column="32" selection-start-line="15" selection-start-column="32" selection-end-line="15" selection-end-column="32" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -1731,9 +1293,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0">
           <caret line="25" column="34" selection-start-line="25" selection-start-column="34" selection-end-line="25" selection-end-column="34" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -1741,9 +1300,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0">
           <caret line="47" column="24" selection-start-line="47" selection-start-column="24" selection-end-line="47" selection-end-column="24" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -1751,9 +1307,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0">
           <caret line="29" column="13" selection-start-line="29" selection-start-column="13" selection-end-line="29" selection-end-column="13" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -1761,9 +1314,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0">
           <caret line="10" column="13" selection-start-line="10" selection-start-column="13" selection-end-line="10" selection-end-column="13" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -1771,9 +1321,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0">
           <caret line="16" column="43" selection-start-line="16" selection-start-column="43" selection-end-line="16" selection-end-column="43" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -1781,25 +1328,12 @@
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0">
           <caret line="36" column="35" selection-start-line="36" selection-start-column="35" selection-end-line="36" selection-end-column="35" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/com/syafira/SIGITA/ProfilPasscodeTambah.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="23" column="33" selection-start-line="23" selection-start-column="33" selection-end-line="23" selection-end-column="33" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/com/syafira/SIGITA/ProfilDetail.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="-9.346154">
+        <state vertical-scroll-proportion="0.0">
           <caret line="175" column="48" selection-start-line="175" selection-start-column="48" selection-end-line="175" selection-end-column="48" />
           <folding>
             <element signature="imports" expanded="true" />
@@ -2107,7 +1641,7 @@
               <point x="-199.5" y="344.5" />
             </edge>
           </edges>
-          <settings layout="Hierarchic Group" zoom="0.30000000000000004" x="3604.0547755246316" y="732.3673658669235" />
+          <settings layout="Hierarchic Group" zoom="0.30000000000000004" x="3604.0" y="732.0" />
           <SelectedNodes>
             <node>com.syafira.SIGITA.BuildConfig</node>
           </SelectedNodes>
@@ -2124,9 +1658,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0">
           <caret line="16" column="13" selection-start-line="16" selection-start-column="13" selection-end-line="17" selection-end-column="49" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -2135,17 +1666,27 @@
         <state vertical-scroll-proportion="0.0">
           <caret line="289" column="149" selection-start-line="289" selection-start-column="149" selection-end-line="289" selection-end-column="149" />
           <folding>
-            <element signature="imports" expanded="true" />
+            <element signature="e#4549#8143#0" expanded="false" />
+            <element signature="e#5266#7553#0" expanded="false" />
+            <element signature="e#7552#7553#0" expanded="false" />
+            <element signature="e#8142#8143#0" expanded="false" />
+            <element signature="e#8188#32518#0" expanded="false" />
+            <element signature="e#32517#32518#0" expanded="false" />
+            <element signature="e#33529#33740#0" expanded="false" />
+            <element signature="e#33739#33740#0" expanded="false" />
           </folding>
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/com/syafira/SIGITA/DBHelper.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="-10.5">
+        <state vertical-scroll-proportion="0.0">
           <caret line="2348" column="22" selection-start-line="2348" selection-start-column="22" selection-end-line="2348" selection-end-column="22" />
           <folding>
-            <element signature="imports" expanded="true" />
+            <element signature="e#575#576#0" expanded="false" />
+            <element signature="e#632#633#0" expanded="false" />
+            <element signature="e#2702#2703#0" expanded="false" />
+            <element signature="e#2733#2734#0" expanded="false" />
           </folding>
         </state>
       </provider>
@@ -2155,7 +1696,18 @@
         <state vertical-scroll-proportion="0.0">
           <caret line="412" column="75" selection-start-line="410" selection-start-column="9" selection-end-line="412" selection-end-column="75" />
           <folding>
-            <element signature="imports" expanded="true" />
+            <element signature="e#3789#6922#0" expanded="false" />
+            <element signature="e#4478#6380#0" expanded="false" />
+            <element signature="e#6379#6380#0" expanded="false" />
+            <element signature="e#6921#6922#0" expanded="false" />
+            <element signature="e#6965#8515#0" expanded="false" />
+            <element signature="e#7439#8463#0" expanded="false" />
+            <element signature="e#8462#8463#0" expanded="false" />
+            <element signature="e#8514#8515#0" expanded="false" />
+            <element signature="e#8560#12817#0" expanded="false" />
+            <element signature="e#12816#12817#0" expanded="false" />
+            <element signature="e#18129#18316#0" expanded="false" />
+            <element signature="e#18315#18316#0" expanded="false" />
           </folding>
         </state>
       </provider>
@@ -2165,7 +1717,18 @@
         <state vertical-scroll-proportion="0.0">
           <caret line="434" column="85" selection-start-line="434" selection-start-column="85" selection-end-line="434" selection-end-column="85" />
           <folding>
-            <element signature="imports" expanded="true" />
+            <element signature="e#4747#8127#0" expanded="false" />
+            <element signature="e#5468#7536#0" expanded="false" />
+            <element signature="e#7535#7536#0" expanded="false" />
+            <element signature="e#8126#8127#0" expanded="false" />
+            <element signature="e#8170#9922#0" expanded="false" />
+            <element signature="e#8674#9864#0" expanded="false" />
+            <element signature="e#9863#9864#0" expanded="false" />
+            <element signature="e#9921#9922#0" expanded="false" />
+            <element signature="e#9967#14943#0" expanded="false" />
+            <element signature="e#14942#14943#0" expanded="false" />
+            <element signature="e#21522#21733#0" expanded="false" />
+            <element signature="e#21732#21733#0" expanded="false" />
           </folding>
         </state>
       </provider>
@@ -2192,11 +1755,53 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/com/syafira/SIGITA/ImunisasiAlarmReceiver.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.76870745">
+        <state vertical-scroll-proportion="0.0">
           <caret line="56" column="0" selection-start-line="56" selection-start-column="0" selection-end-line="56" selection-end-column="0" />
           <folding>
             <element signature="imports" expanded="true" />
           </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/com/syafira/SIGITA/ProfilPasscode.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="-6.1538463">
+          <caret line="194" column="42" selection-start-line="194" selection-start-column="33" selection-end-line="194" selection-end-column="42" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/com/syafira/SIGITA/ProfilPasscodeCek.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="-6.1538463">
+          <caret line="636" column="42" selection-start-line="636" selection-start-column="33" selection-end-line="636" selection-end-column="42" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/com/syafira/SIGITA/ProfilPasscodeHapus.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="-5.230769">
+          <caret line="10" column="23" selection-start-line="10" selection-start-column="13" selection-end-line="10" selection-end-column="23" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/com/syafira/SIGITA/ProfilPasscodeTambah.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="-6.1538463">
+          <caret line="384" column="43" selection-start-line="384" selection-start-column="33" selection-end-line="384" selection-end-column="43" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/com/syafira/SIGITA/ProfilPasscodeUbah.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.426506">
+          <caret line="387" column="43" selection-start-line="387" selection-start-column="33" selection-end-line="387" selection-end-column="43" />
+          <folding />
         </state>
       </provider>
     </entry>

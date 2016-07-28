@@ -36,9 +36,9 @@ public class ProfilPasscodeHapus extends ProfilPasscode {
         }
 
         if (success) {
-            Toast.makeText(getApplicationContext(), "ProfilPasscode Berhasil Dihapus", Toast.LENGTH_LONG).show();
+            Toast.makeText(getApplicationContext(), "Passcode Berhasil Dihapus", Toast.LENGTH_LONG).show();
         } else {
-            Toast.makeText(getApplicationContext(), "ProfilPasscode Gagal Dihapus", Toast.LENGTH_LONG).show();
+            Toast.makeText(getApplicationContext(), "Passcode Gagal Dihapus", Toast.LENGTH_LONG).show();
         }
 
         // Start Profil Activity

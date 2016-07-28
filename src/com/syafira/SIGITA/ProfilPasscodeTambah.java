@@ -169,9 +169,9 @@ public class ProfilPasscodeTambah extends ProfilPasscode {
                     }
 
                     if (success) {
-                        Toast.makeText(getApplicationContext(), "ProfilPasscode Berhasil Tersimpan", Toast.LENGTH_LONG).show();
+                        Toast.makeText(getApplicationContext(), "Passcode Berhasil Tersimpan", Toast.LENGTH_LONG).show();
                     } else {
-                        Toast.makeText(getApplicationContext(), "ProfilPasscode Gagal Tersimpan", Toast.LENGTH_LONG).show();
+                        Toast.makeText(getApplicationContext(), "Passcode Gagal Tersimpan", Toast.LENGTH_LONG).show();
                     }
 
                     // Start Profil Activity
