@@ -32,7 +32,7 @@ public class TumbuhKembang extends Home implements OnClickListener {
         super.onCreate(savedInstanceState);
 
         // Load Layout
-        setContentView(R.layout.tumbuh_kembang);
+        setContentView(R.layout.tumbang);
 
         // Fetch Intent Extra
         Intent fetchID = getIntent();

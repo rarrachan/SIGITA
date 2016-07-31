@@ -33,7 +33,7 @@ public class ImunisasiJadwal extends Imunisasi{
         super.onCreate(savedInstanceState);
 
         // Load Layout
-        setContentView(R.layout.jadwal_imunisasi);
+        setContentView(R.layout.imunisasi_jadwalimunisasi);
 
         // Fetch Intent Extra
         Intent fetchID = getIntent();

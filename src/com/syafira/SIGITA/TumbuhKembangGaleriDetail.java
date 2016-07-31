@@ -41,7 +41,7 @@ public class TumbuhKembangGaleriDetail extends TumbuhKembangGaleri {
         super.onCreate(savedInstanceState);
 
         // Load Layout
-        setContentView(R.layout.detail_galeri);
+        setContentView(R.layout.tumbang_galeri_detail);
 
         // Session Manager
         session = new SessionManager();
@@ -132,7 +132,7 @@ public class TumbuhKembangGaleriDetail extends TumbuhKembangGaleri {
             public void onClick(View v) {
                 // Create Dialog
                 final Dialog dialog = new Dialog(TumbuhKembangGaleriDetail.this);
-                dialog.setContentView(R.layout.hapus_galeri);
+                dialog.setContentView(R.layout.tumbang_galeri_hapus);
                 dialog.setCanceledOnTouchOutside(true);
                 dialog.getWindow().setBackgroundDrawable(new ColorDrawable(android.graphics.Color.TRANSPARENT));
                 dialog.show();

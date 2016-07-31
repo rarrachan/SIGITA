@@ -53,7 +53,7 @@ public class GiziDokumentasiTambah extends GiziDokumentasi {
         super.onCreate(savedInstanceState);
 
         // Load Layout
-        setContentView(R.layout.tambah_dokumentasi);
+        setContentView(R.layout.gizi_dokumentasigizi_tambah);
 
         // Load Session Manager
         session = new SessionManager();

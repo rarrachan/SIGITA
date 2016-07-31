@@ -17,7 +17,7 @@ public class Splash extends Activity{
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.splash);
+        setContentView(R.layout.splashscreen);
 
         // Load Database
         DBHelper db = new DBHelper(this);

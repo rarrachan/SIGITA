@@ -43,7 +43,7 @@ public class ImunisasiAlarm extends Imunisasi {
         super.onCreate(savedInstanceState);
 
         // Load Layout
-        setContentView(R.layout.alarm_imunisasi);
+        setContentView(R.layout.imunisasi_alarm);
 
         // Fetch Intent Extra
         Intent fetchID = getIntent();

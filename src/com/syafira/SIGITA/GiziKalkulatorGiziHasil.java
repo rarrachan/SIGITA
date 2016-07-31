@@ -74,7 +74,7 @@ public class GiziKalkulatorGiziHasil extends GiziKalkulatorGizi {
         super.onCreate(savedInstanceState);
 
         // Load Layout
-        setContentView(R.layout.hasil_kalkulator_gizi);
+        setContentView(R.layout.gizi_kalkulatorgizi_hasil);
 
         // Fetch Intent Extra
         Intent fetchID = getIntent();

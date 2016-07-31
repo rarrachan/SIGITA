@@ -11,7 +11,7 @@
     <string name="button_gizi">Gizi</string>
     <string name="button_imunisasi">Imunisasi</string>
     <string name="button_tumbuhkembang">Tumbuh Kembang</string>
-    <string name="button_rekammedis">Rekam Medis</string>
+    <string name="button_catatankesehatan">Catatan Kesehatan</string>
 
     <string name="detail_profil">Detail Profil</string>
     <string name="button_anaklaki">Nama Anak Laki-Laki</string>
@@ -56,10 +56,10 @@
 
     <string name="alert_lupa">Lupa Passcode?</string>
     <string name="alert_lupa_passcode">Jika anda lupa passcode, maka anda harus menghapus seluruh data anak ini. Penghapusan meliputi riwayat
-        imunisasi, status gizi, rekam medis, dan record tumbuh kembang anak. Apa anda yakin untuk menghapus seluruh data anak ini?</string>
+        imunisasi, status gizi, catatan kesehatan, dan record tumbuh kembang anak. Apa anda yakin untuk menghapus seluruh data anak ini?</string>
     <string name="alert_warning">WARNING !</string>
     <string name="alert_hapus">Apa anda yakin untuk menghapus seluruh data anak ini? Penghapusan meliputi riwayat
-        imunisasi, status gizi, rekam medis, dan record tumbuh kembang anak.
+        imunisasi, status gizi, catatan kesehatan, dan record tumbuh kembang anak.
     </string>
     <string name="alert_akses">Anda tidak dapat mengakses menu ini karena anda belum memilih profil. Silahkan memilih
         profil anak terlebih dahulu.
@@ -163,46 +163,45 @@
     <string name="ubah_galeri">Ubah Galeri</string>
     <string name="alert_hapus_galeri">Apa anda yakin untuk menghapus galeri ini?</string>
 
-    <string name="medis_keluhan">Keluhan :</string>
-    <string name="medis_hint_keluhan">Keluhan</string>
-    <string name="medis_obat">Obat :</string>
-    <string name="medis_hint_obat">Obat</string>
+    <string name="kesehatan_keluhan">Keluhan :</string>
+    <string name="kesehatan_hint_keluhan">Keluhan</string>
+    <string name="kesehatan_obat">Obat :</string>
+    <string name="kesehatan_hint_obat">Obat</string>
 
-    <string name="medis_tanggalberobat_tabel">Tanggal Berobat</string>
-    <string name="medis_nama">Nama Anak :</string>
-    <string name="medis_hint_nama">Nama Anak</string>
-    <string name="medis_tanggalberobat">Tanggal Berobat :</string>
-    <string name="medis_hint_tanggalberobat">01/01/1990</string>
-    <string name="tambah_rekam_medis">Tambah Rekam Medis</string>
-    <string name="medis_dokter">Nama Dokter :</string>
-    <string name="medis_hint_dokter">Nama Dokter</string>
-    <string name="medis_rumahsakit">Nama Rumah Sakit :</string>
-    <string name="medis_hint_rumahsakit">Nama Rumah Sakit</string>
-    <string name="medis_tinggibadan">Tinggi Badan :</string>
-    <string name="medis_hint_tinggibadan">00.00</string>
-    <string name="medis_centimeter">CM</string>
-    <string name="medis_beratbadan">Berat Badan :</string>
-    <string name="medis_hint_beratbadan">00.00</string>
-    <string name="medis_kilogram">KG</string>
-    <string name="medis_tindakan">Tindakan :</string>
-    <string name="medis_hint_tindakan">Tindakan</string>
+    <string name="kesehatan_tanggalberobat_tabel">Tanggal Berobat</string>
+    <string name="kesehatan_nama">Nama Anak :</string>
+    <string name="kesehatan_hint_nama">Nama Anak</string>
+    <string name="kesehatan_tanggalberobat">Tanggal Berobat :</string>
+    <string name="kesehatan_hint_tanggalberobat">01/01/1990</string>
+    <string name="tambah_catatan_kesehatan">Tambah Catatan Kesehatan</string>
+    <string name="kesehatan_dokter">Nama Dokter :</string>
+    <string name="kesehatan_hint_dokter">Nama Dokter</string>
+    <string name="kesehatan_rumahsakit">Nama Rumah Sakit :</string>
+    <string name="kesehatan_hint_rumahsakit">Nama Rumah Sakit</string>
+    <string name="kesehatan_tinggibadan">Tinggi Badan :</string>
+    <string name="kesehatan_hint_tinggibadan">00.00</string>
+    <string name="kesehatan_centimeter">CM</string>
+    <string name="kesehatan_beratbadan">Berat Badan :</string>
+    <string name="kesehatan_hint_beratbadan">00.00</string>
+    <string name="kesehatan_kilogram">KG</string>
+    <string name="kesehatan_tindakan">Tindakan :</string>
+    <string name="kesehatan_hint_tindakan">Tindakan</string>
 
-    <string name="detail_rekam_medis">Detail Rekam Medis</string>
-    <string name="ubah_rekam_medis">Ubah Rekam Medis</string>
-    <string name="alert_hapus_medis">Apa anda yakin untuk menghapus rekam medis ini?</string>
+    <string name="detail_catatan_kesehatan">Detail Catatan Kesehatan</string>
+    <string name="ubah_catatan_kesehatan">Ubah Catatan Kesehatan</string>
+    <string name="alert_hapus_kesehatan">Apa anda yakin untuk menghapus catatan kesehatan ini?</string>
 
     <string name="button_tentangsigita">Tentang SIGITA</string>
-    <string name="tentang_sigita">SIGITA &#8211; Sistem Informasi Gizi, Imunisasi, dan Tumbuh-Kembang Anak &#8211; merupakan
-        sebuah sistem informasi berbasis android yang dapat memberikan serta menyimpan berbagai informasi seputar anak berusia 0 hingga 5 tahun.
-        Informasi tersebut antara lain perhitungan status gizi anak setiap
-        bulan serta perbandingan status gizi dengan kurva pertumbuhan anak yang dihitung
-        menggunakan indeks antropometri sebagai dasar penilaian status gizi, pencatatan
-        riwayat serta pengingat jadwal imunisasi, pencatatan rekam medis, hingga
-        perbandingan antara pertumbuhan dan perkembangan anak dengan developmental
-        milestones serta penyimpanan momen penting pada pertumbuhan dan perkembangan
-        anak.
-    \n
-    \n
-    Menu Kalkulator Gizi, Jadwal Imunisasi, dan Tahapan Tumbuh Kembang dapat diakses tanpa harus memilih profil terlebih dahulu. Sedangkan menu
-    Dokumentasi Gizi, Riwayat Imunisasi, Alarm Imunisasi, Galeri Tumbuh Kembang, dan Rekam Medis dapat diakses setelah memilih profil.</string>
+    <string name="tentang_sigita">SIGITA &#8211; Sistem Informasi Gizi, Imunisasi, dan Tumbuh-Kembang Anak &#8211;
+        merupakan sebuah sistem informasi berbasis android yang dapat memberikan serta menyimpan berbagai
+        informasi seputar anak berusia 0 hingga 5 tahun.
+        Informasi tersebut antara lain perhitungan status gizi anak setiap bulan serta perbandingan
+        status gizi dengan kurva pertumbuhan anak yang dihitung menggunakan indeks antropometri sebagai
+        dasar penilaian status gizi, penyimpanan riwayat serta pengingat jadwal imunisasi, pencatatan kesehatan,
+        hingga pertumbuhan dan perkembangan anak (child developmental milestones) serta penyimpanan momen penting
+        pada pertumbuhan dan perkembangan anak.
+        \n\n
+        Menu Kalkulator Gizi, Jadwal Imunisasi, dan Tahapan Tumbuh Kembang dapat diakses tanpa harus memilih profil
+        terlebih dahulu. Sedangkan menu Dokumentasi Gizi, Riwayat Imunisasi, Alarm Imunisasi, Galeri Tumbuh Kembang,
+        dan Catatan Kesehatan dapat diakses setelah memilih profil.</string>
 </resources>

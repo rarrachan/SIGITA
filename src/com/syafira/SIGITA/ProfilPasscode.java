@@ -33,7 +33,7 @@ public class ProfilPasscode extends Profil {
         super.onCreate(savedInstanceState);
 
         // Load Layout
-        setContentView(R.layout.passcode);
+        setContentView(R.layout.profil_passcode);
 
         // Fetch Intent Extra
         Intent fetchID = getIntent();

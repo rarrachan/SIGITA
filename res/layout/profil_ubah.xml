@@ -1,0 +1,549 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:fillViewport="true"
+            android:scrollbars="none"
+            android:id="@+id/scrollView">
+
+    <RelativeLayout
+            android:focusable="true"
+            android:focusableInTouchMode="true"
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content">
+
+        <LinearLayout
+                android:layout_width="fill_parent"
+                android:layout_height="fill_parent"
+                android:background="#FFFBC9"
+                android:orientation="vertical">
+
+            <LinearLayout
+                    android:layout_width="fill_parent"
+                    android:layout_height="fill_parent"
+                    android:background="#FFFBC9"
+                    android:orientation="vertical"
+                    android:layout_marginBottom="50dp">
+
+                <!-- Start Linear Layout Header -->
+                <LinearLayout
+                        android:id="@+id/HeaderLinearLayout"
+                        android:layout_width="fill_parent"
+                        android:layout_height="wrap_content"
+                        android:background="#FFF1B5"
+                        android:orientation="horizontal">
+
+                    <!-- Start Blank Space -->
+                    <View
+                            android:layout_width="0dp"
+                            android:layout_height="0dp"
+                            android:layout_weight=".2"/>
+                    <!-- End Blank Space -->
+
+                    <!-- Start Header Logo Image -->
+                    <ImageView
+                            android:id="@+id/logo_index"
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content"
+                            android:layout_weight="1"
+                            android:adjustViewBounds="true"
+                            android:src="@drawable/icon_logopanjang"
+                            android:contentDescription="@string/app_name"/>
+                    <!-- End Header Logo Image -->
+
+                    <!-- Start Blank Space -->
+                    <View
+                            android:layout_width="0dp"
+                            android:layout_height="0dp"
+                            android:layout_weight=".2"/>
+                    <!-- End Blank Space -->
+
+                </LinearLayout>
+                <!-- End Linear Layout Header -->
+
+                <!-- Start Linear Layout Content -->
+                <LinearLayout
+                        android:layout_width="fill_parent"
+                        android:layout_height="wrap_content"
+                        android:gravity="center"
+                        android:orientation="vertical"
+                        android:layout_gravity="center_vertical">
+
+                    <!-- Start Text View Ubah Profil -->
+                    <TextView
+                            android:id="@+id/ubah_profil"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:textColor="#D046F2"
+                            android:text="@string/ubah_profil"
+                            style="@android:style/TextAppearance.DeviceDefault.Medium"
+                            android:layout_gravity="center_vertical"
+                            android:layout_margin="20dp"/>
+                    <!-- End Text View Ubah Profil -->
+
+                    <!-- Start Text View Profil ID -->
+                    <TextView
+                            android:id="@+id/profil_id"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:visibility="gone"/>
+                    <!-- End Text View Ubah Profil ID -->
+
+                    <!-- Start Text View Nama Sebelumnya -->
+                    <TextView
+                            android:id="@+id/profil_nama_sebelumnya"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:visibility="gone"/>
+                    <!-- End Text View Nama Sebelumnya -->
+
+                    <!-- Start Linear Layout Row -->
+                    <LinearLayout
+                            android:layout_width="fill_parent"
+                            android:layout_height="wrap_content"
+                            android:orientation="horizontal"
+                            android:layout_gravity="center">
+
+                        <!-- Start Blank Space -->
+                        <View
+                                android:layout_width="0dp"
+                                android:layout_height="0dp"
+                                android:layout_weight=".05"/>
+                        <!-- End Blank Space -->
+
+                        <!-- Start Linear Layout Profil -->
+                        <LinearLayout
+                                android:layout_width="0dp"
+                                android:layout_height="wrap_content"
+                                android:orientation="vertical"
+                                android:layout_weight="1">
+
+                            <!-- Start Text View Profil Nama -->
+                            <TextView
+                                    android:id="@+id/text_profil_nama"
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:textColor="#D046F2"
+                                    android:text="@string/profil_nama"
+                                    style="@android:style/TextAppearance.DeviceDefault.Medium"/>
+                            <!-- End Text View Profil Nama -->
+
+                            <!-- Start Edit Text Profil Nama -->
+                            <EditText
+                                    android:id="@+id/profil_nama"
+                                    android:layout_width="fill_parent"
+                                    android:layout_height="wrap_content"
+                                    android:textColor="#FF0000"
+                                    android:hint="@string/profil_hint_nama"
+                                    style="@android:style/TextAppearance.DeviceDefault.Medium"/>
+                            <!-- End Edit Text Profil Nama -->
+
+                            <!-- Start Text View Golongan Darah -->
+                            <TextView
+                                    android:id="@+id/text_profil_golongandarah"
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:textColor="#D046F2"
+                                    android:text="@string/profil_golongandarah"
+                                    style="@android:style/TextAppearance.DeviceDefault.Medium"/>
+                            <!-- End Text View Golongan Darah -->
+
+                            <!-- Start Radio Group Golongan Darah -->
+                            <RadioGroup
+                                    android:id="@+id/profil_golongandarah"
+                                    android:layout_width="fill_parent"
+                                    android:layout_height="wrap_content"
+                                    android:orientation="horizontal">
+
+                                <!-- Start Radio Button Golongan Darah A -->
+                                <RadioButton
+                                        android:id="@+id/profil_A"
+                                        android:layout_width="0dp"
+                                        android:layout_height="match_parent"
+                                        android:text="@string/profil_A"
+                                        android:textColor="#FF0000"
+                                        android:button="@null"
+                                        style="@android:style/TextAppearance.DeviceDefault.Medium"
+                                        android:background="@android:color/transparent"
+                                        android:layout_weight="1"
+                                        android:drawableTop="?android:attr/listChoiceIndicatorSingle"
+                                        android:gravity="center_horizontal"/>
+                                <!-- End Radio Button Golongan Darah A -->
+
+                                <!-- Start Radio Button Golongan Darah B -->
+                                <RadioButton
+                                        android:id="@+id/profil_B"
+                                        android:layout_width="0dp"
+                                        android:layout_height="match_parent"
+                                        android:text="@string/profil_B"
+                                        android:textColor="#FF0000"
+                                        android:button="@null"
+                                        android:drawableTop="?android:attr/listChoiceIndicatorSingle"
+                                        android:background="@android:color/transparent"
+                                        style="@android:style/TextAppearance.DeviceDefault.Medium"
+                                        android:layout_weight="1"
+                                        android:gravity="center_horizontal"/>
+                                <!-- End Radio Button Golongan Darah B -->
+
+                                <!-- Start Radio Button Golongan Darah AB -->
+                                <RadioButton
+                                        android:id="@+id/profil_AB"
+                                        android:layout_width="0dp"
+                                        android:layout_height="match_parent"
+                                        android:text="@string/profil_AB"
+                                        android:textColor="#FF0000"
+                                        android:button="@null"
+                                        android:drawableTop="?android:attr/listChoiceIndicatorSingle"
+                                        android:background="@android:color/transparent"
+                                        style="@android:style/TextAppearance.DeviceDefault.Medium"
+                                        android:layout_weight="1"
+                                        android:gravity="center_horizontal"/>
+                                <!-- End Radio Button Golongan Darah AB -->
+
+                                <!-- Start Radio Button Golongan Darah O -->
+                                <RadioButton
+                                        android:id="@+id/profil_O"
+                                        android:layout_width="0dp"
+                                        android:layout_height="match_parent"
+                                        android:text="@string/profil_O"
+                                        android:textColor="#FF0000"
+                                        android:button="@null"
+                                        android:drawableTop="?android:attr/listChoiceIndicatorSingle"
+                                        android:background="@android:color/transparent"
+                                        style="@android:style/TextAppearance.DeviceDefault.Medium"
+                                        android:layout_weight="1"
+                                        android:gravity="center_horizontal"/>
+                                <!-- End Radio Button Golongan Darah O -->
+
+                            </RadioGroup>
+                            <!-- End Radio Group Golongan Darah -->
+
+                            <!-- Start Text View Panjang Lahir -->
+                            <TextView
+                                    android:id="@+id/text_profil_panjanglahir"
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:textColor="#D046F2"
+                                    android:text="@string/profil_panjanglahir"
+                                    style="@android:style/TextAppearance.DeviceDefault.Medium"/>
+                            <!-- End Text View Panjang Lahir -->
+
+                            <!-- Start Linear Layout Panjang Lahir -->
+                            <LinearLayout
+                                    android:layout_width="fill_parent"
+                                    android:layout_height="wrap_content"
+                                    android:orientation="horizontal">
+
+                                <!-- Start Edit Text Panjang Lahir -->
+                                <EditText
+                                        android:id="@+id/profil_panjanglahir"
+                                        android:layout_width="0dp"
+                                        android:layout_height="wrap_content"
+                                        android:textColor="#FF0000"
+                                        style="@android:style/TextAppearance.DeviceDefault.Medium"
+                                        android:inputType="numberDecimal"
+                                        android:hint="@string/profil_hint_panjanglahir"
+                                        android:layout_weight="1"/>
+                                <!-- End Edit Text Panjang Lahir -->
+
+                                <!-- Start Text View Centimeter -->
+                                <TextView
+                                        android:id="@+id/profil_centimeter"
+                                        android:layout_width="0dp"
+                                        android:layout_height="wrap_content"
+                                        android:textColor="#D046F2"
+                                        android:text="@string/profil_centimeter"
+                                        style="@android:style/TextAppearance.DeviceDefault.Medium"
+                                        android:layout_weight=".5"/>
+                                <!-- End Text View Centimeter -->
+
+                            </LinearLayout>
+                            <!-- End Linear Layout Panjang Lahir -->
+
+                            <!-- Start Text View Berat Lahir -->
+                            <TextView
+                                    android:id="@+id/text_profil_beratlahir"
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:textColor="#D046F2"
+                                    android:text="@string/profil_beratlahir"
+                                    style="@android:style/TextAppearance.DeviceDefault.Medium"/>
+                            <!-- End Text View Berat Lahir -->
+
+                            <!-- Start Linear Layout Berat Lahir -->
+                            <LinearLayout
+                                    android:layout_width="fill_parent"
+                                    android:layout_height="wrap_content"
+                                    android:orientation="horizontal">
+
+                                <!-- Start Edit Text Berat Lahir -->
+                                <EditText
+                                        android:id="@+id/profil_beratlahir"
+                                        android:layout_width="0dp"
+                                        android:layout_height="wrap_content"
+                                        style="@android:style/TextAppearance.DeviceDefault.Medium"
+                                        android:inputType="numberDecimal"
+                                        android:textColor="#FF0000"
+                                        android:hint="@string/profil_hint_beratlahir"
+                                        android:layout_weight="1"/>
+                                <!-- End Edit Text Berat Lahir -->
+
+                                <!-- Start Text View Gram -->
+                                <TextView
+                                        android:id="@+id/profil_gram"
+                                        android:layout_width="0dp"
+                                        android:layout_height="wrap_content"
+                                        android:textColor="#D046F2"
+                                        android:text="@string/profil_kilogram"
+                                        style="@android:style/TextAppearance.DeviceDefault.Medium"
+                                        android:layout_weight=".5"/>
+                                <!-- End Text View Gram -->
+
+                            </LinearLayout>
+                            <!-- End Linear Layout Berat Lahir -->
+
+                            <!-- Start Text View Alergi -->
+                            <TextView
+                                    android:id="@+id/text_profil_alergi"
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:textColor="#D046F2"
+                                    android:text="@string/profil_alergi"
+                                    style="@android:style/TextAppearance.DeviceDefault.Medium"/>
+                            <!-- End Text View Alergi -->
+
+                            <!-- Start Edit Text Alergi -->
+                            <EditText
+                                    android:id="@+id/profil_alergi"
+                                    android:layout_width="fill_parent"
+                                    android:layout_height="wrap_content"
+                                    android:textColor="#FF0000"
+                                    android:hint="@string/profil_hint_alergi"
+                                    style="@android:style/TextAppearance.DeviceDefault.Medium"/>
+                            <!-- End Edit Text Alergi -->
+
+                            <!-- Start Text View Penyakit Kronis -->
+                            <TextView
+                                    android:id="@+id/text_profil_penyakitkronis"
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:textColor="#D046F2"
+                                    android:text="@string/profil_penyakitkronis"
+                                    style="@android:style/TextAppearance.DeviceDefault.Medium"/>
+                            <!-- End Text View Penyakit Kronis -->
+
+                            <!-- Start Edit Text Penyakit Kronis -->
+                            <EditText
+                                    android:id="@+id/profil_penyakitkronis"
+                                    android:layout_width="fill_parent"
+                                    android:layout_height="wrap_content"
+                                    android:textColor="#FF0000"
+                                    android:hint="@string/profil_hint_penyakitkronis"
+                                    style="@android:style/TextAppearance.DeviceDefault.Medium"/>
+                            <!-- End Edit Text Penyakit Kronis -->
+
+                        </LinearLayout>
+                        <!-- End Linear Layout Profil -->
+
+                        <!-- Start Blank Space -->
+                        <View
+                                android:layout_width="0dp"
+                                android:layout_height="0dp"
+                                android:layout_weight=".05"/>
+                        <!-- End Blank Space -->
+
+                        <!-- Start Linear Layout Profil -->
+                        <LinearLayout
+                                android:layout_width="0dp"
+                                android:layout_height="wrap_content"
+                                android:orientation="vertical"
+                                android:layout_weight="1">
+
+                            <!-- Start Text View Jenis Kelamin -->
+                            <TextView
+                                    android:id="@+id/text_profil_jeniskelamin"
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:textColor="#D046F2"
+                                    android:text="@string/profil_jeniskelamin"
+                                    style="@android:style/TextAppearance.DeviceDefault.Medium"/>
+                            <!-- End Text View Jenis Kelamin -->
+
+                            <!-- Start Radio Group Jenis Kelamin -->
+                            <RadioGroup
+                                    android:id="@+id/profil_jeniskelamin"
+                                    android:layout_width="fill_parent"
+                                    android:layout_height="wrap_content"
+                                    android:orientation="vertical">
+
+                                <!-- Start Radio Button LakiLaki -->
+                                <RadioButton
+                                        android:id="@+id/profil_lakilaki"
+                                        android:layout_width="fill_parent"
+                                        android:layout_weight="1"
+                                        android:layout_height="0dp"
+                                        android:text="@string/profil_lakilaki"
+                                        android:textColor="#FF0000"
+                                        style="@android:style/TextAppearance.DeviceDefault.Medium"/>
+                                <!-- End Radio Button LakiLaki -->
+
+                                <!-- Start Radio Button Perempuan -->
+                                <RadioButton
+                                        android:id="@+id/profil_perempuan"
+                                        android:layout_width="fill_parent"
+                                        android:layout_weight="1"
+                                        android:layout_height="0dp"
+                                        android:text="@string/profil_perempuan"
+                                        android:textColor="#FF0000"
+                                        style="@android:style/TextAppearance.DeviceDefault.Medium"/>
+                                <!-- End Radio Button Perempuan -->
+
+                            </RadioGroup>
+                            <!-- End Radio Group Jenis Kelamin -->
+
+                            <!-- Start Text View Tempat Lahir -->
+                            <TextView
+                                    android:id="@+id/text_profil_tempatlahir"
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:textColor="#D046F2"
+                                    android:text="@string/profil_tempatlahir"
+                                    style="@android:style/TextAppearance.DeviceDefault.Medium"/>
+                            <!-- End Text View Tempat Lahir -->
+
+                            <!-- Start Edit Text Tempat Lahir -->
+                            <EditText
+                                    android:id="@+id/profil_tempatlahir"
+                                    android:layout_width="fill_parent"
+                                    android:layout_height="wrap_content"
+                                    android:textColor="#FF0000"
+                                    android:hint="@string/profil_hint_tempatlahir"
+                                    style="@android:style/TextAppearance.DeviceDefault.Medium"/>
+                            <!-- End Edit Text Tempat Lahir -->
+
+                            <!-- Start Text View Tanggal Lahir -->
+                            <TextView
+                                    android:id="@+id/text_profil_tanggallahir"
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:textColor="#D046F2"
+                                    android:text="@string/profil_tanggallahir"
+                                    style="@android:style/TextAppearance.DeviceDefault.Medium"/>
+                            <!-- End Text View Tanggal Lahir -->
+
+                            <!-- Start Edit Text Tanggal Lahir -->
+                            <EditText
+                                    android:id="@+id/profil_tanggallahir"
+                                    android:layout_width="fill_parent"
+                                    android:layout_height="wrap_content"
+                                    android:textColor="#FF0000"
+                                    android:hint="@string/profil_hint_tanggallahir"
+                                    android:focusable="false"
+                                    style="@android:style/TextAppearance.DeviceDefault.Medium"/>
+                            <!-- End Edit Text Tanggal lahir -->
+
+                            <!-- Start Text View Foto -->
+                            <TextView
+                                    android:id="@+id/text_profil_foto"
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:textColor="#D046F2"
+                                    android:text="@string/profil_foto"
+                                    style="@android:style/TextAppearance.DeviceDefault.Medium"/>
+                            <!-- End Text View Foto -->
+
+                            <!-- Start Image View Foto -->
+                            <ImageView
+                                    android:id="@+id/profil_foto"
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:adjustViewBounds="true"
+                                    android:src="@drawable/icon_tambahfoto"
+                                    android:contentDescription="@string/app_name"
+                                    android:layout_gravity="center"/>
+                            <!-- End Image View Foto -->
+
+                        </LinearLayout>
+                        <!-- End Linear Layout Profil -->
+
+                        <!-- Start Blank Space -->
+                        <View
+                                android:layout_width="0dp"
+                                android:layout_height="0dp"
+                                android:layout_weight=".05"/>
+                        <!-- End Blank Space -->
+
+                    </LinearLayout>
+                    <!-- End Linear Layout Row -->
+
+                </LinearLayout>
+                <!-- End Linear Layout Content -->
+
+                <!-- Start Linear Layout Content -->
+                <LinearLayout
+                        android:layout_width="fill_parent"
+                        android:layout_height="wrap_content"
+                        android:orientation="horizontal"
+                        android:layout_gravity="center"
+                        android:layout_marginBottom="30dp"
+                        android:layout_marginTop="20dp">
+
+                    <!-- Start Blank Space -->
+                    <View
+                            android:layout_width="0dp"
+                            android:layout_height="0dp"
+                            android:layout_weight="1"/>
+                    <!-- End Blank Space -->
+
+                    <!-- Start Image View Button Simpan -->
+                    <ImageView
+                            android:id="@+id/button_simpan"
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content"
+                            android:layout_weight="1"
+                            android:adjustViewBounds="true"
+                            android:src="@drawable/tombol_simpan"
+                            android:contentDescription="@string/app_name"/>
+                    <!-- End Image View Button Simpan -->
+
+                    <!-- Start Blank Space -->
+                    <View
+                            android:layout_width="0dp"
+                            android:layout_height="0dp"
+                            android:layout_weight="1"/>
+                    <!-- End Blank Space -->
+
+                </LinearLayout>
+                <!-- End Linear Layout Content -->
+
+            </LinearLayout>
+
+        </LinearLayout>
+
+        <!-- Start Relative Layout Footer -->
+        <RelativeLayout
+                android:id="@+id/FooterRelativeLayout"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:background="#FFF1B5"
+                android:layout_alignParentBottom="true">
+
+            <!-- Start Text Footer -->
+            <TextView
+                    android:id="@+id/text_footer"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_centerHorizontal="true"
+                    android:textColor="#D046F2"
+                    android:paddingTop="15dp"
+                    android:paddingBottom="15dp"
+                    android:text="@string/text_footer"
+                    style="@android:style/TextAppearance.DeviceDefault.Medium"/>
+            <!-- End Text Footer -->
+
+        </RelativeLayout>
+        <!-- End Relative Layout Footer -->
+
+    </RelativeLayout>
+
+</ScrollView>

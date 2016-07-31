@@ -80,7 +80,7 @@ public class ProfilUbah extends ProfilDetail implements OnClickListener {
         super.onCreate(savedInstanceState);
 
         // Load Layout
-        setContentView(R.layout.ubah_profil);
+        setContentView(R.layout.profil_ubah);
 
         // Load Session Manager
         session = new SessionManager();

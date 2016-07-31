@@ -53,7 +53,7 @@ public class GiziDokumentasiUbah extends GiziDokumentasiDetail {
         super.onCreate(savedInstanceState);
 
         // Load Layout
-        setContentView(R.layout.ubah_dokumentasi);
+        setContentView(R.layout.gizi_dokumentasigizi_ubah);
 
         // Load Session Manager
         session = new SessionManager();

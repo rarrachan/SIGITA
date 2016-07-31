@@ -57,7 +57,7 @@ public class TumbuhKembangGaleriTambah extends TumbuhKembangGaleri {
         super.onCreate(savedInstanceState);
 
         // Load Layout
-        setContentView(R.layout.tambah_galeri);
+        setContentView(R.layout.tumbang_galeri_tambah);
 
         // Fetch Intent Extra
         Intent fetchID = getIntent();

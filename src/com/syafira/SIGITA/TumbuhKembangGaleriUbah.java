@@ -60,7 +60,7 @@ public class TumbuhKembangGaleriUbah extends TumbuhKembangGaleriDetail {
         super.onCreate(savedInstanceState);
 
         // Load Layout
-        setContentView(R.layout.ubah_galeri);
+        setContentView(R.layout.tumbang_galeri_ubah);
 
         // Session Manager
         session = new SessionManager();

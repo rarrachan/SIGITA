@@ -75,8 +75,8 @@ public class Home extends Activity {
         text_footer.setTypeface(typeface);
 
         // Grid Menu
-        String[] menu = {"Profil", "Gizi", "Imunisasi", "Tumbuh Kembang", "Rekam Medis", "Tentang"};
-        int[] menu_image = {R.drawable.icon_profil, R.drawable.icon_gizi, R.drawable.icon_imunisasi, R.drawable.icon_tumbuhkembang, R.drawable.icon_rekammedis, R.drawable.icon_logo};
+        String[] menu = {"Profil", "Gizi", "Imunisasi", "Tumbuh Kembang", "Catatan Kesehatan", "Tentang"};
+        int[] menu_image = {R.drawable.icon_profil, R.drawable.icon_gizi, R.drawable.icon_imunisasi, R.drawable.icon_tumbuhkembang, R.drawable.icon_catatankesehatan, R.drawable.icon_logo};
 
         List<HashMap<String, ?>> aList = new ArrayList<>();
         for (int a = 0; a < menu.length; a++) {
@@ -153,15 +153,15 @@ public class Home extends Activity {
                         finish();
                         break;
 
-                    // Rekam Medis
+                    // Catatan Kesehatan
                     case 4:
                         // Check Session
                         if (session.checkSession(Home.this)) {
-                            Intent medis = new Intent(Home.this, RekamMedis.class);
+                            Intent kesehatan = new Intent(Home.this, CatatanKesehatan.class);
                             lastActivity = System.currentTimeMillis();
-                            medis.putExtra("lastActivity", lastActivity);
-                            medis.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TASK | Intent.FLAG_ACTIVITY_CLEAR_TOP);
-                            startActivity(medis);
+                            kesehatan.putExtra("lastActivity", lastActivity);
+                            kesehatan.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TASK | Intent.FLAG_ACTIVITY_CLEAR_TOP);
+                            startActivity(kesehatan);
                             finish();
                         } else {
                             final Dialog dialog = new Dialog(Home.this);

@@ -86,7 +86,7 @@ public class GiziDokumentasiDetail extends GiziDokumentasi {
         super.onCreate(savedInstanceState);
 
         // Load Layout
-        setContentView(R.layout.detail_dokumentasi);
+        setContentView(R.layout.gizi_dokumentasigizi_detail);
 
         // Fetch Intent Extra
         Intent fetchID = getIntent();
@@ -1289,7 +1289,7 @@ public class GiziDokumentasiDetail extends GiziDokumentasi {
             public void onClick(View v) {
                 // Create Dialog
                 final Dialog dialog = new Dialog(GiziDokumentasiDetail.this);
-                dialog.setContentView(R.layout.hapus_dokumentasi);
+                dialog.setContentView(R.layout.gizi_dokumenasigizi_hapus);
                 dialog.setCanceledOnTouchOutside(true);
                 dialog.getWindow().setBackgroundDrawable(new ColorDrawable(android.graphics.Color.TRANSPARENT));
                 dialog.show();

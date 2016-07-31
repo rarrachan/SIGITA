@@ -50,7 +50,7 @@ public class GiziKalkulatorGizi extends Gizi {
         super.onCreate(savedInstanceState);
 
         // Load Layout
-        setContentView(R.layout.kalkulator_gizi);
+        setContentView(R.layout.gizi_kalkulatorgizi);
 
         // Load Session Manager
         session = new SessionManager();

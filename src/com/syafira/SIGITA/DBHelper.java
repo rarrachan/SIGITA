@@ -44,7 +44,7 @@ public class DBHelper extends SQLiteOpenHelper {
         createRiwayat(db);
         createTahapan(db);
         createGaleri(db);
-        createMedis(db);
+        createKesehatan(db);
     }
 
     // Upgrade Database
@@ -66,7 +66,7 @@ public class DBHelper extends SQLiteOpenHelper {
         db.execSQL("DROP TABLE IF EXISTS riwayat_imunisasi");
         db.execSQL("DROP TABLE IF EXISTS tahap_tumbang");
         db.execSQL("DROP TABLE IF EXISTS galeri_tumbang");
-        db.execSQL("DROP TABLE IF EXISTS rekam_medis");
+        db.execSQL("DROP TABLE IF EXISTS catatan_kesehatan");
         onCreate(db);
     }
 
@@ -2770,27 +2770,27 @@ public class DBHelper extends SQLiteOpenHelper {
         return db.delete("galeri_tumbang", "galeri_profilID =" + id, null) < 1;
     }
 
-    // Create Table Rekam Medis
-    public void createMedis(SQLiteDatabase db) {
+    // Create Table Catatan Kesehatan
+    public void createKesehatan(SQLiteDatabase db) {
 
-        // Create Table Rekam Medis
-        String create_rekam_medis = "create table rekam_medis (" +
-                " medisID integer primary key autoincrement, " +
-                " medis_profilID integer not null, " +
-                " medis_tanggal text not null," +
-                " medis_berat real, " +
-                " medis_tinggi real, " +
-                " medis_keluhan text, " +
-                " medis_tindakan text, " +
-                " medis_obat text, " +
-                " medis_dokter text, " +
-                " medis_rumahsakit text, " +
-                " FOREIGN KEY ( medis_profilID  ) REFERENCES profil  ( profilID ));";
-        db.execSQL(create_rekam_medis);
+        // Create Table Catatan Kesehatan
+        String create_catatan_kesehatan = "create table catatan_kesehatan (" +
+                " kesehatanID integer primary key autoincrement, " +
+                " kesehatan_profilID integer not null, " +
+                " kesehatan_tanggal text not null," +
+                " kesehatan_berat real, " +
+                " kesehatan_tinggi real, " +
+                " kesehatan_keluhan text, " +
+                " kesehatan_tindakan text, " +
+                " kesehatan_obat text, " +
+                " kesehatan_dokter text, " +
+                " kesehatan_rumahsakit text, " +
+                " FOREIGN KEY ( kesehatan_profilID  ) REFERENCES profil  ( profilID ));";
+        db.execSQL(create_catatan_kesehatan);
     }
 
-    // Insert Rekam Medis to Database
-    public long insertMedis(Integer id, String tanggalberobat, String namadokter, String rumahsakit, String tinggibadan,
+    // Insert Catatan Kesehatan to Database
+    public long insertKesehatan(Integer id, String tanggalberobat, String namadokter, String rumahsakit, String tinggibadan,
                             String beratbadan, String keluhan, String tindakan, String obat) {
 
         // Open Database to Write
@@ -2798,36 +2798,36 @@ public class DBHelper extends SQLiteOpenHelper {
 
         // Get Value
         ContentValues values = new ContentValues();
-        values.put("medis_profilID", id);
-        values.put("medis_tanggal", tanggalberobat);
-        values.put("medis_berat", beratbadan);
-        values.put("medis_tinggi", tinggibadan);
-        values.put("medis_keluhan", keluhan);
-        values.put("medis_tindakan", tindakan);
-        values.put("medis_obat", obat);
-        values.put("medis_dokter", namadokter);
-        values.put("medis_rumahsakit", rumahsakit);
+        values.put("kesehatan_profilID", id);
+        values.put("kesehatan_tanggal", tanggalberobat);
+        values.put("kesehatan_berat", beratbadan);
+        values.put("kesehatan_tinggi", tinggibadan);
+        values.put("kesehatan_keluhan", keluhan);
+        values.put("kesehatan_tindakan", tindakan);
+        values.put("kesehatan_obat", obat);
+        values.put("kesehatan_dokter", namadokter);
+        values.put("kesehatan_rumahsakit", rumahsakit);
 
         // Insert Data
-        return db.insert("rekam_medis", null, values);
+        return db.insert("catatan_kesehatan", null, values);
     }
 
-    // Get Rekam Medis from Database
-    public Cursor getMedis(Integer id) {
-        Cursor cursor = db.rawQuery("SELECT * FROM rekam_medis WHERE medis_profilID = " + id + " ORDER BY SUBSTR(medis_tanggal, 7, 4) DESC, SUBSTR(medis_tanggal, 4, 2) DESC, SUBSTR(medis_tanggal, 1, 2) DESC", null);
+    // Get Catatan Kesehatan from Database
+    public Cursor getKesehatan(Integer id) {
+        Cursor cursor = db.rawQuery("SELECT * FROM catatan_kesehatan WHERE kesehatan_profilID = " + id + " ORDER BY SUBSTR(kesehatan_tanggal, 7, 4) DESC, SUBSTR(kesehatan_tanggal, 4, 2) DESC, SUBSTR(kesehatan_tanggal, 1, 2) DESC", null);
         cursor.moveToFirst();
         return cursor;
     }
 
-    // Get One Rekam Medis From Database
-    public Cursor getOneMedis(Integer id) {
-        Cursor cursor = db.rawQuery("SELECT * FROM rekam_medis WHERE medisID = " + id, null);
+    // Get One Catatan Kesehatan From Database
+    public Cursor getOneKesehatan(Integer id) {
+        Cursor cursor = db.rawQuery("SELECT * FROM catatan_kesehatan WHERE kesehatanID = " + id, null);
         cursor.moveToFirst();
         return cursor;
     }
 
-    // Update Rekam Medis to Database
-    public long updateMedis(Integer medisID, Integer profilID, String tanggalberobat, String namadokter, String rumahsakit, String tinggibadan,
+    // Update Catatan Kesehatan to Database
+    public long updateKesehatan(Integer kesehatanID, Integer profilID, String tanggalberobat, String namadokter, String rumahsakit, String tinggibadan,
                             String beratbadan, String keluhan, String tindakan, String obat) {
 
         // Open Database to Write
@@ -2835,30 +2835,30 @@ public class DBHelper extends SQLiteOpenHelper {
 
         // Get Value
         ContentValues values = new ContentValues();
-        values.put("medis_tanggal", tanggalberobat);
-        values.put("medis_berat", beratbadan);
-        values.put("medis_tinggi", tinggibadan);
-        values.put("medis_keluhan", keluhan);
-        values.put("medis_tindakan", tindakan);
-        values.put("medis_obat", obat);
-        values.put("medis_dokter", namadokter);
-        values.put("medis_rumahsakit", rumahsakit);
+        values.put("kesehatan_tanggal", tanggalberobat);
+        values.put("kesehatan_berat", beratbadan);
+        values.put("kesehatan_tinggi", tinggibadan);
+        values.put("kesehatan_keluhan", keluhan);
+        values.put("kesehatan_tindakan", tindakan);
+        values.put("kesehatan_obat", obat);
+        values.put("kesehatan_dokter", namadokter);
+        values.put("kesehatan_rumahsakit", rumahsakit);
 
         // Update Data
-        return db.update("rekam_medis", values, "medisID = " + medisID + " AND medis_profilID = " + profilID, null);
+        return db.update("catatan_kesehatan", values, "kesehatanID = " + kesehatanID + " AND kesehatan_profilID = " + profilID, null);
     }
 
-    // Delete Rekam Medis from Database
-    public boolean deleteMedis(Integer id) {
+    // Delete Catatan Kesehatan from Database
+    public boolean deleteKesehatan(Integer id) {
         
         // Delete Data
-        return db.delete("rekam_medis", "medisID =" + id, null) < 1;
+        return db.delete("catatan_kesehatan", "kesehatanID =" + id, null) < 1;
     }
 
-    // Delete Rekam Medis from ProfilID from Database
-    public boolean deleteMedisProfilID(Integer profilID) {
+    // Delete Catatan Kesehatan from ProfilID from Database
+    public boolean deleteKesehatanProfilID(Integer profilID) {
         
         // Delete Data
-        return db.delete("rekam_medis", "medis_profilID =" + profilID, null) < 1;
+        return db.delete("catatan_kesehatan", "kesehatan_profilID =" + profilID, null) < 1;
     }
 }

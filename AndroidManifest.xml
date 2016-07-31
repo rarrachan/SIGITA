@@ -244,31 +244,31 @@
                   android:theme="@android:style/Theme.NoTitleBar.Fullscreen">
         </activity>
         <!-- Rekam Medis Activity -->
-        <activity android:name="com.syafira.SIGITA.RekamMedis"
+        <activity android:name=".CatatanKesehatan"
                   android:label="@string/app_name"
                   android:configChanges="orientation|screenSize|keyboardHidden"
                   android:theme="@android:style/Theme.NoTitleBar.Fullscreen">
         </activity>
         <!-- Tambah Rekam Medis Activity -->
-        <activity android:name=".RekamMedisTambah"
+        <activity android:name=".CatatanKesehatanTambah"
                   android:label="@string/app_name"
                   android:configChanges="orientation|screenSize|keyboardHidden"
                   android:theme="@android:style/Theme.NoTitleBar.Fullscreen">
         </activity>
         <!-- Detail Rekam Medis Activity -->
-        <activity android:name=".RekamMedisDetail"
+        <activity android:name=".CatatanKesehatanDetail"
                   android:label="@string/app_name"
                   android:configChanges="orientation|screenSize|keyboardHidden"
                   android:theme="@android:style/Theme.NoTitleBar.Fullscreen">
         </activity>
         <!-- Ubah Rekam Medis Activity -->
-        <activity android:name=".RekamMedisUbah"
+        <activity android:name=".CatatanKesehatanUbah"
                   android:label="@string/app_name"
                   android:configChanges="orientation|screenSize|keyboardHidden"
                   android:theme="@android:style/Theme.NoTitleBar.Fullscreen">
         </activity>
         <!-- Hapus Rekam Medis Activity -->
-        <activity android:name=".RekamMedisHapus"
+        <activity android:name=".CatatanKesehatanHapus"
                   android:label="@string/app_name"
                   android:configChanges="orientation|screenSize|keyboardHidden"
                   android:theme="@android:style/Theme.NoTitleBar.Fullscreen">

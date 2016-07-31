@@ -36,7 +36,7 @@ public class TumbuhKembangTahapan extends TumbuhKembang {
         super.onCreate(savedInstanceState);
 
         // Load Layout
-        setContentView(R.layout.tahapan_tumbang);
+        setContentView(R.layout.tumbang_tahapantumbang);
 
         // Fetch Intent Extra
         Intent fetchID = getIntent();

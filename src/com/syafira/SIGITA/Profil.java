@@ -124,7 +124,7 @@ public class Profil extends Home {
                     public void onClick(View v) {
                         // Create Dialog
                         final Dialog dialog_profil = new Dialog(Profil.this);
-                        dialog_profil.setContentView(R.layout.dialog_profil);
+                        dialog_profil.setContentView(R.layout.profil_pilihprofil);
                         dialog_profil.setCanceledOnTouchOutside(true);
                         dialog_profil.getWindow().setBackgroundDrawable(new ColorDrawable(android.graphics.Color.TRANSPARENT));
                         dialog_profil.show();
@@ -320,13 +320,13 @@ public class Profil extends Home {
                 finish();
                 break;
 
-            case "rekammedis":
-                // Start Rekam Medis Activity
-                Intent rekammedis = new Intent(this, RekamMedis.class);
+            case "catatankesehatan":
+                // Start Catatan Kesehatan Activity
+                Intent catatankesehatan = new Intent(this, CatatanKesehatan.class);
                 lastActivity = System.currentTimeMillis();
-                rekammedis.putExtra("lastActivity", lastActivity);
-                rekammedis.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TASK | Intent.FLAG_ACTIVITY_CLEAR_TOP);
-                startActivity(rekammedis);
+                catatankesehatan.putExtra("lastActivity", lastActivity);
+                catatankesehatan.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TASK | Intent.FLAG_ACTIVITY_CLEAR_TOP);
+                startActivity(catatankesehatan);
 
                 // Close This Activity
                 finish();

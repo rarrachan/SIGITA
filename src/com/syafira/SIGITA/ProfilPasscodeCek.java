@@ -41,7 +41,7 @@ public class ProfilPasscodeCek extends ProfilPasscode {
         super.onCreate(savedInstanceState);
 
         //Load Layout
-        setContentView(R.layout.passcode_cek);
+        setContentView(R.layout.profil_passcode_cek);
 
         // Load Session Manager
         session = new SessionManager();
@@ -430,7 +430,7 @@ public class ProfilPasscodeCek extends ProfilPasscode {
             public void onClick(View v) {
                 // Create Dialog
                 final Dialog dialog = new Dialog(ProfilPasscodeCek.this);
-                dialog.setContentView(R.layout.lupa_passcode);
+                dialog.setContentView(R.layout.profil_passcode_lupa);
                 dialog.setCanceledOnTouchOutside(true);
                 dialog.getWindow().setBackgroundDrawable(new ColorDrawable(android.graphics.Color.TRANSPARENT));
                 dialog.getWindow().setSoftInputMode(WindowManager.LayoutParams.SOFT_INPUT_STATE_ALWAYS_HIDDEN);

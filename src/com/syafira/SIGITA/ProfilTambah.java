@@ -75,7 +75,7 @@ public class ProfilTambah extends Profil implements OnClickListener {
         super.onCreate(savedInstanceState);
 
         // Load Layout
-        setContentView(R.layout.tambah_profil);
+        setContentView(R.layout.profil_tambah);
 
         // Fetch Intent Extra
         Intent fetchID = getIntent();

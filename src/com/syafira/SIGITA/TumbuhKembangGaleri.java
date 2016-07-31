@@ -29,7 +29,7 @@ public class TumbuhKembangGaleri extends TumbuhKembang {
         super.onCreate(savedInstanceState);
 
         // Load Layout
-        setContentView(R.layout.galeri_tumbang);
+        setContentView(R.layout.tumbang_galeri);
 
         // Fetch Intent Extra
         Intent fetchID = getIntent();
@@ -108,7 +108,7 @@ public class TumbuhKembangGaleri extends TumbuhKembang {
             // Ids of views in listview_layout
             int[] to = {R.id.galeri_foto, R.id.galeri_tanggal_foto};
 
-            final SimpleAdapter adapter = new SimpleAdapter(getBaseContext(), aList, R.layout.galeri_grid, from, to){
+            final SimpleAdapter adapter = new SimpleAdapter(getBaseContext(), aList, R.layout.tumbang_galeri_grid, from, to){
                 @Override
                 public View getView(int position, View convertView, android.view.ViewGroup parent) {
                     View v = super.getView(position, convertView, parent);

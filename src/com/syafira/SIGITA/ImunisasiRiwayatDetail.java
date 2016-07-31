@@ -50,7 +50,7 @@ public class ImunisasiRiwayatDetail extends ImunisasiRiwayat {
         super.onCreate(savedInstanceState);
 
         // Load Layout
-        setContentView(R.layout.detail_riwayat);
+        setContentView(R.layout.imunisasi_riwayatimunisasi_detail);
 
         // Load Session Manager
         session = new SessionManager();
@@ -154,7 +154,7 @@ public class ImunisasiRiwayatDetail extends ImunisasiRiwayat {
             public void onClick(View v) {
                 // Create Dialog
                 final Dialog dialog = new Dialog(ImunisasiRiwayatDetail.this);
-                dialog.setContentView(R.layout.hapus_riwayat);
+                dialog.setContentView(R.layout.imunisasi_riwayatimunisasi_hapus);
                 dialog.setCanceledOnTouchOutside(true);
                 dialog.getWindow().setBackgroundDrawable(new ColorDrawable(android.graphics.Color.TRANSPARENT));
                 dialog.show();

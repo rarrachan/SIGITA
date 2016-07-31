@@ -56,7 +56,7 @@ public class ProfilDetail extends Profil {
         super.onCreate(savedInstanceState);
 
         // Load Layout
-        setContentView(R.layout.detail_profil);
+        setContentView(R.layout.profil_detail);
 
         // Fetch Intent Extra
         Intent fetchID = getIntent();
@@ -221,7 +221,7 @@ public class ProfilDetail extends Profil {
             public void onClick(View v) {
                 // Create Dialog
                 final Dialog dialog = new Dialog(ProfilDetail.this);
-                dialog.setContentView(R.layout.hapus_profil);
+                dialog.setContentView(R.layout.profil_hapus);
                 dialog.setCanceledOnTouchOutside(true);
                 dialog.getWindow().setBackgroundDrawable(new ColorDrawable(android.graphics.Color.TRANSPARENT));
                 dialog.show();

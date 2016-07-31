@@ -58,7 +58,7 @@ public class ImunisasiRiwayatTambah extends ImunisasiRiwayat {
         super.onCreate(savedInstanceState);
 
         // Load Layout
-        setContentView(R.layout.tambah_riwayat);
+        setContentView(R.layout.imunisasi_riwayatimunisasi_tambah);
 
         // Fetch Intent Extra
         Intent fetchID = getIntent();

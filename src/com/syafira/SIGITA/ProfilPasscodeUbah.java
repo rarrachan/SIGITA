@@ -38,7 +38,7 @@ public class ProfilPasscodeUbah extends ProfilPasscode {
         super.onCreate(savedInstanceState);
 
         //Load Layout
-        setContentView(R.layout.passcode_tambah);
+        setContentView(R.layout.profil_passcode_tambah);
 
         // Load Session Manager
         session = new SessionManager();

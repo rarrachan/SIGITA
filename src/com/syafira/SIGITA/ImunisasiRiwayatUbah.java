@@ -58,7 +58,7 @@ public class ImunisasiRiwayatUbah extends ImunisasiRiwayatDetail {
         super.onCreate(savedInstanceState);
 
         // Load Layout
-        setContentView(R.layout.ubah_riwayat);
+        setContentView(R.layout.imunisasi_riwayatimunisasi_ubah);
 
         // Load Session Manager
         session = new SessionManager();

@@ -58,7 +58,7 @@ public class ProfilHapus extends ProfilDetail {
             db.deleteDokumentasiProfilID(id);
             db.deleteRiwayatProfilID(id);
             db.deleteGaleriProfilID(id);
-            db.deleteMedisProfilID(id);
+            db.deleteKesehatanProfilID(id);
             db.deleteProfil(id);
 
             // Declare Condition
