@@ -46,8 +46,8 @@ public class TumbuhKembangGaleriUbah extends TumbuhKembangGaleriDetail {
     private EditText galeri_tanggal;
     private TextView text_galeri_usia;
     private TextView galeri_usia;
-    private TextView text_keterangan_foto;
-    private TextView keterangan_foto;
+    private TextView text_galeri_keterangan;
+    private TextView galeri_keterangan;
     private TextView text_galeri_foto;
     private ImageView galeri_foto;
     private ImageView button_simpan;
@@ -86,8 +86,8 @@ public class TumbuhKembangGaleriUbah extends TumbuhKembangGaleriDetail {
         galeri_tanggal = (EditText) findViewById(R.id.galeri_tanggal);
         text_galeri_usia = (TextView) findViewById(R.id.text_galeri_usia);
         galeri_usia = (TextView) findViewById(R.id.galeri_usia);
-        text_keterangan_foto = (TextView) findViewById(R.id.text_galeri_keterangan_foto);
-        keterangan_foto = (TextView) findViewById(R.id.galeri_keterangan_foto);
+        text_galeri_keterangan = (TextView) findViewById(R.id.text_galeri_keterangan);
+        galeri_keterangan = (TextView) findViewById(R.id.galeri_keterangan);
         text_galeri_foto = (TextView) findViewById(R.id.text_galeri_foto);
         galeri_foto = (ImageView) findViewById(R.id.galeri_foto);
         button_simpan = (ImageView) findViewById(R.id.button_simpan);
@@ -102,15 +102,15 @@ public class TumbuhKembangGaleriUbah extends TumbuhKembangGaleriDetail {
         galeri_tanggal.setTypeface(typeface);
         text_galeri_usia.setTypeface(typeface);
         galeri_usia.setTypeface(typeface);
-        text_keterangan_foto.setTypeface(typeface);
-        keterangan_foto.setTypeface(typeface);
+        text_galeri_keterangan.setTypeface(typeface);
+        galeri_keterangan.setTypeface(typeface);
         text_galeri_foto.setTypeface(typeface);
 
         final String nama = session.loadSession(this, "nama");
         galeri_nama.setText(nama);
         galeri_tanggal.setText(cursor.getString(cursor.getColumnIndex("galeri_tanggal")));
         galeri_usia.setText(cursor.getString(cursor.getColumnIndex("galeri_usia")));
-        keterangan_foto.setText(cursor.getString(cursor.getColumnIndex("galeri_desc")));
+        galeri_keterangan.setText(cursor.getString(cursor.getColumnIndex("galeri_deskripsi")));
         final String foto_path = android.os.Environment.getExternalStorageDirectory() + "/SIGITA/" + nama.replaceAll(" ", "_") + "/" + cursor.getString(cursor.getColumnIndex("galeri_foto"));
         if (Drawable.createFromPath(foto_path) != null) {
             galeri_foto.setImageDrawable(Drawable.createFromPath(foto_path));
@@ -233,7 +233,7 @@ public class TumbuhKembangGaleriUbah extends TumbuhKembangGaleriDetail {
                 String nama = galeri_nama.getText().toString();
                 String tgl = galeri_tanggal.getText().toString();
                 String umur = galeri_usia.getText().toString();
-                String keterangan = keterangan_foto.getText().toString();
+                String keterangan = galeri_keterangan.getText().toString();
                 BitmapDrawable drawable_foto = (BitmapDrawable) galeri_foto.getDrawable();
 
                 // Change Space into UnderScore

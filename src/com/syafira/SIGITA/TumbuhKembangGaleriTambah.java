@@ -43,8 +43,8 @@ public class TumbuhKembangGaleriTambah extends TumbuhKembangGaleri {
     private EditText galeri_tanggal;
     private TextView text_galeri_usia;
     private TextView galeri_usia;
-    private TextView text_keterangan_foto;
-    private EditText keterangan_foto;
+    private TextView text_galeri_keterangan;
+    private EditText galeri_keterangan;
     private TextView text_galeri_foto;
     private ImageView galeri_foto;
     private ImageView button_simpan;
@@ -79,8 +79,8 @@ public class TumbuhKembangGaleriTambah extends TumbuhKembangGaleri {
         galeri_tanggal = (EditText) findViewById(R.id.galeri_tanggal);
         text_galeri_usia = (TextView) findViewById(R.id.text_galeri_usia);
         galeri_usia = (TextView) findViewById(R.id.galeri_usia);
-        text_keterangan_foto = (TextView) findViewById(R.id.text_galeri_keterangan_foto);
-        keterangan_foto = (EditText) findViewById(R.id.galeri_keterangan_foto);
+        text_galeri_keterangan = (TextView) findViewById(R.id.text_galeri_keterangan);
+        galeri_keterangan = (EditText) findViewById(R.id.galeri_keterangan);
         text_galeri_foto = (TextView) findViewById(R.id.text_galeri_foto);
         galeri_foto = (ImageView) findViewById(R.id.galeri_foto);
         button_simpan = (ImageView) findViewById(R.id.button_simpan);
@@ -95,8 +95,8 @@ public class TumbuhKembangGaleriTambah extends TumbuhKembangGaleri {
         galeri_tanggal.setTypeface(typeface);
         text_galeri_usia.setTypeface(typeface);
         galeri_usia.setTypeface(typeface);
-        text_keterangan_foto.setTypeface(typeface);
-        keterangan_foto.setTypeface(typeface);
+        text_galeri_keterangan.setTypeface(typeface);
+        galeri_keterangan.setTypeface(typeface);
         text_galeri_foto.setTypeface(typeface);
 
         galeri_nama.setText(session.loadSession(this, "nama"));
@@ -221,7 +221,7 @@ public class TumbuhKembangGaleriTambah extends TumbuhKembangGaleri {
             String nama = galeri_nama.getText().toString();
             String tgl = galeri_tanggal.getText().toString();
             String umur = galeri_usia.getText().toString();
-            String keterangan = keterangan_foto.getText().toString();
+            String keterangan = galeri_keterangan.getText().toString();
             BitmapDrawable drawable_foto = (BitmapDrawable) galeri_foto.getDrawable();
 
             // Change Space into UnderScore

@@ -128,7 +128,7 @@ public class ImunisasiJadwalDetail extends ImunisasiJadwal {
         final int list_id = cursor.getInt(cursor.getColumnIndex("listID"));
         jenis_vaksin.setText(cursor.getString(cursor.getColumnIndex("list_vaksin")));
         usia_vaksin.setText(cursor.getString(cursor.getColumnIndex("list_usia")));
-        keterangan_vaksin.setText(cursor.getString(cursor.getColumnIndex("list_desc")));
+        keterangan_vaksin.setText(cursor.getString(cursor.getColumnIndex("list_deskripsi")));
 
     }
 

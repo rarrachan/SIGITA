@@ -127,111 +127,145 @@
   </component>
   <component name="FileEditorManager">
     <leaf>
-      <file leaf-file-name="DBHelper.java" pinned="false" current-in-tab="true">
+      <file leaf-file-name="DBHelper.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/com/syafira/SIGITA/DBHelper.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.3325301">
-              <caret line="198" column="35" selection-start-line="198" selection-start-column="33" selection-end-line="198" selection-end-column="35" />
+            <state vertical-scroll-proportion="0.0">
+              <caret line="2411" column="86" selection-start-line="2411" selection-start-column="86" selection-end-line="2411" selection-end-column="86" />
+              <caret line="2413" column="86" selection-start-line="2413" selection-start-column="86" selection-end-line="2413" selection-end-column="86" />
+              <caret line="2415" column="86" selection-start-line="2415" selection-start-column="86" selection-end-line="2415" selection-end-column="86" />
+              <caret line="2417" column="86" selection-start-line="2417" selection-start-column="86" selection-end-line="2417" selection-end-column="86" />
+              <caret line="2419" column="86" selection-start-line="2419" selection-start-column="86" selection-end-line="2419" selection-end-column="86" />
+              <caret line="2421" column="86" selection-start-line="2421" selection-start-column="86" selection-end-line="2421" selection-end-column="86" />
+              <caret line="2423" column="86" selection-start-line="2423" selection-start-column="86" selection-end-line="2423" selection-end-column="86" />
+              <caret line="2425" column="86" selection-start-line="2425" selection-start-column="86" selection-end-line="2425" selection-end-column="86" />
+              <caret line="2427" column="86" selection-start-line="2427" selection-start-column="86" selection-end-line="2427" selection-end-column="86" />
+              <caret line="2429" column="86" selection-start-line="2429" selection-start-column="86" selection-end-line="2429" selection-end-column="86" />
+              <caret line="2431" column="86" selection-start-line="2431" selection-start-column="86" selection-end-line="2431" selection-end-column="86" />
+              <caret line="2433" column="86" selection-start-line="2433" selection-start-column="86" selection-end-line="2433" selection-end-column="86" />
+              <caret line="2435" column="86" selection-start-line="2435" selection-start-column="86" selection-end-line="2435" selection-end-column="86" />
+              <caret line="2437" column="86" selection-start-line="2437" selection-start-column="86" selection-end-line="2437" selection-end-column="86" />
+              <caret line="2439" column="86" selection-start-line="2439" selection-start-column="86" selection-end-line="2439" selection-end-column="86" />
+              <caret line="2441" column="86" selection-start-line="2441" selection-start-column="86" selection-end-line="2441" selection-end-column="86" />
+              <caret line="2443" column="86" selection-start-line="2443" selection-start-column="86" selection-end-line="2443" selection-end-column="86" />
+              <caret line="2445" column="86" selection-start-line="2445" selection-start-column="86" selection-end-line="2445" selection-end-column="86" />
+              <caret line="2447" column="86" selection-start-line="2447" selection-start-column="86" selection-end-line="2447" selection-end-column="86" />
+              <caret line="2449" column="86" selection-start-line="2449" selection-start-column="86" selection-end-line="2449" selection-end-column="86" />
+              <caret line="2451" column="86" selection-start-line="2451" selection-start-column="86" selection-end-line="2451" selection-end-column="86" />
+              <caret line="2453" column="86" selection-start-line="2453" selection-start-column="86" selection-end-line="2453" selection-end-column="86" />
+              <caret line="2455" column="86" selection-start-line="2455" selection-start-column="86" selection-end-line="2455" selection-end-column="86" />
+              <caret line="2457" column="86" selection-start-line="2457" selection-start-column="86" selection-end-line="2457" selection-end-column="86" />
+              <caret line="2459" column="86" selection-start-line="2459" selection-start-column="86" selection-end-line="2459" selection-end-column="86" />
+              <caret line="2461" column="86" selection-start-line="2461" selection-start-column="86" selection-end-line="2461" selection-end-column="86" />
+              <caret line="2463" column="86" selection-start-line="2463" selection-start-column="86" selection-end-line="2463" selection-end-column="86" />
+              <caret line="2465" column="86" selection-start-line="2465" selection-start-column="86" selection-end-line="2465" selection-end-column="86" />
+              <caret line="2467" column="86" selection-start-line="2467" selection-start-column="86" selection-end-line="2467" selection-end-column="86" />
+              <caret line="2469" column="86" selection-start-line="2469" selection-start-column="86" selection-end-line="2469" selection-end-column="86" />
+              <caret line="2471" column="86" selection-start-line="2471" selection-start-column="86" selection-end-line="2471" selection-end-column="86" />
+              <caret line="2473" column="86" selection-start-line="2473" selection-start-column="86" selection-end-line="2473" selection-end-column="86" />
+              <caret line="2475" column="86" selection-start-line="2475" selection-start-column="86" selection-end-line="2475" selection-end-column="86" />
+              <caret line="2477" column="86" selection-start-line="2477" selection-start-column="86" selection-end-line="2477" selection-end-column="86" />
+              <caret line="2479" column="86" selection-start-line="2479" selection-start-column="86" selection-end-line="2479" selection-end-column="86" />
+              <caret line="2481" column="86" selection-start-line="2481" selection-start-column="86" selection-end-line="2481" selection-end-column="86" />
+              <caret line="2483" column="86" selection-start-line="2483" selection-start-column="86" selection-end-line="2483" selection-end-column="86" />
+              <caret line="2704" column="33" selection-start-line="2704" selection-start-column="33" selection-end-line="2704" selection-end-column="33" />
+              <caret line="2721" column="36" selection-start-line="2721" selection-start-column="36" selection-end-line="2721" selection-end-column="36" />
+              <caret line="2752" column="36" selection-start-line="2752" selection-start-column="36" selection-end-line="2752" selection-end-column="36" />
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="CatatanKesehatanUbah.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/com/syafira/SIGITA/CatatanKesehatanUbah.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="-10.769231">
-              <caret line="228" column="45" selection-start-line="228" selection-start-column="45" selection-end-line="228" selection-end-column="45" />
-              <folding>
-                <element signature="imports" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="Home.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/com/syafira/SIGITA/Home.java">
+      <file leaf-file-name="ImunisasiJadwal.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/com/syafira/SIGITA/ImunisasiJadwal.java">
           <provider selected="true" editor-type-id="text-editor">
             <state vertical-scroll-proportion="-6.8461537">
-              <caret line="153" column="27" selection-start-line="153" selection-start-column="25" selection-end-line="153" selection-end-column="27" />
+              <caret line="104" column="60" selection-start-line="104" selection-start-column="57" selection-end-line="104" selection-end-column="60" />
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="Profil.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/com/syafira/SIGITA/Profil.java">
+      <file leaf-file-name="TumbuhKembangGaleriTambah.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/com/syafira/SIGITA/TumbuhKembangGaleriTambah.java">
           <provider selected="true" editor-type-id="text-editor">
             <state vertical-scroll-proportion="-6.8461537">
-              <caret line="332" column="19" selection-start-line="332" selection-start-column="17" selection-end-line="332" selection-end-column="19" />
+              <caret line="443" column="62" selection-start-line="443" selection-start-column="57" selection-end-line="443" selection-end-column="62" />
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="ProfilDetail.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/com/syafira/SIGITA/ProfilDetail.java">
+      <file leaf-file-name="ImunisasiJadwalDetail.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/com/syafira/SIGITA/ImunisasiJadwalDetail.java">
           <provider selected="true" editor-type-id="text-editor">
             <state vertical-scroll-proportion="-6.8461537">
-              <caret line="196" column="52" selection-start-line="196" selection-start-column="50" selection-end-line="196" selection-end-column="52" />
+              <caret line="130" column="87" selection-start-line="130" selection-start-column="87" selection-end-line="130" selection-end-column="87" />
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="ProfilHapus.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/com/syafira/SIGITA/ProfilHapus.java">
+      <file leaf-file-name="TumbuhKembangGaleri.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/com/syafira/SIGITA/TumbuhKembangGaleri.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="-6.8461537">
-              <caret line="20" column="24" selection-start-line="20" selection-start-column="22" selection-end-line="20" selection-end-column="24" />
-              <folding>
-                <element signature="imports" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="ProfilPasscode.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/com/syafira/SIGITA/ProfilPasscode.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="-6.8461537">
-              <caret line="98" column="49" selection-start-line="98" selection-start-column="47" selection-end-line="98" selection-end-column="49" />
+            <state vertical-scroll-proportion="-6.5384617">
+              <caret line="17" column="9" selection-start-line="17" selection-start-column="7" selection-end-line="17" selection-end-column="9" />
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="ProfilPasscodeCek.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/com/syafira/SIGITA/ProfilPasscodeCek.java">
+      <file leaf-file-name="TumbuhKembangGaleriUbah.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/com/syafira/SIGITA/TumbuhKembangGaleriUbah.java">
           <provider selected="true" editor-type-id="text-editor">
             <state vertical-scroll-proportion="-6.8461537">
-              <caret line="39" column="21" selection-start-line="39" selection-start-column="19" selection-end-line="39" selection-end-column="21" />
-              <folding>
-                <element signature="imports" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="ProfilTambah.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/com/syafira/SIGITA/ProfilTambah.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="-6.8461537">
-              <caret line="35" column="14" selection-start-line="35" selection-start-column="12" selection-end-line="35" selection-end-column="14" />
-              <folding>
-                <element signature="imports" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="strings.xml" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/res/values/strings.xml">
-          <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="-3.3529413">
-              <caret line="193" column="26" selection-start-line="193" selection-start-column="26" selection-end-line="193" selection-end-column="26" />
+              <caret line="112" column="90" selection-start-line="112" selection-start-column="90" selection-end-line="112" selection-end-column="90" />
               <folding />
             </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="TumbuhKembangTahapan.java" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/src/com/syafira/SIGITA/TumbuhKembangTahapan.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state vertical-scroll-proportion="0.9012048">
+              <caret line="30" column="30" selection-start-line="30" selection-start-column="30" selection-end-line="30" selection-end-column="30" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="TumbuhKembangGaleriDetail.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/com/syafira/SIGITA/TumbuhKembangGaleriDetail.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state vertical-scroll-proportion="-6.8461537">
+              <caret line="95" column="90" selection-start-line="95" selection-start-column="90" selection-end-line="95" selection-end-column="90" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="TumbuhKembangGaleriHapus.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/com/syafira/SIGITA/TumbuhKembangGaleriHapus.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state vertical-scroll-proportion="-5.230769">
+              <caret line="16" column="67" selection-start-line="16" selection-start-column="65" selection-end-line="16" selection-end-column="67" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="tumbang_galeri_hapus.xml" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/res/layout/tumbang_galeri_hapus.xml">
+          <provider selected="true" editor-type-id="text-editor">
+            <state vertical-scroll-proportion="0.0">
+              <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+              <folding />
+            </state>
+          </provider>
+          <provider editor-type-id="android-designer">
+            <state />
           </provider>
         </entry>
       </file>
@@ -264,16 +298,9 @@
   <component name="IdeDocumentHistory">
     <option name="CHANGED_PATHS">
       <list>
-        <option value="$PROJECT_DIR$/src/com/syafira/SIGITA/PasscodeCek.java" />
-        <option value="$PROJECT_DIR$/src/com/syafira/SIGITA/HasilKalkulatorGizi.java" />
-        <option value="$PROJECT_DIR$/src/com/syafira/SIGITA/TambahGaleri.java" />
-        <option value="$PROJECT_DIR$/src/com/syafira/SIGITA/DokumentasiTambah.java" />
-        <option value="$PROJECT_DIR$/src/com/syafira/SIGITA/GiziDokumentasiGiziTambah.java" />
         <option value="$PROJECT_DIR$/src/com/syafira/SIGITA/ImunisasiAlarm.java" />
         <option value="$PROJECT_DIR$/src/com/syafira/SIGITA/Splash.java" />
         <option value="$PROJECT_DIR$/src/com/syafira/SIGITA/GiziDokumentasiTambah.java" />
-        <option value="$PROJECT_DIR$/src/com/syafira/SIGITA/TumbuhKembangGaleriTambah.java" />
-        <option value="$PROJECT_DIR$/src/com/syafira/SIGITA/TumbuhKembangGaleriUbah.java" />
         <option value="$PROJECT_DIR$/src/com/syafira/SIGITA/ProfilUbah.java" />
         <option value="$PROJECT_DIR$/src/com/syafira/SIGITA/ProfilTambah.java" />
         <option value="$PROJECT_DIR$/src/com/syafira/SIGITA/ImunisasiAlarmReceiver.java" />
@@ -314,7 +341,14 @@
         <option value="$PROJECT_DIR$/src/com/syafira/SIGITA/CatatanKesehatanTambah.java" />
         <option value="$PROJECT_DIR$/src/com/syafira/SIGITA/CatatanKesehatanUbah.java" />
         <option value="$PROJECT_DIR$/src/com/syafira/SIGITA/ProfilDetail.java" />
+        <option value="$PROJECT_DIR$/res/layout/tumbang_galeri_tambah.xml" />
+        <option value="$PROJECT_DIR$/src/com/syafira/SIGITA/TumbuhKembangGaleriTambah.java" />
+        <option value="$PROJECT_DIR$/res/layout/tumbang_galeri_ubah.xml" />
+        <option value="$PROJECT_DIR$/res/layout/tumbang_galeri_detail.xml" />
         <option value="$PROJECT_DIR$/src/com/syafira/SIGITA/DBHelper.java" />
+        <option value="$PROJECT_DIR$/src/com/syafira/SIGITA/ImunisasiJadwalDetail.java" />
+        <option value="$PROJECT_DIR$/src/com/syafira/SIGITA/TumbuhKembangGaleriDetail.java" />
+        <option value="$PROJECT_DIR$/src/com/syafira/SIGITA/TumbuhKembangGaleriUbah.java" />
       </list>
     </option>
   </component>
@@ -389,6 +423,40 @@
       <sortByType />
     </navigator>
     <panes>
+      <pane id="Scope">
+        <subPane subId="Project Files">
+          <PATH>
+            <PATH_ELEMENT USER_OBJECT="Root">
+              <option name="myItemId" value="" />
+              <option name="myItemType" value="" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT USER_OBJECT="SIGITA">
+              <option name="myItemId" value="" />
+              <option name="myItemType" value="" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT USER_OBJECT="Root">
+              <option name="myItemId" value="" />
+              <option name="myItemType" value="" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT USER_OBJECT="SIGITA">
+              <option name="myItemId" value="" />
+              <option name="myItemType" value="" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT USER_OBJECT="src">
+              <option name="myItemId" value="" />
+              <option name="myItemType" value="" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT USER_OBJECT="com/syafira/SIGITA">
+              <option name="myItemId" value="" />
+              <option name="myItemType" value="" />
+            </PATH_ELEMENT>
+          </PATH>
+        </subPane>
+      </pane>
+      <pane id="PackagesPane" />
+      <pane id="Scratches" />
       <pane id="ProjectPane">
         <subPane>
           <PATH>
@@ -481,40 +549,6 @@
           </PATH>
         </subPane>
       </pane>
-      <pane id="Scratches" />
-      <pane id="Scope">
-        <subPane subId="Project Files">
-          <PATH>
-            <PATH_ELEMENT USER_OBJECT="Root">
-              <option name="myItemId" value="" />
-              <option name="myItemType" value="" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT USER_OBJECT="SIGITA">
-              <option name="myItemId" value="" />
-              <option name="myItemType" value="" />
-            </PATH_ELEMENT>
-          </PATH>
-          <PATH>
-            <PATH_ELEMENT USER_OBJECT="Root">
-              <option name="myItemId" value="" />
-              <option name="myItemType" value="" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT USER_OBJECT="SIGITA">
-              <option name="myItemId" value="" />
-              <option name="myItemType" value="" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT USER_OBJECT="src">
-              <option name="myItemId" value="" />
-              <option name="myItemType" value="" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT USER_OBJECT="com/syafira/SIGITA">
-              <option name="myItemId" value="" />
-              <option name="myItemType" value="" />
-            </PATH_ELEMENT>
-          </PATH>
-        </subPane>
-      </pane>
-      <pane id="PackagesPane" />
     </panes>
   </component>
   <component name="PropertiesComponent">
@@ -522,7 +556,7 @@
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="recentsLimit" value="5" />
     <property name="last_opened_file_path" value="$PROJECT_DIR$" />
-    <property name="ANDROID_EXTENDED_DEVICE_CHOOSER_SERIALS" value="c16071d7d60bc31" />
+    <property name="ANDROID_EXTENDED_DEVICE_CHOOSER_SERIALS" value="emulator-5554" />
     <property name="ANDROID_EXTENDED_DEVICE_CHOOSER_AVD" value="Nexus_4_API_15" />
     <property name="UI_DESIGNER_EDITOR_MODE.UIDesignerToolWindowManager2.WIDTH" value="281" />
     <property name="settings.editor.selected.configurable" value="preferences.lookFeel" />
@@ -973,11 +1007,13 @@
       <workItem from="1469720205080" duration="951000" />
       <workItem from="1469721230119" duration="4652000" />
       <workItem from="1469899841122" duration="7253000" />
+      <workItem from="1470045960209" duration="2231000" />
+      <workItem from="1470057046576" duration="667000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="1176360000" />
+    <option name="totallyTimeSpent" value="1179258000" />
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
@@ -1000,7 +1036,6 @@
       <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.2197615" sideWeight="0.5257186" order="0" side_tool="true" content_ui="tabs" />
       <window_info id="Application Servers" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Maven Projects" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32980332" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
-      <window_info id="Preview" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32930514" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
       <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.35714287" sideWeight="0.4742814" order="9" side_tool="false" content_ui="tabs" />
       <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.34412265" sideWeight="0.49093655" order="4" side_tool="false" content_ui="tabs" />
@@ -1009,7 +1044,6 @@
       <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.30438066" sideWeight="0.5" order="4" side_tool="false" content_ui="combo" />
       <window_info id="Memory Monitor" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.3282313" sideWeight="0.5090634" order="6" side_tool="true" content_ui="tabs" />
       <window_info id="Database" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.41691843" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
-      <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.4931973" sideWeight="0.5" order="8" side_tool="false" content_ui="tabs" />
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.24962178" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
       <window_info id="Ant Build" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
       <window_info id="UI Designer" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
@@ -1020,7 +1054,9 @@
       <window_info id="Commander" active="false" anchor="right" auto_hide="false" internal_type="SLIDING" type="SLIDING" visible="false" weight="0.4" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Hierarchy" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.24962178" sideWeight="0.5" order="7" side_tool="false" content_ui="combo" />
       <window_info id="Inspection" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.4" sideWeight="0.5" order="12" side_tool="false" content_ui="tabs" />
+      <window_info id="Preview" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32930514" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
       <window_info id="Database Console" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.0" sideWeight="0.5" order="14" side_tool="false" content_ui="tabs" />
+      <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.4931973" sideWeight="0.5" order="8" side_tool="false" content_ui="tabs" />
     </layout>
   </component>
   <component name="Vcs.Log.UiProperties">
@@ -1050,424 +1086,12 @@
     <option name="FILTER_TARGETS" value="false" />
   </component>
   <component name="editorHistoryManager">
-    <entry file="uml://JAVA/com.syafira.SIGITA">
-      <provider selected="true" editor-type-id="UmlEditorProvider">
-        <state>
-          <ID>JAVA</ID>
-          <OriginalElement>com.syafira.SIGITA</OriginalElement>
-          <nodes>
-            <node x="3985.0" y="3300.0">com.syafira.SIGITA.BuildConfig</node>
-            <node x="9454.691113945577" y="369.0">com.syafira.SIGITA.Splash</node>
-            <node x="193.5" y="798.0">com.syafira.SIGITA.GiziKalkulatorGizi</node>
-            <node x="2949.0" y="2027.5">com.syafira.SIGITA.ProfilHapus</node>
-            <node x="2285.0" y="1807.0">com.syafira.SIGITA.GiziDokumentasiTambah</node>
-            <node x="3787.9375" y="628.0">com.syafira.SIGITA.ProfilTambah</node>
-            <node x="4112.379109977324" y="1907.0">com.syafira.SIGITA.ProfilPasscodeCek</node>
-            <node x="1115.75" y="2706.0">com.syafira.SIGITA.GiziDokumentasiUbah</node>
-            <node x="4279.0" y="3300.0">com.syafira.SIGITA.R</node>
-            <node x="1016.0" y="1507.0">com.syafira.SIGITA.GiziDokumentasiDetail</node>
-            <node x="8618.941113945577" y="269.0">com.syafira.SIGITA.TumbuhKembang</node>
-            <node x="2921.25" y="698.0">com.syafira.SIGITA.ProfilDetail</node>
-            <node x="1767.75" y="2926.5">com.syafira.SIGITA.GiziDokumentasiHapus</node>
-            <node x="6368.254109977324" y="1747.0">com.syafira.SIGITA.ImunisasiRiwayatTambah</node>
-            <node x="2698.0" y="3300.0">com.syafira.SIGITA.SessionManager</node>
-            <node x="3513.0" y="3300.0">com.syafira.SIGITA.ImunisasiAlarmReceiver</node>
-            <node x="8723.980938208617" y="878.0">com.syafira.SIGITA.TumbuhKembangTahapan</node>
-            <node x="10552.480938208617" y="2027.5">com.syafira.SIGITA.RekamMedisHapus</node>
-            <node x="0.0" y="1627.0">com.syafira.SIGITA.GiziKalkulatorGiziHasil</node>
-            <node x="8266.504109977324" y="2726.0">com.syafira.SIGITA.TumbuhKembangGaleriUbah</node>
-            <node x="8315.980938208617" y="928.0">com.syafira.SIGITA.TumbuhKembangGaleri</node>
-            <node x="5532.254109977324" y="2027.5">com.syafira.SIGITA.ProfilPasscodeHapus</node>
-            <node x="6896.504109977324" y="2646.0">com.syafira.SIGITA.ImunisasiRiwayatUbah</node>
-            <node x="5815.254109977324" y="908.0">com.syafira.SIGITA.ImunisasiJadwal</node>
-            <node x="7360.254109977324" y="0.0">com.syafira.SIGITA.Home</node>
-            <node x="7350.445223922901" y="319.0">com.syafira.SIGITA.TentangSIGITA</node>
-            <node x="4755.9375" y="888.0">com.syafira.SIGITA.ProfilPasscode</node>
-            <node x="2988.0" y="3300.0">com.syafira.SIGITA.ImageZoom</node>
-            <node x="7001.980938208616" y="888.0">com.syafira.SIGITA.ImunisasiRiwayat</node>
-            <node x="9758.480938208617" y="1737.0">com.syafira.SIGITA.RekamMedisUbah</node>
-            <node x="10051.980938208617" y="728.0">com.syafira.SIGITA.RekamMedisDetail</node>
-            <node x="1777.6952239229022" y="878.0">com.syafira.SIGITA.GiziDokumentasi</node>
-            <node x="4159.0" y="3300.0">com.syafira.SIGITA.Manifest</node>
-            <node x="4554.816609977324" y="1897.0">com.syafira.SIGITA.ProfilPasscodeUbah</node>
-            <node x="9245.980938208617" y="728.0">com.syafira.SIGITA.RekamMedisTambah</node>
-            <node x="4033.316609977324" y="269.0">com.syafira.SIGITA.Profil</node>
-            <node x="8844.504109977324" y="2926.5">com.syafira.SIGITA.TumbuhKembangGaleriHapus</node>
-            <node x="4992.816609977324" y="1897.0">com.syafira.SIGITA.ProfilPasscodeTambah</node>
-            <node x="9902.941113945577" y="259.0">com.syafira.SIGITA.RekamMedis</node>
-            <node x="3132.0" y="1627.0">com.syafira.SIGITA.ProfilUbah</node>
-            <node x="7878.254109977324" y="1827.0">com.syafira.SIGITA.TumbuhKembangGaleriTambah</node>
-            <node x="8468.254109977324" y="1837.0">com.syafira.SIGITA.TumbuhKembangGaleriDetail</node>
-            <node x="2035.0" y="3300.0">com.syafira.SIGITA.ImageZoomer</node>
-            <node x="3264.0" y="3300.0">com.syafira.SIGITA.ExpandableHeightGridView</node>
-            <node x="0.0" y="3300.0">com.syafira.SIGITA.DBHelper</node>
-            <node x="5796.754109977324" y="249.0">com.syafira.SIGITA.Imunisasi</node>
-            <node x="7128.254109977324" y="1747.0">com.syafira.SIGITA.ImunisasiRiwayatDetail</node>
-            <node x="5220.9375" y="868.0">com.syafira.SIGITA.ImunisasiAlarm</node>
-            <node x="3770.0" y="3300.0">com.syafira.SIGITA.GridViewItem</node>
-            <node x="7644.504109977324" y="2926.5">com.syafira.SIGITA.ImunisasiRiwayatHapus</node>
-            <node x="1177.0702239229022" y="269.0">com.syafira.SIGITA.Gizi</node>
-            <node x="5715.254109977324" y="1817.0">com.syafira.SIGITA.ImunisasiJadwalDetail</node>
-          </nodes>
-          <notes />
-          <edges>
-            <edge source="com.syafira.SIGITA.Gizi" target="com.syafira.SIGITA.Home">
-              <point x="0.0" y="-144.5" />
-              <point x="1392.0702239229022" y="209.0" />
-              <point x="7383.825538548752" y="209.0" />
-              <point x="-141.42857142857156" y="94.5" />
-            </edge>
-            <edge source="com.syafira.SIGITA.GiziKalkulatorGiziHasil" target="com.syafira.SIGITA.GiziKalkulatorGizi">
-              <point x="0.0" y="-424.5" />
-              <point x="0.0" y="244.5" />
-            </edge>
-            <edge source="com.syafira.SIGITA.Splash" target="com.syafira.SIGITA.Home">
-              <point x="0.0" y="-44.5" />
-              <point x="9556.691113945577" y="219.0" />
-              <point x="7619.539824263038" y="219.0" />
-              <point x="94.28571428571468" y="94.5" />
-            </edge>
-            <edge source="com.syafira.SIGITA.RekamMedisUbah" target="com.syafira.SIGITA.RekamMedisDetail">
-              <point x="0.0" y="-314.5" />
-              <point x="10145.480938208617" y="1487.0" />
-              <point x="10245.980938208617" y="1487.0" />
-              <point x="-194.0" y="314.5" />
-            </edge>
-            <edge source="com.syafira.SIGITA.RekamMedisDetail" target="com.syafira.SIGITA.RekamMedis">
-              <point x="0.0" y="-314.5" />
-              <point x="10439.980938208617" y="603.0" />
-              <point x="10244.941113945577" y="603.0" />
-              <point x="114.0" y="154.5" />
-            </edge>
-            <edge source="com.syafira.SIGITA.GiziDokumentasi" target="com.syafira.SIGITA.Gizi">
-              <point x="0.0" y="-164.5" />
-              <point x="2025.1952239229022" y="603.0" />
-              <point x="1499.5702239229022" y="603.0" />
-              <point x="107.5" y="144.5" />
-            </edge>
-            <edge source="com.syafira.SIGITA.RekamMedisTambah" target="com.syafira.SIGITA.RekamMedis">
-              <point x="0.0" y="-314.5" />
-              <point x="9638.980938208617" y="603.0" />
-              <point x="10016.941113945577" y="603.0" />
-              <point x="-114.0" y="154.5" />
-            </edge>
-            <edge source="com.syafira.SIGITA.ProfilPasscode" target="com.syafira.SIGITA.Profil">
-              <point x="0.0" y="-154.5" />
-              <point x="4978.4375" y="603.0" />
-              <point x="4421.649943310656" y="603.0" />
-              <point x="155.33333333333303" y="144.5" />
-            </edge>
-            <edge source="com.syafira.SIGITA.TumbuhKembangGaleriDetail" target="com.syafira.SIGITA.TumbuhKembangGaleri">
-              <point x="0.0" y="-214.5" />
-              <point x="8738.254109977324" y="1487.0" />
-              <point x="8606.980938208617" y="1487.0" />
-              <point x="97.0" y="114.5" />
-            </edge>
-            <edge source="com.syafira.SIGITA.ImunisasiJadwalDetail" target="com.syafira.SIGITA.ImunisasiJadwal">
-              <point x="0.0" y="-234.5" />
-              <point x="0.0" y="134.5" />
-            </edge>
-            <edge source="com.syafira.SIGITA.ImunisasiRiwayatTambah" target="com.syafira.SIGITA.ImunisasiRiwayat">
-              <point x="0.0" y="-304.5" />
-              <point x="6738.254109977324" y="1487.0" />
-              <point x="7121.980938208616" y="1487.0" />
-              <point x="-120.0" y="154.5" />
-            </edge>
-            <edge source="com.syafira.SIGITA.RekamMedisHapus" target="com.syafira.SIGITA.RekamMedisDetail">
-              <point x="0.0" y="-24.0" />
-              <point x="194.0" y="314.5" />
-            </edge>
-            <edge source="com.syafira.SIGITA.ProfilUbah" target="com.syafira.SIGITA.ProfilDetail">
-              <point x="0.0" y="-424.5" />
-              <point x="3610.0" y="1487.0" />
-              <point x="3519.75" y="1487.0" />
-              <point x="199.5" y="344.5" />
-            </edge>
-            <edge source="com.syafira.SIGITA.GiziKalkulatorGizi" target="com.syafira.SIGITA.Gizi">
-              <point x="0.0" y="-244.5" />
-              <point x="498.0" y="603.0" />
-              <point x="1284.5702239229022" y="603.0" />
-              <point x="-107.5" y="144.5" />
-            </edge>
-            <edge source="com.syafira.SIGITA.GiziDokumentasiTambah" target="com.syafira.SIGITA.GiziDokumentasi">
-              <point x="0.0" y="-244.5" />
-              <point x="2607.0" y="1487.0" />
-              <point x="2148.945223922902" y="1487.0" />
-              <point x="123.75" y="164.5" />
-            </edge>
-            <edge source="com.syafira.SIGITA.ProfilPasscodeHapus" target="com.syafira.SIGITA.ProfilPasscode">
-              <point x="0.0" y="-24.0" />
-              <point x="5613.754109977324" y="1477.0" />
-              <point x="5145.3125" y="1477.0" />
-              <point x="166.875" y="154.5" />
-            </edge>
-            <edge source="com.syafira.SIGITA.TentangSIGITA" target="com.syafira.SIGITA.Home">
-              <point x="0.0" y="-94.5" />
-              <point x="7521.945223922901" y="229.0" />
-              <point x="7525.254109977324" y="229.0" />
-              <point x="0.0" y="94.5" />
-            </edge>
-            <edge source="com.syafira.SIGITA.TumbuhKembangTahapan" target="com.syafira.SIGITA.TumbuhKembang">
-              <point x="0.0" y="-164.5" />
-              <point x="8974.980938208617" y="603.0" />
-              <point x="8941.441113945577" y="603.0" />
-              <point x="107.5" y="144.5" />
-            </edge>
-            <edge source="com.syafira.SIGITA.TumbuhKembangGaleri" target="com.syafira.SIGITA.TumbuhKembang">
-              <point x="0.0" y="-114.5" />
-              <point x="8509.980938208617" y="603.0" />
-              <point x="8726.441113945577" y="603.0" />
-              <point x="-107.5" y="144.5" />
-            </edge>
-            <edge source="com.syafira.SIGITA.ProfilPasscodeTambah" target="com.syafira.SIGITA.ProfilPasscode">
-              <point x="0.0" y="-154.5" />
-              <point x="5201.816609977324" y="1487.0" />
-              <point x="5034.0625" y="1487.0" />
-              <point x="55.625" y="154.5" />
-            </edge>
-            <edge source="com.syafira.SIGITA.Profil" target="com.syafira.SIGITA.Home">
-              <point x="0.0" y="-144.5" />
-              <point x="4266.316609977324" y="219.0" />
-              <point x="7430.968395691609" y="219.0" />
-              <point x="-94.28571428571468" y="94.5" />
-            </edge>
-            <edge source="com.syafira.SIGITA.TumbuhKembangGaleriUbah" target="com.syafira.SIGITA.TumbuhKembangGaleriDetail">
-              <point x="0.0" y="-224.5" />
-              <point x="8545.504109977324" y="2621.0" />
-              <point x="8603.254109977324" y="2621.0" />
-              <point x="-135.0" y="214.5" />
-            </edge>
-            <edge source="com.syafira.SIGITA.ProfilTambah" target="com.syafira.SIGITA.Profil">
-              <point x="0.0" y="-414.5" />
-              <point x="4261.9375" y="603.0" />
-              <point x="4266.316609977324" y="603.0" />
-              <point x="0.0" y="144.5" />
-            </edge>
-            <edge source="com.syafira.SIGITA.GiziDokumentasiUbah" target="com.syafira.SIGITA.GiziDokumentasiDetail">
-              <point x="0.0" y="-244.5" />
-              <point x="1431.75" y="2621.0" />
-              <point x="1328.25" y="2621.0" />
-              <point x="-312.25" y="544.5" />
-            </edge>
-            <edge source="com.syafira.SIGITA.ImunisasiAlarm" target="com.syafira.SIGITA.Imunisasi">
-              <point x="0.0" y="-174.5" />
-              <point x="5474.9375" y="603.0" />
-              <point x="5875.087443310657" y="603.0" />
-              <point x="-156.66666666666652" y="164.5" />
-            </edge>
-            <edge source="com.syafira.SIGITA.ProfilDetail" target="com.syafira.SIGITA.Profil">
-              <point x="0.0" y="-344.5" />
-              <point x="3320.25" y="603.0" />
-              <point x="4110.98327664399" y="603.0" />
-              <point x="-155.33333333333303" y="144.5" />
-            </edge>
-            <edge source="com.syafira.SIGITA.ImunisasiRiwayatHapus" target="com.syafira.SIGITA.ImunisasiRiwayatDetail">
-              <point x="0.0" y="-24.0" />
-              <point x="7726.004109977324" y="2621.0" />
-              <point x="7675.754109977324" y="2621.0" />
-              <point x="182.5" y="304.5" />
-            </edge>
-            <edge source="com.syafira.SIGITA.ProfilPasscodeUbah" target="com.syafira.SIGITA.ProfilPasscode">
-              <point x="0.0" y="-154.5" />
-              <point x="4763.816609977324" y="1487.0" />
-              <point x="4922.8125" y="1487.0" />
-              <point x="-55.625" y="154.5" />
-            </edge>
-            <edge source="com.syafira.SIGITA.ImunisasiRiwayatUbah" target="com.syafira.SIGITA.ImunisasiRiwayatDetail">
-              <point x="4.547473508864641E-13" y="-304.5" />
-              <point x="7260.504109977324" y="2621.0" />
-              <point x="7310.754109977324" y="2621.0" />
-              <point x="-182.5" y="304.5" />
-            </edge>
-            <edge source="com.syafira.SIGITA.Imunisasi" target="com.syafira.SIGITA.Home">
-              <point x="0.0" y="-164.5" />
-              <point x="6031.754109977324" y="229.0" />
-              <point x="7478.111252834467" y="229.0" />
-              <point x="-47.14285714285688" y="94.5" />
-            </edge>
-            <edge source="com.syafira.SIGITA.ProfilPasscodeCek" target="com.syafira.SIGITA.ProfilPasscode">
-              <point x="0.0" y="-144.5" />
-              <point x="4311.379109977324" y="1477.0" />
-              <point x="4811.5625" y="1477.0" />
-              <point x="-166.875" y="154.5" />
-            </edge>
-            <edge source="com.syafira.SIGITA.TumbuhKembang" target="com.syafira.SIGITA.Home">
-              <point x="0.0" y="-144.5" />
-              <point x="8833.941113945577" y="229.0" />
-              <point x="7572.396967120181" y="229.0" />
-              <point x="47.14285714285688" y="94.5" />
-            </edge>
-            <edge source="com.syafira.SIGITA.ImunisasiRiwayatDetail" target="com.syafira.SIGITA.ImunisasiRiwayat">
-              <point x="0.0" y="-304.5" />
-              <point x="7493.254109977324" y="1487.0" />
-              <point x="7361.980938208616" y="1487.0" />
-              <point x="120.0" y="154.5" />
-            </edge>
-            <edge source="com.syafira.SIGITA.TumbuhKembangGaleriHapus" target="com.syafira.SIGITA.TumbuhKembangGaleriDetail">
-              <point x="0.0" y="-24.0" />
-              <point x="8931.004109977324" y="2621.0" />
-              <point x="8873.254109977324" y="2621.0" />
-              <point x="135.0" y="214.5" />
-            </edge>
-            <edge source="com.syafira.SIGITA.TumbuhKembangGaleriTambah" target="com.syafira.SIGITA.TumbuhKembangGaleri">
-              <point x="0.0" y="-224.5" />
-              <point x="8163.254109977324" y="1487.0" />
-              <point x="8412.980938208617" y="1487.0" />
-              <point x="-97.0" y="114.5" />
-            </edge>
-            <edge source="com.syafira.SIGITA.GiziDokumentasiDetail" target="com.syafira.SIGITA.GiziDokumentasi">
-              <point x="0.0" y="-544.5" />
-              <point x="1640.5" y="1487.0" />
-              <point x="1901.4452239229022" y="1487.0" />
-              <point x="-123.75" y="164.5" />
-            </edge>
-            <edge source="com.syafira.SIGITA.ImunisasiRiwayat" target="com.syafira.SIGITA.Imunisasi">
-              <point x="0.0" y="-154.5" />
-              <point x="7241.980938208616" y="603.0" />
-              <point x="6188.42077664399" y="603.0" />
-              <point x="156.66666666666652" y="164.5" />
-            </edge>
-            <edge source="com.syafira.SIGITA.RekamMedis" target="com.syafira.SIGITA.Home">
-              <point x="0.0" y="-154.5" />
-              <point x="10130.941113945577" y="209.0" />
-              <point x="7666.682681405895" y="209.0" />
-              <point x="141.42857142857156" y="94.5" />
-            </edge>
-            <edge source="com.syafira.SIGITA.ImunisasiJadwal" target="com.syafira.SIGITA.Imunisasi">
-              <point x="0.0" y="-134.5" />
-              <point x="0.0" y="164.5" />
-            </edge>
-            <edge source="com.syafira.SIGITA.GiziDokumentasiHapus" target="com.syafira.SIGITA.GiziDokumentasiDetail">
-              <point x="0.0" y="-24.0" />
-              <point x="1849.25" y="2621.0" />
-              <point x="1952.75" y="2621.0" />
-              <point x="312.25" y="544.5" />
-            </edge>
-            <edge source="com.syafira.SIGITA.ProfilHapus" target="com.syafira.SIGITA.ProfilDetail">
-              <point x="0.0" y="-24.0" />
-              <point x="3030.5" y="1487.0" />
-              <point x="3120.75" y="1487.0" />
-              <point x="-199.5" y="344.5" />
-            </edge>
-          </edges>
-          <settings layout="Hierarchic Group" zoom="0.30000000000000004" x="3604.0" y="732.0" />
-          <SelectedNodes>
-            <node>com.syafira.SIGITA.BuildConfig</node>
-          </SelectedNodes>
-          <Categories>
-            <Category>Fields</Category>
-            <Category>Methods</Category>
-          </Categories>
-          <SCOPE>All</SCOPE>
-          <VISIBILITY>private</VISIBILITY>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/com/syafira/SIGITA/Splash.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="16" column="13" selection-start-line="16" selection-start-column="13" selection-end-line="17" selection-end-column="49" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/com/syafira/SIGITA/GiziDokumentasiTambah.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="289" column="149" selection-start-line="289" selection-start-column="149" selection-end-line="289" selection-end-column="149" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/com/syafira/SIGITA/TumbuhKembangGaleriTambah.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="412" column="75" selection-start-line="410" selection-start-column="9" selection-end-line="412" selection-end-column="75" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/com/syafira/SIGITA/TumbuhKembangGaleriUbah.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="434" column="85" selection-start-line="434" selection-start-column="85" selection-end-line="434" selection-end-column="85" />
-          <folding>
-            <element signature="imports" expanded="false" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/com/syafira/SIGITA/ProfilUbah.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="523" column="50" selection-start-line="523" selection-start-column="50" selection-end-line="523" selection-end-column="50" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/com/syafira/SIGITA/ImunisasiAlarmReceiver.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="56" column="0" selection-start-line="56" selection-start-column="0" selection-end-line="56" selection-end-column="0" />
-          <folding>
-            <element signature="imports" expanded="false" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/res/layout/tumbang_galeri_ubah.xml">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.33247423">
-          <caret line="139" column="44" selection-start-line="139" selection-start-column="42" selection-end-line="139" selection-end-column="44" />
-          <folding />
-        </state>
-      </provider>
-      <provider editor-type-id="android-designer">
-        <state />
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/res/layout/tumbang_galeri_tambah.xml">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="-0.0">
-          <caret line="0" column="11" selection-start-line="0" selection-start-column="9" selection-end-line="0" selection-end-column="11" />
-          <folding />
-        </state>
-      </provider>
-      <provider editor-type-id="android-designer">
-        <state />
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/res/layout/profil_passcode_cek.xml">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="0" column="11" selection-start-line="0" selection-start-column="9" selection-end-line="0" selection-end-column="11" />
-          <folding />
-        </state>
-      </provider>
-      <provider editor-type-id="android-designer">
-        <state />
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/res/layout/catatankesehatan.xml">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="-3.1886792">
-          <caret line="253" column="67" selection-start-line="253" selection-start-column="67" selection-end-line="253" selection-end-column="67" />
-          <folding>
-            <element signature="e#2425#2458#0" expanded="true" />
-            <element signature="e#9974#10014#0" expanded="true" />
-            <element signature="e#10929#10961#0" expanded="true" />
-            <element signature="e#11870#11899#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-      <provider editor-type-id="android-designer">
-        <state />
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/res/layout/catatankesehatan_hapus.xml">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="-4.4716983">
           <caret line="95" column="46" selection-start-line="95" selection-start-column="46" selection-end-line="95" selection-end-column="46" />
           <folding>
-            <element signature="e#3827#3845#0" expanded="true" />
+            <element signature="e#3827#3845#0" expanded="false" />
           </folding>
         </state>
       </provider>
@@ -1480,27 +1104,27 @@
         <state vertical-scroll-proportion="-3.1886792">
           <caret line="78" column="83" selection-start-line="78" selection-start-column="79" selection-end-line="78" selection-end-column="83" />
           <folding>
-            <element signature="e#3411#3445#0" expanded="true" />
-            <element signature="e#5097#5121#0" expanded="true" />
-            <element signature="e#5698#5727#0" expanded="true" />
-            <element signature="e#6384#6410#0" expanded="true" />
-            <element signature="e#6994#7025#0" expanded="true" />
-            <element signature="e#7695#7725#0" expanded="true" />
-            <element signature="e#8332#8367#0" expanded="true" />
-            <element signature="e#9800#9834#0" expanded="true" />
-            <element signature="e#10427#10466#0" expanded="true" />
-            <element signature="e#11129#11160#0" expanded="true" />
-            <element signature="e#12280#12316#0" expanded="true" />
-            <element signature="e#12908#12938#0" expanded="true" />
-            <element signature="e#13728#13758#0" expanded="true" />
-            <element signature="e#14874#14909#0" expanded="true" />
-            <element signature="e#15496#15524#0" expanded="true" />
-            <element signature="e#17790#17817#0" expanded="true" />
-            <element signature="e#18457#18489#0" expanded="true" />
-            <element signature="e#19317#19345#0" expanded="true" />
-            <element signature="e#19988#20021#0" expanded="true" />
-            <element signature="e#20842#20866#0" expanded="true" />
-            <element signature="e#21497#21526#0" expanded="true" />
+            <element signature="e#3411#3445#0" expanded="false" />
+            <element signature="e#5097#5121#0" expanded="false" />
+            <element signature="e#5698#5727#0" expanded="false" />
+            <element signature="e#6384#6410#0" expanded="false" />
+            <element signature="e#6994#7025#0" expanded="false" />
+            <element signature="e#7695#7725#0" expanded="false" />
+            <element signature="e#8332#8367#0" expanded="false" />
+            <element signature="e#9800#9834#0" expanded="false" />
+            <element signature="e#10427#10466#0" expanded="false" />
+            <element signature="e#11129#11160#0" expanded="false" />
+            <element signature="e#12280#12316#0" expanded="false" />
+            <element signature="e#12908#12938#0" expanded="false" />
+            <element signature="e#13728#13758#0" expanded="false" />
+            <element signature="e#14874#14909#0" expanded="false" />
+            <element signature="e#15496#15524#0" expanded="false" />
+            <element signature="e#17790#17817#0" expanded="false" />
+            <element signature="e#18457#18489#0" expanded="false" />
+            <element signature="e#19317#19345#0" expanded="false" />
+            <element signature="e#19988#20021#0" expanded="false" />
+            <element signature="e#20842#20866#0" expanded="false" />
+            <element signature="e#21497#21526#0" expanded="false" />
           </folding>
         </state>
       </provider>
@@ -1513,27 +1137,27 @@
         <state vertical-scroll-proportion="0.33202356">
           <caret line="190" column="91" selection-start-line="190" selection-start-column="87" selection-end-line="190" selection-end-column="91" />
           <folding>
-            <element signature="e#3407#3439#0" expanded="true" />
-            <element signature="e#5142#5166#0" expanded="true" />
-            <element signature="e#5734#5763#0" expanded="true" />
-            <element signature="e#6483#6509#0" expanded="true" />
-            <element signature="e#7102#7133#0" expanded="true" />
-            <element signature="e#7741#7771#0" expanded="true" />
-            <element signature="e#8378#8413#0" expanded="true" />
-            <element signature="e#9784#9818#0" expanded="true" />
-            <element signature="e#10411#10450#0" expanded="true" />
-            <element signature="e#11119#11150#0" expanded="true" />
-            <element signature="e#12271#12307#0" expanded="true" />
-            <element signature="e#12899#12929#0" expanded="true" />
-            <element signature="e#13719#13749#0" expanded="true" />
-            <element signature="e#14865#14900#0" expanded="true" />
-            <element signature="e#15487#15515#0" expanded="true" />
-            <element signature="e#17782#17809#0" expanded="true" />
-            <element signature="e#18449#18481#0" expanded="true" />
-            <element signature="e#19310#19338#0" expanded="true" />
-            <element signature="e#19981#20014#0" expanded="true" />
-            <element signature="e#20836#20860#0" expanded="true" />
-            <element signature="e#21491#21520#0" expanded="true" />
+            <element signature="e#3407#3439#0" expanded="false" />
+            <element signature="e#5142#5166#0" expanded="false" />
+            <element signature="e#5734#5763#0" expanded="false" />
+            <element signature="e#6483#6509#0" expanded="false" />
+            <element signature="e#7102#7133#0" expanded="false" />
+            <element signature="e#7741#7771#0" expanded="false" />
+            <element signature="e#8378#8413#0" expanded="false" />
+            <element signature="e#9784#9818#0" expanded="false" />
+            <element signature="e#10411#10450#0" expanded="false" />
+            <element signature="e#11119#11150#0" expanded="false" />
+            <element signature="e#12271#12307#0" expanded="false" />
+            <element signature="e#12899#12929#0" expanded="false" />
+            <element signature="e#13719#13749#0" expanded="false" />
+            <element signature="e#14865#14900#0" expanded="false" />
+            <element signature="e#15487#15515#0" expanded="false" />
+            <element signature="e#17782#17809#0" expanded="false" />
+            <element signature="e#18449#18481#0" expanded="false" />
+            <element signature="e#19310#19338#0" expanded="false" />
+            <element signature="e#19981#20014#0" expanded="false" />
+            <element signature="e#20836#20860#0" expanded="false" />
+            <element signature="e#21491#21520#0" expanded="false" />
           </folding>
         </state>
       </provider>
@@ -1546,7 +1170,7 @@
         <state vertical-scroll-proportion="0.33202356">
           <caret line="157" column="62" selection-start-line="157" selection-start-column="62" selection-end-line="157" selection-end-column="62" />
           <folding>
-            <element signature="e#2205#2223#0" expanded="true" />
+            <element signature="e#2205#2223#0" expanded="false" />
           </folding>
         </state>
       </provider>
@@ -1570,7 +1194,7 @@
         <state vertical-scroll-proportion="-1.981132">
           <caret line="60" column="75" selection-start-line="60" selection-start-column="71" selection-end-line="60" selection-end-column="75" />
           <folding>
-            <element signature="e#1685#1703#0" expanded="true" />
+            <element signature="e#1685#1703#0" expanded="false" />
           </folding>
         </state>
       </provider>
@@ -1583,7 +1207,7 @@
         <state vertical-scroll-proportion="-1.981132">
           <caret line="72" column="79" selection-start-line="72" selection-start-column="75" selection-end-line="72" selection-end-column="79" />
           <folding>
-            <element signature="e#1823#1841#0" expanded="true" />
+            <element signature="e#1823#1841#0" expanded="false" />
           </folding>
         </state>
       </provider>
@@ -1596,10 +1220,10 @@
         <state vertical-scroll-proportion="-1.981132">
           <caret line="321" column="91" selection-start-line="321" selection-start-column="87" selection-end-line="321" selection-end-column="91" />
           <folding>
-            <element signature="e#12728#12764#0" expanded="true" />
-            <element signature="e#13326#13356#0" expanded="true" />
-            <element signature="e#15904#15939#0" expanded="true" />
-            <element signature="e#16496#16524#0" expanded="true" />
+            <element signature="e#12728#12764#0" expanded="false" />
+            <element signature="e#13326#13356#0" expanded="false" />
+            <element signature="e#15904#15939#0" expanded="false" />
+            <element signature="e#16496#16524#0" expanded="false" />
           </folding>
         </state>
       </provider>
@@ -1612,10 +1236,10 @@
         <state vertical-scroll-proportion="-1.981132">
           <caret line="323" column="91" selection-start-line="323" selection-start-column="87" selection-end-line="323" selection-end-column="91" />
           <folding>
-            <element signature="e#12869#12905#0" expanded="true" />
-            <element signature="e#13467#13497#0" expanded="true" />
-            <element signature="e#16045#16080#0" expanded="true" />
-            <element signature="e#16637#16665#0" expanded="true" />
+            <element signature="e#12869#12905#0" expanded="false" />
+            <element signature="e#13467#13497#0" expanded="false" />
+            <element signature="e#16045#16080#0" expanded="false" />
+            <element signature="e#16637#16665#0" expanded="false" />
           </folding>
         </state>
       </provider>
@@ -1639,7 +1263,7 @@
         <state vertical-scroll-proportion="-1.981132">
           <caret line="72" column="79" selection-start-line="72" selection-start-column="75" selection-end-line="72" selection-end-column="79" />
           <folding>
-            <element signature="e#1823#1841#0" expanded="true" />
+            <element signature="e#1823#1841#0" expanded="false" />
           </folding>
         </state>
       </provider>
@@ -1652,7 +1276,7 @@
         <state vertical-scroll-proportion="-1.981132">
           <caret line="68" column="79" selection-start-line="68" selection-start-column="75" selection-end-line="68" selection-end-column="79" />
           <folding>
-            <element signature="e#2120#2138#0" expanded="true" />
+            <element signature="e#2120#2138#0" expanded="false" />
           </folding>
         </state>
       </provider>
@@ -1665,7 +1289,7 @@
         <state vertical-scroll-proportion="-1.981132">
           <caret line="60" column="75" selection-start-line="60" selection-start-column="71" selection-end-line="60" selection-end-column="75" />
           <folding>
-            <element signature="e#1685#1703#0" expanded="true" />
+            <element signature="e#1685#1703#0" expanded="false" />
           </folding>
         </state>
       </provider>
@@ -1678,7 +1302,7 @@
         <state vertical-scroll-proportion="-1.981132">
           <caret line="60" column="75" selection-start-line="60" selection-start-column="71" selection-end-line="60" selection-end-column="75" />
           <folding>
-            <element signature="e#1685#1703#0" expanded="true" />
+            <element signature="e#1685#1703#0" expanded="false" />
           </folding>
         </state>
       </provider>
@@ -1691,8 +1315,8 @@
         <state vertical-scroll-proportion="-1.981132">
           <caret line="333" column="95" selection-start-line="333" selection-start-column="91" selection-end-line="333" selection-end-column="95" />
           <folding>
-            <element signature="e#15829#15859#0" expanded="true" />
-            <element signature="e#18381#18409#0" expanded="true" />
+            <element signature="e#15829#15859#0" expanded="false" />
+            <element signature="e#18381#18409#0" expanded="false" />
           </folding>
         </state>
       </provider>
@@ -1719,9 +1343,9 @@
           <caret line="318" column="71" selection-start-line="318" selection-start-column="71" selection-end-line="318" selection-end-column="71" />
           <caret line="328" column="71" selection-start-line="328" selection-start-column="71" selection-end-line="328" selection-end-column="71" />
           <folding>
-            <element signature="e#15065#15101#0" expanded="true" />
-            <element signature="e#15691#15721#0" expanded="true" />
-            <element signature="e#17652#17687#0" expanded="true" />
+            <element signature="e#15065#15101#0" expanded="false" />
+            <element signature="e#15691#15721#0" expanded="false" />
+            <element signature="e#17652#17687#0" expanded="false" />
           </folding>
         </state>
       </provider>
@@ -1737,9 +1361,9 @@
           <caret line="317" column="71" selection-start-line="317" selection-start-column="71" selection-end-line="317" selection-end-column="71" />
           <caret line="327" column="71" selection-start-line="327" selection-start-column="71" selection-end-line="327" selection-end-column="71" />
           <folding>
-            <element signature="e#14970#15006#0" expanded="true" />
-            <element signature="e#15596#15626#0" expanded="true" />
-            <element signature="e#17556#17591#0" expanded="true" />
+            <element signature="e#14970#15006#0" expanded="false" />
+            <element signature="e#15596#15626#0" expanded="false" />
+            <element signature="e#17556#17591#0" expanded="false" />
           </folding>
         </state>
       </provider>
@@ -1752,7 +1376,7 @@
         <state vertical-scroll-proportion="-1.981132">
           <caret line="94" column="87" selection-start-line="94" selection-start-column="83" selection-end-line="94" selection-end-column="87" />
           <folding>
-            <element signature="e#1685#1703#0" expanded="true" />
+            <element signature="e#1685#1703#0" expanded="false" />
           </folding>
         </state>
       </provider>
@@ -1765,7 +1389,7 @@
         <state vertical-scroll-proportion="-1.981132">
           <caret line="76" column="83" selection-start-line="76" selection-start-column="79" selection-end-line="76" selection-end-column="83" />
           <folding>
-            <element signature="e#2120#2138#0" expanded="true" />
+            <element signature="e#2120#2138#0" expanded="false" />
           </folding>
         </state>
       </provider>
@@ -1795,19 +1419,10 @@
         <state />
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/com/syafira/SIGITA/TumbuhKembangGaleri.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/com/syafira/SIGITA/ProfilPasscodeHapus.java">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="-8.192307">
           <caret line="45" column="46" selection-start-line="45" selection-start-column="44" selection-end-line="45" selection-end-column="46" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -1815,7 +1430,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="-6.8461537">
           <caret line="11" column="27" selection-start-line="11" selection-start-column="25" selection-end-line="11" selection-end-column="27" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -1861,7 +1475,7 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/com/syafira/SIGITA/CatatanKesehatanUbah.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="-10.769231">
+        <state vertical-scroll-proportion="0.0">
           <caret line="228" column="45" selection-start-line="228" selection-start-column="45" selection-end-line="228" selection-end-column="45" />
           <folding>
             <element signature="imports" expanded="true" />
@@ -1871,31 +1485,28 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/com/syafira/SIGITA/Home.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="-6.8461537">
+        <state vertical-scroll-proportion="0.0">
           <caret line="153" column="27" selection-start-line="153" selection-start-column="25" selection-end-line="153" selection-end-column="27" />
-          <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/com/syafira/SIGITA/Profil.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="-6.8461537">
+        <state vertical-scroll-proportion="0.0">
           <caret line="332" column="19" selection-start-line="332" selection-start-column="17" selection-end-line="332" selection-end-column="19" />
-          <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/com/syafira/SIGITA/ProfilDetail.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="-6.8461537">
+        <state vertical-scroll-proportion="0.0">
           <caret line="196" column="52" selection-start-line="196" selection-start-column="50" selection-end-line="196" selection-end-column="52" />
-          <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/com/syafira/SIGITA/ProfilHapus.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="-6.8461537">
+        <state vertical-scroll-proportion="0.0">
           <caret line="20" column="24" selection-start-line="20" selection-start-column="22" selection-end-line="20" selection-end-column="24" />
           <folding>
             <element signature="imports" expanded="true" />
@@ -1905,7 +1516,7 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/com/syafira/SIGITA/ProfilPasscode.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="-6.8461537">
+        <state vertical-scroll-proportion="0.0">
           <caret line="98" column="49" selection-start-line="98" selection-start-column="47" selection-end-line="98" selection-end-column="49" />
           <folding />
         </state>
@@ -1913,17 +1524,14 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/com/syafira/SIGITA/ProfilPasscodeCek.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="-6.8461537">
+        <state vertical-scroll-proportion="0.0">
           <caret line="39" column="21" selection-start-line="39" selection-start-column="19" selection-end-line="39" selection-end-column="21" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/com/syafira/SIGITA/ProfilTambah.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="-6.8461537">
+        <state vertical-scroll-proportion="0.0">
           <caret line="35" column="14" selection-start-line="35" selection-start-column="12" selection-end-line="35" selection-end-column="14" />
           <folding>
             <element signature="imports" expanded="true" />
@@ -1933,16 +1541,163 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/res/values/strings.xml">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="-3.3529413">
+        <state vertical-scroll-proportion="0.0">
           <caret line="193" column="26" selection-start-line="193" selection-start-column="26" selection-end-line="193" selection-end-column="26" />
           <folding />
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/res/layout/tumbang_galeri_tambah.xml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.76620823">
+          <caret line="256" column="66" selection-start-line="256" selection-start-column="66" selection-end-line="256" selection-end-column="66" />
+          <folding />
+        </state>
+      </provider>
+      <provider editor-type-id="android-designer">
+        <state />
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/res/layout/tumbang_galeri_ubah.xml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="256" column="66" selection-start-line="256" selection-start-column="66" selection-end-line="256" selection-end-column="66" />
+          <folding />
+        </state>
+      </provider>
+      <provider editor-type-id="android-designer">
+        <state />
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/res/layout/tumbang_galeri_detail.xml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="268" column="66" selection-start-line="268" selection-start-column="66" selection-end-line="268" selection-end-column="66" />
+          <folding />
+        </state>
+      </provider>
+      <provider editor-type-id="android-designer">
+        <state />
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/res/layout/tumbang_galeri_hapus.xml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+      <provider editor-type-id="android-designer">
+        <state />
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/src/com/syafira/SIGITA/DBHelper.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.3325301">
-          <caret line="198" column="35" selection-start-line="198" selection-start-column="33" selection-end-line="198" selection-end-column="35" />
+        <state vertical-scroll-proportion="0.0">
+          <caret line="2411" column="86" selection-start-line="2411" selection-start-column="86" selection-end-line="2411" selection-end-column="86" />
+          <caret line="2413" column="86" selection-start-line="2413" selection-start-column="86" selection-end-line="2413" selection-end-column="86" />
+          <caret line="2415" column="86" selection-start-line="2415" selection-start-column="86" selection-end-line="2415" selection-end-column="86" />
+          <caret line="2417" column="86" selection-start-line="2417" selection-start-column="86" selection-end-line="2417" selection-end-column="86" />
+          <caret line="2419" column="86" selection-start-line="2419" selection-start-column="86" selection-end-line="2419" selection-end-column="86" />
+          <caret line="2421" column="86" selection-start-line="2421" selection-start-column="86" selection-end-line="2421" selection-end-column="86" />
+          <caret line="2423" column="86" selection-start-line="2423" selection-start-column="86" selection-end-line="2423" selection-end-column="86" />
+          <caret line="2425" column="86" selection-start-line="2425" selection-start-column="86" selection-end-line="2425" selection-end-column="86" />
+          <caret line="2427" column="86" selection-start-line="2427" selection-start-column="86" selection-end-line="2427" selection-end-column="86" />
+          <caret line="2429" column="86" selection-start-line="2429" selection-start-column="86" selection-end-line="2429" selection-end-column="86" />
+          <caret line="2431" column="86" selection-start-line="2431" selection-start-column="86" selection-end-line="2431" selection-end-column="86" />
+          <caret line="2433" column="86" selection-start-line="2433" selection-start-column="86" selection-end-line="2433" selection-end-column="86" />
+          <caret line="2435" column="86" selection-start-line="2435" selection-start-column="86" selection-end-line="2435" selection-end-column="86" />
+          <caret line="2437" column="86" selection-start-line="2437" selection-start-column="86" selection-end-line="2437" selection-end-column="86" />
+          <caret line="2439" column="86" selection-start-line="2439" selection-start-column="86" selection-end-line="2439" selection-end-column="86" />
+          <caret line="2441" column="86" selection-start-line="2441" selection-start-column="86" selection-end-line="2441" selection-end-column="86" />
+          <caret line="2443" column="86" selection-start-line="2443" selection-start-column="86" selection-end-line="2443" selection-end-column="86" />
+          <caret line="2445" column="86" selection-start-line="2445" selection-start-column="86" selection-end-line="2445" selection-end-column="86" />
+          <caret line="2447" column="86" selection-start-line="2447" selection-start-column="86" selection-end-line="2447" selection-end-column="86" />
+          <caret line="2449" column="86" selection-start-line="2449" selection-start-column="86" selection-end-line="2449" selection-end-column="86" />
+          <caret line="2451" column="86" selection-start-line="2451" selection-start-column="86" selection-end-line="2451" selection-end-column="86" />
+          <caret line="2453" column="86" selection-start-line="2453" selection-start-column="86" selection-end-line="2453" selection-end-column="86" />
+          <caret line="2455" column="86" selection-start-line="2455" selection-start-column="86" selection-end-line="2455" selection-end-column="86" />
+          <caret line="2457" column="86" selection-start-line="2457" selection-start-column="86" selection-end-line="2457" selection-end-column="86" />
+          <caret line="2459" column="86" selection-start-line="2459" selection-start-column="86" selection-end-line="2459" selection-end-column="86" />
+          <caret line="2461" column="86" selection-start-line="2461" selection-start-column="86" selection-end-line="2461" selection-end-column="86" />
+          <caret line="2463" column="86" selection-start-line="2463" selection-start-column="86" selection-end-line="2463" selection-end-column="86" />
+          <caret line="2465" column="86" selection-start-line="2465" selection-start-column="86" selection-end-line="2465" selection-end-column="86" />
+          <caret line="2467" column="86" selection-start-line="2467" selection-start-column="86" selection-end-line="2467" selection-end-column="86" />
+          <caret line="2469" column="86" selection-start-line="2469" selection-start-column="86" selection-end-line="2469" selection-end-column="86" />
+          <caret line="2471" column="86" selection-start-line="2471" selection-start-column="86" selection-end-line="2471" selection-end-column="86" />
+          <caret line="2473" column="86" selection-start-line="2473" selection-start-column="86" selection-end-line="2473" selection-end-column="86" />
+          <caret line="2475" column="86" selection-start-line="2475" selection-start-column="86" selection-end-line="2475" selection-end-column="86" />
+          <caret line="2477" column="86" selection-start-line="2477" selection-start-column="86" selection-end-line="2477" selection-end-column="86" />
+          <caret line="2479" column="86" selection-start-line="2479" selection-start-column="86" selection-end-line="2479" selection-end-column="86" />
+          <caret line="2481" column="86" selection-start-line="2481" selection-start-column="86" selection-end-line="2481" selection-end-column="86" />
+          <caret line="2483" column="86" selection-start-line="2483" selection-start-column="86" selection-end-line="2483" selection-end-column="86" />
+          <caret line="2704" column="33" selection-start-line="2704" selection-start-column="33" selection-end-line="2704" selection-end-column="33" />
+          <caret line="2721" column="36" selection-start-line="2721" selection-start-column="36" selection-end-line="2721" selection-end-column="36" />
+          <caret line="2752" column="36" selection-start-line="2752" selection-start-column="36" selection-end-line="2752" selection-end-column="36" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/com/syafira/SIGITA/ImunisasiJadwal.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="-6.8461537">
+          <caret line="104" column="60" selection-start-line="104" selection-start-column="57" selection-end-line="104" selection-end-column="60" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/com/syafira/SIGITA/ImunisasiJadwalDetail.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="-6.8461537">
+          <caret line="130" column="87" selection-start-line="130" selection-start-column="87" selection-end-line="130" selection-end-column="87" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/com/syafira/SIGITA/TumbuhKembangGaleri.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="-6.5384617">
+          <caret line="17" column="9" selection-start-line="17" selection-start-column="7" selection-end-line="17" selection-end-column="9" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/com/syafira/SIGITA/TumbuhKembangGaleriDetail.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="-6.8461537">
+          <caret line="95" column="90" selection-start-line="95" selection-start-column="90" selection-end-line="95" selection-end-column="90" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/com/syafira/SIGITA/TumbuhKembangGaleriHapus.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="-5.230769">
+          <caret line="16" column="67" selection-start-line="16" selection-start-column="65" selection-end-line="16" selection-end-column="67" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/com/syafira/SIGITA/TumbuhKembangGaleriTambah.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="-6.8461537">
+          <caret line="443" column="62" selection-start-line="443" selection-start-column="57" selection-end-line="443" selection-end-column="62" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/com/syafira/SIGITA/TumbuhKembangGaleriUbah.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="-6.8461537">
+          <caret line="112" column="90" selection-start-line="112" selection-start-column="90" selection-end-line="112" selection-end-column="90" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/com/syafira/SIGITA/TumbuhKembangTahapan.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.9012048">
+          <caret line="30" column="30" selection-start-line="30" selection-start-column="30" selection-end-line="30" selection-end-column="30" />
           <folding />
         </state>
       </provider>
